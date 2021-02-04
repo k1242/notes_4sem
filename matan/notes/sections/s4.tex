@@ -1,0 +1,81 @@
+\begin{to_def}
+    Обозначим \textit{частичную сумму} тригонометрического ряда Фурье для $2\pi$-периодической функции $f$ как
+    \begin{equation*}
+        T_n (f, x) = \sum_{k=-n}^n c_k (f) e^{ikx}.
+    \end{equation*}
+\end{to_def}
+
+\begin{to_lem}
+    Для $n$-й частичной суммы ряда Фурье $2\pi$-периодической функции имеет место формула в виде свёртки
+    \begin{equation*}
+        T_n (f, x) = \int_{-\pi}^{\pi} f(x+t) D_n (t) \d T,
+    \end{equation*}
+    с ядром Дирихле
+    \begin{equation*}
+        D_n (t) = \frac{1}{2\pi} \frac{\sin \big(\left(n+\frac{1}{2}\right) t\big)}{\sin\left(\frac{1}{2} t\right)}.
+    \end{equation*}
+\end{to_lem}
+
+
+\begin{to_lem}[Равномерная ограниченность интегралов от ядра Дирихле]
+    Существует такая константа $C$, что 
+    \begin{equation*}
+        \left|
+        \int_a^b D_n (t) \d t
+        \right| \leq C
+    \end{equation*}
+    для любых $a, b \in [-\pi, \pi], \ n \in \mathbb{N}$.
+\end{to_lem}
+
+\begin{to_thr}[Равномерный принцип локализации]
+    Запищем для $\delta \in (0, \pi)$
+    \begin{equation*}
+        T_n (f, x) - f(x) = 
+        \int_{-\pi}^{\pi} 
+        \left(
+            f(x+t) - f(x)
+        \right) D_n (t) \d t =
+        \int_{-\delta}^{\delta} \left(
+            f(x+t) - f(x)
+        \right) D_n (t) \d t + 
+        \int_M 
+        (f(x+t)-f(x)) D_n (t) \d t,
+    \end{equation*}
+    где $M = \left\{t \mid \delta \leq |t| \leq \pi\right\}$. Если $f \in L_1 [-\pi, \pi]$, то
+    \begin{equation*}
+        \int_M \left(
+            f(x+t) - f(x)
+        \right) D_n (t) \d t
+        \ \to \ 0, \hspace{0.5 cm} n \to \infty.
+    \end{equation*}
+    Если $f$ ограничена на отрезке $[a, b]$, то это выражение стремится к нулю равномерно по $x \in [a, b]$.
+\end{to_thr}
+
+
+\begin{to_def}
+    Функция $f$ называется гёльдеровой степени $\alpha > 0$, если для любых $x, \, y$ из области определения
+    \begin{equation*}
+        |f(x) -f(y)| \leq C |x-y|^{\alpha}
+    \end{equation*}
+    с некоторой константой $C$.
+\end{to_def}
+
+
+\begin{to_thr}[Признак Липшица сходимости ряда Фурье]
+    Для абсолютно интегрируемой $2\pi$-периодической функции, которая является гёльдеровой с некоторыми $C$, $\alpha > 0$ на интервале $(A, B) \supset [a, b]$
+    \begin{equation*}
+        T_n (f, x) \to f(x)
+    \end{equation*}
+    равномерно $x \in [a, b]$ при $n \to \infty$.
+\end{to_thr}
+
+\begin{to_thr}[Признак Дирихле сходимости ряда Фурье]
+    Для абсолютно интегрируемой $2\pi$-периодической функции, которая является непрерывной с ограниченной вариацией на интервале $(A, B) \supset [a, b]$
+    \begin{equation*}
+        T_n (f, x) \to f(x)
+    \end{equation*}
+    равномерно по $x \in [a, b]$ при $n \to \infty$.
+\end{to_thr}
+
+\red{Далее несколько лемм, сформулированных в виде задач, а именно признак Дирихле сходимости ряда Фурье в точке, признак Липшица сходимости ряда Фурье в точке, признак Дини сходимости ряда Фурье в точке. Ага, это 13 тема. А потом будут темы 14 - 17.}
+

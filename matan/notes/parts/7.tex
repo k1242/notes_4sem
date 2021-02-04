@@ -1,0 +1,109 @@
+ \begin{to_def}
+     В комплексном случае норма $L_2$ порождена \textit{скалярным произведением}
+     \begin{equation*}
+         (f, g) = \int_{-\infty}^{+\infty} f(x) \overline{g(x)} \d x
+         \hspace{0.5cm} \longrightarrow \hspace{0.5cm}
+         \|f\|_2 = \sqrt{(f, f)}.
+     \end{equation*}
+ \end{to_def}
+
+
+\begin{to_def}
+    Определим \textit{коэффициент Фурье} (с точностью до умножения на константу)
+    \begin{equation*}
+        c_f (y) = \int_{-\infty}^{+\infty} f(x) e^{-ixy} \d x.
+    \end{equation*}
+\end{to_def}
+
+\begin{to_thr}[]
+    Если $f \in L_1 (\mathbb{R})$, то $|c_f (y)| \leq \|f\|_1$ и $c_f (y)$ непрерывно зависит от $y$.
+\end{to_thr}
+
+\begin{to_thr}[Лемма об осцилляции]
+    Если $f \in L_1 (\mathbb{R})$, то выражение
+    \begin{equation*}
+        c_f (y) = \int_{-\infty}^{+\infty} f(x) e^{-ixy} \d x
+    \end{equation*}
+    стремится к нулю при $y \to \infty$.
+\end{to_thr}
+
+\begin{to_lem}
+    Еси производная $f^{(k-1)}$ абсолютно непрерывна и производные до $k$-й включительно\footnote{
+        Для $k$-й достаточно существования почти всюду.
+    }  находятся в $L_1 (\mathbb{R})$, то
+    \begin{equation*}
+        c_f (y) = o \left(\frac{1}{y^k}\right),
+        \hspace{1 cm}
+        t \to \infty.
+    \end{equation*}
+\end{to_lem}
+
+\begin{to_thr}[]
+    Если $f \in L-1 (\mathbb{R})$ имеет ограниченную вариацию на $\mathbb{R}$, то выражение
+    \begin{equation*}
+        c_f (y) = \int_{-\infty}^{+\infty} f(x) e^{-ixy} \d x
+    \end{equation*}
+    оказывается $O(1/y)$ при $y \to \infty$.
+\end{to_thr}
+
+\begin{to_con}
+    Пусть функция $f \colon \mathbb{R} \mapsto \mathbb{R}$ имеет абсолютно непрерывную $(k-1)$-ую производную, производные до $k$-й включительно находятся в $L_1 (\mathbb{R})$, а $f^{(k)}$ (возможно, после изменения на множестве меры нуль) имеет ограниченную вариацию на $\mathbb{R}$, тогда
+    \begin{equation*}
+        c_f (y) = \int_{-\infty}^{+\infty} 
+        f(x) e^{-ixy} \d x =
+        O\left(\frac{1}{y^{k+1}}\right), 
+        \hspace{1 cm}
+        y \to \infty.
+    \end{equation*}
+\end{to_con}
+
+
+
+\begin{to_thr}[Лемма о равномерной осцилляции]
+    Если $f \in L_1(\mathbb{R})$, то выражение
+    \begin{equation*}
+        c(y, \xi, \eta) = \int_\xi^\eta f(x) e^{-ixy} \d x
+    \end{equation*}
+    стремится к нулю при $y \to \infty$ равномерно по $\xi, \ \eta$.
+\end{to_thr}
+
+
+\subsubsection*{Периодические функции}
+
+
+\begin{to_def}
+    Для $2\pi$-\textit{периодической функции}  $f(x+2\pi) \equiv f(x)$ \textit{коэффициенты Фурье}  запишутся, как
+    \begin{equation*}
+        c_n = \frac{1}{2\pi} \int_{-\pi}^{\pi} 
+        f(x) e^{-inx} \d x = 
+        \frac{
+        (f, e^{inx})
+        }{
+        \|e^{inx}\|_2^2
+        },
+    \end{equation*}
+    где последнее выражение понимается в смысле скалярного произведения и нормы в $L_2 [-\pi, \pi]$.
+\end{to_def}
+
+\begin{to_thr}[]
+    Пусть функция $f$ имеет период $2 \pi$ и абсолютно непрерывную $(k-1)$-ую производную, причём $f^(k)$ (возможно, после изменения на множестве меры нуль) имеет ограниченную вариацию на $[-\pi, \pi]$, тогда
+    \begin{equation*}
+        c_n = \frac{1}{2\pi} \int_{-\pi}^{\pi} f(x) e^{inx} \d x =
+        O\left(\frac{1}{n^{k+1}}\right),
+        \hspace{1 cm}
+        n \to \infty.
+    \end{equation*}
+\end{to_thr}
+
+
+\begin{to_lem}
+    Усли у $2\pi$-периодической функции ограниченной вариации есть ненулевое конечное число разрывов, и она кусочно абсолютно непрерывна, то оценка $O(1/n)$ для коэффициентов Фурье неулучшаема.
+\end{to_lem}
+
+\begin{to_thr}[]
+    Пусть функция $f$ непрерывна и $2\pi$-периодическая, тогда для коэффициента Фурье имеется оценка
+    \begin{equation*}
+        c_n = O(\omega_f (\pi/n)),
+    \end{equation*}
+    где $\omega_f$ -- модуль непрерывности $f$.
+\end{to_thr}

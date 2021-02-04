@@ -14,6 +14,11 @@
     \import{./figures/}{#1.pdf_tex}
 }
 
+\newcommand{\sbsnum}[2]{
+    \setcounter{subsection}{\the\numexpr #1 - 1 \relax}
+    \subsection{#2}
+}
+
 \newcommand{\diag}{\mathop{\mathrm{diag}}\nolimits}
 \newcommand{\grad}{\mathop{\mathrm{grad}}\nolimits}
 \renewcommand{\div}{\mathop{\mathrm{div}}\nolimits}
