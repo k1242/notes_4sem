@@ -27,6 +27,18 @@
     назовём $L_p (X)$.
 \end{to_def}
 
+\texttt{Очень хорошим, симметричным, актуальным для описания квантовой механики оказывается $L_2$ простран-\\ство, на котором естественно вводить скалярное произведение, его порождающее.} 
+
+ \begin{to_def}
+     В комплексном случае норма $L_2$ порождена \textit{скалярным произведением}
+     \begin{equation*}
+         (f, g) = \int_{-\infty}^{+\infty} f(x) \overline{g(x)} \d x
+         \hspace{0.5cm} \longrightarrow \hspace{0.5cm}
+         \|f\|_2 = \sqrt{(f, f)}.
+     \end{equation*}
+ \end{to_def}
+
+
 \begin{to_thr}[Неравенство Гёльдера]
     Возьмём $p, \, q > 1$ такие, что $1/p + 1/q = 1$. Пусть $f \in L_p (X)$ и $g \in L_q(X)$. Тогда
     \begin{equation*}
@@ -82,7 +94,7 @@
 \begin{to_thr}[Неравенство Минковского]
     Для функций $f, \, g \in L_p$ при $p \geq 1$
     \begin{equation*}
-        \|f + g\|_p \leq \|f\|_p + \|g\|)_p.
+        \|f + g\|_p \leq \|f\|_p + \|g\|_p.
     \end{equation*}
 \end{to_thr}
 
@@ -91,6 +103,16 @@
 \subsubsection*{Полнота пространства интегрируемых функций}
 
 Далее в разделе всегда предполагается суммирование по $k$ от $1$ до $\infty$. Глобально можно сказать, что \texttt{в нормированном пространстве вопрос полноты сводится в вопросу сходимости рядов}, у которых сходятся суммы норм. 
+
+\begin{to_def}
+    Назовём последовательность $(f_n)$ \textit{фундаментальной}, если
+    \begin{equation*}
+        \forall \varepsilon > 0 \ 
+        \exists N_\varepsilon \colon 
+        \forall n, m \geq N_\varepsilon \
+        \|f_n - f_m\|_p < \varepsilon.
+    \end{equation*}
+\end{to_def}
 
 \begin{to_lem}
     Пусть у последовательности функций $(u_k)$ из $L_p (X)$ сумма
