@@ -1,0 +1,285 @@
+\subsection{Волновое уравнение}
+
+В общем оптика устроена как-то так: $\text{ГО} \subset \text{ВО} \subset \text{ЭО} \subset \text{КО}$.
+Вспомним уравнения Максвелла
+\begin{equation*}
+    \left\{\begin{aligned}
+            \div \vc{D} &= 4 \pi \rho \\
+            \div \vc{B} &= 0 \\
+            \rot \vc{E} &= - \frac{1}{c}\frac{\partial \vc{B}}{\partial t} \\
+            \rot \vc{H} &= \frac{4\pi}{c} \vc{j} + \frac{1}{c} \frac{\partial \vc{D}}{\partial t}.
+    \end{aligned}\right.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \rot \rot \vc{E} = - \frac{1}{c} \frac{\partial }{\partial t} \rot \vc{B}
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \nabla^2 \vc{E} - \frac{\varepsilon \mu}{c^2} \frac{\partial^2 \vc{E}}{\partial t^2} = 0
+\end{equation*}
+Будем считать, что нет свободных токов и зарядов. Как вариант, можно найти решение в виде
+\begin{equation*}
+    \vc{E} = \vc{E}_0 \exp\left(
+        i \omega t - \vc{k} \cdot \vc{r}
+    \right).
+\end{equation*}
+Важно, что верны формально замены
+\begin{equation*}
+    \frac{\partial }{\partial t} \to i \omega,
+    \hspace{1 cm}
+    \left\{\begin{aligned}
+         \partial_{x} &\to - i k_x, \\
+         \partial_{y} &\to - i k_y, \\
+         \partial_{z} &\to - i k_z,  \\   
+    \end{aligned}\right.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \nabla \to - i \vc{k},
+    \hspace{1 cm}
+    \nabla^2 \to - k^2.
+\end{equation*}
+Приходим к уравнению вида
+\begin{equation*}
+    - k^2 \vc{E} + \frac{\varepsilon \mu}{c^2} \omega^2 \vc{E} = 0
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \frac{\omega^2}{k^2} = \frac{c^2}{\varepsilon \mu},
+    \hspace{0.5cm} \to \hspace{0.5cm}
+    \frac{\omega}{k} = \frac{c}{\sqrt{\varepsilon \mu}} = \frac{c}{\sqrt{\varepsilon}} = \frac{c}{n}.
+\end{equation*}
+Можем посмотреть на $\omega t - \vc{k} \cdot \vc{r} = \const$. Тогда
+\begin{equation*}
+    \omega \d t - k \d z = 0,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \frac{dz}{dt} = \frac{\omega}{k}.
+\end{equation*}
+
+
+\subsection{Уравнения эйконала}
+
+\begin{enumerate}
+    \item Свет распространяется в виде лучей.
+    \item Среда характеризуется показателем преломления $n$, более того\footnote{
+        Будем считать, что лучу нужно проходить больший оптический путь.
+    }  $c_{\text{ср}} = c / n$.
+    \item $\int n \d l \to \min$ (принцип Ферма).
+\end{enumerate}
+
+\begin{to_def}
+    \textit{Оптический путь} можем определить, как
+    \begin{equation*}
+        S = \int_A^B n(\vc{r}) \d l.
+    \end{equation*}
+\end{to_def}
+
+
+Посмотрим на уравнение
+\begin{equation*}
+    \nabla^2 \vc{E} - \frac{n^2}{c^2} \frac{\partial^2 \vc{E}}{\partial t^2} = 0,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    {E} (\vc{r}, t) = a(\vc{r}) \exp\left(
+        i k_0 \Phi(\vc{r}) - i \omega t
+    \right),
+\end{equation*}
+где $\Phi(\vc{r})$ называем \textit{эйконалом}, а $a$ - амплитуда.
+
+Тогда формально получаем следующее:
+\begin{equation*}
+    \frac{\partial }{\partial t} \to -i \omega,
+    \ 
+    \frac{\partial^2 }{\partial t^2} \to - \omega^2,
+    \hspace{1 cm}
+    \frac{\partial }{\partial x} E = 
+    a_x' \exp(\ldots) + a(\vc{r}) i k_0 \, \Phi_x' \exp(\ldots),
+\end{equation*}
+И для второй производной
+\begin{equation*}
+    \frac{\partial^2 E}{\partial x^2} = a''_{xx} \exp(\ldots) + 
+    2 i k_0 a'_x \Phi'_x \exp(\ldots) + i k_0 a \Phi_{xx}'' \exp(\ldots) - a(\vc{r}) k_0^2 |\Phi'_x|^2 \exp(\ldots).
+\end{equation*}
+Таким образом нашли $\Delta E$
+\begin{equation*}
+    \nabla^2 E = \nabla^2 a \exp(\ldots) - a(\vc{r}) k_0^2 |\grad \Phi|^2 \exp(\ldots) + 
+    i \left(
+        2 k_0 (\grad a, \grad \Phi) + k_0 a \nabla^2 \Phi
+    \right) \exp(\ldots).
+\end{equation*}
+Внимательно посмотрели на волновое уравнение, решили сгруппировать вещественную часть и мнимую
+\begin{equation*}
+    \nabla^2 a \exp(\ldots) - a(\vc{r}) k_0^2 |\grad \Phi|^2 \exp(\ldots) + \frac{\omega^2}{c^2} n^2 a \exp(\ldots) = 0,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    |\grad \Phi|^2 = 
+    \underbrace{
+        \frac{1}{a l_0^2} \nabla^2 a
+    }_{
+        \text{изм. ампл.}
+    }
+     + n^2.
+\end{equation*}
+Ну, будем считать, что (настоящая область применимости волновой оптики)
+\begin{equation*}
+    \bigg|
+        \lambda \frac{\partial^2 a}{\partial x^2} 
+    \bigg| \ll 
+    \bigg|
+        \frac{\partial a}{\partial x} 
+    \bigg|,
+    \hspace{0.5cm} \Leftrightarrow \hspace{0.5cm}
+    \bigg|
+            \lambda \frac{\partial a}{\partial x} 
+    \bigg| \ll a,
+    \hspace{1 cm}
+    \lambda \to 0.
+\end{equation*}
+И приходим к \textit{уравнению Эйконала} 
+\begin{equation}
+    \boxed{
+        |\grad \Phi| = n.
+    }
+\end{equation}
+Ещё раз вспомним, что волновой фронт имеет вид
+\begin{equation*}
+    \omega t - k_0 \Phi = \const.
+\end{equation*}
+Запишем, что (живём вдоль $\vc{S}$)
+\begin{equation*}
+    \grad \Phi = n \vc{S},
+    \hspace{1 cm}
+    \|\vc{S}\| = 1,
+    \hspace{1 cm}
+    \frac{\partial \Phi}{\partial S} = n.
+\end{equation*}
+Тогда
+\begin{equation*}
+    \omega \d t - k_0 \d \Phi = 0,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \omega \d t = k_0 \d \Phi = k_0 \frac{\partial \Phi}{\partial S} \d S = k_0 n \d S.
+\end{equation*}
+
+
+
+
+\subsection{Принцип Ферма}
+
+% поврехность постоянной фазы.
+Пусть $\Phi$ -- однозначно задан, тогда 
+\begin{equation*}
+    \grad \Phi = n \vc{S},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \oint n \vc{S} \cdot \d \vc{l} = 0,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \int_{ACB} n \vc{S} \cdot \d \vc{l} = 
+    \int_{ADB} n \vc{S} \cdot \d \vc{l}.
+\end{equation*}
+Но $\vc{S} \cdot \d \vc{l} = S \d l = \d l$ на $ACB$. Тогда
+\begin{equation*}
+    \int_{ACB} n \d l = \int_{ADB} n \vc{S} \cdot \d \vc{l} \leq \int_{ADB} n \d l.
+\end{equation*}
+Что доказывает принцип Ферма.
+
+
+\subsection{Траектория луча (?)}
+
+Для луча верно, что
+\begin{equation*}
+    n \vc{S} = \grad \Phi,
+    \hspace{1 cm}
+    | d \vc{r} | = \d l, 
+    \hspace{1 cm}
+    \vc{S} = \frac{d \vc{r}}{d l}.
+\end{equation*}
+В таком случае верно, что
+\begin{equation*}
+    n \frac{d \vc{r}}{d l} = \grad \Phi,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \frac{d }{d l} (n \frac{d \vc{r}}{d l} ) = \frac{d }{d l} \grad \Phi = \grad \frac{d \Phi}{d l} = \grad n.
+\end{equation*}
+Получили  \textit{уравнение траектории луча} 
+\begin{equation}
+    \boxed{
+        \frac{d }{d l} \left(
+            n \frac{d \vc{r}}{d l} 
+        \right) = \grad n
+        }.
+\end{equation}
+Например, в однородной среде
+\begin{equation*}
+    n = \const,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \frac{d^2 \vc{r}}{d l^2} = 0,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \vc{r} = \vc{a} l + \vc{b}.
+\end{equation*}
+
+
+Можно сделать ещё так (найти кривизну траектории?)
+\begin{equation*}
+    \vc{S} \frac{d n}{d l} + n \frac{d \vc{S}}{d l} = \nabla n,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}  
+    \frac{d \vc{S}}{d l} = \frac{1}{n}\left(
+        \nabla n - \vc{S} \frac{d n}{d l}     
+    \right).
+\end{equation*}
+Получаем (вспомнив трёхгранник Френе)
+\begin{equation*}
+    \frac{\vc{N}}{R} = \frac{1}{n} \left(
+        \nabla n - \vc{S} \frac{d n}{d l} 
+    \right),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    0 < \frac{N^2}{R} = \frac{\left(\vc{N} \cdot \nabla n\right)}{n},
+\end{equation*}
+или
+\begin{equation}
+    \left(
+        \vc{N} \cdot \nabla n
+    \right) > 0,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \text{луч поворачивает в $\uparrow n$}.
+\end{equation}
+
+
+
+
+\subsection{Уравнение луча в параксиальном приближение}
+
+Пусть есть некоторая $n(y)$. Пусть луч движется $\theta (y)$, рассмотрим ситуацию преломления, тогда
+\begin{equation*}
+    n(y) \cos \theta(y) = n (y + \d y) \cos \theta(y + d y),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \left(
+        n(y) + \frac{d n}{d y} \Delta y
+    \right)  \left(
+        \cos \theta(y) - \sin \theta(y)
+    \right).
+\end{equation*}
+Раскрыв скобки, получим
+\begin{equation*}
+    n(y) \cos \theta(y) = n(y) \cos \theta(y) + \frac{d n}{d y} \cos \theta(y) \Delta y - n(y) \sin \theta(y) \frac{d \theta}{d y} \Delta y.
+\end{equation*}
+Запишем чуть аккуратнее:
+\begin{equation*}
+    \frac{d n}{d y} \cos \theta(y) = n(y) \sin \theta(y) \frac{d \theta}{d y},
+\end{equation*}
+Считая, что $\sin \theta(y) \approx \theta(y) = d y /d x$, тогда
+\begin{equation}
+    \frac{1}{n} \frac{d n}{d y} = \tg \theta \frac{d \theta}{d y} = \frac{d \theta}{d x} = \frac{d^2 y}{d x^2},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    y_{xx}'' = \frac{1}{n}\frac{d n}{d y}.
+\end{equation}
+
+
+
+
+\subsection{Пример слоистой среды}
+
+
+Рассмотрим вещество с коммерческим названием SELFOC и переменным показателем преломления вида
+\begin{equation*}
+    n^2 = n_0^2 (1 - \alpha^2 y^2) 
+\end{equation*}
+Считая $\alpha y \ll 1$, подставляя в уравнение луча находим, что
+\begin{equation*}
+    y_{xx}'' = \frac{1}{n_0(1-\alpha^2 y^2)^{1/2}} \frac{d n}{d y} =
+    \frac{-n_0 \alpha^2 y}{n_0} = - \alpha^2 y,
+\end{equation*}
+и мы снова всё свели к гармоническому осциллятору.
+
+\phantom{42}
+
+\noindent
+\red{Нужно ещё разобрать мнимую часть, в которой сидит факт об отсутствии взаимодействия лучей.}

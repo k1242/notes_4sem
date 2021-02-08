@@ -1,0 +1,394 @@
+% 16.11
+% 16.33
+% 16.47
+% 16.64
+% 16.107
+
+
+
+\subsubsection*{16.11}
+
+Введём ось $OX$ координат вдоль туннеля, выбрав в качестве $x=0$ положение равновесия. Тогда кинетическая энергия
+\begin{equation*}
+    T = \frac{1}{2} m \dot{x}^2.
+\end{equation*}
+Интегрируя силу, действующую на тело, находим потенциальную энергию
+\begin{equation*}
+    F_x = -\frac{G M(x) m}{r^2(x)} \cdot \frac{x}{r} = - G \kappa x,
+    \hspace{1 cm}
+    \frac{G \kappa R^3}{R^2} = g,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \Pi = \int F \d x = \frac{1}{2}\frac{g}{R} x.
+\end{equation*}
+Так удачно вышло, что $T$ и $\Pi$ -- квадратичные формы. Запишем вековое уравнение:
+\begin{equation*}
+     \frac{\partial^2 \Pi}{\partial q^2} - \lambda \frac{\partial^2 T}{\partial \dot{q}^2} = 0,
+     \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+     \lambda = \frac{g}{R},
+     \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+     T = 2 \pi \sqrt{\frac{R}{g}}.
+\end{equation*}
+
+
+\subsubsection*{16.33}
+
+Выбрав оси, как показано на рисунке, получим систему с 2 степенями свободы.  Кинетическая энергия системы
+\begin{equation*}
+    T = \frac{m}{2} \left(
+        \dot{x}_1^2 + \dot{x}_2^2
+    \right).
+\end{equation*}
+Потенциальная энергия для трёх пружинок (сдвинутая так, чтобы положение равновесия был $0$)
+\begin{equation*}
+    \Pi = \frac{c}{2} (x_2)^2 + \frac{c}{2} (x_1)^2 + \frac{2c}{2}
+    \left(
+       x_2 - x_1
+    \right)^2.
+\end{equation*}
+И снова так вышло, что $T$ и $\Pi$ -- квадратичные формы, так что 
+\begin{equation*}
+     \det \left(
+     \frac{\partial^2 \Pi}{\partial q^i \partial q^j} - \lambda \frac{\partial^2 T}{\partial \dot{q}^i \partial \dot{q}^j}\right) = 0,
+     \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+     \det\left[
+        c\begin{pmatrix}
+            3 & 2 \\
+            2 & 3 \\
+        \end{pmatrix} - 
+        \lambda m\begin{pmatrix}
+            1 & 0 \\
+            0 & 1 \\
+        \end{pmatrix}
+     \right] = 0,
+     \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+     (\lambda m)^2 + 9 c^2 - 6 \lambda m c - 4 c^2 = 0.
+\end{equation*}
+Соответственно находим квадраты частот
+\begin{equation*}
+    \lambda^2 - 6 \lambda \frac{c}{m} + 5 \frac{c^2}{m^2} = 
+    \left(\lambda_1 -  \frac{c}{m}\right)
+    \left(\lambda_2 - 5 \frac{c}{m}\right)
+    = 0,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \left\{\begin{aligned}
+        \lambda_1: & \begin{pmatrix}
+            -2c & 2c
+        \end{pmatrix}
+        \begin{pmatrix}
+            x_1 \\ x_2
+        \end{pmatrix} = 0
+        &\Rightarrow
+        \ \ \vc{u}_1 = \begin{pmatrix}
+            1 \\ 1
+        \end{pmatrix}; \\
+        \lambda_1: & \begin{pmatrix}
+            2c & 2c
+        \end{pmatrix}
+        \begin{pmatrix}
+            x_1 \\ x_2
+        \end{pmatrix} = 0
+        &\Rightarrow
+        \ \ \vc{u}_2 = \begin{pmatrix}
+            1 \\ -1
+        \end{pmatrix}.
+    \end{aligned}\right.
+\end{equation*}
+Соответственно, уравнение движения будет иметь вид
+\begin{equation*}
+    \begin{pmatrix}
+        x_1 \\ x_2
+    \end{pmatrix} = 
+    C_1 
+    \begin{pmatrix}
+        1 \\ 1
+    \end{pmatrix} 
+        \sin\left(
+            \sqrt{\frac{c}{m}}\,  t + \alpha_1
+        \right)
+    +
+    C_2
+    \begin{pmatrix}
+        1 \\ -1
+    \end{pmatrix}
+    \sin\left(
+        \sqrt{\frac{5c}{m}} \, t + \alpha_2
+    \right).
+\end{equation*}
+
+
+
+\subsubsection*{16.47}
+
+Запишем с учётом малости колебаний кинетическую энергию системы
+\begin{equation*}
+    T = \frac{m}{2} l^2 \dot{\varphi}^2 + \frac{m}{2} \left(
+        l \dot{\varphi}_2 + l \dot{\varphi}_1
+    \right)^2.
+\end{equation*}
+И, опять же, с учетом малости, потенциальную
+\begin{align*}
+    \Pi &= \frac{c}{2} \left(
+        (l \varphi_1)^2 + (l \varphi_1 + l \varphi_2)^2
+    \right) + 
+    m g l \cos \varphi_1 + m  g l (\cos \varphi_1 + \cos \varphi_2) = \\
+    &= 
+    \frac{c}{2} \left(
+        (l \varphi_1)^2 + (l \varphi_1 + l \varphi_2)^2
+    \right) + 2 m g l \left(1 - \frac{\varphi_1^2}{2}\right) + mgl \left(1 - \frac{\varphi_2^2}{2}\right).
+\end{align*}
+Как обычно, получив квадратичные формы (хотя бы в малом приближение) радуемся и переходим к поиску частот собственных колебаний
+\begin{equation*}
+     \det \left(
+     \frac{\partial^2 \Pi}{\partial q^i \partial q^j} - \lambda \frac{\partial^2 T}{\partial \dot{q}^i \partial \dot{q}^j}\right) = 0,
+     \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+     \det\left[
+        \begin{pmatrix}
+            2cl^2 - 2 mgl & c l^2 \\
+            c l^2 & cl^2  - mgl \\
+        \end{pmatrix} - 
+        \lambda 
+        ml^2\begin{pmatrix}
+            2 & 1 \\
+            1 & 1 \\
+        \end{pmatrix}
+     \right] = 0.
+\end{equation*}
+Раскрыв, получаем уравнение вида
+\begin{equation*}
+    2 ([cl^2-ml^2 \lambda] - mgl)^2 - [cl^2-ml^2 \lambda]^2 = 0,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    x = \frac{\sqrt{2} m g l}{\sqrt{2} \pm 1} = [cl^2-ml^2 \lambda],
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \lambda_{1, 2} = \frac{c}{m} -  2\frac{g}{l} \mp \sqrt{2} \frac{g}{l}.
+\end{equation*}
+Теперь подставляем известные $\lambda$, и находим амплитудные векторы
+\begin{align*}
+    &\lambda_1 \, : \ \
+    \begin{pmatrix}
+        2  +2 \sqrt{2} & 2 + \sqrt{2}
+    \end{pmatrix}
+    \begin{pmatrix}
+        x_1 \\ x_2
+    \end{pmatrix} = 0
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \vc{u}_1 = \begin{pmatrix}
+        1 \\ - \sqrt{2}
+    \end{pmatrix}; \\
+    &\lambda_2 \, : \ \
+    \begin{pmatrix}
+        2  -2 \sqrt{2} & 2 - \sqrt{2}
+    \end{pmatrix}
+    \begin{pmatrix}
+        x_1 \\ x_2
+    \end{pmatrix} = 0
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \vc{u}_2 = \begin{pmatrix}
+        1 \\ \sqrt{2}
+    \end{pmatrix}.
+\end{align*}
+Это позволяет нам записать уравнение движения малых колебаний (при $c/m > (2+\sqrt{2}) g / l$)
+\begin{equation*}
+    \begin{pmatrix}
+        \varphi_1 \\
+        \varphi_2
+    \end{pmatrix} = 
+    C_1 \begin{pmatrix}
+        1 \\ - \sqrt{2}
+    \end{pmatrix}
+    \sin \left(
+        \sqrt{\frac{c}{m} - \left(2 + \sqrt{2}\right) \frac{g}{l}} \, t + \alpha_1
+    \right) + 
+    C_2 \begin{pmatrix}
+        1 \\ \sqrt{2}
+    \end{pmatrix}
+    \sin \left(
+        \sqrt{\frac{c}{m} - \left(2-\sqrt{2}\right) \frac{g}{l}} \, t + \alpha_2
+    \right).
+\end{equation*}
+
+
+\subsubsection*{16.64}
+Запишем кинетическую энергию системы
+\begin{equation*}
+    T = \frac{m}{2} \left(
+        \dot{x}_1^2 + \dot{x}_3^2
+    \right) + \frac{nm}{2} \dot{x}_2^2.
+\end{equation*}
+И, считая $0$ в положении равновесия, потенциальную энергию системы, запасенную в сжатых пружинах
+\begin{equation*}
+    \Pi = \frac{c}{2} (x_2 - x_1)^2 + \frac{c}{2} (x_3 - x_2)^2.
+\end{equation*}
+В таком случае
+\begin{equation*}
+     \det \left(
+     \frac{\partial^2 \Pi}{\partial q^i \partial q^j} - \lambda \frac{\partial^2 T}{\partial \dot{q}^i \partial \dot{q}^j}\right) = 0,
+     \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+     \det\left[
+        c \begin{pmatrix}
+            1 & -1 & 0 \\
+            -1 & 2 & -1 \\
+            0 & -1 & 1 \\
+        \end{pmatrix} - \lambda 
+        m \begin{pmatrix}
+            1 & 0 & 0 \\
+            0 & n & 0 \\
+            0 & 0 & 1 \\
+        \end{pmatrix}
+     \right] = 0.
+\end{equation*}
+Раскрывая, приходим у уравнению на $\lambda$ вида
+\begin{equation*}
+    \lambda_1 \left(
+        \lambda_2 - \frac{c}{m}
+    \right)\left(
+        \lambda_3 - \frac{(2+n)c}{nm}
+    \right) = 0.
+\end{equation*}
+Соответственно, амплитудные векторы находим, как
+\begin{align*}
+    &\lambda_1 \, : \ \
+    \begin{pmatrix}
+        -c & 2c & -c \\
+        c & -c & 0 \\
+    \end{pmatrix}
+    \begin{pmatrix}
+        x_1 \\ x_2 \\ x_3
+    \end{pmatrix} = 0
+    &\Rightarrow \hspace{2cm}
+    &\vc{u}_1 = \begin{pmatrix}
+        1 \\ 1 \\ 1
+    \end{pmatrix}; \\
+    % 
+    &\lambda_2 \, : \ \
+    \begin{pmatrix}
+        c & 2c-nc & c \\
+        0 & c & 0 \\
+    \end{pmatrix}
+    \begin{pmatrix}
+        x_1 \\ x_2 \\ x_3
+    \end{pmatrix} = 0
+    &\Rightarrow \hspace{2cm}
+    &\vc{u}_2 = \begin{pmatrix}
+        -1 \\ 0 \\ 1
+    \end{pmatrix}; \\
+    % 
+    &\lambda_3 \, : \ \
+    \begin{pmatrix}
+        c & nc & c \\
+        0 & c & 2c/n \\
+    \end{pmatrix}
+    \begin{pmatrix}
+        x_1 \\ x_2 \\ x_3
+    \end{pmatrix} = 0
+    &\Rightarrow \hspace{2cm}
+    &\vc{u}_3 = \begin{pmatrix}
+        n \\ -2 \\ n
+    \end{pmatrix}.
+\end{align*}
+Что ж, уравнение движения малых колебаний запишется в виде
+\begin{equation*}
+    \begin{pmatrix}
+        x_1 \\ x_2 \\ x_3
+    \end{pmatrix} = 
+    (C_1 t + \alpha_1) \begin{pmatrix}
+        1 \\ 1 \\ 1
+    \end{pmatrix} + 
+    C_2 \begin{pmatrix}
+        1 \\ 0 \\ -1
+    \end{pmatrix} 
+    \sin \left(
+        \sqrt{\frac{c}{m}} \, t + \alpha_2
+    \right) + 
+    C_3 \begin{pmatrix}
+        n \\ -2 \\ n
+    \end{pmatrix}
+    \sin \left(
+        \sqrt{\frac{(n+2)c}{nm}} \, t + \alpha_3
+    \right).
+\end{equation*}
+
+
+
+\subsubsection*{16.107}
+
+
+Знаем, что кинетическая энергия и обобщенные силы для системы могут быть записаны в виде\footnote{
+    С глубоким сожалением вынуждены оставить баланс индексов в рамках этой задачи. Немое суммирование подразумевается, при повторение индексов.
+} 
+\begin{equation*}
+    T = \frac{1}{2} a_{ik} \dot{q}_i \dot{q}_k,
+    \hspace{1 cm}
+    Q_i = b_{ik} \dot{q}_k,
+\end{equation*}
+где $a_{ik}$ -- положительно определенная квадратичная форма, а $b_{ik} = - b_{ki}$ -- кососимметричная квадратичная форма. 
+
+Запишем уравнения Лагранжа второго рода
+\begin{equation*}
+    \frac{d }{d t} \frac{\partial T}{\partial \dot{q}_i} - \frac{\partial T}{\partial q_i} = Q_i,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    a_{ik} \ddot{q}_k = b_{i\alpha} \dot{q}_\alpha.
+\end{equation*}
+Осталось этот набор уравнений решить.
+
+
+Воспользуемся алгоритмом приведения двух квадратичных форм к каноническому виду. Выберем в качестве скалярного произведения $a_{ik}$, в терминах $a_{ik}$ выберем ортогональный базис так, чтобы $a_{ik}$ было равно $\delta_{ik}.$ Повернём через $u_{ik}$ базис, приведя $b_{ik}$ к каноническому виду $b^*_{jl}$, указанному в условии с $m$ блоков $2 \times 2$. 
+\begin{equation*}
+    \left\{\begin{aligned}
+        \delta_{ik} \ddot{q}_k &= b_{i\alpha} \dot{q}_\alpha, \\    
+        u_{kj} q^*_j &= q_k
+    \end{aligned}\right.
+    \hspace{0.5cm} \Rightarrow  \hspace{0.5cm}
+    u^{-1}_{li} \cdot \left(\vphantom{\frac{1}{2}}
+        \delta_{ik} u_{kj} q^*_j= b_{i\alpha} u_{\alpha \beta} q^*_\beta
+    \right)
+    \hspace{0.5cm} \overset{\sqsupset\, i = 1}{\Rightarrow}  \hspace{0.5cm}
+    \begin{pmatrix}
+        1 & 0 \\
+        0 & 1 \\
+    \end{pmatrix} 
+    \begin{pmatrix}
+        \ddot{q}_1^* \\ \ddot{q}_2^*
+    \end{pmatrix} = 
+    \begin{pmatrix}
+        0 & -\nu \\
+        \nu & 0 \\
+    \end{pmatrix}
+    \begin{pmatrix}
+        \dot{q}_1^* \\ \dot{q}_2^*
+    \end{pmatrix}.
+\end{equation*}
+И таких систем с колебаниями у нас будет $m$ штук
+\begin{equation*}
+    \left\{\begin{aligned}
+        \ddot{q}_1^* &= - \nu \dot{q}_2^* \\
+        \ddot{q}_2^* &= - \nu \dot{q}_1^* \\
+    \end{aligned}\right.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \left\{\begin{aligned}
+        \dddot{q}_1^* &= - \nu \ddot{q}_2^* \\
+        \dddot{q}_2^* &= - \nu \ddot{q}_1^* \\
+    \end{aligned}\right.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \left\{\begin{aligned}
+        q_1^* &= \frac{A}{\nu} \cos (\nu t + \alpha) + C_1 \\
+        q_2^* &= \frac{A}{\nu} \sin (\nu t + \alpha) + C_2. \\
+    \end{aligned}\right.
+\end{equation*}
+Нули же в каноническом виде $b_{ij}$ будут соответствовать трансляциям
+\begin{equation*}
+    q^* = A t + B.
+\end{equation*}
+Собирая всё вместе, находим, что 
+\begin{equation*}
+    q_\alpha = u_{\alpha i} q^*_i,
+    \hspace{1 cm}
+    q^*_i = 
+    \left\{\begin{aligned}
+        &({A_j} / {\nu_j}) \cdot \cos (\nu_j t + \alpha_j) + B_{2j - 1}
+        & \text{ при } &i = 2j - 1 \leq 2 m; \\
+        &({A_j} / {\nu_j}) \cdot \sin (\nu_j t + \alpha_j) + B_{2j}
+        & \text{ при } &i = 2j  \leq 2 m; \\
+        & (A_j) \cdot t + B_j
+        & \text{ при } &i = j  > 2 m. \\
+    \end{aligned}\right.
+\end{equation*}
