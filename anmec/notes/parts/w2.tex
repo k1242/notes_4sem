@@ -1,0 +1,225 @@
+\subsection*{Вынужденные колебания}
+
+Давайте испортим консервативность так, чтобы
+\begin{equation*}
+    \frac{d }{d t} \frac{\partial T}{\partial \dot{q}^i} - \frac{\partial T}{\partial q^i} = - \frac{\partial \Pi}{\partial q^i} + Q_i(t).
+\end{equation*}
+Как выяснили раннее
+\begin{equation*}
+    q = U  \theta. \hspace{1 cm}
+    U\T A U = E, U\T C U = \Lambda.
+\end{equation*}
+Посчитаем элементарную работу добавленной силы
+\begin{equation*}
+    \delta A = Q_i \delta q^i = \Theta\T \delta \theta = Q\T U \delta \theta,
+\end{equation*}
+тогда можно записать, что
+\begin{equation*}
+    \Theta = U\T Q, \hspace{1 cm} Q = \left(U\T\right)^{-1} \Theta,
+\end{equation*}
+то есть \textit{преобразование обобщенных сил}. То есть уравнение приходит к виду
+\begin{equation*}
+    A \ddot{q} + C q = Q(t),
+    \hspace{0.5cm} \overset{\text{бог с индексами}}{=}  \hspace{0.5cm}
+    \ddot{q}_i + \lambda_i \theta_i = \Theta_i (t).
+\end{equation*}
+Тогда ответ запишется в виде
+\begin{equation*}
+    q = \sum_{i=1}^{n} c_i \vc{u}_i \sin \left(
+        \sqrt{\lambda_i} \, t + \alpha_i
+    \right) + 
+    \sum_{i=1}^{n} \vc{u}_i \theta^*_i (t),
+\end{equation*}
+где вторая сумма соотвествует \textit{вынужденным колебаниям}, а первая свободным гармоническим колебаниям. 
+
+Пусть так вышло, что 
+\begin{equation*}
+    % \theta_i (t) = a_i \sin (\Omega t),
+    % \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \left\{\begin{aligned}
+        \theta_i^* &= b_i \sin \left(\Omega t\right) \\
+        \Theta_i (t) &= a_i \sin \left(\Omega t\right)
+    \end{aligned}\right.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    b_i \left(
+        \lambda_i - \Omega^2
+    \right) = a_i,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \theta_i^* = \frac{a_i}{\lambda_i - \Omega^2} \sin \left(\Omega t\right).
+\end{equation*}
+В случае же \textit{резонанса} ищем решение в виде
+\begin{equation*}
+    \theta_i^* (t) = b_i t \cos\left(\Omega t\right),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    b_i = -\frac{a_i}{2 \Omega}.
+\end{equation*}
+И здесь мы видим первые звоночки от Пуанкаре, о конце линейной теории.
+
+
+
+\subsubsection*{Задача 1 (18.42)}
+
+Есть некоторая платформа, перемещающаяся по закону $a \sin \omega t$. На ней подвешены куча стержней, соединенных пружинами разной упругости, на разных высотах. Вопрос -- на каких $\omega$ возможен резонанс?
+
+Перейдём в СО платформы, тогда возбуждающая сила -- сила инерции, соотвественно для всех стержней возбуждающая сила одинаковая
+\begin{equation*}
+    \vc{J}_i^e
+    = - m \mathrm{\vc{w}}_i^e = m \omega^2 a \sin (\omega t) \vc{e}.
+\end{equation*}
+Посчитаем обобщенные силы, как
+\begin{equation*}
+    Q_1^e = \ldots = Q_n^e = \frac{\delta A_i}{\delta \varphi_i} = 
+    \frac{
+    \left(
+        \vc{J}_i^e \cdot \delta \vc{r}_i
+    \right)
+    }{
+        \delta \varphi_i
+    } = \frac{1}{2} m \omega^2 a l \sin (\omega t).
+\end{equation*}
+Получается, что мы посчитали столбец обобщенных сил
+\begin{equation*}
+    \vc{Q} = \frac{l}{2} \left[
+        1, \ 1,\  \ldots, 1
+    \right]\T \ a \omega^2 m \sin (\omega t).
+\end{equation*}
+По крайней мере мы можем сказать, что у нас есть главная частота
+\begin{equation*}
+    \lambda_1 = \frac{3 g}{2l}, \hspace{1 cm}
+    \vc{u}_1 = \left[
+        1, \ 1,\  \ldots, 1
+    \right]\T.
+\end{equation*}
+Теперь выпишем матрицу кинетической энергии
+\begin{equation*}
+    A = \frac{ml^2}{6} E, \hspace{1 cm} U\T A U = E,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    U U\T = E,
+\end{equation*}
+с точностью до множителя. Тогда $\vc{u}_1, \ldots, \vc{u}_n$ -- ортогональный базис.
+
+Теперь вспоминаем, что
+\begin{equation*}
+    \Theta = U\T Q = \begin{pmatrix}
+        \vc{u}\T_1 \\ \ldots \\ \vc{u}\T_n
+    \end{pmatrix} \vc{u}_1 \ 
+    \frac{1}{2} a \omega^2 l m \sin (\omega t) = 
+    \begin{pmatrix}
+        \vc{u}\T_1 \cdot \vc{u}_1 \\ \ldots \\ \vc{u}\T_n \cdot \vc{u}_1
+    \end{pmatrix}\ 
+    \frac{1}{2} a \omega^2 l m \sin (\omega t) = 
+    \begin{pmatrix}
+        n \\ \ldots \\ 0
+    \end{pmatrix} \vc{u}_1 \,
+    \frac{1}{2} a \omega^2 l m \sin (\omega t).
+\end{equation*}
+Ура, от сих приходим к приятным уравнениям Лагранжа
+\begin{equation*}
+    \left\{\begin{aligned}
+        \ddot{\theta}_q + \lambda_1 \dot{\theta}_1 &= n a \omega^2 \frac{l}{2} \sin \omega t,
+        \ddot{\theta}_2 + \lambda_2 \theta_2  \\
+        &\ldots \\
+        \ddot{\theta}_n + \lambda_n \theta_n &= 0 \\
+    \end{aligned}\right.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \omega_{\text{рез}} = \sqrt{\frac{3g}{2l}}.
+\end{equation*}
+
+
+\subsection*{Диссипативные системы}
+
+И снова испортим консервативную систему до диссипативной,
+\begin{equation*}
+    \frac{d }{d t} \frac{\partial T}{\partial \dot{q}^i} - \frac{\partial T}{\partial q^i} = - \frac{\partial \Pi}{\partial q^i} + \tilde Q_i(\dot{q}) = Q_i(q, \dot{q}).
+\end{equation*}
+С кинетической всё как обычно, тогда
+\begin{equation*}
+    T = \frac{1}{2} \dot{\vc{q}}\T A \dot{\vc{q}};
+    \hspace{1 cm}
+    \vc{Q} = \vc{Q}(0) + \frac{\partial \vc{Q}}{\partial \vc{q}\T} \vc{q} + \frac{\partial \vc{Q}(0)}{\partial \dot{\vc{q}}\T} \dot{\vc{q}} = - C \vc{q} - B \dot{\vc{q}}.
+\end{equation*}
+Где ввели матрицы вида
+\begin{equation*}
+    C = - \frac{\partial \vc{Q}(0)}{\partial q\T};
+    \hspace{1 cm}
+    B = - \frac{\partial Q (0)}{\partial \dot{q}\T}.
+\end{equation*}
+В таком случае уравнение примет вид
+\begin{equation}
+    A \ddot{\vc{q}} + B \dot{\vc{q}} + C \vc{q} = 0,
+\end{equation}
+получили \textit{линеаризация уравнений Лагранжа I}.
+Но его схожу к каноническом виду не привести.
+
+Вспомним, что энергия системы
+\begin{equation*}
+    E = \frac{1}{2} \dot{\vc{q}} \cdot A \dot{\vc{q}} + \frac{1}{2} \vc{q} \cdot C \vc{q},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \frac{d E}{d t} = A \ddot{\vc{q}} \cdot \dot{\vc{q}} + C \vc{q} \cdot \dot{q} =
+    \left[
+        A \ddot{\vc{q}} + C \vc{q}
+    \right] \cdot \dot{\vc{q}} = - B \dot{\vc{q}}^2 = N.
+\end{equation*}
+И пошла классификация: если $N \equiv 0$, то силы называем \textit{гироскопическими}. Если $N \leq 0$, то силы \textit{диссипативные}. 
+
+
+\begin{to_def}
+    Положение равновесия $\vc{q}^*$ называется \textit{асимптотически устойчивым}, если оно устойчиво \textbf{и} 
+    \begin{equation*}
+        \exists \delta \colon  \forall\,  |\dot{\vc{q}}| < \delta, \, |\vc{q}| < \delta \ \ 
+        \lim_{t \to \infty} \vc{q}(t) = 0, \ 
+        \lim_{t \to \infty} \dot{\vc{q}}(t) = 0.
+    \end{equation*}
+\end{to_def}
+
+
+Возвращаясь к уравнению, вспомним что решение ищется в виде\footnote{
+    В общем случае решение системы вообще сложнее (при кратных $\lambda$), но качественно всё примерно в таком же духе, поэтому, ну, всё хорошо.
+} 
+\begin{equation*}
+    \vc{q} = \sum_{i=1}^{2n} C_i \vc{u}_i \exp\left(
+        \lambda_i t
+    \right),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \left[
+        A \lambda^2 + B \lambda + C
+    \right] \vc{u} = 0,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \det\left[
+        A \lambda^2 + B \lambda + C
+    \right] = 0,
+\end{equation*}
+тогда мы находим $2n$ решений $\lambda_1, \ldots, \lambda_{2n}$, и, соответственно, $2n$ амплитудных векторов.
+
+
+\begin{to_thr}[Достаточное условие асимптотической устойчивости]
+    Для того, чтобы решение $\vc{q} = \vc{q}^*$ было асимптотически устойчиво необходимо, чтобы
+    \begin{equation*}
+        \Re \lambda_i < 0, \ \ \forall i \in \{1, \ldots, 2n\}.
+    \end{equation*}
+    Если $\exists \lambda_i \colon \Re \lambda_i > 0$, тогда всё не так хорошо.
+\end{to_thr}
+
+
+Как узнать, что ..., для этого достаточно посмотреть на рыбу
+\begin{equation*}
+    a_m \lambda^m + a_{m-1} \lambda^{m-1} + \ldots + a_0 = 0,
+\end{equation*}
+и отрежем голову и хвост, получим матрицу
+\begin{equation*}
+    \Gamma = \begin{pmatrix}
+        a_{m-1} & a_{m-3} & \ldots & 0\\
+        a_m & a_{m-2} & \ldots & 0 \\ 
+        0 & a_{m-1} & \ldots & 0 \\
+        0 & 0 & \ldots & a_0 \\
+    \end{pmatrix},
+\end{equation*}
+так получили матрицу Гурвица.
+
+\begin{to_thr}[Критерий Рауса-Гурвица]
+    Для того, чтобы $\Re \lambda_i < 0$ необходимо и достаточно, чтобы $a_i > 0$, и
+    \begin{equation*}
+        \Delta_1, \ \Delta_3, \ \ldots,\ \Delta_{m-1} > 0.
+    \end{equation*}
+    \red{Есть другие формы}.
+\end{to_thr}
