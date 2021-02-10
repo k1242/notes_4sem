@@ -1,0 +1,75 @@
+\subsubsection*{17.8}
+
+Давайте посмотрим на случай, например, при $n=4$. 
+\begin{equation*}
+    |A \lambda^2 + B \lambda + C| = 0,
+    \hspace{0.2 cm}
+    f(\lambda) = 
+    \det 
+    \left(
+    \begin{array}{cccc}
+     ({c_1}+{c_2})+\lambda ^2 {m_1} & -{c_2} & 0 & 0 \\
+     -{c_2} & {c_2}+{c_3}+\lambda ^2 {m_2} & -{c_3} & 0 \\
+     0 & -{c_3} & {c_3}+{c_4}+\lambda ^2 {m_3} & -{c_4} \\
+     0 & 0 & -{c_4} & \beta  \lambda +{c_4}+\lambda ^2 {m_4} \\
+    \end{array}
+    \right) = 0;
+\end{equation*}
+Получим уравнение вида
+\begin{align*}
+    f (\lambda) =\  &\lambda^8 \cdot
+    (m_1 m_2 m_3 m_4)
+    + \\
+    + &\lambda^7 \cdot
+    (\beta  m_1 m_2 m_3)
+    + \\
+    + &\lambda^6 \cdot
+    (c_4 m_1 m_2 m_3+c_2 m_1 m_4 m_3+c_3 m_1 m_4 m_3+c_1 m_2 m_4 m_3+c_2 m_2 m_4 m_3
+    + \\ 
+        &\phantom{\lambda^4 \cdot} +
+    c_3 m_1 m_2 m_4+c_4 m_1 m_2 m_4)
+    + \\
+    + &\lambda^5 \cdot
+    (
+        \beta  c_3 m_1 m_2+\beta  c_4 m_1 m_2+\beta  c_1 m_3 m_2+\beta  c_2 m_3 m_2+\beta  c_2 m_1 m_3+\beta  c_3 m_1 m_3
+    ) + \\
+    + &\lambda^4 \cdot
+    (
+        c_3 c_4 m_1 m_2+c_1 c_4 m_3 m_2+c_2 c_4 m_3 m_2+c_1 c_3 m_4 m_2+c_2 c_3 m_4 m_2
+        + \\ 
+        &\phantom{\lambda^4 \cdot} +
+        c_1 c_4 m_4 m_2+c_2 c_4 m_4 m_2+c_2 c_4 m_1 m_3 + c_3 c_4 m_1 m_3+c_2 c_3 m_1 m_4
+        + \\ 
+        &\phantom{\lambda^4 \cdot} +
+        c_2 c_4 m_1 m_4+c_3 c_4 m_1 m_4+c_1 c_2 m_3 m_4+c_1 c_3 m_3 m_4+c_2 c_3 m_3 m_4
+    ) + \\
+    + &\lambda^3 \cdot
+    (
+        \beta  c_2 c_3 m_1+\beta  c_2 c_4 m_1+\beta  c_3 c_4 m_1+\beta  c_1 c_3 m_2+\beta  c_2 c_3 m_2+\beta  c_1 c_4 m_2
+        + \\ 
+        &\phantom{\lambda^4 \cdot} +
+        \beta  c_2 c_4 m_2+\beta  c_1 c_2 m_3+\beta  c_1 c_3 m_3+\beta  c_2 c_3 m_3
+    ) + \\
+    + &\lambda^2 \cdot
+    (
+        c_2 c_3 c_4 m_1+c_1 c_3 c_4 m_2+c_2 c_3 c_4 m_2+c_1 c_2 c_4 m_3+c_1 c_3 c_4 m_3
+        + \\ 
+        &\phantom{\lambda^4 \cdot} +
+        c_2 c_3 c_4 m_3+c_1 c_2 c_3 m_4+c_1 c_2 c_4 m_4+c_1 c_3 c_4 m_4+c_2 c_3 c_4 m_4
+    ) + \\
+    + &\lambda^1 \cdot
+    (
+        \beta  c_1 c_2 c_3+\beta  c_1 c_4 c_3+\beta  c_2 c_4 c_3+\beta  c_1 c_2 c_4
+    ) + \\
+    + &\lambda^0 \cdot
+    (
+        c_1 c_2 c_3 c_4
+    ).
+\end{align*}
+И теперь посчитаем миноры в матрице Гурвица, то получим, что
+\begin{equation*}
+    \Delta_1 = m_1 m_2 m_3 \, \beta, \ \ 
+    \Delta_2 = c_4 \, m_1^2 m_2^2 m_3^2 \, \beta, \ \ 
+    \Delta_3 = c_4^2 \, m_1^3 m_2^3 m_3^2 \, \beta^2, \ \ 
+    \Delta_4 = c_3  c_4^3 \, m_1^4  m_2^4 m_3^2 \, \beta^2.
+\end{equation*}
