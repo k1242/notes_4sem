@@ -1,79 +1,138 @@
-\subsubsection*{17.8}
+\subsubsection*{17.8 (\checkmark)}
 
-Давайте посмотрим на случай, например, при $n=4$. 
+Для начала рассмотрим систему, в которой нижний грузик привязан к полу пружинкой жесткости $c_{n+1} = 0$, так матрица для потенциальной энергии станет немного симметричнее. 
+
+Выберем в качестве координат положения грузиков, где $q^i = 0$ соответствует положению равновесия $i$-го груза.  
+Запишем потенциальную энергию системы
 \begin{equation*}
-    |A \lambda^2 + B \lambda + C| = 0,
-    \hspace{0.2 cm}
-    f(\lambda) = 
-    \det 
-    \left(
-    \begin{array}{cccc}
-     ({c_1}+{c_2})+\lambda ^2 {m_1} & -{c_2} & 0 & 0 \\
-     -{c_2} & {c_2}+{c_3}+\lambda ^2 {m_2} & -{c_3} & 0 \\
-     0 & -{c_3} & {c_3}+{c_4}+\lambda ^2 {m_3} & -{c_4} \\
-     0 & 0 & -{c_4} & \beta  \lambda +{c_4}+\lambda ^2 {m_4} \\
-    \end{array}
-    \right) = 0;
+    2 \Pi = c_1 q_1^2 + c_2(q_1-q_2)^2 + \ldots + c_n (q_n-q_n-1)^2 + c_{n+1} q_{n+1}^2.
 \end{equation*}
-Получим уравнение вида
+Тогда матрица потенциальной энергии $C$ примет вид
+\begin{equation*}
+    C_{ij} = \frac{\partial^2 \Pi}{\partial q^i \partial q^j},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    C = \begin{pmatrix}
+        c_1 + c_2 & -c_2 & 0 &  &  \\
+        -c_2 & c_2 + c_3 & -c_3 & 0 &  \\
+        0 & -c_3 & c_3 + c_4 &  &   \\
+         & 0 &  & \ddots & -c_n \\
+         &  &  & -c_n & c_n + c_{n+1}
+    \end{pmatrix}
+\end{equation*}
+Запишем уравнение Лагранжа второго рода, и рассмотрим систему в линейном приближении
+\begin{equation*}
+    \frac{d }{d t} \frac{\partial T}{\partial \dot{q}^i} - \frac{\partial T}{\partial q^i}
+     = - \frac{\partial \Pi}{\partial q} + Q_i,
+     \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+     A \ddot{\vc{q}} + B \dot{\vc{q}} + C \vc{q} = 0,
+     \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+     \frac{d E}{d t} =
+     A \ddot{\vc{q}} \cdot \dot{\vc{q}} + C \dot{\vc{q}} \cdot \vc{q} = - B \dot{\vc{q}} \cdot \dot{\vc{q}} = - \beta \dot{q}_n^2.
+\end{equation*}
+Получается, что диссипация является полной, а значит имеет смысл вспомнить теорему о добавлении в систему диссипативных сил с полной диссипацией.
+
+\begin{to_thr}[Теорема Томсона-Тэта-Четаева]
+    Если в некотором изолированном положении равновесия потенциальная энергия имеет строгий локальный минимум, то при добавлении диссипативных сил с полной диссипацией (и/или гироскопических) это положение равновесия становится асимптотически устойчивым.
+\end{to_thr}
+
+По теореме Лагранжа-Дирихле положение равновесия $\vc{q} = 0$ устойчиво, если в положение равновесия достигается локальный минимум потенциала $\Pi$. Получается остается показать, что матрица $C$ положительно определена, или, по критерию Сильвестра, что все угловые миноры $\Delta_i$ матрицы $C$ положительны.
+
+Посчитав несколько миноров ручками, приходим к виду $\Delta_i$, которое докажем по индукции.
 \begin{align*}
-    f (\lambda) =\  &\lambda^8 \cdot
-    (m_1 m_2 m_3 m_4)
-    + \\
-    + &\lambda^7 \cdot
-    (\beta  m_1 m_2 m_3)
-    + \\
-    + &\lambda^6 \cdot
-    (c_4 m_1 m_2 m_3+c_2 m_1 m_4 m_3+c_3 m_1 m_4 m_3+c_1 m_2 m_4 m_3+c_2 m_2 m_4 m_3
-    + \\ 
-        &\phantom{\lambda^4 \cdot} +
-    c_3 m_1 m_2 m_4+c_4 m_1 m_2 m_4)
-    + \\
-    + &\lambda^5 \cdot
-    (
-        \beta  c_3 m_1 m_2+\beta  c_4 m_1 m_2+\beta  c_1 m_3 m_2+\beta  c_2 m_3 m_2+\beta  c_2 m_1 m_3+\beta  c_3 m_1 m_3
-    ) + \\
-    + &\lambda^4 \cdot
-    (
-        c_3 c_4 m_1 m_2+c_1 c_4 m_3 m_2+c_2 c_4 m_3 m_2+c_1 c_3 m_4 m_2+c_2 c_3 m_4 m_2
-        + \\ 
-        &\phantom{\lambda^4 \cdot} +
-        c_1 c_4 m_4 m_2+c_2 c_4 m_4 m_2+c_2 c_4 m_1 m_3 + c_3 c_4 m_1 m_3+c_2 c_3 m_1 m_4
-        + \\ 
-        &\phantom{\lambda^4 \cdot} +
-        c_2 c_4 m_1 m_4+c_3 c_4 m_1 m_4+c_1 c_2 m_3 m_4+c_1 c_3 m_3 m_4+c_2 c_3 m_3 m_4
-    ) + \\
-    + &\lambda^3 \cdot
-    (
-        \beta  c_2 c_3 m_1+\beta  c_2 c_4 m_1+\beta  c_3 c_4 m_1+\beta  c_1 c_3 m_2+\beta  c_2 c_3 m_2+\beta  c_1 c_4 m_2
-        + \\ 
-        &\phantom{\lambda^4 \cdot} +
-        \beta  c_2 c_4 m_2+\beta  c_1 c_2 m_3+\beta  c_1 c_3 m_3+\beta  c_2 c_3 m_3
-    ) + \\
-    + &\lambda^2 \cdot
-    (
-        c_2 c_3 c_4 m_1+c_1 c_3 c_4 m_2+c_2 c_3 c_4 m_2+c_1 c_2 c_4 m_3+c_1 c_3 c_4 m_3
-        + \\ 
-        &\phantom{\lambda^4 \cdot} +
-        c_2 c_3 c_4 m_3+c_1 c_2 c_3 m_4+c_1 c_2 c_4 m_4+c_1 c_3 c_4 m_4+c_2 c_3 c_4 m_4
-    ) + \\
-    + &\lambda^1 \cdot
-    (
-        \beta  c_1 c_2 c_3+\beta  c_1 c_4 c_3+\beta  c_2 c_4 c_3+\beta  c_1 c_2 c_4
-    ) + \\
-    + &\lambda^0 \cdot
-    (
-        c_1 c_2 c_3 c_4
-    ).
+    \text{Предположение: }\hspace{0.3 cm} 
+    &
+    \Delta_n = \sum_{i=1}^{n+1} \frac{1}{c_i} \prod_{j=1}^{n+1} c_j 
+    \\
+    \text{База: }\hspace{0.3 cm}  
+    &
+        \Delta_2 = \det \begin{Vmatrix}
+            c_1+c_2 & -c_2 \\
+            -c_2 & c_2+c_3 \\
+        \end{Vmatrix} = 
+        c_1 c_2 + c_2 c_3 + c_1 c_3 = \sum_{i=1}^{2+1} \frac{1}{c_i}\left(
+        \prod_{j=1}^{2+1} c_j
+    \right)
+    \\
+    \text{Переход: }\hspace{0.3 cm} 
+    &
+    \Delta_{n+1} 
+    \overset{(\textnormal{I})}{=} %=#1
+    (c_{n+1} + c_{n+1})
+    \Delta_n - c_{n+1}^2 \Delta_{n-1} 
+    = %=#2
+    \\
+    & 
+    \phantom{\Delta_{n+1}} = c_{n+1} \sum_{i=1}^{n+1} \frac{1}{c_i}
+    % \left(
+        \prod_{j=1}^{n+1} c_j
+    % \right) 
+    +
+     c_{n+2} \sum_{i=1}^{n+1} \frac{1}{c_i}
+     % \left(
+        \prod_{j=1}^{n+1} c_j
+    % \right)
+    -
+    c_{n+1}^2 \sum_{i=1}^{n} \frac{1}{c_i}
+    % \left(
+        \prod_{j=1}^{n} c_j
+    % \right) 
+    = %=#3
+    \\
+    & 
+    \phantom{\Delta_{n+1}} =  
+    c_{n+2} \sum_{i=1}^{n+1} \frac{1}{c_i}
+    % \left(
+        \prod_{j=1}^{n+1} c_j
+    % \right) 
+    + 
+    c_{n+1} 
+    \left(\sum_{i=1}^{n} \frac{1}{c_i}
+            % \left(
+                \prod_{j=1}^{n+1} c_j
+            % \right)  
+            + 
+            \frac{1}{c_{n+1}}
+            % \left(
+                \prod_{j=1}^{n+1} c_j
+            % \right) 
+    \right)
+    - 
+    c_{n+1}^2 \sum_{i=1}^{n} \frac{1}{c_i}
+    % \left(
+        \prod_{j=1}^{n} c_j
+    % \right) 
+    = 
+    \\
+    & 
+    \phantom{\Delta_{n+1}} 
+    \overset{(\textnormal{II})}{=}  %=#4
+    \sum_{i=1}^{n+1} \frac{1}{c_i} \prod_{j=1}^{n+2} c_j
+    + 
+    \frac{1}{c_{n+2}} \prod_{j=1}^{n+2} c_j 
+    = 
+    \sum_{i=1}^{n+2} \frac{1}{c_i} \prod_{j=1}^{n+2} c_j,
+    \hspace{1 cm}
+    \textnormal{Q. E. D.}
 \end{align*}
-И теперь посчитаем миноры в матрице Гурвица, то получим, что
+Действительно, первый переход (I) получается, раскрытием определителя $\Delta_{n+1}$ по нижней строчке. В переходе (II) были сделаны замены, вида
 \begin{equation*}
-    \Delta_1 = m_1 m_2 m_3 \, \beta, \ \ 
-    \Delta_2 = c_4 \, m_1^2 m_2^2 m_3^2 \, \beta, \ \ 
-    \Delta_3 = c_4^2 \, m_1^3 m_2^3 m_3^2 \, \beta^2, \ \ 
-    \Delta_4 = c_3  c_4^3 \, m_1^4  m_2^4 m_3^2 \, \beta^2.
+        \sum_{i=1}^{n} \frac{1}{c_i}
+        % \left(
+            \prod_{j=1}^{n+1} c_j
+        % \right) 
+        = 
+        c_{n+1} \sum\limits_{i=1}^{n} \frac{1}{c_i}
+        % \big(
+            \prod\limits_{j=1}^{n} c_j
+        % \big) 
+        ; \hspace{0.5 cm}
+        \prod_{j=1}^{n+1} c_j = 
+        \frac{1}{c_{n+2}} \prod_{j=1}^{n+2} c_j
+        ; \hspace{0.5 cm}
+        c_{n+2} \sum_{i=1}^{n+1} \frac{1}{c_i} \prod_{j=1}^{n+1}
+        =
+        \sum_{i=1}^{n+1} \frac{1}{c_i} \prod_{j=1}^{n+2} c_j.        
 \end{equation*}
+Полученная формула для $\Delta_n$ ясно даёт понять, что $\Delta_i > 0$ для $i = 1, \ldots, n$, что доказывает положительную определенность $C$, а значит и локальный минимум потенциала $\Pi$ достигается в положение равновесия $\vc{q}=0$. 
 
-
-
-
+Таким образом выполняются условия теоремы Лагранжа-Дирихле, как и условия теоремы Томсона-Тэта-Четаева, а значит положение равновесия $\vc{q}=0$ является асимптотически устойчивым.
