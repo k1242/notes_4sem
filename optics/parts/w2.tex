@@ -1,0 +1,305 @@
+Будем рассматривать оптически центрированные системы, введем нормально к $OX$ ось $OY$. Всё у нас аксиально симметрично, тогда луч можно характеризовать
+\begin{equation*}
+    \{y_1, \theta_1\} \to 
+    \{y_1, n_1 \theta_1\},
+\end{equation*}
+где принято обозначение $n \theta \overset{\mathrm{def}}{=} V$.
+
+Вообще после прохождения оптической системы можем записать, что происходит некоторое линейное преобразование
+\begin{equation*}
+    \begin{pmatrix}
+        y_2 \\ n_1 \theta_2
+    \end{pmatrix} = 
+    \begin{pmatrix}
+        A & B \\
+        C & D \\
+    \end{pmatrix}
+    \begin{pmatrix}
+        y_1 \\ n_1 \theta_1
+    \end{pmatrix}.
+\end{equation*}
+
+
+\subsection*{Матрица перемещения}
+
+Пусть луч распространяется в однородной среде, под $\theta_1$ распространяется, тогда $\theta_2 = \theta_1$. Что произошло с $y$? Ну, $y_2 = y_1 + l \theta_1$, тогда
+\begin{equation}
+    \begin{pmatrix}
+        y_2 \\ n_2 \theta_2
+    \end{pmatrix} = 
+    \begin{pmatrix}
+        1 & l/n \\
+        0 & 1 \\
+    \end{pmatrix} 
+    \begin{pmatrix}
+        y_1 \\ n_1 \theta_1 
+    \end{pmatrix},
+    \hspace{1 cm}
+    \begin{pmatrix}
+        y_2 \\ \theta_2
+    \end{pmatrix} = 
+    \begin{pmatrix}
+        1 & l \\
+        0 & 1 \\
+    \end{pmatrix} 
+    \begin{pmatrix}
+        y_1 \\ n_1 
+    \end{pmatrix}, 
+\end{equation}
+где соответствующую матрицу обозначим за $T$. 
+
+
+\subsubsection*{Матрица преломления на сферической поверхности}
+
+Есть некоторая ось $OX$, будем считать радиус кривизны положительным, если он идёт направо. Смотреть рис. О2.1. Верно, что
+\begin{equation*}
+    n_1 \beta_1 = n_2 \beta_2,
+    \hspace{1 cm}
+    \beta_1 = \theta_1 + \alpha, 
+    \hspace{1 cm}
+    \beta_2 = \theta_2 + \alpha.
+\end{equation*}
+Тогда,
+\begin{equation*}
+    \alpha = \frac{y_1}{R}, 
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}   
+    n_2 \theta_2 = n_1 \theta_1 + (n_1 - n_2) \frac{y_1}{R},
+    \hspace{0.5cm} \Leftrightarrow \hspace{0.5cm}
+    V_2 = V_1 + \frac{n_1-n_2}{R} y_1.
+\end{equation*}
+Теперь можем записать матрицу преломления $P$
+\begin{equation}
+    P(y, V) = \begin{pmatrix}
+        1 & 0 \\
+        -\frac{n_2-n_1}{R} & 1 \\
+    \end{pmatrix},
+    \hspace{1 cm}
+    P(y, \theta) = 
+    \begin{pmatrix}
+        1 & 0 \\
+        \frac{n_2-n_1}{n_2 R} & \frac{n_1}{n_2} \\
+    \end{pmatrix},
+\end{equation}
+где $(n_2-n_1)/R$ называют \textit{оптической силой}.
+
+
+\subsubsection*{Общий подход}
+
+Пусть есть  схема рис. 02.2, тогда
+\begin{equation*}
+    \underbrace{M_3 M_2 M_1}_{M} \vc{a} = \vc{b},
+    \hspace{1 cm}
+    \Leftrightarrow
+    \hspace{1 cm}
+    \vc{a} = M_1^{-1} M_2^{-1} M_3^{-1} \vc{b}.
+\end{equation*}
+
+Посмотрим на коэффициенты, приравнивая их к 0. Пусть 
+\begin{equation*}
+    \begin{pmatrix}
+        y_2 \\ \theta_2
+    \end{pmatrix} = 
+    \begin{pmatrix}
+        A & B \\
+        C & 0 \\
+    \end{pmatrix}
+    \begin{pmatrix}
+        y_1 \\ \theta_1
+    \end{pmatrix},
+\end{equation*}
+тогда $\theta_2 = c y_1$, тогда при $D=0$,  получается, что $O\Pi_1$ -- фокальная плоскость (слева).
+
+Пусть $B=0$, тогда $y_2 = A y_1$, тогда это изображение, и говорим, что эти \textit{плоскости сопряженные}, а коэффициент $A$ -- \textit{коэффициент поперечного увеличения}. 
+
+Пусть $C=0$, тогда $\theta_2 = \theta_1 D$, что соответствует телескопической системой, а коэффициент $D$ -- \textit{коэффициент углового увеличения}.
+
+Теперь рассмотрим $A = 0$, получается, что это фокальная плоскость справа. 
+
+
+
+\subsection*{Задачи}
+
+\subsubsection*{Пример №0}
+
+Рассмотрим преломление на первой границе, где
+\begin{equation*}
+    \begin{pmatrix}
+        1 & 0 \\
+        \frac{n-1}{R_2} & n \\
+    \end{pmatrix}
+    \begin{pmatrix}
+        1 & 0 \\
+        \frac{1-n}{n R_1} & 1/n \\
+    \end{pmatrix} = 
+    \begin{pmatrix}
+        1 & 0 \\
+        \frac{n-1}{R_2}+\frac{1-n}{R_1} & 1 \\
+    \end{pmatrix},
+\end{equation*}
+получается оптическая сила системы получилась равной
+\begin{equation*}
+    (n-1) \left(
+        -\frac{1}{R_2} + \frac{1}{R_1}
+    \right),
+\end{equation*}
+согласно определению.
+
+Найдём теперь после линзы изображение объекта (рис. О2.4)
+\begin{equation*}
+    \begin{pmatrix}
+        1 & b \\
+        0 & 1 \\
+    \end{pmatrix}
+    \begin{pmatrix}
+        1 & 0 \\
+        -1/F & 1 \\
+    \end{pmatrix}
+    \begin{pmatrix}
+        1 & a \\
+        0 & 1 \\
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+        1- \frac{b}{F} & b \\
+        -\frac{1}{F} & 1 \\
+    \end{pmatrix}
+    \begin{pmatrix}
+        1 & a \\
+        0 & 1 \\
+    \end{pmatrix} = 
+    \begin{pmatrix}
+        1-b/F & a(1-b/F)+b \\
+        -1/F & -a/F + 1 \\
+    \end{pmatrix}.
+\end{equation*}
+Для сопряженности плоскостей необходимо и достаточно, чтобы $B=0$, то есть
+\begin{equation*}
+    a + b - \frac{ab}{F} = 0,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \frac{1}{a}  +\frac{1}{b} = \frac{1}{F}.
+\end{equation*}
+Тогда увеличение можно увидеть в $A = 1-b/F$.
+
+
+
+
+\subsubsection*{Пример №2}
+
+Показатель преломления $n=1.56$, высота стрелки $h=2$ мм, в переменных $(y, V)$ запишем (см. рис. 02.5)
+\begin{equation*}
+    \begin{pmatrix}
+        1 & x/n \\
+        0 & 1 \\
+    \end{pmatrix}
+    \begin{pmatrix}
+        1 & 0 \\
+        -0.56/2.8 & 1 \\
+    \end{pmatrix}
+    \begin{pmatrix}
+        1 & 15 \\
+        0 & 1 \\
+    \end{pmatrix} = 
+    \begin{pmatrix}
+        1-\frac{x}{7.8} & 15-\frac{x}{0.78} \\
+        -0.2 & -2 \\
+    \end{pmatrix},
+\end{equation*}
+требуя сопряженности плоскостей
+\begin{equation*}
+    15 - \frac{x}{0.78} = 0,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    x = 11.7 \text{ см}.
+\end{equation*}
+Коэффициент увеличения а-ля $1/D$, то есть равен $-1/2$.
+
+
+\subsubsection*{Пример №4}
+
+Параллельный пучок света проходит через шарик радиуса $R=1$ см, с показателем преломления $n = 1.4$.
+
+С шариком $n=2$ луч собирается на полюсе шарика. В общем случае
+\begin{equation*}
+    \left(
+    \begin{array}{cc}
+     1 & F \\
+     0 & 1 \\
+    \end{array}
+    \right)
+    \left(
+    \begin{array}{cc}
+     1 & 0 \\
+     \frac{-(1-n)}{-R} & 1 \\
+    \end{array}
+    \right)
+    \left(
+    \begin{array}{cc}
+     1 & \frac{2 R}{n} \\
+     0 & 1 \\
+    \end{array}
+    \right)
+    \left(
+    \begin{array}{cc}
+     1 & 0 \\
+     -\frac{n-1}{R} & 1 \\
+    \end{array}
+    \right) = 
+    \left(
+    \begin{array}{cc}
+     \vphantom{\bigg|}
+     -\frac{2 F (n-1)+(n-2) R}{n R} & \frac{F (-n)+2 F+2 R}{n} \\
+     \vphantom{\bigg|}
+     \frac{2-2 n}{n R} & \frac{2}{n}-1 \\
+    \end{array}
+    \right),
+\end{equation*}
+тогда
+\begin{equation*}
+    - 2 F (n-1) = R (n-2).
+\end{equation*}
+
+
+\subsubsection*{Пример №11}
+
+
+См. рис. О2.5. Пусть оптические силы $P_1$ и $P_2$, а расстояние $l$, тогда
+\begin{equation*}
+    \left(
+        \begin{array}{cc}
+         1 & 0 \\
+         -\frac{1}{F_2} & 1 \\
+        \end{array}
+    \right)
+    \left(
+        \begin{array}{cc}
+         1 & l \\
+         0 & 1 \\
+        \end{array}
+    \right)
+    \left(
+        \begin{array}{cc}
+         1 & 0 \\
+         -\frac{1}{F_1} & 1 \\
+        \end{array}
+    \right) = 
+    \left(
+    \begin{array}{cc}
+    \vphantom{\bigg|}
+         1-\frac{l}{F_1} & l \\
+     \vphantom{\bigg|}
+         -\frac{F_1+F_2-l}{F_1 F_2} & 1-\frac{l}{F_2} \\
+    \end{array}
+    \right) = \begin{pmatrix}
+        \vphantom{\bigg|}
+        1-P_1 & l \\
+        \vphantom{\bigg|}
+        P_1 + P_2 - P_1 P_2 l & 1 - P_2 \\
+    \end{pmatrix}.
+\end{equation*}
+Давайте считать $1/F = (n-1) G$. Хочется избавиться от зависимости от $n$. Тогда
+\begin{equation*}
+    l = \frac{1}{2} \left(
+        \frac{1}{(n-1)G_1} + \frac{1}{(n-1) G_2}
+    \right) = \frac{F_1 + F_2}{2}.
+\end{equation*}
+
+
