@@ -1,6 +1,179 @@
-\input{parts/17_8}
 
-\newpage
+
+
 \subsubsection*{17.11 (а)}
 
-...
+Известно, что система описывается, как
+\begin{equation*}
+    \left\{\begin{aligned}
+        \ddot{x} + \ddot{x} + x - \alpha y &= 0 \\
+        \ddot{y} + \dot{y} - \beta x + y = 0
+    \end{aligned}\right.
+    , \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    A = B = E, \hspace{1 cm}
+    C = \begin{pmatrix}
+        1 & -\alpha \\
+        -\beta & 1 \\
+    \end{pmatrix}.
+\end{equation*}
+Тогда запишем уравнение на собственные числа
+\begin{equation*}
+    \det\left(
+        A \lambda^2 + B\lambda + C
+    \right) = \det
+    \begin{vmatrix}
+        \lambda^2 + \lambda + 1 & -\alpha \\
+        -\beta & \lambda^2+\lambda+1 \\
+    \end{vmatrix} = 0,
+\end{equation*}
+Раскрывая,
+\begin{equation*}
+    (\lambda^2 + \lambda + 1)^2 + \beta \alpha = 
+    \left(
+        \lambda^2 + \lambda + 1 - i \gamma
+    \right)
+    \left(
+        \lambda^2 + \lambda + 1 + i \gamma
+    \right) = 0.
+\end{equation*}
+Получается, что
+\begin{equation*}
+    \lambda_{1, 2} = \frac{1}{2} \left(
+        \vphantom{\frac{1}{2}}
+        -1 \pm \sqrt{
+        \pm 4 i \gamma - 3
+        }
+    \right),
+\end{equation*}
+где введено обозначение $\gamma = \sqrt{\beta \alpha}$. По теореме об асимптотической устойчивости достаточно, чтобы $\Re \lambda_i < 0$, соответственно найдём все $\gamma$ удовлетворяющие этому условию.
+
+Пусть $\alpha \cdot \beta < 0$, тогда $\gamma = i \sqrt{|\alpha \beta|}$, или
+\begin{equation*}
+    \lambda_{1, 2} = \frac{1}{2}\left(
+    \vphantom{\frac{1}{2}}
+    -1 \pm \sqrt{\mp 4 \kappa - 3}
+    \right),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    |4 \kappa - 3| < 1,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    |\kappa| = |\alpha \beta | < 1,
+\end{equation*}
+где было введено обозначение $\kappa = |\alpha \beta|$.
+
+
+При $\alpha \cdot \beta > 0$ верно, что $\gamma = \kappa^2$, тогда
+\begin{equation*}
+    \Re \sqrt{z} = \Re \left(
+        \sqrt{|z|} \cos \left(
+            \frac{\varphi}{2} + \pi k
+        \right)
+    \right) < 0,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \sqrt{a^2 + b^2} \ \frac{1}{2} \left(
+        1 + \frac{a}{\sqrt{a^2 + b^2}}
+    \right) < 1,
+\end{equation*}
+где комплексное число под корнем было представлено как $a + ib$. Тогда
+\begin{equation*}
+    \sqrt{9 + \partial \kappa^2} - 3 < 2,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    9 + 16 \kappa^2 < 5, 
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    |\alpha \beta|  < 1.
+\end{equation*}
+Получается достаточным условием асимптотической устойчивости является условие $|\alpha \beta| < 1$.
+
+\input{parts/17_8}
+
+
+\subsubsection*{17.20}
+
+Запишем систему в матричном виде
+\begin{equation*}
+    A \ddot{\vc{q}} + B \dot{\vc{q}} + C \vc{q} = 0,
+\end{equation*}
+и воспользуемся теоремой Ляпунова об асимптотической устойчивости. Действительно, существует функция, такая, что
+\begin{equation*}
+    V = E = T + \Pi = \frac{1}{2} a_{ij} \dot{q}^i \dot{q}^j + \frac{1}{2} c_{\alpha \beta} q^{\alpha} q^{\beta} > 0.
+\end{equation*}
+В силу уравнений движения
+\begin{equation*}
+    \frac{d E}{d t} = a_{ij} \ddot{q}^i \dot{q}^j + c_{\alpha \beta} \dot{q}^\alpha q^\beta = - b_\gamma (\dot{q}^\gamma) < 0,
+\end{equation*}
+из чего следует асимптотическая устойчивость системы.
+
+
+\subsubsection*{17.28}
+
+Есть некоторая система такая, что
+\begin{equation*}
+    \left\{\begin{aligned}
+        \dot{x}^1 &= \alpha_1 (x^2 - x^1), \\
+        \dot{x}^2 &= \alpha_2 (x^3 - x^2), \\
+        &\ldots\\
+        x^n &= \alpha^n (x^1 - x^n)
+    \end{aligned}\right.
+\end{equation*}
+и снова найдём функцию Ляпунова, например, $V$ вида
+\begin{equation*}
+    2 V = \frac{1}{\alpha_1}(x_1 - a)^2 + \frac{1}{\alpha_2} (x_2 - a)^2 + \ldots + \frac{1}{\alpha_n}(x_n - a)^2,
+\end{equation*}
+тогда, в силу уравнений системы,
+\begin{align*}
+    \dot{V} &= \frac{\dot{x}_1}{\alpha_1} (x_1 - a) + \ldots + 
+    \frac{\dot{x}_n}{\alpha_n}(x_n - a) = 
+    (x_1 - a) (x_2 - x_1) + \ldots + (x_n - a) (x_1 - x_n) = \\
+    &= - \sum_{i=1}^{n} x_i^2 + 
+    \sum_{i=1}^{n-1} x_i x_{i+1} + x_n x_1 = 
+    - \frac{1}{2}(x_n^2 - 2 x_n x_1 + x_1^2) - \frac{1}{2} 
+    \sum_{i=1}^{n} (x_i - x_{i+1})^2 < 0,
+\end{align*}
+аналогично №17.20,
+по теореме Ляпунова об асимптотической устойчивости,
+положение равновесия системы асимптотически устойчиво.
+
+
+
+\input{parts/18_17.tex}
+\input{parts/18_31.tex}
+\input{parts/18_37.tex}
+
+
+
+
+
+
+
+\subsubsection*{18.62}
+Известно, что кинетическая и потенциальная энергия системы могут быть записаны, как
+\begin{equation*}
+    T = \frac{1}{2} a_{ik} \dot{q}^i \dot{q}^k,
+    \hspace{1 cm}
+    \Pi = \frac{1}{2} c_{ik} q^i q^k.
+\end{equation*}
+С помощью уравнений Лагранжа второго рода можем перейти  к системе
+\begin{equation*}
+    A \ddot{\vc{q}} + C \dot{q} = A \vc{u}_1 \gamma \sin (\omega t).
+\end{equation*}
+Так как $A, \,C$ -- (невырожденные) положительно-определенные симметричные квадратичные формы, то они во-первых обратимы, а во вторых коммутируют (т.к. одновременно приводятся к диагональному виду), а значит и $A^{-1} C$ симметрична, соответственно имеет ортогональный базис.
+
+Собственно, известно, что
+\begin{equation*}
+    \left\{\begin{aligned}
+        \det (C - \lambda_i A) = 0 \\
+        (C - \lambda_i A) \vc{u}_i = 0,
+    \end{aligned}\right.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}   
+    A^{-1} C \, \vc{u}_i = \lambda_1 \vc{u}_i.
+\end{equation*}
+Перейдём к базису из собственных векторов (и переменным $\theta$), тогда уравнения примут вид
+\begin{equation*}
+    \ddot{\vc{q}} + \begin{pmatrix}
+        \lambda_1 &  &  \\
+         & \ddots &  \\
+         &  & \lambda_n \\
+    \end{pmatrix} \dot{q} = \begin{pmatrix}
+        1 \\ \vdots \\ 0
+    \end{pmatrix} \gamma \sin (\omega t).
+\end{equation*}
+Так как резонанс возможен только на собственных частотах системы, и $\lambda_1 = \omega_1^2$, то единственная частота, на которой возможен резонанс равна $\omega_1$.

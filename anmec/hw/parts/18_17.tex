@@ -1,0 +1,57 @@
+\subsubsection*{18.17}
+
+
+Известно что на груз действуют две силы
+\begin{equation*}
+    F_1 (t) = A_1 \sin \omega_1 t,
+    \hspace{1 cm}
+    F_2 (t) = A_2 \cos \omega_2 t,
+\end{equation*}
+и сопротивление среды $F = - \beta v$. 
+
+Запишем кинетическую и потенциальную энергию системы
+\begin{equation*}
+    T = \frac{m}{2} \dot{q}^2, \hspace{1 cm}
+    \Pi = \frac{c}{2}q^2.
+\end{equation*}
+Из уравнений Лагранжа второго рода находим
+\begin{equation*}
+    m \ddot{q} + \beta \dot{q} + c q = F_1 + F_2 = A \sin (\omega_1 t) + B \cos (\omega_2 t).
+\end{equation*}
+Для начала найдём собственные колебания системы
+\begin{equation*}
+    m \lambda^2 + \beta \lambda + c = 0,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \lambda_{1, 2} = \frac{-\beta \pm \sqrt{\beta^2 - 4 mc}}{2m}.
+\end{equation*}
+Найдём теперь частные решения для вынужденных колебаний, в виде
+\begin{align*}
+    q = \alpha_1 \sin (\omega_1 t + \varphi_1) + \alpha_2 \sin (\omega_2 t + \varphi_2),
+\end{align*}
+подставляя в уравнения движения получам, что (рассмотрим $\omega_1$, для $\omega_2$ рассуждения аналогичны)
+\begin{equation*}
+    \sin (\omega_1 t + \varphi_1) (x - m \omega_1^2) + \cos (\omega_1 t + \varphi_1) \omega_1 \beta = \frac{A}{\alpha_1}\sin \omega_1 t,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \sin(\omega_1 t + \varphi_1 + \kappa) = \frac{A}{\alpha_1} \frac{\sin \omega_1 t}{\sqrt{
+    (c-m \omega_1)^2 + \beta^2 \omega_1^2
+    }},
+\end{equation*}
+где $\kappa$ такая, что
+\begin{equation*}
+    \cos \kappa = \frac{c - m \omega_1^2}{\sqrt{
+        (\omega_1 \beta)^2 + (c-m \omega_1)^2
+    }}.
+\end{equation*}
+Сравнивая выражения, находим константы
+\begin{equation*}
+\left\{\begin{aligned}
+        \varphi_1 &= - \kappa_1 \\
+        \varphi_2 &= \frac{\pi}{2} - \kappa_2
+\end{aligned}\right.
+\hspace{1 cm}
+    \alpha_i (\omega_i) = \frac{A_i}{\sqrt{(m \omega_i-c)^2+\omega_i^2 \beta^2}},
+\end{equation*}
+и подставляем в ответ
+\begin{equation*}
+    q = \alpha_1 \sin (\omega_1 t + \varphi_1) + \alpha_2 \sin (\omega_2 t + \varphi_2).
+\end{equation*}

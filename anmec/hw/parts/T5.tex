@@ -1,0 +1,68 @@
+\subsubsection*{Т5}
+Покажем существование предельного цикла, и нарисуем фазовые портреты для системы 
+\begin{align*}
+    \dot{x} &= - y + x (\mu - x^2 - y^2)(\mu - 2 x^2 - 2 y^2) \\
+    \dot{y} &= x + y (\mu - x^2 - y^2)(\mu - 2 x^2 - 2 y^2)
+\end{align*}
+ при различных параметрах $\mu$.
+
+Перейдём к полярным координатам
+\begin{equation*}
+    \left\{\begin{aligned}
+        x &= r \cos \varphi \\
+        y &= r \sin \varphi
+    \end{aligned}\right. ,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \left\{\begin{aligned}
+        \dot{x} &= \dot{r} \cos \varphi - r \dot{\varphi} \sin \varphi 
+        = r \left(
+            (2 r^4 - 3 r^2 \mu  +\mu^2) \cos \varphi - \sin \varphi
+        \right)
+        \\
+        \dot{y} &= \dot{r} \sin \varphi + r \dot{\varphi} \cos \varphi 
+        = r \left(
+            (2 r^4 - 3 r^2 \mu  +\mu^2) \sin \varphi + \cos \varphi
+        \right)
+    \end{aligned}\right. .
+\end{equation*}
+Рассмотрим $\dot{x} \cos \varphi + \dot{y} \sin \varphi = \dot{r}$, и $\dot{y} \cos \varphi - \dot{x} \sin \varphi = r \dot{\varphi}$:
+\begin{equation*}
+    \left\{\begin{aligned}
+        \dot{r} = r (2 r^4 - 3 r^2 \mu + \mu^2) \\
+        r \dot{\varphi} = r
+    \end{aligned}\right.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \frac{\dot{r}}{\dot{\varphi}} = \frac{d r}{d \varphi} = r (2 r^4 - 3 r^2 \mu + \mu^2).
+\end{equation*}
+Судя по виду уравнений можно предположить, что при некоторых $\mu$ производная $dr / d\varphi = 0$ (более аккуратные рассуждения будут проведены в задаче Т6), тогда
+\begin{equation*}
+    (2 r^4 - 3 r^2 \mu + \mu^2) = 
+    2 \left(r^2 - \frac{\mu}{2}\right) \left(r^2 - \mu\right) = 
+    2 \left(r^2 - r_1^2\right) \left(r^2 - r_2^2\right)
+    = 0,
+\end{equation*}
+где $r_1^2 = \mu/2$ и $r_2^2 = \mu$. Соответсвенно при $\mu > 0$ существует периодическая траектория при $r \in \{r_1, r_2\}$. Из вида производной $\dot{r}$ знаем, что 
+\begin{equation*}
+    \sign \dot{r} = \left\{\begin{aligned}
+        1, & \ \ r \in (0, r_1) \cup (r_2, + \infty) \\
+        -1, & \ \ r \in (-r_1, r_2)
+    \end{aligned}\right.
+\end{equation*}
+Следовательно траектория $\dot{\varphi} = 1, \ r = r_2$ является неустойчивой, а $\dot{\varphi} = 1, \ r = r_2$ устойчива, а соответсвенно и является предельным циклом. 
+
+При отрицательных $\mu$ существует единственное положение равновесия в $x = y = 0$, являющееся устойчивым фокусом (см. вид $\dot{r}$), а при $\mu > 0$ становится неустойчивым фокусом. Таким образом приходим к фазовым портретам изображенным на рисунке \ref{T5}.
+
+
+
+\begin{figure}
+    \centering
+    \includegraphics{D:\\Kami\\WM12_Workspace\\AnMec\\T5_1.pdf}
+    \hspace{0.2cm}
+    \includegraphics{D:\\Kami\\WM12_Workspace\\AnMec\\T5_2.pdf}
+    \hspace{0.2cm}
+    \includegraphics{D:\\Kami\\WM12_Workspace\\AnMec\\T5_3.pdf}
+    \hspace{0.2cm}
+    \includegraphics{D:\\Kami\\WM12_Workspace\\AnMec\\T5_4.pdf}
+    \caption{Фазовый портрет системы №Т5 (бифуркация при плавном изменение $\mu$)}
+    \label{T5}
+\end{figure}

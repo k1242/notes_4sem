@@ -1,0 +1,68 @@
+\subsubsection*{Т6}
+
+Рассмотрим систему вида
+\begin{align*}
+    \dot{x} &= - y + \mu x - x y^2,\\
+    \dot{y} &= \mu y + x - y^3.
+\end{align*}
+
+
+
+Аналогично Т5 перейдём к полярным координатам, и выразим $\dot{\varphi}$ и $\dot{r}$, так вышло, что и здесь всё хорошо, и
+\begin{equation*}
+    \left\{\begin{aligned}
+        r \dot{\varphi} &= r \\
+        \dot{r} &= r \mu - r^3 \sin^2 (\varphi)
+    \end{aligned}\right.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \frac{\dot{r}}{\dot{\varphi}} = \frac{d r}{d \varphi} = 
+    r (\mu - r^2 \sin^2 \varphi).
+\end{equation*}
+Найдём значения $r = r_*$, где $\dot{r}$ меняет знак
+\begin{equation*}
+    r_*^2 = \mu \sin^{-2} \varphi,
+\end{equation*}
+что возможно только при $\mu > 0$. Аналогично предыдущей задаче рассмотрим $\sign \dot{r}$, и получим
+\begin{equation*}
+    \sign \dot{r} = 
+    \left\{\begin{aligned}
+        1 & \ \  r < r_*   \\
+        -1 & \ \ r > r_*
+    \end{aligned}\right.
+\end{equation*}
+
+Подробнее рассмотрим положение равновесия $x=y=0$, которое в силу постоянства $\dot{\varphi}$ единственное. В линейном приближение, 
+\begin{equation*}
+    J = \begin{pmatrix}
+        \dot{x}'_x & \dot{x}'_y \\
+        \dot{y}'_x & \dot{y}'_y \\
+    \end{pmatrix}
+    = 
+    \begin{pmatrix}
+        \mu-y^2 & -1-2xy \\
+        1 & \mu - 3 y^2 \\
+    \end{pmatrix} = \begin{pmatrix}
+        \mu & -1 \\
+        1 & \mu \\
+    \end{pmatrix}.
+\end{equation*}
+Тогда 
+\begin{equation*}
+    \det(J - \lambda E) = (\mu - \lambda)^2 + 1 = 0,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \lambda_{1, 2} = \mu \pm 1.
+\end{equation*}
+Тогда при $\mu < 0$, по теореме Ляпунова об устойчивости в линейном приближение, $x=y=0$ -- устойчивый фокус, при $\mu = 0$ верно, что $\Re (\lambda) = 0$, следовательно это центр, а при $\mu > 0$ фокус становится неустойчивым. Это позволяет прийти к фазовы портретам при различным значениям $\mu$, изображенным на рисунке \ref{T6}.
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics{D:\\Kami\\WM12_Workspace\\AnMec\\tmp0.pdf}
+    \hspace{0.2cm}
+    \includegraphics{D:\\Kami\\WM12_Workspace\\AnMec\\tmp1.pdf}
+    \hspace{0.2cm}
+    \includegraphics{D:\\Kami\\WM12_Workspace\\AnMec\\tmp2.pdf}
+    % \hspace{0.2cm}
+    % \includegraphics{D:\\Kami\\WM12_Workspace\\AnMec\\tmp.pdf}
+    \caption{Бифуркация Пуанкаре-Андронова-Хопфа}
+    \label{T6}
+\end{figure}

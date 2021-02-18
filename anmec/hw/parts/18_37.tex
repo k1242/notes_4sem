@@ -1,0 +1,114 @@
+\subsubsection*{18.37}
+
+Момент инерции стержня $J = \frac{1}{3} m l^2$, тогда, считая отклонения малыми, кинетическую и потенциальную энергию системы можем записать, как
+\begin{equation*}
+    T = \frac{1}{2} J \left(\dot{\varphi}^2 + \dot{\psi}^2\right),
+    \hspace{1 cm}
+    \Pi = \frac{1}{2}c (\varphi a - \psi a)^2 + \left(
+        1 - \frac{\varphi^2}{2} + 1 - \frac{\psi^2}{2}
+    \right) mg \frac{l}{2}.
+\end{equation*}
+Переходя в СО движущейся платформы, к системе добавляется инерциальная сила
+\begin{equation*}
+    M = \frac{mA}{2} \sin(\omega t) \omega^2 l,
+\end{equation*}
+действующая на центры масс стержней.
+
+С помощью уравнений Лагранжа второго рода переходим к уравнениям вида
+\begin{equation*}
+    A \ddot{\vc{q}} + C \vc{q} = M,
+    \hspace{1 cm}
+    A = J \begin{pmatrix}
+        1 & 0 \\
+        0 & 1 \\
+    \end{pmatrix},
+    \hspace{1 cm}
+    C = \frac{1}{2}\begin{pmatrix}
+        2a^2c + mgl & -2ca^2 \\
+        -2ca^2 & 2a^2 c + mgl \\
+    \end{pmatrix}
+\end{equation*}
+Из векового уравнения теперь можем найти собственные частоты системы, для получения однородного решения
+\begin{equation*}
+    \det(C - \lambda A) = 0,
+    \hspace{0.25cm} \Rightarrow \hspace{0.25cm}
+    \left(
+        mg \frac{l}{2} - J \lambda
+    \right) \left(
+        a^2 c + mg \frac{l}{2} - J \lambda
+    \right) = 0,
+\end{equation*}
+откуда легко находим $\lambda$
+\begin{equation*}
+    \lambda_1 = \frac{3}{2}\frac{g}{l}, \hspace{1 cm},
+    \hspace{0.5 cm} \vc{u}_1 = \begin{pmatrix}
+        1 \\ 1
+    \end{pmatrix},
+    \hspace{1 cm}
+    \lambda_2 = \frac{3}{2} \frac{g}{l} + \frac{6ca^2}{ml^2},
+    \hspace{0.5 cm} 
+    \begin{pmatrix}
+        1 \\ -1
+    \end{pmatrix}.
+\end{equation*}
+из которых уже можем составить ФСР.
+
+Теперь перейдём к поиску частного решения\footnote{
+    Так как по условию $\varphi$ и $\psi$ малые, то про резонанс говорить не приходится.
+} :
+\begin{equation*}
+    \varphi = \alpha \sin (\omega t), 
+    \psi = \beta \sin (\omega t),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    -A \omega^2 \begin{pmatrix}
+        \alpha \\ \beta
+    \end{pmatrix} + C \begin{pmatrix}
+        \alpha \\ \beta
+    \end{pmatrix} = 
+    \frac{m A \omega^2 l}{2} \begin{pmatrix}
+        1   \\ 1
+    \end{pmatrix}.,
+\end{equation*}
+вводя матрицу
+\begin{equation*}
+    \Lambda = C - A \omega^2,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \Lambda \begin{pmatrix}
+        \alpha \\ \beta
+    \end{pmatrix} = 
+    \frac{m A \omega^2 l}{2} \begin{pmatrix}
+        1 \\ 1
+    \end{pmatrix},
+    \hspace{0.5cm} \Leftrightarrow \hspace{0.5cm}   
+    \begin{pmatrix}
+        \alpha \\ \beta
+    \end{pmatrix} 
+    =
+     \Lambda^{-1} \,
+    \frac{m A \omega^2 l}{2} \begin{pmatrix}
+        1 \\ 1
+    \end{pmatrix}.
+\end{equation*}
+Считая $\Lambda^{-1}$, находим частное решение и получаем ответ
+\begin{equation*}
+    \begin{pmatrix}
+        \varphi \\ \psi
+    \end{pmatrix} = 
+    \frac{3 A \omega^2}{3 g - 2 l \omega^2} \begin{pmatrix}
+        1 \\ 1
+    \end{pmatrix} \sin (\omega t) + 
+    C_1 \begin{pmatrix}
+        1 \\ 1
+    \end{pmatrix}
+    \sin\left(
+        \sqrt{\frac{3}{2}\frac{g}{l}} \, t + \alpha_1
+    \right) + 
+    C_2 \begin{pmatrix}
+        1 \\ -1
+    \end{pmatrix} 
+    \sin\left(
+        \sqrt{
+        \frac{3}{2} \frac{g}{l} + \frac{6 c a^2}{ml^2}
+        } \, t + \alpha_2
+    \right).
+\end{equation*}

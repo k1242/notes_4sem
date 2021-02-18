@@ -1,0 +1,77 @@
+\subsubsection*{18.31}
+
+
+И снова запишем кинетическую и потенциальную энергию системы, как
+\begin{equation*}
+    T = \frac{1}{2} J \left(\varphi_1^2 + \varphi_2^2\right),
+    \hspace{1 cm}
+    \Pi = \frac{c}{2} \varphi_1^2 + \frac{c}{2}(\varphi_2 - \varphi_1)^2.
+\end{equation*}
+Из уравнений Лагранжа второго рода перейдём к системе
+\begin{align*}
+    J \ddot{\varphi}_1 + c(\varphi_1 - \varphi_2) &= M_0 \sin \omega t\\
+    J \ddot{\varphi} + \beta \dot{\varphi}_2 + c (\varphi_2 - \varphi_1) = 0.
+\end{align*}
+Искать собственные числа здесь оказалось плохой идеей, так что просто будем искать решение в виде
+\begin{equation*}
+    \vc{\varphi} = \begin{pmatrix}
+        a_1 \\ a_2
+    \end{pmatrix} e^{i\omega t} - 
+    \begin{pmatrix}
+        b_1 \\ b_2
+    \end{pmatrix} e^{-i\omega t}.
+\end{equation*}
+Для первого слагаемого
+\begin{equation*}
+    \left\{\begin{aligned}
+        - J \omega^2 a_1 + c a_1 - c a_2 &= \mathcal M \\
+        - J \omega^2 a_2 + \beta i \omega a_2 + c a_2 - c a_1 &= 0
+    \end{aligned}\right.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \left\{\begin{aligned}
+        a_1 (c - J \omega^2) - c a_2 &= \mathcal M \\
+        a_2 (c - J \omega^2 + i \beta \omega) &= c a_1
+    \end{aligned}\right.
+\end{equation*}
+Для второго слагаемого
+\begin{equation*}
+    \left\{\begin{aligned}
+        - J \omega^2 b_1 + c b_1 - c b_2 &= - \mathcal M \\
+        - J \omega^2 b_2 - \beta i \omega b_2 + c b_2 - c b_1 = 0
+    \end{aligned}\right.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \left\{\begin{aligned}
+        b_1 = \frac{b_2}{c} (c - J \omega^2 - i \beta \omega)
+        b_2 (\frac{c - J \omega^2}{c} (c - J \omega^2 + i \beta \omega - c)) = - \mathcal M
+    \end{aligned}\right.
+    ,
+\end{equation*}
+где $\mathcal M = M_0 / (2 i)$. Также хочется ввести некоторые постоянные
+\begin{equation*}
+    \kappa = \frac{c - J \omega^2}{c} (c - J \omega^2 + i \beta \omega) - c,
+    \hspace{1 cm}
+    \xi = \frac{c - J \omega^2}{c} (c - J \omega^2 + i \beta \omega - c),
+    \hspace{1 cm}
+    \eta = 
+\end{equation*}
+тогда получим хорошие выражения для искомых переменных
+\begin{equation*}
+    \left\{\begin{aligned}
+        a_1 &= \frac{\mathcal M}{\kappa} \frac{c - J \omega^2 + i \beta \omega}{c} \\
+        a_2 &= \frac{\mathcal M}{\kappa}
+    \end{aligned}\right.
+    , \hspace{1 cm}
+    \left\{\begin{aligned}
+         b_1 &= - \frac{\mu}{\xi} \frac{c - J \omega^2 - i \beta \omega}{c} \\
+       b_2 &= - \frac{\mu}{\xi}
+    \end{aligned}\right. .
+\end{equation*}
+Теперь их можно поставить в решение уравнения и получить ответ:
+\begin{equation*}
+    \vc{\varphi} = \begin{pmatrix}
+        a_1 \\ a_2
+    \end{pmatrix} e^{i\omega t} - 
+    \begin{pmatrix}
+        b_1 \\ b_2
+    \end{pmatrix} e^{-i\omega t}.
+\end{equation*}
