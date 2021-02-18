@@ -7,7 +7,7 @@
 [*заметки с семинаров*](https://github.com/k1242/notes_4sem/blob/main/anmec/notes/anmec_notes.pdf)
 );
 
-* <font color="red"> Новинка! </font> **дифференциальным уравнениям** 
+* [<font color="red"> Новинка!] </font> **дифференциальным уравнениям** 
 (
 [*задание*]()
 );
