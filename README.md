@@ -9,7 +9,7 @@
 
 * [<font color="red"> Новинка!] </font> **дифференциальным уравнениям** 
 (
-[*задание*]()
+[*задание*](https://github.com/k1242/notes_4sem/blob/main/diffeqs/hw/HW.pdf)
 );
 
 * **современной оптике**
