@@ -1,30 +1,34 @@
 \documentclass{article}
-\usepackage[unicode, pdftex]{hyperref}
-\usepackage{amsmath,amsthm,amssymb}
-\usepackage{mathtext}
-\usepackage{xcolor}
-\usepackage{hyperref}
-\usepackage[bottom=20mm]{geometry}
-\usepackage[pdftex]{graphicx}
-\graphicspath{{pictures/}}
-\DeclareGraphicsExtensions{.png}
-\definecolor{linkcolor}{HTML}{00009F} % цвет ссылок
-\definecolor{urlcolor}{HTML}{00009F} % цвет гиперссылок
-\hypersetup{pdfstartview=FitH,  linkcolor=linkcolor,urlcolor=urlcolor, colorlinks=true}
-\oddsidemargin=-5.4mm
-\textwidth=180mm
-\headheight=0mm
-\headsep=0mm
-\usepackage[T1,T2A]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage{amssymb}
-\usepackage{amsthm}
-\usepackage[english,bulgarian,ukrainian,russian]{babel}
-\title{Я не придумал как озаглавить, а называть "дз по дифурам" как-то скучно}
-\author{Шишкин П.Е.}
+
+\input{preambule}
+
 \begin{document}
-\maketitle
+
+\begin{center}
+    \LARGE \textsc{Задание по курсу <<Дифференциальные уравнения II>>}
+\end{center}
+
+\hrule
+
+\phantom{42}
+
+\begin{flushright}
+    \begin{tabular}{rr}
+    % written by:
+        \textbf{Автор}: 
+        & Шишкин П.Е. \\
+        &\\
+    % date:
+        \textbf{От}: &
+        \textit{\today}\\
+    \end{tabular}
+\end{flushright}
+
+\thispagestyle{empty}
 \tableofcontents
+\newpage
+
+
 
 \section{Задача Коши}
 \subsection{C. \S5: 26}
@@ -117,25 +121,24 @@ y'''=0
 \begin{gathered}
     \frac{y^3}{2}=p\\
     \frac{d y}{y} = \frac{d p}{p} \\
-\end{gathered}\\
-\right.
+\end{gathered}
+\right. \\
     2 x =p y - \frac{p^2 }{y^2} \\
 \end{cases}
 \end{equation}
 проинтегрируем второе выражение в совокупности (получим $p=C y$) и подставим оба уравнения совокупности в уравнение на x:
 \begin{equation}
-\begin{cases}
-\left[
-\begin{gathered}
-    8x=y^4\\
-    2x=C y^2 - C^2 \\
-\end{gathered}\\
-\right.
-    2 x =p y - \frac{p^2 }{y^2} \\
-\end{cases}
+    \begin{cases}
+    \left[
+    \begin{gathered}
+        8x=y^4\\
+        2x=C y^2 - C^2 \\
+    \end{gathered}\right. \\
+        2 x =p y - \frac{p^2 }{y^2} \\
+    \end{cases}
 \end{equation}
 Построим графики полученных кривых Рис. \ref{fig:6.36}
-\begin{figure}[h]
+\begin{figure}[ht]
 \center{\includegraphics[width=1\linewidth]{6.36.png}}
 \caption{Интегральные кривые С. \S6: 36}
 \label{fig:6.36}
@@ -173,37 +176,39 @@ y'''=0
 \end{equation}
 Т.е. $x=y^4/8$ действительно дискриминантная кривая, касающаяся решений  вида $C y^2 - C^2$ при $C \geq 0$
 \end{proof}
+
+
 \subsection{С. \S6: 49 }
 Решение полностю аналогично предыдущему, однако в этот раз разрешим уравнение относительно $y$ а не $x$ (это чтобы я не совсем уж весь код копипастил):
 В уравнении 
 \begin{equation}
-    y'-ln(y')=y-x 
+    y'-\ln(y')=y-x 
 \end{equation}
 Сделаем замену $\frac{d y}{d x}=p$ и разрешим первое уравнение относительно $y$ 
 \begin{equation}
-\begin{cases}
-    y=p - ln(p) + x\\
-    \frac{d y}{d x}=p
-\end{cases}
+    \begin{cases}
+        y=p - \ln(p) + x\\
+        \frac{d y}{d x}=p
+    \end{cases}
 \end{equation}
 Второе уравнение системы (20) можем записать как $dy = p dx$, от первого возьмём дифференциал.
 \begin{equation}
-\begin{cases}
-    (p-1)(d p - p d x)=0 \\
-    \frac{d y}{d x}=p
-\end{cases}
+    \begin{cases}
+        (p-1)(d p - p d x)=0 \\
+        \frac{d y}{d x}=p
+    \end{cases}
 \end{equation}
 Откуда:
 \begin{equation}
-\begin{cases}
-\left[
-\begin{gathered}
-    p=1\\
-    \frac{d p}{p} = dx \\
-\end{gathered}\\
-\right.
-    y=p - ln(p) + x \\
-\end{cases}
+    \begin{cases}
+    \left[
+    \begin{gathered}
+        p=1\\
+        \frac{d p}{p} = dx \\
+    \end{gathered}
+    \right. \\
+        y=p - \ln(p) + x \\
+    \end{cases}
 \end{equation}
 проинтегрируем второе выражение в совокупности (получим $p=e^{x+C}$) и подставим оба уравнения совокупности в уравнение на y:
 \begin{equation}
@@ -212,16 +217,15 @@ y'''=0
 \begin{gathered}
     y=1+x\\
     y=e^{x + C} -C \\
-\end{gathered}\\
-\right.
-    y=p - ln(p) + x \\
+\end{gathered} \right. \\
+    y=p - \ln(p) + x \\
 \end{cases}
 \end{equation}
 Построим графики полученных кривых Рис. \ref{fig:6.49}
-\begin{figure}[h]
-\center{\includegraphics[width=1\linewidth]{6.49.png}}
-\caption{Интегральные кривые С. \S6: 49}
-\label{fig:6.49}
+\begin{figure}[ht]
+    \center{\includegraphics[width=1\linewidth]{6.49.png}}
+    \caption{Интегральные кривые С. \S6: 49}
+    \label{fig:6.49}
 \end{figure}
 \newline
 Весьма очевидно, что особым решением, дискриминантной кривой в данном случае будет $y=x+1$ но, к сожалению, это необходимо доказать :(
@@ -229,8 +233,8 @@ y'''=0
 Необходимое условие дискриминантной кривой:
 \begin{equation}
     \begin{cases}
-    \frac{\partial}{\partial p}(p - ln(p) + x - y) = 0\\
-    p - ln(p) + x -y=0\\
+    \frac{\partial}{\partial p}(p - \ln(p) + x - y) = 0\\
+    p - \ln(p) + x -y=0\\
     \end{cases}
 \end{equation}
 Откуда:
@@ -254,8 +258,9 @@ y'''=0
     0=0
     \end{cases}
 \end{equation}
-Т.е. $y=x+1$ действительно дискриминантная кривая, касающаяся решений  вида $e^{x+C}-C$ уже (в сравнении с предыдущей задачей) при любых $С$
+Т.е. $y=x+1$ действительно дискриминантная кривая, касающаяся решений  вида $e^{x+C}-C$ уже (в сравнении с предыдущей задачей) при любых $C$
 \end{proof}
+
 \subsection{Ф.: 1065}
 Для решения задач 1065-1067 воспользуемся следующим фактом (Филиппов с. 109-110) :\\
 Если в системе уравнений 
@@ -345,6 +350,7 @@ u(x)=e^{x-2}
 \end{equation}
  Довольно очевидно, что \ref{eq8} и \ref{eq9} не могут быть продолжены на интервал $(-\infty, + \infty)$ хотя бы из-за того что они не определены на всём интервале. Взять же объединение этих решений невозможно, потому что единственная точка, где они могли бы пересекаться: $y=0$ не достигается ни одним из решений, т.е. объединение решений никогда не будет непрерывной функцией.
 \end{proof}
+
 \subsection{T2}
 Слишком много пунктов а смысла маловато $\Rightarrow$ плохая задача.\\
 Решим квадратное уравнение относительно $y'$, откуда можно получить:
@@ -357,7 +363,7 @@ u(x)=e^{x-2}
 \right.
 \end{equation}
 Тогда решениями уравнения будут кривые:
-\begin{equation}\label{eq9}
+\begin{equation}\label{eq9_}
     \left[
 \begin{gathered}
     y_1=x+C_1 \\
@@ -372,9 +378,9 @@ C_1=1-x \\
 C_2=-x
 \end{cases}, $
  тогда   $y_1'=y_2'=1$ что соответсвует наличию общей касательной.\\
-Решим краевую задачу $y(0)=0, y(2)=e$. Тогда, очевидно из \ref{eq9} $C_1=0; C_2=-1$. Построим график полученного решения \ref{fig:T2}
+Решим краевую задачу $y(0)=0, y(2)=e$. Тогда, очевидно из \ref{eq9_} $C_1=0; C_2=-1$. Построим график полученного решения \ref{fig:T2}
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \center{\includegraphics[width=1\linewidth]{T2.png}}
 \caption{Решение краевой задачи Т2}
 \label{fig:T2}
@@ -422,14 +428,15 @@ C_2=-x
  \begin{proof}
 Предположим функции линейно зависимы, тогда вронскиан тождественно равен нулю на всём промежутке. В то же время в точке $x_1$ $w(x) \neq 0$. Противоречие. Значит функции линейно независимы. 
  \end{proof}
+
 \subsection{Ф.: 667}
 Илья Викторович-таки попал в задачу из задания :)
 Легко видеть (особенно если решать задачу сразу после семинара где она обсуждалась), что Вронскиан равен нулю. Тем не менее, это ещё не означает, что функции линейно зависимы. Покажем что это не так. Тогда воспользуемся методом 2:
 Предположим, фунции линейно зависимы. Тогда:
-\begin{equation}\label{f649.2}
+\begin{equation}\label{f649.2_}
     \lambda_1 x + \lambda_2 x^5 + \lambda_3 |{x^5}| = 0 \text{ } \forall x \in I
 \end{equation}
-Поскольку \ref{f649.2} верно для любых $x$, подставим $x=-1/2$,$x=1/4$,$x=1/2$, Получим систему:
+Поскольку \ref{f649.2_} верно для любых $x$, подставим $x=-1/2$,$x=1/4$,$x=1/2$, Получим систему:
 \begin{equation}
     \underbrace{
     \begin{pmatrix}
@@ -444,7 +451,7 @@ C_2=-x
     \end{pmatrix}
     =0
 \end{equation}
- Поскольку $det(\text{ЫуЫа})=15/32768 \neq 0$ система имеет только тривиальное решение. Противоречие. Значит функции линейно независимы.
+ Поскольку $\det(\text{ЫуЫа})=15/32768 \neq 0$ система имеет только тривиальное решение. Противоречие. Значит функции линейно независимы.
  \subsection{Ф.: 668*}
  \begin{proof}
 
@@ -467,7 +474,7 @@ C_2=-x
  \end{equation}
  Что означает линейную зависимость $g(x)$ и $h(x)$.
 \end{proof}
-Стоит отметить, что если бы функции $g(x)$ и $h(x)$ были не решениями однородного дифф. уравнения 2 порядка, а просто какими-то функциями, то такое доказательство не было бы верно, например: $g(x)=cos(x)$ $h(x)=-x^2+\pi$ имеют максимум в $(0,0)$, но очевидно линейно независимы.
+Стоит отметить, что если бы функции $g(x)$ и $h(x)$ были не решениями однородного дифф. уравнения 2 порядка, а просто какими-то функциями, то такое доказательство не было бы верно, например: $g(x)=\cos(x)$ $h(x)=-x^2+\pi$ имеют максимум в $(0,0)$, но очевидно линейно независимы.
 \subsection{Ф.: 673}
 Пристально посмотрим на решения $y_1=x^2-2x+2$, $y_2=x^2-4x+4$, $y_3=x^2+x-1$, $y_4=-x-1$. Можно заметить, что: $y_3+3 y_4=y_1$, $y_3+5 y_4=y_2$. Решения $y_3, y_4$ очевидно линейно независимы. Знгачит есть только 2 линейно независимых решения. Пусть $y(x)$ - общее решение диф уравнения. Оно всегда будет линейно зависимо с частными. Тогда:
 \begin{equation}\label{f673.1}
@@ -482,7 +489,7 @@ C_2=-x
 Равенство \ref{f673.1} это уже пример д.у. второго порядка. Т.е. $N_{min} \leq 2$. Очевидно, $N_{min} \neq 1$ Потому что у д.у. первого порядка не может быть 2 линейно независимых решений. Откуда получаем ответ: $N\geq 2$
 \subsection{Ф.: 678}
 Воспользуемся методом из предыдущей задачи: скажем что общее решение д.у. всегда линейно зависимо с наибольшей по включению линейно независимой системой частных решений этого д.у., а значит Вронскиан $W(y(x),f_1,\ldots, f_n)=0$\\
-$y_1(x)=sh(x)$ $y_1'(x)=сh(x)$ $y_1(x)''=sh(x)$ \\
+$y_1(x)=sh(x)$ $y_1'(x)=ch(x)$ $y_1(x)''=sh(x)$ \\
 $y_2(x)=ch(x)$ $y_2'(x)=sh(x)$ $y_2(x)''=sh(x)$ \\
 $y_3(x)=e^x=y_1(x)+y_2(x)$ это решение не надо писать во Вронскиане, поскольку оно уже линейно зависимо с другими 2\\
 Тогда построим д.у.:
@@ -534,7 +541,7 @@ y_1'(0) && y_2'(0)\\
 \end{equation}
 Тогда для нашей задачи:
 \begin{equation}
-    W(x=-1)=W(x_0) e^{-\int_{x_0}^{-1} P_1(t)dt}=2 e^{-\int_{0}^{-1} \frac{-3}{t+2}dt}=2 e^{-ln(8)}=1/4
+    W(x=-1)=W(x_0) e^{-\int_{x_0}^{-1} P_1(t)dt}=2 e^{-\int_{0}^{-1} \frac{-3}{t+2}dt}=2 e^{-\ln(8)}=1/4
 \end{equation}
 \subsection{Ф. \S22:59}
 Обозначим искомое решение как $y_{\text{ЫуЫа}}$
@@ -574,14 +581,14 @@ $\varphi_2=y_2-y_3 = 2x$\\
         \alpha +1 =0
     \end{cases}
 \end{equation}
-Откуда, очевидно следует что 1) мы угадали одно решение 2) $\alpha =-1$ \Rightarrow $\varphi_1=e^{-x}$
+Откуда, очевидно следует что 1) мы угадали одно решение 2) $\alpha =-1$ $\Rightarrow$ $\varphi_1=e^{-x}$
 Теперь надо найти второе решение однородного. Запишем формулу Остроградского - Лиувилля в удобном нам виде:
 \begin{equation}
-    \frac{d}{dx} \left( \frac{y_o}{\varphi_1} \right)= \frac{C}{\varphi_1^2} exp \left( - \int \frac{4x+1} {2x}dx  \right) 
+    \frac{d}{dx} \left( \frac{y_o}{\varphi_1} \right)= \frac{C}{\varphi_1^2} \exp \left( - \int \frac{4x+1} {2x}dx  \right) 
 \end{equation}
 \textcolor[rgb]{1,1,1}{Где-то здесь я понял, что нумеровать абсолютно все (ну или почти все) формулы эстетически не очень красиво, поскольку как-то их многовато, а я на них не особо-то сылаюсь, но дороги назад уже не было. }
 \begin{equation}
-    \frac{d}{dx} \left( \frac{y_o}{e^{-x}} \right)= \frac{C}{e^{-2x}} exp \left(-2x - \frac{ln(x)}{2}  \right) = C x^{-1/2}
+    \frac{d}{dx} \left( \frac{y_o}{e^{-x}} \right)= \frac{C}{e^{-2x}} \exp \left(-2x - \frac{\ln(x)}{2}  \right) = C x^{-1/2}
 \end{equation}
 Проинтегрировав получим $y_o=C_1 \underbrace{e^{-x}}_{\varphi_1}+ C_2 \underbrace{e^{-x} \sqrt x}_{\varphi_2}$. 
 Для нахождения решение неоднородного Д.У. воспользуемся методом вариации постоянной. 
@@ -613,10 +620,13 @@ $\varphi_2=y_2-y_3 = 2x$\\
 \begin{proof}
 Предположим, существуют линейно независимые $y_1$ , $y_2$ ограниченные вместе со своими производными. Тогда, в любой положительной окрестности 0, Вронскеан этих функций не 0, кроме того он обязан быть ограничен, поскольку ограничены сами функции и их первые производные. Для любой положительной $\varepsilon$-окрестности точки 0 внутри неё возьмём некоторую точку $\delta$. Т.к. Вронскеан не ноль, положим $W(\varepsilon)=W_0$ Запишем формулу Лиувилля - Остроградского:
 \begin{equation}
-    W(\delta)=W_0 exp \left(- \int^{\delta}_{\varepsilon} \frac{x}{x^2} dx  \right) = W_0 \frac{\varepsilon}{\delta}
+    W(\delta)=W_0 \exp \left(- \int^{\delta}_{\varepsilon} \frac{x}{x^2} \, dx  \right) = W_0 \frac{\varepsilon}{\delta}
 \end{equation}
 Ну тут уже становится очевидно, что если в любой окрестности нуля вронскеан не 0 хотя бы в одной точке, он начинает неограниченно возрастать при стремлении к 0:\\
 $\forall  \varepsilon > 0 \forall M \exists \delta =  \frac{\varepsilon}{2|M|}: W(\delta)>|M|$
 А раз Вронскеан не ограничен, чего бы производным и функциям оказаться ограниченными?
 \end{proof}
+
+
+
 \end{document}

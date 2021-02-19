@@ -1,0 +1,62 @@
+% \usepackage[unicode, pdftex]{hyperref}
+% \usepackage{amsmath,amsthm,amssymb}
+% \usepackage{mathtext}
+% \usepackage{xcolor}
+% \usepackage{hyperref}
+
+% \usepackage[pdftex]{graphicx}
+
+
+\usepackage[T2A]{fontenc}                   %!? закрепляет внутреннюю кодировку LaTeX
+\usepackage[utf8]{inputenc}                 %!  закрепляет кодировку utf8
+\usepackage[english,russian]{babel}         %!  подключает русский и английский
+% \usepackage[margin=1.8cm]{geometry}         %!  фиксирует оступ на 2cm
+\usepackage[bottom=20mm]{geometry}
+
+\usepackage[unicode, pdftex]{hyperref}      %!  оглавление для панели навигации по PDF-документу + гиперссылки
+
+\usepackage{amsthm}                         %!  newtheorem и их сквозная нумерация
+\usepackage{hypcap}                         %?  адресация на картинку, а не на подпись к ней
+\usepackage{caption}                        %-  позволяет корректировать caption 
+\usepackage{fancyhdr}                       %   добавить верхний и нижний колонтитул
+\usepackage{wrapfig}                        %!  обтекание таблиц и рисунков
+
+\usepackage{amsmath}                        %!  |
+\usepackage{amssymb,textcomp, esvect,esint} %!  |важно для формул 
+\usepackage{amsfonts}                       %!  математические шрифты
+\usepackage{mathrsfs}                       %  добавит красивые E, H, L
+\usepackage{ulem}                           %!  перечеркивание текста
+\usepackage{abraces}                        %?  фигурные скобки сверху или снизу текста
+\usepackage{pifont}                         %!  нужен для крестика
+\usepackage{cancel}                         %!  аутентичное перечеркивание текста
+\usepackage{esvect}                         %  добавит вектора стрелочками
+
+\usepackage{graphicx}                       %?  графическое изменение текста
+\usepackage{indentfirst}                    %   добавить indent перед первым параграфом
+\usepackage{xcolor}                         %   добавляет цвета
+\usepackage{enumitem}                       %!  задание макета перечня.
+
+
+\graphicspath{{pictures/}}
+\DeclareGraphicsExtensions{.png}
+
+\definecolor{linkcolor}{HTML}{00009F} % цвет ссылок
+\definecolor{urlcolor}{HTML}{00009F} % цвет гиперссылок
+
+\hypersetup{pdfstartview=FitH,  linkcolor=linkcolor,
+urlcolor=urlcolor, colorlinks=true}
+
+\oddsidemargin=-5.4mm
+\textwidth=180mm
+\headheight=0mm
+\headsep=0mm
+
+\newcommand{\diag}{\mathop{\mathrm{diag}}\nolimits}
+\newcommand{\grad}{\mathop{\mathrm{grad}}\nolimits}
+\renewcommand{\div}{\mathop{\mathrm{div}}\nolimits}
+\newcommand{\rot}{\mathop{\mathrm{rot}}\nolimits}
+\newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits}
+\newcommand{\Spec}{\mathop{\mathrm{Spec}}\nolimits}
+\newcommand{\sign}{\mathop{\mathrm{sign}}\nolimits}
+\newcommand{\tr}{\mathop{\mathrm{tr}}\nolimits}
+\newcommand{\rg}{\mathop{\mathrm{rg}}\nolimits}
