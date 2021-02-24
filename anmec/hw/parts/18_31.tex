@@ -7,10 +7,12 @@
     \hspace{1 cm}
     \Pi = \frac{c}{2} \varphi_1^2 + \frac{c}{2}(\varphi_2 - \varphi_1)^2.
 \end{equation*}
-Из уравнений Лагранжа второго рода перейдём к системе
+Из уравнений Лагранжа второго рода перейдём к систем\footnote{
+    Тут при решении была потеряна \red{двойка}, выделенная красным цветом, но перегивать как-то грустно.
+} 
 \begin{align*}
-    J \ddot{\varphi}_1 + c(\varphi_1 - \varphi_2) &= M_0 \sin \omega t\\
-    J \ddot{\varphi} + \beta \dot{\varphi}_2 + c (\varphi_2 - \varphi_1) &= 0.
+    J \ddot{\varphi}_1 + c(\text{\red{2}}\varphi_1 - \varphi_2) &= M_0 \sin \omega t\\
+    J \ddot{\varphi}_2 + \beta \dot{\varphi}_2 + c (\varphi_2 - \varphi_1) &= 0.
 \end{align*}
 Искать собственные числа здесь оказалось плохой идеей, так что просто будем искать решение в виде
 \begin{equation*}
