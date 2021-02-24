@@ -10,7 +10,7 @@
 Из уравнений Лагранжа второго рода перейдём к системе
 \begin{align*}
     J \ddot{\varphi}_1 + c(\varphi_1 - \varphi_2) &= M_0 \sin \omega t\\
-    J \ddot{\varphi} + \beta \dot{\varphi}_2 + c (\varphi_2 - \varphi_1) = 0.
+    J \ddot{\varphi} + \beta \dot{\varphi}_2 + c (\varphi_2 - \varphi_1) &= 0.
 \end{align*}
 Искать собственные числа здесь оказалось плохой идеей, так что просто будем искать решение в виде
 \begin{equation*}
@@ -37,12 +37,12 @@
 \begin{equation*}
     \left\{\begin{aligned}
         - J \omega^2 b_1 + c b_1 - c b_2 &= - \mathcal M \\
-        - J \omega^2 b_2 - \beta i \omega b_2 + c b_2 - c b_1 = 0
+        - J \omega^2 b_2 - \beta i \omega b_2 + c b_2 - c b_1 &= 0
     \end{aligned}\right.
     \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
     \left\{\begin{aligned}
-        b_1 = \frac{b_2}{c} (c - J \omega^2 - i \beta \omega)
-        b_2 (\frac{c - J \omega^2}{c} (c - J \omega^2 + i \beta \omega - c)) = - \mathcal M
+        &b_1 = \frac{b_2}{c} (c - J \omega^2 - i \beta \omega) \\
+        &b_2 \left(\frac{c - J \omega^2}{c} (c - J \omega^2 + i \beta \omega - c)\right) = - \mathcal M
     \end{aligned}\right.
     ,
 \end{equation*}

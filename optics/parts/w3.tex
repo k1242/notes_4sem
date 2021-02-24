@@ -1,0 +1,153 @@
+\subsection*{Обобщение на случай отражения}
+
+Была некоторая матрица преломления
+\begin{equation*}
+     P(y, V) = \begin{pmatrix}
+        1 & 0 \\
+        -\frac{n_2-n_1}{R} & 1 \\
+    \end{pmatrix},
+\end{equation*}
+и матрица распространения
+\begin{equation*}
+    T = \begin{pmatrix}
+        1 & l/n \\
+        0 & 1 \\
+    \end{pmatrix}.
+\end{equation*}
+В случае отражения видимо хочется заменить $n \to -n$. Знак $\theta$ определяется, как вниз, или вверх.
+
+Пусть теперь $n_1=n,$ $n_2=-n$, тогда матрица отражения
+\begin{equation*}
+    R = \begin{pmatrix}
+        1 & 0 \\
+        -(-n-n)/r & 1 \\
+    \end{pmatrix} = \begin{pmatrix}
+        1 & 0 \\
+        2n/r & 1 \\
+    \end{pmatrix}.
+\end{equation*}
+Так фокусное расстояние для сферического зеркала $R/2$, что логично. В случае же, если мы захотим следить за направлениями осей, то можно вернуться к переменным $\{z, \theta\}$. 
+
+
+\subsubsection*{Пример 1 (плоскопараллельная пластина)}
+
+Пусть есть пластинка толшины $h$, то
+\begin{equation*}
+    \begin{pmatrix}
+        1h/n & 0 \\
+        1 & 0 \\
+    \end{pmatrix}^N = 
+    \begin{pmatrix}
+        1 & hN/n \\
+        0 & 1 \\
+    \end{pmatrix}.
+\end{equation*}
+
+
+\subsubsection*{Пример 2 (плоскопараллельная пластина)}
+
+Задача 13, см. рис. 03.1, блокнот 3, что позволяет построить матрицу отражения. Если добавить распространения в воздухе, то можно поговорить про фокальные плоскости. 
+
+
+\subsection{Периодические оптические системы}
+
+Пусть есть некоторая периодическая система с матрицей $ABCD$, действующая на луч $\{y_0, V_0\}$
+\begin{equation*}
+    \begin{pmatrix}
+        y_m \\ V_m
+    \end{pmatrix} = 
+    \begin{pmatrix}
+        A & B \\
+        C & D \\
+    \end{pmatrix}^m
+    \begin{pmatrix}
+        y_0 \\ V_0
+    \end{pmatrix}.
+\end{equation*}
+Хотелось бы понять на устойчивость такого действия системы на луч, для этого посмотрим на 
+\begin{equation*}
+    \begin{pmatrix}
+        y_{m+1} \\ V_{m+1}
+    \end{pmatrix} = 
+    \begin{pmatrix}
+        A & B \\
+        C & D \\
+    \end{pmatrix} \begin{pmatrix}
+        y_m \\ V_m
+    \end{pmatrix},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \left\{\begin{aligned}
+        y_{m+1} = A y_m + B v_m \\
+        v_{m+1} = C y_m + D v_m
+    \end{aligned}\right.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    V_m = \frac{y_{m+1}-Ay_m}{B},
+\end{equation*}
+теперь можем, забыв про $V$, говорить про $y_m$
+\begin{equation*}
+    \frac{y_{m+1}-A y_{m+1}}{B} = C y_m + \frac{D (y_{m+1}-Ay_m)}{B},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    y_{m+2} - A y_{m+1} = BC y_m + D (y_{m+1} - A y_m)
+\end{equation*}
+и, наконец,
+\begin{equation*}
+    y_{m+2} - (A+D) y_{m+1} + 
+    \cancelto{1}{(A D - B C)}
+     y_m = 0,
+\end{equation*}
+которое решается также, как и диффур, подстановкой $y_m = y_0 h^m$, тогда
+\begin{equation*}
+    y_m = y_0 h^m, \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    h^2 - (A+D) h + 1 = 0,
+\end{equation*}
+считая $\tr M = A+D \overset{\mathrm{def}}{=} 2 b$, находим, что
+\begin{equation*}
+    h^2 - 2 b h  +1 = 0, 
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    h_{1, 2} = b \pm \sqrt{b^2-1}
+\end{equation*}
+что приводит нас к некоторому к следующей классификации
+
+$|b|>1$ -- неустойчивый режим
+
+$|b|=1$ -- граница
+
+$|b|<1$ -- устойчивость
+
+\noindent
+Рассмотрим $b < 1$ и для удобства положим $b = \cos \varphi$, тогда
+\begin{equation*}
+    h_{1, 2} = \cos \varphi \pm i \sin \varphi = e^{i\varphi},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    y_m = \alpha_1 e^{im \varphi} + \alpha_2 e^{-im \varphi} = 
+    \underline{y_{\textnormal{max}}} \sin (m \varphi + \underline{\varphi_0}),
+\end{equation*}
+где подчеркнутые параемтры определяются начальными условиями. 
+
+
+Стоит заметить, что хотелось бы $\theta_m$ периодической. 
+
+
+\subsubsection*{Пример 2}
+
+См. рис. О3.2, блокнот 3. Получаем $b$
+\begin{equation*}
+    b=  \frac{2-f/F}{2}, \hspace{0.5 cm} |b|<1,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    0 < \frac{d}{F} < 4.
+\end{equation*}
+Пусть $d=F$, тогда $b=1/2$, соответственно $b = \cos \varphi$, и $\varphi = \pi/3$, получается система будет периодичной.
+
+При $d=2F$, $b=0$. При $d=0$ получим одну линзу. При $d=4F$ будем понятная картинка. 
+
+
+
+\subsubsection*{Пример 3 (Оптический резонатор)}
+
+Матрица будет выглядеть так (см. Блокнот). Тогда $b$ 
+\begin{equation*}
+    b = 2 \bigg(\underbrace{1+\frac{L}{R_1}}_{g_1}\bigg)\bigg(\underbrace{1+\frac{L}{R_2}}_{g_2}\bigg) - 1,
+\end{equation*}
+и рассмотрим $0 \leq g_1 g_2 \leq 1$.
+
+Другой случай это симметричный кофоканый резонатор, тогда $R_1 = -L$, и $R_2 = - L$. 
