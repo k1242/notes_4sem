@@ -25,4 +25,4 @@
 
 ## P.S.
 Если есть какие-то опечатки в современной оптике, то в надежде на их отсутствтие можно посмотреть 
-[здесь](https://github.com/DropName/everynote/blob/main/everynote.pdf).
+[здесь](https://github.com/DropName/everynote/blob/main/everynote.pdf). Блокноты математики с задачами по механике доступны [здесь](https://drive.google.com/drive/folders/1c-WOGz8fqJo39Hf0nRlDVghh4HEP88L2?usp=sharing).
