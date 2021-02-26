@@ -1,0 +1,37 @@
+
+\subsubsection*{№Т8}
+Сразу подставим $\lambda_2 = 2 \lambda_1$ и приведем к нормальной форме Коши уравнения вида
+\begin{align*}
+    \dot{x}_1 &= \lambda_1 x_1 + c_{20} x_2^2 + c_{11} x_1 x_2 + c_{1, 2} x_2^2 \\
+    \dot{x}_2 &= 2 \lambda_1 x_2 + d_{20} x_1^2 + d_{11} x_1 x_2 +  d_{02} x_2^2,
+\end{align*}
+диагональный вид уже получен, остается подобрать многочлен $\vc{p}$ такой, что
+\begin{equation*}
+    \vc{x} = \vc{y} + \vc{p}(\vc{y}),
+    \hspace{1 cm}
+    \dot{\vc{y}} = \Lambda \vc{y} + \Lambda \vc{p} + \vc{g}^2 (\vc{y}) -
+    \frac{\partial \vc{p}}{\partial \vc{y}\T}  \Lambda \vc{y} + O(y^3)
+\end{equation*}
+что возможно, при
+\begin{equation*}
+     p_i = \frac{g_i^2}{k_1 \lambda_1 + \ldots + k_n \lambda_n - \lambda_i}.
+\end{equation*}
+Из этого находим
+\begin{align*}
+    &p_{20}^1 =\frac{c_{20}}{\lambda_1},
+    &p_{11}^1 = \frac{c_{11}}{\lambda_2},
+    &&p_{02}^1 = \frac{c_{02}}{3 \lambda_1}, \\
+    &p_{20}^2 = \frac{\neq 0}{0}, 
+    &p_{11}^2 = \frac{d_{11}}{\lambda_1}, 
+    &&p_{02}^2 = \frac{d_{02}}{2\lambda_1}, \\
+\end{align*}    
+и записываем нормальную форму
+\begin{equation*}
+    \dot{\vc{y}} = \begin{pmatrix}
+        \lambda_1 & 0 \\
+        0 & 2 \lambda_1 \\
+    \end{pmatrix} \vc{y} + 
+    \begin{pmatrix}
+        0 \\ d_{20} y_1^2
+    \end{pmatrix} + O(|\vc{y}|^3).
+\end{equation*}

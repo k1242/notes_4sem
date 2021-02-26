@@ -1,4 +1,4 @@
-\subsubsection*{Т7}
+\subsubsection*{№Т7}
 
 
 Исследуем параметрический резонанс в уравнении Матьё
@@ -24,9 +24,7 @@
 }  $\varepsilon$, получим набор условий. При $\varepsilon^0$
 \begin{equation*}
     \varepsilon^0 \colon \ \ \ddot{x}_0(\tau, T) +  x_0(\tau, T) = 0,
-\end{equation*}
-следовательно
-\begin{equation*}
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
     x_0 = A(T) e^{i\tau} + B(T) e^{-i\tau}.
 \end{equation*}
 При $\varepsilon^1$, подставляя значение $x_0$ находим, что
@@ -56,4 +54,21 @@
         \frac{1}{268} \sqrt{(c - 5/12)(c+1/12)}\, T
     \right),
 \end{align*}
-при отрицательном аргументе корня, мы получим комплексный аргумент у косинуса, то есть гиперболический косинус, который неограниченно растёт, получается. 
+при отрицательном аргументе корня, мы получим комплексный аргумент у косинуса, то есть гиперболический косинус, который неограниченно растёт, иначе же решение ограниченно. Получается, что
+\begin{equation*}
+    \left(
+        c - \frac{5}{12}
+    \right) \left(
+        c  + \frac{1}{12}
+    \right) < 0,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    -\frac{1}{12} < c < \frac{5}{12},
+\end{equation*}
+вспоминая, что $a = 1 + c \varepsilon^2$, получаем
+\begin{equation*}
+    1 - \frac{\varepsilon^2}{12} < a < 1 + \frac{5}{12}\varepsilon^2,
+    \hspace{1 cm}
+    \text{Q. E. D.}
+\end{equation*}
+с учетом пренебрежения слагаемых порядка $o(\varepsilon^2)$.
+

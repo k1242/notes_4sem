@@ -1,0 +1,146 @@
+\subsubsection*{№Т9}
+
+
+Посмотрим на маятник
+\begin{equation*}
+    \ddot{x} + \sin x = 0,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \left\{\begin{aligned}
+        \dot{x}_1 &= x_2, \\
+        \dot{x}_2 &= -x_1 + x_1^2/6,
+    \end{aligned}\right.
+\end{equation*}
+тогда
+\begin{equation*}
+    A = \begin{pmatrix}
+        0 & 1 \\
+        -1 & 0 \\
+    \end{pmatrix},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \Lambda = \begin{pmatrix}
+        -i & 0 \\
+        0 & i \\
+    \end{pmatrix} = 
+    \frac{1}{2}
+    \begin{pmatrix}
+        -i & 1 \\
+        i & 1 \\
+    \end{pmatrix}
+    A
+    \begin{pmatrix}
+        i & -i \\
+        1 & 1 \\
+    \end{pmatrix}.
+\end{equation*}
+Посмотрим на замену $\vc{x} = S \vc{u}$, тогда
+\begin{equation*}
+    \dot{\vc{u}} = \Lambda \vc{u} + S^{-1} \begin{pmatrix}
+        0 \\ X_1^3/6
+    \end{pmatrix},
+\end{equation*}
+или, в координатах,
+\begin{equation*}
+    \left\{\begin{aligned}
+        \dot{u}_1 &= - i u_1 - i (u_1-u_2)^3/12 \\
+        \dot{u}_2 &= i u_2 - i (u_1 - u_2)^3/12
+    \end{aligned}\right.
+    \hspace{1 cm}
+    \vc{g} = \frac{-i}{12}
+    \begin{pmatrix}
+        u_1^3 - 3 u_1^2 u_2 + 3 u_1 u_2^2 - u_2^3 \\
+        u_1^3 - 3 u_1^2 u_2 + 3 u_1 u_2^2 - u_2^3 
+    \end{pmatrix}.
+\end{equation*}
+Во имя упрощения уравнений, перейдём к переменным 
+\begin{equation*}
+    \vc{u} = \vc{y} + \vc{p}(\vc{y}),
+    p_i = 
+    \frac{g_i^k}{k_1 \lambda_1 + \ldots + k_n \lambda_n - \lambda_i},
+\end{equation*}
+тогда коэффициенты многочлена
+\begin{align*}
+    &p_{03}^1 = \frac{1}{48}, 
+    &p_{12}^1 = -\frac{1}{8},
+    &&p_{21}^1 = \frac{\neq 0}{0},
+    &&p_{30}^1 = \frac{1}{24}, \\
+    &p_{03}^2 = \frac{1}{24}, 
+    &p_{12}^2 = \frac{\neq 0}{0},
+    &&p_{21}^2 = \frac{1}{8},
+    &&p_{30}^2 = \frac{1}{48}.
+\end{align*}
+Получается, остались только резонансные слагаемые,
+\begin{equation*}
+    \begin{pmatrix}
+        \dot{y}_1 \\ \dot{y}_2
+    \end{pmatrix} = 
+    \begin{pmatrix}
+        -iy_1 + i y_1^2 y_2/4 \\
+        i y_2 - i y_1 y_2^2 / 4
+    \end{pmatrix}
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \left\{\begin{aligned}
+        y_1 &= C_1(t) e^{it}, \\
+        y_2 &= C_2(t) e^{-it},
+    \end{aligned}\right.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \left\{\begin{aligned}
+        y_1 &= \gamma_2 \exp\left(i(\gamma_1-4)t/4\right), \\
+        y_2 &= \gamma_1/\gamma_2 \cdot e^{-i(\gamma_1-4)t/4}.
+    \end{aligned}\right.
+\end{equation*}
+Теперь подставим начальные условия $t=0$ и $x_1=a$, $x_2=0$. Пусть
+\begin{equation*}
+    \left\{\begin{aligned}
+        u &= x_2 + i x_1 \\
+        \bar{u} &= x_2 - i x_1
+    \end{aligned}\right.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \left\{\begin{aligned}
+        x_2 &= u_1 + u_2 \\
+        x_1 &= i(u_1-u_2)
+    \end{aligned}\right.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \left\{\begin{aligned}
+        \Re u &= u_1 + u_2 \\
+        \Im u &= u_1 - u_2
+    \end{aligned}\right.
+\end{equation*}
+Тогда
+\begin{equation*}
+    u \bar{u} (t=0) = a^2 = \Re^2 u + \Im^2 u = 2 (u_1^2 + u_2^2),
+\end{equation*}
+также
+\begin{equation*}
+    \tg \text{Arg} u = \frac{\Re u}{\Im u} = 0,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    u_1^2 - u_2^2 = 0.
+\end{equation*}
+Пренебрегая членам $O(y_1^3)$ находим, что
+\begin{equation*}
+    u_1 = y_1,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    u_1^2 \approx y_1^2,
+\end{equation*}
+аналогчино $u_2^2 \approx y_2^2$, другими словами
+\begin{equation*}
+    y_1^2 + y_2^2 = \frac{a^2}{2},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \gamma_2^2 + \frac{\gamma_1^2}{\gamma_2^2} = \frac{a^2}{2}.
+\end{equation*}
+также верно, что
+\begin{equation*}
+    y_1^2 - y_2^2 = 0,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}   
+    \gamma_1^2 = \gamma_2^4,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \gamma_1 = \gamma_2^2,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \gamma_1 = \frac{a^2}{4}.
+\end{equation*}
+Вспомнив, как выглядит $y_1 (t)$ находим, что
+\begin{equation*}
+    \omega = \bigg|1-\frac{\gamma}{4}\bigg| = \bigg|
+    1 - \frac{a^2}{16}
+    \bigg|,
+\end{equation*}
+что очень сильно похоже на правду.

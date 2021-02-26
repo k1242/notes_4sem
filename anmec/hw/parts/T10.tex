@@ -1,0 +1,58 @@
+\subsubsection*{№Т10}
+
+\red{Возможно, тут алгебраическая ошибка.} Уравнение Бине для светового луча 
+\begin{equation*}
+    u'' + u = \frac{3}{2} a u^2,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \left\{\begin{aligned}
+        \dot{x}_1 &= x_2, \\
+        \dot{x}_2 &= - x_1 + \frac{3}{2} a x_1^2
+    \end{aligned}\right.
+\end{equation*}
+что в плане диагонализации абсолютно аналогично №Т9, а значит
+\begin{equation*}
+    \Lambda = \begin{pmatrix}
+        -i & 0 \\
+        0 & i \\
+    \end{pmatrix},
+    \hspace{1 cm}
+    S = \begin{pmatrix}
+        i & -i \\
+        1 & 1 \\
+    \end{pmatrix},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \left\{\begin{aligned}
+        x_1 &= i (u_1 - u_2), \\
+        x_2 &= u_1 + u_2.
+    \end{aligned}\right.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \left\{\begin{aligned}
+        u_1 &= - i u_1 - \frac{3}{4} a (u_1^2 - 2 u_1 u_2 + u_2^2) \\
+        u_2 &= i u_2 - \frac{3}{4} a (u_1^2 - 2 u_1 u_2 + u_2^2).
+    \end{aligned}\right.
+\end{equation*}
+Теперь подберем соответствующий многочлен.
+\begin{align*}
+    &p_{20}^1 = - \frac{3}{4} ai,
+    &p_{11}^1 = - \frac{3}{2} ai,
+    &&p_{02}^1 = \frac{1}{4}ai, \\
+    &p_{20}^2 = -\frac{1}{4} ai,
+    &p_{11}^2 = \frac{3}{2} ai,
+    &&p_{02}^2 = \frac{3}{4} ai.
+\end{align*}
+Ура, нет резонансов, тогда
+\begin{equation*}
+    \left\{\begin{aligned}
+        \dot{y}_1 &= -i y_1, \\
+        \dot{y}_2 &= i y_2
+    \end{aligned}\right.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \left\{\begin{aligned}
+        u_1 &= y_1 + a i \left(
+            -\frac{3}{4}y_1^2 - \frac{3}{2} y_1 y_2 + \frac{1}{4} y_2^2
+        \right) \\
+        u_2 &= y_2 + a i \left(
+            - \frac{1}{4} y_1^2 + \frac{3}{2} y_1 y_2 + \frac{3}{4} y_2^2
+        \right).
+    \end{aligned}\right.    
+\end{equation*}
