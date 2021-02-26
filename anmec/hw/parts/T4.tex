@@ -4,10 +4,38 @@
 \begin{equation*}
     u'' + u = \frac{a}{2c^2} v^2 + \frac{3}{2}a u^2,
 \end{equation*}
-где $r^2 \dot{\varphi} = c$.
+где $r^2 \dot{\varphi} = c, \ u=1/r$. Перейдём к системе
+\begin{equation*}
+    \left\{\begin{aligned}
+        u' &= y \\
+        y' &= \frac{3}{2} a u^2 + \frac{a}{2c^2} v^2 - u
+    \end{aligned}\right.
+\end{equation*}
+положение равновесия которой находится в точке
+\begin{equation*}
+    y^* = 0, \hspace{1 cm}
+    u^* = 
+    \frac{1\pm \sqrt{1-3 \frac{v^2 a^2}{c^2}}}{3a}.
+\end{equation*}
+Зависимость $u^*(c)$ представлена на рисунке, соответственно положение равновесия существует только при $c \geq \sqrt{3} v a$, при чём при равенстве оно единственно.
+\begin{figure}[ht]
+    \centering
+    \includegraphics{D:\\Kami\\WM12_Workspace\\AnMec\\T4_plot.pdf}
+    \caption{Бифуркационная диаграмма стационарных точек уравнения Бине к №Т4}
+\end{figure}
 
-
-\begin{figure}
+\noindent
+Посмотрим на устойчивость положения равновесия
+\begin{equation*}
+    J = \begin{pmatrix}
+        0 & 1 \\
+        3au-1 & 0 \\
+    \end{pmatrix},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \lambda^2 = 3 a u - 1 = \pm \sqrt{1 - 3 \frac{v^2 a^2}{c^2}},
+\end{equation*}
+получается плюсу соответствует седл, а минусу центр. Соответствующие фазовые портреты представлены на рисунке, при $a,v=1$.
+\begin{figure}[ht]
     \centering
     \includegraphics{D:\\Kami\\WM12_Workspace\\AnMec\\T4_1.pdf}
     \hspace{0.2cm}
@@ -17,14 +45,5 @@
     \caption{Фазовый портрет системы №Т4 (бифуркация при плавном изменение $c$)}
 \end{figure}
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-\begin{figure}[h]
-    \centering
-    \includegraphics{D:\\Kami\\WM12_Workspace\\AnMec\\T4_plot.pdf}
-    \caption{Бифуркационная диаграмма стационарных точек уравнения Бине}
-\end{figure}
+
+

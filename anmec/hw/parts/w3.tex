@@ -2,18 +2,49 @@
 % \subsubsection*{no ?Т2}
 \input{parts/T2.tex}
 
-% \subsubsection*{Т3}
-% Исследуем систему вида
-% \begin{equation*}
-%     \left\{\begin{aligned}
-%         \dot{x} &= y, \\
-%         \dot{y} &= k \left(
-%             \frac{b}{a-x} - x
-%         \right)
-%     \end{aligned}\right.
-% \end{equation*}
 
+\subsubsection*{Т3}
+Исследуем систему вида
+\begin{equation*}
+    \left\{\begin{aligned}
+        \dot{x} &= y, \\
+        \dot{y} &= k \left(
+            \frac{b}{a-x} - x
+        \right)
+    \end{aligned}\right.
+\end{equation*}
+Рассмотрим положение равновесия $\dot{x} = \dot{y} = 0$, при $x \neq a$
+\begin{equation*}
+    x^* = \frac{1}{2}\left(
+        a \pm \sqrt{a^2 - 4b}
+    \right),
+\end{equation*}
+что приводит нас к следующим случаям. 
 
+Пусть $a^2 = 4b$, тогда $x^* = a/2$, попробуем найти фазовый портрет по линейному приближению
+\begin{equation*}
+    \det(J - \lambda E) = 
+     \lambda^2 - k\left(
+        \frac{b}{(a-x^*)^2}-1
+     \right) = k \cdot 0 = 0,
+     \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+     \lambda = 0,
+\end{equation*}
+следовательно линейным приближением здесь не воспользоваться.
+
+При $a^2 > 4b$, 
+\begin{equation*}
+    x^* = \frac{a}{2} \pm \sqrt{
+    \left(\frac{a}{2}\right)^2 - b
+    } = \frac{a}{2} \pm \delta,
+\end{equation*}
+тогда
+\begin{equation*}
+    \lambda^2 = \frac{5}{4} (4b - a^2) \pm a \delta,
+\end{equation*}
+в случае $+ a\delta$ $\Re \lambda_{1, 2} = 0$, следовательно это \textit{центр}, при $-a \delta$ получается $\lambda^2 = 100 b - 9 a^2 > 64 b > 0$, следовательно это \textit{седло}.
+
+При $a^2 < 4b$ не существует положения равновесия, что приводит нас к физовым диаграммам аналогичным задаче Т4. 
 
 
 \input{parts/T4.tex}

@@ -1,0 +1,131 @@
+\subsection{Метод усреднений}
+
+Рассмотрим уравнение вида
+\begin{equation*}
+    \ddot{x} + \omega^2 x + \varepsilon h(x, \dot{x}) = 0.
+\end{equation*}
+Рассмотрим систему в терминах быстрого времени $\tau = t$ и медленного $T = \varepsilon t$. В первом приближение получим, что 
+\begin{align*}
+    &O(1) \colon &x_0 &= r(T) \cos (\omega \tau + \varphi(T)) \\
+    &O(\varepsilon)\colon 
+    &\partial_\tau^2 x_1 + \omega^2 x_1 
+    &=
+     - 2 \partial_\tau \partial_T x_0 - h = 
+     + 2 \omega \partial_T (r \cos (\omega \tau + \varphi)) - h 
+     = \\
+    &&&= 2 \omega (r' \sin (\omega \tau + \varphi)) +  r \varphi' \cos (\omega \tau + \varphi) - h
+\end{align*}
+и далее будем считать, что $\omega \tau + \varphi = \theta$, и разложим $h$ в ряд Фурье. Тогда
+\begin{equation*}
+    h = \frac{a_0}{2} + \sum_{k=1}^{\infty} a_k \cos k \theta + b_k \sin k \theta,
+\end{equation*}
+соответственно, дабы убить резонансные слагаемые,
+\begin{equation*}
+    \begin{aligned}
+        2 \omega r' - b_1 &= 0 \\
+        2 \omega r \varphi' - a_1 &= 0.
+    \end{aligned}
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \left\{\begin{aligned}
+        \omega r' &= \frac{1}{2} \frac{1}{\pi} \int_0^{2\pi} h \sin \theta \d \theta &= \langle h \sin  \theta \rangle \\
+        \omega r \varphi' &=\ldots&= \langle h \cos \theta \rangle
+    \end{aligned}\right.
+\end{equation*}
+
+\subsubsection*{Осциллятор Ван дер Поля}
+
+Рассмотрим уравнения вида
+\begin{equation*}
+    \ddot{x} + x + \varepsilon (x^2 - 1) \dot{x} = 0,
+\end{equation*}
+что соответствует рассмотренному случаю с $\omega=1$, или ($\tau+\varphi=\theta$)
+\begin{align*}
+    h &= (r^2 \cos^2 (\tau + \varphi) - 1)(-r \sin (\tau  +\varphi)) = \\
+    &= r (\sin \theta - r^2 \cos^2 \theta \sin \theta),
+\end{align*}
+тогда 
+\begin{equation*}
+    r' = r = \frac{1}{2\pi} \int_0^{2\pi} \left(
+        \sin^2 \theta - r^2 \cos^2 \theta \sin^2 \theta
+    \right) \d \theta = \frac{r}{2}\left( 1 - \frac{r^2}{4}\right),
+\end{equation*}
+что соответствует возникновению предельного цикла радиуса $2$.
+
+
+
+\subsection{Нормальная форма Коши}
+Продолжаем рассматривать
+\begin{equation*}
+    \dot{\vc{x}} = \vc{f} (\vc{x}), \hspace{1 cm} \vc{x} =0 \colon \vc{f}(0)=0,
+\end{equation*}
+также будем считать, что $\vc{f}(\vc{x})$ -- аналитическая функция, и разложим её в ряд. Уравнение вида
+\begin{equation*}
+    \dot{\vc{x}} = A \vc{x} + \vc{g}(\vc{x}),
+\end{equation*}
+хотим свести к линейному виду. Сделаем следующую замену
+\begin{equation*}
+    \vc{x} \to \tilde{\vc{x}} 
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \dot{\tilde{\vc{x}}} = \Lambda \tilde{\vc{x}} + \vc{g}(\tilde{\vc{x}}),
+\end{equation*}
+далее сделаем замену
+\begin{equation*}
+    \tilde{\vc{x}} = \vc{y} + \vc{p}(\vc{y}),
+\end{equation*}
+где $\vc{p}(\vc{y})$ -- <<вектор>> из полиномов минимальной нелинейной степени.
+
+Прямой подстановкой получаем, что
+\begin{equation*}
+    \dot{\vc{y}} + \frac{\partial \vc{p}}{\partial \vc{y}\T} \dot{\vc{y}} = 
+    \left(E + \frac{\partial \vc{p}}{\partial \vc{y}\T}\right) \dot{\vc{y}} = 
+    \Lambda \vc{y} + \Lambda \vc{p} + \vc{g}(\vc{y} + \vc{p}),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \dot{\vc{y}} = 
+    \left(E + \frac{\partial \vc{p}}{\partial \vc{y}\T}\right)^{-1} \left(
+        \Lambda \vc{y} + \Lambda \vc{p} + \vc{g}(\vc{y} + \vc{p})
+    \right),
+\end{equation*}
+а теперь разложим всё в ряд и оставим слагаемые степени не более $\deg \vc{p} = k$, тогда
+\begin{align*}
+    \dot{\vc{y}} &=
+     \left(E - \frac{\partial \vc{p}}{\partial \vc{y}\T}\right)
+     \left(
+        \Lambda \vc{y} + \Lambda \vc{p} + \vc{g}^m (\vc{y})
+     \right) + O(|y|^{m+1}) = \\
+     &= \Lambda \vc{y} + \Lambda \vc{p} + \vc{g}^m (\vc{y}) - \frac{\partial \vc{p}}{\partial \vc{y}\T} \Lambda \vc{y} + O(|\vc{y}|^{m+1}).
+\end{align*}
+Вспомним, что понятно как выглядит $p_i$
+\begin{equation*}
+    p_i = \sum_{k_1, \ldots, k_n} p^i_{k_1, ..., k_n} y^{k_1} \ldots y^{k_n},
+    \hspace{1 cm}
+    k_1 + \ldots + k_n = m,
+\end{equation*}
+а также $g_i^m$
+\begin{equation*}
+    g_{i}^m = \sum_{k_1, \ldots, k_n} g^i_{k_1, \ldots, k_n} y^{k_1} \ldots y^{k_n},
+\end{equation*}
+работая с каждым мономом приходим к уравнениям
+\begin{equation*}
+    \lambda_i p^i_{k_1, \ldots, k_n} - \left(
+        k_1 \lambda_1 + k_2 \lambda_2 + \ldots + k_n \lambda_n
+    \right) p^i_{k_1, \ldots, k_n} = -g^i_{k_1, \ldots, k_n},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \boxed{
+    p_{k_1, \ldots, k_n}^i = 
+    \frac{-g^i_{k_1, \ldots, k_n}}{\lambda_i - (\vc{k} \cdot \vc{\lambda})} 
+    },
+\end{equation*}
+что приводит нас к следующей теореме.
+
+\begin{to_thr}[Теорема Пуанкаре-Дюлака]
+    Можно всё убрать, кроме резонансных слагаемых.
+\end{to_thr}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,40 @@
+Исследуем параметрический резонанс в уравнении Матьё
+\begin{equation*}
+    \ddot{x} + (a + \varepsilon \cos t) x = 0,
+\end{equation*}
+где $0 < \varepsilon \ll 1$. Будем считать $a = 1 + c \varepsilon^2$, и рассматривать задачу относительно медленного времени $\tau = t$ и быстрого времени $T = \varepsilon^2 t$. Пусть также $a = 1 + c \varepsilon^2$, где $c = )(1)$. Величинами порядка $o(\varepsilon^2)$ пренебрежем.
+
+Для начала перепишем дифференцирование по времени в терминах $T, \tau$:
+\begin{align*}
+    d_t &= \partial_\tau + \varepsilon^2 \partial_T, \\
+    d^2_{t, t} &= 
+    \partial^2_{\tau, \tau} + 2 \varepsilon^2 \partial_\tau \partial_T,
+\end{align*}
+где слагаемым $\varepsilon^4 \partial^2_{T, T}$ пренебрегли. 
+
+Для поиска решения воспользуемся естественным анзацем, вида
+\begin{equation*}
+    x = x_0(\tau, T) + \varepsilon x_1 (\tau, T) + \varepsilon^2 x_2 (\tau, T),
+\end{equation*}
+тогда, после подстановки в уравнение Матье и группировки по степеням\footnote{
+    Коэффициент при каждой степени должен быть нулевым.
+}  $\varepsilon$, получим набор условий. При $\varepsilon^0$
+\begin{equation*}
+    \varepsilon^0 \colon \ \ \ddot{x}_0(\tau, T) +  x_0(\tau, T) = 0,
+\end{equation*}
+следовательно
+\begin{equation*}
+    x_0 = A(T) e^{i\tau} + B(T) e^{-i\tau}.
+\end{equation*}
+При $\varepsilon^1$, подставляя значение $x_0$ находим, что
+\begin{equation*}
+    \varepsilon^1 \colon \ \ \ddot{x}_1(\tau, T) +  x_1(\tau, T) 
+    = -\frac{1}{2}\left(
+        A+B + A e^{2 i \tau} + B e^{- 2 i \tau}
+    \right)
+    ,
+\end{equation*}
+решая это дифференциальное уравнение относительно $x_1(\tau, T)$ находим, что
+\begin{equation*}
+    x_1(\tau, T) = 
+\end{equation*}
