@@ -1,0 +1,220 @@
+Вспомним волновое уравнение
+\begin{equation*}
+    \nabla^2 E - \frac{\varepsilon \mu}{c^2} \frac{\partial^2 E}{\partial t^2} = 0,
+\end{equation*}
+пусть $\varepsilon \neq 1$ и $\mu=1$, считая волну монохроматической всегда можем получить уравнение Гельмгольца
+\begin{equation*}
+    E = f(r) \exp(-i \omega t),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \nabla^2 f + \varepsilon k^2 f = 0,
+\end{equation*}
+где $k_0^2 = \omega^2/c^2$. Есть решение в виде плоской волны $f_0 e^{- k_0 \cdot r}$, решение в виде $A r^{-1} e^{i k_0 \cdot r}$. Можно рассматривать также параболическое приближение. 
+
+Выберем некоторую ось $z$. Есть два места, где встречается $r$ -- в числителе и аргументе экспоненты. Известно, что $r^2 = \rho^2 + z^2$, тогда
+\begin{equation*}
+    r = \sqrt{\rho^2 + z^2} = z \left(1 + \frac{\rho^2}{z^2}\right)^{1/2} \approx z + \frac{\rho^2}{2z}.
+\end{equation*}
+Говоря об аргументе хочется, чтобы всё работало, для этого
+\begin{equation*}
+    \frac{2\pi}{\lambda} \left(z + \frac{\rho^2}{2z}+\ldots\right) = \frac{2\pi}{\lambda} z + \frac{2\pi}{\lambda} \frac{\rho^2}{2z} + \ldots,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \frac{2\pi}{\lambda} \frac{\rho^2}{2z} \ll \pi.
+\end{equation*}
+Так\footnote{
+    Видно, что входит $n$ зон Френеля.
+}  и пришли к \textit{параболическому} \textit{приближению}, вида
+\begin{equation*}
+    f = \frac{A}{z} \exp\left(
+        i k z + i k \frac{\rho^2}{2z}
+    \right).
+\end{equation*}
+
+
+\subsection{Параболическое приближение}
+
+Подробнее посмотрим на
+\begin{equation*}
+    f(\vc{r}) = A(\vc{r}) \exp(ikz).
+\end{equation*}
+Точнее нас интересует некоторая модуляция сигнала
+\begin{align*}
+    \frac{\partial A}{\partial z} \lambda \ll A
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \frac{\partial A}{\partial z} \ll \frac{A}{\lambda}
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \frac{\partial A}{\partial z} \ll A \cdot k, \\
+    \frac{\partial^2 A}{\partial z^2} \cdot \lambda \ll \frac{\partial A}{\partial z} 
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \ldots
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \frac{\partial^2 A}{\partial z^2} \ll \frac{\partial A}{\partial z} \cdot k.
+\end{align*}
+Считая $k^2 = \varepsilon \omega^2 / c^2$, можем записать, что
+\begin{equation*}
+    \nabla^2 f + \frac{\varepsilon}{c^2}\omega^2 f = 0,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \nabla^2 f + k^2 f = 0,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \frac{\partial f}{\partial z} = \frac{\partial A}{\partial z} e^{ikz} + A ik e^{ikz}
+\end{equation*}
+где 
+\begin{equation*}
+    \nabla^2 = \frac{\partial^2 }{\partial z^2} + \nabla^2_{\bot}.
+\end{equation*}
+Для второй производной
+\begin{equation*}
+    \frac{\partial^2 f}{\partial z^2} = \frac{\partial^2 A}{\partial z^2}  e^{ikz} + 2 \frac{\partial A}{\partial z}  i k e^{ikz} - A k^2 e^{ikz}.
+\end{equation*}
+Подставляя всё в уравнение находим, что
+\begin{equation*}
+    \frac{\partial^2 A}{\partial z^2} + 2 \frac{\partial A}{\partial z} ik - \cancel{A k^2} + \nabla^2_{\bot} A + \cancel{A k^2} = 0.
+\end{equation*}
+Вспоминая малость второй производной, получаем
+\begin{equation}
+    \boxed{
+    \nabla^2_\bot A + 2 i k \frac{\partial A}{\partial z} = 0
+    }
+    \hspace{0.5cm}
+    \text{--- параксиальное приближение уравнения Гельмгольца.}
+\end{equation}
+\red{Возможно, тут минус. На всякий случай хочется проверить, что параболическая волна это решение.} 
+
+
+Однако, мы будем подробнее работать конкретно с решением 
+\begin{equation*}
+    f(r) = \frac{A}{z} \exp\left(-i k z - ik \frac{\rho^2}{2z}\right),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    f(r) = A(r) e^{-ikz},
+    \hspace{1 cm}
+    A(r) \overset{\mathrm{def}}{=}  \frac{A}{z} \exp\left(-i k \frac{\rho^2}{2z}\right).
+\end{equation*}
+Здесь хочется сделать некоторый сдвиг
+\begin{equation*}
+    z \longrightarrow q(z) \overset{\mathrm{def}}{=}  z + i z_0,
+\end{equation*}
+где $z_0 = \const$ (Рэлеевская длина), $q(z)$ -- $q$-параметр. Тогда уравнение придет к виду
+\begin{equation*}
+    f(r) = \frac{A}{z + i z_0} \exp\left(
+        -i k z - i k \frac{\rho^2}{2 (z+i z_0)}
+    \right).
+\end{equation*}
+Далее заметим, что
+\begin{equation*}
+    \frac{1}{q(z)} = \frac{1}{z + i z_0} = \frac{z- iz_0}{z^2 + z_0^2},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    f(r) = A\left(
+        \frac{z}{z^2+z_0^2} - i \frac{z_0}{z^2 + z_0^2}
+    \right) \exp\left(
+        -i k z- ik \frac{\rho^2}{2} \left(
+            \frac{z}{z^2+z_0^2} - i \frac{z_0}{z^2+z_0^2}
+        \right)
+    \right).
+\end{equation*}
+Тогда получается
+\begin{equation*}
+    f(r) = A \left(
+        \frac{z}{z^2+z_0^2} - i \frac{z_0}{z^2+z_0^2}
+    \right) \exp\left(
+        - \frac{k \rho^2}{2} \frac{z_0}{z^2+z_0^2}
+    \right) \exp\left(
+        - ikz - ik \frac{\rho^2 z}{2(z^2 + z_0^2)}
+    \right).
+\end{equation*}
+Внимательно оглядев выражение в экспоненте, понимаем что хочется переписать его в виде
+\begin{equation}
+    - \frac{2 \pi}{2} \frac{\rho^2 z_0}{\lambda (z^2+z_0^2)} = - \frac{\rho^2}{\frac{\lambda}{z_0 \pi}(z^2+z_0^2)} = 
+    - \frac{\rho^2}{W^2(z)},
+    \hspace{1 cm}
+    W^2(z) \overset{\mathrm{def}}{=} \frac{\lambda}{z_0 \pi}(z^2+z_0^2).
+\end{equation}
+Другим переобозначением будет
+\begin{equation}
+    \frac{z}{z^2+z_0^2} = \frac{1}{z\left(
+        1 + \frac{z_0^2}{z^2}
+    \right)},
+    \hspace{1 cm}
+    R(z) \overset{\mathrm{def}}{=}  z \left(1 + \frac{z_0^2}{z^2}\right).
+\end{equation}
+Тогда исходное уравнение перепишется в виде
+\begin{equation*}
+    f(r) = A \left(
+        \frac{1}{R(z)} - i \frac{\lambda}{\pi W^2(z)}
+    \right) \exp\left(
+        - \frac{\rho^2}{W^2(z)}
+    \right) \exp\left(
+        - i k z - ik \frac{\rho^2}{2 R(z)}
+    \right).
+\end{equation*}
+Приводя к удобной форме комплексную амплитуду, получим
+\begin{equation}
+    f(r) = \frac{A}{i z_0} \frac{W_0}{W(z)} \exp\left(
+        - \frac{\rho^2}{W^2(z)}
+    \right) \exp\left(
+        - ik z - ik \frac{\rho^2}{2 R(z)} + i \zeta(z)
+    \right),
+    \hspace{0.5 cm}
+    \zeta \overset{\mathrm{def}}{=}  \arctan \frac{z}{z_0},
+    \hspace{0.5 cm} W_0 \overset{\mathrm{def}}{=} W(0).
+\end{equation}
+
+
+\subsection{Интенсивность}
+
+\begin{to_def}
+    Интенсивность есть
+    \begin{equation*}
+        I = \langle |\vc{S}| \rangle_t = \left\langle \frac{c}{4\pi} \sqrt{\varepsilon} E^2\right\rangle = \frac{cn}{4\pi} \left\langle E^2\right\rangle = \frac{cn}{8\pi} E_0^2,
+        \hspace{1 cm}
+        \left[I\right] = \frac{\text{Дж}}{\text{с}\cdot\text{см}^2} = \frac{\text{Вт}}{\text{см}^2}.
+    \end{equation*}
+\end{to_def}
+Но далее $I \sim E_0^2$ превращается $I = E^2$. Вспоминая, что всё хорошо, и $I = E E^*$, находим, что
+\begin{equation}
+    I = A_0^2 \frac{W_0^2}{W^2(z)} \exp\left(
+        - \frac{2\rho^2}{W^2(z)}
+    \right),
+\end{equation}
+и именно поэтому пучки называются Гауссовыми. Получается, что при увеличение $z$ наш пучок размывается (см. $I(\rho)$). Если мы задумаемся, что есть $I_{\text{центр}} (z) \sim 1 / z^2$. 
+
+Если нас интересует мощность, то
+\begin{equation*}
+    P = \int_{0}^{\infty} I(\rho) 2 \pi \rho \d \rho = \frac{1}{2} I_0 \pi W_0^2,
+    \hspace{0.5 cm} I_0 = A_0^2.
+\end{equation*}
+Если посчитать
+\begin{equation*}
+    \alpha = \frac{1}{P} \int_{0}^{\rho_0} I(\rho, z) 2 \pi \rho \d \rho = 1 - \exp\left(
+        - \frac{2\rho_0^2}{W^2(z)}
+    \right),
+\end{equation*}
+так, например, $\rho_0 = W(z)$ приводит к величине $\alpha \approx 0.86$, а при $\rho_0 = \frac{3}{2} W(z)$ получим $\alpha \approx 0.99$. Поэтому $W(r)$ называется \textit{радиусом (диаметром)} \textit{пучка}. 
+
+Вспомним зависимость радиуса пучка от $z$
+\begin{equation*}
+    W(z) = \sqrt{
+        \frac{\lambda z_0}{\pi} \left(
+            1 + \frac{z^2}{z_0^2}
+        \right)
+    },
+\end{equation*}
+где в $W_0 = W(0) = \sqrt{ \lambda z_0 / \pi}$, а при больших $z$ 
+\begin{equation*}
+     \lim_{z \to \infty} W(z) \approx z\, \sqrt{\frac{\lambda}{\pi z_0}},
+     \hspace{1 cm}
+     \theta = \sqrt{\frac{\lambda}{\pi z_0}} = \frac{W_0}{z_0} = 
+     \lambda \sqrt{\frac{1}{\lambda \pi z_0}} \approx \frac{\lambda}{W_0}
+     .
+ \end{equation*} 
+Также можно указать $2 z_0$ -- \textit{глубина резкости}. 
+
+Если взять гелий-неоновый лазер при длине волны $\lambda_0 = 633$ нм, получится из $2 W_0 = 2$ см, то $2 z_0 = 1$ км, а при $2 W_0 = 200$ мкм будет $2 z_0 = 1$ мм.
+
+Тот момент, что фаза набегает на $\pi$ -- эффект Гюйи. Говоря о волновом фронте,
+\begin{equation*}
+    k \left(z + \frac{\rho^2}{2R}\right) + \zeta(z) = 2 \pi m,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    z + \frac{\rho^2}{2R} = m \lambda + \frac{\zeta \lambda}{2 \pi},
+\end{equation*}
+что приводит нас к тому, что $\rho^2 / 2 R$ -- \textit{радиус кривизны}.
+
+
