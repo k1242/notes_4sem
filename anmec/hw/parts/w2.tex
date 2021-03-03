@@ -6,8 +6,8 @@
 Известно, что система описывается, как
 \begin{equation*}
     \left\{\begin{aligned}
-        \ddot{x} + \ddot{x} + x - \alpha y &= 0 \\
-        \ddot{y} + \dot{y} - \beta x + y = 0
+        \ddot{x} + \dot{x} + x - \alpha y &= 0 \\
+        \ddot{y} + \dot{y} - \beta x + y &= 0
     \end{aligned}\right.
     , \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
     A = B = E, \hspace{1 cm}
@@ -28,7 +28,7 @@
 \end{equation*}
 Раскрывая,
 \begin{equation*}
-    (\lambda^2 + \lambda + 1)^2 + \beta \alpha = 
+    (\lambda^2 + \lambda + 1)^2 - \beta \alpha = 
     \left(
         \lambda^2 + \lambda + 1 - i \gamma
     \right)
@@ -45,9 +45,9 @@
         }
     \right),
 \end{equation*}
-где введено обозначение $\gamma = \sqrt{\beta \alpha}$. По теореме об асимптотической устойчивости достаточно, чтобы $\Re \lambda_i < 0$, соответственно найдём все $\gamma$ удовлетворяющие этому условию.
+где введено обозначение $\gamma = \sqrt{-\beta \alpha}$. По теореме об асимптотической устойчивости достаточно, чтобы $\Re \lambda_i < 0$, соответственно найдём все $\gamma$ удовлетворяющие этому условию.
 
-Пусть $\alpha \cdot \beta < 0$, тогда $\gamma = i \sqrt{|\alpha \beta|}$, или
+Пусть $\alpha \cdot \beta > 0$, тогда $\gamma = i \sqrt{|\alpha \beta|}$, или
 \begin{equation*}
     \lambda_{1, 2} = \frac{1}{2}\left(
     \vphantom{\frac{1}{2}}
@@ -61,7 +61,7 @@
 где было введено обозначение $\kappa = |\alpha \beta|$.
 
 
-При $\alpha \cdot \beta > 0$ верно, что $\gamma = \kappa^2$, тогда
+При $\alpha \cdot \beta < 0$ верно, что $\gamma = \kappa^2$, тогда
 \begin{equation*}
     \Re \sqrt{z} = \Re \left(
         \sqrt{|z|} \cos \left(
