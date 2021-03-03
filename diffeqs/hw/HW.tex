@@ -640,18 +640,95 @@ $\varphi_2=y_2-y_3 = 2x$\\
     C_2(x)=x \ln x + C_2\\
     \end{cases}
 \end{equation}
-И финальный ответ: $y_o = C_1\underbrace{(\ln x + 1)}_{\varphi_1} + C_2\underbrace{ x}_{\varphi_2}  + 
+И финальный ответ: $y_o = C_1\underbrace{(\ln x + 1)}_{\varphi_1} + C_2\underbrace{x}_{\varphi_2}  + 
  - x^2/2+x^2 \ln x /2$
 \subsection{С. \S9: 53 }
-ну тут алгоритм +- понятен я попозже сделаю...
+Решить уравнение \begin{equation}
+    x(x+1)y'' + (4x+2)y' + 2y = 6(x+1)
+\end{equation}
+Подберём частное решение $\varphi_1 = \frac{1}{x}$. Можно записать формулу Остроградского - Лиувилля:
+\begin{equation}
+    \frac{d}{dx} \left( \frac{y_o}{1/x} \right) = \frac{C}{1/x^2} \exp \left( - \int  \frac{4x+2}{x^2+x} dx\right) 
+    \Rightarrow 
+    \frac{d}{dx} \left( \frac{y_o}{1/x} \right) = \frac{C}{1+x^2}
+    \Rightarrow
+    y_o = C_1 \underbrace{\frac{1}{x}}_{\varphi_1} + C_2\underbrace{\frac{1}{x^2+x}}_{\varphi_2}        
+\end{equation}
+    Далее Воспользуемся методом вариации постоянной.
+    \begin{equation} \label{c953}
+        \begin{cases}
+            C_1'(x) \varphi_1 + C_2'(x) \varphi_2 = 0 \\
+            C_1'(x) \varphi_1' + C_2'(x) \varphi_2' = \frac{6(x+1)}{x (x+1)}
+        \end{cases}
+        \Rightarrow
+        \begin{cases}
+            C_1'(x) + C_2'(x) (x+1) = 0 \\
+            C_2'(x) \left( \frac{2}{(x+1)^2} - \frac{2(x+1)}{x^3} \right) - C_2'(x) \frac{1}{x^2} = \frac{6}{x}
+        \end{cases}
+    \end{equation}
+    Решая \ref{c953} и подставляя $C_1(x)$ и $C_2(x)$ получаем ответ: $y=\frac{C_1}{x}+\frac{C_2}{x(x+1)}+x+2$
+
+
 \subsection{С. \S9: 64 }
-ну тут алгоритм +- понятен я попозже сделаю...
+
+Решить уравнение 
+\begin{equation}
+    x^2(x-3)y'' - x^2 (x-2)y' + 2(x^2-3x +3)y = (x-3)^2
+\end{equation}
+Подберём частное решение $\varphi_1 = x^2$. Можно записать формулу Остроградского - Лиувилля:
+\begin{equation}
+    \frac{d}{dx} \left( \frac{y_o}{x^2} \right) = \frac{C}{x^4} \exp \left( -\int  \frac{- x^2 (x-2)}{x^2(x-3)} dx\right) 
+    \Rightarrow
+    y_o = C_1 \underbrace{x^2}_{\varphi_1} + C_2\underbrace{\frac{\exp(x)}{x}}_{\varphi_2}        
+\end{equation}
+    Далее Воспользуемся методом вариации постоянной.
+    \begin{equation} \label{c964}
+        \begin{cases}
+            C_1'(x) \varphi_1 + C_2'(x) \varphi_2 = 0 \\
+            C_1'(x) \varphi_1' + C_2'(x) \varphi_2' = \frac{(x-3)^2}{x^2 (x-3)}
+        \end{cases}
+        \Rightarrow
+        \begin{cases}
+            C_1'(x) x^2 + C_2'(x) \exp(x)/x = 0 \\
+            2 C_1'(x) x + C_2' \frac{e^x(x^2-2x+2)}{x^3} = \frac{x-3}{x^2}
+        \end{cases}
+    \end{equation}
+    Решая \ref{c964} и подставляя $C_1(x)$ и $C_2(x)$ получаем ответ: $y=C_1 x^2 + C_2 \frac{\exp(x)}{x}-1/x+1/2$
+
+
 \subsection{С. \S9: 68(а)}
-попооозже
+Поскольку общее решение ОДУ всегда линейно зависимо со своими 2 базисными, вронскеан от $y_o$ $\varphi_1$ $\varphi_2$ всегда ноль. таким образом Однородное равнение получим из выражения:
+\begin{equation}
+\begin{vmatrix}
+y_o  && x && x^2+1 \\
+y_o' && 1 && 2x \\
+y_o'' && 0 && 2 \\
+\end{vmatrix}
+=0    \Rightarrow
+y (x^2-1)'' - 2x y' + 2y = 1-x^2
+\end{equation}
+Базисные решения мы уже знаем, осталось воспользоваться методом вариации постоянной.
+\begin{equation}
+    \begin{cases}
+        C_1(x)'x+C_2(x)'(x^2+1)=0 \\
+        C_1(x)'+ 2C_2(x)'x=\frac{1-x^2}{x^2-1}
+    \end{cases}
+    \Rightarrow
+    \begin{cases}
+        C_1(x)'=-C_2(x)'(x+1/x) \\
+        C_2(x)' \frac{x^2-1}{x}=-1
+    \end{cases}
+    \Rightarrow
+    \begin{cases}
+    C_2(x)=-1/2 \ln (1-x^2) + C_2\\
+    C_1(x)=x+\ln(|\frac{1-x}{1+x}|)
+    \end{cases}
+\end{equation}
+Откуда получим ответ: $y=x^2 + x\ln|\frac{1-x}{1+x}| - \frac{1}{2} (x^2+1) \ln|1-x^2|  +  C_1 x + C_2 (x^2+1)$
 
 \subsection{Т3} 
 \begin{proof}
-Предположим, существуют линейно независимые $y_1$ , $y_2$ ограниченные вместе со своими производными. Тогда, в любой положительной окрестности 0, вронскиан этих функций не 0, кроме того он обязан быть ограничен, поскольку ограничены сами функции и их первые производные. Для любой положительной $\varepsilon$-окрестности точки 0 внутри неё возьмём некоторую точку $\delta$. Т.к. вронскиан не ноль, положим $W(\varepsilon)=W_0$ Запишем формулу Лиувилля - Остроградского:
+Предположим, существуют линейно независимые $y_1$, $y_2$ ограниченные вместе со своими производными. Тогда, в любой положительной окрестности 0, вронскиан этих функций не 0, кроме того он обязан быть ограничен, поскольку ограничены сами функции и их первые производные. Для любой положительной $\varepsilon$-окрестности точки 0 внутри неё возьмём некоторую точку $\delta$. Т.к. вронскиан не ноль, положим $W(\varepsilon)=W_0$. Запишем формулу Лиувилля - Остроградского:
 \begin{equation}
     W(\delta)=W_0 \exp \left(- \int^{\delta}_{\varepsilon} \frac{x}{x^2} \, dx  \right) = W_0 \frac{\varepsilon}{\delta}
 \end{equation}
