@@ -46,7 +46,7 @@ g'(x_0)=h'(x_0)=y_0
 \begin{equation}
 f(y',y,x)=0
 \end{equation}
-По теореме о существовании и единственности решения ЗК у данного уравнения существует ровно одно решение с начальным условием $y(0)=y_0$ Это означает что h(x) и g(x) совпадает, что противоречит условии о различности. 
+По теореме о существовании и единственности решения ЗК у данного уравнения существует ровно одно решение с начальным условием $y(x_0)=y_0$ Это означает что h(x) и g(x) совпадает, что противоречит условии о различности. 
 \end{proof}
 б) Нет. Даказательство полностью аналогично, кроме использования второго начального условия.  
 \begin{proof} Предположим существуют 2 различные интегральные кривые g(x), h(x) которые касаются в точке ($x_0$,$y_0$). Тогда:
@@ -149,14 +149,14 @@ y'''=0
 Необходимое условие дискриминантной кривой:
 \begin{equation}
     \begin{cases}
-    \frac{\partial}{\partial p}(2 x y^2 p^2 - y^3 p + 1) = 0\\
-    2 x y^2 p^2 - y^3 p + 1 = 0\\
+    \frac{\partial}{\partial p}(2 x y^2/p^2 - y^3 /p + 1) = 0\\
+    2 x y^2/ p^2 - y^3 /p + 1 = 0\\
     \end{cases}
 \end{equation}
 Откуда:
 \begin{equation}
     \begin{cases}
-    p=\frac{y}{4 x}\\
+    p=\frac{y^3}{2}\\
     8x=y^4\\
     \end{cases}
 \end{equation}
@@ -640,18 +640,95 @@ $\varphi_2=y_2-y_3 = 2x$\\
     C_2(x)=x \ln x + C_2\\
     \end{cases}
 \end{equation}
-И финальный ответ: $y_o = C_1\underbrace{(\ln x + 1)}_{\varphi_1} + C_2\underbrace{ x}_{\varphi_2}  + 
+И финальный ответ: $y_o = C_1\underbrace{(\ln x + 1)}_{\varphi_1} + C_2\underbrace{x}_{\varphi_2}  + 
  - x^2/2+x^2 \ln x /2$
 \subsection{С. \S9: 53 }
-ну тут алгоритм +- понятен я попозже сделаю...
+Решить уравнение \begin{equation}
+    x(x+1)y'' + (4x+2)y' + 2y = 6(x+1)
+\end{equation}
+Подберём частное решение $\varphi_1 = \frac{1}{x}$. Можно записать формулу Остроградского - Лиувилля:
+\begin{equation}
+    \frac{d}{dx} \left( \frac{y_o}{1/x} \right) = \frac{C}{1/x^2} \exp \left( - \int  \frac{4x+2}{x^2+x} dx\right) 
+    \Rightarrow 
+    \frac{d}{dx} \left( \frac{y_o}{1/x} \right) = \frac{C}{1+x^2}
+    \Rightarrow
+    y_o = C_1 \underbrace{\frac{1}{x}}_{\varphi_1} + C_2\underbrace{\frac{1}{x^2+x}}_{\varphi_2}        
+\end{equation}
+    Далее Воспользуемся методом вариации постоянной.
+    \begin{equation} \label{c953}
+        \begin{cases}
+            C_1'(x) \varphi_1 + C_2'(x) \varphi_2 = 0 \\
+            C_1'(x) \varphi_1' + C_2'(x) \varphi_2' = \frac{6(x+1)}{x (x+1)}
+        \end{cases}
+        \Rightarrow
+        \begin{cases}
+            C_1'(x) + C_2'(x) (x+1) = 0 \\
+            C_2'(x) \left( \frac{2}{(x+1)^2} - \frac{2(x+1)}{x^3} \right) - C_2'(x) \frac{1}{x^2} = \frac{6}{x}
+        \end{cases}
+    \end{equation}
+    Решая \ref{c953} и подставляя $C_1(x)$ и $C_2(x)$ получаем ответ: $y=\frac{C_1}{x}+\frac{C_2}{x(x+1)}+x+2$
+
+
 \subsection{С. \S9: 64 }
-ну тут алгоритм +- понятен я попозже сделаю...
+
+Решить уравнение 
+\begin{equation}
+    x^2(x-3)y'' - x^2 (x-2)y' + 2(x^2-3x +3)y = (x-3)^2
+\end{equation}
+Подберём частное решение $\varphi_1 = x^2$. Можно записать формулу Остроградского - Лиувилля:
+\begin{equation}
+    \frac{d}{dx} \left( \frac{y_o}{x^2} \right) = \frac{C}{x^4} \exp \left( -\int  \frac{- x^2 (x-2)}{x^2(x-3)} dx\right) 
+    \Rightarrow
+    y_o = C_1 \underbrace{x^2}_{\varphi_1} + C_2\underbrace{\frac{\exp(x)}{x}}_{\varphi_2}        
+\end{equation}
+    Далее Воспользуемся методом вариации постоянной.
+    \begin{equation} \label{c964}
+        \begin{cases}
+            C_1'(x) \varphi_1 + C_2'(x) \varphi_2 = 0 \\
+            C_1'(x) \varphi_1' + C_2'(x) \varphi_2' = \frac{(x-3)^2}{x^2 (x-3)}
+        \end{cases}
+        \Rightarrow
+        \begin{cases}
+            C_1'(x) x^2 + C_2'(x) \exp(x)/x = 0 \\
+            2 C_1'(x) x + C_2' \frac{e^x(x^2-2x+2)}{x^3} = \frac{x-3}{x^2}
+        \end{cases}
+    \end{equation}
+    Решая \ref{c964} и подставляя $C_1(x)$ и $C_2(x)$ получаем ответ: $y=C_1 x^2 + C_2 \frac{\exp(x)}{x}-1/x+1/2$
+
+
 \subsection{С. \S9: 68(а)}
-попооозже
+Поскольку общее решение ОДУ всегда линейно зависимо со своими 2 базисными, вронскеан от $y_o$ $\varphi_1$ $\varphi_2$ всегда ноль. таким образом Однородное равнение получим из выражения:
+\begin{equation}
+\begin{vmatrix}
+y_o  && x && x^2+1 \\
+y_o' && 1 && 2x \\
+y_o'' && 0 && 2 \\
+\end{vmatrix}
+=0    \Rightarrow
+y (x^2-1)'' - 2x y' + 2y = 1-x^2
+\end{equation}
+Базисные решения мы уже знаем, осталось воспользоваться методом вариации постоянной.
+\begin{equation}
+    \begin{cases}
+        C_1(x)'x+C_2(x)'(x^2+1)=0 \\
+        C_1(x)'+ 2C_2(x)'x=\frac{1-x^2}{x^2-1}
+    \end{cases}
+    \Rightarrow
+    \begin{cases}
+        C_1(x)'=-C_2(x)'(x+1/x) \\
+        C_2(x)' \frac{x^2-1}{x}=-1
+    \end{cases}
+    \Rightarrow
+    \begin{cases}
+    C_2(x)=-1/2 \ln (1-x^2) + C_2\\
+    C_1(x)=x+\ln(|\frac{1-x}{1+x}|)
+    \end{cases}
+\end{equation}
+Откуда получим ответ: $y=x^2 + x\ln|\frac{1-x}{1+x}| - \frac{1}{2} (x^2+1) \ln|1-x^2|  +  C_1 x + C_2 (x^2+1)$
 
 \subsection{Т3} 
 \begin{proof}
-Предположим, существуют линейно независимые $y_1$ , $y_2$ ограниченные вместе со своими производными. Тогда, в любой положительной окрестности 0, вронскиан этих функций не 0, кроме того он обязан быть ограничен, поскольку ограничены сами функции и их первые производные. Для любой положительной $\varepsilon$-окрестности точки 0 внутри неё возьмём некоторую точку $\delta$. Т.к. вронскиан не ноль, положим $W(\varepsilon)=W_0$ Запишем формулу Лиувилля - Остроградского:
+Предположим, существуют линейно независимые $y_1$, $y_2$ ограниченные вместе со своими производными. Тогда, в любой положительной окрестности 0, вронскиан этих функций не 0, кроме того он обязан быть ограничен, поскольку ограничены сами функции и их первые производные. Для любой положительной $\varepsilon$-окрестности точки 0 внутри неё возьмём некоторую точку $\delta$. Т.к. вронскиан не ноль, положим $W(\varepsilon)=W_0$. Запишем формулу Лиувилля - Остроградского:
 \begin{equation}
     W(\delta)=W_0 \exp \left(- \int^{\delta}_{\varepsilon} \frac{x}{x^2} \, dx  \right) = W_0 \frac{\varepsilon}{\delta}
 \end{equation}
@@ -659,7 +736,446 @@ $\varphi_2=y_2-y_3 = 2x$\\
 $\forall  \varepsilon > 0 \forall M \exists \delta =  \frac{\varepsilon W(\varepsilon)}{2|M|}: W(\delta)>|M|$
 А раз вронскиан не ограничен, чего бы производным и функциям оказаться ограниченными?
 \end{proof}
+\section{Теорема Штурма}
+Напомним теорему Штурма: Пусть есть $y''+q(x)y=0$ и $z''+Q(x)z=0$ где $Q(x), q(x) \in C(I)$ такие что $\forall x \in I \rightarrow Q(x) \geq q(x)$ тогда между любыми последовательными нулями $x_1 , x_2$ некоторого нетривиального решения $y(x)$ тогда: $\forall$ нетривиальных решений $z(x)$ $\exists$ нуль $x_0$ такой что $x_0 \in (x_1,x_2)$ или существуют нули (решения $z(x)$ ) $x_1,x_2$
+\subsection{Ф.: 723}
+Доказать что все решения уравнения
+\begin{equation}\label{ф723}
+ y''+q(x)y=0, q \leq 0, y(x_0)>0,y'(x_0)>0
+\end{equation}
+остаюстя положительными при всех $x>x_0$
+\begin{proof}
+В качестве $Q(x)$ в теореме возьмём $Q(x)=0 \geq q(x)$. в качестве нетривиального решения $z(x)=1$ Уже очевидно, что  2 нулей у  \ref{ф723} быть не может (если бы было 2, между ними любыми лежал ноль $z(x)$ которого, очевидно нет).
+Теперь предположим, что у решения  \ref{ф723} существует корень $x_1>x_0$ Тогда $\forall s \in (x_1,x_0) \rightarrow y(s)>0$. Кроме того это корень кратности 1 (можно составить ЗК для $y=0$, $y'=0$, тогда решением будет тождественный ноль $y=0$, а раз решение единственно то корень кратности 2 только тождественный ноль). Тогда (поскольку $x_1>x_0$ по предположению) будет выполняться $y'(x_1)<0$ (неравенство строгое, т.к. корень кратности 1). С другой стороны $y'(x_1)= \int^{x_1}_{x_0} \underbrace{y''(x)}_{-y q(x) \geq 0} dx + \underbrace{y'(x_0)}_{>0} \geq 0$ Противоречие. 
+\end{proof}
+\subsection{Ф.: 725*}
+\textcolor[rgb]{1,1,1}{Если честно, это просто копипаста из конспекта Ильи Викторовича, но я затехал заново. Казалось бы, зачем?}
+Доказать, что если на $[x_1,x_2]$ $q(x)\leq 0$, то краевая задача 
+\begin{equation}
+y''+q(x)y=0 ;   y(x_1)=a,y(x_2)=b
+\end{equation}
+имеет единственное решение для любых действительных $a$ и $b$ и $x_1 \neq x_2$.
+\begin{proof}
+    Единственность:\\
+Предположим что данная краевая задача имеет два различных решения $y_1(x),y_2(x)$. Рассмотрим функцию $z(x)=y_1(x)-y_2(x)$. Она отлична от тождественного нуля и является решением краевой задачи $y''+q(x)y=0 ;   y(x_1)=0,y(x_2)=0$. Но любое нетривиальное решение уравнения не может иметь более одного нуля по следствию из теоремы Штурма. Противоречие.\\
+
+    Существование:\\
+Для уравнения $y'' + q(x)=0$ поставим 2 З.К.\\
+1)$y(x_1)=a,y'(x_1)=0$ Это решение существует (и единственно). Обозначим его как $y_1(x)$\\
+2)$y(x_1)=a,y'(x_1)=1$ Это решение существует (и единственно). Обозначим его как $y_2(x)$\\
+Заметим, что $y_1(x_2) \neq y_2(x_2)$. Т.к. инача бы функция $z=y_1-y_2$ была бы решением кравевой задачи $y''+q(x)y=0;   y(x_1)=0,y(x_2)=0$ , что невозможно.
+Рассмотрим функцию $s(x)=k y_1(x)+(1-k) y_2(x)$ она является решением уравнения $y''+q(x)y=0 $ и для любых $k$ верно $s(x_1) = a$.
+Тогда можно подобрать такое $k$, что $s(x_2)=b$. Это и будет требуемым решением. $k=\frac{b-y_2(x_2)}{y_1(x_2)-y_2(x_2)}$.
+\end{proof}
+\subsection{Ф.: 726}
+Я не очень понял смысл задачи. Просто решаем уравнение, получаем: $y(x)=A \cos(\sqrt m x + \varphi)$ Расстояние между нулями, соответсвенно $\rho = \frac{\pi}{\sqrt m}$ На отрезке $[a,b]$ может содержаться $ N = \lfloor \frac{a-b}{\rho} \rfloor + 1$. Ну или  $N = \lfloor \frac{a-b}{\rho} \rfloor$
+\subsection{C. \S10: 2}
+Доказать что уравнение 
+\begin{equation}
+    y''+\frac{1}{4(x^2+1)}=0
+\end{equation}
+Имеет лишь конечное число нулей на $[0,+\infty)$. на промежутке $[1,+\infty)$ Оценим уравнением $y''+\frac{y}{4 x^2}=0$. Заменой $x=e^t$ (надо заметить, что эта замена не выводит нас из интересующего промежутка, так что всё законно) получаем $4y''-4y'+y=0$ у которого конечное число нулей $y(x) = c_1 \sqrt x + c_2 \sqrt x \log(x)$. Значит по теореме Штурма и у исходного уравнения конечное число нулей. Но это не всё, поскольку точка 0 включена, оценим на промежутке $[0,1)$ уравнением 
+$y''+y=0$. Там решение имеет ненулевое расстояние между нулями, а значит и число нулей на промежутке конечно $\Rightarrow$ конечно число нулей исходного уравнения. Итого: на $[0,1)$ конечное число нулей, на $[1,+\inf)$ конечное число нулей, значит всего нулей конечно.
+\subsection{C. \S10: 3}
+Доказать что уравнение 
+\begin{equation}
+    y''+\frac{1}{4(x^2+1)}=0
+\end{equation}
+Имеет бесконечное число нулей на $[0,+\infty)$. Дабы не было бед с участком $[0,1]$, мы его выкинем (если бесконечно и без него, зачем он нужен?) Тогда можно оценить уравнением $y''+\frac{y}{2x^2}=0$. Где $\frac{1}{2x^2} \leq \frac{1}{1+x^2}$ Заменой $x=e^t$ получаем $2y''-2y'+y=0$. Решением будет $y(x)=c_1 \sqrt{x} \sin \left(\frac{\log (x)}{2}\right)+c_2 \sqrt{x} \cos \left(\frac{\log (x)}{2}\right)$ у которого, очевидно бесконечное число нулей. По теореме Штурма между каждыми двумя его решениями будет по крайней мере 1 нуль исходного, а значит нулей исходного также бесконечно много на $[1,+\infty)$ 
+\subsection{C. \S10: 6}
+Доказать что уравнение 
+\begin{equation}
+    y''+x^2 y' +(x+4)y=0
+\end{equation}
+Имеет не более 6(шести) нулей.\\
+Ну работать так нам неудобно. Приведём уравнение к виду: $y''+q(x)y=0$ заменой $y=u z$ получим $u''z+z''u+x^2u'z+(x+4) u z + \underbrace{z'(2u'+x^2u)}_{=0}=0$. Откуда $u=\exp{-\frac{x^3}{6}}$ Это очень хорошо, поскольку число нулей функции $z(x)$ совпадает с числом нулей $y=z u$. И итоговое уравнение получается: $z''+z(-\frac{1}{4} \left(x^4-16\right))=0$ Довольно очевидно, что на интервалах $(-\infty,-2)$, $(+2,+\infty)$ $q(x)<0$ а значит на каждом из них не более 1 нуля. На интервале $[-2,2]$ можно оценить $Q=4$. Тогда на нём не более 3 нулей (т.к. может 2  нуля у решений $y''+4y=0$, а число нулей исходного по теореме Штурма превосходит не более чем на 1). Итого: 1+1+3 - пять нулей.
+\subsection{Т4}
+Доказать что уравнение 
+\begin{equation}
+    y''-2x y' +y=0
+\end{equation}
+Заменой $y=uz$ приведём к виду $u=\exp{x^2/2}$ и получим $z''+(2-x^2)z=0$. Аналогично предыдущему номеру будет не более 4 нулей (2 на промежутках $(-\infty, -\sqrt2)$ $(\sqrt2,+\infty)$, не более 2 на $[-\sqrt 2, \sqrt 2]$)
+\subsection{T5}
+Заменой $y=uz$ получаем $u=\sqrt{\frac{1}{x}}$; $z''+z \left( \frac{1-\nu^2}{4x^2}+\frac{1}{4} \right)=0$. \\
+а) Для достаточно больших х, можно оценить $\left( \frac{1-\nu^2}{4x^2}+\frac{1}{4} \right) \geq 1/5$. А значит число нулей исходного уравнения не менее числа нулей $y''+y/3=0$ минус 1. Ну т.е. бесконечность (при больших иксах). Важно заметить, что тут доказывается при больших иксах, и таким образом отрезок $[0,1]$ можно выкинуть из рассмотрения. Это понадобится далее.\\
+б)Воспользуемся следствием из теоремы Штурма: если $q(x)$ ограничего сверху $M$ а снизу $m$ тогда расстояние между соседними нулями $\rho \in [\frac{2 \pi}{\sqrt M}, \frac{2 \pi}{\sqrt m}]$.  Обозначим $\frac{1-\nu^2}{4}=b$ тогда для достаточно больших $x$: $\frac{1}{4}-\frac{|b|}{N} < \left( \frac{b}{x^2}+\frac{1}{4} \right)< \frac{1}{4}+\frac{|b|}{N}; \forall N$. В целом $N$ не зависит от $x$ но верным неравенство будет только с некоторого $x_0$. Тогда устремляя $N \rightarrow \infty$ расстояние между корнями будет стремиться к $\pi$. Надо только показать что мы имеем право устремлять $N \rightarrow \infty$ при условии $n \rightarrow \infty$. Что эквивалентно доказательству $n \rightarrow \infty \Rightarrow x \rightarrow \infty$. Чтобы доказать что координаты нулей уходят на бесконечность, а не стремятся к какой-нибудь константе, достаточно показать что $\rho \geq h$ где $h$ - какая-то ненулевая константа. Опять-таки воспользуемся следствием из теоремы Штурма. $\left( \frac{1-\nu^2}{4x^2}+\frac{1}{4} \right) \leq 1 + 1+\nu^2, \forall x>1$ Здесь вспомним, что бесконечное число иксов было с момента $x>1$ и такая оценка справедлива. Тогда и вправду расстояния пежду последовательными корнями ненулевое и при стремлении номера корня к бесконечности его абсцисса стремится к бесконечности.
+\section{Исследвание поведения фазовых траекторий}
+
+\textcolor[rgb]{1,1,1}{ \text{https://vk.com/alex\_dvur не уверен, что нашёл девушку, если он всё-таки Вас нашёл, напишите ему об этом. Умеет техать}}
+\subsection{Ф.: 964}
+Исследуем $y'=\frac{x+4y}{2x+3y}$ Тогда рассмотрим это как систему 
+\begin{equation}
+\begin{cases}
+        \dot{y}=x+4y\\
+        \dot{x}=2x+3y\\
+    \end{cases}    
+\end{equation}
+Найдём собственные значения и собственные векторы матрицы $A=\begin{pmatrix}2 && 3 \\ 1 && 4 \end{pmatrix}$:\\
+ $\lambda_1= 5,h_1 = \begin{pmatrix}1  \\  1 \end{pmatrix} $; $\lambda_2= 1,h_2 = \begin{pmatrix} -3  \\  1 \end{pmatrix} $. Поскольку корни вещественные больше 0, п.р. - устойчивый узел. Построим фазовый портрет.
+ \begin{figure}[ht]
+\center{\includegraphics[width=0.8\linewidth]{964.png}}
+\caption{Фазовый портрет Ф.: 964 (устойчивый узел)}
+\label{964}
+\end{figure}
+
+\subsection{Ф.: 972*}
+\begin{equation}
+\begin{cases}
+        \dot{x}=2x-y\\
+        \dot{y}=x\\
+    \end{cases}    
+\end{equation}
+Найдём собственные значения и собственные векторы матрицы $A=\begin{pmatrix}2 && -1 \\ 1 && 0 \end{pmatrix}$:\\
+ $\lambda_1= 1,h_1 = \begin{pmatrix}1  \\  1 \end{pmatrix} $; $\lambda_2= 1,h_2 = h_1$. Нет базиса из собственных векторов. Поэтому ищем присоединённый: $h_{11} =\begin{pmatrix}1  \\  0 \end{pmatrix} $ Решением уравнения будет: $\vec x= C_1 \vec h_1 \exp{t}+C_2 ( \vec h_1 t + \vec h_{11})\exp{t}$. Положение равноевесия - неустойчивый вырожденный узел. 
+ \begin{figure}[ht]
+\center{\includegraphics[width=0.8\linewidth]{972.png}}
+\caption{Фазовый портрет Ф.: 972 (неустойчивый вырожденный узел) }
+\label{972}
+\end{figure}
 
 
+\subsection{Ф.: 973}
+Исследуем систему 
+\begin{equation}
+\begin{cases}
+        \dot{x}=x+3y\\
+        \dot{y}=-6x-5y\\
+    \end{cases}    
+\end{equation}
+Найдём собственные значения и собственные векторы матрицы $A=\begin{pmatrix}1 && 3\\ -6 && -5 \end{pmatrix}$:\\
+ $\lambda_1= -2+3i,h_1 = \begin{pmatrix} -1-i  \\  2 \end{pmatrix} $; $\lambda_2= -2-3i,h_2 = \begin{pmatrix} -1+i  \\  2 \end{pmatrix} $. Поскольку корни комплексные и $\Re{\lambda_{12}}<0$ , п.р. - устойчивый фокус. Построим фазовый портрет.
+ \begin{figure}[ht]
+\center{\includegraphics[width=0.8\linewidth]{973.png}}
+\caption{Фазовый портрет Ф.: 973 (устойчивый фокус)}
+\label{973}
+\end{figure}
+\textcolor[rgb]{1,1,1}{надо сказать, тут мешке сплохело и оно чутка корявое, надеюсь никто не почувствует слишком сильной эстетической боли}
 
+
+\subsection{Ф.: 974}
+Исследуем систему 
+\begin{equation}
+\begin{cases}
+        \dot{x}=x\\
+        \dot{y}=2x-y\\
+    \end{cases}    
+\end{equation}
+Найдём собственные значения и собственные векторы матрицы $A=\begin{pmatrix}1 && 0 \\ 2 && -1 \end{pmatrix}$:\\
+ $\lambda_1= -1,h_1 = \begin{pmatrix} 0  \\  1 \end{pmatrix} $; $\lambda_2= 1,h_2 = \begin{pmatrix} \pi  \\  \pi \end{pmatrix} $. Поскольку корни действительные и разных знаков, п.р. - седло. Построим фазовый портрет.
+ \begin{figure}[ht]
+\center{\includegraphics[width=0.8\linewidth]{974.png}}
+\caption{Фазовый портрет Ф.: 974 (седло)}
+\label{974}
+\end{figure}\\
+
+\subsection{Ф.: 975}
+Исследуем систему 
+\begin{equation}
+\begin{cases}
+        \dot{x}=-2x-5y\\
+        \dot{y}=2x+2y\\
+    \end{cases}    
+\end{equation}
+Найдём собственные значения и собственные векторы матрицы $A=\begin{pmatrix}-2 && -5 \\ 2 && 2 \end{pmatrix}$:\\
+ $\lambda_1= i\sqrt6,h_1 = \begin{pmatrix} \frac{1}{2} \left(-2+i \sqrt{6}\right)  \\  1 \end{pmatrix} $; $\lambda_2= -i\sqrt6,h_2 = \begin{pmatrix} \frac{1}{2} \left(-2-i \sqrt{6}\right)  \\  1 \end{pmatrix} $. Поскольку корни комплексные и $\Re{\lambda_{12}}=0$ , п.р. - центр. Построим фазовый портрет.
+ \begin{figure}[ht]
+\center{\includegraphics[width=0.8\linewidth]{975.png}}
+\caption{Фазовый портрет Ф.: 975 (центр)}
+\label{975}
+\end{figure}\\
+
+\subsection{Ф.: 978}
+Исследуем систему 
+\begin{equation}
+\begin{cases}
+        \dot{x}=-2x+y\\
+        \dot{y}=-4x+2y\\
+    \end{cases}    
+\end{equation}
+Найдём собственные значения и собственные векторы матрицы $A=\begin{pmatrix}-2 && 1 \\ -4 && 2 \end{pmatrix}$:\\
+ $\lambda_1=0
+ h_1 = \begin{pmatrix} 1  \\  2 \end{pmatrix} $; 
+ $\lambda_2= 0,
+ h_2 $ не существует, так что найдём присоединённый. \\
+ $h_{11}= \begin{pmatrix} 0  \\  1 \end{pmatrix}$
+ Я вообще без понятия, как называть п.р. с двумя нулевыми лямбдами. Но написать решение и нарисовать его можно. $\vec x = c_1 \vec h_1 + C_2 (\vec h_1 t + \vec h_{11})$
+ \begin{figure}[ht]
+\center{\includegraphics[width=0.8\linewidth]{978.png}}
+\caption{Фазовый портрет Ф.: 978 (непойми что)}
+\label{978}
+\end{figure}\\
+
+\subsection{С. \S13: 9}
+Исследуем систему 
+\begin{equation}
+\begin{cases}
+        \dot{x}=x^2+x+2y^2-2\\
+        \dot{y}=x+y^2\\
+    \end{cases}    
+\end{equation}
+Найдем точки равновесия, приравняв $\dot{x}=0; \dot{y}=0$ можем получить что точками равновесия будут: $p_1=(-1,1),p_2=(-1,-1)$\\
+1)Лианеризуем (лианеризируем? лианеризовываем?) в $p_1$:\\
+$x=u-1,y=v+1$:
+\begin{equation}
+\begin{cases}
+        \dot{u}=-u+4v+o(u^2+v^2)\\
+        \dot{v}=u+2v+o(v^2+u^2)\\
+    \end{cases}    
+\end{equation}
+Найдём собственные значения и собственные векторы матрицы $A=\begin{pmatrix}-1 && 4 \\ 1 && 2 \end{pmatrix}$:\\
+ $\lambda_1=3,
+ h_1 = \begin{pmatrix} 1  \\  1 \end{pmatrix} $; 
+ $\lambda_2= -2,
+ h_2 = \begin{pmatrix} -4  \\  1 \end{pmatrix} $. 
+ Поскольку корни действительные и разных знаков, п.р. - седло \ref{13.9.1}
+ \begin{figure}[ht]
+\center{\includegraphics[width=0.8\linewidth]{13.9.1.png}}
+\caption{Фазовый портрет С. \S13: 9 $(-1,1)$ (седло)}
+\label{13.9.1}
+\end{figure}\\
+2)Лиан-что-то в $p_2$:\\
+$x=u-1,y=v-1$:
+\begin{equation}
+\begin{cases}
+        \dot{u}=-u-4v+o(u^2+v^2)\\
+        \dot{v}=u-2v+o(v^2+u^2)\\
+    \end{cases}    
+\end{equation}
+Найдём собственные значения и собственные векторы матрицы $A=\begin{pmatrix} -1 && -4 \\ 1 && -2 \end{pmatrix}$:\\
+ $\lambda_1=\frac{1}{2} \left(-3+i \sqrt{15}\right),
+ h_1 = \begin{pmatrix} \frac{1}{2} i \left(\sqrt{15}-i\right) \\  1 \end{pmatrix} $; 
+ $\lambda_2= \frac{1}{2}\left(-3-i \sqrt{15}\right),
+ h_2 = \begin{pmatrix} -\frac{1}{2} i \left(\sqrt{15}+i\right)  \\  1 \end{pmatrix} $. 
+ Поскольку корни комплексные и $\Re \lambda_{12}<0$, п.р. - устойчивый фокус \ref{13.9.2}
+ \begin{figure}[ht]
+\center{\includegraphics[width=0.8\linewidth]{13.9.2.png}}
+\caption{Фазовый портрет С. \S13: 9 $(-1,-1)$ (устойчивый фокус)}
+\label{13.9.2}
+\end{figure}\\
+
+А теперь построим весь фазовый портрет просто потому что можем \ref{13.9.3}.\\
+
+\begin{figure}[ht]
+\center{\includegraphics[width=0.8\linewidth]{13.9.3.png}}
+\caption{Фазовый портрет С. \S13: 9  (просто красоты ради)}
+\label{13.9.3}
+\end{figure}
+
+\subsection{С. \S13: 15}
+Исследуем систему 
+\begin{equation}
+\begin{cases}
+        \dot{x}=x^2-y\\
+        \dot{y}=\ln{(3x^2-1)}-\ln{2}\\
+    \end{cases}    
+\end{equation}
+Найдем точки равновесия, приравняв $\dot{x}=0; \dot{y}=0$ можем получить что точками равновесия будут: $p_1=(-1,1),p_2=(1,1)$\\
+
+1)Лиан-что-то в $p_1$:\\
+$x=u-1,y=v+1$:
+\begin{equation}
+\begin{cases}
+        \dot{u}=-2u-v+o(u^2+v^2)\\
+        \dot{v}=-3u+o(v^2)\\
+    \end{cases}    
+\end{equation}
+Найдём собственные значения и собственные векторы матрицы $A=\begin{pmatrix} -2 && -1 \\ -3 && 0 \end{pmatrix}$:\\
+ $\lambda_1=-3,
+ h_1 = \begin{pmatrix} 1 \\  1 \end{pmatrix} $; 
+ $\lambda_2= 1,
+ h_2 = \begin{pmatrix} -1  \\  3 \end{pmatrix} $. 
+ Поскольку корни действительные разных знаков, п.р. - седло \ref{13.15.1}
+ \begin{figure}[ht]
+\center{\includegraphics[width=0.8\linewidth]{13.15.1.png}}
+\caption{Фазовый портрет С. \S13: 9 $(-1,1)$ (седло)}
+\label{13.15.1}
+\end{figure}\\
+
+2)Лиан-что-то в $p_2$:\\
+$x=u+1,y=v+1$:
+\begin{equation}
+\begin{cases}
+        \dot{u}=2u-v+o(u^2+v^2)\\
+        \dot{v}=3u+o(v^2+u^2)\\
+    \end{cases}    
+\end{equation}
+Найдём собственные значения и собственные векторы матрицы $A=\begin{pmatrix}2 && -1 \\ 3 && 0 \end{pmatrix}$:\\
+ $\lambda_1=1+i \sqrt{2},
+ h_1 = \begin{pmatrix} \frac{1}{3} i \left(\sqrt{2}-i\right) \\  1 \end{pmatrix} $; 
+ $\lambda_2= 1-i \sqrt{2}   ,
+ h_2 = \begin{pmatrix} -\frac{1}{3} i \left(\sqrt{2}+i\right) \\  1 \end{pmatrix} $. 
+ Поскольку корни комлексные и $\Re \lambda_{12}>0$, п.р. - неустойчивый фокус \ref{13.15.2}
+ \begin{figure}[ht]
+\center{\includegraphics[width=0.8\linewidth]{13.15.2.png}}
+\caption{Фазовый портрет С. \S13: 15 $(1,1)$ (неустойчивый фокус)}
+\label{13.15.2}
+\end{figure}\\
+
+
+\subsection{С. \S13: 39}
+Исследуем систему 
+\begin{equation}
+\begin{cases}
+        \dot{x}=8+4y-2xy\\
+        \dot{y}=x^2-4y^2\\
+    \end{cases}    
+\end{equation}
+Найдем точки равновесия, приравняв $\dot{x}=0; \dot{y}=0$ можем получить что точками равновесия будут: $p_1=(-2,-1), p_2=(4,2)$\\
+
+1)$p_1$:\\
+$x=u-2,y=v-1$:
+\begin{equation}
+\begin{cases}
+        \dot{u}=2u+8v+o(u^2+v^2)\\
+        \dot{v}=-4u+8v+o(v^2)\\
+    \end{cases}    
+\end{equation}
+Найдём собственные значения и собственные векторы матрицы $A=\begin{pmatrix} 2 && 8 \\ -4 && 8 \end{pmatrix}$:\\
+ $\lambda_1=5+i \sqrt{23},
+ h_1 = \begin{pmatrix} -\frac{1}{4} i \left(\sqrt{23}+3 i\right) \\  1 \end{pmatrix} $; 
+ $\lambda_2= 5-i \sqrt{23},
+ h_2 = \begin{pmatrix} \frac{1}{4} i \left(\sqrt{23}-3 i\right)  \\  3 \end{pmatrix} $. 
+ Поскольку корни комплексные и $\Re \lambda_{12}>0$, п.р. - неустойчивый фокус \ref{13.39.1}
+ \begin{figure}[ht]
+\center{\includegraphics[width=0.8\linewidth]{13.39.1.png}}
+\caption{Фазовый портрет С. \S13: 39 $(-2,-1)$ (неустойчивый фокус)}
+\label{13.39.1}
+\end{figure}\\  
+2) $p_2$:\\
+$x=u+4,y=v+2$:
+\begin{equation}
+\begin{cases}
+        \dot{u}=-4u-4v+o(u^2+v^2)\\
+        \dot{v}=8u-16v+o(v^2)\\
+    \end{cases}    
+\end{equation}
+Найдём собственные значения и собственные векторы матрицы $A=\begin{pmatrix} -4 && -4 \\ 8 && -16 \end{pmatrix}$:\\
+ $\lambda_1=-12,
+ h_1 = \begin{pmatrix} 1 \\  2 \end{pmatrix} $; 
+ $\lambda_2= -8,
+ h_2 = \begin{pmatrix} 1 \\  1 \end{pmatrix} $. 
+ Очевидно, п.р. - устойчивый узел \ref{13.39.2}
+ \begin{figure}[ht]
+\center{\includegraphics[width=0.8\linewidth]{13.39.2.png}}
+\caption{Фазовый портрет С. \S13: 39 $(4,2)$ (устойчивый узел)}
+\label{13.39.2}
+\end{figure}\\  
+Ну и картинка с 2 особыми точками, куда без неё: \ref{13.39.3}\\
+ \begin{figure}[ht]
+\center{\includegraphics[width=0.8\linewidth]{13.39.3.png}}
+\caption{Фазовый портрет С. \S13: 39}
+\label{13.39.3}
+\end{figure}\\
+
+\subsection{С. \S13: 44}
+Исследуем систему 
+\begin{equation}
+\begin{cases}
+        \dot{x}=1-\exp{(x^2-y)}\\
+        \dot{y}=\tanh{(2+x-x^2)}\\
+    \end{cases}    
+\end{equation}
+Найдем точки равновесия, приравняв $\dot{x}=0; \dot{y}=0$ можем получить что точками равновесия будут: $p_1=(-1,1), p_2=(2,4)$\\
+
+1)$p_1$:\\
+$x=u-1,y=v+1$:
+\begin{equation}
+\begin{cases}
+        \dot{u}=2u+v+o(u^2+v^2)\\
+        \dot{v}=3u+0v+o(v^2)\\
+    \end{cases}    
+\end{equation}
+Найдём собственные значения и собственные векторы матрицы $A=\begin{pmatrix} 2 && 1 \\ 3 && 0 \end{pmatrix}$:\\
+ $\lambda_1=3,
+ h_1 = \begin{pmatrix} 1 \\  1 \end{pmatrix} $; 
+ $\lambda_2= -1,
+ h_2 = \begin{pmatrix} -1 \\  3 \end{pmatrix} $. 
+ Очевидно, п.р. - седло \ref{13.44.1}
+ \begin{figure}[ht]
+\center{\includegraphics[width=0.8\linewidth]{13.44.1.png}}
+\caption{Фазовый портрет С. \S13: 44 $(-1,1)$ (седло)}
+\label{13.44.1}
+\end{figure}\\  
+2) $p_2$:\\
+$x=u+2,y=v+4$:
+\begin{equation}
+\begin{cases}
+        \dot{u}=-4u+v+o(u^2+v^2)\\
+        \dot{v}=-3u+o(v^2)\\
+    \end{cases}    
+\end{equation}
+Найдём собственные значения и собственные векторы матрицы $A=\begin{pmatrix} -4 && 1 \\ -3 && 0 \end{pmatrix}$:\\
+ $\lambda_1=-3,
+ h_1 = \begin{pmatrix} 1 \\  1 \end{pmatrix} $; 
+ $\lambda_2= -1,
+ h_2 = \begin{pmatrix} 1 \\  3 \end{pmatrix} $. 
+ Очевидно, п.р. - устойчивый узел \ref{13.44.2}
+ \begin{figure}[ht]
+\center{\includegraphics[width=0.8\linewidth]{13.44.2.png}}
+\caption{Фазовый портрет С. \S13: 44 $(2,4)$ (устойчивый узел)}
+\label{13.44.2}
+\end{figure}\\  
+Ну и картинка с 2 особыми точками, куда без неё\ref{13.44.3}:\\
+ \begin{figure}[ht]
+\center{\includegraphics[width=0.8\linewidth]{13.44.3.png}}
+\caption{Фазовый портрет С. \S13: 44}
+\label{13.44.3}
+\end{figure}\\
+
+\subsection{С. \S13: 45}
+Исследуем систему 
+\begin{equation}
+\begin{cases}
+        \dot{x}=\sqrt{1+2x-5y}-1\\
+        \dot{y}=\arctg{(x/2+3/5x^2-2y)}\\
+    \end{cases}    
+\end{equation}
+Найдем точки равновесия, приравняв $\dot{x}=0; \dot{y}=0$ можем получить что точками равновесия будут: $p_1=(0,0), p_2=(1/2,1/5)$\\
+
+1)$p_1$:\\
+$x=u,y=v$:
+\begin{equation}
+\begin{cases}
+        \dot{u}=u-5/2v+o(u^2+v^2)\\
+        \dot{v}=1/2u-2v+o(v^2)\\
+    \end{cases}    
+\end{equation}
+Найдём собственные значения и собственные векторы матрицы $A=\begin{pmatrix} 1 && -5/2 \\ 1/2 && -2 \end{pmatrix}$:\\
+ $\lambda_1=-3/2,
+ h_1 = \begin{pmatrix} 1 \\  1 \end{pmatrix} $; 
+ $\lambda_2= 1/2,
+ h_2 = \begin{pmatrix} 5 \\  1 \end{pmatrix} $. 
+ Очевидно, п.р. - седло \ref{13.45.1}
+ \begin{figure}[ht]
+\center{\includegraphics[width=0.8\linewidth]{13.45.1.png}}
+\caption{Фазовый портрет С. \S13: 45 $(0,0)$ (седло)}
+\label{13.45.1}
+\end{figure}\\ 
+
+2) $p_2$:\\
+$x=u+1/2,y=v+1/5$:
+\begin{equation}
+\begin{cases}
+        \dot{u}=u-5/2v+o(u^2+v^2)\\
+        \dot{v}=11/10u-2v+o(v^2)\\
+    \end{cases}    
+\end{equation}
+КТО ПРИДУМАЛ ЭТИ ЧИСЛА?!?!?!? Простите, крик боли утсавшего человека, который не поужинает, пока не закончит дифуры.\\
+Найдём собственные значения и собственные векторы матрицы $A=\begin{pmatrix} 1 && -5/2 \\ 11/10 && -2 \end{pmatrix}$:\\
+ $\lambda_1=\frac{1}{2} \left(-1+i \sqrt{2}\right),
+ h_1 = \begin{pmatrix}\frac{5}{11} i \left(\sqrt{2}-3 i\right) \\  1 \end{pmatrix} $; 
+ $\lambda_2= \frac{1}{2} \left(-1-i \sqrt{2}\right),
+ h_2 = \begin{pmatrix} \frac{1}{11} (-5) i \left(\sqrt{2}+3 i\right) \\  1 \end{pmatrix} $. 
+ Очевидно, п.р. - устойчивый фокус \ref{13.45.2}
+ \begin{figure}[ht]
+\center{\includegraphics[width=0.8\linewidth]{13.45.2.png}}
+\caption{Фазовый портрет С. \S13: 45 $(1/2,1/5)$ (устойчивый фокус)}
+\label{13.45.2}
+\end{figure}\\  
+Ну и картинка с 2 особыми точками, куда без неё (только там беды с корнем на некоторой области и она не такая красивая): \ref{13.45.3}\\
+ \begin{figure}[ht]
+\center{\includegraphics[width=0.8\linewidth]{13.45.3.png}}
+\caption{Фазовый портрет С. \S13: 45}
+\label{13.45.3}
+\end{figure}\\
 \end{document}
