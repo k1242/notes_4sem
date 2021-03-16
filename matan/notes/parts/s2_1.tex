@@ -1,0 +1,160 @@
+\section*{Собственные интегралы с параметром}
+
+
+\subsection*{13.8(3)}
+
+
+Стоит следующий вопрос
+\begin{equation*}
+    \int_0^1 \d x \int_0^1 \d \alpha f(x, \alpha) - \int_0^1 \d \alpha \int_0^1 \d x f(x, \alpha) \overset{?}{=} 0.
+\end{equation*}
+Выберем в качестве $f(x, \alpha)$ 
+\begin{equation*}
+    f(x, \alpha) = \left(
+        \frac{x^5}{\alpha^4} - \frac{2 x^3}{\alpha^3}
+    \right) e^{-x^2/\alpha}.
+\end{equation*}
+Для этого вычислим интеграл
+\begin{equation*}
+    g(x) = \int_0^1 \d \alpha f(x, \alpha) = \int_0^1 \d \alpha \left(
+        \frac{x^5}{\alpha^4} - \frac{2 x^3}{\alpha^3}
+    \right) e^{-x^2/\alpha}
+\end{equation*}
+Теперь вполне логично сделать замену переменных
+\begin{equation*}
+    d t = x^2 (\frac{-1}{\alpha^2}) \d \alpha 
+\end{equation*}
+и получить
+\begin{equation*}
+    g(x) = \int_{x^2}^{\infty} \d t \left(
+        \frac{x^3}{\alpha^2} - \frac{2 x}{\alpha}
+    \right) e^{-t}
+\end{equation*}
+который взяв по частям и получаем
+\begin{equation*}
+    \frac{x^3}{\alpha^2} - \frac{2 x}{\alpha} = \frac{1}{x} (t^2 - 2t)
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    g(x) = \frac{1}{x} \int_{x^2}^{\infty} (t^2 - 2t) e^{-t} \d t = 
+    \frac{1}{x} \left\{-t^2 e^{-t}\right\} \bigg|_{x^2}^{\infty} = x^3 e^{-x^2}.
+\end{equation*}
+Идём дальше, возвращаясь к первоначальному интегрированию,
+\begin{equation*}
+    \int_0^1 g(x) \d x = \frac{1}{2} \int_0^1 x^2 e^{-x^2} \d (x^2) = 
+    \frac{1}{2} \int_0^1 t e^{-t} \d t = - \frac{1}{2} (t+1) e^{-t} \big|_0^1 = \frac{1}{2}-\frac{1}{e}.
+\end{equation*}
+Теперь пойдём в другую сторону
+\begin{equation*}
+    h(\alpha) = \int_0^1 \d x f(x, \alpha) = \frac{1}{2\alpha} \int_0^{1/\alpha} (t^2 - 2t) e^{-t} \d t = \frac{1}{2\alpha} \left\{
+        - t^2 e^{-t}
+    \right\}\bigg|^{1/\alpha}_0 = - \frac{1}{2\alpha^3} e^{-1/\alpha}.
+\end{equation*}
+Остается посчитать интеграл $\alpha$ 
+\begin{equation*}
+    \int_0^1 h(\alpha) \d \alpha = - \frac{1}{2} \int_1^{\infty} t e^{-t} \d t = - \frac{1}{e}.
+\end{equation*}
+
+
+\subsection*{13.14(3)}
+
+Найти $\Phi'(\alpha)$, если 
+\begin{equation*}
+    \Phi(\alpha) = \int_{\sin \alpha}^{\cos \alpha} e^{\alpha\sqrt{1-x^2}} \d x.
+\end{equation*}
+Тут смотрим на К3, стр 325 (7), условия которой выполняются. Остается только посчитать
+\begin{equation*}
+    \Phi'(\alpha) = e^{\alpha |\sin \alpha|} (-\sin \alpha) - e^{\alpha |\cos \alpha|} \cos \alpha + \int_{\sin \alpha}^{\cos \alpha} e^{\alpha \sqrt{1-x^2}} \sqrt{1-x^2} \d x.
+\end{equation*}
+
+
+\subsection*{13.17}
+
+Есть интеграл вида
+\begin{equation*}
+    I(\alpha) = \int_0^b \frac{]d x}{x^2 + \alpha^2}.
+\end{equation*}
+Дифференцируя его по параметру $\alpha > 0$ вычислим интграл
+\begin{equation*}
+    J(\alpha) = \int_0^b \frac{\d x}{(x^2 + \alpha^2)^2}.
+\end{equation*}
+\textbf{Нужно} проверить, что условия теоремы выполняются, и вообще дифференцировать можем.
+Тут всё хорошо, так что
+\begin{equation*}
+    \frac{\partial I(\alpha)}{\partial \alpha} = \int_0^\Lambda dx \ \frac{\partial }{\partial \alpha} \frac{1}{x^2+\alpha^2} = - 2 \alpha \int_0^\Lambda \frac{\d x}{(x^2 + \alpha^2)^2} = - 2 \alpha J(\alpha).
+\end{equation*}
+Таким образом приходим к
+\begin{equation*}
+    J(\alpha) = \frac{1}{2\alpha} \frac{\partial }{\partial \alpha} \left(
+        \frac{1}{\alpha} \arctg \frac{\Lambda}{\alpha}
+    \right) = \frac{1}{2\alpha^3} \left\{
+        \arctg \frac{\Lambda}{\alpha} + \frac{\Lambda \alpha}{\Lambda^2 + \alpha^2}
+    \right\}.
+\end{equation*}
+
+
+\subsection*{13.18 (1)}
+
+Теперь применяя дифференцирование по параметру $\alpha$, вычислить
+\begin{equation*}
+    I(\alpha) = \int_0^{\pi/2}  \ln \left(
+        \alpha^2 - \sin^2 \varphi
+    \right) \d \varphi.
+\end{equation*}
+Утверждается, что \textbf{можно} дифференцировать по параметру. Ну и посчитаем тогда
+\begin{equation*}
+    \frac{d I(\alpha)}{d \alpha} = \int_0^{\pi/2} \d \varphi \frac{\partial }{\partial \alpha} \ln \left(\alpha^2 - \sin^2 \varphi\right) = 
+    \int_0^{\pi/2} \frac{2\alpha \d \varphi}{\alpha^2 - \sin^2 \varphi} = \frac{\pi}{\sqrt{\alpha^2-1}}.
+\end{equation*}
+Таким образом находим, что
+\begin{equation*}
+    I(\alpha) = \pi \ln ( \alpha + \sqrt{\alpha^2-1}) + C.
+\end{equation*}
+С другой стороны
+\begin{align*}
+    I(\alpha) &= \int_0^{\pi/2} \{2 \ln \alpha + o(1)\} \d \varphi = \pi \ln \alpha + o(1)
+    I(\alpha) &= \pi \ln \alpha + \pi \ln 2 + C + o(1).
+\end{align*}
+при больших $\alpha$. Получается, что
+\begin{equation*}
+    I(\alpha) = \pi \ln \left\{
+        \frac{1}{2}\left(
+            \alpha + \sqrt{\alpha^2-1}
+        \right)
+    \right\}
+\end{equation*}
+
+
+\section*{Равномерная сходимость несобственных интегралов, зависящих от параметра}
+
+Пусть $\alpha \in E$, подумаем о сходимости интгралов, зависящих от параметра
+\begin{equation*}
+    \int_a^{\infty} f(x \alpha) \d x.
+\end{equation*}
+По определению сходится (поточечно)
+\begin{equation*}
+    \forall \alpha \in E \ \ 
+    \forall \varepsilon > 0 \ \
+    \exists \delta[\varepsilon, \alpha] > a \ \
+    \forall \xi > \delta[\varepsilon, \alpha] \ \
+    \bigg|
+        \int_{\xi}^{\infty} f(x, \alpha) \d x
+    \bigg| < \varepsilon.
+\end{equation*}
+В случае же равномерной сходимости
+\begin{equation*}
+    \forall \varepsilon > 0 \ \
+    \exists \delta(\varepsilon) > a \ \ 
+    \forall \xi > \delta(\varepsilon) \ \ 
+    \bigg|
+        \int_{\xi}^{\infty} f(x, \alpha) \d x
+    \bigg| < \varepsilon.
+\end{equation*}
+
+\subsection*{14.1(1)}
+
+По признаку Вейерштрассе $x^\alpha \geq x^{\alpha_0}$, если $x > 1$, $\alpha > \alpha_0 > 1$
+\begin{equation*}
+    \int_1^{\infty} \frac{dx}{x^\alpha} \leq \int_1^{\infty} \frac{\d x}{x^{\alpha_0}}
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    M(x) = \frac{1}{x^{\alpha_0}}.
+\end{equation*}
+что соответствует сходимости. Аналогично 14.1(2).

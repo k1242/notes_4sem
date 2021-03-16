@@ -1,0 +1,172 @@
+Запишем уравнения Лагранжа
+\begin{equation*}
+    \frac{d }{d t} \frac{\partial L}{\partial \dot{q}} - \frac{\partial L}{\partial q} = 0,
+    \hspace{1 cm} 
+    L = \frac{1}{2} a_{ij} \dot{q}^{i} \dot{q}^j - \Pi.
+\end{equation*}
+Пусть есть некоторый импульс
+\begin{equation*}
+    p = \frac{\partial L}{\partial \dot{q}} = A \dot{q} + \ldots,
+    \hspace{0.3cm} \Rightarrow \hspace{0.3cm}
+    \dot{q} = A^{-1} + \ldots,
+    \hspace{0.3cm} \Rightarrow \hspace{0.3cm}
+    \begin{aligned}
+        (q ,\dot{q}, t) &  \text{--- лагранжевы переменные} \\
+        (q, p. t) &  \text{--- гамильтоновы переменные}
+    \end{aligned}
+\end{equation*}
+
+
+\subsection{Немного геометрии}
+
+Было конфигурационное многообразие размерности $n$. Каждому состоянию соответствует точка на многообразии, $\dot{q} \in T_q M$. Собственно, $p \in T^*_q M$ ($TM$ -- касательное расслоение) лежит в кокасательном пространстве ($T^* M$ -- кокасательное расслоение)(почему?). Тогда возьмем некоторый функционал 
+\begin{equation*}
+    H(q, p, t) \colon  T^* M \times \mathbb{R}^1 \to \mathbb{R}^1.
+\end{equation*}
+Считая $(q, t) = \const$
+\begin{equation*}
+    d L = \frac{\partial L}{\partial \dot{q}} \cdot d \dot{q} = p \cdot \d \dot{q},
+    \hspace{1 cm}
+    d (\dot{q} p) = p \d \dot{q} + \dot{q} \d p = \d L + \dot{q} \d p.
+\end{equation*}
+Тогда давайте всё сгруппируем
+\begin{equation*}
+    d (\dot{q} p - L) = \dot{q} \d p = \frac{\partial H}{\partial p} \d p.
+\end{equation*}
+То есть $d L = p d q$, а $d H = \dot{q} \d p$. 
+
+\begin{to_def}
+    Определим гамильтониан, как
+    \begin{equation*}
+    % формально это и будем считать преобразование Лежандра
+        H(q, p, t) \overset{\mathrm{def}}{=}  p \cdot \dot{q} (q, p, t) - L(q, \dot{q} (q, p, t), t).
+    \end{equation*}
+\end{to_def}
+
+
+
+\subsection{Уравнения Гамильтона}
+
+Запишем дифференциал Гамильтониана
+\begin{align*}
+    d H &= \frac{\partial H}{\partial q} \d q  +\frac{\partial H}{\partial p} \d p + \frac{\partial H}{\partial t} \d t, \\
+    d H &= \dot{q} \d p + p \d \dot{q} - \frac{\partial L}{\partial q} \d q - \frac{\partial L}{\partial \dot{q}} \d \dot{q} - \frac{\partial L}{\partial t} \d t.
+\end{align*}
+Во-первых отсюда следует, что
+\begin{equation}
+    \frac{\partial H}{\partial t} = - \frac{\partial L}{\partial t}.
+\end{equation}
+Также имея право приравнивать коэффициенты
+\begin{equation}
+    \dot{q} = \frac{\partial H}{\partial p},
+    \hspace{1 cm}
+    \dot{q} = \frac{\partial H}{\partial p},
+    \ 
+    \dot{p} = \frac{\partial L}{\partial q}
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \boxed{
+        \dot{q} = \frac{\partial H}{\partial p}, \ \ 
+        \dot{p} = - \frac{\partial H}{\partial q} 
+    }
+    .
+\end{equation}
+Которые, о чудо, уже существуют в нормальной форме Коши. 
+
+
+\subsection*{Замечания}
+
+\subsubsection*{Консервативные системы}
+
+Для консервативной системы
+\begin{equation}
+    L = T_2 - \Pi,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    H = \frac{\partial L}{\partial \dot{q}} \cdot \dot{q} - T_2 + \Pi = T_2 + \Pi = E.
+\end{equation}
+\texttt{Вообще уранвения Гамильтона написал ещё Лагранж, а $H$, потому что Гюйгенс.} А выше мы получили полную механическую энергию. 
+
+\subsubsection*{Общность происходящего}
+
+\texttt{Последовательный курс -- некоторая история, должна быть приемственность тем. В общем так мы и движемся в сторону большей абстракции. Но минус в том, что лагранжева механика и гамильтонова механика существуют сами по себе.}  Гамильтонова система это $(M, \omega, H)$, где $M$ -- конфигурационное $2n$-мерное многообразие, $\omega$ -- 2-форма, а $H$ -- гамильтониан, то есть функция гамильтоновых переменных.
+
+
+\subsubsection*{Задача 19.24}
+Есть некоторая сфера, у которой радиус -- известная функция времени $R(t)$ (реономная связь), есть сила тяжести $\vc{g}$.
+В качестве координат выберем сферические $\theta, \varphi$.  
+\begin{equation*}
+    \vc{r} = \begin{pmatrix}
+        \ldots
+    \end{pmatrix}
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    T = \frac{m}{2} (R^2 \dot{\theta}^2 + R^2 \dot{\varphi}^2 \sin^2 \theta )  + \frac{m}{2} \dot{R}^2.
+\end{equation*}
+Потенциальная энергия
+\begin{equation*}
+    \Pi = mg R \cos \theta.
+\end{equation*}
+Теперь 
+\begin{align*}
+    &p_\theta = \frac{\partial L}{\partial \dot{q}_\theta} = m R^2 \dot{\theta},
+     &\Rightarrow 
+    &&\dot{\theta} &= \frac{p_\theta}{m R^2}, \\
+    &p_\varphi = m R^2 \dot{\varphi}^2 \sin^2 \theta,
+     &\Rightarrow 
+    &&\dot{\varphi} &= \frac{p_\varphi}{m R^2 \sin^2 \theta}
+\end{align*}
+Теперь
+\begin{equation*}
+    H = p \cdot q - L = p_\varphi \varphi + p_\theta \dot{\theta} - L = 
+    \frac{m R^2}{2} \left(
+        p^2_{\theta} + \frac{p^2 \varphi}{\sin^2 \theta}
+    \right) - \frac{m}{2} \dot{R}^2 (t) + m g R(t) \cos \theta.
+\end{equation*}
+Запишем теперь уравнения Гамильтона
+\begin{equation*}
+    \dot{\theta} = \frac{p_\theta}{m R^2}, \hspace{1 cm}
+    \dot{\varphi} = \frac{p_\varphi}{m R^2 \sin^2 \theta},
+\end{equation*}
+что вполне логично, а также второй набор
+\begin{equation*}
+    \dot{p}_\theta = - m g \dot{R} 
+\end{equation*}
+
+\subsection{Уравнения Рауса}
+
+Идея в том, что можно делать преобразование только по некоторому набору переменных, что приводит нас к функции Раусса
+\begin{equation*}
+    R = \left(\sum_{i = k + 1}^{n} p_i \dot{\hat{q}}_i\right) - 
+    L (q, \dot{q}_1, \ldots, \dot{q}_{k+1}, \hat{\dot{q}}_{k}, \ldots, \hat{\dot{q}}_n, t),
+\end{equation*}
+где шляпка соответствует выражению через $q ,p ,t$. \red{Можно ещё здесь уравнения записать, см. билеты.}
+
+\subsection{Уравнения Уиттекера}
+
+Хочется уменьшать порядок дифференциальных уравнений. Пусть $H(q, p) \equiv h$. Тогда у нас есть некоторая $2n-1$-поверхность. Пусть
+\begin{equation*}
+    \frac{\partial H}{\partial p_1} \neq 0,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    p_1 = - K(q, p_2, \ldots, p_n, h).
+\end{equation*}
+Получается, что траектории заполняют не всё пространство, а некоторое его подпространство. Количество уравнения можем сменить с $2n$ до $2n-2$
+\begin{equation*}
+    \frac{\partial H}{\partial q_i}  + \frac{\partial H}{\partial p_1} \frac{\partial p_1}{\partial q_i}= 0,
+    \hspace{1 cm}
+    \frac{\partial H}{\partial p_i} + \frac{\partial H}{\partial p_1} \frac{\partial p_1}{\partial p_i} = 0.
+\end{equation*}
+Теперь выпешем уравнения Гамильтона 
+\begin{align*}
+    & \dot{q}_1 = \frac{\partial H}{\partial p_1}, 
+    & \dot{p}_1 = - \frac{\partial H}{\partial q_1} , \\
+    & \dot{q}_i = \frac{\partial H}{\partial p_i} , 
+    & \dot{p}_i = - \frac{\partial H}{\partial q_i} .
+\end{align*}
+Тогда
+\begin{equation}
+    \frac{d q_i}{d q_1} = \frac{\partial H}{\partial p_i} \bigg/ \frac{\partial H}{\partial p_1} = \frac{\partial K}{\partial p_i},
+    \hspace{0.5cm} \hspace{0.5cm}
+    \frac{d p_i}{d q_1} = - \frac{\partial H}{\partial q_i} \bigg/ \frac{\partial H}{\partial p_1} = - \frac{\partial K}{\partial q_i},
+    \hspace{1 cm}
+    i = 2, \ldots, n.
+\end{equation}
+Красота и победа!)
+

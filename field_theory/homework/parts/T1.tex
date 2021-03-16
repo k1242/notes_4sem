@@ -1,0 +1,63 @@
+\subsection*{Т1}
+Для начала запишем преобразование Лоренца для системы $K'$:
+\begin{equation*}
+    t' = \gamma_{v_x} \left(t - \beta_x \frac{x}{c}\right)
+    , \hspace{1 cm}
+    x' = \gamma_{v_x} (x - v_x t)
+    , \hspace{1 cm}
+    y' = y
+    , \hspace{1 cm}
+    z' = z.
+\end{equation*}
+Аналогично перейдём к системе $K''$, выразив компоненты через их представление в системе $K'$
+\begin{equation*}
+    t'' = \gamma_{v_y'} \left(t' - \beta_{v_y'} \frac{y'}{c}\right),
+    \hspace{1 cm}
+    x'' = x', 
+    \hspace{1 cm}
+    y'' = \gamma_{v_y'} (y' - v_y' t),
+    \hspace{1 cm}
+    z'' = z'.
+\end{equation*}
+Центр системы $K''$ неподвижен в координатах системы $K''$, соответственно
+\begin{equation*}
+    x'' = y'' = z'' = 0,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \left\{\begin{aligned}
+        x_{K''} &= v_x  t\\
+        y_{K''} &= \gamma_{v_x}^{-1} v_y' t  
+    \end{aligned}\right.
+    ,
+\end{equation*}
+что соответствет $(x, y)[t]$ для координат центра системы $K''$ в системе $K$.
+
+Теперь найдём движение центра системы $K$ в системе $K''$, подставив значения $x=y=0$,
+\begin{equation*}
+    x''_K = - \gamma_{v_x} v_x t,
+    \hspace{1 cm}
+    y''_K = - \gamma_{v_y'} \gamma_{v_x} v_y' t,
+    \hspace{1 cm}
+    t''_K = - \gamma_{v_y'} \gamma_{v_x}  t.
+\end{equation*}
+Можно заметить, что
+\begin{equation*}
+    \gamma_{v_y'} \gamma_{v_x} \approx \gamma\left(\sqrt{v_x^2 + v_y'^2}\right) = \gamma_v,
+    \hspace{1 cm}
+    \beta_{v_x}, \beta_{v_y'} \ll 1.
+\end{equation*}
+Теперь нас интересует направление прямой $\parallel \vc{v}$ -- движения $K''$ в системе $K$:
+\begin{equation*}
+    \tg \varphi = \frac{v_y}{v_x} = \frac{\dot{y}_{K''}}{\dot{x}_{K''}} = \gamma_{v_x}^{-1} \frac{v_y'}{v_x}.
+\end{equation*}
+Угол же между осью $x''$ и движением центра системы $K$ может быть найден, как
+\begin{equation*}
+    \tg (\theta + \varphi) = \frac{d y''_K}{d t''} \bigg/ \frac{d x''_K}{d t''} = 
+    \gamma_{v_y'}
+    \frac{v_y'}{v_x} = \gamma_{v_x} \gamma_{v_y'} \tg \varphi \approx \gamma_v \tg \varphi.
+\end{equation*}
+С другой стороны, раскрывая тангенс суммы, находим
+\begin{equation*}
+    \tg \theta + \tg \varphi = \gamma_v \tg \varphi (1 - \tg \varphi \tg \theta),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \tg \theta = \frac{(\gamma_v - 1) \tg \varphi}{1 + \gamma_v \tg^2 \varphi}.
+\end{equation*}

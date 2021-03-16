@@ -1,0 +1,30 @@
+\subsection*{Общие сведения}
+
+Для кинематики полезно было бы ввести следующие величины
+\begin{equation*}
+    \gamma(v) = \gamma_v = \left(1 - \frac{v^2}{c^2}\right)^{-1/2},
+    \hspace{1 cm}
+    \beta(v) = \beta_v = \frac{v}{c},
+    \hspace{1 cm}
+    \Lambda(v, OX) = \begin{pmatrix}
+        \gamma_v & - \beta_v \gamma_v & 0 & 0\\
+        - \beta_v \gamma_v & \gamma & 0 & 0\\
+        0 & 0 & 1 & 0\\
+        0 & 0 & 0 & 1\\
+    \end{pmatrix},
+\end{equation*}
+где $\Lambda$ -- преобразование Лоренца, для которого, кстати, верно, что $\Lambda^{-1} (v) = \Lambda(-v)$.
+
+Также преобразование Лоренца можно записать в виде
+\begin{equation}
+\label{LORENTS}
+    \begin{pmatrix}
+        c t' \\ \vc{r}'
+    \end{pmatrix} = 
+    \begin{pmatrix}
+        \gamma & - \vc{\beta}_v \gamma 
+        \vphantom{\dfrac{1}{2}} \\
+        - \vc{\beta}_v \gamma & \mathbb{E} + \frac{\gamma_v - 1}{\beta_v^2} \vc{\beta} \otimes \vc{\beta}  
+        \vphantom{\dfrac{1}{2}} \\
+    \end{pmatrix}
+\end{equation}
