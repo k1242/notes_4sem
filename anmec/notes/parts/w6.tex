@@ -1,0 +1,180 @@
+Есть система Гамильтона
+\begin{equation*}
+    \left\{\begin{aligned}
+        \dot{q} &= \partial_p H \\
+        \dot{p} &= - \partial_q H \\
+    \end{aligned}\right.
+\end{equation*}
+и для них существуют первые интегралы -- $\varphi(q, p, t)$ -- сохранение на любых траектория движения системы.
+
+Как их получать? Во-первых, до тех пор, пока гамильтонин явно от времени не зависит -- это первый интеграл:
+\begin{equation*}
+    \partial_t H = 0, \hspace{0.5cm} \Rightarrow \hspace{0.5cm} d_t H = 0.
+\end{equation*}
+Аналогично
+\begin{equation*}
+    \frac{\partial H}{\partial q^i} = 0,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    p_i = \const.
+\end{equation*}
+
+\begin{to_def}
+    \textit{Скобкой Пуассона} для функции гамильтоновых переменных может быть определена, как
+    \begin{equation*}
+        \{\varphi, \psi\} = \frac{\partial \varphi}{\partial q} \frac{\partial \psi}{\partial p} -
+        \frac{\partial \varphi}{\partial p} \frac{\partial \psi}{\partial q}.
+    \end{equation*}
+\end{to_def}
+
+Что происходит и почему
+\begin{equation*}
+    \frac{d \varphi}{d t} = \frac{\partial \varphi}{\partial t} + \frac{\partial \varphi}{\partial q} \dot{q} + \frac{\partial \varphi}{\partial p} \dot{p} = \frac{\partial \varphi}{\partial t} \{\varphi, H\} = 0,
+\end{equation*}
+соответственно скобки пуассона -- вплоне логичный критерий первого интеграла.
+
+\begin{to_thr}[]
+    Если $\varphi, \psi$ -- первые интагралы, то $\{\varphi, \psi\}$ -- это первый интеграл или число.
+\end{to_thr}
+
+Первые интегралы бывают зависимы, так для $\varphi_1, \ldots, \varphi_m$ можем составить
+\begin{equation*}
+    \rg \frac{\partial (\varphi_1, \ldots, \varphi_m)}{ \partial(q^i, p_j, t)} = m.
+\end{equation*}
+
+\begin{to_thr}[Теорема Э. Нетер]
+    Пусть есть некоторое однопараметрическое семейство $\tilde{q} = \tilde{q}(q, t, \alpha)$ и $\tilde{t} = \tilde{t} (q, t, \alpha)$ где $\alpha \in \mathbb{R}^1$ такое, что дифференцируемо, $\alpha =0 \ \sim \ $ тождественное преобразование, и
+    \begin{equation*}
+        L \left(\tilde{q}, \frac{d \tilde{q}}{d \tilde{t}}, t\right) \d \tilde{t} = L\left(q, \frac{d q}{d t}, t\right) \d t.
+    \end{equation*}
+    Тогда в системе есть первый интеграл, который вычисляется так:
+    \begin{equation*}
+        \varphi(q, p, t) = \tilde{p} \cdot \left(
+            \frac{\partial \tilde{q}}{\partial \alpha} 
+        \right)_{\alpha=0} - H \cdot \left(
+            \frac{\partial \tilde{t}}{\partial \alpha} 
+        \right)_{\alpha=0}.
+    \end{equation*}
+\end{to_thr}
+
+Например, 
+\begin{align*}
+    \tilde{q} &= q + \alpha, \hspace{0.5cm} \Rightarrow \hspace{0.5cm} p_q = \const \\
+    \tilde{t} &= t + \alpha, \hspace{0.5cm} \Rightarrow \hspace{0.5cm} H = \const.
+\end{align*}
+
+
+\subsubsection*{Задача 1}
+Пусть есть некоторая точка в радиальном потенциальном поле. Лагранжиан
+\begin{equation*}
+    L = \frac{m}{2} (
+        \dot{r}^2 + r^2 \dot{\theta}^2 + r^2 \sin^2 \theta \varphi^2
+    ) - \Pi(r).
+\end{equation*}
+Тогда вполне логично рассмотреть $\tilde{\varphi} = \varphi + \alpha$, тогда
+\begin{equation*}
+    I = p_\varphi \left(
+        \frac{\partial \tilde{\varphi}}{\partial \alpha}_{\alpha=0} = p_\varphi = \frac{\partial L}{\partial \dot{\varphi}} = m r^2 \sin^2 \theta \dot{\varphi},
+    \right)
+\end{equation*}
+так что момент сохраняется. 
+\texttt{ Вопрос: если есть первый интеграл, то существует ли симметрия для этого первого интеграла?}
+% прецессия перегелия меркурия, -- классно описывается в ото
+% если человек во что-то верит, то он это докажет
+
+\subsection{Интегральные инварианты}
+
+\begin{to_def}
+    \textit{Интегральный инвариант} -- интегральное выражение, от гамильтоновых переменных, сохраняющееся на некоторой области траектории прямых путей.
+\end{to_def}
+
+
+Скажем, что $N$ -- конфигурационное многообразие, $(q, \dot{q}) \in TN$, также введем $\vc{x} = (q, p)\T$, где
+\begin{equation*}
+    \vc{x} \in M^{2n} \equiv T^* N.
+\end{equation*}
+Продолжим итерации, перейдем к
+\begin{equation*}
+    (\vc{x}, \dot{\vc{x}}) \in TM^{4n}.
+\end{equation*}
+Теперь введем некоторый 
+\begin{equation*}
+    L(\vc{x}, \dot{\vc{x}}, t) \equiv L(q, p, \dot{q}, \dot{p}, t) = p \cdot \dot{q} - H(q, p, t).
+\end{equation*}
+Также мы знаем, что
+\begin{equation*}
+    \delta \int L \d t = 0,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}   
+    \frac{d }{d t} \frac{\partial L}{\partial \dot{\vc{x}}} - \frac{\partial L}{\partial \vc{x}} = 0,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \dot{p} = - \frac{\partial H}{\partial q},
+    \hspace{5mm}
+    \dot{q} = \frac{\partial H}{\partial p}.
+\end{equation*}
+что верно для задачи варьирования за закрепленными концами.
+
+Тогда
+\begin{equation*}
+    \delta \int_{t_0(\alpha)}^{t_1(\alpha)} L \d t
+    = (p \delta q - H \delta t) \bigg|_{t_0}^{t_1} -
+    \int_{t_0}^{t_1} \left[
+        \left(
+            \dot{p} + \frac{\partial H}{\partial q} 
+        \right) \cdot \delta q + 
+        \left(
+            \dot{q} - \frac{\partial H}{\partial p} 
+        \right) \cdot \delta p
+    \right] \d t.
+\end{equation*}
+Это приводит нас к \textbf{трубке прямых путей}. Вводим согласованные контуры по $\alpha$.
+
+Вспоминаем, что 
+\begin{equation*}
+    \int_{\alpha=0}^{\alpha=1} \delta S (\alpha) = S(1) - S(0) \equiv 0.
+\end{equation*}
+Тогда
+\begin{equation*}
+    \oint_{C_0} (p \delta q - H \delta t) - 
+    \oint_{C_1} (p \delta q - H \delta t)  = 0,
+\end{equation*}
+что в силу произвольности выбранных контуров
+\begin{equation*}
+    J_{\text{ПК}} = \oint_{C} (p \delta q - H \delta t) = \const
+\end{equation*}
+что приводит нас к \textit{интегралу Пуанкаре-Картана}.
+
+В изохронном случае
+\begin{equation*}
+    I_{\text{П}} = \oint p \delta q = \const
+\end{equation*}
+что приводит к униврсальному интегральному инварианту Пуанкаре. \texttt{Прикол в том, что он не особо зависит от $H$.}
+
+\subsubsection*{Пример}
+
+Пусть $L = \frac{1}{2} (\dot{q}^2 - q^2)$, и в качестве $C_0$ выберем $q = \cos \alpha$ и $\dot{q} =\sin \alpha$, при $t \equiv 0$. Хочется найти вид трубки прямых путей и посчитать интегральный инвариант:
+\begin{equation*}
+    \left\{\begin{aligned}
+        q &= A \cos (t + \alpha) \\
+        p &= \dot{q} = -A \sin(t + \alpha)
+    \end{aligned}\right.
+\end{equation*}
+Тогда
+\begin{equation*}
+    q^2 + p^2 = A^2,
+\end{equation*}
+что соответсвует окружности, или, в случае с движением по времени, цилиндру. Интеграл Пуанкаре тогда
+\begin{equation*}
+    I_\Pi = \oint p \delta q = \int_0^{2\pi} p \frac{\partial q}{\partial \alpha} \delta \alpha = 
+    \int_0^{2\pi} \cos^2 \alpha \d \alpha \overset{\mathrm{!}}{=}  A^2 \pi.
+\end{equation*}
+то есть пока $n=1$ интеграл Пуанкаре -- это просто фазовый объем, который для всех гамильтоновых систем сохраняется.
+
+\subsection{Обратные теоремы теории интегральных инвариантов}
+
+Пока что мы сформулировали, что если система Гамильтонова, то у нее сохраняется интегральный инвариант Пуанкаре и интегральный инвариант Пуанкаре Картана.
+
+Но верно и обратно, если $\forall \bar{c}$  
+\begin{equation*}
+    I_\Pi = \oint p \delta q = \const, 
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} \exists H(q, p, t).
+\end{equation*}
+Если же сохранятся для некоторой $F$ интеграл $I_{\text{ПК}}$, то $H = F(q, p, t) + f(t)$.

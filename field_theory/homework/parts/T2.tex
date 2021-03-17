@@ -1,11 +1,15 @@
 \subsection*{Т2}
+\addcontentsline{toc}{subsection}{T2}
 
 Аппроксимируем движение нИСО в моменты времени $t$ и $t+dt$ сопутствующими ИСО $K'$ и $K''$. Пусть $K$ -- лабороторная система отсчета, $K'$ -- сопутствующая ИСО $\vc{v} \overset{\mathrm{def}}{=}  \vc{v}(t)$, а $K''$ -- сопутствующая ИСО движущаяся относительно $K$ со скоростью $\vc{v}(t + \d t)  = \vc{v} + \d \vc{v}$. Далее для удобства будем считать, что $K''$ движется относительно $K'$ со скоростью $\d \vc{v}'$.
 
 Проверим, что последовательное применеие $\Lambda(d \vc{v}') \cdot \Lambda(\vc{v})$ эквивалентно
-$R \cdot \Lambda(\vc{v} + \d \vc{v})$, где $R$ -- вращение в $\{xyz\}$.
+$R(\varphi) \cdot \Lambda(\vc{v} + \d \vc{v})$, где $R(\varphi)$ -- вращение в $\{xyz\}$. Для этого просто найдём 
+\begin{equation*}
+    R(\varphi) = \Lambda(d \vc{v}') \cdot \Lambda(\vc{v}) \cdot \Lambda(\vc{v} + \d \vc{v})^{-1}.
+\end{equation*}
 
-Пусть ось $x \parallel \vc{v}$, ось $y$ выберем так, чтобы $d\vc{v} \in \{Oxy\}$. Теперь, согласно $\eqref{LORENTS}$, считая $|\vc{v}|=\beta_1$ можем записать
+Пусть ось $x \parallel \vc{v}$, ось $y$ выберем так, чтобы $d\vc{v} \in \{Oxy\}$. Теперь, согласно $\eqref{LORENTS}$, считая $|\vc{v}|=\beta_1$, $d \vc{v}' = (\beta_x',\, \beta_y')\T$ можем записать (пренебрегая слагаемыми $\beta_x', \beta_y'$ второй и выше степени):
 \begin{equation*}
     \Lambda(\vc{v}) =
     \left(
@@ -16,5 +20,71 @@ $R \cdot \Lambda(\vc{v} + \d \vc{v})$, где $R$ -- вращение в $\{xyz\
          0 & 0 & 0 & 1 \\
         \end{array}
     \right),
-    \Lambda(d \vc{v}) = 
+    \hspace{5 mm}
+    \Lambda(d \vc{v}') = 
+\begin{bmatrix}
+ 1 & -\beta_x' & -\beta_y' & 0 \\
+ -\beta_x' & 1 & 0 & 0 \\
+ -\beta_y' & 0 & 1 & 0 \\
+ 0 & 0 & 0 & 1 \\
+\end{bmatrix}.
 \end{equation*}
+Теперь можем выразить $d \vc{v}'$ через $d \vc{v}$, считая $\vc{r}_{\mathrm{f}}$ центром системы $K''$
+\begin{equation*}
+    \vc{r}_f' = \Lambda(d \vc{v}') \cdot \Lambda(\vc{v}) \vc{r}_f = 
+\l(
+    c t', \ 0, \ 0, \ 0
+\r)\T
+\hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+\beta(\vc{v}+d \vc{v})_x = \frac{\beta_1 + \beta_x'}{1 + \beta_1 \beta_x'},
+\hspace{5 mm}
+\beta(\vc{v}+d \vc{v})_y = \frac{\gamma_{\beta_1} \beta_y}{1+\beta_1 \beta_x}.
+% 
+\end{equation*}
+где скорость находим аналогично первому номеру. Тут стоит заметить, что скоростью $\beta_x$ можно было бы пренебречь в сравнении с $\beta_1$, так как скорее всего первый порядок малось $\beta_x$ не войдёт в ответ, однако хотелось бы в этом убедиться.
+
+Зная $d \vc{v}$ можем найти $d \vc{v}'$:
+\begin{equation*}
+    \beta_x' = \gamma_{\beta_1}^2 \beta_x,
+    \hspace{5 mm}
+    \beta_y' = \gamma \beta_y.
+\end{equation*}
+Но это на потом.
+
+Через $\vc{v}, \ d \vc{v}'$ теперь можем найти $\Lambda(\vc{v} + d \vc{v})$, и посчитать обратную матрицу:
+\begin{equation*}
+    \Lambda^{-1} (\vc{v} + d \vc{v}) = 
+    \begin{bmatrix}
+         \gamma_{\beta_1} (\beta_1 \beta_x+1) & \gamma_{\beta_1} (\beta_1+\beta_x) & \beta_y & 0 \\
+         \gamma_{\beta_1} (\beta_1+\beta_x) & \gamma_{\beta_1} (\beta_1 \beta_x+1) & \frac{\beta_1 \beta_y}{\gamma_{\beta_1}^{-1}+1} & 0 \\
+         \beta_y & \frac{\beta_1 \beta_y}{\gamma_{\beta_1}^{-1}+1} & 1 & 0 \\
+         0 & 0 & 0 & 1 \\
+    \end{bmatrix}
+\end{equation*}
+Наконец можем посчитать матрицу поворота, которая в первом приближении действительно не содержит $\beta_x$:
+\begin{equation*}
+    R(\varphi) = \begin{bmatrix}
+ 1 & 0 & 0 & 0 \\
+ 0 & 1 & -\frac{\beta_1 \beta_y'}{\sqrt{1-\beta_1^2}+1} & 0 \\
+ 0 & \frac{\beta_1 \beta_y'}{\sqrt{1-\beta_1^2}+1} & 1 & 0 \\
+ 0 & 0 & 0 & 1 \\
+\end{bmatrix}
+\end{equation*}
+что дейстительно соответствует повороту в плоскости $\{xy\}$ вокруг оси $z$ с углом $\varphi$ равным
+\begin{equation*}
+    \varphi = -\frac{\beta_y \beta_1}{\gamma_{\beta_1}^{-2} + \gamma_{\beta_1}^{-1}} = 
+    -\frac{\gamma_{\beta_1}^{2}}{\gamma_{\beta_1} + 1} \beta_1 \beta_y,
+\end{equation*}
+где $\varphi$ малый, в силу малости $\beta_y$. Так вот, в результате поворота координатных осей меняются и любые векторы, неподвижные в неИСО, то есть искомая угловая скорость
+\begin{equation*}
+    \omega_z = -\frac{\gamma_{\beta_1}^{2}}{\gamma_{\beta_1} + 1} \beta_1 (\beta_y / \Delta t),
+    \hspace{5 mm}
+    \Leftrightarrow
+    \hspace{5 mm}
+    \vc{\omega} = -\frac{\gamma_{\beta_1}^{2}}{\gamma_{\beta_1} + 1} \left[
+        \vc{\beta} \times  \dot{\vc{\beta}}
+    \right] = \frac{\gamma_{\beta_1}^{2}}{\gamma_{\beta_1} + 1} \left[
+        \dot{\vc{\beta}} \times  \vc{\beta}
+    \right],
+\end{equation*}
+что и требовалось доказать.

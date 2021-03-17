@@ -1,0 +1,47 @@
+\subsection*{Т3}
+\addcontentsline{toc}{subsection}{T3}
+
+Посмотрим на сопутствующую вращающемуся интерферометру в точке рассматриваемого луча. Для луча можем записать волновой вектор, как
+\begin{equation*}
+    \bar{k}'_{\pm} = \l(
+        \frac{\omega}{c}, \ \pm n \frac{\omega}{c}, \ 0, \ 0
+    \r),
+\end{equation*}
+где знак выбирается в соответсвии с направлением обхода. Считая, что ось $Ox$ направлена вдоль вращения интерферометра в рассматриваемой точке
+\begin{equation*}
+    c k_{\pm} = \begin{bmatrix}
+        \gamma & \gamma\beta & 0  & 0 \\
+        \gamma\beta & \gamma & 0  & 0 \\
+        0 & 0 & 1 & 0 \\
+        0 & 0 & 0 & 1 \\
+    \end{bmatrix}
+    \begin{pmatrix}
+        \omega \\ \pm n \omega \\ 0 \\ 0
+    \end{pmatrix} = 
+    \begin{pmatrix}
+        \omega \gamma (1 + \pm n \beta) \\
+        \omega \gamma ( n \pm\beta) \\ 0 \\ 0
+    \end{pmatrix},
+\end{equation*}
+откуда
+\begin{equation*}
+    c k_{x, \pm} = \omega \gamma (n \pm \beta).
+\end{equation*}
+Можно заметить, что у света также зависит частота от направления двиения, судя по формуле выше, но в силу малости скорости вращения, это приведет только к оооочень медленной осцилляции в интерференции
+\begin{equation*}
+    I_{\textnormal{инт}} = I_1 + I_2 + \left\langle \left(\vc{E}_{10} \cdot \vc{E}_{20}\right) \cos\left(
+                (\omega_2 - \omega_1) t + \ldots
+            \right)\right\rangle,
+\end{equation*}
+так что по идее этим эффектом можно принебречь.
+
+В силу различности $k_+$ и $k_-$ можем найти разность хода
+\begin{equation*}
+    \Delta \varphi = \varphi_+ - \varphi_- = 2\pi R \frac{\gamma \omega \beta}{c},
+\end{equation*}
+считая данной угловую скорость вращения интерферометра $\Omega$ приходим к выражению вида
+\begin{equation*}
+    \Delta \varphi = \frac{2\gamma}{c^2} \omega \Omega \pi R^2 
+    \overset{\gamma \sim 1}{\approx} \frac{2\pi}{c^2} \omega \Omega R^2,
+\end{equation*}
+где $\gamma \approx 1$ для корректности результата, так как при расчете не учитывалось изменение метрики для неИСО.
