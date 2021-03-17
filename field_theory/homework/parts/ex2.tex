@@ -1,0 +1,73 @@
+\subsection*{У2}
+\begin{itemize}
+	\item $[\vc{a} \times [\vc{b} \times \vc{c}]]^i = \varepsilon_{\phantom{0} j k}^{i} a^j [\vc{b} \times \vc{c}]^k
+	=
+	\varepsilon_{\phantom{0} j k}^i a^j \varepsilon_{\phantom{0} m n}^k b^m c^n = \left(\delta_{m}^{i} \delta_{j n} - \delta_{n}^{i} \delta_{j m} \right) a^j b^m c^n
+	=
+	a^j b^i c_j - c^i a^j b_j
+	=
+	b^i (\vc{a} \cdot \vc{c}) - c^i (\vc{a} \cdot \vc{b}).$
+
+	\item $\left([\vc{a} \times \vc{b}] \cdot [\vc{c} \times \vc{d}]\right)
+	=
+	\varepsilon_{i j k} a^j b^k \varepsilon_{\phantom{0} m n}^{i} c^m d^n
+	= \left(\delta_{j m} \delta_{k n} - \delta_{j n} \delta_{k m} \right) a^j b^k c^m d^n
+	= a^j b^k c_j d_k - a^j b^k c_k d_j
+	=$
+
+	$=(\vc{a} \cdot \vc{c})(\vc{b} \cdot \vc{d}) - (\vc{a} \cdot \vc{d})(\vc{b} \cdot \vc{c}).$
+
+	\item Тут придется применить результаты первого примера этого урпажения:
+	\begin{equation*}
+	\left([\vc{a} \times \vc{b}] \cdot [ [\vc{b} \times \vc{c}] \times [\vc{c} \times \vc{a}] ]\right)
+	=
+	\left(\vc{a} \cdot [\vc{b} \times \vc{c}]\right) \left(\vc{b} \cdot [\vc{c} \times \vc{a}]\right)
+	-
+	\left(\vc{a} \cdot [\vc{c} \times \vc{a}]\right) \left(\vc{b} \cdot [\vc{b} \times \vc{c}]\right)
+	=
+\end{equation*}	
+\begin{equation*}
+	=
+	a^i \varepsilon_{i j k} b^j c^k \cdot b^{\alpha} \varepsilon_{\alpha \beta \gamma} c^\beta a^\gamma 
+	-
+	a^i \varepsilon_{i j k} c^j a^k \cdot b^{\alpha} \varepsilon_{\alpha \beta \gamma} b^\beta c^\gamma
+	= (a^i \varepsilon_{i j k} b^j c^k)^2 = \left(\vc{a} \cdot [\vc{b} \times \vc{c}]\right)^2	
+\end{equation*}
+\end{itemize}
+
+% \begin{equation*}
+% 	[\vc{a} \times [\vc{b} \times \vc{c}]]^i = \varepsilon_{\phantom{0} j k}^{i} a^j [\vc{b} \times \vc{c}]^k
+% 	=
+% 	\varepsilon_{\phantom{0} j k}^i a^j \varepsilon_{\phantom{0} m n}^k b^m c^n = \left(\delta_{m}^{i} \delta_{j n} - \delta_{n}^{i} \delta_{j m} \right) a^j b^m c^n
+% 	=
+% 	a^j b^i c_j - c^i a^j b_j
+% 	=
+% 	b^i (\vc{a} \cdot \vc{c}) - c^i (\vc{a} \cdot \vc{b}).
+% \end{equation*}
+
+% \begin{equation*}
+% 	\left([\vc{a} \times \vc{b}] \cdot [\vc{c} \times \vc{d}]\right)
+% 	=
+% 	\varepsilon_{i j k} a^j b^k \varepsilon_{\phantom{0} m n}^{i} c^m d^n
+% 	= \left(\delta_{j m} \delta_{k n} - \delta_{j n} \delta_{k m} \right) a^j b^k c^m d^n
+% 	= a^j b^k c_j d_k - a^j b^k c_k d_j
+% 	=
+% 	(\vc{a} \cdot \vc{c})(\vc{b} \cdot \vc{d}) - (\vc{a} \cdot \vc{d})(\vc{b} \cdot \vc{c}).
+% \end{equation*}
+
+% Тут придется применить результаты первого примера этого урпажения:
+% \begin{equation*}
+% 	\left([\vc{a} \times \vc{b}] \cdot [ [\vc{b} \times \vc{c}] \times [\vc{c} \times \vc{a}] ]\right)
+% 	=
+% 	\left(\vc{a} \cdot [\vc{b} \times \vc{c}]\right) \left(\vc{b} \cdot [\vc{c} \times \vc{a}]\right)
+% 	-
+% 	\left(\vc{a} \cdot [\vc{c} \times \vc{a}]\right) \left(\vc{b} \cdot [\vc{b} \times \vc{c}]\right)
+% 	=
+% \end{equation*}	
+% \begin{equation*}
+% 	=
+% 	a^i \varepsilon_{i j k} b^j c^k \cdot b^{\alpha} \varepsilon_{\alpha \beta \gamma} c^\beta a^\gamma 
+% 	-
+% 	a^i \varepsilon_{i j k} c^j a^k \cdot b^{\alpha} \varepsilon_{\alpha \beta \gamma} b^\beta c^\gamma
+% 	= (a^i \varepsilon_{i j k} b^j c^k)^2 = \left(\vc{a} \cdot [\vc{b} \times \vc{c}]\right)^2	
+% \end{equation*}

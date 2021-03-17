@@ -1,0 +1,29 @@
+\subsection*{У3}
+Сразу оговорим, что все нечетные степени, ввиду инвариантности по перестановкам при усреднении дадут нуль.
+
+Для четных же будем получать какие-то симметричные тензоры, которые могут быть выражены через всевозможные комбинации символов Кронекера. Так для два-тензора:
+\begin{equation*}
+	< n_\alpha n_\beta> = z_{a b} = \frac{1}{3} \delta_{\alpha \beta}.
+\end{equation*}
+В силу единичности $n$ при свертке два-тензора из них должна получиться единица. Симметричный единичный два-тензор, инвариантный к поворотам это и есть Кроннекер на троих.
+
+Для четырех же возьмём все возможные комбинации символов Кроннекера:
+\begin{equation*}
+	<n_\alpha n_\beta n_\gamma n_\mu> = \frac{1}{c} 
+	\left(
+	\delta_{\alpha \beta} \delta_{\gamma \mu} + \delta_{\alpha \gamma} \delta_{\beta \mu} + \delta_{\alpha \mu} \delta_{\beta \gamma}
+	\right).
+\end{equation*}
+Опять же нужно найти константу $c$, чтобы свертка четыре-тензора была единичной:
+\begin{equation*}
+	\delta^{\alpha \beta} \delta^{\gamma \mu}\left(
+	\delta_{\alpha \beta} \delta_{\gamma \mu} + \delta_{\alpha \gamma} \delta_{\beta \mu} + \delta_{\alpha \mu} \delta_{\beta \gamma}
+	\right) = 9 + \delta_{\gamma}^{\beta} \delta_{\beta}^{\gamma}  + \delta_{\mu}^{\beta} \delta_{\beta}^{\mu} = 15.
+	\hspace{1 cm}
+	 \Rightarrow
+	 \hspace{1 cm}
+	 <n_\alpha n_\beta n_\gamma n_\mu> = \frac{1}{15} 
+	\left(
+	\delta_{\alpha \beta} \delta_{\gamma \mu} + \delta_{\alpha \gamma} \delta_{\beta \mu} + \delta_{\alpha \mu} \delta_{\beta \gamma}
+	\right).
+\end{equation*}

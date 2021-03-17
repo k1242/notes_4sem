@@ -1,0 +1,45 @@
+\subsection*{У1}
+Строчка с символами Кронекера:
+\begin{equation*}
+	\delta_{\alpha}^{\alpha} = 3,
+	\hspace{0.5 cm}
+	\hspace{0.5 cm}
+	\delta_{\alpha}^{\beta} \delta_{\beta}^{\gamma} = \delta_{\alpha}^{\gamma},
+	\hspace{1 cm}
+	\delta_{\alpha}^{\beta} \delta_{\beta}^{\gamma} \delta_{\gamma}^{\alpha} =\delta_{\alpha}^{\alpha} = 3.
+\end{equation*}
+
+По определению символа Леви-Чивиты, раскроем определитель:
+\begin{equation*}
+	\varepsilon_{\alpha \beta \gamma} \varepsilon^{\alpha' \beta' \gamma} = 
+	\begin{vmatrix}
+	    \delta_\alpha^{\alpha'} & \delta_{\alpha}^{\beta'} & \delta_{\alpha}^{\gamma} \\
+	    \delta_{\beta}^{\alpha'} & \delta_{\beta}^{\beta'} & \delta_{\beta}^{\gamma} \\
+	    \delta_{\gamma}^{\alpha'} & \delta_{\gamma}^{\beta'} & \delta_{\gamma}^{\gamma`} \\
+	\end{vmatrix}
+	=
+	\delta_{\alpha}^{\alpha'} \left(\delta_{\beta}^{\beta'} \delta_{\gamma}^{\gamma} - \delta_{\beta}^{\gamma} \delta_{\gamma}^{\beta'} \right)
+	-
+	\delta_{\alpha}^{\beta'} \left(\delta_{\beta}^{\alpha'} \delta_{\gamma}^{\gamma} -\delta_{\beta}^{\gamma} \delta_{\gamma}^{\alpha'} \right)
+	+
+	\delta_{\alpha}^{\gamma} \left(\delta_{\beta}^{\alpha'} \delta_{\gamma}^{\beta'} -\delta_{\beta}^{\beta'} \delta_{\gamma}^{\alpha'} \right)
+	=
+\end{equation*}
+\begin{equation*}
+	=\delta_{\alpha}^{\alpha'} \left(3 \delta_{\beta}^{\beta'}  - \delta_{\beta}^{\beta'} \right)
+	-\delta_{\alpha}^{\beta'} \left(2 \delta_{\beta}^{\alpha'} \right) 
+	+ \delta_{\alpha}^{\beta'} \delta_{\beta}^{\alpha'} 
+	- \delta_{\alpha}^{\gamma} \delta_{\beta}^{\beta'} \delta_{\gamma}^{\alpha'}  
+	=
+	\boxed{
+	\delta_{\alpha}^{\alpha'} \delta_{\beta}^{\beta'} - \delta_{\alpha}^{\beta'} \delta_{\beta}^{\alpha'}.
+	}  
+\end{equation*}
+
+Далее просто в последнем равенстве приравниваем в первом случае $\beta' =\beta$, а во втором ещё и $\alpha=\alpha'$, получая:
+\begin{equation*}
+	\varepsilon_{\alpha \beta \gamma} \varepsilon^{\alpha' \beta \gamma} = 3 \delta_{\alpha}^{\alpha'} - \delta_{\alpha}^{\alpha'} = 2\delta_{\alpha}^{\alpha'},
+	\hspace{0.5 cm}
+	\hspace{0.5 cm}
+	\varepsilon_{\alpha \beta \gamma} \varepsilon^{\alpha \beta \gamma} = 2 \delta_{\alpha}^{\alpha} = 6.
+\end{equation*}
