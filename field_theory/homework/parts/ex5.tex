@@ -1,0 +1,11 @@
+\subsection*{У5}
+Суть в том, чтобы скалярно домножая на константу, получать интегралы от форм, которые можно позже преобразовать по формуле Стокса.
+\begin{itemize}
+	\item $\vc{c} \cdot \int_V \nabla f d^3 r = \int_V \div (\vc{c} f) = \oint_{\partial V} \omega_{\vc{c} f}^2 = \oint_{\partial V} \vc{c} f \cdot d \vc{S}$.
+
+	\item $\vc{c} \cdot \int_V \rot \vc{A} d^3 r = \int_V \vc{\nabla} \cdot [\vc{A} \times \vc{c}] d^3 r = \int_V \div[\vc{A} \times \vc{c}] d^3 r =  \oint_S [\vc{A} \times \vc{c}] \cdot \vc{S} = \oint_S \vc{c} \cdot [d \vc{S} \times \vc{A}] = - \oint_S \vc{c} [A \times d \vc{S}]$.
+
+	\item $\vc{c} \cdot \int_S [\nabla f \times d \vc{S}] = \int_S d \vc{S} \cdot [\vc{c} \times \vc{\nabla} f] = - \int_S d \vc{S} \cdot \rot \vc{c} f = - \oint \vc{c} f \cdot d \vc{l}$.
+
+	\item $\oint_S [\vc{\nabla} \times \vc{A}] d \vc{S} = \int_\Gamma \vc{A} \cdot d \vc{l} = 0$, т.к. $\Gamma = \varnothing$.
+\end{itemize}

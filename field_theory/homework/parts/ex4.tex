@@ -1,0 +1,149 @@
+\subsection*{У4}
+\subsubsection*{a)}
+\begin{itemize}
+	\item $(\rot \rot \vc{A})^i 
+	= 
+	\varepsilon_{\phantom{0} j k}^{i} \nabla^j (\varepsilon_{\phantom{0} \alpha \beta}^{k} \nabla^\alpha A^\beta)
+	=
+	(\delta_{\alpha}^{i} \delta_{j \beta} - \delta_{\beta}^{i} \delta_{j \alpha}) \nabla^j \nabla^\alpha A^\beta
+	=
+	\nabla^i (\nabla_j A^j) - \nabla_j \nabla^j A^i
+	=
+	\left(
+	\grad \div \vc{A} - \nabla^2 \vc{A}
+	\right)^i$.
+
+	\item $(\rot [\vc{a} \times \vc{b}])^i 
+	=
+	\varepsilon_{\phantom{0} j k}^{i} \nabla^j \varepsilon_{\phantom{0} \alpha \beta}^{k} a^\alpha b^\beta
+	=
+	(\delta_{\alpha}^{i} \delta_{j \beta} - \delta_{\beta}^{i} \delta_{j \alpha})(a^\alpha \nabla^j b^\beta + b^\beta \nabla^j a^\alpha)
+	=
+	a^i \nabla^j b_j - b^i \nabla^j a_j 
+	=
+	(\vc{a} \div \vc{b} - \vc{b} \div \vc{a})^i$.
+
+	\item $(\rot [\vc{a} \times \vc{b}])^i
+	=
+	\varepsilon_{\phantom{0} j k}^{i} \nabla^j f A^k = \varepsilon_{\phantom{0} j k}^{i} (f \nabla^j A^k + A^k \nabla^j f)
+	=
+	f \varepsilon_{\phantom{0} j k}^{i} \nabla^j A^k + \varepsilon_{\phantom{0} j k}^{i} \nabla^j f
+	=
+	(f \rot \vc{A} + \vc{A} \times \grad f)^i$.
+
+	\item $\div f \vc{A} = \nabla_i f A^i = A^i \nabla_i f + f \nabla_i A^i
+	=
+	(\vc{A} \cdot \grad f) + f \div \vc{A}$.
+
+	\item $\div [\vc{a} \times \vc{b}] = \nabla_i \varepsilon_{\phantom{0} j k}^{i} a^j b^k = \varepsilon_{\phantom{0} j k}^{i} (b^k \nabla_i a^j + a^j \nabla_i b^k)
+	=
+	\varepsilon_{\phantom{0} j k}^{i} b^k \nabla_i a^j + \varepsilon_{\phantom{0} j k}^{i} a^j \nabla_i b^k
+	=
+	b^k \varepsilon_{k \phantom{0} j}^{ \phantom{0} i} \nabla_i a^j - a^j \varepsilon_{j \phantom{0} k}^{\phantom{0} i} \nabla_i b^k
+	=$
+	
+	$=(\vc{b} \cdot \rot \vc{a}) - (\vc{a} \cdot \rot \vc{b})$.
+
+	\item $[\grad(\vc{a} \cdot \vc{b})]^i = \nabla^i a^j b_j = a^j \nabla^i b_j + b_j \nabla^i a^j$
+
+	Рассмотрим такую штуку: $((\vc{a} \cdot \vc{\nabla}) \vc{b})^j
+	=
+	a_i \nabla^i b^j
+	$
+
+	И такую: $
+	(\vc{a} \times [\vc{\nabla} \times \vc{b}])^i
+	=
+	\varepsilon_{\phantom{0} j k}^{i} a^j \varepsilon_{\phantom{0} \alpha \beta}^{k} \nabla^\alpha b^\beta
+	=
+	(\delta_a^i \delta_{j \beta} - \delta_\beta^i \delta_{j \alpha}) a^j \nabla^\alpha b^\beta
+	=
+	a^j \nabla^i b_j - a_j \nabla^j b^i
+	$
+
+	Из этих штук и можем составить начальную:
+	 $$[\grad(\vc{a} \cdot \vc{b})]^i = \nabla^i a^j b_j = a^j \nabla^i b_j + b_j \nabla^i a^j
+	 =
+	 [\vc{a} \times [\vc{\nabla} \times \vc{b}]]^i + [\vc{b} \times [\vc{\nabla} \times \vc{a}]] + (\vc{a} \cdot \vc{\nabla}) \vc{b} + (\vc{b} \cdot \vc{\nabla}) \vc{a}.
+	 $$
+\end{itemize}
+
+\subsubsection*{б)}
+\begin{itemize}
+	\item $\rot [\vc{\omega} \times \vc{r}] = 3 \vc{\omega}$.
+
+	\item 
+	$ grad(\vc{a} \cdot \vc{r}) = (\vc{a} \cdot \vc{\nabla}) \vc{r} = \bigg\slash a^i \nabla_i r^j =\phantom{\frac{1}{1}} a^i \delta_i^j \bigg\slash = \vc{a}$
+\end{itemize}
+
+\subsubsection*{в)}
+	\begin{itemize}
+		\item  $\grad r = \bigg\slash \nabla^i \sqrt{r^j r_j} = \frac{1}{2}\frac{\nabla^i r^j r_j}{\sqrt{r^\gamma r_\gamma}} = \frac{r^j \delta_{j}^{i}}{r} \bigg\slash = \frac{\vc{r}}{r}$.
+
+		\item $\div \vc{r} = \nabla_\alpha r^\alpha = \delta_\alpha^\alpha = 3. \phantom{\bigg\slash} $
+
+		\item $(\vc{a} \cdot \vc{n}) \vc{r}= \bigg\slash a^i \nabla_i r^j \bigg\slash = \vc{a}$.
+
+		\item $\grad f (r) = \bigg\slash
+		\nabla^i f(r) = f_r' \nabla^i \sqrt{r^j r_j}
+		\bigg\slash = f_r' \frac{\vc{r}}{r}$.
+
+		\item $\rot \vc{a}(r) = \bigg\slash \varepsilon_{\phantom{0} j k}^{i} \nu^j a^k(r) = \varepsilon_{\phantom{0} j k}^{i} (a^k)_r' \frac{\nabla^j r}{r^j/r} \bigg\slash = \frac{1}{r} [\vc{a}_r' \times \vc{r}]$.
+
+		\item $\div \vc{a}(r) = \bigg\slash \nabla^i a_i(r) = (a_i)_r' \nabla^i r \bigg\slash = \frac{1}{r} (\vc{a}_r' \cdot \vc{r})$.
+	\end{itemize}
+% \begin{equation*}
+% 	(\rot \rot \vc{A})^i 
+% 	= 
+% 	\varepsilon_{\phantom{0} j k}^{i} \nabla^j (\varepsilon_{\phantom{0} \alpha \beta}^{k} \nabla^\alpha A^\beta)
+% 	=
+% 	(\delta_{\alpha}^{i} \delta_{j \beta} - \delta_{\beta}^{i} \delta_{j \alpha}) \nabla^j \nabla^\alpha A^\beta
+% 	=
+% 	\nabla^i (\nabla_j A^j) - \nabla_j \nabla^j A^i
+% 	=
+% 	\left(
+% 	\grad \div \vc{A} - \nabla^2 \vc{A}
+% 	\right)^i
+% \end{equation*}
+
+% \begin{equation*}
+% 	(\rot [\vc{a} \times \vc{b}])^i 
+% 	=
+% 	\varepsilon_{\phantom{0} j k}^{i} \nabla^j \varepsilon_{\phantom{0} \alpha \beta}^{k} a^\alpha b^\beta
+% 	=
+% 	(\delta_{\alpha}^{i} \delta_{j \beta} - \delta_{\beta}^{i} \delta_{j \alpha})(a^\alpha \nabla^J b^\beta + b^\beta \nabla^j a^\alpha)
+% 	=
+% 	a^i \nabla^j b_j - b^i \nabla^j a_j 
+% 	=
+% 	(\vc{a} \div \vc{b} - \vc{b} \div \vc{a})^i
+% \end{equation*}
+
+% \begin{equation*}
+% 	(\rot [\vc{a} \times \vc{b}])^i
+% 	=
+% 	\varepsilon_{\phantom{0} j k}^{i} \nabla^j f A^k = \varepsilon_{\phantom{0} j k}^{i} (f \nabla^j A^k + A^k \nabla^j f)
+% 	=
+% 	f \varepsilon_{\phantom{0} j k}^{i} \nabla^j A^k + \varepsilon_{\phantom{0} j k}^{i} \nabla^j f
+% 	=
+% 	(f \rot \vc{A} + \vc{A} \times \grad f)^i
+% \end{equation*}
+
+% \begin{equation*}
+% 	\div f \vc{A} = \nabla_i f A^i = A^i \nabla_i f + f \nabla_i A^i
+% 	=
+% 	(\vc{A} \cdot \grad f) + f \div \vc{A}
+% \end{equation*}
+
+% \begin{equation*}
+% 	\div [\vc{a} \times \vc{b}] = \nabla_i \varepsilon_{\phantom{0} j k}^{i} a^j b^k = \varepsilon_{\phantom{0} j k}^{i} (b^k \nabla_i a^j + a^j \nabla_i b^k)
+% 	=
+% 	\varepsilon_{\phantom{0} j k}^{i} b^k \nabla_i a^j + \varepsilon_{\phantom{0} j k}^{i} a^j \nabla_i b^k
+% 	=
+% 	b^k \varepsilon_{k \phantom{0} j}^{ \phantom{0} i} \nabla_i a^j - a^j \varepsilon_{j \phantom{0} k}^{\phantom{0} i} \nabla_i b^k
+% 	=
+% 	(\vc{b} \cdot \rot \vc{a}) - (\vc{a} \cdot \rot \vc{b})
+% \end{equation*}
+
+% \begin{equation*}
+% 	[\grad(\vc{a} \cdot \vc{b})]^i = \nabla^i a^j b_j = a^j \nabla^i b_j + b_j \nabla^i a^j
+% \end{equation*}
