@@ -1,0 +1,67 @@
+\subsection*{Т5}
+\addcontentsline{toc}{subsection}{T5}
+
+Имеем две частицы, 4-импульсы которых в начальный момент:
+\begin{equation*}
+	p_\gamma^i = \begin{pmatrix}\varepsilon_\gamma \\ \vc{p}_\gamma \end{pmatrix},
+	\hspace{0.5 cm}
+	|p_\gamma^i| \approx \varepsilon_\gamma.
+	\hspace{2 cm}
+	p_e^i = \begin{pmatrix} \varepsilon_e \\ \vc{p}_e\end{pmatrix},
+	\hspace{0.5 cm}
+	|p_e^i| =\beta_e \varepsilon_e.
+\end{equation*}
+
+Перейдём в систему центра инерции двух частиц. Пусть пусть движется со скоростью $\beta$, тогда матрица преобразования для такой пересадки и аберрация угла будут
+\begin{equation*}
+ 	\begin{pmatrix}
+ 	    \gamma & \gamma \beta & 0 & 0 \\
+ 	    \gamma \beta & \gamma & 0 & 0 \\
+ 	    0 & 0 & 1 & 0 \\
+ 	    0 & 0 & 0 & 1 \\
+ 	\end{pmatrix},
+ 	\hspace{1 cm}
+ 	\cos \theta' = \frac{\cos \theta - \beta}{1 - \cos \theta \beta}.
+\end{equation*}
+Запишем закон сохранения импульса до и после столкновения, штрихами пометим величины после столкновения.
+\begin{equation*}
+	p_\gamma^i + p_e^i = p_\gamma'^i + p_e'^i
+	\hspace{0.5 cm}
+	\Rightarrow
+	\hspace{0.5 cm}
+	(p_e'^i)^2 = (p_\gamma^i + p_e^i - p_\gamma'^i)^2
+	=
+	{p_\gamma^2} + p_e^2 + p_\gamma'^2 + 2 p_e p_\gamma - 2 p_e p_\gamma' - 2 p_\gamma p_\gamma',
+\end{equation*}
+пренебрегая квадратом импульса фотонов получаем
+\begin{equation*}
+	m_e^2 = m_e^2 + 2 p_e p_\gamma - 2 p_e p_\gamma' - 2 p_\gamma p_\gamma'
+	\hspace{0.5 cm}
+	\Rightarrow
+	\hspace{0.5 cm}
+	p_e p_\gamma -  p_e p_\gamma' -  p_\gamma p_\gamma' = 0.
+\end{equation*}
+Перемножим компоненты 4-импульсов:
+\begin{equation*}
+	\varepsilon_e \varepsilon_\gamma - \vc{p}_e \cdot \vc{p}_\gamma - \varepsilon_e \varepsilon_\gamma' + \vc{p}_e \cdot \vc{p}_\gamma' - \varepsilon_\gamma \varepsilon_\gamma' + \vc{p}_\gamma \cdot \vc{p}_\gamma' = 0.
+\end{equation*}
+Пусть частицы разлетелись под углом $\theta$:
+\begin{equation*}
+	\varepsilon_e \varepsilon_\gamma + \varepsilon_e \varepsilon_\gamma \beta_e - \varepsilon_e \varepsilon_\gamma' + \beta_e \varepsilon_e \varepsilon_\gamma' \cos \theta - \varepsilon_\gamma \varepsilon_\gamma' + \varepsilon_\gamma \varepsilon_\gamma' \cos (\pi-\theta) = 0.
+\end{equation*}
+Откуда не сложно выразить энергию фотона после столкновения, заметим, что по условию задачи: $\varepsilon_\gamma/\varepsilon_e = 10^{-11}$, такими членами будем пренебрегать:
+\begin{equation*}
+	\varepsilon_\gamma' = \frac{\varepsilon_e \varepsilon_\gamma(1 + \beta_e)}{\varepsilon_e (1 - \beta_e \cos \theta) + \varepsilon_\gamma (1 + \cos \theta)}
+	=
+	\frac{\varepsilon_\gamma (1 + \beta_e)}{1 - \beta \cos \theta + \frac{\varepsilon_\gamma}{\varepsilon_e}(1 + \cos \theta)} 
+	\approx \frac{\varepsilon_\gamma (1 + \beta_e)}{1 - \beta_e \cos \theta}.
+\end{equation*}
+
+Имея формулу плюс-минус общую не сложно ответить на вопрос про рассеяние назад:
+\begin{equation*}
+	\varepsilon_\gamma' (cos \theta = -1) \approx \varepsilon_\gamma = 2 \text{ эВ}. 
+\end{equation*}
+в то время, как вперед пролетает:
+\begin{equation*}
+	\varepsilon_\gamma' (cos \theta = 1) \approx \frac{\varepsilon_\gamma \varepsilon_e^2}{m_e^2} \approx 320 \text{ ГэВ}. 
+\end{equation*}
