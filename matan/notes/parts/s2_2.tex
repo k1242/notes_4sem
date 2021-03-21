@@ -1,0 +1,244 @@
+\subsection{Дифференцирование и интегрирование по параметру несобственных интегралов}
+
+\subsubsection*{Т2}
+
+Вычислим интеграл Дирихле
+\begin{equation*}
+    \int_0^\infty \frac{\sin \alpha x}{x} \d x
+\end{equation*}
+Пусть
+\begin{equation*}
+    \Phi(\alpha, \beta) = \int_0^{\infty} e^{-\beta x} \frac{\sin (\alpha x)}{x} \d x,
+\end{equation*}
+что называют smooth cut of. 
+\begin{equation*}
+    \Phi'_\alpha (\alpha, \beta) = 
+    \int_0^\infty e^{-\beta x} \cos (\alpha x) \d x = \frac{\beta}{\alpha^2 + \beta^2},
+\end{equation*}
+по правилу Лейбница (см. теормин). Теперь, интегриря $\alpha$ на отрезке $[0, \alpha]$ находим
+\begin{equation*}
+    \Phi(\alpha, \beta) - \Phi(0, \beta) = \beta \int_{0}^{\alpha} \frac{d t}{t^2 + \beta^2} = 
+    \arctg \frac{\alpha}{\beta} \overset{\mathrm{?}}{\to} I(\alpha).
+\end{equation*}
+Понятно, что $I(\alpha) = - I(\alpha)$, так что далее считаем $\alpha > 0$. Имеем правно рассмотреть $\beta \in [0, 1]$.
+
+Тогда рассмотрим предел
+\begin{equation*}
+    \lim_{\beta \to +0} \int_0^{+\infty} e^{-\beta x} \frac{\sin(\alpha x)}{x} \d x = I(\alpha) =
+    \lim_{\beta \to +0} \arctg \frac{\alpha}{\beta} = \frac{\pi}{2}.
+\end{equation*}
+Таким образом для произвольного $\alpha$ верно, что
+\begin{equation}
+    \int_0^{\infty} \frac{\sin(x)}{x} \d x = \frac{\pi}{2} \sign (\alpha).
+\end{equation}
+
+
+% далее интегралы Лапласа с дробно рациональной функцией -- пример 2.
+% ДЗ -- пример 5 -> интегралы Френеля. К3, стр 352
+% 
+
+
+\subsubsection*{15.1(1)}
+
+Теперь хочется посчитать
+\begin{equation*}
+    \int_{0}^{+\infty}  \left(
+        \cos^ (ax) - \cos^2 (bx)
+    \right) \frac{dx}{x} = \frac{1}{2} \int_{0}^{+\infty}  \left(
+        \cos(2ax) - \cos(2 b x)
+    \right) \frac{dx}{x} = \frac{1}{2} \ln \frac{b}{a}.
+\end{equation*}
+где уже можем выбрать $\cos (2ax) = f(ax)$. 
+
+\subsubsection*{15.1(2)}
+
+Теперь найдём
+\begin{equation*}
+    \int_{0}^{+\infty}  \l(
+        e^{-ax^2} - e^{-bx^2}
+    \r) \frac{dx}{x} = \ln \sqrt{\frac{b}{a}} = \frac{1}{2} \ln \frac{b}{a},
+\end{equation*}
+
+\subsubsection*{15.1(4)}
+
+На этот раз наш интеграл
+\begin{equation*}
+    \int_0^1 \frac{x^a - x^b}{\ln x} \d x = \bigg/
+    \red{
+        \ln \frac{1}{x} = t
+    }
+    \bigg/ = 
+    \int_{\infty}^0 \frac{\d t}{t} e^{-t} (e^{-at} - e^{-bt}) = 
+    \int_0^\infty \l(
+        e^{-(b+1)t} - e^{-(a+1)t}
+    \r) \frac{\d t}{t} = \ln \frac{a+1}{b+1}
+\end{equation*}
+
+% в 15.2(3) t = x^2
+
+\subsubsection*{15.3(2)}
+
+Интеграл
+\begin{equation*}
+    \int_0^\infty \sin x \cos^ x \frac{dx}{x} = \int_{0}^{+\infty} 
+    \frac{dx}{x}\sin(x) \frac{1}{2} \l(
+        1 + \cos (2x)
+    \r) = \frac{1}{2} \int_0^\infty \frac{\sin x}{x} \d x + 
+    \frac{1}{2} \int_0^\infty \frac{\sin x \cos 2 x}{x} \d x,
+\end{equation*}
+где уже хочется подставить раскрытый $\sin (3 x)$:
+\begin{equation*}
+    \frac{1}{2} \frac{\pi}{2} + \frac{1}{2} \frac{1}{2} \int_0^\infty \frac{\sin(3x)}{x} \d x -
+    \frac{1}{4} \int_0^\infty \frac{\sin x}{x} \d x = \frac{\pi}{4}.
+\end{equation*}
+% почему можно дифференцировать по параметру, равномерно ил он сходится
+
+
+\subsubsection*{15.4(3)}
+
+Есть интграл вида
+\begin{equation*}
+    I(\alpha) = \int_{0}^{+\infty} \frac{\sin^4 (\alpha x)}{x^2} \d x.
+\end{equation*}
+% хочется проверить условие дифференцируемости
+...
+
+Теперь можем посчитать
+\begin{equation*}
+    I'_\alpha (\alpha) = \int_{0}^{+\infty} 4 \sin^2 (\alpha x) \cos(\alpha x) \frac{\d x}{x}
+    =
+    \int_{0}^{+\infty} \frac{dx}{x} \l(
+        \frac{1}{4} \sin (2 x\alpha) - \frac{1}{8} \sin (4 x \alpha)
+    \r) = \frac{\pi}{4} \sign \alpha,
+\end{equation*}
+что верно $\forall \alpha$. 
+
+Возвращаясь к интегралу, находим, что
+\begin{equation*}
+    I(\alpha) = \frac{\pi}{4} |\alpha| + 0,
+\end{equation*}
+так как $I(0) = 0$.
+
+
+\subsubsection*{Интерирование по частям}
+
+Воообще 
+\begin{equation*}
+    \int_{a}^{+\infty}  f(x, \alpha) g'_x (x, \alpha) \d x 
+    =
+    f(x, \alpha) g(x, \alpha) \bigg|_a^{\infty} - \int_{a}^{+\infty}  f'_x (x, \alpha) g(x, \alpha) \d x,
+\end{equation*}
+работает, когда $f, g \in C^1$ по $x$ и любые два из трёх написанных пределов существуют.
+
+
+
+\subsubsection*{15.5(6)}
+
+Интеграл 
+\begin{equation*}
+    I(\alpha) = \int_{0}^{+\infty}  \sin^3 (x) \cos (\alpha x) \frac{dx}{x^3}
+\end{equation*}
+хотелось бы вычислить.
+
+Интегрируя по частям
+\begin{equation*}
+    \sin^3 x \cos (\alpha x) = \frac{3}{8} \left(
+        \sin(\alpha+1)x - \sin (\alpha - 1)x
+    \right) - \frac{1}{8} \l(
+        \sin(\alpha+3)x - \sin(\alpha_3)x
+    \r),
+\end{equation*}
+для $\alpha > 3$. В общем приходим к выражению
+\begin{align*}
+    I(\alpha) 
+    &=
+     \int_{0}^{+\infty}  \sin^3 (x) \cos (\alpha x) \frac{dx}{x^3}
+    =
+     \int_0^\infty \sin^3 x \cos(\alpha x) \d \l(
+        \frac{-1}{2x^2}
+    \r) 
+    = 
+    \\
+    &=
+    \l(
+        -\frac{1}{2x^2}
+    \r) \sin^3 x \cos \alpha x \bigg|_0^\infty + \frac{1}{2} \int_{0}^{+\infty} 
+    \frac{1}{x^2} \d (\sin^3 x \cos \alpha x) = 
+    \frac{1}{2} \int_{0}^{+\infty} \l(
+        \sin^3 (x) \cos (\alpha x)
+    \r)'_x  f\left(-\frac{1}{x}\right) 
+    = 
+    \\
+    &= 
+    - \frac{1}{2x} \l(
+        \sin^3 x \cos(\alpha x)
+    \r)'_x \bigg|_0^\infty + 
+    \frac{1}{2} \int_{0}^{+\infty}  \frac{1}{x} \d \l(
+        \sin^3 x \cos \alpha x
+    \r)'_x
+    = 
+    \\ 
+    &=
+    -\frac{1}{2} \int_{0}^{+\infty} \frac{\d x}{x} \l(
+        \frac{3}{8}\left[
+            (\alpha+1)^2 \sin (\alpha+1)x - (\alpha-1)2 \sin (\alpha-1)x
+        \right] - 
+        \frac{1}{8}\left[
+            (\alpha+3)^2 \sin (\alpha+3) x - (\alpha-3)^2 \sin  (\alpha-3)x
+        \right]
+    \r) 
+    = \\
+    &=
+    -\frac{\pi}{4} \left\{
+        \frac{3}{8} (\alpha+1)^2 - \frac{3}{8} (\alpha-1)^2 - \frac{1}{8} (\alpha + 3)^2+ \frac{1}{8} (\alpha-3)^2
+    \right\} = 0 
+\end{align*}
+
+
+\subsubsection*{15.6(5)}
+При выполнении всех условий о дифференцирование интеграла по параметру, для интеграла 
+\begin{equation*}
+    I(\alpha) = \int_0^1 \frac{\arctg (\alpha x)}{x \sqrt{1-x^2}} \d x,
+\end{equation*}
+может быть так посчитан. 
+
+Действительно,
+\begin{align*}
+    \frac{d I(\alpha)}{d \alpha} 
+    &=
+    \int_0^1 \frac{1}{x \sqrt{1-x^2}} \frac{1}{1+(\alpha x)^2} 
+    = 
+    \int_0^1 dx \left[
+        \sqrt{1-x^2} (1+ (\alpha x)^2)
+    \right]^{-1}
+    = \\ &=
+    \bigg/
+        x = \cos t, \ d x = - \sin t \d t
+    \bigg/ = \frac{1}{\sqrt{1+\alpha^2}} \arctg \l(
+        \frac{\tg t}{\sqrt{1+\alpha^2}}
+    \r) \bigg|_0^{\pi/2} = \frac{\pi}{2 \sqrt{1+\alpha^2}}.
+\end{align*}
+Тогда $I(\alpha)$
+\begin{equation*}
+    I(\alpha) = \frac{\pi}{2} \int \frac{d \alpha}{\sqrt{1+\alpha^2}} + C -
+    \frac{\pi}{2} \ln \bigg|
+        \alpha + \sqrt{\alpha^2 + 1}
+    \bigg| + C,
+\end{equation*}
+где $I(0) = 0$ так что $C = 0$.
+
+
+
+\subsubsection*{15.15(4)}
+
+Теперь хочется взять интеграл
+\begin{equation*}
+    I(\alpha) = \int_0^\infty \frac{\sin^2 (\alpha x)}{x^2 (1+x^2)} \d x
+\end{equation*}
+И снова по частям (при выполнении условий теоремы о дифференцировании по параметру \red{[!]}) справедливо утверждать
+\begin{align*}
+    \frac{d I(\alpha)}{d \alpha}  
+    &= \int_0^\infty \frac{\sin (2 \alpha x)}{x (1+x^2)} \d x, \\
+    \frac{d^2 I(\alpha)}{d \alpha^2} &= 2 \int_{0}^{+\infty} 
+    \frac{\cos(2 \alpha x)}{1+x^2} \d x = 2 \frac{\pi}{2} e^{-2 |\alpha|}.
+\end{align*}
