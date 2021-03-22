@@ -1,0 +1,102 @@
+\subsection*{Т7}
+\addcontentsline{toc}{subsection}{T7}
+Начнём с небольшого вступления.
+Выберем оси $z$ по $\vc{H}$, ось $y$ так, чтобы в $ \vc{E} \in \text{Oyz}$.
+Тогда тензор электромагнитного поля запишется:
+\begin{equation*}
+	F^{\mu \nu} = 
+	\begin{pmatrix}
+	    0 & 0 & -E \sin \theta  & -E \cos \theta \\
+	    0 & 0 & -H & 0 \\
+	    E \sin \theta & H & 0 & 0 \\
+	    E \cos \theta & 0 & 0 & 0 \\
+	\end{pmatrix},
+\end{equation*}
+с учетом $\Lambda = \frac{e E}{m c}$ и $\omega = \frac{e H}{m c}$, уравнения движения же :
+\begin{equation*}
+	\frac{d}{d \tau}
+	\begin{pmatrix}
+		u_0 \\ u_x \\ u_y \\ u_z
+	\end{pmatrix}
+	=
+	\begin{pmatrix}
+	    0 & 0 & \Lambda \sin \theta & \Lambda \cos \theta \\
+	    0 & 0 & \omega & 0 \\
+	    \Lambda \sin \theta & - \omega & 0 & 0 \\
+	    \Lambda \cos \theta & 0 & 0 & 0 \\
+	\end{pmatrix}
+	\begin{pmatrix}
+		u_0 \\ u_x \\ u_y \\ u_z
+	\end{pmatrix}.
+\end{equation*}
+Решаем полученное дифференциальное уравнения, в степенях экспонент:
+\begin{equation*}
+	\lambda^4 + \lambda^2 (\omega^2 - \Lambda^2) - \Lambda^2 \omega^2 \cos^2 \theta = 0
+	\hspace{0.5 cm}
+	\Rightarrow
+	\hspace{0.5 cm}
+	\lambda^2 = -\frac{1}{4} \left(\frac{e}{m c}\right) \left[I_1 \mp \sqrt{I_1^2 + I_2^2}\right],
+	\hspace{0.5 cm}
+	I_1 = E^2 - H^2
+	\hspace{0.2 cm}
+	I_2 = \vc{E} \cdot H
+\end{equation*}
+И получаем:
+\begin{equation*}
+	\left\{
+	\begin{aligned}
+		&\lambda_{1,2} = \pm \chi \\
+		&\lambda_{3,4} = \pm i \Omega
+	\end{aligned}\right.
+\end{equation*}
+В нашей же задаче мы имеем случай ортогональных полей, тогда $I_2 = 0$.
+
+Пусть сначала у нас поля не равны друг другу по модулю, и $H>E$. Тогда можно перейти в систему отсчета так, что остаются не нулевыми только мнимые корни $\lambda_{3,4} = \pm i \Omega$. И циклотронная частота: \begin{equation*}
+	\Omega = \frac{e}{m c} \sqrt{H^2 - E^2} \equiv \frac{e H'}{m c}.
+\end{equation*}
+Тут $H'$ -- магнитное поле в системе отсчета, движущейся вдоль оси $x$ со скоростью:
+\begin{equation*}
+	\vc{v} = c \frac{\vc{E} \times \vc{H}}{\vc{H}^2}.
+\end{equation*}
+И из уравнения движения выше получаем, что:
+\begin{equation*}
+	\dot{u}_z = 0,
+	\hspace{0.5 cm}
+	u_z(\tau) = \frac{p_{0z}}{m c},
+	\hspace{0.5 cm}
+	z(\tau) = \frac{p_{0z}}{m}\tau.
+\end{equation*}
+Для оставшихся компонент имеем:
+\begin{equation*}
+	\begin{pmatrix}
+		u_0 (\tau) \\ u_x(\tau) \\ u_y(\tau)
+	\end{pmatrix}
+	=
+	a_0 \begin{pmatrix}
+		1 \\ \Lambda / \omega \\ 0
+	\end{pmatrix}
+	+
+	a_+ \begin{pmatrix}
+		1 \\ \omega / \Lambda \\ i \Omega / \Lambda
+	\end{pmatrix} e^{i \Omega \tau}
+	+
+	a_- \begin{pmatrix}
+		1 \\ \omega/\Lambda \\ - i \Omega/\Lambda
+	\end{pmatrix} e^{- i \Omega \tau}.
+\end{equation*}
+И если подставить начальные условия:
+\begin{align*}
+	&u_0(\tau) = \frac{\omega^2(\varepsilon_0 - p_{0x} v)}{m c^2 \Omega^2} - \frac{\Lambda \omega(\varepsilon_0 v - c^2 p_{0x})}{m c^3 \Omega^2} \cos \Omega \tau
+	- \frac{\Lambda p_{0y}}{m c \Omega} \sin \Omega \tau \\
+	&u_{y}(\tau) = \frac{\omega}{m c^2 \Omega}\left(\varepsilon_0 \frac{v}{c} - c p_{0x}\right) \sin \Omega \tau + \frac{p_{0y}}{m c} \cos \Omega \tau\\
+	&u_x(\tau) = \frac{\Lambda \omega (\varepsilon_0 - p_{0x}v)}{m c^2 \Omega^2} - \frac{\omega^2}{m c^2 \Omega^2}\left[
+	\left(\varepsilon_0 \frac{v}{c} - c p_{0x}\right)\cos \Omega \tau +\frac{\Omega c p_{0y}}{\omega}\sin \Omega \tau
+	\right]
+\end{align*}
+Для скорости по оси $x$ получили компоненту, независящую от времени --- это скорость дрейфа:
+\begin{equation*}
+	v_{\text{др}} = \frac{\Lambda \omega (\varepsilon_0 - p_{0x}v)}{m c^2 \Omega^2}.
+\end{equation*}
+
+Случай же равенства полей получим в предельном случае, взяв $H = E \sqrt{1 + \delta^2}$, таким образом при $\delta \to 0$ получаем $E \to H$.
+Тогда $H^2 - E^2 = E^2 \delta^2$ и $\Omega = \Lambda \delta$.
