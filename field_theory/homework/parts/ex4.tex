@@ -19,12 +19,18 @@
 	\varepsilon_{\phantom{0} j k}^{i} \nabla^j \varepsilon_{\phantom{0} \alpha \beta}^{k} a^\alpha b^\beta
 	=
 	(\delta_{\alpha}^{i} \delta_{j \beta} - \delta_{\beta}^{i} \delta_{j \alpha})(a^\alpha \nabla^j b^\beta + b^\beta \nabla^j a^\alpha)
-	=
-	a^i \nabla^j b_j - b^i \nabla^j a_j 
-	=
-	(\vc{a} \div \vc{b} - \vc{b} \div \vc{a})^i$.
+	= a^i \nabla^j b_j - b^i \nabla^j a_j + b_j \nabla^j a^i - a^j \nabla^j b^i =
+	$
+	\\
+	\phantom{$(\rot [\vc{a} \times \vc{b}])^i$} $= (\vc{a} \div \vc{b} - \vc{b} \div \vc{a})^i
+	+ ((\vc{b} \cdot \nabla) \vc{a}-(\vc{a} \cdot \nabla) \vc{b})^i.
+	$.
 
-	\item $(\rot [\vc{a} \times \vc{b}])^i
+% 	a^i \nabla^j b_j - b^i \nabla^j a_j 
+	% =
+	% (\vc{a} \div \vc{b} - \vc{b} \div \vc{a})^i$ 
+
+	\item $(\rot f \vc{A})^i
 	=
 	\varepsilon_{\phantom{0} j k}^{i} \nabla^j f A^k = \varepsilon_{\phantom{0} j k}^{i} (f \nabla^j A^k + A^k \nabla^j f)
 	=
@@ -47,13 +53,13 @@
 
 	\item $[\grad(\vc{a} \cdot \vc{b})]^i = \nabla^i a^j b_j = a^j \nabla^i b_j + b_j \nabla^i a^j$
 
-	Рассмотрим такую штуку: $((\vc{a} \cdot \vc{\nabla}) \vc{b})^j
+	Рассмотрим такую штуку: $((\vc{a} \cdot {\nabla}) \vc{b})^j
 	=
 	a_i \nabla^i b^j
 	$
 
 	И такую: $
-	(\vc{a} \times [\vc{\nabla} \times \vc{b}])^i
+	(\vc{a} \times [{\nabla} \times \vc{b}])^i
 	=
 	\varepsilon_{\phantom{0} j k}^{i} a^j \varepsilon_{\phantom{0} \alpha \beta}^{k} \nabla^\alpha b^\beta
 	=
@@ -65,16 +71,16 @@
 	Из этих штук и можем составить начальную:
 	 $$[\grad(\vc{a} \cdot \vc{b})]^i = \nabla^i a^j b_j = a^j \nabla^i b_j + b_j \nabla^i a^j
 	 =
-	 [\vc{a} \times [\vc{\nabla} \times \vc{b}]]^i + [\vc{b} \times [\vc{\nabla} \times \vc{a}]] + (\vc{a} \cdot \vc{\nabla}) \vc{b} + (\vc{b} \cdot \vc{\nabla}) \vc{a}.
+	 [\vc{a} \times [{\nabla} \times \vc{b}]]^i + [\vc{b} \times [{\nabla} \times \vc{a}]] + (\vc{a} \cdot {\nabla}) \vc{b} + (\vc{b} \cdot {\nabla}) \vc{a}.
 	 $$
 \end{itemize}
 
 \subsubsection*{б)}
 \begin{itemize}
-	\item $\rot [\vc{\omega} \times \vc{r}] = 3 \vc{\omega}$.
+	\item $\rot [\vc{\omega} \times \vc{r}] = 2 \vc{\omega}$.
 
 	\item 
-	$ grad(\vc{a} \cdot \vc{r}) = (\vc{a} \cdot \vc{\nabla}) \vc{r} = \big/ a^i \nabla_i r^j =\phantom{\frac{1}{1}} a^i \delta_i^j \big/ = \vc{a}$
+	$ \grad(\vc{a} \cdot \vc{r}) = (\vc{a} \cdot {\nabla}) \vc{r} = \big/ a^i \nabla_i r^j =\phantom{\frac{1}{1}} a^i \delta_i^j \big/ = \vc{a}$
 \end{itemize}
 
 \subsubsection*{в)}
@@ -84,7 +90,7 @@
 
 		\item $\div \vc{r} = \nabla_\alpha r^\alpha = \delta_\alpha^\alpha = 3. \phantom{\big/} $
 
-		\item $(\vc{a} \cdot \vc{n}) \vc{r}= \big/ a^i \nabla_i r^j \big/ = \vc{a}$.
+		\item $(\vc{a} \cdot \nabla) \vc{r}= \big/ a^i \nabla_i r^j \big/ = \vc{a}$.
 
 		\item $\grad f (r) = \big/
 		\nabla^i f(r) = f_r' \nabla^i \sqrt{r^j r_j}

@@ -18,7 +18,7 @@
 	\varepsilon_{o \nu} = \frac{m_\pi^2 - m_\mu^2}{2 m_\pi}c^2 = \frac{140^2 - 105^2}{2 \cdot 140} \cdot 1^2 = 31 \text{ МэВ}.
 \end{equation*}
 
-Переходя же в лабораторную же систему отсчёта:	
+Переходя в лабораторную систему отсчёта:	
 \begin{equation*}
 	\varepsilon_\nu = \gamma(v) \varepsilon_{0 \nu} \left(1 - \frac{v}{c} \cos \theta_0\right).
 \end{equation*}
@@ -33,9 +33,9 @@
 \begin{equation*}
 	\varepsilon_\nu = \gamma(v) \varepsilon_{0 \nu} \left(1 - \frac{v}{c} \cos \theta_0\right)
 	\hspace{0.5 cm}
-	\overset{d}{\leadsto}
+	\overset{d}{\Rightarrow}
 	\hspace{0.5 cm}
-	d \varepsilon = \frac{v}{c} \gamma \varepsilon_0 d \cos \theta_0.
+	d \varepsilon = \frac{v}{c} \gamma \varepsilon_0 \d \cos \theta_0.
 \end{equation*}
 Из всех частиц $N_0$ в телесном угле $d \Omega_0$ заключено:
 \begin{equation*}
@@ -43,12 +43,13 @@
 	\hspace{1 cm}
 	\Rightarrow
 	\hspace{1 cm}
-	\frac{d N}{N_0} = \frac{1}{4 \pi} \frac{c d \varepsilon}{v \gamma \varepsilon_0} (2 \pi) = \frac{d \varepsilon}{\varepsilon_{\text{max}} - \varepsilon_{\text{min}}}.
+	\frac{d N}{N_0} = \frac{1}{4 \pi} \frac{c \d \varepsilon}{v \gamma \varepsilon_0} (2 \pi) = \frac{d \varepsilon}{\varepsilon_{\text{max}} - \varepsilon_{\text{min}}}.
 \end{equation*}
 
 Но это всё было в системе центра инерции, нужно перейти в лабораторную, а тогда произойдёт аберрация:
 \begin{equation*}
-	\frac{d \cos \theta' - \beta}{1 - \beta \cos \theta}.
+	\cos \theta = 
+	\frac{\cos \theta - \beta}{1 - \beta \cos \theta}.
 \end{equation*}
 Таким образом
 \begin{equation*}
@@ -56,4 +57,7 @@
 	=
 	\left(\frac{d N}{d \cos \theta'}\right) \frac{1 - \beta^2}{(\beta \cos \theta - 1)^2},
 \end{equation*}
-где $\left(\frac{d N}{d \cos \theta'}\right)$ --- распределение по углу в системе центра инерции, которое в силу изотропности пространства постоянно.
+где $d N/d \cos \theta'$ --- распределение по углу в системе центра инерции, которое в силу изотропности пространства постоянно. Так как в правой части отсутствует энергия, то распределение энергии по углу -- постоянно, тогда 
+\begin{equation*}
+	\langle \varepsilon^\nu\rangle = 1333 \text{\ МэВ}.
+\end{equation*}
