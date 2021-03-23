@@ -13,7 +13,7 @@
 [*задание*](https://github.com/k1242/notes_4sem/blob/main/field_theory/homework/field_theory_hw.pdf)
 );
 
-*  **дифференциальным уравнениям** 
+*  **дифференциальным уравнениям :mag: ** 
 (
 [*задание*](https://github.com/k1242/notes_4sem/blob/main/diffeqs/hw/HW.pdf)
 );
