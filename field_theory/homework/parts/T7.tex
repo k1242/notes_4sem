@@ -47,26 +47,30 @@
 \end{equation*}
 Осталось подставить начальные условия
 \begin{equation*}
-	\bar{u}(s=0) = (\mathscr{E}_0/c, p_{0x}, p_{0y}, p_{0z})\T,
+	\bar{u}(s=0) = (\mathscr{E}_0/c, p_{0x}, p_{0y}, p_{0z})\T / mc,
 \end{equation*}
 находим уравнения относительно $\bar{u}$ для трёх случаев. При $\alpha \in (0, 1)$:
 \begin{align*}
-	u_x(s) &= -\frac{(\alpha  p_0-p_{0x}) \cos \left(\frac{\sqrt{1-\alpha ^2} e H s}{c^2 m}\right)}{\left(1-\alpha ^2\right) c m}-\frac{\left(\alpha ^2-1\right) p_{oy} \sin \left(\frac{\sqrt{1-\alpha ^2} e H s}{c^2 m}\right)}{\left(1-\alpha ^2\right)^{3/2} c m}-\frac{\alpha  (\alpha  p_{0x}-p_0)}{\left(1-\alpha ^2\right) c m} ,
+	u_x(s) &= -\frac{(\alpha  p_0-p_{0x}) \cos \left(\frac{\sqrt{1-\alpha ^2} e H s}{c^2 m}\right)}{\left(1-\alpha ^2\right) c m}-\frac{\left(\alpha ^2-1\right) p_{0y} \sin \left(\frac{\sqrt{1-\alpha ^2} e H s}{c^2 m}\right)}{\left(1-\alpha ^2\right)^{3/2} c m}-\frac{\alpha  (\alpha  p_{0x}-p_0)}{\left(1-\alpha ^2\right) c m} ,
 	\\
-	u_y(s) &= \frac{(\alpha  p_0-p_{0x}) \sin \left(\frac{\sqrt{1-\alpha ^2} e H s}{c^2 m}\right)}{\sqrt{1-\alpha ^2} c m}+\frac{p_{oy} \cos \left(\frac{\sqrt{1-\alpha ^2} e H s}{c^2 m}\right)}{c m}.
+	u_y(s) &= \frac{(\alpha  p_0-p_{0x}) \sin \left(\frac{\sqrt{1-\alpha ^2} e H s}{c^2 m}\right)}{\sqrt{1-\alpha ^2} c m}+\frac{p_{0y} \cos \left(\frac{\sqrt{1-\alpha ^2} e H s}{c^2 m}\right)}{c m}.
 \end{align*}
 При $\alpha > 1$:
 \begin{align*}
-	u_x(s) &= \frac{(\alpha  p_0-p_{0x}) \cosh \left(\frac{\sqrt{\alpha ^2-1} e H s}{c^2 m}\right)}{\left(\alpha ^2-1\right) c m}+\frac{p_{oy} \sinh \left(\frac{\sqrt{\alpha ^2-1} e H s}{c^2 m}\right)}{\sqrt{\alpha ^2-1} c m}+\frac{\alpha  (\alpha  p_{0x}-p_0)}{\left(\alpha ^2-1\right) c m},
+	u_x(s) &= \frac{(\alpha  p_0-p_{0x}) \cosh \left(\frac{\sqrt{\alpha ^2-1} e H s}{c^2 m}\right)}{\left(\alpha ^2-1\right) c m}+\frac{p_{0y} \sinh \left(\frac{\sqrt{\alpha ^2-1} e H s}{c^2 m}\right)}{\sqrt{\alpha ^2-1} c m}+\frac{\alpha  (\alpha  p_{0x}-p_0)}{\left(\alpha ^2-1\right) c m},
 	\\
-	u_y(s) &= \frac{(\alpha  p_0-p_{0x}) \sinh \left(\frac{\sqrt{\alpha ^2-1} e H s}{c^2 m}\right)}{\sqrt{\alpha ^2-1} c m}+\frac{p_{oy} \cosh \left(\frac{\sqrt{\alpha ^2-1} e H s}{c^2 m}\right)}{c m}.
+	u_y(s) &= \frac{(\alpha  p_0-p_{0x}) \sinh \left(\frac{\sqrt{\alpha ^2-1} e H s}{c^2 m}\right)}{\sqrt{\alpha ^2-1} c m}+\frac{p_{0y} \cosh \left(\frac{\sqrt{\alpha ^2-1} e H s}{c^2 m}\right)}{c m}.
 \end{align*}
 И при $\alpha = 1$:
 \begin{align*}
-	u_x(s) &= \frac{e^2 H^2 s^2 (p_0-p_{0x})}{2 c^5 m^3}+\frac{e H p_{oy} s}{c^3 m^2}+\frac{p_{0x}}{c m}, \\
-	u_y(s) &= \frac{e H s (p_0-p_{0x})}{c^3 m^2}+\frac{p_{oy}}{c m}.
+	u_0(s) &= \frac{e^2 H^2 s^2 (p_0-p_{0x})}{2 c^5 m^3}+\frac{e H p_{0y} s}{c^3 m^2}+\frac{p_0}{c m} \\
+	u_x(s) &= \frac{e^2 H^2 s^2 (p_0-p_{0x})}{2 c^5 m^3}+\frac{e H p_{0y} s}{c^3 m^2}+\frac{p_{0x}}{c m}, \\
+	u_y(s) &= \frac{e H s (p_0-p_{0x})}{c^3 m^2}+\frac{p_{0y}}{c m}.
 \end{align*}
 и по оси $z$ движение с $u_z = p_{0z} / mc = \const$, а $s = c \tau$.
+
+
+
 % $\Lambda = \frac{e E}{m c}$ и $\omega = \frac{e H}{m c}$, уравнения движения же :
 % \begin{equation*}
 % 	\frac{d}{d \tau}
@@ -149,7 +153,14 @@
 % 	\left(\varepsilon_0 \frac{v}{c} - c p_{0x}\right)\cos \Omega \tau +\frac{\Omega c p_{0y}}{\omega}\sin \Omega \tau
 % 	\right]
 % \end{align*}
-Для скорости по оси $x$ получили компоненту, независящую от времени --- это скорость дрейфа:
+При пристальном взгляде на $u_0$ и $u_x$ 
+\begin{equation*}
+	u_0 - u_x = \frac{p_0 - p_{0x}}{cm} = 
+	\frac{\mathscr{E}_0 - c p_{0x}}{m c^2}
+	=
+	\const.
+\end{equation*}
+Для скорости по оси $x$ получили компоненту, независящую от времени ($E > H$) --- это скорость дрейфа:
 \begin{equation*}
 	v_{\text{др}} = u_x^{\neq f(s)} c  = c
 	\frac{\alpha  (\alpha  p_{0x}-p_0)}{\left(\alpha ^2-1\right) c m} = 
@@ -161,3 +172,17 @@
 	\bigg/ = c \alpha = c \frac{E}{H},
 \end{equation*}
 что соответствует нерелятивистскому случаю.
+
+Для случая $H > E$:
+\begin{equation*}
+	v_{\text{др}} = u_x^{\neq f(s)} c  = c
+	\frac{\alpha  (\alpha  p_{0x}-p_0)}{\left(\alpha ^2-1\right) c m} = 
+	\bigg/
+	\begin{aligned}
+	    p_0 &\approx m c\\
+	    \alpha &\gg 1. \\
+	\end{aligned}
+	\bigg/ = \frac{p_0}{cm} \frac{c}{\alpha} = 
+	 -\frac{c}{\alpha} = -c \frac{H}{E},
+\end{equation*}
+что уже очень похоже на правду.
