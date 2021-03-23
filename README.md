@@ -4,15 +4,16 @@
 * **аналитической механике II**
 (
 [*задание*](https://github.com/k1242/notes_4sem/blob/main/anmec/hw/anmec_hw_4sem.pdf),
-[*заметки с семинаров*](https://github.com/k1242/notes_4sem/blob/main/anmec/notes/anmec_notes.pdf)
+[*заметки с семинаров*](https://github.com/k1242/notes_4sem/blob/main/anmec/notes/anmec_notes.pdf),
+[*теория :hammer:*](https://github.com/k1242/notes_4sem/blob/main/anmec/tickets/anmec_tickets.pdf),
 );
 
-* **теория поля**
+*  **теория поля**
 (
 [*задание*](https://github.com/k1242/notes_4sem/blob/main/field_theory/homework/field_theory_hw.pdf)
 );
 
-* [<font color="red"> Новинка!] </font> **дифференциальным уравнениям** 
+*  **дифференциальным уравнениям :mag:** 
 (
 [*задание*](https://github.com/k1242/notes_4sem/blob/main/diffeqs/hw/HW.pdf)
 );
