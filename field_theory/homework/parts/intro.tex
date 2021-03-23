@@ -1,5 +1,5 @@
 Для кинематики полезно было бы ввести следующие величины
-\begin{equation*}
+\begin{equation}
     \gamma(v) = \gamma_v = \left(1 - \frac{v^2}{c^2}\right)^{-1/2},
     \hspace{1 cm}
     \beta(v) = \beta_v = \frac{v}{c},
@@ -10,7 +10,7 @@
         0 & 0 & 1 & 0\\
         0 & 0 & 0 & 1\\
     \end{pmatrix},
-\end{equation*}
+\end{equation}
 где $\Lambda$ -- преобразование Лоренца, для которого, кстати, верно, что $\Lambda^{-1} (v) = \Lambda(-v)$.
 
 Также преобразование Лоренца можно записать в виде
@@ -24,5 +24,43 @@
         \vphantom{\dfrac{1}{2}} \\
         - \vc{\beta}_v \gamma & \mathbb{E} + \frac{\gamma_v - 1}{\beta_v^2} \vc{\beta} \otimes \vc{\beta}  
         \vphantom{\dfrac{1}{2}} \\
-    \end{pmatrix}
+    \end{pmatrix},
 \end{equation}
+что очень удобно и полезно.
+
+Говоря о движение заряда в ЭМ-поле, хотелось бы получить уравнения движения. По принципу наименьшего действия
+\begin{equation*}
+    \delta S = \delta \int_a^b \l(
+        -mc \d s - \frac{e}{c} A_i \d x^i
+    \r) = 0,
+    \hspace{0.5cm} \overset{ds = \sqrt{\d x_i \d x^i}}{\Rightarrow}  \hspace{0.5cm}
+    \delta S = - \int_a^b \l(
+        mc \frac{\d x_i \d \delta x^i}{d s} + \frac{e}{c} A_i \d \delta x^i + \frac{e}{c} \delta A_i \d x^i
+    \r) = 0,
+\end{equation*}
+где проинтегрировав по частям первые два слагаемые получаем
+\begin{equation*}
+    \int_a^b
+    \l(
+        m c \d u_i \delta x^i + \frac{e}{c} \frac{\partial A_i}{\partial x^k} \delta x^i \d x^k - \frac{e}{c} \frac{\partial A_i}{\partial x^k} \d x^i \delta x^k
+    \r) = 0,
+    \hspace{0.25cm} \Rightarrow \hspace{0.25cm}
+    \int_a^b \l(
+        mc \frac{d u_i}{d s} - \frac{e}{c} \l(
+            \frac{\partial A_k}{\partial x^i} - \frac{\partial A_i}{\partial x^k} 
+        \r) u^k
+    \r) \delta x^i \d s = 0
+\end{equation*}
+где $(\delta \ldots) |_a^b = 0$ в силу варьирования при заданных пределах. Также сделаны замены $d u_i \to (u_i)'_s \d s$, $\d x^i \to u^i \d s$. А это уже победа, ведь в силу произвольности $\delta x^i$ получаем
+\begin{equation}
+     \frac{m c^2}{e} \frac{d u_i}{d s} = F^{ik} u_k = F^{ik} g_{kj} u^j,
+     \hspace{10 mm}
+     F^{ik} = \begin{pmatrix}
+         0 & -E_x & -E_y  & -E_z \\
+         E_x & 0 & -H_z  & H_y \\
+         E_y & H_z & 0 & -H_x \\
+         E_z & -H_y & H_x & 0 \\
+     \end{pmatrix},
+\label{EMtensor}
+\end{equation}
+что позволяет всегда смотреть на движение заряда в постоянном ЭМ-поле, как на систему линейных дифференциальных уравнений, решать которую, по крайней мере относительно $s = c \tau$ решать мы умеем.
