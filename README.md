@@ -7,6 +7,11 @@
 [*заметки с семинаров*](https://github.com/k1242/notes_4sem/blob/main/anmec/notes/anmec_notes.pdf)
 );
 
+* **теория поля**
+(
+[*задание*](https://github.com/k1242/notes_4sem/blob/main/field_theory/homework/field_theory_hw.pdf)
+);
+
 * [<font color="red"> Новинка!] </font> **дифференциальным уравнениям** 
 (
 [*задание*](https://github.com/k1242/notes_4sem/blob/main/diffeqs/hw/HW.pdf)
