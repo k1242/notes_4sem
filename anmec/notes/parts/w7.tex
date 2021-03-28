@@ -1,0 +1,265 @@
+\begin{to_thr}[Теорема Ли Хуа-Сжуна]
+    Был некоторый интегральный инвариант Пуанкаре, так вот, утверждается, что 
+    \begin{equation*} 
+        J = \oint A(q, p, t) \cdot \delta q + B(q, p, t) \cdot \delta p = \const \cdot J_{\text{П}},
+    \end{equation*}
+    только вот интегральный инвариант Пуанкаре существует для трубки прямых путей, а сейчас мы обобщаем это на отношения для разных трубок.
+\end{to_thr}
+
+Говоря о некоторых следствиях 
+\begin{equation*}
+    \oint q \delta p = c \oint p \delta q,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \oint 
+    \underbrace{(q \delta p - c p \delta q)}_{\delta \Phi}
+     = 0.
+\end{equation*}
+Раньше были уравнения Лагранжа
+\begin{equation*}
+    \frac{d }{d t} \frac{\partial L}{\partial \dot{q}} - \frac{\partial L}{\partial q} = 0,
+    \hspace{5 mm} \bigg/
+        \tilde{q} = \tilde{q} (q, t)
+    \bigg/ \hspace{5 mm}
+    \frac{d }{d t} \frac{\partial \tilde{L}}{\partial \dot{\tilde{q}}} -
+    \frac{\partial \tilde{L}}{\partial \tilde{q}} = 0.
+\end{equation*}
+Но, скорости не преобразуются. 
+
+Чуть прикольнее в уравнениях Якоби
+\begin{equation}
+\label{eqw}
+    \left\{\begin{aligned}
+        \tilde{q} &= \tilde{q} (q, p, t) \\
+        \tilde{p} &= \tilde{p} (q, p, t) \\
+    \end{aligned}\right.
+    \hspace{5 mm}
+    \bigg|
+        \frac{\partial (\tilde{q}, \tilde{p})}{\partial (q, p)} 
+    \bigg| \neq 0.
+\end{equation}
+что приводит к ситуации
+\begin{equation*}
+    \left\{\begin{aligned}
+        \dot{q} &= \partial_p H \\
+        \dot{p} &= - \partial_q H
+    \end{aligned}\right.
+    \hspace{0.5cm} \to \hspace{0.5cm}
+    \left\{\begin{aligned}
+        \dot{\tilde{q}} &= \tilde{Q}(\dot{\tilde{q}}, \dot{\tilde{p}}, t) \\ 
+        \dot{\tilde{p}} &= \tilde{P}(\dot{\tilde{q}}, \dot{\tilde{p}}, t) \\ 
+    \end{aligned}\right.
+\end{equation*}
+
+\begin{to_def}
+    Преобразование \eqref{eqw} называется каноническим, если оно переводит любую гамильтонову систему в гамильтонову.
+\end{to_def}
+
+Из вариационных принципов умеем получать уравнения Лагранжа, да и уравнения Гамильтона тоже
+\begin{equation*}
+    \delta \int_{t_0}^{t_1} \l(
+        p \cdot \dot{q} - H
+    \r) \d t = 0.
+\end{equation*}
+Как раньше выбираем $\dot{\vc{x}} = [q, \, p]\T$, что приведет к $2n$ переменным.
+
+Но и в новых переменных хочется видеть что-то похожее,
+\begin{equation*}
+    \delta \int \l(
+        \tilde{p} \cdot \dot{\tilde{q}} - \tilde{H}
+    \r) \d t = 0,
+\end{equation*}
+что приводит нас к мысли о том, что 
+\begin{equation*}
+    \tilde{p} \cdot \dot{\tilde{q}} - \tilde{H} = 
+    c (p \cdot \dot{q} - H) - \frac{d \tilde{F}}{d t} (q, p, t).
+\end{equation*}
+домножая, получаем
+\begin{equation*}
+    \tilde{p} \cdot \d \tilde{q} - \tilde{H} \d t = c p \d q - H \d t - \d F,
+\end{equation*}
+тогда
+\begin{equation*}
+    \d \tilde{q} = \frac{\partial \tilde{q}}{\partial t} \d t + \delta^t \tilde{q},
+    \hspace{5 mm}
+    \d F = \frac{\partial F}{\partial t} \d t + \delta^t F.
+\end{equation*}
+так приходим к уравнению
+\begin{equation*}
+    \tilde{p} \cdot \frac{\partial \tilde{q}}{\partial t}  \d t + 
+    \tilde{p} \cdot \partial^t \tilde{q} - \tilde{H} \d t = c p \cdot \d q - c H \d t - \frac{\partial F}{\partial t} \d t - \delta^t F,
+\end{equation*}
+что приводит к уравнению
+\begin{equation}
+\label{eqt}
+    \boxed{
+        \tilde{p} \cdot \delta^t \tilde{q}  -  c p \d q = - \delta^t F
+    },
+    \text{\ \ --- \ \ критерий канонического преобразования,}
+\end{equation}
+где $c$ -- \textit{валентность}, соответствующая теореме Ли Хуа-Сжуна, а $F$ -- производящая функция.
+
+\begin{to_thr}[критерий каноничности преобразования]
+    Если существует $c$ и $F$ такие, что выполняется \eqref{eqt}, то преобразование $(p, q) \mapsto (\tilde{p}, \tilde{q})$ канонично.
+\end{to_thr}
+
+\noindent
+Бонусом находим новый Гамильтониан, приравнивая коэффициенты при $\d t$. 
+\begin{equation*}
+    \tilde{H} = c H + \frac{\partial F}{\partial t} + \tilde{p} \cdot \frac{\partial \tilde{q}}{\partial t}.
+\end{equation*}
+
+\subsubsection*{Решим Задачу}
+Возьмем такое преобразование
+\begin{equation*}
+    \left\{\begin{aligned}
+        \tilde{q} &= p \tg t \\
+        \tilde{p} &= q \ctg t \\
+    \end{aligned}\right.
+    ,
+    \hspace{10 mm}
+    H = \frac{qp}{\sin t \, \cos t}.
+\end{equation*}
+тогда
+\begin{equation*}
+    \tilde{p} \, \delta^t \tilde{q} = q \ctg t \, \tg t \, \delta^t p = q \delta^t p = \delta^t (qp) - p \delta q,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \tilde{p} \cdot \delta^t \tilde{q} - (-1) p \delta q = - \delta (-qp).
+\end{equation*}
+Теперь можем найти новый гамильтониан
+\begin{equation*}
+    \tilde{H} = (-1) \frac{pq}{\sin t \, \cos t} + 0 + \frac{q \ctg (t)\,  p}{\cos^2 t} = 0,
+\end{equation*}
+что очень здорово, ведь в новых переменных $\dot{\tilde{q}} = 0, \, \dot{\tilde{p}} = 0$, что позволило найти первые интегралы системы, а также движение
+\begin{equation*}
+    \left\{\begin{aligned}
+        q &= \beta \tg t, \\
+        p &= \alpha \ctg t. \\
+    \end{aligned}\right.
+\end{equation*}
+
+
+\subsection{Импульсы не нужны}
+
+Вообще, пусть нам хочется в \textit{$(q, \tilde{q})$ описание} 
+\begin{equation*}
+    \bigg|
+        \frac{\partial \tilde{q}}{\partial p} 
+    \bigg| \neq 0,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    (q, p) \to (q, \tilde{q}).
+\end{equation*}
+Отличная идея! Теперь $F \to S(q, \tilde{q}, t)$ -- производящая функция. К слову, такие преобразования называются \textit{свободными}. Кусок вывода сразу можем выкинуть и перейти к
+\begin{equation*}
+    \tilde{p} \cdot d \tilde{q} - \tilde{H} \d t =  c p \cdot \d q - c H \d t - \d S,
+\end{equation*}
+что дает возможность работать сразу работать с независимыми дифференциалами
+\begin{equation*}
+    \left\{\begin{aligned}
+        \tilde{p} &= - \partial_{\tilde{q}} S \\
+        p &= c^{-1} \partial_q S \\
+    \end{aligned}\right.
+    \text{\ \ --- \ \ критерий каноничности в \textit{$(q, \tilde{q})$ описание}}.
+\end{equation*}
+Ещё и гамильтониан, как раньше, находим
+\begin{equation*}
+    \tilde{H} = c H + \partial_t S.
+\end{equation*}
+
+
+\subsubsection*{Задача 2}
+Есть преобразование
+\begin{equation*}
+    \left\{\begin{aligned}
+        q &= \sqrt{2 \tilde{p}} \cos \tilde{q} \\
+        p &= \sqrt{2 \tilde{p}} \sin \tilde{q} \\ 
+    \end{aligned}\right.
+    ,
+    \hspace{5 mm}
+    H = \frac{q^2 + p^2}{2}.
+\end{equation*}
+Теперь 
+\begin{equation*}
+    p = q \tg \tilde{q}, \hspace{5 mm}
+    \tilde{p} = \frac{q^2}{2 \cos^2 \tilde{q}},
+\end{equation*}
+и теперь, интегрируя,
+\begin{equation*}
+    \left\{\begin{aligned}
+        \frac{q^2}{2} (1 + \tg^2 \tilde{q}) &= - \partial_{\tilde{q}} S, \\
+        q \tg \tilde{q} &= c^{-1} \partial_q S,
+    \end{aligned}\right.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    S = - \l(
+        \frac{q^2}{2} \tg \tilde{q}
+    \r), \hspace{5 mm} c = -1.
+\end{equation*}
+И новый гамильтониан
+\begin{equation*}
+    \tilde{H} = - H = -\tilde{p}.
+\end{equation*}
+Заметим, что тут уже не восстановить Лагранжиан, -- преобразования Лежандра вырожденно. И уравнения движения
+\begin{align*}
+    q &= \sqrt{2 \alpha} \cos (-t + \beta) \\
+    p &= \sqrt{2 \alpha} \sin (-t + \beta).
+\end{align*}
+
+
+\subsection{Симплектическая геометрия (симплектология)}
+
+% см. Арнольда
+% Герман Вель
+% Гильберт, Нетер, Вель в Нетингеме 
+
+Гамильтонова система -- набор $(M, \omega, H)$, где $\dim M = 2 n$ -- конфигурационное многообразие, $H$ -- гамильтониан, $\omega$ -- симплектическая 2-форма.
+
+% возможно, форма -- что-то вроде ориентируемой площади.
+
+\begin{to_thr}[Теорема Дарбу]
+    Всегда локально есть такие переменные, что 2-форма принимает канонический вид
+    \begin{equation*}
+        \omega = \sum_{i=1}^{n} \d p_i \wedge \d q_i.
+    \end{equation*}
+\end{to_thr}
+
+\noindent
+К слову, $H\colon M \times \mathbb{R}_t \to \mathbb{R}$. Также точка $x \in M$ такая, что
+\begin{equation*}
+    \xi \in T_x M, \hspace{5 mm}
+    \omega_\xi (\ldots) = \omega(\ldots, \xi) \in T^*_x M,
+\end{equation*}
+что позволяет задать отображение 
+\begin{equation*}
+    \omega \colon  T_x M \to T_x^* M.
+\end{equation*}
+Если сделаем для всех $x \in M$, то 
+\begin{equation*}
+    \omega \colon TM \mapsto T^* M.
+\end{equation*}
+Аналогично можем построить
+\begin{equation*}
+    J \colon T^*M \mapsto TM.
+\end{equation*}
+Таким образом, считая $dH$ 1-формой,
+\begin{equation*}
+    J(\d H) \in TM,
+    \text{\ \ -- \ \ гамильтоново векторное поле},
+\end{equation*}
+что позволяет прийти к
+\begin{equation*}
+    \dot{x} = J(\d H) (x),
+    \hspace{10 mm}
+    J = \begin{bmatrix}
+        0 & E \\
+        -E & 0 \\
+    \end{bmatrix}.
+\end{equation*}
+\texttt{Как мы до такой жизни дошли? Было же трёхмерное пространство, время, которое на часах смотрим, наб- -людаемые переменные, но как только мы захотели обобщить, выработать общий метод, пришлось прийти к $n$-мерному конфигурационному многообразию, --- деятельности воспаленного мозга.} 
+
+\red{
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea \textit{commodo}
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit \textbf{esse}
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+}
