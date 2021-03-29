@@ -1,0 +1,26 @@
+Consider\footnote{
+    M. Pecora, L. Carroll, Synchronization in Chaotic Systems, 1990.
+}  an autonomous $n$-dimensional dynamical system:
+\begin{equation*}
+    \dot{u} = f(u)
+    \ \Leftrightarrow \
+    \left\{\begin{aligned}
+        \dot{v} &= g(v, w), \\
+        \dot{w} &= h(v, w)
+    \end{aligned}\right.
+    \ \ \ \text{where} \ \ \
+    \begin{aligned}
+        &v = (u_1, \ldots, u_m) \\
+        &w = (u_{m+1}, \ldots, u_n) \\
+    \end{aligned}
+\end{equation*}
+and $g = (f_{1}(u), \ldots, f_m(u)), \ h = (f_{m+1}(u), \ldots, f_n(u))$.
+
+Then, at system $\dot{w}' = h(v, w')$ it's right that
+\begin{equation*}
+    \lim_{t \to \infty} \left(\Delta w = w' - w\right) = 0,
+    \ \  \text{only if} \ \
+    \textnormal{LyapunovExponent}(w) < 0.
+\end{equation*}
+
+Also, it could be shown, that with noize in system parametrs $\Delta w(t) \to \const$ at some additional conditions.

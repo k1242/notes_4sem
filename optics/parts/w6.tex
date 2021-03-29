@@ -1,0 +1,149 @@
+\subsection{Естественная ширина линии}
+
+Это скорее чисто квантовое явление, поэтому давайте сейчас немного помашем руками, пусть атом это осциллятор
+\begin{equation*}
+    \ddot{x} + 2 \gamma \dot{x}  +\omega_0^2 x = 0,
+    \hspace{5 mm}
+    x(0) = x_0,
+    \hspace{5 mm}
+    \dot{x}(0) = 0,
+\end{equation*}
+что приводит к известному решению
+\begin{equation*}
+    x(t) = x_0 e^{- \gamma t} \left(
+        \cos (\omega t) + \frac{\gamma}{2\omega} \sin (\omega t)
+    \right) \approx 
+    x_0 e^{-\gamma t} \cos (\omega_0 t)
+    ,
+    \hspace{5 mm}
+    \omega = \sqrt{\omega_0^2 - \gamma^2}.
+\end{equation*}
+Далее, пусть есть преобразование Фурье
+\begin{equation*}
+    x(t) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{+\infty} A(\omega) e^{i \omega t} \d \omega,
+    \hspace{5 mm}
+    A(\omega) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{+\infty} x(t) e^{-i \omega t} \d t.
+\end{equation*}
+Тогда
+\begin{align*}
+    A(\omega) &= \frac{1}{\sqrt{2\pi}} \int_{0}^{+\infty} x_0 e^{- \gamma t} \cos (\omega_0 t)
+    e^{- i \omega t} \d t = \bigg/
+        \cos (\omega_0 t) = \frac{1}{2} \left( e^{i \omega_0 t} + e^{- i \omega_0 t}\right)
+    \bigg/ = \\
+    &=  \frac{1}{\sqrt{2\pi}} \frac{1}{2} \int_{0}^{\infty} x_0 e^{-\gamma t} e^{i (\omega_0 - \omega)t} \d t + 
+    \frac{1}{\sqrt{2\pi}} \frac{1}{2} \int_{0}^{+\infty} x_0 e^{-\gamma t} e^{i(\omega_0+\omega)t} \d t = \\
+    &= \frac{x_0}{2 \sqrt{2\pi}}  \left[
+        \frac{e^{-\gamma t + i(\omega_0 - \omega) t}}{i (\omega_0 - \omega) - \gamma} + 
+        \frac{e^{-\gamma t + i (\omega_0 + \omega)t}}{- (\omega_0 + \omega) - \gamma}
+    \right] \bigg|_0^\infty \approx
+    - \frac{x_0}{2 \sqrt{2\pi}} \frac{1}{i (\omega_0 - \omega) - \gamma}
+    ,
+\end{align*}
+где вторым слагаемым можно пренеречь, в силу ...
+\begin{equation*}
+    I = A A^* = \frac{x_0^2}{8 \pi} \frac{1}{(\omega_0-\omega)^2 + \gamma^2},
+\end{equation*}
+что дает кривую Лоренцова профиля.
+
+Если говорить про жизнь, то ширина на полувысоте $\in [10^7, \, 10^9]$ Гц.
+
+
+
+
+
+
+\subsection{Доплеровское уширение}
+
+В зависимости от взаимного движения излучения от атома и приемника будет фиксироваться частота
+\begin{equation*}
+    \omega = \omega_0 (1 + \vc{k} \cdot \vc{v})
+\end{equation*}
+Если аккуратно взять $f(v_x)$, то само собой максимум в $v_x = 0$, и максимум $J(\omega)$ будет в $\omega_0$, а сама кривая -- перекочевавший из $f(v_x)$ гауссов колокольчик.
+
+Если говорить точнее, то
+\begin{equation*}
+    v_0^2 = \frac{2kT}{m}, \hspace{5 mm}
+    d N = N \exp\left(
+        - \frac{(\omega-\omega_0)^2c^2}{\omega_0^2 v_0^2}
+    \right) \frac{c}{\omega_0} \d \omega,
+\end{equation*}
+где, переходя к числам будем наблюдать толщину $\in [10^0, 10^9]$ Гц.
+
+
+
+
+
+\subsection{Другие примеры}
+
+Есть столкновительное уширение, глобально потенциальная энергия зависит от расстояния между атомами, начинает фаза, или частота зависеть от времени. 
+
+Есть ещё времяпролетное уширение, частица пролетает конечный пучок, тогда интегрировать нужно не от $0$ до $\infty$, а от $0$ до $T$, с чем тоже как-то борются.
+
+Глобально можно их резделить на два типа: однородное и неоднородное. Например, естественная ширина линии однородна, а доплеровское неоднородно. 
+
+
+
+
+\subsection{Внутридоплеровская спектроскопия}
+
+\textbf{Постановка задачи}: есть куча бегающих атомов, несколько уровней энергии. Вообще можем следить за излучением, можем за поглощением. Из уширения разные линии уровня могут слиться в одну. Хотелось бы этого избежать.
+
+
+
+\textbf{Квантмех для самых маленьких}: что умеет электрон? Электрон умеет поглощать фотон, с некоторой вероятностью, характеризовать этот процесс будем некоторым сечением поглощения $\sigma$. 
+
+Аналогично для вынужденного излучения есть некоторая $\sigma$, которая такая же как и для поглощения. А ещё, что здорово, излученные фотоны практически идентичны. 
+
+Также спонтанное излучение куда-то  с $h \nu$. А ещё есть безизлучательное излучение, когда энергия уходит в тепло. Всё происходит с какой-то вероятностью, за некоторое свойственное характерное время $\tau$. 
+
+Скоростные (кинематические) уравнения:
+\begin{align*}
+    \dot{n}_2 = - \frac{n_2}{\tau_{\text{Б}}} - \frac{n_2}{\tau_{\text{С}}} - \ldots,
+\end{align*}
+что соответсвует $n_2 = n_{20} \exp(-t/\langle \tau\rangle_{\textnormal{harm}})$. 
+
+Пусть $F = I/(h \nu)$ -- плотность потока фотонов, тогда 
+\begin{equation*}
+    \dot{n}_1 = - F \sigma n_1,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    n_1 (t) = n_1(0) \exp(-F \sigma t),
+\end{equation*}
+и, соответсвенно, при различных случаях
+\begin{equation*}
+    \dot{n}_1 = - F \sigma n_1 + F \sigma n_2 + \frac{n_2}{\tau_{\text{Б}}}.
+\end{equation*}
+И теперь вернемся к доплеровской спектроскопии. 
+
+Пусть $n_1 + n_2 = N$. Можем записать некоторое уравнение баланса $n_2 = N - n_1$
+\begin{equation*}
+    \left\{\begin{aligned}
+        \dot{n}_1 &= - n_1 \sigma F + n_2 \sigma F + {n_2}/{\tau_{\text{Б}}}, \\
+        \dot{n}_2 &= + n_1 \sigma F - n_2 \sigma F - {n_2}/{\tau_{\text{Б}}},        
+    \end{aligned}\right.
+    \hspace{0.1cm} \Rightarrow \hspace{0.1cm}
+    \dot{n}_1 + n_1 (2 \sigma F + \tau_{\text{Б}}^{-1}) = N \sigma F + \frac{N}{\tau_{\text{Б}}},
+    \hspace{0.1cm} \Rightarrow \hspace{0.1cm}
+    {n}_1 = N \frac{\sigma F + \tau_{\text{Б}}^{-1}}{2 \sigma F + \tau_{\text{Б}}^{-1}} = 
+    N \frac{F + \frac{1}{\sigma \tau_{\text{Б}}}}{2F + \frac{1}{\sigma \tau_{\text{Б}}}},
+\end{equation*}
+что соответсвует $\dot{n}_1 = \dot{n}_2 = 0$.
+
+
+Если посмотреть на $n_1(F)$ и $n_2(F)$, то они стремятся к $N/2$, при $F \to + \infty$. А вообще, считая $F_s^{-1} = \sigma \tau_{\text{Б}}$, можем записать
+\begin{equation*}
+    n_1 (F) = N \frac{F + F_s}{2 F + F_s}.
+\end{equation*}
+Введя $\alpha = n_1 \sigma - n_2 \sigma$ -- коэффициент поглощения. В термодинамике была $n \sigma \lambda$ обратно пропорционально длине свободного пробега
+\begin{equation*}
+    d F =  - (n_1 \sigma - n_2 \sigma) F \d z,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    d F = - n_1 \sigma F \d z + n_2 \sigma F \d z.
+\end{equation*}
+Получается, что $\alpha$ стремится к $0$ во времени. 
+
+
+Таким образом, если ооочень сильно светить на вещество, то можно его пробить при большой интенсивности. 
+
+При равенстве частоты лазера и частоты атома возникнет провал Лэмба. В какой-то момент научились менять частоту лазера, и научились так измерять $\omega_0$. Если частот будет две, то также можем зафиксировать два провала Лэмба.
+
+
