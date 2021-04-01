@@ -23,6 +23,11 @@
 [*заметки с лекций*](https://github.com/k1242/notes_4sem/blob/main/optics/optics_notes.pdf)
 );
 
+* **теории вероятностей**
+(
+[*заметки по хорошей книжке*](https://github.com/k1242/notes_4sem/blob/main/prob_theory/notes/prob_th_notes.pdf)
+);
+
 * **гармоническому анализу**
 (
 [*основные теоремы + заметки с лекций*](https://github.com/k1242/notes_4sem/blob/main/matan/notes/matan_notes.pdf)
