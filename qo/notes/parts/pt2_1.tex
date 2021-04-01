@@ -1,0 +1,55 @@
+\begin{to_def}
+    Множество $\mathcal A$, элментами которого являются некоторые подмножества $\Omega$ называют \textit{алгеброй}, если оно удовлетворяет следующим условиям:
+    \begin{itemize}
+        \item[А1)] $\Omega \sin \mathcal A$ 
+        (алгебра содержит достоверные события);
+        \item[А2)] если $A \in \mathcal A$, то $\bar{A} \in \mathcal A$ 
+        (вместе с любым множеством алгебра содержит противоположное к нему);
+        \item[А3)] если $A \in \mathcal A$ и $B \in \mathcal A$, то $A \cup B \in \mathcal A$ 
+        (вместе с любыми двумя множествами алгебра содержит их объединение).
+    \end{itemize}
+\end{to_def}
+
+
+Вообще из А1 и А2 следует, что $\varnothing = \bar{\Omega} \in \mathcal A$. Пункт А3 экстраполируется на любой конечный набор. Кстати, объединение можно заменить (в силу закона де Моргана) на пересечение:
+\begin{equation*}
+    xy \in \mathcal A
+    \hspace{0.5cm} \Leftrightarrow \hspace{0.5cm}
+    \overline{xy} \in \mathcal A
+    \hspace{0.5cm} \Leftrightarrow \hspace{0.5cm}
+    \overline{x} + \overline{y} \in \mathcal A.
+\end{equation*}
+
+\begin{to_thr}[закон де Моргана]
+    Для множеств $x$, $y$ верно, что
+    \begin{equation*}
+        \overline{x + y} = \overline{x} \cdot \overline{y},
+        \hspace{1 cm}
+        \overline{xy} = \overline{x} + \overline{y},
+    \end{equation*}
+    где $xy = x \cap y$, $x + y = x \cup y$. 
+\end{to_thr}
+
+В случае счётного пространства элементарных исходов А3 алгебры оказывается недостаточно, так приходим к $\sigma$-алгебре:
+\begin{to_def}
+    Множество $\mathcal F$, элеменатми которого являются некоторые подмножества $\Omega$ называется $\sigma$-алгеброй, если выполнены следующий условия:
+    \begin{itemize}
+        \item[S1)] $\Omega \sin \mathcal F$ 
+        (алгебра содержит достоверные события);
+        \item[S2)] если $A \in \mathcal F$, то $\bar{A} \in \mathcal F$ 
+        (вместе с любым множеством алгебра содержит противоположное к нему);
+        \item[S3)] если $\{A_i\} \in \mathcal F$, то $\cup_i A_i \in \mathcal F$  
+        (вместе с любым \textit{счетным} набором событий $\sigma$-алгебра содержит их объединение).
+    \end{itemize}
+\end{to_def}
+
+\begin{to_def}
+    Минимальной $\sigma$-алгеброй, содержащей набор множеств $\mathcal U$, называется пересечение всех $\sigma$-алгебр, содержащих $\mathcal U$. 
+\end{to_def}
+
+
+\begin{to_def}
+    Минимальная $\sigma$-алгебра, содержащая множество $\mathcal U$ всех интервалов на вщественной прямой называется \textit{борелевской} \textit{сигма}-\textit{алгеброй} в $\mathbb{R}$ и обозначается $\mathfrak B (\mathbb{R})$.
+\end{to_def}
+
+Итак, оказался определен специальный класс $\mathcal F$ подмножеств $\Omega$, названный $\sigma$-алгеброй событий. Примнеие счетного числа любых операция к множествам из $\mathcal F$ снова дает множество из $\mathcal F$. \textit{Собтиями} будем называть только множества $A \in \mathcal F$.

@@ -1,0 +1,25 @@
+\begin{to_def}
+    Условной вероятностью события $A$ при условии, что произошло событие $B$, называется число
+    \begin{equation*}
+        \P(A|B) = \frac{\P(A \cap B)}{\P (B)},
+    \end{equation*}
+    которое само собой определено только при $\P(B) = 0$.
+\end{to_def}
+
+\begin{to_thr}[]
+    Если $\P (B) > 0$ и $\P (A) > 0$, то
+    \begin{equation*}
+        \P (A \cap B) = \P(B) \P (A | B) = \P (A) \P (B | A).
+    \end{equation*}
+\end{to_thr}
+
+\begin{to_thr}[]
+    Для любых событий $A_1, \ldots, A_n$ верно равенство:
+    \begin{align*}
+        \P (A_1 \ldots A_n) = \P (A_1) \cdot \P(A_2 | A_1) \cdot \P(A_3 | A_1 A_2) \cdot \ldots \cdot
+        \P(A_n | A_1 \ldots A_{n-1}), 
+        % \P (A_1 \ldots A_n) &= \P (A_1) \cdot \P(A_2 \mid A_1) \cdot \P(A_3 \mid A_1 A_2) \cdot \ldots \cdot
+        % \P(A_n \mid A_1 \ldots A_{n-1}). \\
+    \end{align*}
+    если все участвующие в нём условные вероятности определены.
+\end{to_thr}

@@ -1,0 +1,75 @@
+\begin{to_def}
+    Пусть $\Omega$ -- некоторое непустое множество $\mathcal F$ -- $\sigma$-алгебра его подмножеств. Функция
+    \begin{equation*}
+        \mu \colon  \mathcal F \mapsto \mathbb{R} \cap [0, +\infty) \cup \{+\infty\}
+    \end{equation*}
+    называется \textit{мерой} на $(\Omega, \, \mathcal F)$, если она удовлетворяет условиям
+    \begin{itemize}
+        \item[$\mu 1$)] $\mu(A) \geq 0$ для любого множества $A \in \mathcal F$;
+        \item[$\mu 2$)] $\forall$ счетного $\{A_i\} \in \mathcal F$ таких, что $A_i \cap A_j = \varnothing, \ \forall i \neq j$ мера их объединения равна сумме их мер:
+        \begin{equation*}
+            \mu\left(
+                \bigcup_{i=1}^{\infty} A_i
+            \right) = \sum_{i=1}^{\infty} \mu (A_i).
+        \end{equation*}
+    \end{itemize}
+\end{to_def}
+
+Последнее свойство называют \textit{счётное аддитивностью} или $\sigma$-аддитивностью меры. 
+
+
+\begin{to_thr}[свойство непрерывности меры]
+    Пусть дана убывающая последовательность $B_1 \supseteq B_2 \supseteq B_2 \supset B_3 \supset \ldots$ множеств из $\mathcal F$, причем $\mu(B_1) < \infty$. Пусть $B = \cap_i^{\infty} B_i$. Тогда $\mu(B) = \lim\limits_{n\to\infty} \mu (B_n)$.
+\end{to_thr}
+
+\begin{to_def}
+    Пусть $\Omega$ -- непустое множество, $\mathcal F$ -- $\sigma$-алгебра его подмножеств. Мера $\mu \colon  \mathcal F \mapsto \mathbb{R}$ называется \textit{нормитрованной}, если $\mu(\Omega)=1$. Другое название нормированной меры -- \textit{вероятность}. 
+\end{to_def}
+
+\begin{to_def}
+    Пусть $\Omega$ -- пространство элементарных исходов, $\mathcal F$ -- $\sigma$-алгебра его подмножеств (событий). \textit{Вероятностью} или \textit{вероятностной мерой} на $(\Omega, \mathcal F)$ называется функция 
+    \begin{equation*}
+        \P \colon  \mathcal F \mapsto \mathbb{R}
+    \end{equation*}
+    обладающая свойствами
+    \begin{itemize}
+        \item[P1)] $\P (A) \geq 0$ для любого события $A \in \mathcal F$;
+        \item[P2)] для любого счётного набора \textit{попарно несовместных} событий $\{A_i\} \in \mathcal F$ имеет равенство
+        \begin{equation*}
+            \P \left(
+                \bigcup_{i=1}^{\infty} A_i
+            \right) = \sum_{k=1}^{\infty} \P (A_i);
+        \end{equation*}
+        \item[P3)] вероятность достоверного события равна единице: $\P(\Omega) = 1$.
+    \end{itemize}
+\end{to_def}
+
+Свойства (P1) -- (P3) называют \textit{аксиомами вероятности}.
+
+\begin{to_def}
+    Тройка $\langle \Omega, \mathcal F, \P \rangle$, в которой $\Omega$ -- пространство элементарных исходов, $\mathcal F$ -- $\sigma$-алгебра его подмножеств и $\P$ -- вероятная мера на $\mathcal F$, называется \textit{вероятностным пространством}. 
+\end{to_def}
+
+Вообще, для вероятности верны следующие свойства
+\begin{enumerate}
+    \item $\P(\varnothing) = 0$.
+    \item Для любого конечного набора попарно несовместных событий $A_1, \ldots, A_n \in \mathcal F$ имеет место равенство \\ $\P(A_1 \cup \ldots \cup A_n) = \P(A_1) + \ldots + \P(A_n)$.
+    \item $\P (\bar{A}) = 1 - \P(A)$.
+    \item Если $A \subseteq B$, то $\P(B \backslash A) = \P(B) - \P(A)$.
+    \item $A \subseteq B$, то $\P(A) \leq \P(B).$
+    \item $\P(A_1 \cup \ldots \cup A_n) \leq \sum_{i=1}^n P(A_i)$.
+\end{enumerate}
+И это всё, конечно, хорошо, но если мы хотим что-то посчитать, то
+
+\begin{to_thr}[Формула включения-исключения]
+    Для вероятности, в частности для двух событий, верно, что
+    \begin{equation*}
+        \P (A \cup B) = P(A) + P(B) - P(A\cap B)
+    \end{equation*}
+    и, обобщая, для объединения $n$ множеств
+    \begin{equation*}
+        \P(A_1 \cup \ldots \cup A_n) = \sum_{i=1}^{n} \P(A_i) - \sum_{i < j} \P (A_i A_j) + 
+        \sum_{i < j < m} \P(A_i A_j A_m) - \ldots + (-1)^{n-1} \P(A_1 A_2 \ldots A_n).
+    \end{equation*}
+\end{to_thr}
+

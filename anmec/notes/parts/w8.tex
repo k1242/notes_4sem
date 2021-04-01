@@ -1,0 +1,156 @@
+Были разные критерии каноничности, главное, чтобы Якобиан был невырожденный. В общем план такой, если мы научимся приводить все гамильтонианы к $0$ -- было бы здорово.
+
+\begin{equation*}
+    \tilde{H} = 0, \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \left\{\begin{aligned}
+        \dot{\tilde{q}} = 0 \\
+        \dot{\tilde{p}} = 0 \\
+    \end{aligned}\right.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \left\{\begin{aligned}
+        \tilde{p} = \alpha \\
+        \tilde{p} = - \beta
+    \end{aligned}\right.
+\end{equation*}
+Осталось найти хорошую $S$, которую можем найти из уравнения
+\begin{equation*}
+    H(q, p, t) + \frac{1}{c} \frac{\partial S}{\partial t} (q, \alpha, t) = 0,
+\end{equation*}
+только $p$ здесь явно не в тему ($p = \partial_q S$), так что, считая далее $S = c S$, перейдём к уравнению
+\begin{equation}
+    \frac{\partial S}{\partial t} + H\left(q, \frac{\partial S}{\partial q}, t\right) = 0,
+\end{equation}
+что называаем \textit{уравнением Гамильтона-Якоби}.
+
+Из плюсов: решаем это уравнение -- находим уравнение движения. Минусы: это нелинейное уравнение в частных производных. 
+
+\begin{to_def}
+    Функция $S(q, \alpha, t)$ назывется \textit{полным интегралом} уравнения Гамильтона-Якоби, если она является решением  и 
+    \begin{equation*}
+        \bigg|
+            \frac{\partial^2 S}{\partial q\T \partial \alpha} \neq 0
+        \bigg|.
+    \end{equation*}
+\end{to_def}
+
+Так вот, полный алгоритм: находим Гамильтониан, переходим к уравнению Гамильтона-Якоби, из него вытаскиваем производящую функцию, приводящую к нулевому решению, и, обратными заменами, находим уравнения движения
+\begin{equation*}
+    \left\{\begin{aligned}
+        p &= \partial_q S (q, \alpha, t) \\
+        \beta &= \partial_\alpha S (q, \alpha, t) \\
+    \end{aligned}\right.
+    .
+\end{equation*}
+
+Единственная $\pm$ алгоритмичная надежда -- метод разделения переменных. Давайте попробуем найти полный интеграл в виде
+\begin{equation*}
+    S = S_0 (t, \alpha) + S_1 (q_1, \alpha) + \ldots + S_n (q_n, \alpha).
+\end{equation*}
+
+\subsubsection*{Задача}
+
+Посмотрим на некоторую точку $m$ в потенциале 
+\begin{equation*}
+    \Pi = \frac{\vc{a} \cdot \vc{r}}{r^3}, \hspace{5 mm} \vc{a} = \const.
+\end{equation*}
+Вообще для уравнения Гамильтона-Якоби крайне важно хорошим образом выбрать координаты, выражающим геометрию задачи.
+
+Далее для простоты будем считать $\vc{a} \parallel Oz$, введем сферические координаты $(r, \theta, \varphi)$. 
+\begin{equation*}
+    T = \frac{m}{2} \left(
+        \dot{r}^2 + r^2 \dot{\theta}^2 + r^2 \sin^2 (\theta) \dot{\varphi}^2
+    \right),
+    \hspace{5 mm}
+    \Pi = \frac{a \cos \theta}{r^2}.
+\end{equation*}
+\texttt{Арнольд пишет, что хрен там вы докажите, что полного интеграла там нет.}
+
+\subsection{Немного магии}
+
+Посмотрим на полную полную производную полного интеграла системы
+\begin{equation}
+    \frac{d S}{d t}  (q, \alpha, t) = \frac{\partial S}{\partial t}  + \frac{\partial S}{\partial q}  \cdot \dot{q} = p \cdot \dot{q} - H = L (q, \dot{q}, t),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    S = \int L \d t.
+\end{equation}
+Теормех не единственная теория, \texttt{возможно и не самая верная, но красота в глазах смотрящего}, так вот, уравнения Гамильтона-Якоби -- наиболее близкое к квантмеху уравнение, а-ля квазиклассическое приближение. Выглядит эта конструкция так:
+\begin{equation*}
+    i \hbar \frac{\partial }{\partial t} \Psi = \hat{H} \Psi,
+\end{equation*}
+где $\Psi$ -- волновая функция, а $\Psi^2$ -- плотность вероятности нахождения где-нибудь. 
+
+Рассмотрим Гамильтониан вида
+\begin{equation*}
+    i \hbar \frac{\partial \Psi}{\partial t} = \left[
+        - \frac{\hbar^2}{2m} \frac{\partial^2 }{\partial x^2} + \Pi(x, t)
+    \right] \Psi.
+\end{equation*}
+Понятно, что где-нибудь частица да находится. Вообще, давайте считать, что
+\begin{equation*}
+    \Psi \sim \exp\left(\frac{i}{\hbar} S\right),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \frac{\partial \psi}{\partial t} = \frac{i}{\hbar} \frac{\partial S}{\partial t}  \exp\left(\frac{i}{\hbar} S\right),
+    \hspace{5 mm}
+    \frac{\partial^2 \psi}{\partial x^2} = \frac{i}{\hbar} \left[
+        \frac{\partial^2 S}{\partial x^2} + \frac{i}{\hbar} \left(
+            \frac{\partial S}{\partial x} 
+        \right)^2
+    \right] \exp\left(\frac{i}{\hbar} S\right).
+\end{equation*}
+Подставляя это в уравненеие Шредингера находим, что
+\begin{equation*}
+    - \frac{\partial S}{\partial t} = \frac{i \hbar}{2 m} \frac{\partial^2 S}{\partial x^2} + \frac{1}{2m} 
+    \left(\frac{\partial S}{\partial x} \right)^2 + \Pi
+\end{equation*}
+что, если отбросить мнимую часть, перейдет в 
+\begin{equation*}
+    \frac{\partial S}{\partial t} + \frac{1}{2m} \left(
+        \frac{\partial S}{\partial x} 
+    \right)^2 + \Pi(x, t) = 0.
+\end{equation*}
+
+
+
+\subsection{Каниническая теория возмущений (к Т12)}
+
+Давайте перейдём к $(q, \tilde{p})$ -- описане. Вообще критерий тогда получится вида
+\begin{equation*}
+    S(q, \tilde{p}, t) 
+    \hspace{5 mm} \to  \hspace{5 mm}
+    \left\{\begin{aligned}
+        \tilde{q} &= \partial_{\tilde{p}} S \\
+        p &= c^{-1} \partial_q S
+    \end{aligned}\right.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \tilde{H} = c H + \frac{\partial S}{\partial t}.
+\end{equation*}
+Ещё раз используем идею о том, чтобы что-то испортить
+\begin{equation*}
+    H = H_0 + \varepsilon H, \hspace{5 mm} \varepsilon \ll 1.
+\end{equation*}
+Посмотрим на производящую функцию вида
+\begin{equation*}
+    S = S_0 = q \tilde{p},
+    \hspace{5 mm}
+    \left\{\begin{aligned}
+        \tilde{q} = q, \\
+        p = \tilde{p}
+    \end{aligned}\right.
+\end{equation*}
+которая переведет гамильтониан в себя. Но нам нужно немного систему возмутить, соответсвенно выберем
+\begin{equation*}
+    S = q \tilde{p} + \varepsilon S,
+    \hspace{5 mm}
+    \left\{\begin{aligned}
+        \tilde{q} = q + \varepsilon \partial_{\tilde{p}} S_1, \\
+        p = \tilde{p} + \varepsilon \partial_q S_1.
+    \end{aligned}\right.
+\end{equation*}
+Так мы , подбирая $S_1$, сделаем для $H_1$ хорошую долгую жизнь
+\begin{equation*}
+    \tilde{H} = H_0 + O(\varepsilon^2).
+\end{equation*}
+
+
+% Т13 --- смотри Маркеева, преобразования Биркгофа
+% 
