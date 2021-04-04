@@ -1,0 +1,48 @@
+\begin{to_thr}[]
+    Для матожидания функции $\varphi(x, y)$ от компонент случайного вектора $(\xi, \eta)$ справедлива формула
+    \begin{equation*}
+        \E \varphi(\xi, \eta) = 
+        \int_{-\infty}^{+\infty} \int_{-\infty}^{+\infty} \varphi(\xi, \eta) 
+        f_{\xi, \eta} (x, y) \d x \d y.
+    \end{equation*}
+\end{to_thr}
+
+\begin{to_def}
+    \textit{Начальным моментом порядка} $(k, l)$ называется математическое ожидание функции $x^k y^l$:
+    \begin{equation*}
+        \nu_{k, l} = \E (\xi^k \eta^l)
+        =
+        \int_{-\infty}^{+\infty} \int_{-\infty}^{+\infty} 
+        x^k y^l f_{\xi, \eta} (x, y) \d x \d y.
+        .
+    \end{equation*}
+\end{to_def}
+
+
+\red{
+\begin{to_def}
+    \textit{Центральным моментом порядка} $(k, l)$
+    называется математическое ожидание функции $(\xi - \E \xi)^k (\eta - \E \eta)^l$:
+    \begin{equation*}
+        \mu_{k, l} \overset{\mathrm{def}}{=}  \E \left(
+            (\xi - \E \xi)^k (\eta - \E \eta)^l
+        \right) 
+        =
+        \int_{-\infty}^{+\infty} 
+        \int_{-\infty}^{+\infty} 
+        (x - \E \xi)^k (y - \E \eta)^l f_{\xi, \eta} (x, y) \d x \d y.
+    \end{equation*}
+\end{to_def}
+}
+
+
+\begin{to_def}
+    Для набора случайных величин $\xi_1, \ldots, \xi_n$ \textit{ковариационной матрицей} $C = (c_{ij})$ и \textit{корреляционной матрицей} $\R = (\rho_{ij})$ называют матрицы порядка $n$, состоавленные из всех парных ковариаций, и всех парны коэффициентов корреляции
+    \begin{equation*}
+        c_{ij} = \cov (\xi_i,\, \xi_j),
+        \hspace{10 mm}
+        \rho_{ij} = \rho(\xi_i,\, \xi_j).
+    \end{equation*}
+\end{to_def}
+ 
+ Стоит заметить, что эти матрицы симметричны, неотрицательно определены, а также неотрицательны их определители, более того $\det R \leq 1$.

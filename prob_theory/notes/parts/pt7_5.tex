@@ -1,0 +1,24 @@
+\begin{to_def}
+    Случайные величины $\xi_1, \ldots, \xi_n$ называются \textit{независимыми} (в совокупности), если \textit{для любого} набора борелевских множеств $B_1, \ldots, B_n \in \mathfrak B (\mathbb{R})$ имеет место равенство
+    \begin{equation*}
+         \P (\xi_1 \in B_1, \ldots, \xi_n \in B_n) 
+         =
+          \P (\xi_1 \in B_1) \cdot \ldots \cdot \P (\xi_n \in B_n).
+     \end{equation*}  
+\end{to_def}
+
+Определение независимости можно сформулировать в терминах функций распределения. 
+
+\begin{to_def}
+    Случайные величины $\xi_1, \ldots, \xi_n$ независимы (в совокупности), если для любых $x_1,\ldots, x_n$ имеет место равенство
+    \begin{equation*}
+        F_{\xi_1, \ldots, \xi_n}  (x_1, \ldots, x_n) = F_{\xi_1} (x_1) \cdot \ldots \cdot F_{\xi_n} (x_n).
+    \end{equation*}
+\end{to_def}
+
+\begin{to_thr}[]
+    Случайные величины $\xi_1, \ldots, \xi_n$ с абсолютно непрерывными распределениями независимы (в совокупности) тогда и только тогда, когда плотность их совместного распределения существует и равна произведению плотностей, т.е.для любых $x_1, \ldots, x_n$ имеет место равенство:
+    \begin{equation*}
+        f_{\xi_1, \ldots, \xi_n} (x_1, \ldots, x_n) = f_{\xi_1} (x_1) \cdot \ldots \cdot f_{\xi_n} (x_n).
+    \end{equation*}
+\end{to_thr}

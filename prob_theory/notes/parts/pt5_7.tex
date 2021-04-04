@@ -1,0 +1,27 @@
+\begin{to_lem}
+    Для любого $x \in \mathbb{R}$ справедливо соотношение:
+    \begin{equation*}
+        \Phi_{a, \sigma^2} (x) = \Phi_{0, 1} \left(
+            \frac{x-a}{\sigma}
+        \right).
+    \end{equation*}
+\end{to_lem}
+
+
+Аналогичное утверждение для случайных величичн: если $\xi \in \textnormal{N}_{a, \sigma^2}$, то $\eta = \frac{\xi-a}{\sigma} \in \textnormal{N}_{0, 1}$. Более того, если $\xi \in \textnormal{N}_{a, \sigma^2}$, то
+\begin{equation*}
+    \P (x_1 < \xi < x_2) = \Phi_{a, \sigma^2} (x_2) - \Phi_{a, \sigma^2} (x_2) = \Phi_{0, 1} \left(
+        \frac{x_2 - a}{\sigma}
+    \right) - \Phi_{0, 1} \left(
+        \frac{x_1 - a}{\sigma}
+    \right).
+\end{equation*}
+В общем вычисления любых вероятностей для нормального распределения сводятся к вычислению $\Phi_{0, 1} (x)$, которое обладает следующими свойствами:
+\begin{itemize}
+    \item $\Phi_{0, 1} (0) = 0.5, \hspace{5 mm} \Phi_{0, 1} (-x) = 1 - \Phi_{0, 1} (x)$.
+    \item Если $\xi \in \textnormal{N}_{0, 1}$, то для любого $x > 0$, верно что
+    $
+        \P (|\xi| < x) = 1 - 2 \Phi_{0, 1} (-x) = 2 \Phi_{0, 1} (x) - 1.
+    $
+\end{itemize}
+

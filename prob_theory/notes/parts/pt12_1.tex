@@ -1,0 +1,12 @@
+\begin{to_def}
+    Функция $\varphi_\xi (t) = \E \left(
+        e^{i t \xi}
+    \right)$ вещественной переменной $t$ называется \textit{характеричтической функцией} случайной величины $\xi$.
+\end{to_def}
+
+Например, если характеристическая функция имеет стандратное нормальное распределение, то её характеристическая функция равна
+\begin{equation*}
+    \varphi_\xi (t) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{+\infty} e^{i t x} e^{- x^2/2} \d x = 
+    \frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{+\infty} =
+    \frac{e^{-t^2/2}}{\sqrt{2 \pi}} \int_{-\infty}^{+\infty} e^{- (x-it)^2/2} \d (x-it) = e^{-t^2/2}.
+\end{equation*}
