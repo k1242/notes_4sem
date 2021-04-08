@@ -1,0 +1,37 @@
+\subsection{Т4}
+
+Докажем, что функции вида $P(x) e^{-x^2/2}$, где $P(x) \in \mathbb{C}[x]$, при преобразовании Фурье переходти в функцию того же вида, причём степень многочлена не повышается. 
+
+Действительно,
+\begin{align*}
+    F[f](y) 
+    &= 
+    \int_{-\infty}^{+\infty} \frac{d t}{\sqrt{2\pi}} P_\alpha (t) e^{-t^2/2} e^{-iyt} 
+    = 
+    \int_{-\infty}^{+\infty} \frac{d t}{\sqrt{2\pi}} e^{-t^2/2} P_\alpha \left(
+        \frac{\partial }{\partial (-iy)}  e^{-yt}
+    \right) 
+    = \\ &= 
+    P_\alpha \left(
+        i \frac{\partial }{\partial y} 
+    \right) \int_{-\infty}^{+\infty} \frac{d t}{\sqrt{2\pi}}
+    e^{-t^2/2} e^{-iyt}
+    \overset{17.8(2)}{=} 
+    P_\alpha \left(
+        - \frac{\partial }{\partial y} 
+    \right) e^{-y^2/2}.
+\end{align*}
+Осталось показать, что степень многочлена не увеличилась, для этого достаточно рассмотреть
+\begin{equation*}
+    F[f](y) = p_\alpha \cdot \left(
+        i \frac{\partial }{\partial y} 
+    \right)^n e^{-y^2/2} + P_{\alpha-1} \left(
+        i \frac{\partial }{\partial y} 
+    \right) e^{-y^2/2}
+    = 
+    p_\alpha i^{\alpha} (-y)^\alpha e^{-y^2/2} + Q_{\alpha-1} (y) e^{-y^2/2} + P_{\alpha-1} \left(
+        i \frac{\partial }{\partial y}
+    \right)e^{-y^2/2},
+\end{equation*}
+поэтому степень не повышается.
+

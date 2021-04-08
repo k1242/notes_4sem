@@ -1,0 +1,46 @@
+Введём прямое и обратное преобразование Фурье:
+\begin{align}
+    f(x) \mapsto \hat{f}(y) &= F[f](y) \overset{\mathrm{def}}{=} \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{+\infty} f(t) e^{-iyt} \d t, \\
+    f(y) \mapsto \bhat{f}(x) &= F^{-1}[f](x) \overset{\mathrm{def}}{=} 
+    \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{+\infty} f(t) e^{i x t} \d t.
+\end{align}
+Далее выпишем некоторые свойства преобразования Фурье.
+
+\textit{Фомула обращения}. Если непрерывная функция $f$ абсолютно интегрируема на $\mathbb{R}$ и имеет в каждой точке $x \in \mathbb{R}$ конечные односторонние производные, то
+\begin{equation*}
+    F^{-1} [F[f]] = F[F^{-1}[f]] = f.
+\end{equation*}
+
+\textit{Непрерывность}. Если функция $f$ абсолютно интегрируема на $\mathbb{R}$, то её преобразование Фурье $\hat{f}(y)$ -- непрерывная и ограниченная на $\mathbb{R}$ функция, для которой верно
+\begin{equation*}
+    \lim_{y \to + \infty} \hat{f} (y) = \lim_{y \to -\infty} \hat{f}(y) = 0.
+\end{equation*}
+
+\textit{Преобразования Фурье производной}. Если функция $f$ и её производные до $n$-го порядка включительно непрерывны и абсолтно интегрируемы на $\mathbb{R}$, то
+\begin{equation*}
+    F[f^{(k)}] = (iy)^k F[f], \hspace{5 mm} k =1, 2, \ldots, n.
+\end{equation*}
+
+\textit{Производная преобразования Фурье}. Если функция $f$ непрерывна на $\mathbb{R}$, а функции $f(x), x f(x), \ldots, x^n f(x)$ абсолютно интегрируемы на $\mathbb{R}$, то функция $\hat{f} (y) = F[f](y)$ имеет на $\mathbb{R}$ производные до $n$-го порядка включительное, причем
+\begin{equation*}
+    \hat{f}^{(k)} (y) = (-i)^k F[x^k f(x)], \hspace{5 mm} k = 1, 2, \ldots, n.
+\end{equation*} 
+
+Также полезно определить \textit{интеграл Фурье}, как интеграл вида
+\begin{equation*}
+    f(x) \sim F^{-1}[F[f]](x) =  v.p. \ \frac{1}{2\pi} \int_{-\infty}^{+\infty} e^{ixy}\d y \int_{-\infty}^{+\infty} f(t) e^{-ty} \d t = \int_{-\infty}^{+\infty} c(y) e^{ixy} \d y,
+\end{equation*}
+где
+\begin{equation*}
+    c(y) = \frac{1}{2\pi} \int_{-\infty}^{+\infty}  f(t) e^{iyt} \d t.
+\end{equation*}
+Иначе, через тригонометрические функции
+\begin{equation*}
+    f(x) = \int_0^{+\infty} a(y) \cos (yx) \d x + \int_0^{+\infty}  b(y) \sin (yx) \d x,
+\end{equation*}
+где
+\begin{equation*}
+    a(y) = \frac{1}{\pi} \int_{-\infty}^{+\infty} f(t) \cos (yt) \d t,
+    \hspace{10 mm}
+    b(y) = \frac{1}{\pi} \int_{-\infty}^{+\infty}  f(t) \sin (yt) \d t.
+\end{equation*}

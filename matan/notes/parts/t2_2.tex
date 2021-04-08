@@ -1,0 +1,60 @@
+% ------ 14 --------------
+
+\begin{to_def}
+    Интеграл, сходящийся $\forall \alpha \in E$, вида
+    \begin{equation*}
+        I(\alpha) = \int_a^{+\infty} f(x, \alpha) \d x
+    \end{equation*}
+    называют \textit{равномерно сходящимся на множестве} $E$, если 
+    \begin{equation*}
+        \forall \varepsilon > 0, \ \exists \delta_\varepsilon \colon  \forall \alpha \in E, \ \forall \xi \geq \delta_\varepsilon \ \ \bigg|
+            \int_\xi^{\infty} f(x, \alpha) \d x
+        \bigg| \leq \varepsilon.
+    \end{equation*}
+\end{to_def}
+
+\noindent
+Если построить отрицание, то поймём, что \textit{интеграл сходится неравномерно} на $E$, если
+\begin{equation*}
+    \exists \varepsilon_0 > 0 \colon  \forall \delta \in [\alpha, + \infty) \ \  \exists \alpha_\delta \in E, \ \xi_\delta \in [\delta, +\infty) \colon 
+    \bigg|
+        \int_{\xi_\delta}^{+\infty} f(x, \alpha_\delta) \d x
+    \bigg| \geq \varepsilon_0.
+\end{equation*}
+Определение равномерной сходимости соответствует условию
+\begin{equation*}
+    \lim_{\xi \to + \infty}
+    \left(\sup_{\alpha \in E} \int_\xi^{+\infty} f(x, \alpha) \d x \right)
+    = 0.
+\end{equation*}
+
+
+\begin{to_lem}[признак Вейерштрасса]
+    Если на $[a, + \infty)$ $\exists \varphi(x)$ такая, что $|f(x, \alpha)| \leq \varphi(x)$ $\forall x \in [a, +\infty)$ и $\forall \alpha \in E$, и если $\int_a^{\infty} f(x, \alpha) \d x$ сходится, то $I(\alpha)$ сходится \textit{абсолютно} и \textit{равномерно} на $E$. 
+\end{to_lem}
+
+
+\begin{to_lem}[признак Дирихле]
+    Интеграл 
+\begin{equation*}
+    \int_a^{\infty} f(x, \alpha) g(x, \alpha) \d x
+\end{equation*}
+сходтся равномерно по $\alpha$ на $E$, если $\forall \alpha \in E$ функции $f, \ g, \ g'_x$ непрерывны по $x$ на множестве $[a, +\infty)$ и удовлетворяют следующим условиям: $g(x, \alpha) \rightrightarrows 0$ при $x \to \infty$, $g'_x (x, \alpha)$ $\forall \alpha$ не меняет знака при $x \in [a, + \infty)$,
+функция $f$ $\forall \alpha \in E$ имеет ограниченную первообразную $\forall x, \ \alpha$.
+\end{to_lem}
+
+
+\begin{to_lem}[критерий Коши]
+    Интеграл $I(\alpha)$ сходится равномерно на $E$ тогда и тольког тогда, когда выполняется \textit{условие Коши}: 
+    \begin{equation*}
+        \forall \varepsilon > 0 \ \exists \delta_\varepsilon \in (a, \infty) \ \colon \ \forall \xi' \in [\varphi_\varepsilon, + \infty), \ \xi'' \in [\delta_\varepsilon, + \infty), \  \forall \alpha
+        \  \ \ 
+        \bigg|
+            \int_{\xi'}^{\xi''} f(x, \alpha) \d x
+        \bigg| < \varepsilon.
+    \end{equation*}
+\end{to_lem}
+
+\begin{to_lem}[непрерывность]
+    Если функция $f(x, \alpha)$ непрерывна на $D = \{(x,a) \mid a \leq x < +\infty, \alpha_1 \leq \alpha \leq \alpha)2\}$ и $I(\alpha)$ сходится равномерно по $\alpha$ на отрезке $[\alpha_1, \alpha_2]$, то функция $I(\alpha)$ непрерывна на отрезке $[\alpha_1, \alpha_2]$.
+\end{to_lem}

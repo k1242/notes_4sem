@@ -1,0 +1,42 @@
+\subsection{Т5}
+
+Вычислим интегралы Лапласа с помощью образения преобразования Фурье:
+\begin{equation*}
+    I(y) = \int_{0}^{+\infty}  \d x \frac{\cos (yx)}{1 + x^2},
+    \hspace{5 mm}
+    K(y) = \int_{0}^{+\infty} \d x \frac{x \sin (yx)}{1 + x^2}.
+\end{equation*}
+В частности рассмотрим функцию $f(x) = e^{-\alpha |x|}$, где $\alpha > 0$, тогда
+\begin{equation*}
+    F[f](y) = \sqrt{\frac{2}{\pi}} \frac{\alpha}{\alpha^2 + y^2},
+    \hspace{10 mm}
+    F^{-1}[g] (x) = \int_{-\infty}^{+\infty} 
+    \frac{\d y}{\sqrt{2\pi}} g(y) e^{ixy}.
+\end{equation*}
+Теперь воспользуемся формулой образения, и найдём
+\begin{align*}
+    f(x) 
+    =
+    F^{-1} \left[
+        F[f]
+    \right](x) 
+    =
+    \frac{2}{\pi}
+     \int_{0}^{+\infty} 
+     \d y \frac{\alpha \cos (2 y)}{\alpha^2 + y^2} = e^{-\alpha |x|}, \hspace{5 mm} \alpha > 0.
+\end{align*}
+Соответственно, при $\alpha = 1$, найдём
+\begin{equation*}
+    \int_{0}^{+\infty} \d y \frac{\cos(xy)}{1 + y^2} = \frac{\pi}{2} e^{-|x|}.
+\end{equation*}
+
+Аналогично находим $K(\alpha)$, а именно $F[f'](y) = iy F[f](y)$
+\begin{equation*}
+    F^{-1} [F[f']](x) = f'(x) = F^{-1}\left[
+        iy F[f]
+    \right] (x) = 2 \int_0^{+\infty} \frac{\d y}{\sqrt{2\pi}} i \sin (xy) \sqrt{\frac{2}{\pi}} \frac{\alpha i y}{\alpha^2 + y^2} = - \frac{2}{\pi} \int_0^\infty \d y \frac{\alpha y \sin (xy)}{\alpha^2 + y^2} = - \alpha \sign x e^{-\alpha |x|},
+\end{equation*}
+что при $\alpha = 1$ перейдёт в интеграл вида
+\begin{equation*}
+    \int_0^{+\infty} \frac{y \sin (xy)}{1 + y^2} \d y = \frac{\pi}{2} \sign (x) e^{-|x|}.
+\end{equation*}

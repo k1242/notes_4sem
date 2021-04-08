@@ -1,0 +1,89 @@
+\begin{to_thr}[непрерваность интеграла по параметру]
+    Пусть $f \colon  X \times  E \mapsto \mathbb{R}$, где $E$ -- область определения $\alpha$, а $X$ для $x$. Пусть также $f(x, \alpha) \in \mathcal L (X) \ \ \forall \alpha$, где $\mathcal L(X)$ -- интегрируема по Лебегу на множестве $X$, $f(x, \alpha)$ непрерывна почти всюду по $\alpha$, и $|f(x, \alpha)|$ мажорируется Лебег-интегрируесой функцией $\forall \alpha \in E$. Тогда 
+    \begin{equation*}
+        I(\alpha) = \int_X f(x, \alpha) \d x
+    \end{equation*}
+    непрерывен.
+\end{to_thr}
+
+\begin{to_con}[непрерваность интеграла по параметру по Кудрявцеву]
+    Если функция $f(x, \alpha)$ непреывна в прямоугольнике
+    \begin{equation*}
+        K = \{(x, \alpha): \ \ a \leq x \leq b, \alpha_1 \leq \alpha_2\},
+    \end{equation*}
+    то интеграл
+    \begin{equation*}
+        \Phi (\alpha) = \int_{\varphi(\alpha)}^{\psi (\alpha)} f(x, \alpha) \d x
+    \end{equation*}
+    есть непрерывная функция параметра $\alpha$ на отрезке $[\alpha_1, \alpha_2]$. В частности, возможен предельный переход под знаком интеграла:
+    \begin{equation*}
+        \lim_{\alpha \to \alpha_0} \int_a^b f(x, \alpha) \d x = \int_a^b \lim_{a \to \alpha_0} f(x, \alpha) \d x.
+    \end{equation*}
+\end{to_con}
+
+\begin{to_con}
+    Пусть $f \colon  [a, + \infty) \mapsto \mathbb{R}$. Если $f$ непрерывна на $[a, + \infty) \times  [c, d]$ \textbf{и} 
+    \begin{equation*}
+        I(\alpha) = \int_a^{+\infty} f(x, \alpha) \d x
+    \end{equation*}
+    сходится равномерно по $\alpha$ нв $[c, d]$, \textbf{то} $I(\alpha)$ непрерывен по $\alpha$ на $[c, d]$. 
+\end{to_con}
+
+\begin{to_thr}[]
+    Пусть $f \colon  X \times  E \mapsto \mathbb{R}$, где $E$ -- область определения $\alpha$, а $X$ для $x$. Пусть также $f(x, \alpha) \in \mathcal L (X) \ \ \forall \alpha$, где $\mathcal L(X)$ -- интегрируема по Лебегу на множестве $X$, $\exists f'(x, \alpha) \in \mathbb{R}$ почти всюду по $\alpha$, и $|f'_{\alpha}(x, \alpha)|$ мажорируется Лебег-интегрируесой функцией $\forall \alpha \in E$ почти всюду. Тогда 
+    \begin{equation*}
+        I(\alpha) = \int_X f(x, \alpha) \d x
+    \end{equation*}
+    дифференцируем $E$ и $I' (\alpha) = \int_X f'_\alpha (x, \alpha) \d x$.
+\end{to_thr}
+
+\begin{to_con}
+    Пусть $f \colon  [a, b] \times  [c, d] \mapsto \mathbb{R}$, $f$ и $f'_\alpha$ непрерынва на $[a, b] \times  [c, d]$, \textbf{то}
+    \begin{equation*}
+        I(\alpha) = \int_a^b f(x, \alpha) \ \in C^1 [c, d];
+        \hspace{10 mm}
+        I'(\alpha) = \int_a^b f'_a (x, \alpha) \d x.
+    \end{equation*}
+\end{to_con}
+
+\begin{to_con}
+    Пусть $I(\alpha) = \int_{a(\alpha)}^{b(\alpha)} f(x, \alpha) \d x$. 
+    Для удобства выберем $a_0 = \inf_\alpha a(\alpha)$ и $b_0 = \sup_\alpha b(\alpha)$. 
+    Также требуем непрерывность $f$ и $f'_x$ на $[a_0, b_0] \times [c, d]$. Считаем, что $a(\alpha)$ и $b(\alpha)$ дифференцируемы. \textbf{Тогда} $I(\alpha)$ -- дифференцируем по $\alpha$ на $[c, d]$. 
+    Более того, в таких условиях верна формула
+    \begin{equation*}
+        I'(\alpha) = \int_{a(\alpha)}^{b(\alpha)} f'_\alpha (x, \alpha) \d x + f(b(\alpha), \alpha) \cdot b'_\alpha (\alpha) - f(a(\alpha), \alpha) \cdot a'_\alpha (\alpha).
+    \end{equation*}
+\end{to_con}
+
+
+\begin{to_con}
+    Пусть функция $f\colon [a, +\infty) \times [c, d] \mapsto \mathbb{R}$. \textbf{Если} существует $\alpha_0 \in [c, d]$ такое, что
+    \begin{equation*}
+        I(\alpha) = \int_a^{\infty} f(x, \alpha_0) \d x
+    \end{equation*}
+    сходится, $f$ и $f'_\alpha$ непрерывны на $[a, +\infty) \times [c, d]$, и
+    \begin{equation*}
+        \int_a^{\infty} f'_\alpha (x, \alpha) \d x
+    \end{equation*}
+    сходится равномерно по $\alpha$ на $E$, \textbf{тогда} $I(\alpha) \in C^1 [c, d]$  и 
+    \begin{equation*}
+        I'_\alpha (\alpha) = \int_{a}^{+\infty} f'_\alpha (x, \alpha) \d x.
+    \end{equation*}
+\end{to_con}
+
+
+\begin{to_thr}[интегрирование интегралов, зависящих от параметров]
+    Если функция $f(x, \alpha)$ непрерывна в прямоугольнике, то интеграл есть функция, интегрируемая на отрезке $[\alpha_1, \alpha_2]$ и справедливо
+    \begin{equation*}
+        \int_{\alpha_1}^{\alpha_2} \left(
+            \int_a^b f(x ,\alpha) \d x
+        \right) \d \alpha 
+        =
+        \int_a^b \left(
+            \int_{\alpha_1}^{\alpha_2} f(x, \alpha) \d \alpha
+        \right) \d x.
+    \end{equation*}
+\end{to_thr}
+
+

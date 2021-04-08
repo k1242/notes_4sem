@@ -1,0 +1,298 @@
+\subsubsection*{13.4}
+
+Пусть $f(x)$ непрерывна и принимает положительные значения на $[0, 1]$. Докажем, что функция 
+\begin{equation*}
+    I(\alpha) = \int_{0}^{1} \frac{\alpha}{x^2 + \alpha^2} f(x) \d x
+\end{equation*}
+разрывна при $\alpha = 0$. 
+
+Функции $\varphi \colon  \frac{\alpha}{x^2 + \alpha^2}$ и $f$ Лебег-интегрируемы по $x$ на $[0, 1]$, знакопостоянны $\forall x \in (0, 1)$, а также $f$ --непрерывна, тогда можем воспользоваться первой теоремой о среднем
+\begin{equation*}
+    I(\alpha) = f(\xi(\alpha)) \arctg \frac{1}{\alpha}, \hspace{5 mm} 0 \leq \xi(\alpha) \leq 1.
+\end{equation*}
+Тогда для $\forall \varepsilon > 0$
+\begin{equation*}
+    |F(\varepsilon) - F(-\varepsilon)| = \bigg|
+        \left(
+            f(\xi(\alpha)) + f(\xi(-\alpha))
+        \right) \arctg \frac{1}{\varepsilon}
+    \bigg| \geq 2 \,in_{x \in [0, 1]} f(x) \bigg|
+        \arctg \frac{1}{\varepsilon}
+    \bigg| \underset{\to}{\varepsilon \to 0} \pi \min_{x \in [0, 1]} f(x) > 0, 
+\end{equation*}
+что говорит о разрывности функции. 
+
+
+
+\subsubsection*{13.5(1)}
+
+Выясним, справедливо ли равенство 
+\begin{equation*}
+    \lim_{\alpha \to 0} \int_0^1 f(x, \alpha) \d x = \int_0^1 \lim_{\alpha \to 0} f(x, \alpha) \d x,
+\end{equation*}
+где $f(x, \alpha) = \frac{x}{\alpha^2}e^{-x^2/\alpha^2}$.
+
+Ну, вообще нельзя. Переходя к пределу под знаком интеграла, получаем нуль. Если же вычислить интеграл, а затем перейти к пределу, то получим
+\begin{equation*}
+    \lim_{\alpha \to 0} \int_0^1 \frac{x}{\alpha^2} e^{-x^2/\alpha^2} \d x = 
+    \frac{1}{2} \lim_{y \to 0} \int_0^1 e^{-x^2/\alpha^2} \d \left(
+        \frac{x^2}{\alpha^2}
+    \right) = \frac{1}{2} \lim_{\alpha \to 0} \left(
+        1 - e^{-1/\alpha^2}
+    \right) = \frac{1}{2}.
+\end{equation*}
+Заметим, что $f$ разрывна в точке $(0, 0)$, вот теоремы о предельном переходе и не работает, необходимо проверять вычислением.
+
+
+
+
+\subsubsection*{13.8(3)}
+
+
+Выясним, равны ли интегралы
+\begin{equation*}
+    I_1 (\alpha) = \int_0^1 \l(
+        \int_0^1 f(x, \alpha) \d \alpha
+    \r) \d x 
+    \ \ \overset{?}{=} \ \ 
+     \int_0^1 \l(
+        \int_0^1  f(x, \alpha) \d \alpha
+    \r) \d x = I_2(\alpha),
+    \hspace{10 mm}
+    f(x, \alpha) = \l(
+        \frac{x^5}{\alpha^4} - \frac{2 x^3}{\alpha^3}
+    \r) e^{-x^2/\alpha}.
+\end{equation*}
+Считая $t = - x^2/\alpha$ и $d t = x^2 (-1/\alpha^2) \d \alpha$, перейдём к интегралу
+\begin{equation*}
+    g(x) = \int_0^1 \d \alpha \l(
+        \frac{x^5}{\alpha^4} - \frac{2x^3}{\alpha^3}
+    \r) e^{-x^2/\alpha} = \int_{x^2}^{\infty} \l(
+        \frac{t^2-2t}{x}
+    \r) e^{-t} \d t = \frac{1}{x} \int_{x^2}^{\infty} \left(
+        t^2 - 2t
+    \right) e^{-t} \d t = \frac{1}{x} \l(
+        - t^2 e^-t
+    \r) \bigg|_{x^2}^{+\infty} = x^3 e^{-x^2}.
+\end{equation*}
+Возвращаясь к первоначальному интегрированию
+\begin{equation*}
+    \int_0^1 g(x) \d x = \frac{1}{2} \int_0^1 x^2 e^{-x^2} \d (x^2) = 
+    \frac{1}{2} \int_0^1 t e^{-t} \d t = - \frac{1}{2} (t+1) e^{-t} \big|_0^1 = \frac{1}{2}-\frac{1}{e}.
+\end{equation*}
+С другой стороны -- другой интеграл,
+\begin{equation*}
+    h(\alpha) = \int_0^1 \d x f(x, \alpha) = \frac{1}{2\alpha} \int_0^{1/\alpha} (t^2 - 2t) e^{-t} \d t = \frac{1}{2\alpha} \left\{
+        - t^2 e^{-t}
+    \right\}\bigg|^{1/\alpha}_0 = - \frac{1}{2\alpha^3} e^{-1/\alpha}.
+\end{equation*}
+Остается посчитать интеграл по $\alpha$ 
+\begin{equation*}
+    \int_0^1 h(\alpha) \d \alpha = - \frac{1}{2} \int_1^{\infty} t e^{-t} \d t = - \frac{1}{e},
+\end{equation*}
+что приводит к противоречию, -- интегралы LHS и RHS е равны друг другу.
+
+
+
+\subsubsection*{13.12}
+
+Пусть $a > 0$, $b > 0$. Вычислим интеграл
+\begin{equation*}
+    I_1 = \int_0^1 \sin \left(
+        \ln \frac{1}{x}
+    \right) \frac{x^b - x^a}{\ln x} \d x,
+    \hspace{10 mm}
+    I_2 = \int_0^1 \cos\left(
+        \ln \frac{1}{x}
+    \right) \frac{x^b - x^a}{\ln x} \d x.
+\end{equation*}
+ Внутри аргумента интеграла можно увидеть другой интеграл, так что рассмотрим вместо $I_{1, 2}$ два повторных интеграла
+ \begin{equation*}
+     I_1 = \int_0^1 \d x \int_a^b x^y \sin\left(\ln \frac{1}{x}\right) \d y,
+     \hspace{10 mm} 
+     I_2 = \int_061 \int_{a}^{b} x^y \cos\left(\ln \frac{1}{x}\right) \d y.
+ \end{equation*}
+ Обозначим аргументы новых $I_{1, 2}$ за $f_1$ и $f_2$, которые непрерывны, поэтому позволяют перестановку по Фубини:
+ \begin{equation*}
+     I_1 = \int_{a}^{b} \d y \int_0^1 x^y \sin \left(\ln \frac{1}{x}\right) \d x,
+     \hspace{10 mm}
+     I_2 = \int_{a}^{b} \d y \int_0^1 x^y \cos \left(\ln \frac{1}{x}\right) \d x.
+ \end{equation*}
+ Подставим $x = e^{-t}$:
+ \begin{equation*}
+     I_1 = \int_{a}^{b}  \d y \int_0^{+\infty} e^{-t (y+1)} \sin t \d t, \hspace{10 mm}
+     I_2 =\int_{a}^{b}  \d y \int_{0}^{+\infty} e^{-t (y+1)} \cos t \d t.
+ \end{equation*}
+ Новый аргумент интегрировать мы уже умеем, так что находим
+ \begin{equation*}
+     I_1 = \int_{a}^{b} \frac{\d y}{(y+1)^2 + 1},
+     \hspace{10 mm}
+     I_2 = \int_{a}^{b} \frac{(y+1)\d y}{(y+1)^2  + 1},
+ \end{equation*}
+ что также интегрируется, так что находим
+ \begin{equation*}
+     I_1 = \arctg \left(
+        \frac{b-a}{1 + (a+1)(b+1)}
+     \right),
+     \hspace{10 mm}
+     I_2 = \frac{1}{2} \ln \left(
+        \frac{b^2 + 2 b + 2}{a^2 + 2 a + 2}
+     \right).
+ \end{equation*}
+
+
+
+
+
+\subsubsection*{13.14(3)}
+
+Найти $\Phi'(\alpha)$, если 
+\begin{equation*}
+    \Phi(\alpha) = \int_{\sin \alpha}^{\cos \alpha} e^{\alpha\sqrt{1-x^2}} \d x.
+\end{equation*}
+Обозначая аргумент интеграла за $f(\alpha, x)$ заметим, что $f$ и $f'_\alpha$ непрерывны, т.к. интеграл собственный, то, интегрируя по частям, находим, что
+\begin{equation*}
+    \Phi'(\alpha) = e^{\alpha |\sin \alpha|} (-\sin \alpha) - e^{\alpha |\cos \alpha|} \cos \alpha + \int_{\sin \alpha}^{\cos \alpha} e^{\alpha \sqrt{1-x^2}} \sqrt{1-x^2} \d x.
+\end{equation*}
+
+
+
+
+\subsubsection*{13.17}
+
+Есть интеграл вида
+\begin{equation*}
+    I(\alpha) = \int_0^b \frac{d x}{x^2 + \alpha^2}.
+\end{equation*}
+Дифференцируя его по параметру $\alpha > 0$ вычислим интграл
+\begin{equation*}
+    J(\alpha) = \int_0^b \frac{\d x}{(x^2 + \alpha^2)^2}.
+\end{equation*}
+Считая интеграл собственным, заметим, что аргумент интеграла ($f(x, \alpha)$), а также $f'_\alpha$ непрерывны. Раз так, то можем интегрировать под знаком интеграла:
+\begin{equation*}
+    \frac{\partial I(\alpha)}{\partial \alpha} = \int_0^b dx \ \frac{\partial }{\partial \alpha} \frac{1}{x^2+\alpha^2} = - 2 \alpha \int_0^b \frac{\d x}{(x^2 + \alpha^2)^2} = - 2 \alpha J(\alpha).
+\end{equation*}
+Таким образом приходим к
+\begin{equation*}
+    J(\alpha) = \frac{1}{2\alpha} \frac{\partial }{\partial \alpha} \left(
+        \frac{1}{\alpha} \arctg \frac{b}{\alpha}
+    \right) = \frac{1}{2\alpha^3} \left\{
+        \arctg \frac{b}{\alpha} + \frac{b \alpha}{b^2 + \alpha^2}
+    \right\}.
+\end{equation*}
+
+
+
+
+
+\subsubsection*{13.18 (1) }
+
+Теперь, применяя дифференцирование по параметру $\alpha$, вычислим
+\begin{equation*}
+    I(\alpha) = \int_0^{\pi/2}  \ln \left(
+        \alpha^2 - \sin^2 \varphi
+    \right) \d \varphi.
+\end{equation*}
+Опять таки, перед нами собственный интеграл, с непрерывным аргументом и его производной по $\alpha$, соответсвенно интегрируемые по Лебегу, поэтому законно писать, что
+\begin{equation*}
+    \frac{d I(\alpha)}{d \alpha} = \int_0^{\pi/2}  \frac{\partial }{\partial \alpha} \ln \left(\alpha^2 - \sin^2 \varphi\right) \d \varphi = 
+    \int_0^{\pi/2} \frac{2\alpha \d \varphi}{\alpha^2 - \sin^2 \varphi} = \frac{\pi}{\sqrt{\alpha^2-1}}.
+\end{equation*}
+Таким образом находим, что
+\begin{equation*}
+    I(\alpha) = \pi \ln ( \alpha + \sqrt{\alpha^2-1}) + C.
+\end{equation*}
+С другой стороны
+\begin{align*}
+    I(\alpha) &= \int_0^{\pi/2} \{2 \ln \alpha + o(1)\} \d \varphi = \pi \ln \alpha + o(1) \\
+    I(\alpha) &= \pi \ln \alpha + \pi \ln 2 + C + o(1),
+\end{align*}
+при больших $\alpha$. Получается, что
+\begin{equation*}
+    I(\alpha) = \pi \ln \left\{
+        \frac{1}{2}\left(
+            \alpha + \sqrt{\alpha^2-1}
+        \right)
+    \right\}.
+\end{equation*}
+
+
+
+
+\subsubsection*{13.28 (Т1)}
+
+Докажем формулу для $n \in \mathbb{N}$,
+\begin{equation*}
+    I_n = \frac{d^n f(x)}{d x^n} = \psi_n (x),
+    \hspace{5 mm}
+    f(x) = \left\{\begin{aligned}
+        &\frac{\sin x}{x}, &x \neq 0, \\
+        &1, &x = 0,
+    \end{aligned}\right.
+    \hspace{5 mm}
+    \psi_n (x) = \left\{\begin{aligned}
+        &\frac{1}{x^{n+1}} \int_0^x y^n \cos \left(
+            y + \frac{\pi n}{2}
+        \right) \d y, &x\neq 0, \\
+        &\frac{\cos \left(\frac{1}{2} \pi n\right)}{n+1}, &x = 0, \ n \in \mathbb{N}.
+    \end{aligned}\right.
+\end{equation*}
+Уже из этого потом покажем, что верна оценка
+\begin{equation*}
+    \bigg|
+        \frac{d^n f(x)}{d x^n} 
+    \bigg| \leq \frac{1}{n+1}, \hspace{5 mm} x \in (-\infty, + \infty).
+\end{equation*}
+
+Ну, выражение для $I_n$ справедливо при $n=1$. Пусть формула для $I_n$ также верна при некотором $n=k$, тогда дифференцируя обе части по $x$ с последующим применением инетгрирования по частям получаем
+\begin{align*}
+    I_{k+1} 
+    &=
+     \frac{d^{k+1}}{d x^{k+1}} \left(\frac{\sin x}{x}\right) = \frac{1}{x} \cos \left(
+        x + \frac{k \pi}{2}
+    \right) - \frac{k+1}{x^{k+2}} \int_0^x y^k \cos \left(
+        y + \frac{k\pi}{2}
+    \right) \d y = \\
+    &= 
+    \frac{1}{x} \cos \left(
+        x + \frac{k \pi}{2}
+    \right) - \frac{k+1}{x^{k+2}} \left(
+        \frac{y^{k+1}}{k+1} \cos \left(y + \frac{k \pi}{2}\right) \bigg|_0^x 
+        + \frac{1}{k+1} \int_0^x y^{k+1} \sin\left(y + \frac{k \pi}{2}\right)\d y
+    \right) = \\
+    &=
+    -\frac{1}{x^{k+2}} \int_0^x y^{k+1} \sin \left(
+        y + \frac{k \pi}{2}
+    \right) \d y = \frac{1}{x^{k+2}} \int_0^x y^{k+1} \cos \left(
+        y + \frac{(k+1)\pi}{2}
+    \right) \d y,
+    \hspace{5 mm}
+    x \neq 0.
+\end{align*}
+Раскладывая $\sin x$ в ряд Тейлора, можем найти
+\begin{equation*}
+    f(x) = \sum_{k=0}^{\infty} \frac{(-1)^k x^{2k}}{(2k + 1)!}, \hspace{2 mm} \forall x,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}  
+    f^{(n)}  (0) = \frac{\cos \left(\frac{1}{2} \pi n\right)}{n+1}.
+\end{equation*}
+Далее, при $x \neq 0$, 
+\begin{equation*}
+    \bigg|
+        \frac{1}{x^{n+1}} \int_0^x y^n \cos\left(
+            y + \frac{\pi n}{2}
+        \right) \d y
+    \bigg| \leq 
+    \frac{1}{|x|^{n+1}} \int_0^{|x|} y^n \d y = \frac{1}{n+1},
+\end{equation*}
+а при $x = 0$,
+\begin{equation*}
+    |f^{(n)} (0)| = \frac{\bigg|
+        \cos \left( \frac{1}{2} \pi n\right)
+    \bigg|}{n + 1} \leq \frac{1}{n+1}, 
+    \hspace{0.5cm} \overset{\forall x}{\Rightarrow}  \hspace{0.5cm}
+    \bigg|
+        \frac{d^n f(x)}{d x^n}
+    \bigg| \leq \frac{1}{n+1},
+    \hspace{5 mm}
+    \textnormal{Q.\, E.\, D.}
+\end{equation*}

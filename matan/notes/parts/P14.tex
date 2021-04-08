@@ -1,0 +1,292 @@
+\subsubsection*{14.1(1, 2)}
+Докажем в 14.1(1) равномерную сходимость интеграла
+\begin{equation*}
+    I(\alpha) = \int_1^{+\infty} \frac{\d x}{x^\alpha}, \hspace{5 mm} 
+    E = [\alpha_0; + \infty), \ \ \alpha_0 > 1.
+\end{equation*}
+По признаку Вейерштрассе $x^\alpha \geq x^{\alpha_0}$, если $x > 1$, $\alpha > \alpha_0 > 1$
+\begin{equation*}
+    \int_1^{\infty} \frac{dx}{x^\alpha} \leq \int_1^{\infty} \frac{\d x}{x^{\alpha_0}}
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    M(x) = \frac{1}{x^{\alpha_0}}.
+\end{equation*}
+что соответствует сходимости. Аналогично 14.1(2), интеграл вида
+\begin{equation*}
+    I(\alpha) = \int_0^1 \frac{d x}{x^\alpha}, \hspace{5 mm} E = (0, \alpha_0), \ \ \alpha_0 < 1.
+\end{equation*}
+Так как $x < 1$, то верно, что при $\alpha < \alpha_0 < 1$ функция $x^{\alpha} \geq x^{\alpha_0}$, что позволяет найти Лебег-интегрируемую мажоранту на $E$. 
+
+
+
+
+\subsubsection*{14.6(3)}
+
+Докажем, что интеграл $I(\alpha)$ сходится равномерно на множестве $E_1$, и сходится неравномерно на $E_2$, если 
+\begin{equation*}
+    I(\alpha) = \int_{0}^{+\infty} \frac{\d x}{4 + (x-\alpha)^6}, \hspace{5 mm} E_1 = [-\infty, 0], \ \ E_2 = [1, + \infty).
+\end{equation*}
+Для начала на $E_1$:
+\begin{equation*}
+    \bigg|
+        \int_{\xi}^{-\infty} \frac{\d x}{4 + (x-\alpha)^6}
+    \bigg|  = \bigg|
+        \int_{\xi-\alpha}^{+\infty} \frac{d t}{ 4 + t^6} 
+    \bigg|,
+    \hspace{10 mm}
+    \sup_{\alpha \in E_1} \bigg|
+        \int_{\xi-\alpha}^{+\infty} \frac{d t}{4 + t^6} 
+    \bigg| = \int_\xi^{+\infty} \frac{\d t }{4 + t^6} 
+    \underset{\xi \to + \infty}{\to} 0,
+\end{equation*}
+что соответсвует равномерной сходимости. 
+
+В случае же $E_2$, по аналогичным рассуждениям, приходим к 
+\begin{equation*}
+    \sup_{\alpha \in E_2} \bigg|
+        \int_{\xi - \alpha}^{+\infty} \frac{
+        \d t
+        }{4 + t^6}
+    \bigg| = \int_{-\infty}^{+\infty} \frac{\d t}{4 + t^6} 
+    \underset{\xi \to + \infty}{\not \to} 0,
+\end{equation*}
+что говорит о неравномерной сходимости.
+
+
+
+
+\subsubsection*{14.6(4)}
+
+Теперь на множествах $E_1 = [0, 2]$ и $E_2 = [0, + \infty)$ 
+рассмотрим интеграл вида
+\begin{equation*}
+    I(\alpha) = \int_0^{+\infty} \exp(-(x-\alpha)^2) \d x.
+\end{equation*}
+По определению равномерной непрерывности рассмотрим
+\begin{equation*}
+    \Omega(E) = 
+    \lim_{\xi \to + \infty}
+    \sup_{\alpha \in E} 
+    \left|
+    \int_\xi^{+\infty} 
+    e^{-(x-\alpha)^2}
+    \d x \right|
+    = 
+    \lim_{\xi \to + \infty}
+    \sup_{\alpha \in E}
+    \left|
+     \int_{\xi - \alpha}^{+\infty} 
+        e^{-x^2}
+     \d x \right|.
+\end{equation*}
+В силу ограниченности $E_1$ $\Omega(E_1) = 0$. А вот на $E_2$ уже будет верно, что
+\begin{equation*}
+    \sup_{\alpha \in E_2} \bigg|
+        \int_{\xi - \alpha}^{+\infty} e^{-x^2} \d x
+    \bigg| = \int_{-\infty}^{+\infty} e^{-x^2} \d x
+    \underset{\xi \to + \infty}{\not \to} 0,
+\end{equation*}
+что говорит о неравномерной сходимости.
+
+
+
+\subsubsection*{14.7(2)}
+
+Исследдуем на равномерную сходимость интеграл вида
+\begin{equation*}
+    I(\alpha) = \int_{0}^{+\infty} \alpha e^{- \alpha x} \d x, \hspace{5 mm} E = [0, 1].
+\end{equation*}
+И снова по определению рассмотрим интеграл 
+\begin{equation*}
+    \bigg|
+        \int_\xi^{+\infty} \alpha e^{-\alpha x} \d x 
+    \bigg| 
+    = 
+    \bigg|
+        \int_{\alpha \xi}^{+\infty} e^{-t} \d t
+    \bigg| = e^{- \alpha \xi}.
+\end{equation*}
+В условиях задачи
+\begin{equation*}
+    \alpha > 0, \hspace{5 mm}
+    e^{-\alpha \xi} \geq \varepsilon_0 \in (0, 1).
+\end{equation*}
+Точнее рассмотрим
+\begin{equation*}
+    \alpha \xi \leq \ln \frac{1}{\varepsilon_0},
+    \hspace{0.5cm} \Leftrightarrow \hspace{0.5cm}
+    \alpha \leq \frac{1}{\xi} \ln \frac{1}{\varepsilon_0}.
+\end{equation*}
+Далее, по определению,
+\begin{equation*}
+    \exists \varepsilon_0 > 0 \ \forall \delta > 0 \ \exists \xi_\delta = \delta
+    \ \exists \alpha(\delta) = \frac{1}{\delta} \ln \frac{1}{\varepsilon_0},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \bigg|
+        \int_{\xi_\delta}^{+\infty} f(x, \alpha) \d x 
+    \bigg| = e^{- \alpha(\delta) \xi(\delta)} \geq \varepsilon_0.
+\end{equation*}
+
+
+
+
+
+\subsubsection*{Признак Абеля}
+
+\begin{to_lem}[признак Абеля]
+    Если интеграл $I(\alpha) = \int_a^{+\infty} f(x, \alpha) \d x$  сходится равномерно на $[\alpha_1, \alpha_2]$ и функция $\varphi$ ограничена и монотонна по $x$, то интеграл 
+    \begin{equation*}
+        \int_a^{+\infty} f(x, y) \varphi(x, y) \d x 
+        \underset{[\alpha_1, \alpha_2]}{\rightrightarrows}.
+    \end{equation*}
+\end{to_lem}
+
+\begin{proof}[$\triangle$]
+
+Для $\forall \varepsilon > 0$, по Критерию Коши, $\exists B(\varepsilon)$ такое, что $\forall b',\, \xi,\, b'' > B(\varepsilon)$ независимо от $\alpha \in [\alpha_1, \alpha_2]$ выполняется 
+\begin{equation*}
+    \bigg|
+        \int_{b'}^{\xi} f(x ,\alpha) \d x
+    \bigg| < \frac{\varepsilon}{2M},
+    \hspace{5 mm}
+    \bigg|
+        \int_{\xi}^{b''} f(x, \alpha) \d x
+    \bigg| < \frac{\varepsilon}{2M},
+\end{equation*}
+где $M = \sup_{x, \alpha} | \varphi(x, \alpha)| \neq 0$.
+
+
+Далее, так как $\varphi$ монотонна по $x$, а функция $f$ интегрируема, то, по второй теореме о среднем, имеем
+\begin{equation*}
+    \int_{b'}^{b''} f(x, \alpha) \varphi(x, \alpha) \d x = \varphi(b' + 0, \alpha) 
+    \int_{b'}^{\xi} f(x, \alpha) \d x +
+    \varphi(b'' - 0, \alpha) \int_\xi^{b''} f(x, \alpha) \d x,
+\end{equation*}
+где  $b' \leq \xi \leq b''$. Отсюда, учитывая неравенства, получаем оценку
+\begin{equation*}
+    \bigg|
+        \int_{b'}^{b''} f(x, \alpha) \varphi(x, \alpha) \d x
+    \bigg| \leq |\varphi(b' + 0, \alpha)| \cdot 
+    \bigg|
+        \int_{b'}^{\xi} f(x, \alpha) \d x
+    \bigg| + 
+    |\varphi(b'' - 0, \alpha)| \cdot \bigg|
+        \int_{\xi}^{b''} f(x, \alpha) \d x
+    \bigg| < \varepsilon,
+\end{equation*}
+для $\forall \alpha \in [\alpha_1, \alpha_2]$. А это, по критерию Коши, и означает, что интеграл $I(\alpha)$ сходится равномерно на $E$.
+\end{proof}
+
+
+
+
+
+\subsubsection*{14.7(4)}
+
+Исследуем на равномерную сходимость на $E$ интеграл $I(\alpha)$ вида
+\begin{equation*}
+    I(\alpha) = \int_1^{+\infty} \frac{\sin x^2}{1 + x^\alpha}\d x,
+    \hspace{5 mm} E = [0, +\infty).
+\end{equation*}
+Сделав замену $x = \sqrt{t}$, получим
+\begin{equation*}
+    I(\alpha) = \int_0^{+\infty} \frac{\sin t \d t}{2 (1 + t^{p/2}) \sqrt{t}}.
+\end{equation*}
+По признаку Дирихле $\int_0^{+\infty} \frac{\sin t}{\sqrt{t}} \d t$ сходится, а функция
+$\frac{1}{2} \left(1 + t^{\alpha/2}\right)^{-1}$ при $\alpha \geq 0$ монотонна по $t$ и ограничена числом $0.5$, следовательно, по \textit{признаку Абеля}, интеграл сходится равномерно.
+
+
+
+
+
+\subsubsection*{14.7(6)}
+
+Исследуем на равномерную сходимость на $E$ интеграл $I(\alpha)$ вида
+\begin{equation*}
+    I(\alpha) = \int_0^1 \sin \frac{1}{x} \cdot \frac{\d x}{x^\alpha}, \hspace{5 mm} E = (0, 2).
+\end{equation*}
+Положим $x = 1/t$, $t > 0$. Тогда
+\begin{equation*}
+    \int_0^1 \sin \frac{1}{x} \cdot \frac{\d x}{x^\alpha} = \int_1^{+\infty} \frac{\sin t}{t^{2-\alpha}} \d t,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \int_\xi^{+\infty} \frac{\sin t}{t^{2-\alpha}} \d t = 
+    \frac{\cos \xi}{\xi^{2-\alpha}} + (\alpha-2) \int_{\xi}^{+\infty} \frac{\cos t}{t^{3-\alpha}} \d t.
+\end{equation*}
+Последний интеграл \red{[!]} сходится равномерно, поэтому при достаточно большм $\xi$ справедлива оценка
+\begin{equation*}
+    \bigg|
+        \int_B^{+\infty} \frac{\cos t}{t^{3-\alpha}} \d t
+    \bigg| < \varepsilon_1, \hspace{5 mm} \varepsilon > 0.
+\end{equation*}
+Возвращаясь к первому слагаемому, заметим, что оно не может быть сделано сколь уголно малым $\forall \Xi \geq \xi$ равномерно относительно параметра $\alpha$. Действительно, пусть $\xi > 0$ задано, а также $0 < \varepsilon_2 \leq 1/2$, тогда выбирая $\Xi = 2 \pi k > \xi$, $k \in \mathbb{N}$ значение параметра $\alpha$ из неравенства $0 < 2 - \alpha < \ln (\varepsilon_2^{-1}) / \ln (2 \pi \kappa)$ находим, что
+\begin{equation*}
+    \bigg|
+        \frac{\cos \xi}{\xi^{2-\alpha}}
+    \bigg| = \frac{1}{(2k\pi)^{2-\alpha}} > \varepsilon_2,
+\end{equation*}
+что означает, что исследуемый интеграл сходится неравномерно.
+
+
+% \subsubsection*{А.Д. 3, №50}
+
+\begin{to_lem}
+Если $f(x, \alpha) \rightrightarrows f(x, \alpha_0)$ на каждом интерва $[a, b]$ и $|f(x, \alpha)| \leq F(x)$, где $F(x)$ -- Лебег-интегрируема, то
+\begin{equation*}
+    \lim_{\alpha \to \alpha_0} \int_a^{+\infty} f(x, \alpha) \d x = \int_a^{+\infty} \lim_{\alpha \to \alpha_0} f(x, \alpha) \d x.
+\end{equation*}    
+\end{to_lem}
+
+\begin{proof}[$\triangle$]
+Оценим по абсолютной величине разность
+\begin{equation*}
+    \int_{0}^{+\infty} f(x, \alpha) \d x - \int_{0}^{+\infty} f(x, \alpha_0) \d x = 
+    \int_a^b \left(
+        f(x, \alpha) - f(x, \alpha_0)
+    \right) \d x + \int_a^b f(x, \alpha) \d x - \int_b^{+\infty} f(x, \alpha_0) \d x,
+    \hspace{5 mm}
+    b > a.
+\end{equation*}
+Для $\forall \varepsilon > 0$ задано, в силу мажорируемости Лебег-интегрируемой функцией, при достаточно большом $b$ справедливы оценки
+\begin{equation*}
+    \bigg|
+        \int_{b}^{+\infty} f(x, \alpha) \d x
+    \bigg| \leq \int_{b}^{+\infty} F(x) \d x < \frac{\varepsilon}{3},
+    \hspace{5 mm}
+    \bigg|
+        \int_{b}^{+\infty} f(x, \alpha_0) \d x
+    \bigg| < \frac{\varepsilon}{3},
+\end{equation*}
+а в силу условия равномерной сходимости -- оценка
+\begin{equation*}
+    |f(x, \alpha) - f(x, \alpha_0)| < \frac{\varepsilon}{3(b-a)}, \hspace{5 mm} \forall x \in [a, b],
+\end{equation*}
+если разность $|y-y_0|$ достаточно мала. 
+
+Таким образом получаем
+\begin{equation*}
+    \bigg|
+        \int_{a}^{+\infty} f(x, \alpha) \d x - \int_{a}^{+\infty} f(x, \alpha_0) \d x
+    \bigg| < \varepsilon,
+\end{equation*}
+при достаточно малом $|\alpha-\alpha_0|$.
+\end{proof}
+
+
+
+
+\subsubsection*{14.21}
+Покажем, что есть $f$ непрерывна и ограничена на промежутке $[0, +\infty)$, то
+\begin{equation*}
+    \lim_{\alpha \to 0} \frac{2}{\pi} \int_0^{\infty} \frac{\alpha f(x)}{x^2 + \alpha^2} \d x = f(0).
+\end{equation*}
+Как обычно положим $x = t \alpha$, при $t > 0$ и $y > 0$. Тогда
+\begin{equation*}
+    I = \lim_{y \to + 0} \frac{2}{\pi} \int_{0}^{+\infty} \frac{f(ty)}{t^2 + 1} \d t.
+\end{equation*}
+Так как $|f(ty)|/(t^2+1) \leq M/(t^2+1)$, где $|f(ty)| \leq M = \const$, $\int_0^{+\infty} \d t / (t^2 + 1) = \pi/2$ (сходится), а в силу непрерывности $f$ дробь $\frac{f(t\alpha)}{t^2 + 1} \rightrightarrows \frac{f(0)}{t^2 + 1}$ при $y \to + 0$ на каждлм конечном интервале $[a, b]$, то,  согласно выше рассмотренной лемме, находим
+\begin{equation*}
+    \lim_{\alpha \to + 0} \frac{2}{\pi} \int_0^{+\infty} \frac{f(t\alpha)}{t^2 + 1} \d t = \frac{2}{\pi} \int_0^{+\infty} \lim_{\alpha \to +0} \frac{f(t\alpha)}{t^2 + 1} \d t = f(0).
+\end{equation*}
+В силу нечетности интеграла по $\alpha$, имеем
+\begin{equation*}
+    \lim_{\alpha \to -0} \frac{2}{\pi} \int_0^{+\infty} \frac{\alpha f(x)}{x^2 + \alpha^2} \d x = - f(0).
+\end{equation*}

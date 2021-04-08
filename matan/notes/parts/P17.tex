@@ -1,0 +1,235 @@
+\subsubsection*{17.1(4)}
+
+Представим функцию $f(x)$ интегралом Фурье, если $f(x)$ вида
+\begin{equation*}
+    f(x)  = \frac{1}{x^2 + a^2}, \hspace{5 mm} a \neq 0.
+\end{equation*}
+Заметим, что $b(y) = 0$, а $a(y)$ 
+\begin{equation*}
+    a(y) = \frac{2}{\pi}\int_0^{+\infty} \frac{\cos (yt)}{t^2 + a^2} \d t = 
+    \bigg/
+        t = a x
+    \bigg/ \frac{2}{\pi a} \int_0^{+\infty} \frac{\cos (a y x)}{1 + x^2} = \frac{2}{\pi a} \frac{\pi}{2}
+    e^{-y a},
+\end{equation*}
+таким образом находим представление в виде интеграла Фурье
+\begin{equation*}
+    f(x) = \frac{1}{|a|} \int_0^{+\infty} e^{- y |a|} \cos (xy) \d y.
+\end{equation*}
+
+
+
+
+
+\subsubsection*{17.2(3)}
+
+Представим функцию $f(x)$ интегралом Фурье, если $f(x)$ вида
+\begin{equation*}
+    f(x) = \left\{\begin{aligned}
+        &\cos(x),  &|x| \leq \pi/2, \\
+        &0, &|x| > \pi/2.
+    \end{aligned}\right.
+\end{equation*}
+Для начала заметим, что $b(y) = 0$, а $a(y)$ 
+\begin{equation*}
+     a(y) = \frac{2}{\pi} \int_0^{\infty} \d t f(t) \cos (y t) = \frac{2}{\pi} \left\{\begin{aligned}
+         &\cos (\pi y/2), &y\neq 1\\
+         &\pi/4, &y=1\\
+     \end{aligned}\right.
+ \end{equation*} 
+ В таком случае можем сопоставить функции её интеграл Фурье
+ \begin{equation*}
+     f(x) \sim \frac{2}{\pi} \int_0^{+\infty} \frac{\cos (\pi y /2)}{y^2-1} \cos (xy) \d y.
+ \end{equation*}
+
+
+
+ \subsubsection*{17.6(2)}
+
+ Представим интегралом Фурье функцию $f(x)$, продолжив её чётным образом на $(-\infty, 0)$, если 
+ \begin{equation*}
+     f(x) = \left\{\begin{aligned}
+         &1, & |x|\leq 1, \\
+         &-, &|X| > 1.
+     \end{aligned}\right.
+ \end{equation*}
+
+ Функция является кусочно-гладкой и абсолютно интегрируемой на $(-\infty, \infty)$, следовательно, её можно представить интегралом Фурье, в силу четности $b(\lambda) = 0$, а $a(\lambda)$ 
+ \begin{equation*}
+     a(\lambda) = \frac{2}{\pi} \int_{0}^{+\infty} f(x) \cos \lambda x \d x = 
+     \frac{2}{\pi} \int_0^1 \cos \lambda x \d x = \frac{2}{\pi} \frac{\sin \lambda}{\lambda}.
+ \end{equation*}
+ Таким образом находим представление:
+ \begin{equation*}
+     f(x) =\frac{2}{\pi} \int_{0}^{+\infty} \frac{\sin \omega}{\omega} \cos (\omega x) \d \omega,
+     \hspace{5 mm}
+     |x| \neq 1.
+ \end{equation*}
+ В точках же $x = \pm 1$, интеграл Фурье равен $1/2$.
+
+
+ \subsubsection*{17.7(4)}
+
+ Теперь найдём преобразование Фурье у аналогичной функции:
+ \begin{equation*}
+     f(x) = \left\{\begin{aligned}
+         &\sin x,  & |x| \leq \pi, \\
+         &0, &|x| > \pi.
+     \end{aligned}\right.
+ \end{equation*}
+Преобразование Фурье найдём, как интеграл вида
+\begin{equation*}
+    F[f](y) = \int_{-\infty}^{+\infty} f(t) e^{-i y t} \frac{d t}{\sqrt{2\pi}}  =
+    \int_{-\pi}^{\pi} 
+    \sin (t) (-i) \sin(y t)
+    \frac{d t}{\sqrt{2\pi}}  = 
+    2 \int_0^{\pi} \sin t \sin (y t) (-i) \frac{d t}{\sqrt{2\pi}} ,
+\end{equation*}
+который уже легко считается
+\begin{equation*}
+    F[f](y) = -i \sqrt{\frac{2}{\pi}} \left\{\begin{aligned}
+        &\frac{\sin (\pi y)}{1-y^2},  &y \neq \pm 1, \\
+        &\frac{\pi}{2}, & y = \pm 1.
+    \end{aligned}\right.
+\end{equation*}
+
+
+\subsubsection*{17.8(2, 4)}
+
+\textbf{2)} Найдём преобразование Фурье функции
+\begin{equation*}
+    f(x) = e^{-x^2/2}.
+\end{equation*}
+Преобразование Фурье найдём, как интеграл вида
+\begin{align*}
+    F[f](y) &= \int_{-\infty}^{+\infty} f(t) e^{-i y t} \frac{d t}{\sqrt{2\pi}}  =
+    \int_{-\infty}^{+\infty} e^{-t^2/2} e^{-ity} \frac{d t}{\sqrt{2\pi}} = 
+    \bigg/
+        \begin{aligned}
+            t/\sqrt{2} = x
+        \end{aligned}
+    \bigg/ = \frac{2}{\sqrt{\pi}} \int_0^{+\infty} e^{-x^2} \cos(\sqrt{2} y x) \d x = \\
+    &=
+    e^{-y^2/2},
+\end{align*}
+где мы воспользовались свойством
+\begin{equation*}
+    \int_0^{\infty} e^{-x^2} \cos (2 \alpha x) \d x = \frac{\sqrt{\pi}}{2} e^{-\alpha^2}.
+\end{equation*}
+
+\textbf{6)} Найдём преобразование Фурье функции
+\begin{equation*}
+    f(x) = \frac{d^2 }{d x^2} (x e^{-|x|}).
+\end{equation*}
+Преобразование Фурье найдём, как интеграл вида
+\begin{align*}
+    F[f](y) 
+    &= 
+    \int_{-\infty}^{+\infty} 
+    \frac{d^2 }{d t^2} (t e^{-|t|}) e^{-iyt} \frac{d t}{d \sqrt{2\pi}} 
+    = 
+    y^2 \int_{-\infty}^{+\infty} 
+    e^{-|t|} \frac{\partial }{\partial (iy)} e^{-iyt}
+    \frac{dt}{\sqrt{2\pi}}
+    = \\ &=
+    - i y^2 \frac{\partial }{\partial y}  \sqrt{\frac{2}{\pi}} \int_{-\infty}^{+\infty} 
+    e^{-|t|} \cos (yt)
+    \d t
+    = 
+    i \sqrt{\frac{8}{\pi}} \frac{y^2}{(1+y^2)^2}.
+\end{align*}
+ 
+
+\subsubsection*{17.14}
+
+Рассмотрим преобразование Фурье $\hat{f} (y)$ функции $f(x) = 1/(1+|x|^5)$. 
+
+ \textbf{1)} Рассмотрим третью производную
+ \begin{equation*}
+     \partial^3_y F[f](y) = (-i)^3 F[t^3 f] (y) = 
+     (-i)^3 \int_{-\infty}^{+\infty} 
+      \frac{t^3}{1 + |t|^5} e^{-iyt} 
+      \frac{dt}{\sqrt{2\pi}}
+      \overset{\mathrm{def}}{=} \Psi(y).
+ \end{equation*}
+ Заметим, что
+ \begin{equation*}
+     |\Psi(y)| \leq \int_{-\infty}^{+\infty} 
+    \frac{|t|^3}{1 + |t|^5} \cdot 1 \cdot
+     \frac{dt}{\sqrt{2\pi}}  < + \infty,
+ \end{equation*}
+ по признаку Вейерштрассе. 
+
+ \textbf{2)} Заметим, что $y^5 O(y^{-5}) = O(1)$, а также $(i y)^5 F[f](y) = O(1)$ в окрестности больших $y$. 
+ Если $\exists C \colon  \overset{\circ}{U} (x_0) \colon  |f(x)/g(x)| \leq C$, то говорят, что
+ $f(x) = O(g(x))$ при $x \to x_0$. Верно, что
+ \begin{equation*}
+     \varphi(y) = (iy)^5 F[f](y) = F[f^{(5)}] (y) 
+     = \int_{-\infty}^{+\infty}
+     \frac{dt}{\sqrt{2\pi}} 
+     \l(
+         \frac{\partial^5 f(t)}{\partial t^5} 
+     \r) e^{-iyt}.
+ \end{equation*}
+ Тогда верна оценка
+ \begin{equation*}
+     |\varphi(y)| = |y|^5 |F[f](y)| \leq 
+     \int_{-\infty}^{+\infty} \frac{dt}{\sqrt{2\pi}} 
+     \bigg|
+         \frac{\partial^5 f(t)}{\partial t^5 } 
+     \bigg| \equiv C < + \infty.
+ \end{equation*}
+ Более того
+ \begin{equation*}
+     |F[f](y) \leq \frac{X}{|y|^5},
+     \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+     F[f](y) = O\left(
+        \frac{1}{y^5}
+     \right).
+ \end{equation*}
+ \textbf{3)} Наконец получим оценку для больших $y$:
+ \begin{equation*}
+     |\varphi(y)| = |y|^5 \bigg|
+         F[f](y)
+     \bigg| = \bigg|
+         \int_{-\infty}^{+\infty} \frac{dt}{\sqrt{2\pi}}
+         \frac{\partial^5 f(t)}{\partial t^5}  e^{-i y t}
+     \bigg|.
+ \end{equation*}
+ Так приходим к оценке
+ \begin{equation*}
+     \bigg|
+         F[f](y)
+     \bigg| = \frac{1}{|y|^5} \bigg|
+         \int_{-\infty}^{+\infty} 
+         \frac{dt}{\sqrt{2\pi}} \frac{\partial^5 f(t)}{\partial t^5}  e^{-i y t}
+     \bigg| = \frac{K(y)}{|y|^5},
+ \end{equation*}
+ где $C(y)$ бесконечно малое при $y \to \infty$ по лемме Лебега-Римана, или лемме об осцилляции. 
+
+
+\begin{to_lem}[лемма Римана-Лебега]
+    Если $f(x)$ такая, что $\int_{\mathbb{R}} |f| < + \infty$, то $\int_{\mathbb{R}} f(x) e^{-ipx} \to 0$ при $p \to \infty$.
+\end{to_lem}
+
+
+\subsubsection*{17.17(2)}
+
+Найдём $\varphi(y)$, если 
+\begin{equation*}
+     \int_0^{+\infty} \varphi(y) \sin (xy) \d y = e^{-x}, \hspace{5 mm} x > 0.
+\end{equation*} 
+Через обратное преобразование Фурье:
+\begin{equation*}
+    \varphi(x) = \int_{0}^{+\infty} 
+    \left(
+        \cos(xy) \int_{-\infty}^{+\infty}  \frac{d t}{\pi} \varphi(t) \cos (y t)
+        + 
+        \sin (xy) 2 \int_{0}^{+\infty} \frac{\d t}{\pi} \varphi(t) \sin (y t)
+    \right)
+    \d y,
+\end{equation*}
+тогда
+\begin{equation*}
+    \varphi(x) = \frac{2}{\pi} \int_0^{+\infty} \d y e^{-y} \sin(xy) = \frac{2}{\pi} \frac{x}{1+x^2}, \hspace{5 mm} x > 0.
+\end{equation*}

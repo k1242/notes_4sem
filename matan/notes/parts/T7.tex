@@ -1,0 +1,39 @@
+\subsection{Т7}
+
+Найдём преобразование Фурье функции
+\begin{equation*}
+    f(x) = \left\{\begin{aligned}
+        &x^{p-1} e^{-x}, &x>0 \\
+        &0, &x \leq 0,
+    \end{aligned}\right.
+\end{equation*}
+при $p > 0$. 
+
+Для начала рассмотрим
+\begin{align*}
+    \frac{d \hat{f}}{d x} 
+    =
+     -i F[f \cdot x] = - \frac{i}{\sqrt{2\pi}} \int_0^{+\infty} x^p e^{-x - ixy} \d x 
+     = 
+    \frac{i}{\sqrt{2\pi}} \left(
+        \frac{x p e^{-x(1+iy)}}{-1-iy} \bigg|_0^{+\infty}
+    \right) - \frac{ip}{\sqrt{2\pi}} \int x^{p-1} \frac{e^{-x - i xy}}{-1 + i y} \d x 
+    =
+    \frac{-i p \hat{f}(y)}{1 + iy} ,
+\end{align*}
+что даёт нам некоторое дифференциальное уравнение на $\hat{f}$ вида
+\begin{equation*}
+    \frac{d \hat{f}}{ \hat{f}} = \frac{(-ip) \d y}{1 + iy},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \hat{f}(y) = C (1 + iy)^{-p}.
+\end{equation*}
+Осталось найти константу интегрирования, при $y=0$:
+\begin{equation*}
+    \hat{f}(0) = \frac{1}{\sqrt{2\pi}} \int_0^{+\infty} x^p e^{-x} \d x = \frac{\Gamma(p)}{\sqrt{2\pi}},
+\end{equation*}
+откуда находим
+\begin{equation*}
+    \hat{f}(y) = \frac{\Gamma(p)}{\sqrt{2\pi}} (1+iy)^{-p}.
+\end{equation*}
+
+

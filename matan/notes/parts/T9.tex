@@ -1,0 +1,64 @@
+\subsection{Т9}
+
+Найдём преобразование Фурье функции $f \colon  \mathbb{R}^n \mapsto \mathbb{R}$ вида $f(x) = e^{-A(x)}$, где $A(x)$ -- положительно определенная квадратичная форма.
+
+Во-первых
+\begin{equation*}
+    A(\vc{x}) = \vc{x}\T A \vc{x} = \frac{1}{2} A_{\alpha \beta} x^\alpha x^\beta.
+\end{equation*}
+Тогда преобразование Фурье можно найти, как интеграл, вида
+\begin{equation}
+    F[f](\vc{y})
+    =
+     \int_{\mathbb{R}^n} \frac{d^n t}{(2\pi)^{n/2}} \exp\left(
+        - \frac{1}{2} A_{\alpha \beta} t^\alpha t^\beta - i y_\alpha t^\alpha
+    \right)
+    =
+    \frac{1}{\sqrt{\det A}} \exp\left(
+        - \frac{1}{2} (A^{-1})_{\alpha \beta} y^\alpha y^\beta
+    \right) \equiv
+    \frac{\exp(-A^{-1}(\vc{y}))}{\sqrt{\det A}}.
+\end{equation}
+Докажем эту замечательную формулу. 
+\begin{equation*}
+    \vc{A}(\vc{t}) = \frac{1}{2} (O \vc{x})\T A (O \vc{x}) = \frac{1}{2} \vc{x}\T O\T A O \vc{x} = \frac{1}{2} \vc{x}\T D \vc{x} = \frac{1}{2} \sum_\alpha \left(
+        \sqrt{\lambda_\alpha} x^\alpha
+    \right) \left(
+        \sqrt{ \lambda_\alpha} x_\alpha
+    \right) = \frac{1}{2} z^\alpha z_\alpha.
+\end{equation*}
+Дифференциал можем переписать в виде
+\begin{equation*}
+    d^n t = \bigg|
+        \frac{\partial (t_1, \ldots, t_n)}{\partial (x_1, \ldots, x_n)} d^n x
+    \bigg| = |\det O| d^n x = \frac{d^n z}{\sqrt{\det A}}.
+\end{equation*}
+Также можем рассмотреть скалярное произведение:
+\begin{equation*}
+    (\vc{y} \cdot \vc{t}) = (O\T)_{\alpha \beta} y^\alpha x^\beta = \sum_\beta \frac{1}{\sqrt{\lambda_b}} O_{\beta\alpha} y^\alpha z^\beta = k_\beta z^\beta.
+\end{equation*}
+Итого наш первоначальный интеграл сводится к
+\begin{align*}
+    \int_{\mathbb{R}^n} \frac{\d^n z}{(2\pi)^{n/2} \sqrt{\det A}} \exp\left(
+        - \frac{1}{2} (\vc{z} \cdot \vc{z}) - i (\vc{k} \cdot \vc{z})
+    \right) 
+    &= 
+    \frac{1}{\sqrt{\det A}} \prod_{\alpha=1}^n \int_{-\infty}^{+\infty}
+    \frac{d z^\alpha}{\sqrt{2\pi}} \exp\left(
+        - \frac{1}{2} (z^\alpha)^2 - i k_\alpha z^\alpha
+    \right)
+    = \\ &= 
+    \frac{1}{\sqrt{\det A}} \prod_{\alpha=1}^n \exp\left(-\frac{1}{2} (\vc{k} \cdot \vc{k})\right) = 
+    \frac{1}{\sqrt{\det A}} \prod_{\alpha=1}^n e^{-A^{-1} (y)},
+\end{align*}
+где воспользовались равенством
+\begin{equation*}
+    k_\alpha k^\alpha = \sum_\alpha \frac{1}{\lambda_\alpha} O_{\beta \alpha} (O\T)^{\alpha \gamma} y^\beta y_\gamma = (A^{-1})_\beta^\gamma y^b y)\gamma = 2 A^{-1} (\vc{y}),
+\end{equation*}
+что в итоге доказывает написанную формулу
+\begin{equation*}
+    \boxed{
+    F\left[e^{-A(x)}\right](\vc{y})
+     =     \frac{\exp(-A^{-1}(\vc{y}))}{\sqrt{\det A}}
+     }.
+\end{equation*}

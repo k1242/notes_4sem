@@ -1,0 +1,132 @@
+\subsection{Т2}
+
+\textbf{Интеграл Дирихле}. Вычислим \textit{интеграл Дирихле}
+\begin{equation}
+    I(\alpha) = \int_0^\infty \frac{\sin \alpha x}{x} \d x
+\end{equation}
+Для начала вычислим некоторый другой интеграл:
+\begin{equation*}
+    \Phi(\alpha, \beta) = \int_0^{\infty} e^{-\beta x} \frac{\sin (\alpha x)}{x} \d x,
+    \hspace{10 mm}
+    \Phi'_\alpha (\alpha, \beta) = 
+    \int_0^\infty e^{-\beta x} \cos (\alpha x) \d x = \frac{\beta}{\alpha^2 + \beta^2}.
+\end{equation*}
+Действительно, считая $f'_\alpha (x, \alpha) = e^{-\beta x} \cos (\alpha x)$, заметим, что $f$ и $f'_\alpha$ непрерывны на $E$, $\int_0^{\infty} f(x, \alpha) \d x$ сходится $\forall \alpha \in \mathbb{R}$ по Дирихле:
+\begin{equation*}
+    \bigg|
+        \int_0^{\infty} \sin (\alpha x) \d x
+    \bigg| = \bigg|
+        \frac{\cos (\alpha t) - 1}{\alpha}
+    \bigg| \leq \frac{2}{|\alpha|}, \hspace{5 mm} \alpha \neq 0,
+\end{equation*}
+а функция $x^{-1} e^{-\beta x}$ убывает на промежутке $(0, +\infty)$, также верно, что $\int_0^{\infty} f'_\alpha (x, \alpha) \d x$ сходится равномерно по признаку Вейерштрассе, следовательно можем дифференцировать под знаком интеграла. 
+
+Теперь, интегриря $\alpha$ на отрезке $[0, \alpha]$ находим
+\begin{equation*}
+    \Phi(\alpha, \beta) - \Phi(0, \beta) = \beta \int_{0}^{\alpha} \frac{d t}{t^2 + \beta^2} = 
+    \arctg \frac{\alpha}{\beta} 
+    % \overset{\mathrm{?}}{\to} I(\alpha)
+    .
+\end{equation*}
+Понятно, что $I(\alpha) = - I(\alpha)$, так что далее считаем $\alpha > 0$. Имеем право рассмотреть $\beta \in [0, 1]$, точнее предел
+\begin{equation*}
+    \lim_{\beta \to +0} \int_0^{+\infty} e^{-\beta x} \frac{\sin(\alpha x)}{x} \d x = I(\alpha) =
+    \lim_{\beta \to +0} \arctg \frac{\alpha}{\beta} = \frac{\pi}{2}.
+\end{equation*}
+Таким образом для произвольного $\alpha$ верно, что
+\begin{equation}
+    \int_0^{\infty} \frac{\sin(\alpha x)}{x} \d x = \frac{\pi}{2} \sign (\alpha).
+\end{equation}
+
+\textbf{Интеграл Лапласа}. Вычислим интегралы Лапласа
+\begin{equation*}
+    I(\alpha) = \int_0^\infty \frac{\cos \alpha x}{1 + x^2} \d x = \int_0^\infty f(x, \alpha) \d x, 
+    \hspace{10 mm}
+    K(\alpha) = \int_0^\infty \frac{x \sin \alpha x}{1 + x^2} \d x.
+\end{equation*}
+Без ограничения общности рассмотрим $\alpha > 0$. Проверим, что можем дифференцировать под знаком интеграла: $f(x, \alpha)$ непрерывна $\forall \alpha, \, x$, интеграл
+\begin{equation*}
+    \int_0^{+\infty} f'_\alpha \d x = - \int_0^{+\infty} \frac{x \sin \alpha x}{1 + x^2} \d x,
+\end{equation*}
+сходится равномерно по  $\alpha$ на $[a_0, +\infty)$ для $\forall \alpha_0 > 0$, получается верно, что
+\begin{equation*}
+    I'(\alpha) = - \int_0^{+\infty}  \frac{x \sin \alpha x}{1 + x^2} = 
+    - K(\alpha).
+\end{equation*}
+Складывая с известным выражением интеграла Дирихле, находим
+\begin{equation*}
+    I'(\alpha) + \frac{\pi}{2} = \int_0^{+\infty}  \left(
+        \frac{\sin \alpha x}{x} - \frac{x \sin \alpha x}{1+ x^2} 
+    \right) \d x = 
+    \int_0^{+\infty} \frac{\sin \alpha x}{x (1 + x^2)} \d x.
+\end{equation*}
+Аргумент интеграла непрерывен, как и его производная по $\alpha$, они Лебег-интегрируемы, поэтому, дифференцируя под знаком интеграла, находим
+\begin{equation*}
+    I''(\alpha) = \int_0^{+\infty}  \frac{\cos \alpha x}{1 + x^2} \d x.
+\end{equation*}
+Так мы приходим к дифференциальному уравнению на $I(\alpha)$:
+\begin{equation*}
+    I''(\alpha) - I(\alpha) = 0,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    I(\alpha) = C_1 e^\alpha + C_2 e^{-\alpha}.
+\end{equation*}
+Рассматривая пределы $\alpha \to 0$ и $\alpha \to + \infty$, находим константы интегрирования $C_1 = 0$ и $C_2 = \pi/2$. В силу четности $I(\alpha)$ находим
+\begin{equation*}
+    I(\alpha) = \frac{\pi}{2} e^{-|\alpha|}, \hspace{5 mm} \alpha \in \mathbb{R}.
+\end{equation*}
+Бонусом находим $K(\alpha) = - I'_\alpha (\alpha)$:
+\begin{equation*}
+    K(\alpha) = \frac{\pi}{2} e^{-|\alpha|} \cdot \sign \alpha.
+\end{equation*}
+
+\textbf{Интегралы Френеля}. Вычислим \textit{интеграл Френеля}
+\begin{equation*}
+    I = \int_0^{+\infty} \sin^2 x^2 \d x.
+\end{equation*}
+Для нахождения нам понадобится \textit{интеграл Эйлера-Пуассона} и, возможно, \textit{интеграл Лапласа}:
+\begin{equation*}
+    \int_0^{+\infty} e^{-x^2} \d x = \frac{\sqrt{\pi}}{2},
+    \hspace{10 mm}
+    I(\alpha) = \int_0^{+\infty}  e^{-x^2} \cos 2 \alpha x \d x = \frac{\sqrt{\pi}}{2} e^{-\alpha^2}.
+    .
+\end{equation*}
+Полагая $x^2 = t$ запишем интеграл $I$ в виде
+\begin{equation*}
+    I  = \frac{1}{2} \int_0^{+\infty}  \frac{\sin t}{\sqrt{ t}} \d t.
+\end{equation*}
+При $t > 0$ справедливо равенство
+\begin{equation}
+    \int_0^{+\infty} e^{-t u^2} \d u =
+    \bigg/
+        x = \sqrt{t} u
+    \bigg/ = \frac{1}{2} \sqrt{\frac{\pi}{t}},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \frac{1}{\sqrt{t}} = \frac{2}{\pi} \int_0^{+\infty}  e^{-t u^2} \d u,
+\end{equation}
+Так приходим к двойному интегралу
+\begin{equation*}
+    I = \frac{1}{\sqrt{\pi}} \int_0^{+\infty} \sin t \d t \int_0^{+\infty}  e^{- t u^2} \d u.
+\end{equation*}
+Меняя порядок интегрирования, получаем
+\begin{equation*}
+    I = \frac{1}{\sqrt{\pi}} \int_0^{+\infty} \d u \int_0^{+\infty}  e^{-tu^2} \sin t \d t = 
+    \frac{1}{\sqrt{\pi}} \int_0^{+\infty} \frac{\d u}{1 + u^4}.
+\end{equation*}
+Который легко вычисляется, если заметить, что
+\begin{equation*}
+    \int_0^{+\infty} \frac{x^2 \d x }{1 + x^4} = \int_0^{+\infty} \frac{(1/x^2) \d x}{1 + (1/x)^4} = \int_0^{+\infty} \frac{\d x}{1 + x^4}.
+\end{equation*}
+Поэтому 
+\begin{equation*}
+    2 \int_0^{+\infty}  \frac{\d x}{1 + x^4} = \int_0^{+\infty}  \frac{(1 + 1/x^2)\d x}{x^2 + 1/x^2} = \int_0^{+\infty}  \frac{\d (x - 1/x)}{ (x-1/x)^2 + 2} = \frac{1}{\sqrt{2}} \arctg\left(
+        \frac{x-1/x}{\sqrt{2}}
+    \right) \bigg|_{0}^{\infty} = \frac{\pi}{\sqrt{2}}.
+\end{equation*}
+Откуда уже и получаем
+\begin{equation}
+    I = 
+    \int_0^{+\infty} \sin^2 x^2 \d x
+    =
+    \frac{1}{\sqrt{\pi}} \cdot \frac{\pi}{2 \sqrt{2}} = \frac{1}{2} \sqrt{\frac{\pi}{2}}.
+\end{equation}
+

@@ -1,0 +1,377 @@
+\subsubsection*{15.1(1, 2, 3, 4)}
+
+\textbf{1)} Найдём интеграл вида
+\begin{equation*}
+    \int_{0}^{+\infty}  \left(
+        \cos^2 (ax) - \cos^2 (bx)
+    \right) \frac{dx}{x} = \frac{1}{2} \int_{0}^{+\infty}  \left(
+        \cos(2ax) - \cos(2 b x)
+    \right) \frac{dx}{x} = \frac{1}{2} \ln \frac{b}{a}.
+\end{equation*}
+где воспользовались формулой Фрулани, выбрав $\cos (2ax) = f(ax)$. 
+
+\textbf{2)} Теперь найдём
+\begin{equation*}
+    \int_{0}^{+\infty}  \l(
+        e^{-ax^2} - e^{-bx^2}
+    \r) \frac{dx}{x} = \ln \sqrt{\frac{b}{a}} = \frac{1}{2} \ln \frac{b}{a},
+\end{equation*}
+
+\textbf{3)} Интеграл вида
+\begin{equation*}
+    \int_{0}^{+\infty} \frac{e^{-ax^2}-e^{-bx^2}}{x} \d x = \bigg/
+        \begin{aligned}
+            x &= \sqrt{t}, \\
+            dx &= dt/(2\sqrt{t}) 
+        \end{aligned}
+    \bigg/ = 
+    \int_{0}^{+\infty}
+    \frac{e^{-a t}-e^{-b t}}{2 t} \d t = \frac{1}{2} \ln \frac{b}{a}.
+\end{equation*}
+
+\textbf{4)} И, наконец, вычислим интеграл вида
+\begin{equation*}
+    \int_0^1 \frac{x^a - x^b}{\ln x} \d x = \bigg/
+    \red{
+        \ln \frac{1}{x} = t
+    }
+    \bigg/ = 
+    \int_{\infty}^0 \frac{\d t}{t} e^{-t} (e^{-at} - e^{-bt}) = 
+    \int_0^\infty \l(
+        e^{-(b+1)t} - e^{-(a+1)t}
+    \r) \frac{\d t}{t} = \ln \frac{a+1}{b+1}
+\end{equation*}
+
+% в 15.2(3) t = x^2
+
+
+\subsubsection*{15.2(1)}
+
+Найдём интеграл, вида
+\begin{equation*}
+    \int_0^{+\infty} \frac{1 - \cos \alpha x}{x^2} \d x = -\int_0^{+\infty} \sin^2 \left(
+        \frac{\alpha x}{2}
+    \right) \d \left(\frac{1}{x}\right) = - \frac{\sin^2 \left(\frac{\alpha}{2}x\right)}{x} \bigg|_0^{+\infty} + 
+    \frac{\alpha}{2} \int_0^{+\infty} \frac{\sin \alpha x}{x} \d x = \frac{\pi |\alpha|}{2},
+\end{equation*}
+где модуль вполне правомерен в силу чётности $\cos (\alpha x)$.
+
+
+\subsubsection*{15.3(2)}
+
+Интеграл
+\begin{equation*}
+    \int_0^\infty \sin x \cos^2 x \frac{dx}{x} = \int_{0}^{+\infty} 
+    \sin(x) \frac{1 + \cos (2x)}{2} \frac{dx}{x} = \frac{1}{2} \int_0^\infty \frac{\sin x}{x} \d x + 
+    \frac{1}{2} \int_0^\infty \frac{\sin x \cos 2 x}{x} \d x,
+\end{equation*}
+где уже хочется подставить $\sin (3 x) - \sin (x)= 2 \sin(x) \cos(2x)$:
+\begin{equation*}
+    \frac{1}{2} \frac{\pi}{2} + \frac{1}{2} \frac{1}{2} \int_0^\infty \frac{\sin(3x)}{x} \d x -
+    \frac{1}{4} \int_0^\infty \frac{\sin x}{x} \d x = \frac{\pi}{4}.
+\end{equation*}
+% почему можно дифференцировать по параметру, равномерно ил он сходится
+
+
+\subsubsection*{15.4(3)}
+
+Есть интеграл вида
+\begin{equation*}
+    I(\alpha) = \int_{0}^{+\infty} \frac{\sin^4 (\alpha x)}{x^2} \d x = 
+    \int_0^{+\infty} f(x, \alpha) \d x.
+    .
+\end{equation*}
+Заметим, что $f$, $f'_\alpha$  существуют  почти всюду по $\alpha$, $f'_\alpha = \frac{4 \sin ^3(\alpha  x) \cos (\alpha  x)}{x}$ мажорируется $10 x^2$ при  малых $x$ и \textit{не абсолютно} интегрируема при больших по признаку Дирихле, соответственно можем нтегрировать под знаком интеграла
+\begin{equation*}
+    I'_\alpha (\alpha) = \int_{0}^{+\infty} 4 \sin^3 (\alpha x) \cos(\alpha x) \frac{\d x}{x}
+    =
+    \int_{0}^{+\infty} \frac{dx}{x} \l(
+        \frac{1}{4} \sin (2 x\alpha) - \frac{1}{8} \sin (4 x \alpha)
+    \r) = \frac{\pi}{4} \sign \alpha,
+\end{equation*}
+что верно $\forall \alpha$. 
+
+Возвращаясь к интегралу, находим, что
+\begin{equation*}
+    I(\alpha) = \frac{\pi}{4} |\alpha| + 0,
+\end{equation*}
+так как $I(0) = 0$.
+
+
+\begin{to_thr}[интерирование по частям]
+Воообще 
+\begin{equation*}
+    \int_{a}^{+\infty}  f(x, \alpha) g'_x (x, \alpha) \d x 
+    =
+    f(x, \alpha) g(x, \alpha) \bigg|_a^{\infty} - \int_{a}^{+\infty}  f'_x (x, \alpha) g(x, \alpha) \d x,
+\end{equation*}
+работает, когда $f, g \in C^1$ по $x$ и любые два из трёх написанных пределов существуют.    
+\end{to_thr}
+
+
+
+
+\subsubsection*{15.5(6)}
+
+Вычислим интеграл вида
+\begin{equation*}
+    I(\alpha) = \int_{0}^{+\infty}  \sin^3 (x) \cos (\alpha x) \frac{dx}{x^3}.
+\end{equation*}
+Интегрируя по частям
+\begin{equation*}
+    \sin^3 x \cos (\alpha x) = \frac{3}{8} \left(
+        \sin(\alpha+1)x - \sin (\alpha - 1)x
+    \right) - \frac{1}{8} \l(
+        \sin(\alpha+3)x - \sin(\alpha_3)x
+    \r),
+\end{equation*}
+для $\alpha > 3$. В общем приходим к выражению
+\begin{align*}
+    I(\alpha) 
+    &=
+     \int_{0}^{+\infty}  \sin^3 (x) \cos (\alpha x) \frac{dx}{x^3}
+    =
+     \int_0^\infty \sin^3 x \cos(\alpha x) \d \l(
+        \frac{-1}{2x^2}
+    \r) 
+    = 
+    \\
+    &=
+    \l(
+        -\frac{1}{2x^2}
+    \r) \sin^3 x \cos \alpha x \bigg|_0^\infty + \frac{1}{2} \int_{0}^{+\infty} 
+    \frac{1}{x^2} \d (\sin^3 x \cos \alpha x) = 
+    \frac{1}{2} \int_{0}^{+\infty} \l(
+        \sin^3 (x) \cos (\alpha x)
+    \r)'_x  f\left(-\frac{1}{x}\right) 
+    = 
+    \\
+    &= 
+    - \frac{1}{2x} \l(
+        \sin^3 x \cos(\alpha x)
+    \r)'_x \bigg|_0^\infty + 
+    \frac{1}{2} \int_{0}^{+\infty}  \frac{1}{x} \d \l(
+        \sin^3 x \cos \alpha x
+    \r)'_x
+    = 
+    \\ 
+    &=
+    -\frac{1}{2} \int_{0}^{+\infty} \frac{\d x}{x} \bigg(
+        \frac{3}{8}\left[
+            (\alpha+1)^2 \sin (\alpha+1)x - (\alpha-1)2 \sin (\alpha-1)x
+        \right] - \\ 
+        & 
+        \phantom{=
+    -\frac{1}{2} \int_{0}^{+\infty} \frac{\d x}{x} \bigg(\ }
+         \frac{1}{8}\left[
+            (\alpha+3)^2 \sin (\alpha+3) x - (\alpha-3)^2 \sin  (\alpha-3)x
+        \right]
+    \bigg) 
+    = \\
+    &=
+    -\frac{\pi}{4} \left\{
+        \frac{3}{8} (\alpha+1)^2 - \frac{3}{8} (\alpha-1)^2 - \frac{1}{8} (\alpha + 3)^2+ \frac{1}{8} (\alpha-3)^2
+    \right\} = 0 
+\end{align*}
+
+
+\subsubsection*{15.6(3)}
+
+C помощью дифференцирования по параметру вычислим
+\begin{equation*}
+    I(\alpha) = \int_0^{+\infty} \frac{e^{-\alpha x}-e^{-\beta x}}{x} \sin \lambda x \d x = \int_0^{+\infty} f(x, \alpha) \d x, 
+    \hspace{5 mm}
+    \alpha > 0, \ \beta > 0, \ \lambda \neq 0.
+\end{equation*}
+Для начала проверим, что можем дифференцировать по параметру $\lambda$. Действительно $f \in \mathcal L (X)$, $f'_\lambda = \left(
+    e^{-\alpha x} - e^{-\beta x}
+\right) \cos (\lambda x)$ существует, конечна и Лебег-интегрируема ($< e^{-\alpha x} - e^{-\beta x}$) $\forall \lambda$. Тогда, дифференцируя под знаком интеграла
+\begin{equation*}
+    I'_\lambda (\lambda) = \int_{0}^{+\infty}  \left(
+        e^{-\alpha x} - e^{-\beta x}
+    \right) \cos (\lambda x) \d x = \frac{\alpha}{\alpha^2 + \lambda^2} - \frac{\beta}{\beta^2 + \lambda^2}.
+\end{equation*}
+В таком случае $I(\lambda)$
+\begin{equation*}
+    I(\lambda) = \int I'_\lambda (\lambda) \d \lambda = \arctg\left(
+        \frac{\lambda}{\alpha}
+    \right) - \arctg\left(
+        \frac{\lambda}{\beta} 
+    \right) + C = \arctg\left(
+        \frac{\lambda}{\alpha}
+    \right) - \arctg\left(
+        \frac{\lambda}{\beta} 
+    \right),
+\end{equation*}
+где $C = 0$ так как $I(0) = 0$.
+
+
+\subsubsection*{15.6(5)}
+При выполнении всех условий о дифференцирование интеграла по параметру, для интеграла 
+\begin{equation*}
+    I(\alpha) = \int_0^1 \frac{\arctg (\alpha x)}{x \sqrt{1-x^2}} \d x,
+\end{equation*}
+может быть так посчитан. 
+
+Действительно,
+\begin{align*}
+    \frac{d I(\alpha)}{d \alpha} 
+    &=
+    \int_0^1 \frac{1}{x \sqrt{1-x^2}} \frac{1}{1+(\alpha x)^2} 
+    = 
+    \int_0^1 dx \left[
+        \sqrt{1-x^2} (1+ (\alpha x)^2)
+    \right]^{-1}
+    = \\ &=
+    \bigg/
+        x = \cos t, \ d x = - \sin t \d t
+    \bigg/ = \frac{1}{\sqrt{1+\alpha^2}} \arctg \l(
+        \frac{\tg t}{\sqrt{1+\alpha^2}}
+    \r) \bigg|_0^{\pi/2} = \frac{\pi}{2 \sqrt{1+\alpha^2}}.
+\end{align*}
+Тогда $I(\alpha)$
+\begin{equation*}
+    I(\alpha) = \frac{\pi}{2} \int \frac{d \alpha}{\sqrt{1+\alpha^2}} + C 
+    = 
+    \frac{\pi}{2} \ln \bigg|
+        \alpha + \sqrt{\alpha^2 + 1}
+    \bigg| + C = 
+    \frac{\pi}{2} \ln\left(
+        \alpha + \sqrt{1 + \alpha^2}
+    \right)
+    ,
+\end{equation*}
+где $I(0) = 0$ так что $C = 0$.
+
+
+
+\subsubsection*{15.13(5)}
+
+Попробуем через интеграл Эйлера-Пуассона доказать, что
+\begin{equation*}
+    \int_0^{+\infty} e^{-(x^2 + \alpha^2/x^2)} \d x = \frac{\sqrt{\pi}}{2} e^{-2\alpha}, \hspace{5 mm} \alpha > 0.
+\end{equation*}
+Представим интеграл в виде
+\begin{equation*}
+    \int_0^1 \exp\left(
+        -x^2 - \frac{\alpha^2}{x^2}
+    \right) + \int_{1}^{+\infty} \l(
+        -x^2 - \frac{\alpha^2}{x^2}
+    \r) \d x,
+\end{equation*}
+далее, произведя замену $y = 1/x$ в первом интеграле получаем
+\begin{equation*}
+    I(\alpha) = \int_{1}^{+\infty} \exp \l(
+        -\alpha^2 y^2 + \frac{1}{y^21}
+    \r) \frac{\d y}{y^2} + \int_{1}^{+\infty} \exp\left(
+        -y^2 - \frac{\alpha^2}{y^2}
+    \right) \d y.
+\end{equation*}
+Так как подынтегральные функции $f_1$ и $f_2$ сходятся непрерывны при всех $\alpha$ и $1 \leq y < + \infty$, а соответствующие интегралы, по признаку Вейерштрасса, сходятся равномерно:
+\begin{equation*}
+    |f_1| \leq \frac{1}{y^2}, \hspace{5 mm} |f_2| \leq e^{-y^2},
+\end{equation*}
+и интегралы
+\begin{equation*}
+    \int_1^{+\infty} \frac{\d y}{y^2}, \hspace{5 mm} \int_1^{+\infty} e^{-y^2} \d y
+\end{equation*}
+сходятся, то функция $I$ непрерывна $\forall |\alpha| \in \mathbb{R}$. 
+
+Пусть $|\alpha| \geq \varepsilon > 0$. Поскольку функции $\partial_\alpha f_1$ и $\partial_\alpha f_2$ непрерывны в области $|\alpha| \geq \varepsilon, \ 1 \leq y < + \infty$, а соответствующие интегралы от них, в силу мажорантного признака, сходятся равномерно, то функция $I'$ непрерывна при $\alpha \neq 0$. Следовательно
+\begin{equation*}
+    I'_\alpha (\alpha) = - 2 \alpha \int_{0}^{+\infty} \exp\left(
+        -x^2 - \frac{\alpha^2}{x^2}
+    \right) \frac{\d x}{x^2}.
+\end{equation*}
+Кроме того, положив в исходном интеграле $x = \alpha/y$, $y > 0$, можем написать
+\begin{equation*}
+    I(\alpha) = \alpha \int_{0}^{+\infty} \exp\left(
+        -y^2 - \frac{\alpha^2}{y^2}
+    \right) \frac{\d y}{y^2}.
+\end{equation*}
+Сравнивая последние два интеграла, получаем дифференциальное уравнение $I' + 2 I = 0$, решая которое, находим
+\begin{equation*}
+    I(\alpha) = C e^{-2 \alpha}.
+\end{equation*}
+В силу непрерывности $I(\alpha)$ находим, что $I(0) = \sqrt{\pi}/2$, откуда $C = \sqrt{\pi}/2$. Окончательно,
+\begin{equation*}
+    I(\alpha) = \frac{\sqrt{\pi}}{2} \exp\left(
+        - 2 |\alpha|
+    \right).
+\end{equation*}
+
+
+
+\begin{to_lem}
+    Верно представление, вида
+    \begin{equation*}
+        \frac{1}{x^2 + 1} = \int_0^{+\infty} e^{-y (1 + x^2)} \d y.
+    \end{equation*}
+\end{to_lem}
+
+
+
+\subsubsection*{15.15(1, 4)}
+
+\noindent
+\textbf{1)} Найдём интеграл, вида
+\begin{equation*}
+    \int_0^{+\infty} \frac{\sin^2 (\alpha x)}{1+ x^2} \d x = \frac{1}{2} \int_0^{\infty} \frac{1-\cos(2 \alpha x)}{1 + x^2} \d x 
+    = 
+    \frac{1}{2} \int_{0}^{+\infty} \frac{\d x}{1 + x^2} - \frac{1}{2} 
+    \int_{0}^{+\infty}  \frac{\cos (2 \alpha x)}{1 + x^2} \d x = \frac{\pi}{4} \left(
+        1 - e^{-2|\alpha|}
+    \right).
+\end{equation*}
+
+\noindent
+\textbf{4)} Теперь хочется взять интеграл
+\begin{equation*}
+    I(\alpha) = \int_0^\infty \frac{\sin^2 (\alpha x)}{x^2 (1+x^2)} \d x = \int_0^{+\infty} f(x, \alpha) \d x.
+\end{equation*}
+Заметим, что $f(x, \alpha)$ Лебег-интегрируема $\forall \alpha \in E$. Рассмотрим
+\begin{equation*}
+    f'_\alpha = \frac{\sin 2\alpha x}{x^2 (1 + x^2)}.
+\end{equation*}
+для которой верно, что
+\begin{equation*}
+    \bigg|
+        \frac{2 \sin 2 \alpha x}{x (1 + x^2)}
+    \bigg| \leq \bigg|
+        \frac{1}{1 + x^2}
+    \bigg|, \hspace{5 mm} x < 0.1/\alpha,
+    \hspace{10 mm}
+    \bigg|
+        \frac{2 \sin 2 \alpha x}{x (1 + x^2)}
+    \bigg| \leq \bigg|
+        \frac{2}{x^3}
+    \bigg|, \hspace{5 mm} x > 1,
+\end{equation*}
+соответственно, $f'_\alpha$ Лебег-интегрируема. Тогда верно, что
+\begin{equation*}
+    I'_\alpha (\alpha) = \int_0^{+\infty}  \frac{\sin 2 \alpha x}{x (1 + x^2)} \d x.
+\end{equation*}
+Дифференцируем дальше, по крайней мере хотим, для этого необходимо, чтобы $f'_\alpha$ и $f''_{\alpha, \alpha}$ были бы Лебег-интегрируемы и существуют $\forall \alpha$, что верно. Тогда
+\begin{align*}
+    \frac{d^2 I(\alpha)}{d \alpha^2} &= 2 \int_{0}^{+\infty} 
+    \frac{\cos(2 \alpha x)}{1+x^2} \d x = 2 \frac{\pi}{2} e^{-2 |\alpha|}.
+\end{align*}
+Последний интеграл уже берется:
+\begin{equation*}
+    I''(\alpha) = \int_0^{+\infty}  \frac{2 \cos 2 \alpha x}{1 + x^2} \d x = 2 \frac{\pi}{2} e^{-2 \alpha}.
+\end{equation*}
+Отсюда находим
+\begin{equation*}
+    I'_\alpha (\alpha) = - \frac{\pi}{2} e^{- 2\alpha} + C_1 = - \frac{\pi}{2} e^{-2\alpha} + \frac{\pi}{2},
+\end{equation*}
+и, наконец, находим
+\begin{equation*}
+    I(\alpha) = \frac{\pi}{4} e^{-2\alpha} + \frac{\pi}{2} \alpha + C_2,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    I(\alpha) = \frac{\pi}{4}\left(
+        e^{-2\alpha} + 2 \alpha  -1
+    \right), \hspace{5 mm} \alpha > 0.
+\end{equation*}
+
+
+

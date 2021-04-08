@@ -1,0 +1,38 @@
+\subsection{Т3}
+
+Докажем \textit{формулу Фруллани}
+\begin{equation*}
+    \int_0^{+\infty} \frac{f(ax)-f(bx)}{x} \d x = f(0) \ln \frac{b}{a}, \hspace{5 mm}
+    a > 0, \ b > 0,
+\end{equation*}
+где $f$ -- непрерывная функция и $\int_A^{\infty} \frac{f(x)}{x} \d x$ сходится $\forall A > 0$. 
+
+В силу условий теоремы
+\begin{equation*}
+    \int_{A}^{+\infty} \frac{f(ax)}{x} \d x = \int_{Aa}^{+\infty} \frac{f(t)}{t} \d t,
+    \hspace{10 mm}
+    \int_{A}^{+\infty} \frac{f(bx)}{x} \d x = \int_{Ab}^{+\infty} \frac{f(t)}{t} \d t,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \int_{A}^{+\infty}  \frac{f(ax)-f(bx)}{x} \d x = \int_{Aa}^{Ab} \frac{f(t)}{t} \d t.
+\end{equation*}
+По \textit{первой теореме о среднем}, получаем
+\begin{equation*}
+    \int_{A}^{+\infty} \frac{f(ax)-f(bx)}{x} \d x = f(\xi) \int_{Aa}^{Ab} \frac{\d t}{t} = f(\xi) \ln \frac{b}{a},
+    \hspace{5 mm} 
+    Aa \leq \xi \leq Ab.
+\end{equation*}
+Поскольку функция $f$ непрерывна, то $\lim_{A \to +0} f(\xi) = f(0)$, откуда находим
+\begin{equation}
+     \lim_{A \to +0} \int_{A}^{+\infty}  \frac{f(ax)-f(bx)}{x} \d x = \int_0^{+\infty} \frac{f(ax)-f(bx)}{x} \d x = f(0) \ln \frac{b}{a}.
+ \end{equation} 
+Стоит заметить, что если $\int_A^\infty f(x)/x \d x$ расходится, то
+\begin{equation*}
+    \exists \ \lim_{x \to + \infty} f(x) = f(+\infty),
+    \hspace{5 mm}
+    \exists \ \int_{A}^{+\infty} \frac{f(x)-f(+\infty)}{x} \d x \ \in \mathbb{R},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \int_0^{+\infty}  \frac{f(ax)-f(bx)}{x} \d x = 
+    \left(
+        f(0) - f(+\infty)
+    \right) \ln \frac{b}{a}.
+\end{equation*}
