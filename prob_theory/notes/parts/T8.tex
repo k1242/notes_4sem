@@ -1,0 +1,47 @@
+\subsection*{Т8}
+
+
+Известно следующее совместное распределение:
+\begin{table}[h]
+\centering
+    \begin{tabular}{c|ccc}
+    \toprule
+        $\xi\backslash\eta$ & $-2$ & $0$ & $2$  \\
+    \midrule
+        $-1$ & $\alpha$ & $\beta$ & $2/13$\\
+        $1$ & $3/13$ & $2/13$ & $1/13$\\
+    \bottomrule
+    \end{tabular}
+    ,
+    \hspace{10 mm}
+    $\alpha + \beta = \dfrac{5}{13}$.
+\end{table}
+
+\noindent
+где также известно, что $7 \D (\xi) = 19 \D(\eta)$.
+
+Для начала найдём первые и вторые моменты для $\xi$ и $\eta$:
+\begin{align*}
+    \E(\xi) &= - 2 \cdot \left(\alpha + \frac{3}{13}\right) + 2 \cdot \frac{3}{13} = - 2 \alpha, \\
+    \E(\eta) &= -1 \cdot \left(\alpha + \beta + \frac{2}{13}\right) + 1 \cdot \frac{6}{13} = -\frac{1}{13}, \\
+    \E(\xi^2) &= 4 \cdot \left(
+        \frac{6}{13} + \alpha
+    \right) = \frac{24}{13} + 4 \alpha, \\
+    \E(\eta^2) &= 1.
+\end{align*}
+Теперь можем перейти к квадратному уравнению
+\begin{equation*}
+    19 \cdot \left(1 - \frac{1}{13^2}\right) = 7 \left(
+        \frac{24}{13} + 4 \alpha - 4 \alpha^2
+    \right),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    13^2 (x^2-x) + 36 = 0,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    x_1 = \frac{4}{13},
+    \hspace{5 mm}
+    x_2 = \frac{9}{13}.
+\end{equation*}
+Но, так как $\alpha + \beta = 5/13$, а также $\sign \alpha = \sign \beta = 1$, то $\alpha < 5/13$, а значит искомая величина
+\begin{equation*}
+    \alpha = \frac{4}{13}.
+\end{equation*}

@@ -1,0 +1,35 @@
+\subsection*{Т4}
+
+
+Найдём производящую функция для биномиального распределения, вида
+\begin{equation*}
+    \P(\xi = k) = C_n^k p^k q^{n-k},
+\end{equation*}
+что соответствует количеству успехов в схеме Бернулли, где вероятность успеха $p$.
+
+Коэффициенты в биноме Ньютона выглядят очень похоже на $\P$, так что заметим, что производящая функция вида
+\begin{equation*}
+    P(s) = (q + ps)^n,
+\end{equation*}
+нам подходит. 
+Найдём матожидание и дисперсию, как
+\begin{equation*}
+    \E(\xi) = P'_s (s= 1),
+    \hspace{10 mm}
+    \D(\xi) = P''(1) + P'(1) - \E^2(\xi).
+\end{equation*}
+Производные $P(s)$:
+\begin{equation*}
+    P'(s) = n p (q + ps)^{n-1}, \hspace{5 mm}  
+    P'(1) = n p,
+    \hspace{10 mm}
+    P''(s) = n (n-1) p^2 (q+ps)^{n-1},
+    \hspace{5 mm}
+    P''(1) = n (n-1) p^2,
+\end{equation*}
+тогда искомые величины:
+\begin{equation*}
+    \E(\xi) = np,
+    \hspace{10 mm}
+    \D(\xi) = np(1-p) = npq.
+\end{equation*}

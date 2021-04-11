@@ -1,0 +1,90 @@
+\begin{frame}
+\maketitle
+\end{frame}
+
+\begin{frame}
+\frametitle{\rmfamily Цель работы}
+В предыдущем задании нашей группе требовалось переписать текст из книги Ландау Лившица, том 4 \cite{LL}, с чем мы успешно справились. В этот раз была поставлена задача освоить пакет beamer, создав в нём презентацию по заданному материалу.
+
+\end{frame}
+\begin{frame}
+\frametitle{Реализация команды itemize (задачи к \S41)}
+\begin{itemize}
+\item { Определить изменение направления поляризации частицы при ее 
+движении в плоскости, перпендикулярной однородному магнитному полю
+(${\bf v \bot H}$).
+
+Р е ш е н и е. В правой стороне уравнения (\ref{Eq4109}) остается лишь первый член, т.~е. вектор $\vc{\zeta}$ прецессирует вокруг направления {\bf H} (ось $z$) с угловой скоростью
+$$ -\frac{2\mu m + 2\mu '(\varepsilon - m)}{\varepsilon}{\bf H} = 
+-\left(\frac{e}{\varepsilon}+2\mu'\right){\bf H}.$$
+С этой угловой скоростью вращается в плоскости $xy$ проекция $\vc{\zeta}$
+на эту плоскость (обозначим ее $\vc{\zeta}_1$). Вектор же {\bf v} вращается в той же плоскости с угловой скоростью $-e{\bf H}/{\varepsilon}$.
+ Отсюда видно, что 
+$\vc{\zeta}_1$ поворачивается относительно направления {\bf v} с угловой скоростью -- $2\mu'{\bf H}$ .
+\item То же при движении вдоль направления магнитного поля.
+
+Р е ш е н и е. При совпадающих направлениях {\bf v} и {\bf H} уравнение
+ (\ref{Eq4109}) приводится к виду
+ $$\frac{d\zeta}{dt} = \frac{2\mu m}{\varepsilon}[\zeta {\bf H}],$$
+ т.~е. \vc {\zeta} прецессирует вокруг общего направления {\bf v}
+  и {\bf H} с угловой скоростью $-2\mu m {\bf H}/{\varepsilon}$.
+\item То же при движении в однородном электрическом поле.
+
+Р е ш е н и е. Пусть поле {\bf E} направлено вдоль оси $x$, а движение происходит в плоскости $xy$. Из (\ref{Eq4109})
+  видно, что вектор \vc{\zeta} прецессирует вокруг оси $z$ с мгновенной угловой скоростью
+  $$-\left(\frac{e}{e+m}+2\mu'\right)E \:\frac{p_y}{\varepsilon}.$$
+
+  Снова разложим $\vc{\zeta}$ на составляющие $\vc{\zeta}_z$ и 
+  $\vc{\zeta}_1$
+  (в плоскости $xy$). Тогда 
+  $$\vc{\zeta}_{\|} = \vc{\zeta}_1 \cos \varphi, \qquad
+  \vc{\zeta}_{\bot}{\bf E}= -\vc{\zeta}_1 
+  \sin \varphi \cdot \frac{v_y}{v}.
+  $$
+  Из (\ref{Eq4111}) находим, что $\vc{\zeta}_1$ вращается относительно направления {\bf v} с мгновенной угловой скоростью 
+  $$\dot \varphi = \frac{2v_y}{v^2}\left(\frac{\mu m^2}{\varepsilon^2 
+  }- \mu'\right) = \frac{p_y}{\varepsilon}\left(\frac{em}{p^2}
+  -2\mu'\right).$$}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{\rmfamily Использование формул}
+Энергия и импульс частицы с ${m = 0}$ связаны соотношением
+${\xi = |{\bf p}|}$.  Поэтому для плоской волны (${\eta _p \:\underline{\infty}\: e^{-ipx}}$) уравнение
+ (\ref{Eq3002}) дает    
+ \begin{equation}
+    (\vc{n\sigma})\eta_p = -\eta_p, \label{Eq3003}
+ \end{equation}
+где {\bf n} — орт вектора {\bf р}. Такое же уравнение
+\begin{equation}
+    (\vc{n\sigma})\eta_{-p} = -\eta_{-p}, \label{Eq3004}
+\end{equation}
+имеет место и для волны с <<отрицательной частотой>> 
+(${\eta _{-p} \:\underline{\infty}\: e^{-ipx}}$).
+
+Вторично квантованный \text{$\Psi$-оператор:}
+\begin{equation}
+    \hat \eta = \sum_{\bf p} (\eta_p \hat a_p + \eta_{-p}\hat b_p^+),       \qquad
+    \hat \eta^+ = \sum_{\bf p} (\eta_p^* \hat a_p^+ + \eta_{-p}^*\hat b_p). \label{Eq3005}
+\end{equation}
+Отсюда, как обычно, следует, что $\eta_{-p}^*$— волновые функции античастицы.
+\end{frame}
+\begin{frame}
+\frametitle{\rmfamily Использование рисунка}
+В качестве рисунка вставил скриншот страницы книги Ландау Лившица:
+\begin{figure}[h]
+\centering\includegraphics[width=1cm]{Landau.png}
+\caption{страница 141 книги Ландау Лившица}
+\label{fig:image}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+\frametitle{\rmfamily Список литературы}
+\begin{thebibliography}{9}
+\bibitem{LL}
+Л.Д.Ландау и Е.М.Лифшиц. Том 4. Квантовая электродинамика. Издание третье, исправленное.
+\end{thebibliography}
+\end{frame}

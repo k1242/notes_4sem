@@ -1,0 +1,76 @@
+\subsection*{Т1}
+
+
+Известно, что $\xi$ нормально распределена, и $\E \xi = -11$, а $\E\left(
+    (2 \xi+3)(\xi-2)
+\right) = 253$, найти $\P(\xi \in (-15, 0.16))$.
+
+Итак, $\P(\xi)$ вида
+\begin{equation*}
+    \P(\xi) = \frac{1}{\sigma \sqrt{2\pi}} \exp\left(
+        - \frac{(\xi-a)^2}{2 \sigma^2}
+    \right).
+\end{equation*}
+Матожидание можем найти, как интеграл вида
+\begin{equation*}
+    \E \xi = \int_{-\infty}^{+\infty} \frac{\xi}{\sigma \sqrt{2\pi}} \exp\left(
+        - \frac{(\xi-a)^2}{2\sigma^2}
+    \right) \d \xi = \bigg/
+        \xi - a = t
+    \bigg/ = \frac{a}{\sigma \sqrt{2\pi}} \int_{-\infty}^{+\infty} \exp\left(
+        - \frac{t^2}{2 \sigma^2} \d t
+    \right) = a.
+\end{equation*}
+Аналогчино находим второй момент:
+\begin{equation*}
+    \E \xi^2 = \int_{-\infty}^{+\infty} \frac{\xi^2}{\sigma \sqrt{2\pi}}
+    \exp\left(
+        - \frac{(\xi-a)^2}{2\sigma^2}
+    \right) \d \xi = \bigg/
+        \xi - a = t
+    \bigg/ = \int_{-\infty}^{+\infty}  \frac{t^2}{\sigma \sqrt{2\pi}} \exp\left(
+        - \frac{t^2}{2 \sigma^2}
+    \right) \d t + 
+    \int_{-\infty}^{+\infty} 
+    \frac{a^2}{\sigma \sqrt{2\pi}} \exp\left(
+        - \frac{t^2}{2 \sigma^2}
+    \right)
+    \d t.
+\end{equation*}
+Первый интеграл легко сводится к Гамма-функции, находим, что
+\begin{equation*}
+    \int_{-\infty}^{+\infty}  \frac{t^2}{\sigma \sqrt{2\pi}} \exp\left(
+        - \frac{t^2}{2 \sigma^2}
+    \right) \d t = \Gamma\left(\frac{3}{2}\right) \cdot \frac{(2\sigma^2)^{3/2}}{\sqrt{2\pi}} = \sigma^2,
+\end{equation*}
+второй интеграл просто сводится к $a^2$, итого
+\begin{equation*}
+    \E \xi^2 = \sigma^2 + a^2.
+\end{equation*}
+Так приходим к системе вида
+\begin{equation*}
+    \left\{\begin{aligned}
+        &2 \E(\xi^2) - \E(\xi) - 6 = 253 \\
+        &\E(\xi) = a
+    \end{aligned}\right.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \left\{\begin{aligned}
+        \sigma^2 &= 3, \\
+        a & = -11.
+    \end{aligned}\right.
+\end{equation*}
+Искомая веростность $\P(\xi \in (-15, 0.16))$ в таком случае равна
+\begin{equation*}
+    \int \mathbf N (\xi, \, \sigma, \ a) \d \xi = \frac{1}{2} \textnormal{Erf}\, \left(
+        \frac{\xi-a}{\sqrt{2} \sigma}
+    \right), 
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \P(\xi \in (-15, 0.16)) = \frac{1}{2} \left(
+        \textnormal{Erf}\, \left(
+            \frac{0.16-11}{\sqrt{6}}
+        \right) - \textnormal{Erf}\,
+        \left(
+            \frac{-15 + 11}{\sqrt{6}}
+        \right)
+    \right) \approx 0.99
+\end{equation*}

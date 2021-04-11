@@ -1,0 +1,38 @@
+\subsection{Т8}
+
+Пусть фунция $f \in L_1 (\mathbb{R})$ имеет ограниченную вариацию на всей прямой. Докажем, что свёртка 
+\begin{equation*}
+    f * \ldots * f
+\end{equation*}
+$k+ 2$ раза будет $k$ раз непрерывно дифференцируема.
+
+Рассмотрим
+\begin{equation*}
+    \hat{h} (y) = (2\pi)^{-k/2-1} (\hat{f} (y))^{k+2}.
+\end{equation*}
+Если $f \in L_1 (\mathbb{R})$ имеет ограниченную вариацию на $\mathbb{R}$, то 
+\begin{equation*}
+    c_f (y) = \int_{-\infty}^{+\infty} f(x) e^{-ixy} \d x,
+\end{equation*}
+будет равным $O(1/y)$ при $y \to \infty$. Тогда $\hat{h} (y) = O(y^{-k-2})$ при больших $y$.
+
+Теперь рассмотрим 
+\begin{equation*}
+    F^{-1}[h](y)\colon \frac{d }{d y} F^{-1} [h] (y) = F[(-it) h(t)] (y),
+\end{equation*}
+также верно, что
+\begin{equation*}
+    (F^i)^{(k)} = F[(-it)^k h[t]](y) \to \int_{-\infty}^{+\infty} O\left(\frac{1}{y^2}\right) e^{i y t} \d t.
+\end{equation*}
+Вспомним, что $I(\alpha) = \int f(x, \alpha) \d x$ непрерывен при  $f$ непрерывной, и $I(\alpha)$ сходящемуся равномерно по $\alpha$:
+\begin{equation*}
+    |f(x)| = O(g(x)),
+\end{equation*}
+когда найдётся $\kappa$ такая, что
+\begin{equation*}
+    |f(x)| \leq \kappa |g(x)|,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \int_{-\infty}^{+\infty}  O\left(\frac{1}{y^2}\right) e^{i yt} \d t \leq \kappa
+    \int_{-\infty}^{+\infty} \frac{1}{y^2} e^{i y t} \d t = \frac{-i \kappa e^{i y t}}{y^3} \leq \frac{\kappa}{y^3},
+\end{equation*}
+следовательно сходится равномерно по признаку Вейерштрассе,  а значит и $k$-я производная существует и непрерывна.

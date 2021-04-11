@@ -1,0 +1,36 @@
+\subsection*{Т2}
+
+
+Для функции вида
+\begin{equation*}
+    f(x) = \left\{\begin{aligned}
+        &C/(x-3),  &-5 < x < 2 \\
+        &0,     &x \leq -5 \ || \  2 \leq x
+    \end{aligned}\right.
+\end{equation*}
+являющейся функцией распределения некоторой случайной величины $\zeta$ найдём $C$ и характеристики $\E(\zeta)$, $\D(\zeta)$. 
+
+Для начала найдём $C$:
+\begin{equation*}
+    1 = \int_{-\infty}^{+\infty} f(x) \d x = -\int_{-5}^{2} \frac{C}{3-x} = C \ln(3-x) \bigg|_{-5}^2 = -C \ln(8),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    C = - \frac{1}{\ln 8}.
+\end{equation*}
+Теперь найдём характеристики $\zeta$:
+\begin{align*}
+    \E(\zeta) &= -\int_{-5}^{2} x \frac{C}{3-x} =
+\bigg/
+    -\frac{x}{3-x}=\frac{3}{x-3}+1
+\bigg/ = 
+     \frac{7 - 3 \ln(8)}{-\ln 8} \approx -0.37 \\
+    \E(\zeta^2) &= -\int_{-5}^{2} x^2 \frac{C}{3-x} = 
+\bigg/
+    -\frac{x^2}{3-x} = x+\frac{9}{x-3}+3
+\bigg/
+    =
+    \frac{18 \ln 2 - 7}{\ln 4},
+\end{align*}
+тогда дисперсия $\zeta$:
+\begin{equation*}
+    \D(\zeta) = \E(\zeta^2) - \E^2(\zeta) = \frac{7 (27 \ln (2)-14)}{18 \ln ^2(2)} \approx 3.82.
+\end{equation*}

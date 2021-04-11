@@ -1,0 +1,47 @@
+\subsection{Т6}
+
+Пусть $f \in S(\mathbb{R})$, $\forall x_0, y_0  \in \mathbb{R}$:
+\begin{equation*}
+    \|(x-x_0) f(x) \|_2 \cdot \|(y-y_0) \hat{f} (y)\| \geq \frac{1}{2} \|\hat{f}\|_2^2.
+\end{equation*}
+Для начала рассмотрим $(y-y_0) \hat{f} (y)$. Сделаем замену $t = y-y_0$, тогда
+\begin{equation*}
+    (y-y_0) \hat{f} (y) = t \hat{f} (y_0 + t),
+\end{equation*}
+раскрывая, находим
+\begin{equation*}
+    \hat{f} (y_0 + t) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{+\infty} f(t + y_0) e^{-iyt} \d t =  e^{i y_0 t} F[f] (y).
+\end{equation*}
+Построим следующую цепочку равенств
+\begin{align*}
+    \| (y-y_0) \hat{f} (y)\|_2 = \|f \hat{f} (y_0 + t)\| = \|t e^{i y_0 t} \hat{f} (t)\|_2.
+\end{align*}
+Также заметим, что такое преобразование сохраняет норму (что логично):
+\begin{equation*}
+    \|g e^{i y_0 t}\|_2 = \int_{-\infty}^{+\infty} g e^{i y_0 t} \cdot \overline{g e^{i y_0 t}} \d t = 
+    \int_{-\infty}^{+\infty}  g \bar{g} \d t = \|g\|_2.
+\end{equation*}
+Тогда
+\begin{equation*}
+    \|t e^{i y_0 t} \hat{f} (t)\|_2 = \|t \hat{f} (t)\|_2 = \|\hat{f'} (t)\|_2.
+\end{equation*}
+Теперь, воспользовавшись унитарностью преобразования Фурье, найдём
+\begin{equation*}
+    \|\hat{f'} (t)\|_2 = \|f'(t)\|_2.
+\end{equation*}
+Наконец, можем свести изначальное утверждение к неравенству
+\begin{equation*}
+    \|x f(x)\|_2 \cdot \|f'(x)\|_2 \geq \frac{1}{2} \|f\|_2^2,
+\end{equation*}
+которое уже можем доказать по неравенству Коши-Буняковского
+\begin{equation*}
+    \int_{\mathbb{R}} (x f(x))^2 \d x \int_{\mathbb{R}} (f')^2 \d x \geq 
+    \left(
+        \int_{\mathbb{R}}x f(x) f' (x) \d x
+    \right)^2 = \left(
+        -x f^2(x) \bigg|_{-\infty}^{+\infty} - \frac{1}{2} \int_{\mathbb{R}} f^2 (x) \d x
+    \right)^2 = \frac{1}{4} \|f\|_2^4,
+    \hspace{5 mm} \textnormal{Q.\ E.\ D.}
+\end{equation*}
+где равенство нулю на границах обусловлено принадлежности пространству Шварца.
+
