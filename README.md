@@ -30,7 +30,8 @@
 
 * **гармоническому анализу**
 (
-[*основные теоремы + заметки с лекций*](https://github.com/k1242/notes_4sem/blob/main/matan/notes/matan_notes.pdf)
+[*основные теоремы + заметки с лекций*](https://github.com/k1242/notes_4sem/blob/main/matan/notes/matan_notes.pdf),
+[*задание*](https://github.com/k1242/notes_4sem/blob/main/matan/notes/matan_notes.pdf)
 );
 
 
