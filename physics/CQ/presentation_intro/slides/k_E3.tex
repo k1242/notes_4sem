@@ -1,0 +1,8 @@
+\newcommand{\grey}[1]{\textcolor{mygray}{#1}}
+
+Some transformations we can reduce this system to the 
+\begin{align*}
+    \frac{d s}{d t} &= \grey{c_1} n (s+1) - \grey{c_2} s (s+1) \\
+    \frac{d n}{d t} &= \grey{c_3} + \grey{c_4}  s[t-\tau] + (\grey{c_5} s -\grey{c_8} n) (1+s) - \grey{c_6} n - \grey{c_7} s ,
+\end{align*}
+where $s = (S-S_0)/S_0$, $n = (N-N_0)/N_0$, which can be numerically integrated.

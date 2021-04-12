@@ -1,0 +1,12 @@
+\begin{equation}
+	\frac{d A}{d t} = \frac{i \omega}{2} A \sum_\alpha \frac{1}{V(\alpha)} \frac{\int \zeta(\vc{r}, \alpha) |E (s)|^2 ds}{\int \varepsilon(s) |E(s)|^2 d s}
+	\times |\mu(\alpha)|^2  \frac{[\rho_{ee} + \rho_{hh}(\alpha) - 1]}{(E-E_\alpha) + i E_{T^2}},
+\end{equation}
+
+where $\rho_{ee}$ -- distribution of electrons, and $\rho_{hh}$ -- distribution of holes. It's time to oversimplify  this monster:
+
+\begin{equation}
+	\frac{d A}{d t} = \frac{i \omega}{2 \varepsilon n_r^2} A \sun_\alpha \Gamma_{MD} \frac{1}{V_{MD}} |\mu(\alpha)|^2[\rho_{ee} + \rho_{hh} - 1],
+\end{equation}
+where $n_r$ -- refractive index of the active region.
+And $\Gamma_{MD}$ -- dimensional coupling factor that shows how injected carriers interact with photons.

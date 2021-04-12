@@ -1,0 +1,40 @@
+\begin{frame}{Application.}
+	
+\begin{columns}
+\begin{column}{0.4\linewidth}
+\begin{itemize}
+	\item \textbf{Cryptography. Chaotic cryptography. Encrypted message transmitting.}\\
+	2 synchronised systems (the same parameters) $\to $ synchronised co-evolution $I_1(t) \approx I_2(t) $.
+\end{itemize}
+\end{column}		
+\begin{column}{0.4\linewidth}
+\begin{figure}
+\includegraphics[width=\linewidth]{Encryption.png}
+\end{figure}
+\end{column}			
+%	\includegraphics[scale=0.3]{Hene-1.png}\qquad
+\end{columns}
+\begin{figure}
+	\includegraphics[width=0.4\linewidth]{Encryption_sheme.png}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}
+\begin{columns}
+\begin{column}{0.5\linewidth}		
+\begin{itemize}
+\item \textbf{Random number generation.}	\\
+Random bits produced at a much higher rate than other physical sources of entropy including quantum RNG.	
+\item \textbf{Chaos computing.} \\
+It is possible to create "NOR" gate\\
+"NOR" $\to$ "AND"   , "OR",   "XOR",   "NOT", $\to$ computer \\
+$\ast$ double-scrolled chaotic attractor and threshold function. 
+\end{itemize}
+\end{column}
+\begin{column}{0.5\linewidth}
+	\includegraphics[width=\linewidth]{ChaosRNG.png}
+\end{column}
+\end{columns}
+\end{frame}
+

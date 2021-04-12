@@ -1,0 +1,26 @@
+\newcommand{\red}[1]{\textcolor{black}{#1}}
+\newcommand{\grey}[1]{\textcolor{black}{#1}}
+
+The nonlinear behavior of a semiconductor laser with delayed
+opto-electronic feedback:
+\begin{minipage}{0.62\textwidth}
+    \begin{align*}
+        \frac{d S}{d t} &= - \grey{\gamma_C} S + \grey{\Gamma} g\, S \\
+        \frac{d N}{d t} &= \grey{\frac{J}{ed}}  -  \grey{\gamma_s} N - g\, S + 
+        \grey{\frac{J}{ed} \frac{\xi \red{S [t- \tau]}}{S_0}}
+         \\
+         \vspace{5mm} g &= \grey{g_0} + \grey{g_n}(N-\grey{N_0}) + \grey{g_p}(S-\grey{S_0})
+    \end{align*}
+\end{minipage}
+\hfill
+\begin{minipage}{0.36\textwidth}
+    $S$ -- photon density; \\
+    $N$ -- carrier density; \\
+    $\tau$ -- feedback delay; \\
+    $g$ -- opt. gain coeff.
+\end{minipage}
+positive opto-electronic feedback -- $\xi > 0$. 
+
+\phantom{42}
+
+\textit{Optical gain} -- measure of how well a medium amplifies photons by stimulated emission.
