@@ -1,0 +1,111 @@
+\documentclass{article}
+
+\input{preambule}
+\begin{document}
+
+\setlength{\abovedisplayskip}{3pt}
+\setlength{\abovedisplayshortskip}{3pt}
+\setlength{\belowdisplayskip}{3pt}
+\setlength{\belowdisplayshortskip}{3pt}
+
+% \numberwithin{equation}{section}
+
+\begin{center}
+    \LARGE \textsc{Задание по курсу <<Дифференциальные уравнения II>>}
+\end{center}
+
+\hrule
+
+\phantom{42}
+
+\begin{flushright}
+    \begin{tabular}{rr}
+    % written by:
+        \textbf{Автор}: 
+        & Шишкин П.Е. \\ 
+        &\\
+    % date:
+        \textbf{От}: &
+        \textit{\today}\\
+    \end{tabular}
+\end{flushright}
+
+\thispagestyle{empty}
+\tableofcontents 
+\newpage
+
+
+\section{От авторов}
+\subsection{Шрифт для личных сообщений}
+\textcolor[rgb]{0.480469, 0.566406, 0.480469}{\textit{Меня попросили писать текст не имеющий отношения к решению как-то выделенно, поэтому отныне текст, который я пишу просто от души и сердца, будет написан курсивным шрифтом цвета лягушки в обмороке (я серьёзно, такой цвет есть)}}
+\subsection{Благодарности}                                            
+\textcolor[rgb]{0.480469,0.566406,0.480469}{\textit{Я благодарен *список людей* за *причины* FIXME}}
+\subsection{Заходите в гости}
+ \textcolor[rgb]{0.480469,0.566406,0.480469}{\textit{Заходите в гости, всегда всем рад :)}}                                                                                              
+
+\section{I. Первые интегралы и их использование для решений автономных систем}
+\subsection{C. \S14: 12}
+Исследовать при всех значениях вещественного параметра $a$ поведение фазовых траекторий на всей фазовой плоскости для системы:
+\begin{equation}
+    \begin{cases}
+       \dot{x} = y + ax(x^2 + y^2 - 2)\\
+        \dot{y} = - x + ay(x^2 + y^2 - 2)\\
+    \end{cases}
+\end{equation}
+Уравнение выглядит, как что-то в полярных координатам. Чтож, перейдём к ним 
+\begin{align*}
+x = r \sin{(\varphi)}&&\dot{x} = r \cos {(\varphi)} \dot{\varphi} + \dot{r} \sin {(\varphi )} \\ 
+y = r \cos{(\varphi)}&&\dot{y} = -r \sin {(\varphi)} \dot{\varphi} + \dot{r} \cos {(\varphi )} \\ 
+\end{align*}
+Откуда:
+\begin{equation*}
+    \begin{cases}
+       r \cos {(\varphi)} \dot{\varphi} + \dot{r} \sin {(\varphi )} = r \cos{(\varphi)} + ar \sin{(\varphi)}(r^2 - 2)\\  
+      -r \sin {(\varphi)} \dot{\varphi} + \dot{r} \cos {(\varphi )} = -r \sin{(\varphi)} + ar \cos{(\varphi)}(r^2 - 2)\\
+    \end{cases}
+\end{equation*}
+Откуда можно получить 
+\begin{equation*}
+\begin{cases}
+    \dot{r}=ra(r^2-2)\\
+    \dot{\varphi}=1\\
+        \end{cases}
+\end{equation*}
+Здесь уже очевидны 3 случая: 1)$a>0$, 2)$a<0$ 3) $a=0$. 1) неустойчивый предельный цикл радиуса $\sqrt 2$ 2) устойчивый 
+предельный цикл радиуса $\sqrt 2$  3) центр. Разница при различных знакоопределённых параметрах будет в скорости "навивания" на предельный цикл, но характер движения будет схожий.\\
+ Кстати, $\dot{\varphi}=1$ - это первый интеграл. В целом мы сказали при каких параметрах, что но можно это всё безобразие построить \ref{fig:14.12}.\textcolor[rgb]{0.480469,0.566406,0.480469}{\textit{Чтобы было максимально красиво, построим фазовую диаграмму для $r$ график в декартовых координатах и зависимость угла от радиуса}}
+\begin{figure}[ht]
+\center{\includegraphics[width=1\linewidth]{14.12.png}}
+\caption{Фазовые диаграммы 14.12 в различных координатах для различных параметров}
+\label{fig:14.12}
+\end{figure}      
+ \textcolor[rgb]{0.480469,0.566406,0.480469}{\textit{Я только начал техать, завтра постараюсь залить не 1 задачу, а побольше. Но на сегодня я сделал скелет и всякое там...}}                                                           
+\subsection{Ф.: 1149}
+\subsection{T1}
+\subsection{C. \S16: 5}
+\subsection{C. \S16: 26}   
+
+
+\section{II. Линейные однородные уравнения в частных производных первого порядка}
+\subsection{C. \S17: 5}
+\subsection{C. \S17: 16}
+\subsection{C. \S17: 22}
+\subsection{C. \S17: 79}
+\subsection{C. \S17: 83}
+\subsection{T2}
+
+\section{III. Вариационное исчисление}
+\subsection{C. \S19: 21}
+\subsection{C. \S19: 45}
+\subsection{C. \S19: 72}
+\subsection{C. \S19: 105}
+\subsection{T3}
+\subsection{C. \S20.1: 9}
+\subsection{C. \S20:}
+\subsection{T4}
+\subsection{C. \S20.2: 5}
+\subsection{C. \S20.3: 2}
+\subsection{C. \S21: 1}
+\subsection{T5*}
+
+\end{document}
