@@ -111,7 +111,7 @@ A/B=C/D=E/F=k;\forall \alpha, \beta,\gamma \in \mathbb{R}, \alpha^2+\beta^2+\gam
 \begin{equation*}
     \rg \begin{vmatrix}
         \frac{\partial C_1}{\partial x} && \frac{\partial C_1}{\partial y} && \frac{\partial C_1}{\partial z}\\
-        \frac{\partial C_1}{\partial x} && \frac{\partial C_1}{\partial y} && \frac{\partial C_1}{\partial z}
+        \frac{\partial C_2}{\partial x} && \frac{\partial C_2}{\partial y} && \frac{\partial C_2}{\partial z}
     \end{vmatrix}= \rg \begin{vmatrix}
         1&&0&&1\\
         -2y+4x+2z &&2y-2x && 2x
@@ -219,14 +219,293 @@ Cделаем замену $\dot x = y$ тогда:
         $y(t)=C_3(C_1-t)-C_2+\frac{1}{(C_1-t)^3}$,\\
         $z(t)=\frac{C_2}{C_1-t}-\frac{1}{(C_1-t)^3}$.\\
 На самом деле надо ещё показать что первые интегралы $C_1,C_2$ независимы. Ну если очень хочется можно их выразить, явно посчитать ранг и т.д. Но я воспользуюсь следующим утверждением: поскольку система разрешима (мы смогли решить 2 уравнение) с использованием этих первых 2 интегралов, то они независимы.
- \textcolor[rgb]{0.480469,0.566406,0.480469}{\textit{Пока эти первые интегралы больше используются, как окнстанты. И мало смысла смотреть на них как-то иначе. В следующей части задания это будет не совсем так.}}                                               
+ \textcolor[rgb]{0.480469,0.566406,0.480469}{\textit{Пока эти первые интегралы больше используются, как окнстанты. И мало смысла смотреть на них как-то иначе. В следующей части задания это будет не совсем так.}}
+
+
 \section{II. Линейные однородные уравнения в частных производных первого порядка}
 \subsection{C. \S17: 5}
+Найти общее решение уравнения и решить задачу Коши с указанным
+начальным условием
+\begin{equation}\label{17.5}
+x \frac{\partial u}{\partial x}+y \frac{\partial u}{\partial y}+z^{2}(x-3 y) \frac{\partial u}{\partial z}=0, u=\frac{x^{2}}{y} \text { при } 3 y z=1
+\end{equation}
+Найдём характерестическую систему уравнения \ref{17.5}.
+\begin{equation*}
+    \begin{cases}
+        \dot x=x, (1)\\
+        \dot y = y, (2)\\
+        \dot z = z^2(x-3y),(3)\\
+    \end{cases}
+\end{equation*}
+Для решения надо найти 2 независимых первых интеграла. В данной задаче можно просто составить 2 линейные комбинации: 
+\begin{align*}
+    (1) \cdot y-(2) \cdot x=0 && (1)\cdot z^2-(2)\cdot 3z^2 -(3)=0\\
+    y \cdot dx  = x \cdot dy &&   z^2 \cdot dx - 3z^2 \cdot dy -dz=0\\
+    \frac{dx}{x}=\frac{dy}{y} && dx - 3dy - \frac{dz}{z^2}=0\\
+    \ln{\frac{x}{y}}=C_1(x,y,z) && x-3y+\frac{1}{z}=C_2(x,y,z)\\
+\end{align*}
+Вообще должно быть очевидно, что $C_1$ и $C_2$ независимы, потому что $C_2$ зависит от $z$ а $C_1$ - нет. Но давайте проверим ранг.  \textcolor[rgb]{0.480469,0.566406,0.480469}{\textit{просто это-то тут очевидно, а если наткнуться на задачу где не очевидно, а матаппарат не будет отработан будет печально}}\\
+\begin{gather*}
+\rg \begin{vmatrix}
+        \frac{\partial C_1}{\partial x} && \frac{\partial C_1}{\partial y} && \frac{\partial C_1}{\partial z}\\
+        \frac{\partial C_2}{\partial x} && \frac{\partial C_2}{\partial y} && \frac{\partial C_2}{\partial z}
+    \end{vmatrix} = 
+     \rg \begin{vmatrix}
+        \frac{1}{x}&& -\frac{1}{x } && 0\\
+        1 &&-3 && -\frac{1}{z^2}
+    \end{vmatrix} = 2                                                   
+\end{gather*}                                               
+Значит решением \ref{17.5} будет $F[U_1(x,y,z),U_2(x,y,z)]$ где $F$ - любая непрерывно дифференцируемая функция, $U_1(x,y,z)=\frac{x}{y}, U_2(x,y,z)=x-3y+\frac{1}{z}$. Здесь я выкинул логарифм, потому что если логарифм отношения первый интеграл, то и без логарифма первый интеграл. Вообще это надо было сделать раньше, но я сделал тут :)\\
+Решим ЗК.
+\begin{gather*}
+\begin{cases}
+        u=\frac{x^2}{y}\\
+        3yz=1\\
+        \frac{x}{y}=U_1\\
+        x-3y+\frac{1}{z}=U_2\\
+    \end{cases}    \\
+    \begin{cases}
+    u=\frac{x^2}{y}\\
+        3yz=1\\
+        \frac{x}{y}=U_1\\
+        x=U_2\\
+    \end{cases}    \\
+    u=U_1 U_2= \frac{x}{y}(x-3y+\frac{1}{z})
+\end{gather*}
+Ответ:\\
+ Oбщее решение \ref{17.5}: $F[U_1(x,y,z),U_2(x,y,z)]$ где $F$ - любая непрерывно дифференцируемая функция, $U_1(x,y,z)=\frac{x}{y}, U_2(x,y,z)=x-3y+\frac{1}{z}$.\\
+ Pешение ЗК \ref{17.5}: $u=U_1 U_2= \frac{x}{y}(x-3y+\frac{1}{z})$
+
 \subsection{C. \S17: 16}
+Найти общее решение уравнения и решить задачу Коши с указанным
+начальным условием
+\begin{equation}\label{17.16}
+(z-x+3 y) \frac{\partial u}{\partial x}+(z+x-3 y) \frac{\partial u}{\partial y}-2 z \frac{\partial u}{\partial z}=0, u=\frac{4 y}{z} \text { при } x=3 y \text { . }
+\end{equation}
+Найдём характерестическую систему уравнения \ref{17.16}.
+\begin{equation*}
+    \begin{cases}
+        \dot x = z-x+3y, (1)\\
+        \dot y = z+x-3y, (2)\\
+        \dot z = -2z,(3)\\
+    \end{cases}
+\end{equation*}
+Тут линейная комбинация только одна (ну или я слаб) $(1) + (2) + (3)=0 \Rightarrow dx+dy+dz=0 \Rightarrow x+y+z = C_1$. Подставим этот первый интеграл во вторые 2 уравнения:
+\begin{gather*}
+    \begin{cases}
+        \dot y = C_1-4y\\
+        \dot z =-2z\\
+    \end{cases}\\
+//\text{перемножая крест накрест получим}//\\
+-2z \dot y = \dot z(C_1-4y)\\
+\frac{dz}{2z}=\frac{dy}{C_1-4y}\\
+C_2=\frac{z^2}{C_1-4y}= \frac{z^2}{x+z-3y}
+\end{gather*}
+Проверим независимость: 
+\begin{equation*}
+    \rg \begin{vmatrix}
+        \frac{\partial C_1}{\partial x} && \frac{\partial C_1}{\partial y} && \frac{\partial C_1}{\partial z}\\
+        \frac{\partial C_2}{\partial x} && \frac{\partial C_2}{\partial y} && \frac{\partial C_2}{\partial z}
+    \end{vmatrix} = ... = 2
+\end{equation*}
+Осталось только решить ЗК.
+\begin{gather*}
+\begin{cases}
+        u=\frac{4y}{z}\\
+        x=3y\\
+        x+y+z=U_1\\
+        \frac{z^2}{x+z-3y}=U_2\\
+    \end{cases}    \\
+    \begin{cases}
+    u=\frac{4y}{z}\\
+        x=3y\\
+        4y+z=U_1\\
+        z=U_2\\
+    \end{cases}    \\
+    u=U_1/ U_2-1 = \frac{x}{y}(x-3y+\frac{1}{z})=\frac{(x+y+z)(x-3 y+z)}{z^{2}}-1
+\end{gather*}
+Ответ:\\
+ Oбщее решение \ref{17.16}: $F[U_1(x,y,z),U_2(x,y,z)]$ где $F$ - любая непрерывно дифференцируемая функция, $U_1(x,y,z)=x+y+z, U_2(x,y,z)=\frac{z^2}{x+z-3y}$.\\
+ Pешение ЗК \ref{17.16}: $u=u=U_1/ U_2-1 = \frac{x}{y}(x-3y+\frac{1}{z})=\frac{(x+y+z)(x-3 y+z)}{z^{2}}-1$
+
+
 \subsection{C. \S17: 22}
+Найти общее решение уравнения и решить задачу Коши с указанным
+начальным условием
+\begin{equation}\label{17.22}
+\begin{array}{l}
+\left(2 x^{2} z^{2}+x\right) \frac{\partial u}{\partial x}-\left(4 x y z^{2}-y\right) \frac{\partial u}{\partial y}-\left(4 x z^{3}-z\right) \frac{\partial u}{\partial z}=0, u=y z^{2} \text { при } x=z
+\end{array}
+\end{equation}
+
+найдём характерестическую систему уравнения \ref{17.}.
+\begin{equation*}
+    \begin{cases}
+        \dot x =\left(2 x^{2} z^{2}+x\right) \\
+        \dot y = \left(4 x y z^{2}-y\right)\\
+        \dot z =\left(4 x z^{3}-z\right) \\
+    \end{cases}
+\end{equation*}
+Найдём первые интегралы:
+
+Проверим независимость: 
+\begin{equation*}
+    \rg \begin{vmatrix}
+        \frac{\partial C_1}{\partial x} && \frac{\partial C_1}{\partial y} && \frac{\partial C_1}{\partial z}\\
+        \frac{\partial C_2}{\partial x} && \frac{\partial C_2}{\partial y} && \frac{\partial C_2}{\partial z}
+    \end{vmatrix} = ... = 2
+\end{equation*}
+Осталось только решить ЗК.
+\begin{gather*}
+\begin{cases}
+        u=\\
+        \\
+        U_1=\\
+        U_2=\\
+    \end{cases}    \\
+    \begin{cases}
+        u=\\
+        \\
+        U_1=\\
+        U_2=\\
+    \end{cases}    \\
+    u=
+\end{gather*}
+Ответ:\\
+ Oбщее решение \ref{17.}: $F[U_1(x,y,z),U_2(x,y,z)]$ где $F$ - любая непрерывно дифференцируемая функция, $U_1(x,y,z)=, U_2(x,y,z)=$.\\
+ Pешение ЗК \ref{17.}: $u=$
+
 \subsection{C. \S17: 79}
+Найти общее решение уравнения и решить задачу Коши с указанным
+начальным условием
+\begin{equation}\label{17.79}
+2 x y \frac{\partial u}{\partial x}+\left(1-y^{2}-2 x z\right) \frac{\partial u}{\partial y}-\frac{y}{x} \frac{\partial u}{\partial z}=0, u=\frac{1}{2}-y^{2} \text { при } y^{2}+x z=1
+\end{equation}
+
+найдём характерестическую систему уравнения \ref{17.}.
+\begin{equation*}
+    \begin{cases}
+        \dot x = \\
+        \dot y = \\
+        \dot z = \\
+    \end{cases}
+\end{equation*}
+Найдём первые интегралы:
+
+Проверим независимость: 
+\begin{equation*}
+    \rg \begin{vmatrix}
+        \frac{\partial C_1}{\partial x} && \frac{\partial C_1}{\partial y} && \frac{\partial C_1}{\partial z}\\
+        \frac{\partial C_2}{\partial x} && \frac{\partial C_2}{\partial y} && \frac{\partial C_2}{\partial z}
+    \end{vmatrix} = ... = 2
+\end{equation*}
+Осталось только решить ЗК.
+\begin{gather*}
+\begin{cases}
+        u=\\
+        \\
+        U_1=\\
+        U_2=\\
+    \end{cases}    \\
+    \begin{cases}
+        u=\\
+        \\
+        U_1=\\
+        U_2=\\
+    \end{cases}    \\
+    u=
+\end{gather*}
+Ответ:\\
+ Oбщее решение \ref{17.}: $F[U_1(x,y,z),U_2(x,y,z)]$ где $F$ - любая непрерывно дифференцируемая функция, $U_1(x,y,z)=, U_2(x,y,z)=$.\\
+ Pешение ЗК \ref{17.}: $u=$
 \subsection{C. \S17: 83}
+Найти общее решение уравнения и решить задачу Коши с указанным
+начальным условием
+\begin{equation}\label{17.83}
+2 x y \frac{\partial u}{\partial x}+\left(2 x-y^{2}\right) \frac{\partial u}{\partial y}+y^{3} z \frac{\partial u}{\partial z}=0, u=x^{2} z^{2} \text { при } y^{2}=2 x
+\end{equation}
+найдём характерестическую систему уравнения \ref{17.}.
+\begin{equation*}
+    \begin{cases}
+        \dot x = \\
+        \dot y = \\
+        \dot z = \\
+    \end{cases}
+\end{equation*}
+Найдём первые интегралы:
+
+Проверим независимость: 
+\begin{equation*}
+    \rg \begin{vmatrix}
+        \frac{\partial C_1}{\partial x} && \frac{\partial C_1}{\partial y} && \frac{\partial C_1}{\partial z}\\
+        \frac{\partial C_2}{\partial x} && \frac{\partial C_2}{\partial y} && \frac{\partial C_2}{\partial z}
+    \end{vmatrix} = ... = 2
+\end{equation*}
+Осталось только решить ЗК.
+\begin{gather*}
+\begin{cases}
+        u=\\
+        \\
+        U_1=\\
+        U_2=\\
+    \end{cases}    \\
+    \begin{cases}
+        u=\\
+        \\
+        U_1=\\
+        U_2=\\
+    \end{cases}    \\
+    u=
+\end{gather*}
+Ответ:\\
+ Oбщее решение \ref{17.}: $F[U_1(x,y,z),U_2(x,y,z)]$ где $F$ - любая непрерывно дифференцируемая функция, $U_1(x,y,z)=, U_2(x,y,z)=$.\\
+ Pешение ЗК \ref{17.}: $u=$
+
+
+
 \subsection{T2}
+В области $x>0, \quad y>0, \quad z>0$ найти все решения уравнения
+\begin{equation}\label{17.T2}
+\left(x^{2}+y^{2}\right) \frac{\partial u}{\partial x}+2 x y \frac{\partial u}{\partial y}+\frac{x^{3}-x y^{2}}{z} \frac{\partial u}{\partial z}=0
+\end{equation}
+и решить задачу Коши $u=z^{2}$ при $y^{2}-x^{2}=1$\\
+
+найдём характерестическую систему уравнения \ref{17.}.
+\begin{equation*}
+    \begin{cases}
+        \dot x = \\
+        \dot y = \\
+        \dot z = \\
+    \end{cases}
+\end{equation*}
+Найдём первые интегралы:
+
+Проверим независимость: 
+\begin{equation*}
+    \rg \begin{vmatrix}
+        \frac{\partial C_1}{\partial x} && \frac{\partial C_1}{\partial y} && \frac{\partial C_1}{\partial z}\\
+        \frac{\partial C_2}{\partial x} && \frac{\partial C_2}{\partial y} && \frac{\partial C_2}{\partial z}
+    \end{vmatrix} = ... = 2
+\end{equation*}
+Осталось только решить ЗК.
+\begin{gather*}
+\begin{cases}
+        u=\\
+        \\
+        U_1=\\
+        U_2=\\
+    \end{cases}    \\
+    \begin{cases}
+        u=\\
+        \\
+        U_1=\\
+        U_2=\\
+    \end{cases}    \\
+    u=
+\end{gather*}
+Ответ:\\
+ Oбщее решение \ref{17.}: $F[U_1(x,y,z),U_2(x,y,z)]$ где $F$ - любая непрерывно дифференцируемая функция, $U_1(x,y,z)=, U_2(x,y,z)=$.\\
+ Pешение ЗК \ref{17.}: $u=$
 
 \section{III. Вариационное исчисление}
 \subsection{C. \S19: 21}
