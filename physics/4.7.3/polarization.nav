@@ -3,16 +3,20 @@
 \headcommand {\beamer@sectionpages {1}{1}}
 \headcommand {\beamer@subsectionpages {1}{1}}
 \headcommand {\sectionentry {1}{Theory}{2}{Theory}{0}}
-\headcommand {\beamer@sectionpages {2}{1}}
-\headcommand {\beamer@subsectionpages {2}{1}}
-\headcommand {\sectionentry {2}{Experiment}{2}{Experiment}{0}}
-\headcommand {\beamer@sectionpages {2}{1}}
-\headcommand {\beamer@subsectionpages {2}{1}}
-\headcommand {\sectionentry {3}{Conclusion}{2}{Conclusion}{0}}
-\headcommand {\slideentry {3}{0}{1}{2/2}{}{0}}
+\headcommand {\slideentry {1}{0}{1}{2/2}{}{0}}
 \headcommand {\beamer@framepages {2}{2}}
-\headcommand {\beamer@partpages {1}{2}}
-\headcommand {\beamer@subsectionpages {2}{2}}
-\headcommand {\beamer@sectionpages {2}{2}}
-\headcommand {\beamer@documentpages {2}}
-\headcommand {\gdef \inserttotalframenumber {2}}
+\headcommand {\slideentry {1}{0}{2}{3/3}{}{0}}
+\headcommand {\beamer@framepages {3}{3}}
+\headcommand {\beamer@sectionpages {2}{3}}
+\headcommand {\beamer@subsectionpages {2}{3}}
+\headcommand {\sectionentry {2}{Experiment}{4}{Experiment}{0}}
+\headcommand {\beamer@sectionpages {4}{3}}
+\headcommand {\beamer@subsectionpages {4}{3}}
+\headcommand {\sectionentry {3}{Conclusion}{4}{Conclusion}{0}}
+\headcommand {\slideentry {3}{0}{1}{4/4}{}{0}}
+\headcommand {\beamer@framepages {4}{4}}
+\headcommand {\beamer@partpages {1}{4}}
+\headcommand {\beamer@subsectionpages {4}{4}}
+\headcommand {\beamer@sectionpages {4}{4}}
+\headcommand {\beamer@documentpages {4}}
+\headcommand {\gdef \inserttotalframenumber {4}}
