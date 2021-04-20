@@ -1,0 +1,105 @@
+Будем считать $\varphi_1 (0) = 0$, $\varphi_2 (0) = 0$, а также
+\begin{equation*}
+    H = I_1 \omega_1 + I_2 \omega_2 + \varepsilon (I_1 + \sum_{k_1, k_2} a_k \sin(k_1 \varphi_1 + k_2 \varphi_2)).
+\end{equation*}
+Тогда можем посчитать $\dot{\varphi}_1 = \omega_1 + \varepsilon$, $\varphi_2 = \omega_2$. Также $I_i$ такие, что
+\begin{equation*}
+    \dot{I}_i - \varepsilon \sum a_k k_i \cos(k_1 \varphi_1 + k_2 \varphi_2) = - \varepsilon \sum_{k_1, k_2} a_k k_i \cos (k_1 (\omega_1 + \varepsilon) + k_2 \omega_2)
+\end{equation*}
+Воот, невырожденно, но если $\omega_1/\omega_2 + \varepsilon/\omega_2$ -- рационально, то существуют $k_1$, $k_2$ такие, что  $I_i \sim - \varepsilon a_k k_i t$.
+
+% страница 224, Арнольд Гельштадт
+
+
+\subsection{Сечение Пуанкаре при \texorpdfstring{$n \geq 2$}{}}
+
+Пусть $n=2$, на $M^4$, $H(I_1, I_2) = h$, также $I_1, I_2 = \const$. Тогда можем рассмотреть
+\begin{equation*}
+    I_2 = I_2 (h, I_1), \hspace{5 mm}
+    \dot{\varphi}_1 = \omega_1 (h_1, I_1),
+    \hspace{5 mm}
+    \dot{\varphi}_2 = \omega_2 (h_1, I_1).
+\end{equation*}
+Так свели всё к $M^3 =\{(I, \varphi) \mid H = h\}$,  более того, взяв $t_2 = \frac{2\pi}{\omega_2}$ -- период $\varphi_2$, перейдём к 
+\begin{equation*}
+    \varphi_1 (k t_2) = \varphi_1 (0) + \frac{\omega_1}{\omega_2} 2 \pi k,
+\end{equation*}
+получается, что каждый раз проходя $\varphi_2$ по периоду, мы получаем набор точек. Ура, перешли к двумерному дискретному отображению.
+
+Полезно посмотреть на $\alpha(I_1) = \omega_1/\omega_2$ -- \textit{число вращений}. Если $\alpha$ -- рационально, то наблюдаем конечный набор точек. Если $\alpha$ иррационально, то увидим несчётный набор точек.
+% по теореме Вейля -- плотность ни о чем не говорит.
+
+
+% Введем \textit{отображение Пуанкаре}
+\subsection{Невозмущенное отображение Пуанкаре}
+
+\begin{to_def}
+    \textit{Невозмущенное отображение Пуанкаре}\footnote{
+        Вообще $\Pi_0$ -- сохраняет площадь, то есть $\partial(\varphi', I')/\partial(\varphi, I) = 1$.
+    } :
+    \begin{equation*}
+    \Pi_0 \colon \left\{\begin{aligned}
+        \varphi' &= \varphi + 2 \pi \alpha(I), \\
+        I' &= I,
+    \end{aligned}\right.
+    \hspace{10 mm}
+    \frac{d \alpha}{d I} > 0, 
+    \text{ \ \ -- \ \ условие невырожденности.}
+    \end{equation*}
+    Также возьмём три тора $T^-, T, T^+$ такие, что
+    \begin{equation*}
+        \alpha(T^-) < \alpha(T)= \frac{n}{m} < \alpha(T^+).
+    \end{equation*}
+\end{to_def}
+
+Совершив конечное число отображений Пуанкаре увидим, что на $T$ траектория замкнется. Тогда логично рассмотреть
+\begin{equation*}
+    \Pi^m_0 \left(
+        \begin{bmatrix}
+            \varphi \\ I
+        \end{bmatrix}
+    \right) = 
+    \begin{bmatrix}
+        \varphi + 2 \pi \frac{n}{m}m \\ I
+    \end{bmatrix}
+    = \begin{bmatrix}
+        \varphi \\ I
+    \end{bmatrix}
+\end{equation*}
+
+Вообще торы инварианты, после отображения Пуанкаре внешний тор закрутится против часовой, а внутрениий -- по часовой.
+
+
+\subsection{Возмущенное отображение Пуанкаре}
+
+\begin{to_def}
+    \textit{Возмущенное отображение Пуанкаре}\footnote{
+        Аналогично $\Pi_\varepsilon$ -- сохраняет площадь, то есть $\partial(\varphi', I')/\partial(\varphi, I) = 1$.
+    } :
+    \begin{equation*}
+    \Pi_\varepsilon \colon \left\{\begin{aligned}
+        \varphi' &= \varphi + 2 \pi \alpha(I) + \varepsilon f(\varphi, I), \\
+        I' &= I + \varepsilon g(\varphi, I),
+    \end{aligned}\right.
+    \hspace{10 mm}
+    \frac{d \alpha}{d I} > 0, 
+    \text{ \ \ -- \ \ условие невырожденности.}
+    \end{equation*}
+\end{to_def}
+
+Согласно КАМ-теории $T^- \to T^-_\varepsilon$, $T^+ \to T_\varepsilon^+$, более того они должны получиться инвариантны:
+\begin{equation*}
+    \Pi_\varepsilon (T^+_\varepsilon) = T_\varepsilon^+,
+    \hspace{5 mm}
+    v (T_\varepsilon^-) = T^-_\varepsilon.
+\end{equation*}
+Вообще претендуем ещё на то что, не только торы не разрушатся, но и вращение будет в тех же направлениях.
+
+Если сами резонансы разрушились, то, ну, бывает, но они всё ещё зажаты нерезонансными торами. Резонансному тору резко поплохело, образуется что-то вроде стохастического слоя. 
+
+
+Также всё существует, возможно единственная, точка на сечение, между внешним и внутренним тором,  такая, что $\varphi_1 = \varphi$.  Получается, можно выделить множество
+\begin{equation*}
+    C = \{(I, \varphi) \in \text{\,Сечение Пунакаре\,}\colon \varphi' = \varphi\}.
+\end{equation*}
+Для него, однако, неверно, что $\Pi_\varepsilon^m (C) = C'$. Более того, $C'$ и $C$ пересекаются, пересекаются чётное число раз.
