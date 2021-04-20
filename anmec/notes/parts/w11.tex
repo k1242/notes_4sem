@@ -103,3 +103,71 @@
     C = \{(I, \varphi) \in \text{\,Сечение Пунакаре\,}\colon \varphi' = \varphi\}.
 \end{equation*}
 Для него, однако, неверно, что $\Pi_\varepsilon^m (C) = C'$. Более того, $C'$ и $C$ пересекаются, пересекаются чётное число раз.
+
+
+
+
+\begin{to_thr}[Последняя теорема Пуанкаре или теорема Пуанкаре-Биркгофа]
+    Если есть некоторое преобразование, которой совершает автоморфизм кольца, то существует как минимум две неподвижные точки. Вообще $C \cap C' = 2 k m$. 
+\end{to_thr}
+
+\texttt{Пуанкаре действительно прислал эту теорему, бездоказательно, всё как обычно, и умер..}
+
+ Есть неподвижные точки, это либо седло, либо центр. И вот в окрестностях центров возникают новые торы, фрактально самовоспроизводящиеся.
+
+ % https://en.wikipedia.org/wiki/Arnold_diffusions
+
+ Давайте ещё скажем, что
+ \begin{equation*}
+     \bigg|
+         \frac{\omega_1}{\omega_2} - \frac{n}{m}
+     \bigg| \geq \frac{C(\varepsilon)}{m^\gamma},
+     \hspace{5 mm} \gamma > 2, \hspace{5 mm} C(\varepsilon) \to_{\varepsilon \to 0} 0.
+ \end{equation*}
+ Тогда
+ \begin{equation*}
+     \vv{\omega} = \begin{bmatrix}
+         \omega_1 \\ \omega_2
+     \end{bmatrix}
+ \end{equation*}
+ называется диофантовый вектор частот. Торы с таким отношением частот выживают, а другие разрушаются. 
+
+ Если это всё просуммировать
+ \begin{equation*}
+     \sum_{m=1}^{\infty} \frac{C(\varepsilon)}{m^\gamma} = C(\varepsilon) \sum_{m=1}^{\infty} \frac{1}{m^{\gamma-1}} \to 0, \hspace{5 mm} \varepsilon \to 0.
+ \end{equation*}
+
+ Так получается континуальное множество нулевой меры.
+
+
+ \subsection{Размерность}
+ 
+ Можем взять сетку, покрыть её 2d-объект, тогда
+ \begin{equation*}
+     N(\varepsilon) \sim \frac{1}{\varepsilon^2}.
+ \end{equation*}
+Аналогично для куба\footnote{
+    Так для канторовой лестницы размерность $D = \frac{\ln 2}{\ln 3}$.
+}  $N(\varepsilon) \sim \varepsilon^{-3}$, для прямой $N(\varepsilon) \sim \varepsilon^{-1}$, так можем прийти к
+\begin{equation*}
+    N(\varepsilon) \sim \frac{1}{\varepsilon^D},
+    \hspace{5 mm}
+    \ln N = - D \ln \varepsilon, \ \ \varepsilon \to 0.
+\end{equation*}
+
+\begin{to_def}
+    \textit{Размерностью} множества будем считать
+    \begin{equation*}
+        D = \lim_{\varepsilon \to 0} \left(
+            - \frac{\ln N(\varepsilon)}{\ln \varepsilon}
+        \right).
+    \end{equation*}
+\end{to_def}
+
+\subsection{Итоги}
+
+\texttt{То есть что такое интегрируемость? Это про то что мы можем разделить переменные, можем систему\\ представить как набор независимых маятников.} 
+
+\texttt{Да, стоит сказать, что у Гамильтоновых систем аттракторов быть не может, а вот у диссипативных систем возникают странные аттракторы и т.д.} 
+
+МатАн немного плохо начинает работать на фракталах и пространствах дробной размерности. \texttt{МатАна больше нет. Остался ТеорВер, Статистика, DataScience.} \texttt{Таков мир за пределами интегрируемости.} 
