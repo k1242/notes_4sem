@@ -111,7 +111,7 @@ A/B=C/D=E/F=k;\forall \alpha, \beta,\gamma \in \mathbb{R}, \alpha^2+\beta^2+\gam
 \begin{equation*}
     \rg \begin{vmatrix}
         \frac{\partial C_1}{\partial x} && \frac{\partial C_1}{\partial y} && \frac{\partial C_1}{\partial z}\\
-        \frac{\partial C_1}{\partial x} && \frac{\partial C_1}{\partial y} && \frac{\partial C_1}{\partial z}
+        \frac{\partial C_2}{\partial x} && \frac{\partial C_2}{\partial y} && \frac{\partial C_2}{\partial z}
     \end{vmatrix}= \rg \begin{vmatrix}
         1&&0&&1\\
         -2y+4x+2z &&2y-2x && 2x
@@ -219,14 +219,361 @@ Cделаем замену $\dot x = y$ тогда:
         $y(t)=C_3(C_1-t)-C_2+\frac{1}{(C_1-t)^3}$,\\
         $z(t)=\frac{C_2}{C_1-t}-\frac{1}{(C_1-t)^3}$.\\
 На самом деле надо ещё показать что первые интегралы $C_1,C_2$ независимы. Ну если очень хочется можно их выразить, явно посчитать ранг и т.д. Но я воспользуюсь следующим утверждением: поскольку система разрешима (мы смогли решить 2 уравнение) с использованием этих первых 2 интегралов, то они независимы.
- \textcolor[rgb]{0.480469,0.566406,0.480469}{\textit{Пока эти первые интегралы больше используются, как окнстанты. И мало смысла смотреть на них как-то иначе. В следующей части задания это будет не совсем так.}}                                               
+ \textcolor[rgb]{0.480469,0.566406,0.480469}{\textit{Пока эти первые интегралы больше используются, как окнстанты. И мало смысла смотреть на них как-то иначе. В следующей части задания это будет не совсем так.}}
+
+
 \section{II. Линейные однородные уравнения в частных производных первого порядка}
 \subsection{C. \S17: 5}
+Найти общее решение уравнения и решить задачу Коши с указанным
+начальным условием
+\begin{equation}\label{17.5}
+x \frac{\partial u}{\partial x}+y \frac{\partial u}{\partial y}+z^{2}(x-3 y) \frac{\partial u}{\partial z}=0, u=\frac{x^{2}}{y} \text { при } 3 y z=1
+\end{equation}
+Найдём характерестическую систему уравнения \ref{17.5}.
+\begin{equation*}
+    \begin{cases}
+        \dot x=x, (1)\\
+        \dot y = y, (2)\\
+        \dot z = z^2(x-3y),(3)\\
+    \end{cases}
+\end{equation*}
+Для решения надо найти 2 независимых первых интеграла. В данной задаче можно просто составить 2 линейные комбинации: 
+\begin{align*}
+    (1) \cdot y-(2) \cdot x=0 && (1)\cdot z^2-(2)\cdot 3z^2 -(3)=0\\
+    y \cdot dx  = x \cdot dy &&   z^2 \cdot dx - 3z^2 \cdot dy -dz=0\\
+    \frac{dx}{x}=\frac{dy}{y} && dx - 3dy - \frac{dz}{z^2}=0\\
+    \ln{\frac{x}{y}}=C_1(x,y,z) && x-3y+\frac{1}{z}=C_2(x,y,z)\\
+\end{align*}
+Вообще должно быть очевидно, что $C_1$ и $C_2$ независимы, потому что $C_2$ зависит от $z$ а $C_1$ - нет. Но давайте проверим ранг.  \textcolor[rgb]{0.480469,0.566406,0.480469}{\textit{просто это-то тут очевидно, а если наткнуться на задачу где не очевидно, а матаппарат не будет отработан будет печально}}\\
+\begin{gather*}
+\rg \begin{vmatrix}
+        \frac{\partial C_1}{\partial x} && \frac{\partial C_1}{\partial y} && \frac{\partial C_1}{\partial z}\\
+        \frac{\partial C_2}{\partial x} && \frac{\partial C_2}{\partial y} && \frac{\partial C_2}{\partial z}
+    \end{vmatrix} = 
+     \rg \begin{vmatrix}
+        \frac{1}{x}&& -\frac{1}{x } && 0\\
+        1 &&-3 && -\frac{1}{z^2}
+    \end{vmatrix} = 2                                                   
+\end{gather*}                                               
+Значит решением \ref{17.5} будет $F[U_1(x,y,z),U_2(x,y,z)]$ где $F$ - любая непрерывно дифференцируемая функция, $U_1(x,y,z)=\frac{x}{y}, U_2(x,y,z)=x-3y+\frac{1}{z}$. Здесь я выкинул логарифм, потому что если логарифм отношения первый интеграл, то и без логарифма первый интеграл. Вообще это надо было сделать раньше, но я сделал тут :)\\
+Решим ЗК.
+\begin{gather*}
+\begin{cases}
+        u=\frac{x^2}{y}\\
+        3yz=1\\
+        \frac{x}{y}=U_1\\
+        x-3y+\frac{1}{z}=U_2\\
+    \end{cases}    \\
+    \begin{cases}
+    u=\frac{x^2}{y}\\
+        3yz=1\\
+        \frac{x}{y}=U_1\\
+        x=U_2\\
+    \end{cases}    \\
+    u=U_1 U_2= \frac{x}{y}(x-3y+\frac{1}{z})
+\end{gather*}
+Ответ:\\
+ Oбщее решение \ref{17.5}: $F[U_1(x,y,z),U_2(x,y,z)]$ где $F$ - любая непрерывно дифференцируемая функция, $U_1(x,y,z)=\frac{x}{y}, U_2(x,y,z)=x-3y+\frac{1}{z}$.\\
+ Pешение ЗК \ref{17.5}: $u=U_1 U_2= \frac{x}{y}(x-3y+\frac{1}{z})$
+
 \subsection{C. \S17: 16}
+Найти общее решение уравнения и решить задачу Коши с указанным
+начальным условием
+\begin{equation}\label{17.16}
+(z-x+3 y) \frac{\partial u}{\partial x}+(z+x-3 y) \frac{\partial u}{\partial y}-2 z \frac{\partial u}{\partial z}=0, u=\frac{4 y}{z} \text { при } x=3 y \text { . }
+\end{equation}
+Найдём характерестическую систему уравнения \ref{17.16}.
+\begin{equation*}
+    \begin{cases}
+        \dot x = z-x+3y, (1)\\
+        \dot y = z+x-3y, (2)\\
+        \dot z = -2z,(3)\\
+    \end{cases}
+\end{equation*}
+Тут линейная комбинация только одна (ну или я слаб) $(1) + (2) + (3)=0 \Rightarrow dx+dy+dz=0 \Rightarrow x+y+z = C_1$. Подставим этот первый интеграл во вторые 2 уравнения:
+\begin{gather*}
+    \begin{cases}
+        \dot y = C_1-4y\\
+        \dot z =-2z\\
+    \end{cases}\\
+//\text{перемножая крест накрест получим}//\\
+-2z \dot y = \dot z(C_1-4y)\\
+\frac{dz}{2z}=\frac{dy}{C_1-4y}\\
+C_2=\frac{z^2}{C_1-4y}= \frac{z^2}{x+z-3y}
+\end{gather*}
+Проверим независимость: 
+\begin{equation*}
+    \rg \begin{vmatrix}
+        \frac{\partial C_1}{\partial x} && \frac{\partial C_1}{\partial y} && \frac{\partial C_1}{\partial z}\\
+        \frac{\partial C_2}{\partial x} && \frac{\partial C_2}{\partial y} && \frac{\partial C_2}{\partial z}
+    \end{vmatrix} = ... = 2
+\end{equation*}
+Осталось только решить ЗК.
+\begin{gather*}
+\begin{cases}
+        u=\frac{4y}{z}\\
+        x=3y\\
+        x+y+z=U_1\\
+        \frac{z^2}{x+z-3y}=U_2\\
+    \end{cases}    \\
+    \begin{cases}
+    u=\frac{4y}{z}\\
+        x=3y\\
+        4y+z=U_1\\
+        z=U_2\\
+    \end{cases}    \\
+    u=U_1/ U_2-1 = \frac{x}{y}(x-3y+\frac{1}{z})=\frac{(x+y+z)(x-3 y+z)}{z^{2}}-1
+\end{gather*}
+Ответ:\\
+ Oбщее решение \ref{17.16}: $F[U_1(x,y,z),U_2(x,y,z)]$ где $F$ - любая непрерывно дифференцируемая функция, $U_1(x,y,z)=x+y+z, U_2(x,y,z)=\frac{z^2}{x+z-3y}$.\\
+ Pешение ЗК \ref{17.16}: $u=u=U_1/ U_2-1 = \frac{x}{y}(x-3y+\frac{1}{z})=\frac{(x+y+z)(x-3 y+z)}{z^{2}}-1$
+
+
 \subsection{C. \S17: 22}
+Найти общее решение уравнения и решить задачу Коши с указанным
+начальным условием
+\begin{equation}\label{17.22}
+\begin{array}{l}
+\left(2 x^{2} z^{2}+x\right) \frac{\partial u}{\partial x}-\left(4 x y z^{2}-y\right) \frac{\partial u}{\partial y}-\left(4 x z^{3}-z\right) \frac{\partial u}{\partial z}=0, u=y z^{2} \text { при } x=z
+\end{array}
+\end{equation}
+
+найдём характерестическую систему уравнения \ref{17.22}.
+\begin{equation*}
+    \begin{cases}
+        \dot x =\left(2 x^{2} z^{2}+x\right) \\
+        \dot y = -\left(4 x y z^{2}-y\right)\\
+        \dot z =-\left(4 x z^{3}-z\right) \\
+    \end{cases}
+\end{equation*}
+Найдём первые интегралы:
+$z \dot y -  y\dot z=0 \Rightarrow z/y=C_1$\\
+Cо вторым интегралом немного больнее. Придётся вспомнить уравнения в полных дифференциалах. Второе и третье уже связаны первым интегралом, так что берём первое и 3 (как раз там нет $y$). Перемножим их крест-накрест.
+\begin{gather*}
+    dx(4xz^3-z)+dz(2x^2z^2+x)=0\\
+    //\text{как мы видим, это пока ещё не полный дифференциал. Попробуем домножить на} \mu(z) \text{оно зависит только от z!} //\\
+    dx \underbrace{\mu(4xz^3-z)}_{=R} + dz \underbrace{\mu (2x^2z^2+x)}_{=S} = 0 \stackrel{?}{=} d(Q)\\
+    //\text{чтобы левая часть была равна дифференциалу чего-то, должно выполняться} \frac{\partial R}{\partial z} = \frac{\partial S}{\partial x}  //\\
+    \mu'_z(4xz^3-z)+\mu(12xz^2-1)=\mu(4xz^2+1)\\
+    \mu'_z=-\mu \frac{2}{z}\\    
+    \frac{d \mu}{\mu}=-\frac{2 dz}{z}\\
+    \mu = \frac{1}{z^2}, \\
+    //\text{Теперь можно подставить интегрирующий множитель, найти величину, полный дифференциал который ноль}//\\
+    dx \underbrace{(4xz-1/z)}_{=R} + dz \underbrace{(2x^2+\frac{x}{z^2})}_{=S} = d(Q)=0\\
+    //\text{Тут уже тривиально угадать функцию}//\\
+    Q=2x^2z- \frac{x}{z} = \text{const} = C_2
+\end{gather*}
+
+Проверим независимость ($C_1$ зависит от $z,y$, $C_2$ зависит от $z,x$. Ну очевидно они независимы): 
+\begin{equation*}
+    \rg \begin{vmatrix}
+        \frac{\partial C_1}{\partial x} && \frac{\partial C_1}{\partial y} && \frac{\partial C_1}{\partial z}\\
+        \frac{\partial C_2}{\partial x} && \frac{\partial C_2}{\partial y} && \frac{\partial C_2}{\partial z}
+    \end{vmatrix} = \text{очевидно...} = 2
+\end{equation*}
+Осталось только решить ЗК.
+\begin{gather*}
+\begin{cases}
+        u=yz^2\\
+        x=z\\
+        U_1=z/y\\
+        U_2=2x^2z- \frac{x}{z}\\
+    \end{cases}    \\
+    \begin{cases}
+        u=\frac{4y}{z}\\
+         x=z\\
+        U_1=z/y\\
+        U_2=2z^3 - 1\\
+    \end{cases}    \\
+    u=\frac{U_2+1}{2U_1} = \frac{y\left(z-x+2 x^{2} z^{2}\right)}{2 z^{2}}
+\end{gather*}
+Ответ:\\
+ Oбщее решение \ref{17.22}: $F[U_1(x,y,z),U_2(x,y,z)]$ где $F$ - любая непрерывно дифференцируемая функция, $U_1(x,y,z)=z/y, U_2(x,y,z)=2x^2z- \frac{x}{z}$.\\
+ Pешение ЗК \ref{17.22}: $u=\frac{y\left(z-x+2 x^{2} z^{2}\right)}{2 z^{2}}$
+
 \subsection{C. \S17: 79}
+Найти общее решение уравнения и решить задачу Коши с указанным
+начальным условием
+\begin{equation}\label{17.79}
+2 x y \frac{\partial u}{\partial x}+\left(1-y^{2}-2 x z\right) \frac{\partial u}{\partial y}-\frac{y}{x} \frac{\partial u}{\partial z}=0, u=\frac{1}{2}-y^{2} \text { при } y^{2}+x z=1
+\end{equation}
+
+найдём характерестическую систему уравнения \ref{17.79}.
+\begin{equation*}
+    \begin{cases}
+        \dot x = 2xy\\
+        \dot y = 1-y^{2}-2 x z\\
+        \dot z = -\frac{y}{x} \\
+    \end{cases}
+\end{equation*}
+Найдём первые интегралы:
+Перемножим крест накрест 1 и 3 уравнения. 
+\begin{gather*}
+    -dx \frac{y}{x}=2dz \cdot xy\\
+    \frac{dx}{x^2}=-2 dz\\
+    \frac{1}{x} - 2z = C_1
+\end{gather*}
+Второй, как и всегда, искать менее тривиально.
+Возьмём 1 и 2 уравнения и перемножим крест-накрест. Получится:
+\begin{gather*}
+    2xy \cdot dy = (1-y^2-2xz) dx\\
+    2xy y'=(C_1x-y^2)dx\\
+    y'+y \frac{1}{2x}= \frac{C_1}{2y}\\
+    //\text{О, это же уравнение Бернулли. } t=y^2,t'=2y y'  //\\
+    \frac{t'}{2 \sqrt t}+\sqrt t \frac{1}{2x} = \frac{C_1}{2 \sqrt t}\\
+    t'+t \frac{1}{x}= C_1\\
+    t'x+t \cdot x' = C_1 x\\
+    (t\cdot x)'=C_1x\\
+    t x = \frac{C_1 x^2}{2} + C_2\\
+    C_2 = xy^2- \frac{C_1 x^2}{2}= x(y^2+z^2)-\frac{x}{2}
+\end{gather*}
+Проверим независимость: Один ПИ зависит от $x$ другой нет, очевидно они независимы.
+\begin{equation*}
+    \rg \begin{vmatrix}
+        \frac{\partial C_1}{\partial x} && \frac{\partial C_1}{\partial y} && \frac{\partial C_1}{\partial z}\\
+        \frac{\partial C_2}{\partial x} && \frac{\partial C_2}{\partial y} && \frac{\partial C_2}{\partial z}
+    \end{vmatrix} = ... = 2
+\end{equation*}
+Осталось только решить ЗК.
+\begin{gather*}
+\begin{cases}
+        u= \frac{1}{2} - y^2\\
+        y^2+xz=1\\
+        U_1=\frac{1}{x} - 2z\\
+        U_2= x(y^2+z^2)-\frac{x}{2}\\
+    \end{cases} \\
+    //\text{я считаю, что это какая-то ужасная бяка, поэтому просто переберём варианты } U_1 \cdot U_2, U_1/U_2 \text{ и т.д.}//\\
+    u=U_1 \cdot U_2 = (2 x z-1)\left(y^{2}-\frac{1}{2}+x z\right)
+\end{gather*}
+Ответ:\\
+ Oбщее решение \ref{17.79}: $F[U_1(x,y,z),U_2(x,y,z)]$ где $F$ - любая непрерывно дифференцируемая функция, $U_1(x,y,z)=\frac{1}{x} - 2z, U_2(x,y,z)= x(y^2+z^2)-\frac{x}{2}$.\\
+ Pешение ЗК \ref{17.79}: $u=U_1 \cdot U_2 = (2 x z-1)\left(y^{2}-\frac{1}{2}+x z\right)$
 \subsection{C. \S17: 83}
+Найти общее решение уравнения и решить задачу Коши с указанным
+начальным условием
+\begin{equation}\label{17.83}
+2 x y \frac{\partial u}{\partial x}+\left(2 x-y^{2}\right) \frac{\partial u}{\partial y}+y^{3} z \frac{\partial u}{\partial z}=0, u=x^{2} z^{2} \text { при } y^{2}=2 x
+\end{equation}
+найдём характерестическую систему уравнения \ref{17.83}.
+\begin{equation*}
+    \begin{cases}
+        \dot x = 2xy \\
+        \dot y = 2 x-y^{2}\\
+        \dot z = y^{3} z \\
+    \end{cases}
+\end{equation*}
+Найдём первые интегралы: первые 2 уравнения крест-накрест
+\begin{gather*}
+    dx(2x-y^2)=dy(2xy)\\
+    dx(2x-y^2)+dy(-2xy)=0\\
+    d(x^2-xy^2)=0\\
+    x^2-xy^2=C_1
+\end{gather*}
+ \textcolor[rgb]{0.480469,0.566406,0.480469}{\textit{первые интегралы всё более стрёмные. Даже самый первый становится какой-то жестью}} 
+$y^2=x- \frac{C_1}{x}$\\
+Перемножим 1 и 3 крест-накрест:
+\begin{gather*}
+    dx(y^3z)=dz(2xy)\\
+    z'=\frac{y^2z}{2x}\\
+    \frac{dz}{z}=\frac{1}{2}(1- \frac{C_1}{x^2})\\
+    \ln (z^2) = x + \frac{C_1}{x} + C_2\\
+    C_2 = \ln (z^2) - 2x + y^2. 
+\end{gather*}
+
+
+Проверим независимость: как всегда очевидно независят, но проверить формально надо
+\begin{equation*}
+    \rg \begin{vmatrix}
+        \frac{\partial C_1}{\partial x} && \frac{\partial C_1}{\partial y} && \frac{\partial C_1}{\partial z}\\
+        \frac{\partial C_2}{\partial x} && \frac{\partial C_2}{\partial y} && \frac{\partial C_2}{\partial z}
+    \end{vmatrix} = ... = 2
+\end{equation*}
+Осталось только решить ЗК.
+\begin{gather*}
+\begin{cases}
+        u=x^2z^2\\
+        y^2=2x\\
+        U_1=x^2-xy^2\\
+        U_2=\ln (z^2) - 2x + y^2\\
+    \end{cases}    \\
+    \begin{cases}
+        u=x^2z^2\\
+        y^2=2x\\
+        U_1=-x^2\\
+        e^{U_2}=z^2\\
+    \end{cases}    \\
+    u=-U_1e^{U_2}=(xy^2 - x^2) e^{\ln (z^2) - 2x + y^2} = z^2(xy^2 - x^2) e^{- 2x + y^2}
+\end{gather*}
+Ответ:\\
+ Oбщее решение \ref{17.83}: $F[U_1(x,y,z),U_2(x,y,z)]$ где $F$ - любая непрерывно дифференцируемая функция, $U_1(x,y,z)=x^2-xy^2, U_2(x,y,z)=\ln (z^2) - 2x + y^2$.\\
+ Pешение ЗК \ref{17.83}: $u=z^2(xy^2 - x^2) e^{- 2x + y^2}$
+
+
+
 \subsection{T2}
+В области $x>0, \quad y>0, \quad z>0$ найти все решения уравнения
+\begin{equation}\label{17.T2}
+\left(x^{2}+y^{2}\right) \frac{\partial u}{\partial x}+2 x y \frac{\partial u}{\partial y}+\frac{x^{3}-x y^{2}}{z} \frac{\partial u}{\partial z}=0
+\end{equation}
+и решить задачу Коши $u=z^{2}$ при $y^{2}-x^{2}=1$\\
+
+найдём характерестическую систему уравнения \ref{17.T2}.
+\begin{equation*}
+    \begin{cases}
+        \dot x =x^2+y^2 \\
+        \dot y = 2xy\\
+        \dot z = \frac{x^3-xy^2}{z}\\
+    \end{cases}
+\end{equation*}
+%Найдём первые интегралы: крест-накрест первые 2
+%\begin{gather*}
+ %   dx \cdot 2xy = dy \cdot (x^2+y^2)\\
+  %  y'=\frac{2xy}{x^2+y^2}\\
+   % //y=x \cdot t(x), y'=t(x)+xt'(x)//\\
+    %t'x+t=\frac{2t}{1+t^2}\\
+    %dt \frac{1+t^2}{(t-1)^2}=-\frac{dx}{x}\\
+    %t-\frac{2}{t-1}+2 \ln (t-1) = -\ln(x)+C_1\\
+    %C_1 = \frac{2 x}{x-y}+\frac{y}{x}+2 \log \left(\frac{y}{x}-1\right)+\log (x)\\
+%\end{gather*}
+% \textcolor[rgb]{0.480469,0.566406,0.480469}{\textit{Какой хороший интеграл, настолько хороший, что я лучше найду какой-нибудь ещё}}%      
+ \textcolor[rgb]{0.480469,0.566406,0.480469}{\textit{Тут есть такой красивый первый интеграл! Он закомментирован но если кто хочет посмотреть на наркоманию, можно посмотреть исходный код}}                                                                                          
+ Тут можно заметить линейную комбинацию: $x dx  - y dy - z dz =0 \Rightarrow C_1 =  x^2-y^2-z^2$. Далее выражаем $y=x^2-z^2-C_1$ и берём первые 2 уравнения.
+ \begin{gather*}
+     dz(2x^2-z^2-C_1)-dx\left(xz+C_1 \frac{x}{z} \right)=0\\
+     //\text{Это почти уравнение в полных дифференциалах, надо всего-то домножить на } \frac{z}{(C_1+z^2)^3}//\\
+     dz \frac{2zx-z^3-C_1z}{(C_1+z^2)^3} - dx \frac{x}{(C_1+z^2)^2}=d(C_2)=0\\
+     C_2=\frac{1}{2 \left(C_1+z^2\right)}-\frac{x^2}{2 \left(C_1+z^2\right)^2} = \frac{1}{2x^2-2y^2} - \frac{x^2}{2 \left(x^2-y^2\right)^2}
+ \end{gather*}
+
+
+
+Проверим независимость: о чудо, снова один интеграл зависит от $z$, а другой нет. Так что снова всё ок, но проверить тем не менее необходимо...
+\begin{equation*}
+    \rg \begin{vmatrix}
+        \frac{\partial C_1}{\partial x} && \frac{\partial C_1}{\partial y} && \frac{\partial C_1}{\partial z}\\
+        \frac{\partial C_2}{\partial x} && \frac{\partial C_2}{\partial y} && \frac{\partial C_2}{\partial z}
+    \end{vmatrix} = ... = 2
+\end{equation*}
+Осталось только решить ЗК.
+\begin{gather*}
+\begin{cases}
+        u=z^2\\
+        y^2-x^2=1\\
+        U_1= x^2-y^2-z^2\\
+        U_2=\frac{1}{2 \left(C_1+z^2\right)}-\frac{x^2}{2 \left(C_1+z^2\right)^2} = \frac{1}{2x^2-2y^2} - \frac{x^2}{2 \left(x^2-y^2\right)^2}\\
+    \end{cases}    \\
+    \begin{cases}
+        u=z^2\\
+        y^2-x^2=1\\
+        U_1=-z^2-1\\
+        U_2=- \frac{1}{2} - \frac{x^2}{2}\\
+    \end{cases}    \\
+    u=-1-U_1=z^2+y^2-x^2-1
+\end{gather*}
+Ответ:\\
+ Oбщее решение \ref{17.T2}: $F[U_1(x,y,z),U_2(x,y,z)]$ где $F$ - любая непрерывно дифференцируемая функция, $U_1(x,y,z)=x^2-y^2-z^2, U_2(x,y,z)= \frac{1}{2x^2-2y^2} - \frac{x^2}{2 \left(x^2-y^2\right)^2}$.\\
+ Pешение ЗК \ref{17.T2}: $u= u=-1-U_1=z^2+y^2-x^2-1$ 
+  \textcolor[rgb]{0.480469,0.566406,0.480469}{\textit{Вот и всё с первыми интегралами. Сказал бы всё плохое что я про эти задачи думаю, но я думаю о них только положительно. Какие хорошие задачи}}                                               
 
 \section{III. Вариационное исчисление}
 \subsection{C. \S19: 21}
