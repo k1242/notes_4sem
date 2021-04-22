@@ -626,11 +626,114 @@ $\hat y = 1+\ln(x)$    - абсолютный минимум с вариацие
 \begin{equation}
 J(y)=\int_{0}^{1}\left[\left(1+x^{2}\right)\left(y^{\prime}\right)^{2}-4 x y^{\prime}+y y^{\prime} \sin ^{2} x+\frac{1}{2} y^{2} \sin 2 x\right] d x, y(0)=0, y(1)=\ln 2
 \end{equation}
-
-
+ \textcolor[rgb]{1,1,1}{\textit{Наверное очень интересно, почему я иногда пишу $y$ а иногда не ленюсь и прописываю $y(x)$. Это могут быть 2 последовательные строчки, которые почти ничем не отличаются. Первый вариант, когда я набираю текст сам, а второй когда копирую вормулы из математики (там хорошо указывать явно от чего зависит функция)}}   
+Найдём экстремаль:
+\begin{gather*}
+    \Lagr =\left(x^2+1\right) y'(x)^2-4 x y'(x)+y(x) \sin ^2(x) y'(x)+\frac{1}{2} y(x)^2 \sin (2 x)\\
+    \frac{\partial \Lagr}{\partial y}  - \frac{d }{d x} \frac{\partial \Lagr}{\partial y'} =0   \\
+    \left(x^2+1\right) y''(x)+2 x y'(x)=2\\
+    y(x) = \ln \left(x^2+1\right)+c_1 \arctg(x)+c_2]\\
+    //\text{подставляя граничные условия:}//\\
+    \hat y=\ln \left(x^2+1\right)\\
+\end{gather*}
+Проверим на наличие экстремума.
+\begin{gather*}
+    \Delta J = J(\hat y + h) - J(\hat y) \\
+     \int_0^1 \left(h \left(\sin ^2(x) h'+\frac{2 x \sin ^2(x)}{x^2+1}+\ln \left(x^2+1\right) \sin (2 x)\right)+h' \left(\left(x^2+1\right) h'+\ln \left(x^2+1\right) \sin ^2(x)\right)+h^2 \sin (x) \cos (x)\right) dx\\
+    //\text{какая жесть...}//\\
+    \int_0^1\left( h^2 \sin{(x)}\cos{(x)} 
+    + h'^2(x^2+1)
+    +    h \left( \frac{2 x \sin ^{2}(x)}{x^{2}+1}+\ln \left(x^{2}+1\right) \sin (2 x) \right)\right) dx + \\
+    + \int_0^1 \sin ^{2}(x)  d\left(h^2/2 \right) + \int_0^1 \ln \left(x^{2}+1\right) \sin ^{2}(x) d(h)\\
+    //\text{2 последних по частям, на краях они обнулятся, а подынтегральные выражения сократятся}//\\
+    \int_0^1 h'^2(x^2+1) dx
+\end{gather*}
+Итого, вариация определена положительно, значит экстремаль - абсолютный минимум.\\
+Ответ: \\
+$\hat y = \ln \left(x^2+1\right)$  абсолютный минимум с вариацией $\Delta J = J(\hat y + h) - J(\hat y) =\int_0^1 h'^2(x^2+1) dx $
 \subsection{C. \S19: 72}
+Решить простейшую вариационную задачу:
+\begin{equation}
+J(y)=\int_{1}^{4}\left[15 \sqrt{x} y+3 x^{2} y y^{\prime}-x^{3}\left(y^{\prime}\right)^{2}\right] d x, y(1)=1, y(4)=-3 .
+\end{equation}
+Для начала найдём экстремаль
+\begin{gather*}
+    \Lagr =x^3 \left(-y'(x)^2\right)+3 x^2 y(x) y'(x)+15 \sqrt{x} y(x)\\
+    \frac{\partial \Lagr}{\partial y}  - \frac{d }{d x} \frac{\partial \Lagr}{\partial y'} =0   \\
+    6 x^2 y'(x)+2 x^3 y''(x)+15 \sqrt{x}=6 x y(x)\\
+    y(x) =\frac{C_1}{x^3}+\frac{2}{\sqrt{x}}+C_2 x\\
+    //\text{подставляя граничные условия:}//\\
+    \hat y=\frac{2-x^{3/2}}{\sqrt{x}}\\
+\end{gather*}
+
+Проверим на наличие экстремума.
+\begin{gather*}
+    \Delta J = J(\hat y + h) - J(\hat y) = \int_1^4 \left(3 h(x) \left(x^2 h'(x)-x^2+4 \sqrt{x}\right)-x^{3/2} h'(x) \left(x^{3/2} h'(x)+x^{3/2}-8\right)\right) \, dx  \\
+    \int_1^4 \left( 3 h \left(x^{2}+4 \sqrt{x} \right) - h'^2 x^3 \right) dx + \int_1^4 3/2 x^2 d(h^2)  + \int_1^4 - x^3 + 8x^{3/2}d(h) \\
+    //\text{2 последних по частям, на краях они обнулятся, а подынтегральные выражения сократятся}//\\
+    \int_1^4  \left(-x^3 h'^2 -3x h^2 \right)dx
+\end{gather*}
+Итого, вариация определена отрицательно, значит экстремаль - абсолютный максимум.\\
+Ответ: \\
+$\hat y = \frac{2-x^{3/2}}{\sqrt{x}}$  абсолютный максимум с вариацией $\Delta J = J(\hat y + h) - J(\hat y) =\int_1^4  \left(-x^3 h'^2 -3x h^2 \right)dx$
+
+
 \subsection{C. \S19: 105}
+Показать, что допустимая экстремаль не дает экс-
+тремум функционала:
+\begin{equation}
+J(y)=\int_{0}^{\pi}\left[\left(y^{\prime}\right)^{2}-\frac{25}{16} y^{2}+50 x y\right] d x, y(0)=0, y(\pi)=16 \pi
+\end{equation}
+
+Для начала найдём экстремаль
+\begin{gather*}
+    \Lagr =y'(x)^2-\frac{1}{16} 25 y(x)^2+50 x y(x)\\
+    \frac{\partial \Lagr}{\partial y}  - \frac{d }{d x} \frac{\partial \Lagr}{\partial y'} =0   \\
+    400 x=16 y''(x)+25 y(x)\\
+    y(x) = 16 x+C_1 \cos \left(\frac{5 x}{4}\right)+C_2 \sin \left(\frac{5 x}{4}\right)\\
+    //\text{подставляя граничные условия:}//\\
+    \hat y=16 x\\
+\end{gather*}
+Покажем теперь что экстремум отсутствует
+\begin{gather*}
+    \Delta J = J(\hat y + h) - J(\hat y) = \int_0^{\pi } \left(h'(x) \left(h'(x)+32\right)-\frac{25 h(x)^2}{16}\right) \, dx\\
+    //\text{Здесь даже упрощать не надо ничего, просто возьмём 2 функции которые разный знак дадут}//\\
+    h_1=\sin{(x)} \Rightarrow  \Delta J = \int_0^\pi \cos (x) (\cos (x)+32)-\frac{25 \sin ^2(x)}{16} dx = -\frac{1}{32} (9 \pi )\\
+    h_2 = \sin{(2x)} \Rightarrow  \Delta J = \int_0^\pi 64 \cos (2 x)+\frac{1}{32} (89 \cos (4 x)+39) dx = \frac{39 \pi }{32}\\
+\end{gather*}
+Таким образом знаки приращения могут принимать как положительные так и отрицательные значения, а значит экстремаль ни минимум ни максимум.
+
 \subsection{T3}
+Исследовать на экстремум функционал, определив знаки приращения
+\begin{equation}
+    \int_{1}^{2}\left(\frac{2 y y^{\prime}}{x}-7 \frac{y^{2}}{x^{2}}-\left(y^{\prime}\right)^{2}-12 \frac{y}{x}\right) d x, \quad y(1)=3, \quad y(2)=1
+\end{equation}
+Как и ранее для начала найдём экстремаль
+\begin{gather*}
+    \Lagr =-\frac{7 y(x)^2}{x^2}+\frac{2 y(x) y'(x)}{x}-y'(x)^2-\frac{12 y(x)}{x}\\
+    \frac{\partial \Lagr}{\partial y}  - \frac{d }{d x} \frac{\partial \Lagr}{\partial y'} =0   \\
+    x y''(x)=\frac{6 y(x)}{x}+6\\
+    y(x) = C_2 x^3+\frac{C_1}{x^2}-x\\
+    //\text{подставляя граничные условия:}//\\
+    \hat y=\frac{8 x^5-31 x^3+116}{31 x^2}\\
+\end{gather*}
+Уже экстремаль тут как-то не очень выглядит, но дальше лучше. Посчитаем вариацию
+\begin{gather*}
+    \Delta J = J(\hat y + h) - J(\hat y) = \\
+    \int_1^2 -\frac{31 x^4 h'(x)^2+2 x \left(-31 x^2 h(x)+16 x^5-348\right) h'(x)+h(x) \left(217 x^2 h(x)+64 x^5+2088\right)}{31 x^4} \, dx\\
+    //\text{оно кажется страшным, но это просто из-за цифорок, так-то функция вполе}//\\
+    \int_1^2 \left( -h'^2 -\frac{7}{x^2}h^2 \right)dx -
+    \int_1^2 \left(\frac{64}{31}x + \frac{2088}{31x^4} \right)h \cdot dx +
+    \int_1^2 \frac{1}{x} d(h^2) -
+    \int_1^2 \left( \frac{32}{31} x^2 -\frac{696}{31x^3}\right)d(h)\\
+    //\text{2 последних по частям, на краях они обнулятся, а подынтегральные выражения сократятся}//\\
+    \int_1^2 \left(-h'^2  - \frac{6}{x^2}h^2 \right)dx
+\end{gather*}
+Итого, вариация определена отрицательно, значит экстремаль - абсолютный максимум.\\
+Ответ: \\
+$\hat y = \frac{8 x^5-31 x^3+116}{31 x^2}$  абсолютный максимум с вариацией $\Delta J = J(\hat y + h) - J(\hat y) =\int_1^2 \left(-h'^2  - \frac{6}{x^2}h^2\right)dx$
+ \textcolor[rgb]{0.480469,0.566406,0.480469}{\textit{На самом деле здесь проще и оптимальнее не подставлять сразу значение экстремали, а работать с ним, в некоторый момент вылезать будет появляться уравнение Эйлера-Лагранжа, которое можно приравнять к 0. А вот так сразу подставлять $\hat y$ довольно неприятно. Но всё реально, просто чиселки не оч красивые}}                                               
+
 \subsection{C. \S20.1: 9}
 \subsection{C. \S20:}
 \subsection{T4}
