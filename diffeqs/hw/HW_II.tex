@@ -732,14 +732,43 @@ J(y)=\int_{0}^{\pi}\left[\left(y^{\prime}\right)^{2}-\frac{25}{16} y^{2}+50 x y\
 Итого, вариация определена отрицательно, значит экстремаль - абсолютный максимум.\\
 Ответ: \\
 $\hat y = \frac{8 x^5-31 x^3+116}{31 x^2}$  абсолютный максимум с вариацией $\Delta J = J(\hat y + h) - J(\hat y) =\int_1^2 \left(-h'^2  - \frac{6}{x^2}h^2\right)dx$
- \textcolor[rgb]{0.480469,0.566406,0.480469}{\textit{На самом деле здесь проще и оптимальнее не подставлять сразу значение экстремали, а работать с ним, в некоторый момент вылезать будет появляться уравнение Эйлера-Лагранжа, которое можно приравнять к 0. А вот так сразу подставлять $\hat y$ довольно неприятно. Но всё реально, просто чиселки не оч красивые}}                                               
+ \textcolor[rgb]{0.480469,0.566406,0.480469}{\textit{На самом деле здесь проще и оптимальнее не подставлять сразу значение экстремали, а работать с $y$, в некоторый момент вылезать будет появляться уравнение Эйлера-Лагранжа, которое можно приравнять к 0. А вот так сразу подставлять $\hat y$ довольно неприятно. Но всё реально, просто чиселки не оч красивые}}                                               
 
 \subsection{C. \S20.1: 9}
-\subsection{C. \S20:}
-\subsection{T4}
-\subsection{C. \S20.2: 5}
-\subsection{C. \S20.3: 2}
-\subsection{C. \S21: 1}
-\subsection{T5*}
+Решить задачу со свободным концом
+\begin{equation}
+J(y)=\int_{1}^{3}\left[8 y y^{\prime} \ln x-x\left(y^{\prime}\right)^{2}+6 x y^{\prime}\right] d x, y(3)=15 .
+\end{equation}
 
+
+\subsection{C. \S20.1: 12}
+Решить задачу без ограничений
+\begin{equation}
+J(y)=\int_{1}^{e}\left[x\left(y^{\prime}\right)^{2}+\frac{y^{2}}{x}+\frac{2 y \ln x}{x}\right] d x
+\end{equation}
+
+\subsection{T4}
+Исследовать на экстремум функционал, определив знаки приращения
+\begin{equation}
+    \int_{1}^{2}\left(2 y+y y^{\prime}+x\left(y'^2\right)\right) d x, \quad y(1)=1 .
+\end{equation}
+
+\subsection{C. \S20.2: 5}
+Найти допустимые экстремали
+\begin{equation}
+J\left(y_{1}, y_{2}\right)=\int_{0}^{\pi}\left[\left(y_{1}^{\prime}\right)^{2}+\left(y_{2}^{\prime}\right)^{2}-2 y_{1} y_{2}\right] d x, y_{1}(0)=1, y_{2}(0)=-1, y_{1}\left(\frac{\pi}{2}\right)=e^{\frac{\pi}{2}}, y_{2}\left(\frac{\pi}{2}\right)=-e^{\frac{\pi}{2}} .
+\end{equation}
+
+\subsection{C. \S20.3: 2}
+Исследовать функционал на экстремум, если:
+\begin{equation}
+J(y)=\int_{0}^{1}\left[2 e^{x} y-\left(y^{\prime \prime}\right)^{2}\right] d x, y(0)=y^{\prime}(0)=1, y(1)=e, y^{\prime}(1)=2 e
+\end{equation}
+\subsection{C. \S21: 1}
+Решить изопериметрическую задачу
+\begin{equation}
+J(y)=\int_{0}^{\pi}\left(y^{\prime}\right)^{2} d x, y(0)=0, y(\pi)=\pi, \int_{0}^{\pi} y \sin x d x=1
+\end{equation}
+\subsection{T5*}
+Среди всех кривых на цилиндре $x^{2}+y^{2}=1$, соединяющих точки $(1,0,0)$ и $(0,1,1)$ найти кривую наименьшей длины (геодезическую кривую).
 \end{document}
