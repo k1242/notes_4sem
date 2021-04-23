@@ -732,14 +732,146 @@ J(y)=\int_{0}^{\pi}\left[\left(y^{\prime}\right)^{2}-\frac{25}{16} y^{2}+50 x y\
 Итого, вариация определена отрицательно, значит экстремаль - абсолютный максимум.\\
 Ответ: \\
 $\hat y = \frac{8 x^5-31 x^3+116}{31 x^2}$  абсолютный максимум с вариацией $\Delta J = J(\hat y + h) - J(\hat y) =\int_1^2 \left(-h'^2  - \frac{6}{x^2}h^2\right)dx$
- \textcolor[rgb]{0.480469,0.566406,0.480469}{\textit{На самом деле здесь проще и оптимальнее не подставлять сразу значение экстремали, а работать с ним, в некоторый момент вылезать будет появляться уравнение Эйлера-Лагранжа, которое можно приравнять к 0. А вот так сразу подставлять $\hat y$ довольно неприятно. Но всё реально, просто чиселки не оч красивые}}                                               
+ \textcolor[rgb]{0.480469,0.566406,0.480469}{\textit{На самом деле здесь проще и оптимальнее не подставлять сразу значение экстремали, а работать с $y$, в некоторый момент вылезать будет появляться уравнение Эйлера-Лагранжа, которое можно приравнять к 0. А вот так сразу подставлять $\hat y$ довольно неприятно. Но всё реально, просто чиселки не оч красивые}}                                               
 
 \subsection{C. \S20.1: 9}
-\subsection{C. \S20:}
-\subsection{T4}
-\subsection{C. \S20.2: 5}
-\subsection{C. \S20.3: 2}
-\subsection{C. \S21: 1}
-\subsection{T5*}
+Решить задачу со свободным концом
+\begin{equation}
+J(y)=\int_{1}^{3}\left[8 y y^{\prime} \ln x-x\left(y^{\prime}\right)^{2}+6 x y^{\prime}\right] d x, y(3)=15 .
+\end{equation}\\
 
+Вообще всё то же самое, но теория говорит нам что $\frac{\partial \Lagr}{\partial y'} = 0 |_{x=1}$ на свободном конце. И решение Задачи Коши при подставлении гран условий чутка дольше.  \textcolor[rgb]{0.480469,0.566406,0.480469}{\textit{Тех сошёл с ума, несите новый. Там нет белого текста}}    
+
+\begin{gather*}
+    \Lagr = -x y'(x)^2+6 x y'(x)+8 y(x) \log (x) y'(x)\\
+    \frac{\partial \Lagr}{\partial y}  - \frac{d }{d x} \frac{\partial \Lagr}{\partial y'} =0   \\
+    2 y'(x)+2 x y''(x)-\frac{8 y(x)}{x}-6 = 0\\
+    y = c_2 x^2+\frac{c_1}{x^2}-x\\
+    //\text{Найдём граничные условия}//\\
+    \frac{\partial \Lagr}{\partial y'} = 0 |_{x=1}\\
+    -2 x y'(x)+8 y(x) \log (x)+6 x = 0 |_{x=1}\\
+    0 = \left(6-2 y'(1)\right)\\
+    y'(1)=3\\
+    //\text{Решая ЗК находим константы } C_1, C_2//\\
+    \hat y = 2 x^2-x\\
+\end{gather*}
+Осталось проверить знак приращений.
+\begin{gather*}
+    \Delta J = J(\hat y + h) - J(\hat y) = \int_1^3 \left(x h'(x) \left(-h'(x)-8 x+8 (2 x-1) \log (x)+8\right)+8 h(x) \log (x) \left(h'(x)+4 x-1\right)\right) \, dx\\
+    \int_1^3 -x h'^2 x dx + 
+    \int_1^3 8 h \ln(x) \left(4x-1\right) dx + 
+    \int_1^3 x \left(8+ 8 \ln(x)(2x-1)-8x \right)  d(h)+
+    \int_1^3 4\ln(x) d(h^2)\\
+     //\text{все с h под дифференциалом по частям, на краях как всегда обнуляется, а под интегралами вся жесть уходит}//\\
+    \int_1^3 \left(-x h'^2 - \frac{4}{x}h^2\right)dx
+\end{gather*}
+Приращение строго отрицательно, значит экстремаль - абсолютный максимум. \\
+Отвееееет: \\
+$\hat y = 2 x^2-x + \frac{21890375612389670586790}{8976345801976345} \cdot 0$  абсолютный максимум с вариацией $\Delta J = J(\hat y + h) - J(\hat y) =\int_1^3 \left(-x h'^2 - \frac{4}{x}h^2\right)dx$
+ \textcolor[rgb]{0.480469,0.566406,0.480469}{\textit{раз тех сошёл с ума, то и мне можно}}                                               
+\subsection{C. \S20.1: 12}
+Решить задачу без ограничений
+\begin{equation}
+J(y)=\int_{1}^{e}\left[x\left(y^{\prime}\right)^{2}+\frac{y^{2}}{x}+\frac{2 y \ln x}{x}\right] d x
+\end{equation}\\
+Тут то же самое, просто производная ноль на 2 краях.
+ \textcolor[rgb]{0.480469,0.566406,0.480469}{\textit{Не, а серьёзно, что происходит, что это за пустота? Я в недоумении. Неужели gather настолько слаб, что не умеет переходить на новую страницу? Или слаб я и не понимаю ничего?}}\\                                               
+\begin{gather*}
+    \Lagr = x y'(x)^2+\frac{y(x)^2}{x}+\frac{2 y(x) \log (x)}{x}\\
+    \frac{\partial \Lagr}{\partial y}  - \frac{d }{d x} \frac{\partial \Lagr}{\partial y'} =0   \\
+    -2 y'(x)-2 x y''(x)+\frac{2 y(x)}{x}+\frac{2 \log (x)}{x}=0\\
+    y = -\log (x)+\frac{c_1}{x}+c_2 x\\
+    //\text{Найдём граничные условия}//\\
+    \frac{\partial \Lagr}{\partial y'} = 0 |_{x=1;e}\\
+    -2 x y'(x)+8 y(x) \log (x)+6 x = 0 |_{x=1;e}\\
+    2 x y'(x) = 0\\
+    y'(1)=0\\
+    y'(e)=0\\
+    //\text{Решая ЗК находим константы } C_1, C_2//\\
+    \hat y = -\frac{e-x^2}{e x+x}-\log (x)\\
+\end{gather*}
+Это не самая приятная Экстремаль. Поэтому не будем её подставлять и попадать в ловушку Т3. Запишем так:
+\begin{gather*}
+    \Delta J = J(\hat y + h) - J(\hat y) = \int_1^e \frac{x^2 h'(x) \left(h'(x)+2 y'(x)\right)+2 h(x) (y(x)+\log (x))+h(x)^2}{x} \, d\\
+    \int_1^e \left(h'^2 x + 2 h \frac{y+\ln(x)}{x} + \frac{h^2}{x} \right) dx+
+    \int_1^e \left( 2x y' \right) d(h)\\
+    //\text{берём по частям второй интеграл}//\\
+    \int_1^e \left(h'^2 x + 2 h \frac{y+\ln(x)}{x} + \frac{h^2}{x} \right) dx -
+    \int_1^e \left( 2 y' + 2xy'' \right)h \cdot dx \\
+    \int_1^e  \left(h'^2 x +\frac{h^2}{x} \right) dx + 
+    \int_1^e \underbrace{\left(-2 y'(x)-2 x y''(x)+\frac{2 y(x)}{x}+\frac{2 \log (x)}{x} \right)}_{
+    \textcolor[rgb]{1,1,1}{\frac{\partial \Lagr}{\partial y}  - \frac{d }{d x} \frac{\partial \Lagr}{\partial y'}} =0 \text{ просто потому что мне так захотелось :)}
+    } h \cdot dx \\
+    \Delta J =\int_1^e  \left(h'^2 x +\frac{h^2}{x} \right) dx
+\end{gather*}
+Минимум, получается.\\
+Ответ: \\
+$\hat y = -\frac{e-x^2}{e x+x}-\log (x)$  абсолютный минимум с вариацией $\Delta J = J(\hat y + h) - J(\hat y) =\int_1^e  \left(h'^2 x +\frac{h^2}{x} \right) dx$ 
+ \textcolor[rgb]{0.480469,0.566406,0.480469}{\textit{Там кстати есть белый текст в задаче, можно найти}}                                               
+
+\subsection{T4}
+Исследовать на экстремум функционал, определить знаки приращения
+\begin{equation}
+    \int_{1}^{2}\left(2 y+y y^{\prime}+x\left(y'\right)^2\right) d x, \quad y(1)=1 .
+\end{equation}
+ \textcolor[rgb]{0.480469,0.566406,0.480469}{\textit{Я уже боюсь Т-шек, вот уверен сейчас что-то настолько же пугающее, как стол моего соседа по общаге будет}}  
+ Найдём экстремали:
+ \begin{gather*}
+    \Lagr = x y'(x)^2+y(x) y'(x)+2 y(x)\\
+    \frac{\partial \Lagr}{\partial y}  - \frac{d }{d x} \frac{\partial \Lagr}{\partial y'} =0   \\
+    -2 y'(x)-2 x y''(x)+2=0\\
+    x+c_1 \log (x)+c_2\\
+    //\text{Найдём граничные условия}//\\
+    4 y'(2)+y(2) = 0\\
+    //\text{Решая ЗК находим константы } C_1, C_2//\\
+    \hat y=x-\frac{6 \log (x)}{2+\log (2)}
+ \end{gather*}  
+ \textcolor[rgb]{0.480469,0.566406,0.480469}{\textit{Ну оно конечно не совсем пугающее, но деление на логарифм 2. Зачем? За что? Кто придумывал эти числа? И да, я скорее всего не ошибся, потому что проверяю себя в Вольфраме :) Но всё равно никто же сюда списывать не приходит, все будут проверять сами и проверят написанное}}
+ Определим знаки приращений:
+ \begin{gather*}
+    \Delta J = J(\hat y + h) - J(\hat y) = 
+    \int_1^2 \left(h(x) \left(h'(x)+y'(x)+2\right)+h'(x) \left(x \left(h'(x)+2 y'(x)\right)+y(x)\right)\right) \, dx\\
+    \int_1^2 \left( h (y'+2) + h'^2 x \right) dx + 
+    \int_1^2 1/2 d(h^2)+
+    \int_1^2 (2xy' +xy)d(h)\\
+    //\text{берём по частям всё что не радует сердце и душу}//\\
+    \int_1^2 \left(x h'^2 - \frac{1}{2} h^2 \right)dx +
+    \int_1^2 \underbrace{\left( -2 y'(x)-2 x y''(x)+2 \right)}_{=0} h \cdot dx\\
+    \Delta J = \int_1^2 \left(x h'^2 - \frac{1}{2} h^2 \right)dx
+ \end{gather*}                                               
+ Кажется что экстремума нет, но он есть на самом деле. Поркажем что это строгий минимум (интеграл всегда положителен)
+ \begin{gather*}
+    //\text{оценим второе слагаемое}//\\
+     |h(x)| = \bigg|\int_1^x h' dy \bigg| = \bigg|\int_1^x h' \cdot 1 \cdot dy \bigg| \underbrace{\leq}_{\text{КБШ*}} \sqrt{\int_1^x 1^2 \cdot dy \int_1^xh'^2 dy  } = \sqrt{(x-1) \int_1^xh'^2 dy }\\
+     \int_1^3 h^2 dx \leq \int_1^3 (x-1) dx \int_1^x h'^2 dy  \leq \int_1^3 (x-1)dx \cdot \int_1^3 h'^2 dx = 2 \int_1^3 h'^2 dx\\
+     \int_1^3 \frac{1}{2}h^2 dx \leq \int_1^3 h'^2 dx\\ 
+     //\text{Итак мы оценили второе слагаемое, оценим первое}//\\
+     \int_1^3 x h'^2 dx \leq \int_1^3 1\cdot h'^2 dx\\
+     //\text{собирая всё вместе}//\\
+     \Delta J = \int_1^2 \left(x h'^2 - \frac{1}{2} h^2 \right)dx \geq 0.
+ \end{gather*}
+ Доказано.\\
+*Где КБШ  - неравенство Коши-Буняковского-Шварца. Я бы мог написать полностью, но нижняя фигурная скоюочка растянулась бы и было бы не красиво\\
+Ответ: \\
+$\hat y = x-\frac{6 \log (x)}{2+\log (2)}$  абсолютный минимум с вариацией $\Delta J = J(\hat y + h) - J(\hat y) =\int_1^2 \left(x h'^2 - \frac{1}{2} h^2 \right)dx$ 
+
+\subsection{C. \S20.2: 5}
+Найти допустимые экстремали
+\begin{equation}
+J\left(y_{1}, y_{2}\right)=\int_{0}^{\pi}\left[\left(y_{1}^{\prime}\right)^{2}+\left(y_{2}^{\prime}\right)^{2}-2 y_{1} y_{2}\right] d x, y_{1}(0)=1, y_{2}(0)=-1, y_{1}\left(\frac{\pi}{2}\right)=e^{\frac{\pi}{2}}, y_{2}\left(\frac{\pi}{2}\right)=-e^{\frac{\pi}{2}} .
+\end{equation}
+
+
+\subsection{C. \S20.3: 2}
+Исследовать функционал на экстремум, если:
+\begin{equation}
+J(y)=\int_{0}^{1}\left[2 e^{x} y-\left(y^{\prime \prime}\right)^{2}\right] d x, y(0)=y^{\prime}(0)=1, y(1)=e, y^{\prime}(1)=2 e
+\end{equation}
+\subsection{C. \S21: 1}
+Решить изопериметрическую задачу
+\begin{equation}
+J(y)=\int_{0}^{\pi}\left(y^{\prime}\right)^{2} d x, y(0)=0, y(\pi)=\pi, \int_{0}^{\pi} y \sin x d x=1
+\end{equation}
+\subsection{T5*}
+Среди всех кривых на цилиндре $x^{2}+y^{2}=1$, соединяющих точки $(1,0,0)$ и $(0,1,1)$ найти кривую наименьшей длины (геодезическую кривую).
 \end{document}
