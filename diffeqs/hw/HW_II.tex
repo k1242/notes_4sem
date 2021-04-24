@@ -743,13 +743,13 @@ J(y)=\int_{1}^{3}\left[8 y y^{\prime} \ln x-x\left(y^{\prime}\right)^{2}+6 x y^{
 Вообще всё то же самое, но теория говорит нам что $\frac{\partial \Lagr}{\partial y'} = 0 |_{x=1}$ на свободном конце. И решение Задачи Коши при подставлении гран условий чутка дольше.  \textcolor[rgb]{0.480469,0.566406,0.480469}{\textit{Тех сошёл с ума, несите новый. Там нет белого текста}}    
 
 \begin{gather*}
-    \Lagr = -x y'(x)^2+6 x y'(x)+8 y(x) \log (x) y'(x)\\
+    \Lagr = -x y'(x)^2+6 x y'(x)+8 y(x) \ln (x) y'(x)\\
     \frac{\partial \Lagr}{\partial y}  - \frac{d }{d x} \frac{\partial \Lagr}{\partial y'} =0   \\
     2 y'(x)+2 x y''(x)-\frac{8 y(x)}{x}-6 = 0\\
     y = c_2 x^2+\frac{c_1}{x^2}-x\\
     //\text{Найдём граничные условия}//\\
     \frac{\partial \Lagr}{\partial y'} = 0 |_{x=1}\\
-    -2 x y'(x)+8 y(x) \log (x)+6 x = 0 |_{x=1}\\
+    -2 x y'(x)+8 y(x) \ln (x)+6 x = 0 |_{x=1}\\
     0 = \left(6-2 y'(1)\right)\\
     y'(1)=3\\
     //\text{Решая ЗК находим константы } C_1, C_2//\\
@@ -757,7 +757,7 @@ J(y)=\int_{1}^{3}\left[8 y y^{\prime} \ln x-x\left(y^{\prime}\right)^{2}+6 x y^{
 \end{gather*}
 Осталось проверить знак приращений.
 \begin{gather*}
-    \Delta J = J(\hat y + h) - J(\hat y) = \int_1^3 \left(x h'(x) \left(-h'(x)-8 x+8 (2 x-1) \log (x)+8\right)+8 h(x) \log (x) \left(h'(x)+4 x-1\right)\right) \, dx\\
+    \Delta J = J(\hat y + h) - J(\hat y) = \int_1^3 \left(x h'(x) \left(-h'(x)-8 x+8 (2 x-1) \ln (x)+8\right)+8 h(x) \ln (x) \left(h'(x)+4 x-1\right)\right) \, dx\\
     \int_1^3 -x h'^2 x dx + 
     \int_1^3 8 h \ln(x) \left(4x-1\right) dx + 
     \int_1^3 x \left(8+ 8 \ln(x)(2x-1)-8x \right)  d(h)+
@@ -777,36 +777,36 @@ J(y)=\int_{1}^{e}\left[x\left(y^{\prime}\right)^{2}+\frac{y^{2}}{x}+\frac{2 y \l
 Тут то же самое, просто производная ноль на 2 краях.
  \textcolor[rgb]{0.480469,0.566406,0.480469}{\textit{Не, а серьёзно, что происходит, что это за пустота? Я в недоумении. Неужели gather настолько слаб, что не умеет переходить на новую страницу? Или слаб я и не понимаю ничего?}}\\                                               
 \begin{gather*}
-    \Lagr = x y'(x)^2+\frac{y(x)^2}{x}+\frac{2 y(x) \log (x)}{x}\\
+    \Lagr = x y'(x)^2+\frac{y(x)^2}{x}+\frac{2 y(x) \ln (x)}{x}\\
     \frac{\partial \Lagr}{\partial y}  - \frac{d }{d x} \frac{\partial \Lagr}{\partial y'} =0   \\
-    -2 y'(x)-2 x y''(x)+\frac{2 y(x)}{x}+\frac{2 \log (x)}{x}=0\\
-    y = -\log (x)+\frac{c_1}{x}+c_2 x\\
+    -2 y'(x)-2 x y''(x)+\frac{2 y(x)}{x}+\frac{2 \ln (x)}{x}=0\\
+    y = -\ln (x)+\frac{c_1}{x}+c_2 x\\
     //\text{Найдём граничные условия}//\\
     \frac{\partial \Lagr}{\partial y'} = 0 |_{x=1;e}\\
-    -2 x y'(x)+8 y(x) \log (x)+6 x = 0 |_{x=1;e}\\
+    -2 x y'(x)+8 y(x) \ln (x)+6 x = 0 |_{x=1;e}\\
     2 x y'(x) = 0\\
     y'(1)=0\\
     y'(e)=0\\
     //\text{Решая ЗК находим константы } C_1, C_2//\\
-    \hat y = -\frac{e-x^2}{e x+x}-\log (x)\\
+    \hat y = -\frac{e-x^2}{e x+x}-\ln (x)\\
 \end{gather*}
 Это не самая приятная Экстремаль. Поэтому не будем её подставлять и попадать в ловушку Т3. Запишем так:
 \begin{gather*}
-    \Delta J = J(\hat y + h) - J(\hat y) = \int_1^e \frac{x^2 h'(x) \left(h'(x)+2 y'(x)\right)+2 h(x) (y(x)+\log (x))+h(x)^2}{x} \, d\\
+    \Delta J = J(\hat y + h) - J(\hat y) = \int_1^e \frac{x^2 h'(x) \left(h'(x)+2 y'(x)\right)+2 h(x) (y(x)+\ln (x))+h(x)^2}{x} \, d\\
     \int_1^e \left(h'^2 x + 2 h \frac{y+\ln(x)}{x} + \frac{h^2}{x} \right) dx+
     \int_1^e \left( 2x y' \right) d(h)\\
     //\text{берём по частям второй интеграл}//\\
     \int_1^e \left(h'^2 x + 2 h \frac{y+\ln(x)}{x} + \frac{h^2}{x} \right) dx -
     \int_1^e \left( 2 y' + 2xy'' \right)h \cdot dx \\
     \int_1^e  \left(h'^2 x +\frac{h^2}{x} \right) dx + 
-    \int_1^e \underbrace{\left(-2 y'(x)-2 x y''(x)+\frac{2 y(x)}{x}+\frac{2 \log (x)}{x} \right)}_{
+    \int_1^e \underbrace{\left(-2 y'(x)-2 x y''(x)+\frac{2 y(x)}{x}+\frac{2 \ln (x)}{x} \right)}_{
     \textcolor[rgb]{1,1,1}{\frac{\partial \Lagr}{\partial y}  - \frac{d }{d x} \frac{\partial \Lagr}{\partial y'}} =0 \text{ просто потому что мне так захотелось :)}
     } h \cdot dx \\
     \Delta J =\int_1^e  \left(h'^2 x +\frac{h^2}{x} \right) dx
 \end{gather*}
 Минимум, получается.\\
 Ответ: \\
-$\hat y = -\frac{e-x^2}{e x+x}-\log (x)$  абсолютный минимум с вариацией $\Delta J = J(\hat y + h) - J(\hat y) =\int_1^e  \left(h'^2 x +\frac{h^2}{x} \right) dx$ 
+$\hat y = -\frac{e-x^2}{e x+x}-\ln (x)$  абсолютный минимум с вариацией $\Delta J = J(\hat y + h) - J(\hat y) =\int_1^e  \left(h'^2 x +\frac{h^2}{x} \right) dx$ 
  \textcolor[rgb]{0.480469,0.566406,0.480469}{\textit{Там кстати есть белый текст в задаче, можно найти}}                                               
 
 \subsection{T4}
@@ -820,11 +820,11 @@ $\hat y = -\frac{e-x^2}{e x+x}-\log (x)$  абсолютный минимум с
     \Lagr = x y'(x)^2+y(x) y'(x)+2 y(x)\\
     \frac{\partial \Lagr}{\partial y}  - \frac{d }{d x} \frac{\partial \Lagr}{\partial y'} =0   \\
     -2 y'(x)-2 x y''(x)+2=0\\
-    x+c_1 \log (x)+c_2\\
+    x+c_1 \ln (x)+c_2\\
     //\text{Найдём граничные условия}//\\
     4 y'(2)+y(2) = 0\\
     //\text{Решая ЗК находим константы } C_1, C_2//\\
-    \hat y=x-\frac{6 \log (x)}{2+\log (2)}
+    \hat y=x-\frac{6 \ln (x)}{2+\ln (2)}
  \end{gather*}  
  \textcolor[rgb]{0.480469,0.566406,0.480469}{\textit{Ну оно конечно не совсем пугающее, но деление на логарифм 2. Зачем? За что? Кто придумывал эти числа? И да, я скорее всего не ошибся, потому что проверяю себя в Вольфраме :) Но всё равно никто же сюда списывать не приходит, все будут проверять сами и проверят написанное}}
  Определим знаки приращений:
@@ -835,43 +835,146 @@ $\hat y = -\frac{e-x^2}{e x+x}-\log (x)$  абсолютный минимум с
     \int_1^2 1/2 d(h^2)+
     \int_1^2 (2xy' +xy)d(h)\\
     //\text{берём по частям всё что не радует сердце и душу}//\\
-    \int_1^2 \left(x h'^2 - \frac{1}{2} h^2 \right)dx +
+    \int_1^2 
+     \int_1^2 \left(x h'^2  \right)dx +
     \int_1^2 \underbrace{\left( -2 y'(x)-2 x y''(x)+2 \right)}_{=0} h \cdot dx\\
-    \Delta J = \int_1^2 \left(x h'^2 - \frac{1}{2} h^2 \right)dx
- \end{gather*}                                               
- Кажется что экстремума нет, но он есть на самом деле. Поркажем что это строгий минимум (интеграл всегда положителен)
- \begin{gather*}
-    //\text{оценим второе слагаемое}//\\
-     |h(x)| = \bigg|\int_1^x h' dy \bigg| = \bigg|\int_1^x h' \cdot 1 \cdot dy \bigg| \underbrace{\leq}_{\text{КБШ*}} \sqrt{\int_1^x 1^2 \cdot dy \int_1^xh'^2 dy  } = \sqrt{(x-1) \int_1^xh'^2 dy }\\
-     \int_1^3 h^2 dx \leq \int_1^3 (x-1) dx \int_1^x h'^2 dy  \leq \int_1^3 (x-1)dx \cdot \int_1^3 h'^2 dx = 2 \int_1^3 h'^2 dx\\
-     \int_1^3 \frac{1}{2}h^2 dx \leq \int_1^3 h'^2 dx\\ 
-     //\text{Итак мы оценили второе слагаемое, оценим первое}//\\
-     \int_1^3 x h'^2 dx \geq \int_1^3 1\cdot h'^2 dx\\
-     //\text{собирая всё вместе}//\\
-     \Delta J = \int_1^2 \left(x h'^2 - \frac{1}{2} h^2 \right)dx \geq 0.
- \end{gather*}
- Доказано.\\
-*Где КБШ  - неравенство Коши-Буняковского-Шварца. Я бы мог написать полностью, но нижняя фигурная скоюочка растянулась бы и было бы не красиво\\
+    \Delta J = \int_1^2 \left(x h'^2 \right)dx
+ % \end{gather*}                                               
+ % Кажется что экстремума нет, но он есть на самом деле. Поркажем что это строгий минимум (интеграл всегда положителен)
+ % \begin{gather*}
+ %    //\text{оценим второе слагаемое}//\\
+ %     |h(x)| = \bigg|\int_1^x h' dy \bigg| = \bigg|\int_1^x h' \cdot 1 \cdot dy \bigg| \underbrace{\leq}_{\text{КБШ*}} \sqrt{\int_1^x 1^2 \cdot dy \int_1^xh'^2 dy  } = \sqrt{(x-1) \int_1^xh'^2 dy }\\
+ %     \int_1^3 h^2 dx \leq \int_1^3 (x-1) dx \int_1^x h'^2 dy  \leq \int_1^3 (x-1)dx \cdot \int_1^3 h'^2 dx = 2 \int_1^3 h'^2 dx\\
+ %     \int_1^3 \frac{1}{2}h^2 dx \leq \int_1^3 h'^2 dx\\ 
+ %     //\text{Итак мы оценили второе слагаемое, оценим первое}//\\
+ %     \int_1^3 x h'^2 dx \geq \int_1^3 1\cdot h'^2 dx\\
+ %     //\text{собирая всё вместе}//\\
+ %     \Delta J = \int_1^2 \left(x h'^2 - \frac{1}{2} h^2 \right)dx \geq 0.
+  \end{gather*}
+%  Доказано.\\
+% *Где КБШ  - неравенство Коши-Буняковского-Шварца. Я бы мог написать полностью, но нижняя фигурная скоюочка растянулась бы и было бы не красиво\\
 Ответ: \\
-$\hat y = x-\frac{6 \log (x)}{2+\log (2)}$  абсолютный минимум с вариацией $\Delta J = J(\hat y + h) - J(\hat y) =\int_1^2 \left(x h'^2 - \frac{1}{2} h^2 \right)dx$ 
+$\hat y = x-\frac{6 \ln (x)}{2+\ln (2)}$  абсолютный минимум с вариацией $\Delta J = J(\hat y + h) - J(\hat y) =\int_1^2 \left(x h'^2 \right)dx$ 
 
 \subsection{C. \S20.2: 5}
 Найти допустимые экстремали
 \begin{equation}
 J\left(y_{1}, y_{2}\right)=\int_{0}^{\pi}\left[\left(y_{1}^{\prime}\right)^{2}+\left(y_{2}^{\prime}\right)^{2}-2 y_{1} y_{2}\right] d x, y_{1}(0)=1, y_{2}(0)=-1, y_{1}\left(\frac{\pi}{2}\right)=e^{\frac{\pi}{2}}, y_{2}\left(\frac{\pi}{2}\right)=-e^{\frac{\pi}{2}} .
 \end{equation}
-
+Практически то же самое, только теперь у нас система 2 уравнений Лагранжа второго рода.
+\begin{gather*}
+    \Lagr = y_1'^2 + y_2'^2 -2 y_1 y_2\\
+    \begin{cases}
+         \frac{\partial \Lagr}{\partial y_1}  - \frac{d }{d x} \frac{\partial \Lagr}{\partial y'_1} = 0  \\
+         \frac{\partial \Lagr}{\partial y_1}  - \frac{d }{d x} \frac{\partial \Lagr}{\partial y'_2} = 0  
+    \end{cases}\\
+    \begin{cases}
+        y_1''+y_2=0\\
+        y_2''+y_1=0\\
+    \end{cases}\\
+    \begin{cases}
+        \text{y1}(x) = \frac{1}{2} ((c_1+c_3) \cos (x)+(c_1-c_3) \cosh (x)+(c_2+c_4) \sin (x)+(c_2-c_4) \sinh (x))\\
+        \text{y2}(x) = \frac{1}{2} ((c_1+c_3) \cos (x)+(c_3-c_1) \cosh (x)+(c_2+c_4) \sin (x)+(c_4-c_2) \sinh (x))
+    \end{cases}\\
+    //\text{И подставляя граничные условия получаем:}//\\
+    \begin{cases}
+        \hat y_1=e^x\\
+        \hat y_2 = e^{x}\\
+    \end{cases}
+\end{gather*}
+Ну да, можно было бы угадать сразу. Ну экстремали мы нашли. Проверять дают они экстремум или нет нас не просили, мы и не будем.\\
+Ответ:\\
+Допустимые экстремали: $\hat y_1=e^x, \hat y_2 = e^{x}$
 
 \subsection{C. \S20.3: 2}
 Исследовать функционал на экстремум, если:
 \begin{equation}
 J(y)=\int_{0}^{1}\left[2 e^{x} y-\left(y^{\prime \prime}\right)^{2}\right] d x, y(0)=y^{\prime}(0)=1, y(1)=e, y^{\prime}(1)=2 e
 \end{equation}
+Всё то же самое, только уравнение Лагранжа 2 рода становится уравнением Эйлера-Пуассона.
+\begin{gather*}
+    \Lagr = 2e^xy - (y'')^2\\
+    \frac{\partial \Lagr}{\partial y}-\frac{d}{d x} \frac{\partial \Lagr}{\partial y^{\prime}}+\frac{d^{2}}{d x^{2}} \frac{\partial \Lagr}{\partial y^{\prime \prime}}=0\\
+    2e^x - \frac{d ^2}{d x^2} (2y'')=0\\
+    y^{(4)}=e^x\\
+    y=C_4 x^3+C_3 x^2+C_2 x+C_1+e^x\\
+    //\text{из условия} y(0)=y'(0)=1 \text{получаем} //\\
+    C_1=C_2=0\\
+     y=C_4 x^3+C_3 x^2+e^x\\
+     //\text{из условия} y(1)=e, y'(1)=2e \text{ получаем} //\\
+     C_4=e\\
+     C_3=-e\\
+     \hat y = ex^3-ex^2+e^x
+\end{gather*}
+Это печально, но Экстремум просят проверить\\
+\begin{gather*}
+    \Delta J = J(\hat y + h) - J(\hat y) = \int_0^1(2e^xh-2 \hat y'' h'' - h''^2)dx\\
+    //\text{в задачах со второй производной не только h на концах должен обнуляться, но и } h'//\\
+    // \text{Интегрируем вторую производную h дважды по частям}//\\
+    \int_0^1 \left(-h''^2+2e^xh  - 2h y^{(4)} \right)dx = \int_0^1 \left(-h''^2 \right)dx \leq 0
+\end{gather*}\\
+Итого - экстремаль - абсолютный максимум.\\
+Ответ:\\
+$\hat y = ex^3-ex^2+e^x$  абсолютный максимум с вариацией $\Delta J = J(\hat y + h) - J(\hat y) =\int_0^1 \left(-h''^2 \right)dx \leq 0$ 
+
 \subsection{C. \S21: 1}
 Решить изопериметрическую задачу
 \begin{equation}
-J(y)=\int_{0}^{\pi}\left(y^{\prime}\right)^{2} d x, y(0)=0, y(\pi)=\pi, \int_{0}^{\pi} y \sin x d x=1
+J(y)=\int_{0}^{\pi}\left(y^{\prime}\right)^{2} d x, y(0)=0, y(\pi)=\pi, \int_{0}^{\pi} y \sin x d x=0
 \end{equation}
+ \textcolor[rgb]{0.480469,0.566406,0.480469}{\textit{В электронной версии учебника тут опечатка и в ограничении интеграл единичка. Но там ответ с условием не сходится, так что берём нолик из конспектов Ильи Викторовича}}                                               
+Найдём допустимые экстремали:
+\begin{gather*}
+    \Lagr = (y')^2 + \lambda \cdot y \sin{(x)}\\
+    \frac{\partial \Lagr}{\partial y}  - \frac{d }{d x} \frac{\partial \Lagr}{\partial y'} =0   \\
+    y''=\lambda \sin{(x)}/2\\
+    y=y(x)=C_2 x+C_1-\frac{1}{2} \lambda  \sin (x)\\
+    \begin{cases}
+        y(0)=0 \Rightarrow C_1=0\\
+        y(\pi)=\pi \Rightarrow C_2 = 1\\
+        \int_{0}^{\pi} y \sin x d x=0 \Rightarrow \lambda = 4
+    \end{cases}\\
+    \hat y = x-2 \sin{(x)}
+\end{gather*}
+Проверим знаки приращений.
+\begin{gather*}
+    \Delta J = J(\hat y + h) - J(\hat y) = \int_0^{\pi} (2\hat{y}'h' + h'^2) dx= \int_0^{\pi} (h'^2) dx - \lambda \int_0^\pi h \sin{(x)}dx = \int_0^{\pi} (h'^2) dx
+\end{gather*}
+Итого экстремаль - абсолютный минимум.\\
+Ответ:\\
+$\hat y = x-2 \sin{(x)}$  абсолютный минимум с вариацией $\Delta J = J(\hat y + h) - J(\hat y) =\int_0^{\pi} (h'^2) dx \geq 0$ 
+
 \subsection{T5*}
 Среди всех кривых на цилиндре $x^{2}+y^{2}=1$, соединяющих точки $(1,0,0)$ и $(0,1,1)$ найти кривую наименьшей длины (геодезическую кривую).
+
+ \textcolor[rgb]{0.480469,0.566406,0.480469}{\textit{Как же хочется записать метрический тензор для полярных координать, приравнять $w_{\varphi}=0,w_{z}=0$ и сразу получить ответ, но мы тут аналмехом не испорчены, не будем}}
+ Если вы знаете, как получается метрический тензор в полярных координатах, сюда не надо смотреть, будет больно. Идите сразу к \ref{T5} Это только если вдруг кто-то не знает как это делают в приличном обществе.
+ \begin{gather*}
+ \begin{cases}
+     x=\cos{(\varphi)} ,
+     dx = -\sin{(\varphi)} d(\varphi)\\
+     y=\sin{(\varphi)} ,
+     dy = \cos{(\varphi)} d(\varphi)\\
+     ds^2=dx^2+dy^2+dz^2
+ \end{cases}\\
+    ds^2=d(\varphi)^2+dz^2\\
+ \end{gather*} 
+    Теперь можно переформулировать задачу, как:\\
+    Найти максимум 
+\begin{equation}\label{T5}
+    \int_0^{\pi / 2} \left( \sqrt{\left(\frac{d z}{d \varphi} \right)^2+1} \right)  d(\varphi) ,z(0)=0,z(\pi/2)=1.
+\end{equation}                                              
+Такое уже мы нарешались.
+Найдём экстремали.
+\begin{gather*}
+    \Lagr = \sqrt{z'^2+1}\\
+     \frac{\partial \Lagr}{\partial z}  - \frac{d }{d x} \frac{\partial \Lagr}{\partial z'} =0 \\
+     \frac{z''}{\left((z')^2+1\right)^{3/2}}=0\\
+     z''=0\\
+     z=C_1+C_2 \varphi\\
+     \hat z = \varphi \frac{2}{\pi}
+\end{gather*}
+Проверять что это минимум нет необходимости, ведь существует Теорема Хопфа — Ринова, уже доказанная в прошлом семестре курса Математического Анализа.\\
+Ответ:\\
+в циллиндрических координатах уравнением геодезической будет $ \hat z = \varphi \frac{2}{\pi}$
 \end{document}
