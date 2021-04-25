@@ -1,0 +1,206 @@
+Частенько непонятно, как перейти к переменным действие-угол $(I, \varphi)$, когда есть некоторые $(p, q)$. Иногда нам везёт, переменные разделяются, тогда
+\begin{equation*}
+    H \equiv H(F_1(q_1, p_1), \ldots, F_n(q_n, p_n)),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    S = - h t + \sum_{k} S_k (q_k, \alpha_k),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    p_k = \frac{\partial S}{\partial q_k} = p_k (q_k, \alpha)
+\end{equation*}
+более того
+\begin{equation*}
+    I_k = \frac{1}{2\pi} \oint_{C_k} p_k (q_k, \alpha) \d q_k,
+    \hspace{5 mm}
+    \varphi_k \mod 2 \pi,
+\end{equation*}
+где $k = 1, \ldots, n$, а $C_k$ -- $k$-й цикл на торе. 
+\texttt{Пуанкаре пишет, что системы бывают более интегрируемые и менее интегрируемые}.
+
+\subsubsection*{Задача}
+
+Пусть у нас $n=2>1$. Системы из двух грузиков на пружинке в коробке
+\begin{equation*}
+    L = \frac{m}{2} (\dot{x}_1^2 + \dot{x}_2^2) - \frac{c}{2} (x_1^2 + x_1^2 + (x_1-x_2)^2).
+\end{equation*}
+Хочется перейти к переменным действие угол. Давайте вспомним про переход к главным координатам, где
+\begin{equation*}
+    L = \frac{\dot{\theta}_1^2 - \lambda_1 \theta_1^2}{2} + \frac{\dot{\theta}_2^2 - \lambda_2 \theta^2}{2},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    H = \frac{p_1^2 + \omega_1^2 \theta_1^2}{2} + \frac{p_2^2 + \omega_2^2 \theta_2^2}{2},
+\end{equation*}
+получается система разделилась на два первых интеграла $F_1$ и $F_2$, тогда
+\begin{equation*}
+    I_1  =\frac{1}{2\pi} \oint_{C_1} p_1 (\theta_1, F_1) \d \theta_1 = \frac{1}{2\pi} \frac{2 \pi F_1}{\omega_1} = \frac{F_1}{\omega_1},
+\end{equation*}
+где в конце мы просто вспомнили площадь эллипса, тогда
+\begin{equation*}
+    \tilde{H} = I_1 \omega_1 + I_2 \omega_2 = h.
+\end{equation*}
+Приходим к вырожденной (в некотором смысле) системе
+\begin{align*}
+    &\dot{\varphi}_1 = \omega_1, \hspace{5 mm} &\dot{\varphi}_2 = \omega_2, \\
+    &\dot{I}_1 = 0, \hspace{5 mm}   &\dot{I}_2 = 0.
+\end{align*}
+
+
+\subsection{Немного о теории возмущений}
+
+Пусть мы немного возмущаем хорошую систему, рассмотрим случай $n=1$.
+Возмущение -- переход к $n=1.5$ (\texttt{ну, типа, ...})
+\begin{equation*}
+    H \to H(q, p, \lambda(\varepsilon t)), \hspace{5 mm} 0 < \varepsilon \ll 1.
+\end{equation*}
+Выберем $\tau = \varepsilon t$, например, маятник -- который медленно тянут за ниточку. 
+
+\begin{to_def}
+    Функция $I(q, p, \lambda)$ -- называется \textit{адиабатическим инвариантом} системы, если
+    \begin{equation*}
+        \forall \varkappa > 0, \ \exists \varepsilon_0 (\varkappa) \colon  \forall \varepsilon < \varepsilon_0 
+        \ \ 
+        \bigg|
+            I(q(t), p(t), \lambda(\varepsilon t)) - I(q(0), p(0), \lambda(0))
+        \bigg| < \varkappa,
+        \hspace{5 mm}
+        0 \leq t \leq \frac{1}{\varepsilon}.
+    \end{equation*}
+\end{to_def}
+
+
+Делаем всё как раньше, рассмотрим производяющую функцию
+\begin{equation*}
+    S(q, I, \lambda),
+    \hspace{5 mm}
+    p = \frac{\partial S}{\partial q},
+    \hspace{5 mm}
+    \varphi = \frac{\partial S}{\partial I} ,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    q \equiv q(\varphi, I, \lambda).
+\end{equation*}
+Итого, находим
+\begin{equation*}
+    \hat{H} = H + \frac{\partial S}{\partial t} = H + \frac{\partial S}{\partial \lambda} \frac{d \lambda}{d \tau} \frac{d \tau}{d t} = H + \varepsilon \lambda'_\tau \frac{\partial S}{\partial \lambda} = H_0 + \varepsilon H_1.
+\end{equation*}
+Теперь можем уравнения Гамильтона и записать
+\begin{equation*}
+    \dot{I} = - \varepsilon \lambda_\tau' \frac{\partial }{\partial \varphi} \left(
+        \frac{\partial S}{\partial \lambda} 
+    \right) = - \varepsilon \frac{\partial H-1}{\partial \varphi}
+    ,
+    \hspace{5 mm}
+    \dot{\varphi} = \frac{\partial H_0}{\partial \lambda} + \varepsilon \lambda_\tau' \frac{\partial }{\partial I} \left(
+        \frac{\partial S}{\partial \lambda} 
+    \right) = \frac{\partial H_0}{\partial I} + \varepsilon \frac{\partial H_1}{\partial I},
+\end{equation*}
+где $\dot{I}$ -- медленная переменная, $\dot{\varphi}$ -- быстрая переменная.
+
+Вообще $H_1$ -- $2\pi$-периодическая функция от $\varphi$, \texttt{будем считать, что} в случае, если 
+\begin{equation*}
+    \langle \dot{I} \rangle_\varphi = 0,
+\end{equation*}
+то у усредненной системы есть интеграл движения. Вообще на $t \in [0, 1/\varepsilon]$, верно, что $\textnormal{err}\, I < \const \cdot \varepsilon$.
+
+\subsubsection*{Задача}
+
+Есть некоторая точка массы $m$, стенка удаляется как $l(\varepsilon t)$ -- адиабатически ($v \gg \dot{l}$) медленно расширяется. 
+
+Найдём переменную действия 
+\begin{equation*}
+    I = \frac{1}{2\pi} \oint p \d x = \frac{m v l}{\pi},
+\end{equation*}
+что и является адиабатическим инвариантом. 
+
+\subsection{Многомерный случай}
+
+В случае $n>1$ перейдём от $(I, \varphi)$ к $(J, \psi)$ (так, чтобы $H_0(I) \to H_0 (I) + \varepsilon H_1 (I, \varphi, \varepsilon) = \hat{H} (J)$)
+преобразованием вида
+\begin{equation*}
+    S(\varphi, J) = \varphi J +  \varepsilon S_1 (\varphi, J) + \varepsilon^2 S_2 (\varphi, J) + \ldots
+\end{equation*}
+Тогда, из критерия каноничности,
+\begin{equation*}
+    I = J + \varepsilon \frac{\partial S_1}{\partial \varphi}  + \ldots,
+    \hspace{5 mm}
+    \psi = \varphi + \varepsilon \frac{\partial S_1}{\partial J} + \ldots,
+\end{equation*}
+тогда
+\begin{equation*}
+    \hat{H} = H_0 \left(J + \varepsilon \frac{\partial S_1}{\partial \varphi} + \ldots \right) + \varepsilon H_1 \left(J + \varepsilon \frac{\partial S_1}{\partial \varphi} + \ldots \right) + \ldots = \hat{H}_0 (J) + \varepsilon \hat{H}_1 (J) + \ldots,
+\end{equation*}
+так приходим к системе
+\begin{align*}
+    O(1) &\colon \hat{H}_0 (J) = H_0 (J=I), \\
+    O(\varepsilon) &\colon \hat{H}_1 (J) = \frac{\partial H_0}{\partial J} \frac{\partial S_1}{\partial \varphi} + H_1 (J, \varphi, 0)., \\
+    O(\varepsilon^2) &\colon \ldots
+\end{align*}
+что перепишется в виде
+\begin{equation*}
+    \hat{H}_1 (J) = \omega_0 (J) \cdot \frac{\partial S}{\partial \varphi} + H_1(J, \varphi, 0),
+\end{equation*}
+раскалдывая в ряд Фурье находим, что
+\begin{equation*}
+    H_1 = \sum_k H_{1k} \exp(i (\vc{k} \cdot \vc{\varphi}));
+    \hspace{5 mm}
+    S_1 = \sum_k S_{1k} \exp\left(
+        i (\vc{k} \cdot \hat{\varphi})
+    \right),
+\end{equation*}
+что приводит к 
+\begin{equation*}
+    (\vc{\omega}_0 \cdot \vc{k}) S_{1k} = H_{1k},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    S_1 = \sum \frac{H_{1k}}{(\vc{\omega}_0 \cdot \vc{k}) } \exp\left(
+        i (\vc{k} \cdot \vc{\varphi})
+    \right),
+\end{equation*}
+а это явно демонстрирует \textit{проблему малых знаменателей}.
+
+\texttt{Пуанкаре показал, что такие ряды всегда\footnote{
+    \texttt{У Бродского было стихотворение <<Конец прекрасной эпохи>>. } 
+}  расходятся и умер в 1912 году. В механике наступил пост- \\модерн -- народ пришел к тому что всё неинтегрируется -- беда.} 
+
+
+Но в 1954 году \textbf{К}олмогоров написал статейку на 4 странице, его студент \textbf{А}рнольд, в 1963 году её доказал\footnote{
+    Арнольд, Нейштат, Табор.
+}  страниц на 60. Независимо этим занимался \textbf{М}озер, который пришел к похожим заключениям, но с другой стороны. 
+
+Идея в том, чтобы строить сверхсходящиеся ряды $\varepsilon^{2^n}$, которые очень быстро убывают. Тажке сразу забиваем на рациональные $\omega$, более того важна степень иррациональности числа: когда $\omega$ сильно иррациональное -- есть надежда на успех.
+
+\begin{to_def}
+    Для того, чтобы КАМ-теория работала нужно, чтобы система была \textit{невырождена}:
+    \begin{equation*}
+        \bigg|
+            \frac{\partial^2 H_0}{\partial I_i \partial I_j} 
+        \bigg| \neq 0, \ \Leftrightarrow \ \bigg|
+            \frac{\partial \omega_i}{\partial I_j} 
+        \bigg| \neq 0.
+    \end{equation*}
+    Это всё потому что нам хочется, чтобы мера резонансных торов была бы равна 0. 
+\end{to_def}
+
+\begin{to_def}
+    Говорят, что \textit{торы иррациональны}, если ($n=2$)
+    \begin{equation*}
+        \frac{\omega_1 (I_1, I_2)}{\omega_2 (I_1, I_2)} \neq \frac{n}{m}
+    \end{equation*}
+    что соответствует плотной\footnote{
+        Кстати,здесь начинает цвести эргодическая теория.
+    }  намотке тора. 
+\end{to_def}
+
+
+\begin{to_def}
+    Система называется \textit{изоэнергетически невырожденной}, если
+    \begin{equation*}
+        \det \begin{bmatrix}
+            \dfrac{\partial^2 H_0}{\partial \vc{I}\T \partial \vc{I}} & \vc{\omega} \\
+            \vc{\omega}\T & 0
+        \end{bmatrix} \neq 0,
+\hspace{10 mm}
+        \det \begin{bmatrix}
+            \dfrac{\partial \vc{\omega} }{\partial \vc{I}\T } & \vc{\omega} \\
+            \vc{\omega}\T & 0
+        \end{bmatrix} \neq 0.
+    \end{equation*}
+\end{to_def}
+
+
+

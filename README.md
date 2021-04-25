@@ -15,7 +15,8 @@
 
 *  **дифференциальным уравнениям :mag:** 
 (
-[*задание*](https://github.com/k1242/notes_4sem/blob/main/diffeqs/hw/HW.pdf)
+[*задание I*](https://github.com/k1242/notes_4sem/blob/main/diffeqs/hw/HW.pdf),
+[*задание II*](https://github.com/k1242/notes_4sem/blob/main/diffeqs/hw/HW_II.pdf)
 );
 
 * **современной оптике**

@@ -28,7 +28,7 @@
 
 Что происходит и почему
 \begin{equation*}
-    \frac{d \varphi}{d t} = \frac{\partial \varphi}{\partial t} + \frac{\partial \varphi}{\partial q} \dot{q} + \frac{\partial \varphi}{\partial p} \dot{p} = \frac{\partial \varphi}{\partial t} \{\varphi, H\} = 0,
+    \frac{d \varphi}{d t} = \frac{\partial \varphi}{\partial t} + \frac{\partial \varphi}{\partial q} \dot{q} + \frac{\partial \varphi}{\partial p} \dot{p} = \frac{\partial \varphi}{\partial t} + \{\varphi, H\} = 0,
 \end{equation*}
 соответственно скобки пуассона -- вплоне логичный критерий первого интеграла.
 
@@ -44,7 +44,7 @@
 \begin{to_thr}[Теорема Э. Нетер]
     Пусть есть некоторое однопараметрическое семейство $\tilde{q} = \tilde{q}(q, t, \alpha)$ и $\tilde{t} = \tilde{t} (q, t, \alpha)$ где $\alpha \in \mathbb{R}^1$ такое, что дифференцируемо, $\alpha =0 \ \sim \ $ тождественное преобразование, и
     \begin{equation*}
-        L \left(\tilde{q}, \frac{d \tilde{q}}{d \tilde{t}}, t\right) \d \tilde{t} = L\left(q, \frac{d q}{d t}, t\right) \d t.
+        L \left(\tilde{q}, \frac{d \tilde{q}}{d \tilde{t}}, \tilde{t}\right) \d \tilde{t} = L\left(q, \frac{d q}{d t}, t\right) \d t.
     \end{equation*}
     Тогда в системе есть первый интеграл, который вычисляется так:
     \begin{equation*}
@@ -146,7 +146,7 @@
 \begin{equation*}
     I_{\text{П}} = \oint p \delta q = \const
 \end{equation*}
-что приводит к униврсальному интегральному инварианту Пуанкаре. \texttt{Прикол в том, что он не особо зависит от $H$.}
+что приводит к универсальному интегральному инварианту Пуанкаре. \texttt{Прикол в том, что он не особо зависит от $H$.}
 
 \subsubsection*{Пример}
 

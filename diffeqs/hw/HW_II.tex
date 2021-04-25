@@ -1,6 +1,9 @@
 \documentclass{article}
 \newcommand{\rg}{\text{rg}}
 \input{preambule}
+\usepackage{amssymb}
+\usepackage{ mathrsfs }
+\newcommand{\Lagr}{\mathcal{L}}
 \begin{document}
 
 
@@ -39,8 +42,8 @@
 \section{От авторов}
 \subsection{Шрифт для личных сообщений}
 \textcolor[rgb]{0.480469, 0.566406, 0.480469}{\textit{Меня попросили писать текст не имеющий отношения к решению как-то выделенно, поэтому отныне текст, который я пишу просто от души и сердца, будет написан курсивным шрифтом цвета лягушки в обмороке (я серьёзно, такой цвет есть)}}
-\subsection{Благодарности}                                            
-\textcolor[rgb]{0.480469,0.566406,0.480469}{\textit{Я благодарен *список людей* за *причины* FIXME}}
+\subsection{Благодарности}\label{thxs}                                            
+\textcolor[rgb]{0.480469,0.566406,0.480469}{\textit{Я благодарен Илье Викторовичу, Биглову Камилю, Хоружему Кириллу, Примаку Евгению, Анастасии Громовой, Александру Двуреченскому, Мише Зотову, Андрею Привалову, Корогоду Дмитрию, Гаврилову Дмитрию и всей 926 группе за прямую или косвенную помощь в создании этого теханного решения (исправление опечаток, помощь в работе с техом и помощь в сохранении рассудка тоже за помощь считается). Было бы грубо не упомянуть тех кто постоянно говорил мне об опечатках и откровенных ошибках, тех с кем я сверял ответы, если видел полную жесть, тех кто помогал научиться техать быстро и не совсем уж плохо, тех кто помогал мне не бросить это дело, и естественно, моего любимого семинариста Илью Викторовича тоже надо упомянуть. Если я кого забыл, пишите, добавим :)}}
 \subsection{Заходите в гости}
  \textcolor[rgb]{0.480469,0.566406,0.480469}{\textit{Заходите в гости, всегда всем рад :)}}                                                                                              
 
@@ -86,7 +89,7 @@ y = r \cos{(\varphi)}&&\dot{y} = -r \sin {(\varphi)} \dot{\varphi} + \dot{r} \co
     \begin{cases}
        \dot{x}=y-x\\
        \dot{y}=x+y+z\\
-       \dot{x}=x-y\\
+       \dot{z}=x-y\\
     \end{cases}
 \end{equation}
 Довольно очевидно, что выделить 2 каких-то уравнения без третьей переменной тут не выйдет  \textcolor[rgb]{0.480469,0.566406,0.480469}{(\textit{ну или я слишком слаб и не могу этого сделать)}} поэтому воспользуемся правилом пропорции (чёрной магией):
@@ -103,6 +106,7 @@ A/B=C/D=E/F=k;\forall \alpha, \beta,\gamma \in \mathbb{R}, \alpha^2+\beta^2+\gam
     \frac{dy}{y+C_1}=\frac{dx}{y-x}\\
     y'(y-x)=(y+C_1) \\
     \text{//} y=x+t \text{//} \\
+     \textcolor[rgb]{0.480469,0.566406,0.480469}{\textit{нормальная замена, не обижайте её, не будьте как Дима(}}                                               \\
     tt'=x+C_1  \\
     t^2=x^2+2C_1x+C_2 \\
     C_2=y^2-2xy+2(x+z)x
@@ -111,7 +115,7 @@ A/B=C/D=E/F=k;\forall \alpha, \beta,\gamma \in \mathbb{R}, \alpha^2+\beta^2+\gam
 \begin{equation*}
     \rg \begin{vmatrix}
         \frac{\partial C_1}{\partial x} && \frac{\partial C_1}{\partial y} && \frac{\partial C_1}{\partial z}\\
-        \frac{\partial C_1}{\partial x} && \frac{\partial C_1}{\partial y} && \frac{\partial C_1}{\partial z}
+        \frac{\partial C_2}{\partial x} && \frac{\partial C_2}{\partial y} && \frac{\partial C_2}{\partial z}
     \end{vmatrix}= \rg \begin{vmatrix}
         1&&0&&1\\
         -2y+4x+2z &&2y-2x && 2x
@@ -135,7 +139,7 @@ Cделаем замену $\dot x = y$ тогда:
      //\beta=y,\alpha=\sin{(x)}//\\ 
      -\cos{(x)}+\frac{y^2}{2}=C_1
 \end{gather*}
-Второго первого интеграла тут не будет, иначе бы задача математического маятника решалась слишком легко. Зато у нас есть интеграл энергии. Из него можно немного подумать и получить различные ситуации: $C_1=0$, $C_1>0$ , $C_1<0$.Подставив этот первый игнтеграл, можно сделать линеаризацию системы, получить что $(2\pi n,0)$ - центры, $(\pi (2k-1),0)$ - сёдла, и получить такое поведение: \ref{fig:Т1a}
+Второго первого интеграла тут не будет, иначе бы задача математического маятника решалась слишком легко. Зато у нас есть интеграл энергии. Из него можно немного подумать и получить различные ситуации: $C_1=0$, $C_1>0$ , $C_1<0$.Подставив этот первый интеграл, можно сделать линеаризацию системы, получить что $(2\pi n,0)$ - центры, $(\pi (2k-1),0)$ - сёдла, и получить такое поведение: \ref{fig:Т1a}
 \begin{figure}[h!]
 \center{\includegraphics[width=1\linewidth]{T1a.png}}
 \caption{Т1(a)}
@@ -219,27 +223,759 @@ Cделаем замену $\dot x = y$ тогда:
         $y(t)=C_3(C_1-t)-C_2+\frac{1}{(C_1-t)^3}$,\\
         $z(t)=\frac{C_2}{C_1-t}-\frac{1}{(C_1-t)^3}$.\\
 На самом деле надо ещё показать что первые интегралы $C_1,C_2$ независимы. Ну если очень хочется можно их выразить, явно посчитать ранг и т.д. Но я воспользуюсь следующим утверждением: поскольку система разрешима (мы смогли решить 2 уравнение) с использованием этих первых 2 интегралов, то они независимы.
- \textcolor[rgb]{0.480469,0.566406,0.480469}{\textit{Пока эти первые интегралы больше используются, как окнстанты. И мало смысла смотреть на них как-то иначе. В следующей части задания это будет не совсем так.}}                                               
+ \textcolor[rgb]{0.480469,0.566406,0.480469}{\textit{Пока эти первые интегралы больше используются, как окнстанты. И мало смысла смотреть на них как-то иначе. В следующей части задания это будет не совсем так.}}
+
+
 \section{II. Линейные однородные уравнения в частных производных первого порядка}
 \subsection{C. \S17: 5}
+Найти общее решение уравнения и решить задачу Коши с указанным
+начальным условием
+\begin{equation}\label{17.5}
+x \frac{\partial u}{\partial x}+y \frac{\partial u}{\partial y}+z^{2}(x-3 y) \frac{\partial u}{\partial z}=0, u=\frac{x^{2}}{y} \text { при } 3 y z=1
+\end{equation}
+Найдём характерестическую систему уравнения \ref{17.5}.
+\begin{equation*}
+    \begin{cases}
+        \dot x=x, (1)\\
+        \dot y = y, (2)\\
+        \dot z = z^2(x-3y),(3)\\
+    \end{cases}
+\end{equation*}
+Для решения надо найти 2 независимых первых интеграла. В данной задаче можно просто составить 2 линейные комбинации: 
+\begin{align*}
+    (1) \cdot y-(2) \cdot x=0 && (1)\cdot z^2-(2)\cdot 3z^2 -(3)=0\\
+    y \cdot dx  = x \cdot dy &&   z^2 \cdot dx - 3z^2 \cdot dy -dz=0\\
+    \frac{dx}{x}=\frac{dy}{y} && dx - 3dy - \frac{dz}{z^2}=0\\
+    \ln{\frac{x}{y}}=C_1(x,y,z) && x-3y+\frac{1}{z}=C_2(x,y,z)\\
+\end{align*}
+Вообще должно быть очевидно, что $C_1$ и $C_2$ независимы, потому что $C_2$ зависит от $z$ а $C_1$ - нет. Но давайте проверим ранг.  \textcolor[rgb]{0.480469,0.566406,0.480469}{\textit{просто это-то тут очевидно, а если наткнуться на задачу где не очевидно, а матаппарат не будет отработан будет печально}}\\
+\begin{gather*}
+\rg \begin{vmatrix}
+        \frac{\partial C_1}{\partial x} && \frac{\partial C_1}{\partial y} && \frac{\partial C_1}{\partial z}\\
+        \frac{\partial C_2}{\partial x} && \frac{\partial C_2}{\partial y} && \frac{\partial C_2}{\partial z}
+    \end{vmatrix} = 
+     \rg \begin{vmatrix}
+        \frac{1}{x}&& -\frac{1}{x } && 0\\
+        1 &&-3 && -\frac{1}{z^2}
+    \end{vmatrix} = 2                                                   
+\end{gather*}                                               
+Значит решением \ref{17.5} будет $F[U_1(x,y,z),U_2(x,y,z)]$ где $F$ - любая непрерывно дифференцируемая функция, $U_1(x,y,z)=\frac{x}{y}, U_2(x,y,z)=x-3y+\frac{1}{z}$. Здесь я выкинул логарифм, потому что если логарифм отношения первый интеграл, то и без логарифма первый интеграл. Вообще это надо было сделать раньше, но я сделал тут :)\\
+Решим ЗК.
+\begin{gather*}
+\begin{cases}
+        u=\frac{x^2}{y}\\
+        3yz=1\\
+        \frac{x}{y}=U_1\\
+        x-3y+\frac{1}{z}=U_2\\
+    \end{cases}    \\
+    \begin{cases}
+    u=\frac{x^2}{y}\\
+        3yz=1\\
+        \frac{x}{y}=U_1\\
+        x=U_2\\
+    \end{cases}    \\
+    u=U_1 U_2= \frac{x}{y}(x-3y+\frac{1}{z})
+\end{gather*}
+Ответ:\\
+ Oбщее решение \ref{17.5}: $F[U_1(x,y,z),U_2(x,y,z)]$ где $F$ - любая непрерывно дифференцируемая функция, $U_1(x,y,z)=\frac{x}{y}, U_2(x,y,z)=x-3y+\frac{1}{z}$.\\
+ Pешение ЗК \ref{17.5}: $u=U_1 U_2= \frac{x}{y}(x-3y+\frac{1}{z})$
+
 \subsection{C. \S17: 16}
+Найти общее решение уравнения и решить задачу Коши с указанным
+начальным условием
+\begin{equation}\label{17.16}
+(z-x+3 y) \frac{\partial u}{\partial x}+(z+x-3 y) \frac{\partial u}{\partial y}-2 z \frac{\partial u}{\partial z}=0, u=\frac{4 y}{z} \text { при } x=3 y \text { . }
+\end{equation}
+\textcolor[rgb]{1,1,1}{\text{белый текст}                                            }
+Найдём характерестическую систему уравнения \ref{17.16}.
+\begin{equation*}
+    \begin{cases}
+        \dot x = z-x+3y, (1)\\
+        \dot y = z+x-3y, (2)\\
+        \dot z = -2z,(3)\\
+    \end{cases}
+\end{equation*}
+Тут линейная комбинация только одна (ну или я слаб) $(1) + (2) + (3)=0 \Rightarrow dx+dy+dz=0 \Rightarrow x+y+z = C_1$. Подставим этот первый интеграл во вторые 2 уравнения:
+\begin{gather*}
+    \begin{cases}
+        \dot y = C_1-4y\\
+        \dot z =-2z\\
+    \end{cases}\\
+//\text{перемножая крест накрест получим}//\\
+-2z \dot y = \dot z(C_1-4y)\\
+\frac{dz}{2z}=\frac{-dy}{C_1-4y}\\
+C_2=\frac{z^2}{C_1-4y}= \frac{z^2}{x+z-3y}
+\end{gather*}
+Проверим независимость: 
+\begin{equation*}
+    \rg \begin{vmatrix}
+        \frac{\partial C_1}{\partial x} && \frac{\partial C_1}{\partial y} && \frac{\partial C_1}{\partial z}\\
+        \frac{\partial C_2}{\partial x} && \frac{\partial C_2}{\partial y} && \frac{\partial C_2}{\partial z}
+    \end{vmatrix} = ... = 2
+\end{equation*}
+Осталось только решить ЗК.
+\begin{gather*}
+\begin{cases}
+        u=\frac{4y}{z}\\
+        x=3y\\
+        x+y+z=U_1\\
+        \frac{z^2}{x+z-3y}=U_2\\
+    \end{cases}    \\
+    \begin{cases}
+    u=\frac{4y}{z}\\
+        x=3y\\
+        4y+z=U_1\\
+        z=U_2\\
+    \end{cases}    \\
+    u=U_1/ U_2-1 = \frac{x}{y}(x-3y+\frac{1}{z})=\frac{(x+y+z)(x-3 y+z)}{z^{2}}-1
+\end{gather*}
+Ответ:\\
+ Oбщее решение \ref{17.16}: $F[U_1(x,y,z),U_2(x,y,z)]$ где $F$ - любая непрерывно дифференцируемая функция, $U_1(x,y,z)=x+y+z, U_2(x,y,z)=\frac{z^2}{x+z-3y}$.\\
+ Pешение ЗК \ref{17.16}: $u=u=U_1/ U_2-1 = \frac{x}{y}(x-3y+\frac{1}{z})=\frac{(x+y+z)(x-3 y+z)}{z^{2}}-1$
+
+
 \subsection{C. \S17: 22}
+Найти общее решение уравнения и решить задачу Коши с указанным
+начальным условием
+\begin{equation}\label{17.22}
+\begin{array}{l}
+\left(2 x^{2} z^{2}+x\right) \frac{\partial u}{\partial x}-\left(4 x y z^{2}-y\right) \frac{\partial u}{\partial y}-\left(4 x z^{3}-z\right) \frac{\partial u}{\partial z}=0, u=y z^{2} \text { при } x=z
+\end{array}
+\end{equation}
+
+найдём характерестическую систему уравнения \ref{17.22}.
+\begin{equation*}
+    \begin{cases}
+        \dot x =\left(2 x^{2} z^{2}+x\right) \\
+        \dot y = -\left(4 x y z^{2}-y\right)\\
+        \dot z =-\left(4 x z^{3}-z\right) \\
+    \end{cases}
+\end{equation*}
+Найдём первые интегралы:
+$z \dot y -  y\dot z=0 \Rightarrow z/y=C_1$\\
+Cо вторым интегралом немного больнее. Придётся вспомнить уравнения в полных дифференциалах. Второе и третье уже связаны первым интегралом, так что берём первое и 3 (как раз там нет $y$). Перемножим их крест-накрест.
+\begin{gather*}
+    dx(4xz^3-z)+dz(2x^2z^2+x)=0\\
+    //\text{как мы видим, это пока ещё не полный дифференциал. Попробуем домножить на} \mu(z) \text{оно зависит только от z!} //\\
+    dx \underbrace{\mu(4xz^3-z)}_{=R} + dz \underbrace{\mu (2x^2z^2+x)}_{=S} = 0 \stackrel{?}{=} d(Q)\\
+    //\text{чтобы левая часть была равна дифференциалу чего-то, должно выполняться} \frac{\partial R}{\partial z} = \frac{\partial S}{\partial x}  //\\
+    \mu'_z(4xz^3-z)+\mu(12xz^2-1)=\mu(4xz^2+1)\\
+    \mu'_z=-\mu \frac{2}{z}\\    
+    \frac{d \mu}{\mu}=-\frac{2 dz}{z}\\
+    \mu = \frac{1}{z^2}, \\
+    //\text{Теперь можно подставить интегрирующий множитель, найти величину, полный дифференциал который ноль}//\\
+    dx \underbrace{(4xz-1/z)}_{=R} + dz \underbrace{(2x^2+\frac{x}{z^2})}_{=S} = d(Q)=0\\
+    //\text{Тут уже тривиально угадать функцию}//\\
+    Q=2x^2z- \frac{x}{z} = \text{const} = C_2
+\end{gather*}
+
+Проверим независимость ($C_1$ зависит от $z,y$, $C_2$ зависит от $z,x$. Ну очевидно они независимы): 
+\begin{equation*}
+    \rg \begin{vmatrix}
+        \frac{\partial C_1}{\partial x} && \frac{\partial C_1}{\partial y} && \frac{\partial C_1}{\partial z}\\
+        \frac{\partial C_2}{\partial x} && \frac{\partial C_2}{\partial y} && \frac{\partial C_2}{\partial z}
+    \end{vmatrix} = \text{очевидно...} = 2
+\end{equation*}
+Осталось только решить ЗК.
+\begin{gather*}
+\begin{cases}
+        u=yz^2\\
+        x=z\\
+        U_1=z/y\\
+        U_2=2x^2z- \frac{x}{z}\\
+    \end{cases}    \\
+    \begin{cases}
+        u=\frac{4y}{z}\\
+         x=z\\
+        U_1=z/y\\
+        U_2=2z^3 - 1\\
+    \end{cases}    \\
+    u=\frac{U_2+1}{2U_1} = \frac{y\left(z-x+2 x^{2} z^{2}\right)}{2 z^{2}}
+\end{gather*}
+Ответ:\\
+ Oбщее решение \ref{17.22}: $F[U_1(x,y,z),U_2(x,y,z)]$ где $F$ - любая непрерывно дифференцируемая функция, $U_1(x,y,z)=z/y, U_2(x,y,z)=2x^2z- \frac{x}{z}$.\\
+ Pешение ЗК \ref{17.22}: $u=\frac{y\left(z-x+2 x^{2} z^{2}\right)}{2 z^{2}}$
+
 \subsection{C. \S17: 79}
+Найти общее решение уравнения и решить задачу Коши с указанным
+начальным условием
+\begin{equation}\label{17.79}
+2 x y \frac{\partial u}{\partial x}+\left(1-y^{2}-2 x z\right) \frac{\partial u}{\partial y}-\frac{y}{x} \frac{\partial u}{\partial z}=0, u=\frac{1}{2}-y^{2} \text { при } y^{2}+x z=1
+\end{equation}
+
+найдём характерестическую систему уравнения \ref{17.79}.
+\begin{equation*}
+    \begin{cases}
+        \dot x = 2xy\\
+        \dot y = 1-y^{2}-2 x z\\
+        \dot z = -\frac{y}{x} \\
+    \end{cases}
+\end{equation*}
+Найдём первые интегралы:
+Перемножим крест накрест 1 и 3 уравнения. 
+\begin{gather*}
+    -dx \frac{y}{x}=2dz \cdot xy\\
+    \frac{dx}{x^2}=-2 dz\\
+    \frac{1}{x} - 2z = C_1
+\end{gather*}
+Второй, как и всегда, искать менее тривиально.
+Возьмём 1 и 2 уравнения и перемножим крест-накрест. Получится:
+\begin{gather*}
+    2xy \cdot dy = (1-y^2-2xz) dx\\
+    2xy y'=(C_1x-y^2)dx\\
+    y'+y \frac{1}{2x}= \frac{C_1}{2y}\\
+    //\text{О, это же уравнение Бернулли. } t=y^2,t'=2y y'  //\\
+    \frac{t'}{2 \sqrt t}+\sqrt t \frac{1}{2x} = \frac{C_1}{2 \sqrt t}\\
+    t'+t \frac{1}{x}= C_1\\
+    t'x+t \cdot x' = C_1 x\\
+    (t\cdot x)'=C_1x\\
+    t x = \frac{C_1 x^2}{2} + C_2\\
+    C_2 = xy^2- \frac{C_1 x^2}{2}= x(y^2+zx)-\frac{x}{2}
+\end{gather*}
+Проверим независимость: Один ПИ зависит от $x$ другой нет, очевидно они независимы.
+\begin{equation*}
+    \rg \begin{vmatrix}
+        \frac{\partial C_1}{\partial x} && \frac{\partial C_1}{\partial y} && \frac{\partial C_1}{\partial z}\\
+        \frac{\partial C_2}{\partial x} && \frac{\partial C_2}{\partial y} && \frac{\partial C_2}{\partial z}
+    \end{vmatrix} = ... = 2
+\end{equation*}
+Осталось только решить ЗК.
+\begin{gather*}
+\begin{cases}
+        u= \frac{1}{2} - y^2\\
+        y^2+xz=1\\
+        U_1=\frac{1}{x} - 2z\\
+        U_2= x(y^2+zx)-\frac{x}{2}\\
+    \end{cases} \\
+    //\text{я считаю, что это какая-то ужасная бяка, поэтому просто переберём варианты } U_1 \cdot U_2, U_1/U_2 \text{ и т.д.}//\\
+    u=U_1 \cdot U_2 = (2 x z-1)\left(y^{2}-\frac{1}{2}+x z\right)
+\end{gather*}
+Ответ:\\
+ Oбщее решение \ref{17.79}: $F[U_1(x,y,z),U_2(x,y,z)]$ где $F$ - любая непрерывно дифференцируемая функция, $U_1(x,y,z)=\frac{1}{x} - 2z, U_2(x,y,z)= x(y^2+zx)-\frac{x}{2}$.\\
+ Pешение ЗК \ref{17.79}: $u=U_1 \cdot U_2 = (2 x z-1)\left(y^{2}-\frac{1}{2}+x z\right)$
 \subsection{C. \S17: 83}
+Найти общее решение уравнения и решить задачу Коши с указанным
+начальным условием
+\begin{equation}\label{17.83}
+2 x y \frac{\partial u}{\partial x}+\left(2 x-y^{2}\right) \frac{\partial u}{\partial y}+y^{3} z \frac{\partial u}{\partial z}=0, u=x^{2} z^{2} \text { при } y^{2}=2 x
+\end{equation}
+найдём характерестическую систему уравнения \ref{17.83}.
+\begin{equation*}
+    \begin{cases}
+        \dot x = 2xy \\
+        \dot y = 2 x-y^{2}\\
+        \dot z = y^{3} z \\
+    \end{cases}
+\end{equation*}
+Найдём первые интегралы: первые 2 уравнения крест-накрест
+\begin{gather*}
+    dx(2x-y^2)=dy(2xy)\\
+    dx(2x-y^2)+dy(-2xy)=0\\
+    d(x^2-xy^2)=0\\
+    x^2-xy^2=C_1
+\end{gather*}
+ \textcolor[rgb]{0.480469,0.566406,0.480469}{\textit{первые интегралы всё более стрёмные. Даже самый первый становится какой-то жестью}} 
+$y^2=x- \frac{C_1}{x}$\\
+Перемножим 1 и 3 крест-накрест:
+\begin{gather*}
+    dx(y^3z)=dz(2xy)\\
+    z'=\frac{y^2z}{2x}\\
+    \frac{dz}{z}=\frac{1}{2}(1- \frac{C_1}{x^2})\\
+    \ln (z^2) = x + \frac{C_1}{x} + C_2\\
+    C_2 = \ln (z^2) - 2x + y^2. 
+\end{gather*}
+
+
+Проверим независимость: как всегда очевидно независят, но проверить формально надо
+\begin{equation*}
+    \rg \begin{vmatrix}
+        \frac{\partial C_1}{\partial x} && \frac{\partial C_1}{\partial y} && \frac{\partial C_1}{\partial z}\\
+        \frac{\partial C_2}{\partial x} && \frac{\partial C_2}{\partial y} && \frac{\partial C_2}{\partial z}
+    \end{vmatrix} = ... = 2
+\end{equation*}
+Осталось только решить ЗК.
+\begin{gather*}
+\begin{cases}
+        u=x^2z^2\\
+        y^2=2x\\
+        U_1=x^2-xy^2\\
+        U_2=\ln (z^2) - 2x + y^2\\
+    \end{cases}    \\
+    \begin{cases}
+        u=x^2z^2\\
+        y^2=2x\\
+        U_1=-x^2\\
+        e^{U_2}=z^2\\
+    \end{cases}    \\
+    u=-U_1e^{U_2}=(xy^2 - x^2) e^{\ln (z^2) - 2x + y^2} = z^2(xy^2 - x^2) e^{- 2x + y^2}
+\end{gather*}
+Ответ:\\
+ Oбщее решение \ref{17.83}: $F[U_1(x,y,z),U_2(x,y,z)]$ где $F$ - любая непрерывно дифференцируемая функция, $U_1(x,y,z)=x^2-xy^2, U_2(x,y,z)=\ln (z^2) - 2x + y^2$.\\
+ Pешение ЗК \ref{17.83}: $u=z^2(xy^2 - x^2) e^{- 2x + y^2}$
+
+
+
 \subsection{T2}
+В области $x>0, \quad y>0, \quad z>0$ найти все решения уравнения
+\begin{equation}\label{17.T2}
+\left(x^{2}+y^{2}\right) \frac{\partial u}{\partial x}+2 x y \frac{\partial u}{\partial y}+\frac{x^{3}-x y^{2}}{z} \frac{\partial u}{\partial z}=0
+\end{equation}
+и решить задачу Коши $u=z^{2}$ при $y^{2}-x^{2}=1$\\
+
+найдём характерестическую систему уравнения \ref{17.T2}.
+\begin{equation*}
+    \begin{cases}
+        \dot x =x^2+y^2 \\
+        \dot y = 2xy\\
+        \dot z = \frac{x^3-xy^2}{z}\\
+    \end{cases}
+\end{equation*}
+%Найдём первые интегралы: крест-накрест первые 2
+%\begin{gather*}
+ %   dx \cdot 2xy = dy \cdot (x^2+y^2)\\
+  %  y'=\frac{2xy}{x^2+y^2}\\
+   % //y=x \cdot t(x), y'=t(x)+xt'(x)//\\
+    %t'x+t=\frac{2t}{1+t^2}\\
+    %dt \frac{1+t^2}{(t-1)^2}=-\frac{dx}{x}\\
+    %t-\frac{2}{t-1}+2 \ln (t-1) = -\ln(x)+C_1\\
+    %C_1 = \frac{2 x}{x-y}+\frac{y}{x}+2 \ln \left(\frac{y}{x}-1\right)+\ln (x)\\
+%\end{gather*}
+% \textcolor[rgb]{0.480469,0.566406,0.480469}{\textit{Какой хороший интеграл, настолько хороший, что я лучше найду какой-нибудь ещё}}%      
+ \textcolor[rgb]{0.480469,0.566406,0.480469}{\textit{Тут есть такой красивый первый интеграл! Он закомментирован но если кто хочет посмотреть на наркоманию, можно посмотреть исходный код}}                                                                                          
+ Тут можно заметить линейную комбинацию: $x dx  - y dy - z dz =0 \Rightarrow C_1 =  x^2-y^2-z^2$. Далее выражаем $y^2=x^2-z^2-C_1$ и берём первое и третье уравнения.
+ \begin{gather*}
+     dz(2x^2-z^2-C_1)-dx\left(xz+C_1 \frac{x}{z} \right)=0\\
+     //\text{Это почти уравнение в полных дифференциалах, надо всего-то домножить на } \frac{z}{(C_1+z^2)^3}//\\
+     dz \frac{2zx-z^3-C_1z}{(C_1+z^2)^3} - dx \frac{x}{(C_1+z^2)^2}=d(C_2)=0\\
+     C_2=\frac{1}{2 \left(C_1+z^2\right)}-\frac{x^2}{2 \left(C_1+z^2\right)^2} = \frac{1}{2x^2-2y^2} - \frac{x^2}{2 \left(x^2-y^2\right)^2}
+ \end{gather*}
+
+
+
+Проверим независимость: о чудо, снова один интеграл зависит от $z$, а другой нет. Так что снова всё ок, но проверить тем не менее необходимо...
+\begin{equation*}
+    \rg \begin{vmatrix}
+        \frac{\partial C_1}{\partial x} && \frac{\partial C_1}{\partial y} && \frac{\partial C_1}{\partial z}\\
+        \frac{\partial C_2}{\partial x} && \frac{\partial C_2}{\partial y} && \frac{\partial C_2}{\partial z}
+    \end{vmatrix} = ... = 2
+\end{equation*}
+Осталось только решить ЗК.
+\begin{gather*}
+\begin{cases}
+        u=z^2\\
+        y^2-x^2=1\\
+        U_1= x^2-y^2-z^2\\
+        U_2=\frac{1}{2 \left(C_1+z^2\right)}-\frac{x^2}{2 \left(C_1+z^2\right)^2} = \frac{1}{2x^2-2y^2} - \frac{x^2}{2 \left(x^2-y^2\right)^2}\\
+    \end{cases}    \\
+    \begin{cases}
+        u=z^2\\
+        y^2-x^2=1\\
+        U_1=-z^2-1\\
+        U_2=- \frac{1}{2} - \frac{x^2}{2}\\
+    \end{cases}    \\
+    u=-1-U_1=z^2+y^2-x^2-1
+\end{gather*}
+Ответ:\\
+ Oбщее решение \ref{17.T2}: $F[U_1(x,y,z),U_2(x,y,z)]$ где $F$ - любая непрерывно дифференцируемая функция, $U_1(x,y,z)=x^2-y^2-z^2, U_2(x,y,z)= \frac{1}{2x^2-2y^2} - \frac{x^2}{2 \left(x^2-y^2\right)^2}$.\\
+ Pешение ЗК \ref{17.T2}: $u= u=-1-U_1=z^2+y^2-x^2-1$ 
+  \textcolor[rgb]{0.480469,0.566406,0.480469}{\textit{Вот и всё с первыми интегралами. Сказал бы всё плохое что я про эти задачи думаю, но я думаю о них только положительно. Какие хорошие задачи}}                                               
 
 \section{III. Вариационное исчисление}
 \subsection{C. \S19: 21}
-\subsection{C. \S19: 45}
-\subsection{C. \S19: 72}
-\subsection{C. \S19: 105}
-\subsection{T3}
-\subsection{C. \S20.1: 9}
-\subsection{C. \S20:}
-\subsection{T4}
-\subsection{C. \S20.2: 5}
-\subsection{C. \S20.3: 2}
-\subsection{C. \S21: 1}
-\subsection{T5*}
+Решить простейшую вариационную задачу:
+\begin{equation}\label{19.21}
+J(y)=\int_{1}^{e}\left[\frac{1}{2} x\left(y^{\prime}\right)^{2}+\frac{2 y y^{\prime}}{x}-\frac{y^{2}}{x^{2}}\right] d x, y(1)=1, y(e)=2
+\end{equation}
+\textcolor[rgb]{0.480469,0.566406,0.480469}{\textit{какая простая задача, простейшая я бы сказал}}
+Найдём экстремали:
+\begin{gather*}
+\Lagr= \frac{1}{2} x\left(y^{\prime}\right)^{2}+\frac{2 y y^{\prime}}{x}-\frac{y^{2}}{x^{2}}\\
+\frac{\partial \Lagr}{\partial y}  - \frac{d }{d x} \frac{\partial \Lagr}{\partial y'} =0   \\
+2 \frac{y'}{x} - 2 \frac{y}{x^2} - \frac{d}{dx}\left(xy' +2\frac{y}{x} \right)                                      \\
+2 \frac{y'}{x} - 2 \frac{y}{x^2} - y' - xy'' - 2 \frac{y'}{x}+2 \frac{y}{x^2}=0\\
+y''+\frac{y'}{x}=0\\
+y(x)=C_1 \ln(x)+C_2\\
+//y(1)=1, y(e)=2//\\
+\begin{cases}
+    y(1)=1=C_2 + C_1 \cdot 0\\
+    y(e)=2=C_2 + C_1 \cdot 1\\
+\end{cases}\\
+    \hat y=1+\ln(x)\\
+\end{gather*} 
+Ура, найдена экстремаль. Надо посмотреть будет ли это экстремумом.
+\begin{gather*}
+\Delta J = J(\hat y + h) - J(\hat y) = \int_1^e \left(\frac{1}{2} x h'(x)^2+\frac{h'(x) (2 h(x)+x+2 \ln (x)+2)}{x}-\frac{h(x) (h(x)+2 \ln (x))}{x^2}\right)  dx  \\
+//\text{звуки испуга Паши Шишкина}//    \\
+\int_1^e   \left(\frac{1}{2}x h'^2 - \frac{h^2}{x^2} -h \frac{2\ln(x)}{x^2} \right) dx + 
+\int_1^e \frac{d(h^2)}{x}+
+\int_1^e \left(\frac{2\ln(x)}{x} + 1 + \frac{2}{x} \right) d(h)  \\
+//\text{два последних интеграла по частям, с учётом граничных условий на } h(1)=h(e)=0//\\
+\int_1^e   \left(\frac{1}{2}x h'^2 - \frac{h^2}{x^2} -h \frac{2\ln(x)}{x^2} \right) dx -
+\int_1^e \left(- \frac{h^2}{x^2} \right)dx -
+\int_1^e \left( -\frac{2 \ln(x)}{x^2} \right) h \cdot dx\\
+\int_1^e\frac{1}{2}x h'^2 \cdot dx
+\end{gather*}      
+Очевидно на $(1,e)$ данный интеграл принимает исключительно положительные значения $\Rightarrow$ $\hat y -$ минимум.\\
+Ответ: \\
+$\hat y = 1+\ln(x)$    - абсолютный минимум с вариацией $\Delta J = J(\hat y + h) - J(\hat y) = \int_1^e\frac{1}{2}x h'^2 \cdot dx $                       \\
+ \textcolor[rgb]{0.480469,0.566406,0.480469}{\textit{а можно я не буду каждый раз решать это, а просто сошлюсь на файл математики, который сразу выдаёт ответ на задачу?}}                                                   
 
+\subsection{C. \S19: 45}
+Решить простейшую вариационную задачу:
+
+\begin{equation}
+J(y)=\int_{0}^{1}\left[\left(1+x^{2}\right)\left(y^{\prime}\right)^{2}-4 x y^{\prime}+y y^{\prime} \sin ^{2} x+\frac{1}{2} y^{2} \sin 2 x\right] d x, y(0)=0, y(1)=\ln 2
+\end{equation}
+ \textcolor[rgb]{1,1,1}{\textit{Наверное очень интересно, почему я иногда пишу $y$ а иногда не ленюсь и прописываю $y(x)$. Это могут быть 2 последовательные строчки, которые почти ничем не отличаются. Первый вариант, когда я набираю текст сам, а второй когда копирую вормулы из математики (там хорошо указывать явно от чего зависит функция)}}   
+Найдём экстремаль:
+\begin{gather*}
+    \Lagr =\left(x^2+1\right) y'(x)^2-4 x y'(x)+y(x) \sin ^2(x) y'(x)+\frac{1}{2} y(x)^2 \sin (2 x)\\
+    \frac{\partial \Lagr}{\partial y}  - \frac{d }{d x} \frac{\partial \Lagr}{\partial y'} =0   \\
+    \left(x^2+1\right) y''(x)+2 x y'(x)=2\\
+    y(x) = \ln \left(x^2+1\right)+c_1 \arctg(x)+c_2]\\
+    //\text{подставляя граничные условия:}//\\
+    \hat y=\ln \left(x^2+1\right)\\
+\end{gather*}
+Проверим на наличие экстремума.
+\begin{gather*}
+    \Delta J = J(\hat y + h) - J(\hat y) \\
+     \int_0^1 \left(h \left(\sin ^2(x) h'+\frac{2 x \sin ^2(x)}{x^2+1}+\ln \left(x^2+1\right) \sin (2 x)\right)+h' \left(\left(x^2+1\right) h'+\ln \left(x^2+1\right) \sin ^2(x)\right)+h^2 \sin (x) \cos (x)\right) dx\\
+    //\text{какая жесть...}//\\
+    \int_0^1\left( h^2 \sin{(x)}\cos{(x)} 
+    + h'^2(x^2+1)
+    +    h \left( \frac{2 x \sin ^{2}(x)}{x^{2}+1}+\ln \left(x^{2}+1\right) \sin (2 x) \right)\right) dx + \\
+    + \int_0^1 \sin ^{2}(x)  d\left(h^2/2 \right) + \int_0^1 \ln \left(x^{2}+1\right) \sin ^{2}(x) d(h)\\
+    //\text{2 последних по частям, на краях они обнулятся, а подынтегральные выражения сократятся}//\\
+    \int_0^1 h'^2(x^2+1) dx
+\end{gather*}
+Итого, вариация определена положительно, значит экстремаль - абсолютный минимум.\\
+Ответ: \\
+$\hat y = \ln \left(x^2+1\right)$  абсолютный минимум с вариацией $\Delta J = J(\hat y + h) - J(\hat y) =\int_0^1 h'^2(x^2+1) dx $
+\subsection{C. \S19: 72}
+Решить простейшую вариационную задачу:
+\begin{equation}
+J(y)=\int_{1}^{4}\left[15 \sqrt{x} y+3 x^{2} y y^{\prime}-x^{3}\left(y^{\prime}\right)^{2}\right] d x, y(1)=1, y(4)=-3 .
+\end{equation}
+Для начала найдём экстремаль
+\begin{gather*}
+    \Lagr =x^3 \left(-y'(x)^2\right)+3 x^2 y(x) y'(x)+15 \sqrt{x} y(x)\\
+    \frac{\partial \Lagr}{\partial y}  - \frac{d }{d x} \frac{\partial \Lagr}{\partial y'} =0   \\
+    6 x^2 y'(x)+2 x^3 y''(x)+15 \sqrt{x}=6 x y(x)\\
+    y(x) =\frac{C_1}{x^3}+\frac{2}{\sqrt{x}}+C_2 x\\
+    //\text{подставляя граничные условия:}//\\
+    \hat y=\frac{2-x^{3/2}}{\sqrt{x}}\\
+\end{gather*}
+
+Проверим на наличие экстремума.
+\begin{gather*}
+    \Delta J = J(\hat y + h) - J(\hat y) = \int_1^4 \left(3 h(x) \left(x^2 h'(x)-x^2+4 \sqrt{x}\right)-x^{3/2} h'(x) \left(x^{3/2} h'(x)+x^{3/2}-8\right)\right) \, dx  \\
+    \int_1^4 \left( 3 h \left(x^{2}+4 \sqrt{x} \right) - h'^2 x^3 \right) dx + \int_1^4 3/2 x^2 d(h^2)  + \int_1^4 - x^3 + 8x^{3/2}d(h) \\
+    //\text{2 последних по частям, на краях они обнулятся, а подынтегральные выражения сократятся}//\\
+    \int_1^4  \left(-x^3 h'^2 -3x h^2 \right)dx
+\end{gather*}
+Итого, вариация определена отрицательно, значит экстремаль - абсолютный максимум.\\
+Ответ: \\
+$\hat y = \frac{2-x^{3/2}}{\sqrt{x}}$  абсолютный максимум с вариацией $\Delta J = J(\hat y + h) - J(\hat y) =\int_1^4  \left(-x^3 h'^2 -3x h^2 \right)dx$
+
+
+\subsection{C. \S19: 105}
+Показать, что допустимая экстремаль не дает экс-
+тремум функционала:
+\begin{equation}
+J(y)=\int_{0}^{\pi}\left[\left(y^{\prime}\right)^{2}-\frac{25}{16} y^{2}+50 x y\right] d x, y(0)=0, y(\pi)=16 \pi
+\end{equation}
+
+Для начала найдём экстремаль
+\begin{gather*}
+    \Lagr =y'(x)^2-\frac{1}{16} 25 y(x)^2+50 x y(x)\\
+    \frac{\partial \Lagr}{\partial y}  - \frac{d }{d x} \frac{\partial \Lagr}{\partial y'} =0   \\
+    400 x=16 y''(x)+25 y(x)\\
+    y(x) = 16 x+C_1 \cos \left(\frac{5 x}{4}\right)+C_2 \sin \left(\frac{5 x}{4}\right)\\
+    //\text{подставляя граничные условия:}//\\
+    \hat y=16 x\\
+\end{gather*}
+Покажем теперь что экстремум отсутствует
+\begin{gather*}
+    \Delta J = J(\hat y + h) - J(\hat y) = \int_0^{\pi } \left(h'(x) \left(h'(x)+32\right)-\frac{25 h(x)^2}{16}\right) \, dx\\
+    //\text{Здесь даже упрощать не надо ничего, просто возьмём 2 функции которые разный знак дадут}//\\
+    h_1=\sin{(x)} \Rightarrow  \Delta J = \int_0^\pi \cos (x) (\cos (x)+32)-\frac{25 \sin ^2(x)}{16} dx = -\frac{1}{32} (9 \pi )\\
+    h_2 = \sin{(2x)} \Rightarrow  \Delta J = \int_0^\pi 64 \cos (2 x)+\frac{1}{32} (89 \cos (4 x)+39) dx = \frac{39 \pi }{32}\\
+\end{gather*}
+Таким образом знаки приращения могут принимать как положительные так и отрицательные значения, а значит экстремаль ни минимум ни максимум.
+
+\subsection{T3}
+Исследовать на экстремум функционал, определив знаки приращения
+\begin{equation}
+    \int_{1}^{2}\left(\frac{2 y y^{\prime}}{x}-7 \frac{y^{2}}{x^{2}}-\left(y^{\prime}\right)^{2}-12 \frac{y}{x}\right) d x, \quad y(1)=3, \quad y(2)=1
+\end{equation}
+Как и ранее для начала найдём экстремаль
+\begin{gather*}
+    \Lagr =-\frac{7 y(x)^2}{x^2}+\frac{2 y(x) y'(x)}{x}-y'(x)^2-\frac{12 y(x)}{x}\\
+    \frac{\partial \Lagr}{\partial y}  - \frac{d }{d x} \frac{\partial \Lagr}{\partial y'} =0   \\
+    x y''(x)=\frac{6 y(x)}{x}+6\\
+    y(x) = C_2 x^3+\frac{C_1}{x^2}-x\\
+    //\text{подставляя граничные условия:}//\\
+    \hat y=\frac{8 x^5-31 x^3+116}{31 x^2}\\
+\end{gather*}
+Уже экстремаль тут как-то не очень выглядит, но дальше лучше. Посчитаем вариацию
+\begin{gather*}
+    \Delta J = J(\hat y + h) - J(\hat y) = \\
+    \int_1^2 -\frac{31 x^4 h'(x)^2+2 x \left(-31 x^2 h(x)+16 x^5-348\right) h'(x)+h(x) \left(217 x^2 h(x)+64 x^5+2088\right)}{31 x^4} \, dx\\
+    //\text{оно кажется страшным, но это просто из-за цифорок, так-то функция вполе}//\\
+    \int_1^2 \left( -h'^2 -\frac{7}{x^2}h^2 \right)dx -
+    \int_1^2 \left(\frac{64}{31}x + \frac{2088}{31x^4} \right)h \cdot dx +
+    \int_1^2 \frac{1}{x} d(h^2) -
+    \int_1^2 \left( \frac{32}{31} x^2 -\frac{696}{31x^3}\right)d(h)\\
+    //\text{2 последних по частям, на краях они обнулятся, а подынтегральные выражения сократятся}//\\
+    \int_1^2 \left(-h'^2  - \frac{6}{x^2}h^2 \right)dx
+\end{gather*}
+Итого, вариация определена отрицательно, значит экстремаль - абсолютный максимум.\\
+Ответ: \\
+$\hat y = \frac{8 x^5-31 x^3+116}{31 x^2}$  абсолютный максимум с вариацией $\Delta J = J(\hat y + h) - J(\hat y) =\int_1^2 \left(-h'^2  - \frac{6}{x^2}h^2\right)dx$
+ \textcolor[rgb]{0.480469,0.566406,0.480469}{\textit{На самом деле здесь проще и оптимальнее не подставлять сразу значение экстремали, а работать с $y$, в некоторый момент вылезать будет появляться уравнение Эйлера-Лагранжа, которое можно приравнять к 0. А вот так сразу подставлять $\hat y$ довольно неприятно. Но всё реально, просто чиселки не оч красивые}}                                               
+
+\subsection{C. \S20.1: 9}
+Решить задачу со свободным концом
+\begin{equation}
+J(y)=\int_{1}^{3}\left[8 y y^{\prime} \ln x-x\left(y^{\prime}\right)^{2}+6 x y^{\prime}\right] d x, y(3)=15 .
+\end{equation}\\
+
+Вообще всё то же самое, но теория говорит нам что $\frac{\partial \Lagr}{\partial y'} = 0 |_{x=1}$ на свободном конце. И решение Задачи Коши при подставлении гран условий чутка дольше.  \textcolor[rgb]{0.480469,0.566406,0.480469}{\textit{Тех сошёл с ума, несите новый. Там нет белого текста}}    
+
+\begin{gather*}
+    \Lagr = -x y'(x)^2+6 x y'(x)+8 y(x) \ln (x) y'(x)\\
+    \frac{\partial \Lagr}{\partial y}  - \frac{d }{d x} \frac{\partial \Lagr}{\partial y'} =0   \\
+    2 y'(x)+2 x y''(x)-\frac{8 y(x)}{x}-6 = 0\\
+    y = C_2 x^2+\frac{C_1}{x^2}-x\\
+    //\text{Найдём граничные условия}//\\
+    \frac{\partial \Lagr}{\partial y'} = 0 |_{x=1}\\
+    -2 x y'(x)+8 y(x) \ln (x)+6 x = 0 |_{x=1}\\
+    0 = \left(6-2 y'(1)\right)\\
+    y'(1)=3\\
+    //\text{Решая ЗК находим константы } C_1, C_2//\\
+    \hat y = 2 x^2-x\\
+\end{gather*}
+Осталось проверить знак приращений.
+\begin{gather*}
+    \Delta J = J(\hat y + h) - J(\hat y) = \int_1^3 \left(x h'(x) \left(-h'(x)-8 x+8 (2 x-1) \ln (x)+8\right)+8 h(x) \ln (x) \left(h'(x)+4 x-1\right)\right) \, dx\\
+    \int_1^3 -x h'^2 x dx + 
+    \int_1^3 8 h \ln(x) \left(4x-1\right) dx + 
+    \int_1^3 x \left(8+ 8 \ln(x)(2x-1)-8x \right)  d(h)+
+    \int_1^3 4\ln(x) d(h^2)\\
+     //\text{все с h под дифференциалом по частям, на краях как всегда обнуляется, а под интегралами вся жесть уходит}//\\
+    \int_1^3 \left(-x h'^2 - \frac{4}{x}h^2\right)dx
+\end{gather*}
+Приращение строго отрицательно, значит экстремаль - абсолютный максимум. \\
+Отвееееет: \\
+$\hat y = 2 x^2-x + \frac{21890375612389670586790}{8976345801976345} \cdot 0$  абсолютный максимум с вариацией $\Delta J = J(\hat y + h) - J(\hat y) =\int_1^3 \left(-x h'^2 - \frac{4}{x}h^2\right)dx$
+ \textcolor[rgb]{0.480469,0.566406,0.480469}{\textit{раз тех сошёл с ума, то и мне можно}}                                               
+\subsection{C. \S20.1: 12}
+Решить задачу без ограничений
+\begin{equation}
+J(y)=\int_{1}^{e}\left[x\left(y^{\prime}\right)^{2}+\frac{y^{2}}{x}+\frac{2 y \ln x}{x}\right] d x
+\end{equation}\\
+Тут то же самое, просто производная ноль на 2 краях.
+ \textcolor[rgb]{0.480469,0.566406,0.480469}{\textit{Не, а серьёзно, что происходит, что это за пустота? Я в недоумении. Неужели gather настолько слаб, что не умеет переходить на новую страницу? Или слаб я и не понимаю ничего?}}\\                                               
+\begin{gather*}
+    \Lagr = x y'(x)^2+\frac{y(x)^2}{x}+\frac{2 y(x) \ln (x)}{x}\\
+    \frac{\partial \Lagr}{\partial y}  - \frac{d }{d x} \frac{\partial \Lagr}{\partial y'} =0   \\
+    -2 y'(x)-2 x y''(x)+\frac{2 y(x)}{x}+\frac{2 \ln (x)}{x}=0\\
+    y = -\ln (x)+\frac{C_1}{x}+C_2 x\\
+    //\text{Найдём граничные условия}//\\
+    \frac{\partial \Lagr}{\partial y'} = 0 |_{x=1;e}\\
+    -2 x y'(x)+8 y(x) \ln (x)+6 x = 0 |_{x=1;e}\\
+    2 x y'(x) = 0\\
+    y'(1)=0\\
+    y'(e)=0\\
+    //\text{Решая ЗК находим константы } C_1, C_2//\\
+    \hat y = -\frac{e-x^2}{e x+x}-\ln (x)\\
+\end{gather*}
+Это не самая приятная Экстремаль. Поэтому не будем её подставлять и попадать в ловушку Т3. Запишем так:
+\begin{gather*}
+    \Delta J = J(\hat y + h) - J(\hat y) = \int_1^e \frac{x^2 h'(x) \left(h'(x)+2 y'(x)\right)+2 h(x) (y(x)+\ln (x))+h(x)^2}{x} \, d\\
+    \int_1^e \left(h'^2 x + 2 h \frac{y+\ln(x)}{x} + \frac{h^2}{x} \right) dx+
+    \int_1^e \left( 2x y' \right) d(h)\\
+    //\text{берём по частям второй интеграл}//\\
+    \int_1^e \left(h'^2 x + 2 h \frac{y+\ln(x)}{x} + \frac{h^2}{x} \right) dx -
+    \int_1^e \left( 2 y' + 2xy'' \right)h \cdot dx \\
+    \int_1^e  \left(h'^2 x +\frac{h^2}{x} \right) dx + 
+    \int_1^e \underbrace{\left(-2 y'(x)-2 x y''(x)+\frac{2 y(x)}{x}+\frac{2 \ln (x)}{x} \right)}_{
+    \textcolor[rgb]{1,1,1}{\frac{\partial \Lagr}{\partial y}  - \frac{d }{d x} \frac{\partial \Lagr}{\partial y'}} =0 \text{ просто потому что мне так захотелось :)}
+    } h \cdot dx \\
+    \Delta J =\int_1^e  \left(h'^2 x +\frac{h^2}{x} \right) dx
+\end{gather*}
+Минимум, получается.\\
+Ответ: \\
+$\hat y = -\frac{e-x^2}{e x+x}-\ln (x)$  абсолютный минимум с вариацией $\Delta J = J(\hat y + h) - J(\hat y) =\int_1^e  \left(h'^2 x +\frac{h^2}{x} \right) dx$ 
+ \textcolor[rgb]{0.480469,0.566406,0.480469}{\textit{Там кстати есть белый текст в задаче, можно найти}}                                               
+
+\subsection{T4}
+Исследовать на экстремум функционал, определить знаки приращения
+\begin{equation}
+    \int_{1}^{2}\left(2 y+y y^{\prime}+x\left(y'\right)^2\right) d x, \quad y(1)=1 .
+\end{equation}
+ \textcolor[rgb]{0.480469,0.566406,0.480469}{\textit{Я уже боюсь Т-шек, вот уверен сейчас что-то настолько же пугающее, как стол моего соседа по общаге будет}}  
+ Найдём экстремали:
+ \begin{gather*}
+    \Lagr = x y'(x)^2+y(x) y'(x)+2 y(x)\\
+    \frac{\partial \Lagr}{\partial y}  - \frac{d }{d x} \frac{\partial \Lagr}{\partial y'} =0   \\
+    -2 y'(x)-2 x y''(x)+2=0\\
+    x+C_1 \ln (x)+C_2\\
+    //\text{Найдём граничные условия}//\\
+    4 y'(2)+y(2) = 0\\
+    //\text{Решая ЗК находим константы } C_1, C_2//\\
+    \hat y=x-\frac{6 \ln (x)}{2+\ln (2)}
+ \end{gather*}  
+ \textcolor[rgb]{0.480469,0.566406,0.480469}{\textit{Ну оно конечно не совсем пугающее, но деление на логарифм 2. Зачем? За что? Кто придумывал эти числа? И да, я скорее всего не ошибся, потому что проверяю себя в Вольфраме :) Но всё равно никто же сюда списывать не приходит, все будут проверять сами и проверят написанное}}
+ Определим знаки приращений:
+ \begin{gather*}
+    \Delta J = J(\hat y + h) - J(\hat y) = 
+    \int_1^2 \left(h(x) \left(h'(x)+y'(x)+2\right)+h'(x) \left(x \left(h'(x)+2 y'(x)\right)+y(x)\right)\right) \, dx\\
+    \int_1^2 \left( h (y'+2) + h'^2 x \right) dx + 
+    \int_1^2 1/2 d(h^2)+
+    \int_1^2 (2xy' +xy)d(h)\\
+    //\text{берём по частям всё что не радует сердце и душу}//\\
+    \int_1^2 \left(x h'^2  \right)dx +
+    \int_1^2 \underbrace{\left( -2 y'(x)-2 x y''(x)+2 \right)}_{=0} h \cdot dx\\
+    \Delta J = \int_1^2 \left(x h'^2 \right)dx
+ % \end{gather*}                                               
+ % Кажется что экстремума нет, но он есть на самом деле. Поркажем что это строгий минимум (интеграл всегда положителен)
+ % \begin{gather*}
+ %    //\text{оценим второе слагаемое}//\\
+ %     |h(x)| = \bigg|\int_1^x h' dy \bigg| = \bigg|\int_1^x h' \cdot 1 \cdot dy \bigg| \underbrace{\leq}_{\text{КБШ*}} \sqrt{\int_1^x 1^2 \cdot dy \int_1^xh'^2 dy  } = \sqrt{(x-1) \int_1^xh'^2 dy }\\
+ %     \int_1^3 h^2 dx \leq \int_1^3 (x-1) dx \int_1^x h'^2 dy  \leq \int_1^3 (x-1)dx \cdot \int_1^3 h'^2 dx = 2 \int_1^3 h'^2 dx\\
+ %     \int_1^3 \frac{1}{2}h^2 dx \leq \int_1^3 h'^2 dx\\ 
+ %     //\text{Итак мы оценили второе слагаемое, оценим первое}//\\
+ %     \int_1^3 x h'^2 dx \geq \int_1^3 1\cdot h'^2 dx\\
+ %     //\text{собирая всё вместе}//\\
+ %     \Delta J = \int_1^2 \left(x h'^2 - \frac{1}{2} h^2 \right)dx \geq 0.
+  \end{gather*}
+%  Доказано.\\
+% *Где КБШ  - неравенство Коши-Буняковского-Шварца. Я бы мог написать полностью, но нижняя фигурная скоюочка растянулась бы и было бы не красиво\\
+Ответ: \\
+$\hat y = x-\frac{6 \ln (x)}{2+\ln (2)}$  абсолютный минимум с вариацией $\Delta J = J(\hat y + h) - J(\hat y) =\int_1^2 \left(x h'^2 \right)dx$ 
+
+\subsection{C. \S20.2: 5}
+Найти допустимые экстремали
+\begin{equation}
+J\left(y_{1}, y_{2}\right)=\int_{0}^{\pi}\left[\left(y_{1}^{\prime}\right)^{2}+\left(y_{2}^{\prime}\right)^{2}-2 y_{1} y_{2}\right] d x, y_{1}(0)=1, y_{2}(0)=-1, y_{1}\left(\frac{\pi}{2}\right)=e^{\frac{\pi}{2}}, y_{2}\left(\frac{\pi}{2}\right)=-e^{\frac{\pi}{2}} .
+\end{equation}
+Практически то же самое, только теперь у нас система 2 уравнений Лагранжа второго рода.
+\begin{gather*}
+    \Lagr = y_1'^2 + y_2'^2 -2 y_1 y_2\\
+    \begin{cases}
+         \frac{\partial \Lagr}{\partial y_1}  - \frac{d }{d x} \frac{\partial \Lagr}{\partial y'_1} = 0  \\
+         \frac{\partial \Lagr}{\partial y_1}  - \frac{d }{d x} \frac{\partial \Lagr}{\partial y'_2} = 0  
+    \end{cases}\\
+    \begin{cases}
+        y_1''+y_2=0\\
+        y_2''+y_1=0\\
+    \end{cases}\\
+    \begin{cases}
+        y_1(x) = \frac{1}{2} ((C_1+C_3) \cos (x)+(C_1-C_3) \cosh (x)+(C_2+C_4) \sin (x)+(C_2-C_4) \sinh (x))\\
+        y_2(x) = \frac{1}{2} ((C_1+C_3) \cos (x)+(C_3-C_1) \cosh (x)+(C_2+C_4) \sin (x)+(C_4-C_2) \sinh (x))
+    \end{cases}\\
+    //\text{И подставляя граничные условия получаем:}//\\
+    \begin{cases}
+        \hat y_1=e^x\\
+        \hat y_2 = - e^{x}\\
+    \end{cases}
+\end{gather*}
+Ну да, можно было бы угадать сразу. Ну экстремали мы нашли. Проверять дают они экстремум или нет нас не просили, мы и не будем.\\
+Ответ:\\
+Допустимые экстремали: $\hat y_1=e^x, \hat y_2 = - e^{x}$
+
+\subsection{C. \S20.3: 2}
+Исследовать функционал на экстремум, если:
+\begin{equation}
+J(y)=\int_{0}^{1}\left[2 e^{x} y-\left(y^{\prime \prime}\right)^{2}\right] d x, y(0)=y^{\prime}(0)=1, y(1)=e, y^{\prime}(1)=2 e
+\end{equation}
+Всё то же самое, только уравнение Лагранжа 2 рода становится уравнением Эйлера-Пуассона.
+\begin{gather*}
+    \Lagr = 2e^xy - (y'')^2\\
+    \frac{\partial \Lagr}{\partial y}-\frac{d}{d x} \frac{\partial \Lagr}{\partial y^{\prime}}+\frac{d^{2}}{d x^{2}} \frac{\partial \Lagr}{\partial y^{\prime \prime}}=0\\
+    2e^x - \frac{d ^2}{d x^2} (2y'')=0\\
+    y^{(4)}=e^x\\
+    y=C_4 x^3+C_3 x^2+C_2 x+C_1+e^x\\
+    //\text{из условия} y(0)=y'(0)=1 \text{получаем} //\\
+    C_1=C_2=0\\
+     y=C_4 x^3+C_3 x^2+e^x\\
+     //\text{из условия} y(1)=e, y'(1)=2e \text{ получаем} //\\
+     C_4=e\\
+     C_3=-e\\
+     \hat y = ex^3-ex^2+e^x
+\end{gather*}
+Это печально, но Экстремум просят проверить\\
+\begin{gather*}
+    \Delta J = J(\hat y + h) - J(\hat y) = \int_0^1(2e^xh-2 \hat y'' h'' - h''^2)dx\\
+    //\text{в задачах со второй производной не только h на концах должен обнуляться, но и } h'//\\
+    // \text{Интегрируем вторую производную h дважды по частям}//\\
+    \int_0^1 \left(-h''^2+2e^xh  - 2h y^{(4)} \right)dx = \int_0^1 \left(-h''^2 \right)dx \leq 0
+\end{gather*}\\
+Итого - экстремаль - абсолютный максимум.\\
+Ответ:\\
+$\hat y = ex^3-ex^2+e^x$  абсолютный максимум с вариацией $\Delta J = J(\hat y + h) - J(\hat y) =\int_0^1 \left(-h''^2 \right)dx \leq 0$ 
+
+\subsection{C. \S21: 1}
+Решить изопериметрическую задачу
+\begin{equation}
+J(y)=\int_{0}^{\pi}\left(y^{\prime}\right)^{2} d x, y(0)=0, y(\pi)=\pi, \int_{0}^{\pi} y \sin x d x=0
+\end{equation}
+ \textcolor[rgb]{0.480469,0.566406,0.480469}{\textit{В электронной версии учебника тут опечатка и в ограничении интеграл единичка. Но там ответ с условием не сходится, так что берём нолик из конспектов Ильи Викторовича}}                                               
+Найдём допустимые экстремали:
+\begin{gather*}
+    \Lagr = (y')^2 + \lambda \cdot y \sin{(x)}\\
+    \frac{\partial \Lagr}{\partial y}  - \frac{d }{d x} \frac{\partial \Lagr}{\partial y'} =0   \\
+    y''=\lambda \sin{(x)}/2\\
+    y=y(x)=C_2 x+C_1-\frac{1}{2} \lambda  \sin (x)\\
+    \begin{cases}
+        y(0)=0 \Rightarrow C_1=0\\
+        y(\pi)=\pi \Rightarrow C_2 = 1\\
+        \int_{0}^{\pi} y \sin x d x=0 \Rightarrow \lambda = 4
+    \end{cases}\\
+    \hat y = x-2 \sin{(x)}
+\end{gather*}
+Проверим знаки приращений.
+\begin{gather*}
+    \Delta J = J(\hat y + h) - J(\hat y) = \int_0^{\pi} (2\hat{y}'h' + h'^2) dx= \int_0^{\pi} (h'^2) dx - \lambda \int_0^\pi h \sin{(x)}dx = \int_0^{\pi} (h'^2) dx
+\end{gather*}
+Итого экстремаль - абсолютный минимум.\\
+Ответ:\\
+$\hat y = x-2 \sin{(x)}$  абсолютный минимум с вариацией $\Delta J = J(\hat y + h) - J(\hat y) =\int_0^{\pi} (h'^2) dx \geq 0$ 
+
+\subsection{T5*}
+Среди всех кривых на цилиндре $x^{2}+y^{2}=1$, соединяющих точки $(1,0,0)$ и $(0,1,1)$ найти кривую наименьшей длины (геодезическую кривую).
+
+ \textcolor[rgb]{0.480469,0.566406,0.480469}{\textit{Как же хочется записать метрический тензор для полярных координать, приравнять $w_{\varphi}=0,w_{z}=0$ и сразу получить ответ, но мы тут аналмехом не испорчены, не будем}}
+ Если вы знаете, как получается метрический тензор в полярных координатах, сюда не надо смотреть, будет больно. Идите сразу к \ref{T5} Это только если вдруг кто-то не знает как это делают в приличном обществе.
+ \begin{gather*}
+ \begin{cases}
+     x=\cos{(\varphi)} ,
+     dx = -\sin{(\varphi)} d(\varphi)\\
+     y=\sin{(\varphi)} ,
+     dy = \cos{(\varphi)} d(\varphi)\\
+     ds^2=dx^2+dy^2+dz^2
+ \end{cases}\\
+    ds^2=d(\varphi)^2+dz^2\\
+ \end{gather*} 
+    Теперь можно переформулировать задачу, как:\\
+    Найти максимум 
+\begin{equation}\label{T5}
+    \int_0^{\pi / 2} \left( \sqrt{\left(\frac{d z}{d \varphi} \right)^2+1} \right)  d(\varphi) ,z(0)=0,z(\pi/2)=1.
+\end{equation}                                              
+Такое уже мы нарешались.
+Найдём экстремали.
+\begin{gather*}
+    \Lagr = \sqrt{z'^2+1}\\
+     \frac{\partial \Lagr}{\partial z}  - \frac{d }{d x} \frac{\partial \Lagr}{\partial z'} =0 \\
+     \frac{z''}{\left((z')^2+1\right)^{3/2}}=0\\
+     z''=0\\
+     z=C_1+C_2 \varphi\\
+     \hat z = \varphi \frac{2}{\pi}
+\end{gather*}
+Проверять что это минимум нет необходимости, ведь существует Теорема Хопфа — Ринова, уже доказанная в прошлом семестре курса \href{http://rkarasev.ru/common/upload/an_explanations.pdf}{Математического Анализа}. \\
+Ответ:\\
+в циллиндрических координатах уравнением геодезической будет $ \hat z = \varphi \frac{2}{\pi}$
+
+ \textcolor[rgb]{0.480469,0.566406,0.480469}{\textit{Прочитайте, пожалуйста, \hyperref[thxs]{\text{благодарности}}. Люди про которых я писал там заслуживают минутки внимания}}                                               
 \end{document}
