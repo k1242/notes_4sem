@@ -1,0 +1,169 @@
+\section{КвантМех в холодных ионах}
+
+Квантовомеханические системы описываются квантовомеханическим уравнением Шредингера вида
+\begin{equation*}
+    i \hbar \partial_t \Psi = \hat{H} \Psi,
+\end{equation*}
+где для $N$ частиц $\Psi \equiv \Psi(\vc{r}_1, \ldots, \vc{r}_n, t)$. 
+Гамильтониан же -- набор частных производных вида
+\begin{equation*}
+    \hat{H} = - \sum \frac{\hbar}{2m} \frac{\partial^2 }{\partial x_i^2} + V(x_1, \ldots, x_n),
+\end{equation*}
+а потенциальная энергия --
+\begin{equation*}
+    V = \sum \frac{e^2}{|r_i - r_j|} + \sum V(r_i).
+\end{equation*}
+Важно понимать, что есть набор стационарных решений вида
+\begin{equation*}
+    \Psi = \exp\left(
+        - \frac{i E_n t}{\hbar}
+    \right) \Psi_n (\vc{r}_1, \ldots, \vc{r}_N).
+\end{equation*}
+Переобозначим исходный гамильтониан за $H_0$, а добавку будем называть $\hat{V}$ вида
+\begin{equation*}
+\red{
+    \hat{V} = - e \vc{E} \cdot (\vc{r}_1+ \ldots+ \vc{r}_N) =  \vc{E} \cdot \vc{d}.
+}
+\end{equation*}
+Так вот, $H = \hat{H}_0 + \hat{V}$, допустим мы знаем, что
+\begin{equation*}
+    \hat{H}_0 \Psi_n = E_n \Psi_n,
+\end{equation*}
+тогда
+\begin{equation*}
+    \Psi = \sum c_n (t) e^{-i E_n t} \Psi_n.
+\end{equation*}
+Подставляя это в уравнение Шредингера, получим
+\begin{equation*}
+    i \hbar\, \partial_t c_n = \sum_{m} e^{i(E_n - E_m)t} V_{nm} (t) c_m.
+\end{equation*}
+
+Светим лазером сейчас на частоте близкой к резонансной, поэтому предлагается оставить только резонансную пару $c_0, \, c_1$.  Если ограничиться всего двумя членами, то
+\begin{equation*}
+    E(t) = E_0 \cos \left(
+        (E_1-E_0) t
+    \right),
+    \hspace{5 mm} 
+    i \partial_t \begin{pmatrix}
+        c_0 \\ c_1
+    \end{pmatrix} = 
+    \begin{pmatrix}
+        0 & (Ed)^* \\
+        Ed & 0
+    \end{pmatrix}
+    \begin{pmatrix}
+        c_0 \\ c_1
+    \end{pmatrix},
+\end{equation*}
+которое уже решается. В результате находим осциллирующую резонансную пару
+\begin{equation*}
+        c_0 (t) = c_0 (0) \cos\left(
+            \frac{|E_0 d|}{\hbar} \, t
+        \right) + i e^{i \varphi} c_1 (0) \sin \left(
+            \frac{|E_0 d|}{\hbar} \, t
+        \right).
+\end{equation*}
+Есть матрицы Паули
+\begin{equation*}
+    \sigma_x = \begin{pmatrix} 0 & 1 \\ 1 & 0 \\ \end{pmatrix};
+    \hspace{5 mm} 
+    \sigma_y = \begin{pmatrix} 0 & -i\\ i & 0 \\ \end{pmatrix};
+    \hspace{5 mm} 
+    \sigma_z = \begin{pmatrix} 1 & 0 \\ 0 & -1 \\ \end{pmatrix},
+\end{equation*}
+ также вводится $\sigma_{+-} = \frac{1}{2} \left(
+    \sigma_x \pm i \sigma_y
+ \right)$, тогда гамильтониан перепишется в виде
+ \begin{equation*}
+     i \hbar \partial_t c = \left[
+        (Ed)^* \sigma_- + (Ed) \sigma_+
+     \right].
+ \end{equation*}
+
+
+\subsection{Начало движения ядра}
+
+Теперь ядро $(\vc{R})$ не неподвижно, но решать будем в предположение о факторизации системы
+\begin{equation*}
+    \Psi = \Psi(\vc{R}, \vc{r}_1, \ldots, \vc{r}_N) = \tilde{\Psi} (\tilde{R}) \cdot \Psi(\vc{r}_1, \ldots, \vc{r}_N).
+\end{equation*}
+Внешний потенциал ловушки практически гармонический
+\begin{equation*}
+    \hat{H} = \frac{\hat{p}}{2M} + \frac{m \omega^2 R^2}{2}.
+\end{equation*}
+Его можно с помощью повыщающих и понижающих операторов
+\begin{equation*}
+    a, a^+ = \sqrt{
+    \frac{\hbar}{2 M \omega}
+    } x \pm i \sqrt{\frac{\hbar \omega}{2m}} \hat{p}.
+\end{equation*}
+Тогда гамильтониан перепишется в виде
+\begin{equation*}
+    \hat{H} = \hbar \omega \left(
+        a^+ a + \frac{1}{2}
+    \right).
+\end{equation*}
+Очень важно, что $[a, a^+ ] = 1$. Например, можно решить
+\begin{equation*}
+    a |0\rangle = 0,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    H |0\rangle = \frac{\hbar \omega}{2} |0\rangle,
+\end{equation*}
+где $|0\rangle \equiv \Psi_0 = \Psi(\vc{R})$. Найдём $\Psi_n = (a^+)^n |0\rangle.$
+Утверждается, что
+\begin{equation*}
+    H \Psi_n = \hbar \omega  \left(n + \frac{1}{2}\right) \Psi_n.
+\end{equation*}
+Это можно доказать. Так, например,
+\begin{equation*}
+    [a^+ a, a] = a^+ a \, a - a a^+ a = - a,
+    \hspace{5 mm} 
+    [a^+ a, \, a^+] = a^+.
+\end{equation*}
+% написать функцию: send message
+% написать функцию: make note
+% def mknt(): s = input(); with open("D:\\Kami\\git_folder\\notes_4sem\\qo\\notes\\parts\\K0.tex", "w") as f: f.write(s);
+Теперь можем записать, что
+\begin{equation*}
+    \vc{E}(t) = \vc{E}_0 \cos(\Omega t - \vc{k} \cdot \vc{R}),
+    \hspace{5 mm} 
+    \vc{R} = \sqrt{\frac{1}{2 m \hbar \omega}} (a + a^+).
+\end{equation*}
+В предположении о малости $\vc{k} \cdot \vc{R}$, можем найти
+\begin{equation*}
+    \vc{E} \approx \frac{\vc{E}_0}{2} 
+        e^{-i \Omega t} \left(
+            1 + i k R
+        \right),
+\end{equation*}
+что запишем как соответствующий член в гамильтониан Лэмбэ-Дикке.
+\begin{equation*}
+    \hat{H} = H_0 + \frac{E_0}{2} \left(
+        e^{-\Omega t} \left(
+            1 + ik \sqrt{\frac{1}{2 m \hbar \omega}} (a + a^+)(\sigma_+ + \sigma_-)
+        \right) + h.c.
+    \right),
+\end{equation*}
+% ☺1111}▐Ї☺☼BcTc♠♠♥§♀|}{╝╗╜║╣╕╖↕╢╡│2☺☺
+Выбрав свет в резонанс на один колебательный квант -- мы запутываем ион с одной степенью свободы,
+\begin{equation*}
+    \Omega = \frac{\varepsilon_1 - \varepsilon_0}{\hbar} \pm \omega_0.
+\end{equation*}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

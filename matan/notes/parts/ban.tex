@@ -1,0 +1,205 @@
+\section{Банаховы пространства и их двойственные}
+
+
+\begin{to_def}
+    \textit{Банахово пространство} -- полное нормированое пространство. 
+\end{to_def}
+
+
+
+
+
+\subsubsection*{Т8}
+
+Здесь, и далее $p(x) = \|x\|$, $q(x) = \|x\|'$. Нормы эквивалентны, если
+\begin{equation*}
+    \exists m, M \ \colon  \ m p(x) \leq q(x) \leq M p(x) \  \ \forall x.
+\end{equation*}
+% ульянов бахвалов -- Rn, 3,99
+% Кудрявцев, том 3
+% базис Гамиля есть всегда!
+Так вот, всегда есть $\{e_k\}_{k=1}^n$ базис Гамиля, такой то $x = \sum_{k=1}^n x_k e_k$, где естественно ввести норму вида
+\begin{equation*}
+    p(x) = \sum_{k=1}^n |x_k|.
+\end{equation*}
+Пусть $q(x)$ -- ещё одна норма на $X$, в качестве мажоранты выберем $M = \max_{i=1, \ldots, n}  q(e_i)$.
+Теперь можем оценить сумму сверху:
+\begin{equation*}
+    q(x) = q\left(
+        \sum_{k=1}^n x_k e_k
+    \right) \leq \sum_{k=1}^{n} |x_k| q(e_k) \leq M p(x).
+\end{equation*}
+И оценить снизу:
+\begin{equation*}
+    |q(x) - q(y)| \leq q(x-y) \leq M p (x-y)
+\end{equation*}
+вообще $q$ -- липшецев функционал, -- непрерывные функционал на $X$ с нормой $p$. 
+
+
+\begin{to_lem}
+    Шары в пространстве компактны тогда, и только тогда, когда $\dim X < + \infty$.
+\end{to_lem}
+
+Рассмотрим сферу $S = \{x \in X \mid p(x) = 1\}$ -- компакт. Но мы знаем, что непрерывный функционал на компакте достигает своего миниимума:
+\begin{equation*}
+    \min_{x \in S} q(x) = m > 0.
+\end{equation*}
+На $S$ $q(x) \geq m$. Тогда в $X$ $q(x) \geq m p(x)$. Действительно,
+\begin{equation*}
+    q(tx) - |t|q(x), \ \  p(tx) = |t| \, p(x), \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    q(tx) = \frac{p(tx)}{p(x)} q(x) \geq m\, p(tx).
+\end{equation*}
+Собственно, и $Q.\, E.\, D.$
+
+
+
+
+
+
+\subsubsection*{Т9. Пространство \texorpdfstring{$c$}{с}}
+
+Есть некоторый бесконечномерный <<вектор>> 
+\begin{equation*}
+    x = \big(x(1), x(2), \ldots, x(k), \ldots\big),
+    \hspace{5 mm}
+    \bigg|
+        \lim_{k \to \infty} x(k)
+    \bigg| < + \infty.
+\end{equation*}
+Норма определена, как
+\begin{equation*}
+    p(x) = \|x\|_c = \sup_{k \in \mathbb{N}} |x(k)| = \|x\|_{\infty}.
+\end{equation*}
+Рассмотрим последовательность $x_n$, где 
+\begin{equation*}
+    x_n = (x_n (1), \ldots, x_n(k), \ldots).
+\end{equation*}
+Глобально хотим показать, что
+\begin{equation*}
+    \forall \varepsilon > 0 \ \ 
+    \exists N(\varepsilon) \in \mathbb{N} \ \ 
+    \forall n \geq N(\varepsilon) \ \ 
+    \forall l \in \mathbb{N} \ \  \ 
+    \|x_{n+l} -x_{n}\|_{\infty} = \sup_{k \in \mathbb{N}} |x_{n+l} (k) - x_n (k)| < \varepsilon.
+\end{equation*}
+Попробуем через это продраться:
+\begin{equation*}
+    \forall k \in \mathbb{N} \ \ |x_{n+l} (k) - x_n (k) | < \varepsilon.
+\end{equation*}
+Здесь можем выделить $(x_n(k))_{n \in \mathbb{N}}$ -- числовая фундаментальноая в $\mathbb{R}$. 
+По критерию Коши:
+\begin{equation*}
+    \forall k \in \mathbb{N} \ \ 
+    \lim_{n \to \infty} x_n (k) = y(k) \in \mathbb{R}.
+\end{equation*}
+Установили покомпонентую сходимость. 
+
+Теперь рассмотрим
+\begin{equation*}
+    \sup_{k\in \mathbb{N}} |x_n (k) - y(k)| = \|x_n - y\|_{\infty} < \varepsilon,
+\end{equation*}
+что автоматически означает, что $\exists y$ такой, что
+\begin{equation*}
+    \lim_{n \to \infty} x_n  = y.
+\end{equation*}
+
+Следующий этап -- показать, что
+\begin{equation*}
+    \exists \lim_{k \to \infty} y(k) \in \mathbb{R},
+\end{equation*}
+то есть показать полноту пространства:
+\begin{align*}
+    |y(k+q)-y(k)| 
+    &= |y(k+q) - x_n (k+q) + x_n (k+q) - x_n (k) + x_n (k) - x_n (k)|\\
+    &\leq |y(k+q)-x_n (k+q)| + |y(k) - x_n (k)| + |x_n (k+q) - x_n (k)| \\
+    & < \varepsilon/3 + \varepsilon/3 + \varepsilon/3 = \varepsilon.
+\end{align*}
+Таким образом мы доказали полноту пространства\footnote{
+    \red{$c_0, c_{00}, l_\infty$ -- банаховы ли?}
+} . 
+
+
+
+
+
+
+\subsubsection*{Т10. Критерий Йордана-фон Неймана}
+
+\begin{to_def}
+    Если норма в банаховом пространстве $E$ порождается положительно определенным скалярным произведением 
+    \begin{equation*}
+        \|x\| = \sqrt{(x, x)},
+    \end{equation*}
+    то $E$ называется \textit{гильбертовым пространством}.
+\end{to_def}
+
+\begin{to_thr}[критерий Йордана-фон Неймана]
+    Норма $\|\circ\|_X$ порождается скалярным произведением тогда, и тоглько тогда, когда
+    $\|\circ\|_X$ удовлетворяет правилу параллелограмма:
+    \begin{equation*}
+        \forall x, y \in X \ \ \ 
+        \|x+y\|^2_X + \|x-y\|^2_X = 2 \|x\|_X^2 + 2 \|y\|_X^2.
+    \end{equation*}
+\end{to_thr}
+
+\noindent
+Выберем $C[0, \pi/2]$, и $x(t) = \cos t$, $y(t) = \sin t $. Заметим, что
+\begin{equation*}
+    \|x\|_{\infty} = \|y\|_{\infty} = 1,
+    \hspace{5 mm}
+    \|x+y\|_{\infty} = \sqrt{2}, \hspace{5 mm} \|x-y\|_\infty = 1.
+\end{equation*}
+Таким образом пространство не гильбертово.
+
+
+\subsubsection*{Т11. Поиск функционала}
+
+
+
+Найдём норму функционала
+\begin{equation*}
+    \sum_{k=0}^N (-1)^k f\left(\frac{k}{N}\right).
+\end{equation*}
+Вообще нормированным пространством мы называем пару вида $(X, \|\circ\|_X)$. И пусть есть некоторый непрерывный ограниченный оператор из $X$ в $Y$. Если $Y = \mathbb{C}(\mathbb{R})$, 
+\begin{equation*}
+    A = F \colon  X \to \mathbb{C}(\mathbb{R}).
+\end{equation*}
+Выберем в качетсве $X = C[0, 1]$, а в качетсве $F \colon C[0, 1] \mapsto \mathbb{C}(\mathbb{R})$.
+Функционал вида
+\begin{equation*}
+    F[f] = \sum_{k=0}^{n}(-1)^k f\left(\frac{k}{n}\right).
+\end{equation*}
+Что есть норма функционала? Норма функционала есть
+\begin{align*}
+    \|F\| 
+    &= \sup_{\|f\|_{\infty} \leq 1} |F[f]| \\
+    &= \sup_{\|f\|_{\infty} = 1} |F[f]| \\
+    &= \inf \{
+        L > 0 \mid |F[f]| \leq L\|f\|_\infty
+    \}, 
+    \hspace{5 mm} \forall f \in C[0, 1].
+\end{align*}
+\texttt{Глобально, это доказывается, например, в Константинове очень подробно.} 
+
+\texttt{Всегда легко сверху ограничить.} Тривиальный шаг:
+\begin{equation*}
+    |F[f]| = \bigg|
+        \sum_{k=0}^{n} (-1)^k f\left(
+            \frac{k}{n}
+        \right)
+    \bigg| \leq \sum_{k=0}^{n} \bigg|
+        f\left(\frac{k}{n}\right)
+    \bigg| \leq \sum_{k=0}^{n} \sup_{x\ in [0,1 ]} |f(x)| = (n+1) \cdot \|f\|_{\infty}.
+\end{equation*}
+Продолжаем, 
+\begin{equation*}
+    \frac{|F[f]|}{\|f\|_{\infty}} \leq n + 1,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \|F\| = \sup_{\|f\|_{\infty} = 1} |F[f]| \leq n+1.
+\end{equation*}
+Теперь выберем функцию $f_s(x) = f(k/n) = (-1)^k$. На ней мы действительно достигаем супремум, тогда
+\begin{equation*}
+    \|F\| = |F[f_s]| = n+1.
+\end{equation*}
+
+
