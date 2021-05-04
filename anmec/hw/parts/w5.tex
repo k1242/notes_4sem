@@ -1,0 +1,224 @@
+\subsubsection*{19.9}
+
+Найдём гамильтониан системы, и составим канонические уравнения движения механической системы, с лагранжианом вида
+\begin{equation*}
+    L = \frac{1}{2} \left(
+        (\dot{q}_1^2 + \dot{q}_2^2)^2 + a \dot{q}_1^2 t^2
+    \right) - a \cos q_2.
+\end{equation*}
+Что ж, выразим импульсы, через обобщенные скорости
+\begin{equation*}
+    \left\{\begin{aligned}
+        p_1 &= \partial_{\dot{q}_1} L &= \dot{q}_1 - \dot{q}_2 + q \dot{q}_1 t^2, \\
+        p_2 &= \ldots &= \dot{q}_2 - \dot{q}_1
+    \end{aligned}\right.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \dot{q}_1 = \frac{p_1+p_2}{at^2},
+    \hspace{5 mm} 
+    \dot{q}_2 = \frac{p_1 + p_2(1+at^2)}{at^2}.
+\end{equation*}
+И получим функцию Гамильтона
+\begin{equation*}
+    H = p_1 \dot{q}_1 + p_2 \dot{q}_2 - L = 
+    \frac{(p_1+p_2)^2}{2 at^2} + a \cos q_2 - \frac{p_2^2}{2}.
+\end{equation*}
+Канонические уравнения системы:
+\begin{align*}
+    \dot{q}_1 &= \frac{p_1+p_2}{a t^2}, \\
+    \dot{q}_2 &= \frac{p_1+p_2}{a t^2}-p_2, \\
+    \dot{p}_1 &= 0, \\
+    \dot{p}_2 &= a \sin (q_2) .
+\end{align*}
+
+
+
+
+\subsubsection*{19.15}
+
+Решим обраьтную задачу, попробуем найти лагранжиан механической системы, гамильтониан которой имеет вид
+\begin{equation*}
+    H = \frac{1}{2} \frac{p_1^2 + p_2^2}{q_1^2 + 1_2^2} + a(q_1^2 + q_2^2).
+\end{equation*} 
+Для начала перейдём к обобщенным скоростям
+\begin{equation*}
+    \dot{q}_1 = \frac{p_1}{q_1^2+q_2^2},
+    \hspace{5 mm} 
+    \dot{q}_2 = \frac{p_2}{q_1^2+q_2^2},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \left\{\begin{aligned}
+        p_1 &= (q_1^2+q_2^2) \dot{q}_1, \\
+        p_2 &= (q_1^2+q_2^2) \dot{q}_2.
+    \end{aligned}\right.
+\end{equation*}
+Лагранжиан же примет вид
+\begin{equation*}
+    L = p_1 \dot{q}_1 + p_2 \dot{q}_2 - H = 
+    \left[
+        \frac{1}{2} \left(
+            \dot{q}_1^2 + \dot{q}_2^2
+        \right) - a
+    \right] (q_1^2 + q_2^2).
+\end{equation*}
+
+
+\subsubsection*{19.32}
+
+Найдём гамильтониан для двойного маятника, состоящего из двух одинаковых стержней массы $m$ и для $l$. 
+
+Координаты центар масс стержней:
+\begin{equation*}
+    \left.\begin{aligned}
+        h_1 &= \textstyle \frac{l}{2} \cos \alpha_1, \\
+        h_2 &= \textstyle l \cos \alpha_1 + \frac{l}{2} \cos \alpha_2,\\
+    \end{aligned}\right.
+    \hspace{5 mm} 
+    \left.\begin{aligned}
+        x_1 &= \textstyle \frac{l}{2} \sin \alpha_1, \\
+        x_2 &= \textstyle l \sin \alpha_1 + \frac{l}{2} \sin \alpha_2.
+    \end{aligned}\right.
+\end{equation*}
+Тогда кинетическая и потенциальная энергия системы
+\begin{equation*}
+    \Pi = mg(h_1 + h_2),
+    \hspace{5 mm} 
+    T = \frac{m}{2} l^2 \left(
+        \dot{\alpha}_1^2 + \dot{\alpha}_2^2
+    \right) + 
+    \frac{m}{24} \left(
+        \dot{x}_1^2 + \dot{h}_1^2 + \dot{x}_2^2 + \dot{h}_2^2
+    \right).
+\end{equation*}
+Подставляя координаты, находим
+\begin{align*}
+    T &= \frac{1}{6} l^2 m \left(4 \alpha _1'{}^2+\alpha _2'{}^2+3 \alpha _2' \alpha _1' \cos \left(\alpha _1-\alpha _2\right)\right), \\
+    \Pi &= g m \left(\frac{3}{2} l \cos \left(\alpha _1\right)+\frac{1}{2} l \cos \left(\alpha _2\right)\right),
+\end{align*}
+что не так плохо, как могло бы быть.
+Для консервативной системы с адекваными связями
+\begin{equation*}
+    H = E = T + \Pi, 
+    \hspace{5 mm} 
+    L = T - \Pi,
+    \hspace{5 mm} 
+    \left.\begin{aligned}
+        p_1 &= \partial_{\dot{q}_1} L, \\
+        p_2 &= \partial_{\dot{q}_2} L. \\
+    \end{aligned}\right.
+\end{equation*}
+Ну, подставляя координаты, находим
+\begin{equation*}
+    \left.\begin{aligned}
+        p_1 &= 
+        \frac{1}{6} l^2 m \left(8 \dot{\alpha}_1 +3 \dot{\alpha}_2  \cos \left(\alpha _1-\alpha _2\right)\right), \\
+        p_2 &= 
+        \frac{1}{6} l^2 m \left(
+        2 \dot{\alpha}_2  +
+        3 \dot{\alpha}_1  \cos \left(\alpha _1-\alpha _2\right)
+        \right),
+        \\
+    \end{aligned}\right.
+    \hspace{10 mm} 
+    \left.\begin{aligned}
+        \dot{\alpha}_1 &=  \frac{12 \left(3 p_2 \cos \left(\alpha _1-\alpha _2\right)-2 p_1\right)}{l^2 m \left(9 \cos \left(2 \left(\alpha _1-\alpha _2\right)\right)-23\right)},\\
+        \dot{\alpha}_2 &= \frac{12 \left(3 p_1 \cos \left(\alpha _1-\alpha _2\right)-8 p_2\right)}{l^2 m \left(9 \cos \left(2 \left(\alpha _1-\alpha _2\right)\right)-23\right)}. \\
+    \end{aligned}\right.
+\end{equation*}
+Возможно, после подтстановки станет в гамильтониан станет лучше:
+\begin{equation*}
+    H = - m g \frac{l}{2} 
+    \left[3 \cos \left(\alpha _1\right)- \cos \left(\alpha _2\right)\right]
+    +
+    \frac{1}{ml^2}
+    \frac{
+        6 \left(p_1^2-3 p_1 p_2 \cos (q_1-q_2)+4 p_2^2\right)
+    }{
+        \left(9 \sin ^2(q_1-q_2)+7\right)
+    }
+\end{equation*}
+И канонические уравнения ($\alpha_1 = q_1, \, \alpha_2 = q_2$):
+\begin{align*}
+\dot{q}_1 &= \frac{12 (3 p_2 \cos (q_1-q_2)-2 p_1)}{l^2 m (9 \cos (2 (q_1-q_2))-23)}, \\
+\dot{q}_2 &= \frac{12 (3 p_1 \cos (q_1-q_2)-8 p_2)}{l^2 m (9 \cos (2 (q_1-q_2))-23)}, \\
+\dot{p}_1 &= -\frac{3}{2} g l m \sin (q_1)-\frac{36 \sin (q_1-q_2) \left(p_1 p_2 (9 \cos (2 (q_1-q_2))+41)-12 \left(p_1^2+4 p_2^2\right) \cos (q_1-q_2)\right)}{l^2 m (23-9 \cos (2 (q_1-q_2)))^2}, \\
+\dot{p}_2 &= -\frac{1}{2} g l m \sin (q_2)-\frac{36 \sin (q_1-q_2) \left(12 \left(p_1^2+4 p_2^2\right) \cos (q_1-q_2)-p_1 p_2 (9 \cos (2 (q_1-q_2))+41)\right)}{l^2 m (23-9 \cos (2 (q_1-q_2)))^2}. 
+\end{align*}
+Гамильтониан сходится с приведенным в ответах, что не может не радовать. 
+
+
+\subsubsection*{19.69}
+
+Тяжелое колечко массы $m$ скользит по гладкой проволочной окружности массы $M$ и радуса $r$, которая может вращаться вокруг своего вертикального диаметра. Составим уравнения движения системы в форме уравнений Рауса (выбрав такие обобщенные скорости, чтобы всё сошлось):
+\begin{equation*}
+    \Pi = m g R \cos \psi,
+    \hspace{5 mm} 
+    T = \frac{m}{2} \left(
+        (\dot{\varphi} R \sin \psi)^2 + (\dot{\psi} R)^2
+    \right) + \frac{M R^2}{2} \frac{\dot{\varphi}^2}{2}.
+\end{equation*}
+Лагранжиан знаем, как $L = T - \Pi$, функцию Рауса через
+\begin{equation*}
+    R(\psi, \varphi, \dot{\psi}, p_\varphi) = p_\varphi \dot{\varphi} - L(\psi, \varphi, \dot{\psi}, p_\varphi),
+\end{equation*}
+Находя из $p_\varphi = \partial_{\dot{\varphi}} L$ значение $\dot{\varphi}$, находим функцию Рауса
+\begin{equation*}
+    \dot{\varphi} = \frac{2 p_\varphi}{r^2 (M + 2 m \sin^2 \psi)},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    R = m g R \cos \psi - \frac{m R^2}{2} \dot{\psi}^2 + \frac{p_\varphi^2}{R^2(M+2m \sin^2 \psi)}.
+\end{equation*}
+
+
+
+\subsubsection*{19.70}
+
+В сферических координатах лагранжиан релятивистской частицы в поле тяготения имеет вид
+\begin{equation*}
+    L = - m_0 c^2 \sqrt{1 - \frac{\dot{r}^2 + r^2 \dot{\theta}^2 + r^2 \dot{\varphi}^2 \sin^2 \theta}{c^2}} + \frac{G}{r}.
+\end{equation*}
+Найдём соответствующую функцию Рауса. Аналогично предыдущей задачи, из $p_\varphi = \partial_{\dot{\varphi}} L$ находим $\dot{\varphi}$:
+\begin{equation*}
+    \dot{\varphi} = \pm \frac{p_\varphi}{r \sin \theta} \sqrt{
+    \frac{c^2 - \dot{r}^2 - \dot{\theta}^2 r^2}{p_\varphi^2 + c^2 m^2 r^2 \sin^2 \theta}
+    },
+\end{equation*}
+что подставляем в выражение для функции Рауса $R = p_\varphi \dot{\varphi} - L$, откуда получаем
+\begin{equation*}
+    R = m_0 c^2 \sqrt{\left(
+        1 - \frac{\dot{r}^2 + r^2 \dot{\theta}^2}{c^2}
+    \right)\left(
+        1 + \frac{p_\varphi^2}{m_0^2 c^2 r^2 \sin^2 \theta}
+    \right)} - \frac{G}{r}.
+\end{equation*}
+
+
+\subsubsection*{19.72}
+
+Для системы с лагранжианом вида
+\begin{equation*}
+    L = \frac{\dot{q}^2_1 + \dot{q}^2_2 + {q}^2_1 \dot{q}^2_3}{2} - \frac{q_1^2+q_2^2}{2}.
+\end{equation*}
+Сразу перепишем это в терминах $(q, p)$ разбив на кинетическую и потенциальную энергии:
+\begin{equation*}
+    T = \frac{p_1^2 + p_2^2 + p_3^2/q_1^2}{2},
+    \hspace{5 mm} 
+    \Pi = \frac{q_1^2+q_2^2}{2}.
+\end{equation*}
+Осталось сказать, что $T + \Pi = H = h = \const$, и найти
+\begin{equation*}
+    p_3 = K = \pm q_1 \sqrt{2 h - (p_1^2+p_2^2)-(q_1^2+q_2^2)}.
+\end{equation*}
+Теперь выпешем уравнения Гамильтона
+\begin{align*}
+    \dot{q}_1 &= \partial_{p_1} H, \hspace{5 mm} \dot{p}_1 = - \partial_{q_1} H,
+    \dot{q}_i &= \partial_{p_i} H, \hspace{5 mm} \dot{p}_i = - \partial_{q_i} H.
+\end{align*}
+Тогда
+\begin{align*}
+    \frac{d q_2}{d q_1} &= \frac{\partial K}{\partial p_2} = -\frac{p_2 q_1}{\sqrt{2 h-p_1^2-p_2^2-q_1^2-q_2^2}},
+    % \hspace{5 mm} 
+    % \frac{d q_3}{d q_1} = \frac{\partial K}{\partial p_3} = 0, 
+    \\
+    \frac{d p_2}{d q_1} &= - \frac{\partial K}{\partial q_2} = \frac{q_1 q_2}{\sqrt{2 h-p_1^2-p_2^2-q_1^2-q_2^2}}.
+    % \hspace{5 mm} 
+    % \frac{d p_3}{d q_3} = 0.
+\end{align*}
+

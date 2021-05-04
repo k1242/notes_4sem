@@ -1,0 +1,41 @@
+\subsubsection*{Т20}
+
+
+Для следующих четырёх гамильтоновых систем оценим меру устойчивых, или неустойчивых траекторий к возмущениям $\varepsilon H_1$ при малых $(0 < \varepsilon \ll 1)$. Также построим графики линий уровня $H_0 (I_1, I_2)$ и отложим на них $\omega \colon  \omega_2 = \const$. 
+
+
+\textbf{Первый случай}. Для гамильтониана и возмущения
+\begin{equation*}
+    H_0 = 42 I_1^2 + I_1 I_2 + 42 I_2^2, \hspace{5 mm} H_1 = 2 I_1 \sin(3 \varphi_1 - 18 \varphi_2),
+\end{equation*}
+можем перейти к переменным $\vc{J}, \ \vc{\psi}$ через производящую функцию вида
+\begin{equation*}
+    S + \vc{I} \cdot \vc{\varphi} + \varepsilon \frac{18}{5} \frac{2I_1}{84 I_1 + I_2} \cos(3 \varphi_1 - 18 \varphi_2),
+\end{equation*}
+к гамильтониану $\hat{H} = H_0(J_1, J_2)$, и, соответсвенно ограниченными $I_1$, $I_2$. 
+
+Система с $H_0$ является невырожденной 
+\begin{equation*}
+    \bigg| \frac{\partial^2 H}{\partial I_i \partial I_j} \bigg| = 
+    \begin{pmatrix}
+        84 & 1  \\
+        1 & 84  \\
+    \end{pmatrix} \neq 0,
+\end{equation*}
+а также изоэнергетически невырожденной
+\begin{equation*}
+     \det \begin{bmatrix}
+        \vphantom{\dfrac{1}{2}}
+            \dfrac{\partial^2 H_0}{\partial \vc{I}\T \partial \vc{I}} & \vc{\omega} \\
+        \vphantom{\dfrac{1}{2}}
+            \vc{\omega}\T & 0
+        \end{bmatrix} = \begin{pmatrix}
+            84 & 1 & 84 I_1 + I_2 \\
+            1 & 84 & 84 I_2 + I_1 \\
+            84 I_1 + I_2 & 84 I_2 + I_1 & 0 \\
+        \end{pmatrix} = 14110 (42 I_1^2 + I_1 I_2 + 42 I_2^2) \sim H_0 > 0.
+\end{equation*}
+Таким образом мера траекторий, неустойчивых к возмущениям, равна нуля (а вообще выше мы показали, что их здесь нет).
+
+
+\textbf{Второй случай.}

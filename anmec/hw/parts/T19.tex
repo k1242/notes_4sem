@@ -1,0 +1,136 @@
+\subsubsection*{Т19}
+
+
+
+Для гамильтоновой системы $H_0 = 7 I_1 - I_2$ найдём уравнения движения $x(t) = \sqrt{2 I_1} \cos \varphi_1$, $y = \sqrt{2 I_1} \sin \varphi_1$, при наложении возмущения $\varepsilon H_1$, с 
+\begin{align*}
+    &1) \ \ H_1 = \sqrt{2 I_1} \cos \varphi_1 \cos 6 \varphi_2 = \frac{\sqrt{2 I_1}}{2} \left[
+        \cos(\varphi_1 + 6 \varphi_2) + \cos(\varphi_1-6\varphi_2)
+    \right] \\
+    &2) \ \ H_1 = \sqrt{2 I_1} \cos \varphi_1 \cos 7 \varphi_2 = \frac{\sqrt{2 I_1}}{2} \left[
+        \cos(\varphi_1 + 7 \varphi_2) + \cos(\varphi_1-7\varphi_2)
+    \right].
+\end{align*}
+
+Система является вырожденной в терминах
+\begin{equation*}
+        \bigg|
+            \frac{\partial^2 H_0}{\partial I_i \partial I_j} 
+        \bigg| = 0,
+\end{equation*}
+т.к. $\omega_1 = \partial_{I_1} H_0 = 7 = \const$, $\omega_2 = \partial_{I_2} H_0 = -1 = \const$.
+По аналогичным причинам
+\begin{equation*}
+            \det \begin{bmatrix}
+        \vphantom{\dfrac{1}{2}}
+            \dfrac{\partial^2 H_0}{\partial \vc{I}\T \partial \vc{I}} & \vc{\omega} \\
+        \vphantom{\dfrac{1}{2}}
+            \vc{\omega}\T & 0
+        \end{bmatrix} = 0,
+\end{equation*}
+то есть $\omega_2/\omega_1$ не зависит $I_1, \ I_2$.
+
+\textbf{Первый случай}. Так как возмущение явно периодично, то можем попробовать найти новые хорошие переменные через производящую функцию $S$, вида
+\begin{equation*}
+    S = \vc{I} \cdot \vc{\varphi} + \varepsilon S_1,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \left\{\begin{aligned}
+        \psi &= \varphi + \varepsilon\, \partial_I S \\
+        J &= I + \varepsilon\, \partial_\varphi S
+    \end{aligned}\right.
+\end{equation*}
+Саму функцию ищем в виде
+\begin{equation*}
+    S = \sum_i S_i \exp(i \vc{k}_i \cdot \vc{\varphi}) = S_1 \sin(\varphi_1 + 6 \varphi_2) + S_2 \sin (\varphi - 6 \varphi_2).
+\end{equation*}
+Вспоминая, что $\partial_I H_0 \cdot \partial_\varphi S = -\left[H_1(I, \varphi)\right]_{\text{период}}$, находим
+\begin{equation*}
+    S_1 = \frac{\sqrt{2 I_1}}{2 (7-6)}, \hspace{5 mm} 
+    S_2 = \frac{\sqrt{2 I_1}}{2 (7+6)}.
+\end{equation*}
+Теперь можем найти новые переменные
+\begin{align*}
+    \psi_1 &= \varphi_1 + \frac{\varepsilon}{2 \sqrt{2 I_1}} \sin(\varphi_1 + 6 \varphi_2) + \varepsilon \frac{\sqrt{2 I_1}}{26} \sin(\varphi_1 - 6 \varphi_2),\\
+    \psi_2 &= \varphi_2, \\
+    J_1 &= I_1 + \frac{\varepsilon \sqrt{2 I_1}}{2} \cos(\varphi_1 + 6 \varphi_2) + \frac{\varepsilon \sqrt{2 I_1}}{26} \cos(\varphi_1 - 6 \varphi_2), 
+\end{align*}
+с новым гамильтонианом $\hat{H} = 7 J_1 - J_2 + o(\varepsilon)$, $J_1, J_2 = \const$, и $\psi_1 = 7 t + C_1$, $\psi_2 = - t + C_2$. Выражение для второго интеграла системы содержит $I_2$, поэтому нам неинтересно.
+
+Осталось выразить $I_1$ и $\varphi_1$ в терминах $x, y$:
+\begin{equation*}
+    \varphi_1 = \arctg \frac{y}{x}, \hspace{5 mm} x^2 + y^2 = 2 I_1,
+\end{equation*}
+а также (считая константы нулевыми), подставляя $x,\, y$ в уравнения
+\begin{equation*}
+    \psi_1 = \varphi_1 + \frac{\varepsilon}{4 I_1}\left(
+        \frac{14}{13} y \cos 6 t - \frac{12}{13} x \sin 6 t
+    \right) = 
+    \arctg \frac{y}{x} + \frac{\varepsilon}{13} \frac{1}{x^2+y^2} \left[
+        7 y \cos(6t) - 6 x \sin(6t)
+    \right].
+\end{equation*}
+Аналогично для выражения $J_1$:
+\begin{equation*}
+    J_1 = I_1 + \frac{\varepsilon}{13}\left[
+        7 x \cos (6 t) + 6 y \sin (6t)
+    \right].
+\end{equation*}
+Итогвая система для $x(t)$ и $y(t)$ получилась вида
+\begin{align*}
+    J_1 &= \frac{x^2+y^2}{2} + \frac{\varepsilon}{13}\left[
+        7 x \cos (6 t) + 6 y \sin (6t)
+    \right], \\
+    7 t &= \arctg \frac{y}{x} + \frac{\varepsilon}{13} \frac{1}{x^2+y^2} \left[
+        7 y \cos(6t) - 6 x \sin(6t)
+    \right],
+\end{align*}
+которую можно уже и не разрешать.
+
+
+\textbf{Второй случай}. Если повторить рассуждения первого случая, то увидим деление на $0$ в выражение для $S_1$, однако производящую функцию вида
+\begin{equation*}
+    S = \vc{I} \cdot \vc{\varphi} + S_2,
+    \hspace{10 mm} 
+    S_2 = \frac{\sqrt{2I_1}}{28},
+\end{equation*}
+всё можем рассмотреть, чтобы избавиться от одной из возмущающих гармоник.
+
+Новые переменные будут вида
+\begin{align*}
+    \psi_1 &= \varphi_1 + \frac{\varepsilon}{28 \sqrt{2I_1}} \sin(\varphi_1 - 7 \varphi_2), \\
+    \psi_2 &= \varphi_2, \\
+    J_1 &= I_1 + \frac{\varepsilon \sqrt{2I_1}}{28} \cos\left(\varphi_1 - 7 \varphi_2\right), \\
+    J_2 &= I_2 - \frac{\varepsilon \sqrt{2 I_1}}{4} \cos\left(\varphi_1 - 7 \varphi_2\right),
+\end{align*}
+с новым гамильтонианом вида
+\begin{equation*}
+    \hat{H} = 7 J_1 - J_2 + \frac{\varepsilon \sqrt{2 J_1}}{2} \cos(\psi_1 + 7 \psi_2) + o(\varepsilon).
+\end{equation*}
+В таком случае уравнения движения могут быть записаны, как
+\begin{align*}
+    \dot{\psi}_1 &= \partial_{J_1} \hat{H} = 7 + \frac{\varepsilon}{2 \sqrt{2 J_1}} \cos (\psi_1 + 7 \psi_2), \\
+    \dot{\psi}_2 &= -1, \\
+    \dot{J}_1 &= \varepsilon \frac{\sqrt{2 I_1}}{2} \sin(\psi_1 + 7 \psi_2),
+\end{align*}
+а $J_2$ нас как и раньше не интересует. 
+
+Пристально взглянув на систему понимаем, что хорошая затея ввеси переменные $\gamma = \psi_1 + 7 \psi_2$ и $\varkappa = \sqrt{2 J_1}$, что приводит к системе замечательного вида
+\begin{equation*}
+    \left\{\begin{aligned}
+        \dot{\gamma} = \textstyle \frac{\varepsilon}{2 \varkappa} \cos \gamma, \\
+        \dot{\kappa} = \textstyle \frac{\varepsilon}{2} \sin \gamma,
+    \end{aligned}\right.
+    \hspace{0.25cm} \Rightarrow \hspace{0.25cm}
+    \frac{d \gamma}{d \varkappa} = \frac{1}{\varkappa \tg \gamma},
+    \hspace{0.25cm} \Rightarrow \hspace{0.25cm}
+    \ln \varkappa = - \ln \cos \gamma + \tilde{C},
+    \hspace{0.25cm} \Rightarrow \hspace{0.25cm}
+    \boxed{\varkappa = \frac{C}{\cos \gamma}}.
+\end{equation*}
+Подставляя это в уравнения движения, находим
+\begin{equation*}
+    \varkappa = C \sqrt{1 + \textstyle \left(\frac{\varepsilon}{2C}t\right)^2},
+    \hspace{10 mm} 
+    \tg \gamma = \left(\frac{\varepsilon}{2C}t\right).
+\end{equation*}
+Теперь можно пройти обратную цепочку $\{\gamma, \varkappa\} \to \{J_1, \psi_1\} \to \{I_1, \varphi_1\} \to \{x(t), y(t)\}$, и найти искомые решения уравнений движения.
