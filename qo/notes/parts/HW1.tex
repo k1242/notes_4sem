@@ -1,0 +1,99 @@
+
+\subsection*{Фазовая плотность газа}
+
+Оценим фазовую плотность
+\begin{equation*}
+    \rho \sim n \left(\frac{2 \pi \hbar^2}{m kT}\right)^{3/2}
+\end{equation*}
+азота в атмосфере при нормальных условиях и для холодного лития.
+
+\textbf{Для азота} соответствующие величины
+\begin{equation*}
+    T \approx 273 \text{ K}, \hspace{5 mm}  
+    P \approx 10^5 \text{ Па}, \hspace{5 mm} 
+    m \approx \frac{28 \cdot 10^{-3}}{N_\text{A}} \text{ кг}, \hspace{5 mm} 
+    n \approx 0.78 \frac{P}{k T} \approx 2.1 \cdot 10^{25} \text{ м}^{-3}.
+\end{equation*}
+Коэффициент 0.78 -- количество объёмное количество азота в атмосфере. Итого находим
+\begin{equation*}
+    \rho\left(\text{N}_2\right) \sim 1.6 \de{-7}
+\end{equation*}
+
+\textbf{Для лития} соответствующие величины
+\begin{equation*}
+    T \approx 100 \de{-6} \text{ K}, \hspace{5 mm}  
+    m \approx \frac{7 \cdot 10^{-3}}{N_\text{A}} \text{ кг}, \hspace{5 mm} 
+    n \approx 0.2 \cdot \frac{1}{a^{3}} \approx 2.0 \de{17} \text{ м}^{-3}.
+\end{equation*}
+Здесь коэффицент $0.2$ в выражение для концентрации -- результат расчёта межчастичного расстояния для идеального газа, с вероятностью нахождения на радиусе $r$:
+\begin{equation*}
+    P(r) = \frac{3}{r_{s}} \left(\frac{r}{r_{s}}\right)^2 \exp\left(-\left[\frac{r}{r_{s}}\right]^3\right),
+    \hspace{5 mm} 
+    r_{s} = \left(\frac{3}{4\pi n}\right)^{1/3},
+    \hspace{5 mm} 
+    \langle P(r)\rangle = 0.893 \cdot  r_s,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    n \approx 0.17 \cdot \frac{1}{a^3},
+\end{equation*}
+что совпадает с численным моделированием. Итого, фазовая плотность для лития,
+\begin{equation*}
+    \rho\left(\text{Li}\right) \sim 1.7 \de{-4} \sim 1.1 \de{3} \rho\left(\text{N}_2\right).
+\end{equation*}
+
+
+
+\subsection*{Замедление лития}
+
+Теперь оценим, ускорение с которым замедляется литий в пучке:
+\begin{equation*}
+    m w = \hbar k \frac{\Gamma}{2} = \frac{\pi \hbar \Gamma}{\lambda}, \hspace{5 mm}  \Gamma = \frac{1}{27} \de{-9} \text{ c}^{-1},
+    \hspace{5 mm} 
+    \lambda = 670 \text{ нм}.
+\end{equation*}
+Тогда
+\begin{equation*}
+    w \approx 1.6 \de{6} \text{ м/с}^2 \approx 1.6 \de{5} g,
+\end{equation*}
+а длина тормозного пути (с начальной скорости $500$ м/c) составит  $s = v_0^2/2g \approx 79$ мм, что не так уж и много.
+
+
+
+\subsection*{Частота столкновений}
+
+
+Оценка частоты столкновений (в одном кубометре):
+\begin{equation*}
+    f = \frac{1}{\sqrt{2}} n^2 \sqrt{\frac{8 k T}{\pi m}} \sigma,
+\end{equation*}
+и здесь вопрос только к $\sigma$ для холодного лития. 
+
+
+\textbf{Для холодного лития}.
+Судя по \href{https://arxiv.org/pdf/physics/0107075.pdf}{этой} эффективное сечение для температуры порялка 50 мкК и столкновений Li-Cs порядка
+\begin{equation*}
+    \sigma_{\text{CsLi}} \sim 5 \de{-16} \text{ м}^2.
+\end{equation*}
+% кстати, там же указана частота для такого процесса. 
+% \begin{equation*}
+    % f_0 \sim 20 \text{ c}^{-1}.
+% \end{equation*}
+Так как нас интересует оценка порядков, то наверное не очень плохая затея считать цезий сильно меньше лития, и тогда $\sigma_{\text{LiLi}} \approx 2\sigma_{\text{CsLi}} \approx \sim 1 \de{-15} \text{ м}^2$. Вообще есть зависимость $\sigma(T)$ вида $\sigma = \sigma_0 (1 + S/T)$ (формула Сазерленда), но этим тоже пренебрежем. Тогда
+\begin{equation*}
+    f_1 = 1.1 \de{19} \text{ c}^{-1},
+\end{equation*}
+что много (?). Если взять просто размер (?) атомов лития $r = 1.8 \de{-12}$ м, то $\sigma \approx 2.1 \de{-19}$ м$^2$, и $f_2 \sim 2.3 \de{15} \text{ c}^{-1}.$ 
+
+\textbf{Для азота в нормальных условиях}.
+Здесь проще воспользоваться знанием длины свободного пробега для молекул азота в нормальных условиях
+\begin{equation*}
+    \lambda \approx 0.6 \de{-7} \text{ м},
+\end{equation*}
+откуда
+\begin{equation*}
+    \sigma = \frac{1}{\sqrt{2} \lambda n} \approx 5.7 \de{-19} \text{ м}^{2}.
+\end{equation*}
+Тогда частота столкновений
+\begin{equation*}
+    f \approx 1.3 \de{35} \text{ с}^{-1},
+\end{equation*}
+что много больше частоты столкновений для атомов лития.
