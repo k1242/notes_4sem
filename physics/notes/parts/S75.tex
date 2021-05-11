@@ -1,0 +1,56 @@
+\subsection{Плоские волны в кристаллах}
+
+Поведение света всё также описывается уравнениями Максвелла
+\begin{equation*}
+    \rot \vc{H} = \frac{1}{c} \dot{\vc{D}},
+    \hspace{5 mm} 
+    \rot E = - \frac{1}{c} \dot{\vc{H}},
+\end{equation*}
+однако усложняются материальные уравнения:
+\begin{equation*}
+    D^j = \varepsilon_i^j E^i,
+\end{equation*}
+где $\varepsilon_{ij}$ -- \textit{тензор диэлектрической проницаемости}, или \textit{диэлектрический тензор}.
+% Такая анизотропия приводит к неколлинеарности $\vc{D}$ и $\vc{E}$.
+
+Рассмотрим плоские монохроматические волны вида
+\begin{equation*}
+    \vc{A} = \vc{A}_0 e^{i(\omega t - \smallvc{k} \cdot \smallvc{r})}, 
+\end{equation*}
+где $\vc{A} \in \{\vc{E},\, \vc{H},\, \vc{D}\}$. Понятно, что
+\begin{equation*}
+    \rot \vc{H} = -i \left[\vc{k} \times  \vc{H}\right],
+    \hspace{5 mm} 
+    \partial_t \vc{D} = - i \omega \vc{D}, \hspace{5 mm} \ldots
+\end{equation*}
+Подставив это в уравнения Максвелла, вводя верно волновой нормали $\vc{N} = \frac{v}{\omega} \vc{k}$, получаем
+\begin{equation*}
+    \vc{D} = - \frac{c}{v} \left[\vc{N} \times \vc{H}\right],
+    \hspace{5 mm} 
+    \vc{H} = \frac{c}{v} \left[\vc{N} \times \vc{E}\right],
+\end{equation*}
+где $v$ -- нормальная скорость волны. 
+
+Актуально, как никогда, значение вектора Пойтинга
+\begin{equation*}
+    \vc{S} = \frac{c}{4\pi}\left[\vc{E} \times \vc{H}\right].
+\end{equation*}
+
+\begin{to_lem}
+    Вектор пойтинга $\vc{S}$ определяет направление световых лучей, то есть $S \parallel \vc{u} = d_{\smallvc{k}} \omega$.
+\end{to_lem}
+
+Стоит заметит, что в кристаллая $\vc{S}$ и $\vc{N}$ не совпадают по направлению. 
+Однако, как видно из формул, плоские волны в кристалле поперечн в отношении векторов $\vc{D}$ и $\vc{H}$. Вектора $\vc{E},\, \vc{D},\, \vc{N},\,  \vc{S}$ лежат в плоскости, перпендикулярной к вектору $\vc{H}$. 
+
+Получается, что если $\vc{E}$ и $\vc{D}$ не сонаправлены, то зная направление $\vc{E}$ мы знаем направление и $\vc{D}$, а тогда и $\vc{H}$, и $\vc{N}$, $\vc{S}$ соответственно тоже. 
+При $\vc{E} \parallel \vc{D}$ любая прямая $\bot \vc{E}$ может служить направлением магнитного поля. 
+Подставляя $\vc{H}$ в $\vc{D}$ можем найти
+\begin{equation*}
+    \vc{D} = \frac{c^2}{v^2} \vc{E} - \frac{c^2}{v^2} \left(\vc{N} \cdot \vc{e} \right) \vc{N},
+\end{equation*}
+и, т.к. $(\vc{D} \cdot \vc{N})=0$, то скалярно умножая на $\vc{D}$ находим
+\begin{equation*}
+    v^2 = c^2 \frac{(\vc{D} \cdot \vc{E})}{D^2}.
+\end{equation*}
+Таким образом вектор $\vc{E}$ в кристале является \textit{главным}.

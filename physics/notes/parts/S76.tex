@@ -1,0 +1,86 @@
+\subsection{Оптически одноосные кристаллы}
+
+\begin{to_def}
+    \textit{Оптически одноосными} называют кристаллы, свойства которых обладают симметрей вращения относительно некоторого направления, называемого \textit{оптической осью кристалла}.
+\end{to_def}
+
+Разложим $\vc{E}$ и $\vc{D}$ на составляющие параллельные оптической оси, и нормальный к ней, тогда
+\begin{equation*}
+    \vc{D}_\parallel = \varepsilon_\parallel \vc{E}_\parallel,
+    \hspace{5 mm} 
+    \vc{D}_\bot = \varepsilon_\bot \vc{E}_\bot,
+\end{equation*}
+где $\varepsilon_\parallel$ и $\varepsilon_\bot$ -- продольная и поперечные диэлектрические проницаемости кристалла. Плоскости, в которой лежат оптическая ось кристалла и нормаль $\vc{N}$, называется \textit{главным сечением кристалла}. 
+
+
+\begin{to_def}
+    Если электрический вектор $\vc{D}$ перпендикулярен к главному сечению, то скорость волны не зависит от направдения её распространения, такая волна называется \textit{обыкновенной}.
+\end{to_def}
+
+Тогда $\vc{D} \equiv \vc{D}_\bot$, тогда и $\vc{D} = \varepsilon_\bot \bar{E}$, соответственно 
+\begin{equation*}
+    \vc{D} = \varepsilon_\bot \vc{E},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \left.\begin{aligned}
+        D &= H \textstyle \frac{c}{v} \\
+        H &= E \textstyle \frac{c}{v}
+    \end{aligned}\right.
+    \hspace{5 mm} \Rightarrow \hspace{5 mm} 
+    v = v_\bot \equiv \sub{v}{o} = \frac{c}{\sqrt{\varepsilon_\bot}}.
+\end{equation*}
+
+\begin{to_def}
+    Если электрический вектор $\vc{D}$ лежит в главном сечении, то скорость волны зависит от направления распространенияЮ и такую волну называют \textit{необыкновенной}.
+\end{to_def}
+
+Вектор $\vc{E}$ в таком случае также лежит в главном сечении, и $\vc{E} = \vc{e}_N + \vc{E}_D$. В таком случае, верно
+\begin{equation*}
+    \vc{H} = \frac{c}{v} \left[\vc{N} \times \vc{E}_D\right],
+    \hspace{5 mm} 
+    E_D = \frac{\vc{E} \cdot \vc{D}}{D} = \frac{E_\parallel D_\parallel + E_\bot D_\bot}{D} = \frac{1}{D} \left(
+        \frac{D_\parallel^2}{\varepsilon_\parallel} + \frac{D_\bot^2}{\varepsilon_\bot}.
+    \right)
+\end{equation*}
+Соответсвующие проекции можно заменить на $D \sin \alpha$, где $\alpha$ -- угол между оптической осью и волновой нормалью. Вводя $\frac{1}{\varepsilon} = \frac{N^2_\bot}{\varepsilon_\parallel}+\frac{N^2_\parallel}{\varepsilon_\bot}$ можем перейти к
+\begin{equation*}
+    E_D = D\left(
+        \frac{\sin^2 \alpha}{\varepsilon_\parallel} + \frac{\cos^2 \alpha}{\varepsilon_\bot}
+    \right) = \frac{D}{\varepsilon},
+    \hspace{5 mm} 
+    H = \frac{c}{v} E_D,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+     v = \frac{c}{\sqrt{\varepsilon}} = c \sqrt{\frac{N^2_\bot}{\varepsilon_\parallel}+\frac{N_\parallel^2}{\varepsilon_\bot}}\equiv v_\parallel.
+\end{equation*}
+
+
+Когда $N_\bot =0$, то понятно, что $v = c/\sqrt{\varepsilon_\bot} = v_\bot = \sub{v}{o}$, -- нет разницы между обыкновенной и необыкновенной. В случае $N_\parallel = 0$  верно, что $v = \sub{v}{e} \overset{\mathrm{def}}{=} c/\sqrt{\varepsilon_\parallel}$. 
+
+Термин оптическая ось введен для обозначения прямой, вдоль которой обе волны распростаняются с одинаковыми скоростями, и таким прямых в общем случае, поэтому кристалл называется \textit{оптически двуосным}. В рассмотренном частном случае оси совпали, и получился \textit{оптически одноосный} кристалл.
+
+
+\begin{to_lem}
+    В общем случае волна, вступающая в кристалл изотропной среды, разделяется внутри кристалла на две линейно поляризованные волны: обыкновенную, вектор электрической индукции которой перпендикулярен к главному сечению,
+    и необыкновенную с вектором электрической индукции, лежащим в главном сечении.
+\end{to_lem}
+
+\textbf{Про показатели преломления}. В кристаллая верны законы преломления для \textit{волновых нормалей}: их направления подчиняются закону Снеллиуса
+\begin{equation*}
+    \frac{\sin \varphi}{\sin \psi_\bot} = n_\bot,
+    \hspace{5 mm} 
+    \frac{\sin \varphi}{\sin \psi_{\parallel}} = n_{\parallel},
+\end{equation*}
+где $n_\bot$ и $n_\parallel$ -- показатели прелоления обыкновенной и необыкноуенной волн, т.е.
+\begin{equation*}
+    n_\bot = \frac{c}{v_\bot} = \sub{n}{o},
+    \hspace{5 mm} 
+    n_\parallel = \frac{c}{v_\parallel} = \left(\frac{N^2_\bot}{\varepsilon_\parallel}+\frac{N^2_\parallel}{\varepsilon_\bot}\right)^{-1/2}.
+\end{equation*}
+Постоянная $\sub{n}{o}$ называется \textit{обыкновенным показателем преломления}. Когда необыкновенная волна распространяется перпендикулярно к оптической оси $(N_\bot=1)$, 
+\begin{equation*}
+    n_\parallel = \sqrt{\varepsilon_\parallel} \overset{\mathrm{def}}{=} \sub{n}{e}.
+\end{equation*}
+Величина $\sub{n}{e}$ -- \textit{необыкновенный показатель преломления кристалла}. 
+
+
+\textbf{Двойное лучепреломление}. При преломлении на первой поверхности пластинки волна внутри кристалла разделяется на обыкноыенную, и необыкновенную. Эти волны поляризованы во взаимно перпендикулярных плоскостях и распространяются внутри пластинки в разных направлниях и с разными скоростями. Таким образом можно добиться пространственного разделения двух лучей. 
+% рис 1

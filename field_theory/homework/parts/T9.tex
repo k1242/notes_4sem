@@ -1,0 +1,24 @@
+\Tsec{Т9}
+
+Потенциал диполя
+\begin{equation*}
+    \varphi = - \vc{d} \cdot \nabla \frac{1}{r} = \frac{\vc{d} \cdot \vc{r}}{r^3}.
+\end{equation*}
+Соответсвенно, поле диполя
+\begin{equation*}
+    E = - \grad \varphi = \frac{3 (\vc{n} \cdot \vc{d}) \vc{n} - \vc{d}}{r^3},
+\end{equation*}
+в случае $r \neq 0$. Если же учесть такую возможность, то
+\begin{equation*}
+    \vc{E} = \frac{3 (\vc{d} \cdot \vc{n})\vc{n}-\vc{d}}{r^3} - \frac{4\pi}{3} \delta(\vc{r}) \vc{d}.
+\end{equation*}
+Потенциальная энергия диполя:
+\begin{equation*}
+    U = \int d^3 r\, \rho A_0 = - q \varphi(\vc{R}) + q \varphi(\vc{R}+\vc{l}) = q (\vc{l} \cdot \nabla)\varphi = \vc{d} \cdot (\nabla \varphi) = - \vc{d} \cdot \sub{\vc{E}}{ext}.
+\end{equation*}
+Подставляя $\sub{\vc{E}}{ext}$ находим
+\begin{equation*}
+    U = \frac{(\vc{d}_1 \cdot \vc{d}_2)-3(\vc{n} \cdot d_1)(\vc{n} \cdot \vc{d}_2)}{r_{12}^{3}} + \frac{4\pi}{3} \delta(\vc{r}_{12}) \, (\vc{d}_1 \cdot \vc{d}_2),
+\end{equation*}
+где $\vc{r}_{12}$ -- радиус вектор от первого диполя, ко второму.
+

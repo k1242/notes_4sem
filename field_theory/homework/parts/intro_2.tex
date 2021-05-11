@@ -1,0 +1,17 @@
+\textbf{Электростатика}. Запишем действие взаимодействия $S_{\textnormal{int}}$
+\begin{equation*}
+    \sub{S}{int} = - \frac{e}{c} \int d \tau\, u^\mu A_\mu,
+\end{equation*}
+учитывая $u^\mu = f x^\mu / d \tau$:
+\begin{equation*}
+    \sub{S}{int} = - \frac{1}{c} \int \d^3 V\, \rho \int \d \tau\, \frac{d x^\mu}{d \tau}  A_\mu = 
+    - \frac{1}{c} \int \d t\, d^3 V\, \rho \frac{d x^\mu}{d t}  A_\mu,
+\end{equation*}
+что можем переписать в случае неподвижных зарядов ($\frac{d x^\mu}{d t} = (c,\, \vv{0})\T$), как
+\begin{equation*}
+    \sub{S}{int} = - \int \d t \int d^3 V \cdot \rho \varphi(\vc{r}),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \sub{L}{int} = - \int \d^3 V\, \rho A_0(\vc{r}),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    U = \int d^3 r\, \rho(\vc{r}) A_0 (\vc{r}).
+\end{equation*}

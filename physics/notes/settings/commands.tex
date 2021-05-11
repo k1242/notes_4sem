@@ -7,6 +7,7 @@
 \renewcommand{\geq}{\geqslant}
 
 \newcommand{\vc}[1]{\mbox{\boldmath $#1$}}
+\newcommand{\smallvc}[1]{\scalebox{0.65}{\mbox{\boldmath $#1$}}}
 \newcommand{\T}{^{\text{T}}}
 
 \newcommand{\incfig}[1]{%
@@ -18,7 +19,6 @@
 \newcommand{\grad}{\mathop{\mathrm{grad}}\nolimits}
 \renewcommand{\div}{\mathop{\mathrm{div}}\nolimits}
 \newcommand{\rot}{\mathop{\mathrm{rot}}\nolimits}
-\newcommand{\inv}{\mathop{\mathrm{inv}}\nolimits}
 \newcommand{\Ker}{\mathop{\mathrm{Ker}}\nolimits}
 \newcommand{\Spec}{\mathop{\mathrm{Spec}}\nolimits}
 \newcommand{\sign}{\mathop{\mathrm{sign}}\nolimits}
@@ -28,14 +28,5 @@
 \newcommand{\const}{\text{const}}
 \newcommand{\red}[1]{\textcolor{red}{#1}}
 \newcommand{\xmark}{\ding{55}}
-\newcommand{\sub}[2]{{#1}_{\textnormal{#2}}}
 
-
-\renewcommand{\l}{\left}
-\renewcommand{\r}{\right}
-
-
-\newcommand{\Tsec}[1]{
-    \subsection*{#1}
-    \addcontentsline{toc}{subsection}{#1}
-}
+\newcommand{\sub}[2]{#1_{\textnormal{#2}}}

@@ -1,0 +1,203 @@
+Предел по базе -- предел по фильтру. Для любых двух множеств из фильтра
+
+% интеграл макшейна -- сумма римана 
+% вычисления на решетке -- 
+
+\subsection{Производные обобщенных функций}
+
+\subsubsection*{21.75}
+
+
+Найдём 
+\begin{equation*}
+    I = \langle (\ln x)' \mid \varphi \rangle = - \langle \ln|x| \mid \varphi \rangle = 
+    - \int_{-\infty}^{+\infty} \ln |x| \varphi'(x) \d x = \langle \text{smth} \mid \varphi \rangle,
+\end{equation*}
+однако просто вернуть производную на лоагрифм будет нехорошо. Запишем это так:
+\begin{equation*}
+    I =  - \lim_{\varepsilon \to + 0} \left(
+        \int_{\infty}^{\varepsilon} + \int_{\varepsilon}^{+\infty}
+    \right) \ln |x| \varphi'(x) \d x = \lim_{\varepsilon \to +0}\left[
+        \ln \varepsilon \cdot (\varphi(\varepsilon)-\varphi(-\varepsilon))
+    \right] + \int_{|x|>\varepsilon} \frac{\varphi(x)}{x} \d x.
+\end{equation*}
+Здесь заметим, что
+\begin{equation*}
+    \ln \varepsilon \cdot (\varphi(\varepsilon) - \varphi(-\varepsilon)) = 2 \varepsilon \ln \varepsilon \cdot \frac{\varphi(\varepsilon)-\varphi(-\varepsilon)}{2 \varepsilon} = 0 \varphi'(0) = 0,
+\end{equation*}
+тогда 
+\begin{equation*}
+    I = \lim_{\varepsilon \to +0} \int_{|x|>\varepsilon} \frac{\varphi(x)}{x}\d x,
+\end{equation*}
+но $1/x$ -- не является локально интегрируемой в $0$ функцией. Итого
+\begin{equation*}
+    I = \text{v. p. } \int_{-\infty}^{+\infty} \frac{\varphi(x)}{x} \d x = 
+    \left\langle  
+                \mathcal P \frac{1}{x} \bigg| \varphi
+            \right\rangle.
+\end{equation*}
+Другими словами мы установили, что
+\begin{equation*}
+    (\ln |x|)' \overset{D'}{=} \mathcal P \frac{1}{x}, \ 
+    \Leftrightarrow \ 
+    (\ln |x|)' \overset{* w.}{=} \mathcal P \frac{1}{x},
+    \ 
+    \Leftrightarrow \ 
+    \big\langle (\ln |x|)' \big| = \bigg\langle \mathcal P \frac{1}{x} \bigg|.
+\end{equation*}
+
+\subsubsection*{21.84}
+
+Уместен вопрос: когда верно, что
+\begin{equation*}
+    \langle \lambda_f' \mid \varphi\rangle = \langle  \lambda_{f'} \mid \varphi\rangle.
+\end{equation*}
+Далее пусть $\frac{d }{d x}$ -- классическая производная, $f'$ -- производная обобщенной функции, тогда наш вопрос будет выглядеть, как
+\begin{equation*}
+    \langle f' \mid \varphi \rangle = \bigg\langle 
+        \frac{d f}{d x} \ \bigg|\ \varphi
+    \bigg\rangle + \sum_{k=1}^{n} \Delta f(x_k) \langle \delta(x-x_k) \,|\, \ldots \rangle ,
+\end{equation*}
+где $x_k$ -- точки разрыва классической функции $f$, а
+\begin{equation*}
+    \Delta f (x_k) = f(x_k + 0) - f(x_k - 0) \in \mathbb{R}.
+\end{equation*}
+В частоности рассмотрим  случай с $x_k = 0$. Тогда
+\begin{equation*}
+    \langle f' \mid \varphi \rangle = - \langle f \,|\, \varphi' \rangle = - \int_{-\infty}^{+\infty} f(x) \varphi'(x) \d x,
+\end{equation*}
+что удобно расписать в виде
+\begin{equation*}
+    - \left(\int_{\infty}^{0} + \int_0^\infty\right) f(x) \varphi'(x) = 
+    - f(x) \varphi(x) \bigg|_{+0}^{+\infty} - f(x) \varphi(x) \bigg|_{-\infty}^{-0} + 
+    \int_{-\infty}^{+\infty} \frac{d f(x)}{d x} \varphi(x) \d x =  \Delta f(0) \langle \delta(x) \,|\, \varphi \rangle + \bigg\langle \frac{d f}{d x}  \,\bigg|\, \varphi  \bigg\rangle.
+\end{equation*}
+
+
+
+\begin{hw1}
+    Найти $(\ln x_+)'$ и $\frac{1}{x + i \cdot 0}$, где 
+    \begin{equation*}
+        \ln x_+ = \left\{\begin{aligned}
+            &\ln x, &x > 0, \\
+            &0, &x < 0.
+        \end{aligned}\right.
+        \hspace{10 mm} 
+        \bigg\langle \frac{1}{x \pm i \cdot 0} \,\bigg|\, \varphi \bigg\rangle  = \lim_{\varepsilon \to +0} \int_{-\infty}^{+\infty}  \frac{\varphi(x)}{x \pm i \varepsilon} \d x,
+        \ \ \Rightarrow 
+        \frac{1}{x \pm i \cdot 0} \overset{\mathcal D'}{=}  \mp i \pi \delta(x) + \mathcal P \frac{1}{x}.
+    \end{equation*}
+\end{hw1}
+
+
+
+% Богачев Смолянов -- топ
+
+\subsubsection*{Т29, \ Т30}
+
+% 8.5.3.
+
+\red{Следующее утверждение -- страница 472, Богачев-Смолянов.}
+
+\begin{to_lem}
+    Пусть  $f \in \mathcal D' \left(\mathbb{R}\right)$ и так оказалось, что $f' =0$, тогда $f$ имеет вид $\langle f | \varphi \rangle = c \int_{-\infty}^{\infty} \varphi(x) \d x$.
+\end{to_lem}
+
+\begin{proof}[$\triangle$]
+    Утверждается, что $c = \langle f \,|\, \varphi_0 \rangle $ годится, где
+    \begin{equation*}
+        \varphi_0 \in \mathcal D \left(\mathbb{R}\right) \colon  
+        \int_{-\infty}^{+\infty}  \varphi_0(x) \d x = 1.
+    \end{equation*}
+    Итак, любую функцию $\varphi \in \mathcal D$ можно представить в виде
+    \begin{equation*}
+        \varphi = - \theta \cdot \varphi_0 + \theta \cdot \varphi_0,
+        \hspace{10 mm} 
+        \theta = \int_{-\infty}^{+\infty}  \varphi(x) \d x.
+    \end{equation*}
+    Зададим функцию от вида
+    \begin{equation*}
+        \psi(x) = \int_{\infty}^{x} \left(
+            \varphi(t) - \theta \varphi_0 (t)
+        \right) \d t \ \ \in \DS.
+    \end{equation*}
+    Собирая всё вместе находим
+    \begin{equation*}
+        \psi' = \varphi - \theta \cdot \varphi_0,
+        \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+        \langle f \,|\, \varphi \rangle = \langle f \,|\, \psi' + \theta \varphi_0 \rangle = 
+        \langle f \,|\, \psi' \rangle + \theta \langle f \,|\, \varphi_0 \rangle,
+    \end{equation*}
+    где $- \langle f' \,|\, \psi \rangle =0$ по условию. Также $\langle f \,|\, \varphi_0 \rangle  = c$, тогда верно, что
+    \begin{equation*}
+        \psi' = c \cdot \theta = c \int_{-\infty}^{+\infty}  \varphi(x) \d x, 
+        \hspace{5 mm} 
+        \QED
+    \end{equation*}
+\end{proof}
+
+
+\begin{to_thr}[]
+    Для всякой обобщенной функции $f$ из $\DS$ существует $g \in \mathcal D' (\mathbb{R})$ такая, что $g' \overset{D'}{=}  f$. Для всякой другой $h \in \mathcal D'\left(\mathbb{R}\right)$ верно, что  если $h' \overset{\mathcal D'}{=} f$, то $g - h \overset{\mathcal D'}{=} c$.
+\end{to_thr}
+
+\begin{proof}[$\triangle$]
+    Точно также берем некоторую $\varphi$, $\psi$. Положим, по определению, что 
+    \begin{equation*}
+        \langle g \,|\, \varphi \rangle \overset{\mathrm{def}}{=} - \langle f \,|\, \Psi \rangle ,
+    \end{equation*}
+    для которого хотелось бы показать линейность и непрерывность. 
+
+Для этого рассмотрим
+\begin{equation*}
+    \langle g \,|\, \varphi_1 + \varphi_2 \rangle = - \langle f \,|\, \psi_1 + \psi_2 \rangle =
+    - \bigg\langle f \,\bigg|\, \int_{-\infty}^{x} (\varphi_1 + \varphi_2 - (\theta_1 + \theta_2) \varphi_0) \d t \bigg\rangle = - \langle f \,|\, \psi_1 \rangle- \langle f \,|\, \psi_2 \rangle.
+\end{equation*}
+Осталось показать непрерывность, точнее показать, что линейной отображение $\varphi \to \psi$ непрерывно на $\DS$.
+
+...
+
+\end{proof}
+
+
+
+\subsection{Преобразование Фурье обобщенных функций}
+
+
+% колмогоров фомин -- тоже только табличка
+
+
+Найдём фурье преобразование $n$-й производной дельта-функции
+\begin{equation*}
+    I = \langle F[\delta^{(n)} (x)] \,|\, \varphi \rangle = \langle \delta^{(n)} (x) \,|\, F[\varphi] \rangle  = (-1)^n F^{(n)} [\varphi][0] = 
+    \frac{(-1)^n}{i^n} F[x^n \varphi](0),
+\end{equation*}
+тогда
+\begin{equation*}
+    I = = 
+    \frac{(-1)^n}{i^n} \langle \delta(x) \,|\, F[x^n \varphi] \rangle = i^n \langle F[\delta(x) \,\mid\, x^n \varphi]\rangle,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    F\left[\delta^{(n)} (x)\right] \dseq \frac{(ix)^n}{\sqrt{2\pi}}.
+\end{equation*}
+ 
+\textbf{Физический подход}:
+\begin{equation*}
+    \int_{-\infty}^{+\infty} \frac{\d t}{\sqrt{2\pi}} e^{-ixt} \frac{d^n}{d t^n} \delta(t) = 
+    (-1)^n \int_{-\infty}^{+\infty} \frac{d t}{\sqrt{2\pi}} \delta(t) \frac{d^n }{d t^n} e^{- i x t} = 
+    (i x)^n \int_{-\infty}^{+\infty} \frac{d t}{\sqrt{2\pi}}  \delta(t) e^{-ixt} = (ix)^n \cdot \frac{1}{\sqrt{2\pi}}.
+\end{equation*}
+
+\red{Для третьего примера -- Кудрявцев, учебник, том 3, страница 297 по файлу}
+
+
+
+\subsubsection*{Т33}
+
+\begin{to_thr}[]
+    Пусть $f \in \DS$ и оказалось, что $F[f] \in \DS$. Тогда $f \equiv 0$.
+\end{to_thr}
+
+
+
+
+
