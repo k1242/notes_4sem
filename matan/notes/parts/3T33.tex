@@ -1,0 +1,44 @@
+\subsubsection*{Т33}
+
+Докажем, что если $f \in \DS$ и преобразование Фурье $F[f] \in \DS$, то $f \equiv 0$. 
+
+
+По Зоричу, если есть некоторое преобраование сигнала
+\begin{equation*}
+    \hat{f} (\omega) \equiv F[f] (\omega) = \frac{\sqrt{2\pi}}{2a} \sum_{k=-\infty}^{+\infty} f\left(\frac{\pi}{a}k\right) \exp\left(-i \frac{\pi k}{a} \omega\right),
+\end{equation*}
+где $\hat{F}(\omega) = 0$ за пределами $|\omega| > a$, то мы приходим ряду с некоторыми отсчётными значениями. Но, так как $f \in \mathcal D$, то можем записать тригонометрический полином вида
+\begin{equation*}
+    \hat{f} (\omega) = \frac{\sqrt{2\pi}}{2a} \sum_{k=-N}^{N} f\left(\frac{\pi}{a}k\right) \exp\left(
+        -i \frac{\pi k}{a} \omega
+    \right) = 0,
+\end{equation*}
+ведь у конечного полинома не может быть континуально нулей. 
+
+
+\subsubsection*{Теорема Котельникова}
+
+Рассмотрим получаемый сигнал $f(t)$ с финитным спектром, отличный от нуля только для $\omega < a > 0$. Итак, $\hat{f}(\omega) \equiv 0$ при $|\omega| > a$, поэтому представление
+\begin{equation*}
+    f(t) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{+\infty} \hat{f} (\omega) e^{i \omega t} \d \omega
+\end{equation*}
+для функции с финитным спектром сводится к интегралу лишь по промежутку $[-a, a]$. На этом отрезке функцию $\hat{f} (\omega)$ разложим в ряд Фурье
+\begin{equation*}
+    \hat{f} (\omega) = \sum_{-\infty}^{\infty} c_k (\hat{f}) \exp\left(i \frac{\pi \omega}{a} k\right),
+\end{equation*}
+по полной и ортогональной система на этом отрезке. Для коэффициентов этого ряда можем получить простое выражение вида
+\begin{equation*}
+    c_k (\hat{f}) = \frac{1}{2a} \int_{-a}^{a} \hat{f} (\omega)  \exp\left(i \frac{\pi \omega}{a} k\right) \d \omega = \frac{\sqrt{2\pi}}{2a} f\left(-\frac{\pi}{a}k\right). 
+\end{equation*}
+Собирая всё вместе находим, что
+\begin{equation*}
+    f(t) = \frac{1}{2a} \sum_{k=-\infty}^{\infty} f\left(\frac{\pi}{a} k\right) \int_{-a}^{a}  \exp\left(
+        i \omega \left(t- \frac{\pi}{a}k \right) 
+    \right) \d \omega.
+\end{equation*}
+Вычисляя эти интегралы и приходим к \textit{формуле Котельникова}:
+\begin{equation*}
+    f(t) = \sum_{k=-\infty}^{\infty}  f\left(\frac{\pi}{a}k\right) \frac{\sin a\left(t- \frac{\pi}{a}k \right)}{a \left(t - \frac{\pi}{a} k\right)}.
+\end{equation*}
+Таким образом, для восстановления сообщения, опиописываемого функцией с финитным спектром, сосредоточенным в
+полосе частот $|\omega| < a$ достаточно передать по каналу связи лишь значения $f(k \Delta)$ (называемые \textit{отсчетными} значениями) данной функции через равные промежутки времени $\Delta = \pi/a$. 

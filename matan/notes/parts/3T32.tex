@@ -1,0 +1,97 @@
+\subsubsection*{Т32}
+
+
+Найдём преобразование Фурье в $S'$ некоторых функций.
+
+\textbf{Синус}. Найдём преобразование Фурье вида
+\begin{align*}
+    \big\langle F^{-1}[\delta(x-x_0)] \,\big|\, \varphi \big\rangle &=
+    \big\langle \delta(x-x_0) \,\big|\, F^{-1}[\varphi] \big\rangle  = 
+    F^{-1} [\varphi] (x_0) = \int_{-\infty}^{+\infty} \frac{\d t}{\sqrt{2\pi}} \varphi(t) e^{i x_0 t}  = \\
+    &= \int_{-\infty}^{+\infty} \d t  f(t) \varphi(t) = \bigg\langle \frac{e^{i x_0 t}}{\sqrt{2\pi}} \,\bigg|\,  \varphi\bigg\rangle ,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    F^{-1}[\delta(x-x_0)] (t) = \frac{e^{i x_0 t}}{\sqrt{2\pi}}.
+\end{align*}
+Отсуюда следует, что
+\begin{equation*}
+    \big\langle F[e^{i x_0 t}] \,\big|\, \varphi \big\rangle = \big\langle F\left[\sqrt{2\pi} F^{-1} [\delta(x-x_0)]\right] \,\big|\, \varphi \big\rangle,
+\end{equation*}
+тогда можем перегрупировать, и найти
+\begin{equation*}
+    \big\langle F[e^{i x_0 t}]  \,\big|\, \varphi \big\rangle = \langle \sqrt{2\pi} \delta(x-x_0) \,|\, \varphi \rangle.
+\end{equation*}
+Нас, правда, интересует Фурье от синуса
+\begin{align*}
+    \langle F[\sin(x_0 t)] \,|\, \varphi \rangle &=
+    \bigg\langle F\left[\frac{e^{i x_0 t}-e^{-i x_0 t}}{2 i}\right] \,\bigg|\, \varphi \bigg\rangle  = 
+    \bigg\langle \sqrt{\frac{\pi}{2}} i \left(
+        \delta(x+x_0) - \delta(x-x_0)
+    \right) \,\bigg|\,  \varphi \bigg\rangle.
+\end{align*}
+Тогда $\mathcal D'$ справедливо равенство вида
+\begin{equation*}
+    F[\sin (x_0 t)] \dseq \sqrt{\frac{\pi}{2}} i \big( 
+        \delta(x+x_0) - \delta(x-x_0)
+    \big).
+\end{equation*}
+
+
+\textbf{Дельта-функция}. Пользуясь формулой $n$-й производной
+\begin{align*}
+    \big\langle F[\delta^{(n)}(x)] \,\big|\, \varphi \big\rangle  &= \big\langle \delta^{(n)} (x) \,\big|\, F[\varphi] \big\rangle = 
+    (-1)^n F^{(n)} [\varphi] (0) = \frac{(-1)^n}{i^n} F[x^n \varphi] (0) = 
+    \bigg\langle \frac{(-1)^n}{i^n} \delta(x) \,\bigg|\, F[x^n \varphi] \bigg\rangle 
+    = \\ &= 
+    i^n \big\langle F[\delta(x)] \,\big|\, x^n \varphi \big\rangle = \langle (ix)^n F[\delta(x)] \,|\, \varphi \rangle = \bigg\langle \frac{(ix)^n}{\sqrt{2\pi}} \,\bigg|\, \varphi \bigg\rangle,
+\end{align*}
+таким образом пришли к равенству вида
+\begin{equation*}
+    F[\delta^{(n)} (x)] \dseq \frac{(ix)^n}{\sqrt{2\pi}}.
+\end{equation*}
+
+
+\textbf{Фунция Хевисайда}. Для начала найдём преобразование Фурье функции $\theta(x) e^{-tx}$ при $t>0$
+\begin{equation*}
+    F[\theta(x) e^{-tx}] = \frac{1}{\sqrt{2\pi}} \int_{0}^{\infty} e^{-x(t+iy)}\d x = \frac{-i}{\sqrt{2\pi} (y-it)}.
+\end{equation*}
+Покажем теперь, что в $S'$
+\begin{equation*}
+    \lim_{t\to+0} \theta(x) e^{-tx} = \theta(x).
+\end{equation*}
+Действительно, для каждой функции $\varphi \in S$ и любого числа $A$ имеем
+\begin{equation*}
+    |
+        \langle \theta(x) \,|\, \varphi(x) \rangle - 
+        \langle \theta(x) e^{-tx} \,|\, \varphi(x) \rangle 
+    | = \bigg| \int_{0}^{\infty} (1-e^{-tx}) \varphi(x) \d x \bigg| \leq 
+    \bigg| \int_{0}^{A} (1-e^{-tx}) \varphi(x) \d x \bigg| + 
+    \bigg| \int_{A}^{\infty} (1-e^{-tx}) \varphi(x) \d x \bigg|.
+\end{equation*}
+Теперь зафиксируем $\sigma \in S$ и какое-либо число $\varepsilon >0$. В силу абсолютной интегрируемости $\varphi$, существует $A > 0$ такео, что $\int_A^{+\infty} < \varepsilon/2$ , тогда
+\begin{equation*}
+    \bigg| \int_{A}^{\infty}  (1-e^{-tx}) \varphi(x) \d x \bigg| \leq \frac{\varepsilon}{2}.
+\end{equation*}
+Выберем теперь $t_0 > 0$ так, чтобы при $0 < t < t_0$ было справедливо неравенство
+\begin{equation*}
+    (1 - e^{-t A}) \int_{0}^{A}  |\varphi(x)| \d x < \frac{\varepsilon}{2},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+        |
+        \langle \theta(x) \,|\, \varphi(x) \rangle - 
+        \langle \theta(x) e^{-tx} \,|\, \varphi(x) \rangle 
+    | < \varepsilon.
+\end{equation*}
+Таким образом утверждение про $\lim_{t\to+0} \theta(x) e^{-tx} = \theta(x)$ верно. 
+
+
+В силу непрерывности преобразования Фурье
+\begin{equation*}
+    \lim_{t\to +0} F\left[
+        \theta(x) e^{-tx}
+    \right] = F[\theta(x)],
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    F[\theta(x)] = -\frac{1}{\sqrt{2\pi}} \lim_{t\to +0} \frac{i}{y-it},
+\end{equation*}
+причём  мы сразу утверждаем, что $S'$ предел существует, и, кстати, обозначается за $\frac{i}{y-i 0}$. Тогда
+\begin{equation*}
+    F[\theta(x)] = - \frac{1}{\sqrt{2\pi}} \frac{i}{y-i0}.
+\end{equation*}

@@ -1,0 +1,61 @@
+\subsubsection*{Т34}
+
+Докажем, что преобразование Фурье в $S'$ переводит распределение
+\begin{equation*}
+    \sum_{n=-\infty}^{\infty} \delta_{2\pi n} \hspace{5 mm} 
+    \mapsto
+    \hspace{5 mm} 
+    \frac{1}{\sqrt{2\pi}} \sum_{n=-\infty}^{+\infty} \delta_n.
+\end{equation*}
+
+
+\begin{to_thr}[Формула Пуассона]
+    Так называется следующее соотношение:
+    \begin{equation*}
+        \sqrt{2\pi} \sum_{n=-\infty}^{\infty}  \varphi(2 \pi n) = \sum_{n=-\infty}^{\infty} \hat{\varphi} (n).
+    \end{equation*}
+\end{to_thr}
+
+\begin{proof}[$\triangle$]
+Формула получается при $x= 0$ из равенства вида
+\begin{equation*}
+    \sqrt{2\pi} \sum_{m=-\infty}^{\infty} \varphi(x + 2 \pi n) = \sum_{n=-\infty}^{\infty}  \hat{\varphi} (n) e^{i n x},
+\end{equation*}
+которое мы и докажем. 
+
+Поскольку $\varphi,\, \hat{\varphi} \in S$, ряды сходятся абсолютно и равномерно по $x$ на $\mathbb{R}$. Также чтоит заметить, что
+\begin{equation*}
+    f(x) = \sum_{n=-\infty}^{\infty}  \varphi(x + 2 \pi n)
+\end{equation*}
+бесконечно гладкая и $2\pi$-периодическая. Пусть $\{\hat{c}_k (f)\}$ -- её коэффициенты Фурье по ортонормированной  системе $\left\{\frac{1}{\sqrt{2\pi}} e^{ikx}, \ \ k \in \mathbb{Z}\right\}$. Тогда 
+\begin{equation*}
+    \hat{c}_k (f) = \frac{1}{\sqrt{2\pi}} \int_0^{2\pi} f(x) e^{ikx} \d x = 
+    \sum_{n=-\infty}^{\infty} \frac{1}{\sqrt{2\pi}} \int_{2 \pi n}^{2p(n+1)} \varphi(x) e^{ikx} \d x = 
+    \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{+\infty} \varphi(x) e^{ikx} \d x \overset{\mathrm{def}}{=}  \hat{\varphi}(k). 
+\end{equation*}
+Но ряд фурье $f$ сходится к ней в любой точке $x \in \mathbb{R}$, значит в любой точке $x \in \mathbb{R}$ справедливо соотношение
+\begin{equation*}
+    \sum_{n=-\infty}^{\infty} \varphi(x+2\pi n) = f(x) = \sum_{n=-\infty}^{\infty} \hat{c}_n (f) \frac{e^{inx}}{\sqrt{2\pi}} = \frac{1}{\sqrt{2\pi}} \sum_{n=-\infty}^{\infty}  \hat{\varphi} (n) e^{ikx}, \QED
+\end{equation*}
+
+\end{proof}
+
+
+Тогда в пределах задания можем переписать это в терминах обобщенных функций
+\begin{equation*}
+    \sqrt{2\pi} \sum_{n=-\infty}^{\infty}  \langle \delta(x-2\pi n) \,|\, \varphi \rangle  = \sum_{n=-\infty}^{\infty} 
+    \langle \delta(x-n) \,|\, F[\varphi] \rangle  = \sum_{n=-\infty}^{\infty} \langle F[\delta(x-n)] \,|\, \varphi \rangle.
+\end{equation*}
+Тогда приходим к выражению вида
+\begin{equation*}
+    F\left[\frac{1}{\sqrt{2\pi}} \sum_{n=-\infty}^{\infty} \delta(x-n)\right] = \sum_{n=-\infty}^{\infty}  \delta(x-2 \pi n).
+\end{equation*}
+Вообще $\sum_{n=-\infty}^{\infty}  \delta(x-n) = G$ называют \textit{решеткой Дирака}. 
+
+
+Утверждается, что $G_N$ сходится в $S'$ к $G$ $\forall \varphi$. В частности,
+\begin{equation*}
+    \lim_{N \to \infty} \langle G_N (x) \,|\, \varphi \rangle  = \lim_{N \to \infty} \sum_{n=-N}^{N} \varphi(n) = 
+    \sum_{n=-\infty}^{\infty}  \varphi(n) = \bigg\langle \sum_{n=-\infty}^{\infty} \delta(x-n) \,\bigg|\, \varphi \bigg\rangle,
+\end{equation*}
+так что ряд дейтсвительно сходится и всё хорошо. 

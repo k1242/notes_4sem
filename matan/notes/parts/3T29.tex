@@ -1,0 +1,76 @@
+
+
+
+\subsubsection*{Т29 и Т30}
+
+
+Сначала доакажем, что всякое распределение $\lambda \in \mathcal D'(\mathbb{R})$  имеет первообразную, то есть такую $\mu \in \mathcal D' (\mathbb{R})$, что $\mu' = \lambda$ в смысле дифференцирования обобщенных функций. Потом
+докажем, что любые две первообразные одного и того же распределения отличаются на константу. 
+
+
+
+\begin{to_lem}
+    Пусть  $f \in \mathcal D' \left(\mathbb{R}\right)$ и так оказалось, что $f' =0$, тогда $f$ имеет вид $\langle f | \varphi \rangle = c \int_{-\infty}^{\infty} \varphi(x) \d x$.
+\end{to_lem}
+
+\begin{proof}[$\triangle$]
+    Утверждается, что $c = \langle f \,|\, \varphi_0 \rangle $ годится, где
+    \begin{equation*}
+        \varphi_0 \in \mathcal D \left(\mathbb{R}\right) \colon  
+        \int_{-\infty}^{+\infty}  \varphi_0(x) \d x = 1.
+    \end{equation*}
+    Итак, любую функцию $\varphi \in \mathcal D$ можно представить в виде
+    \begin{equation*}
+        \varphi = - \theta \cdot \varphi_0 + \theta \cdot \varphi_0,
+        \hspace{10 mm} 
+        \theta = \int_{-\infty}^{+\infty}  \varphi(x) \d x.
+    \end{equation*}
+    Зададим функцию от вида
+    \begin{equation*}
+        \psi(x) = \int_{\infty}^{x} \left(
+            \varphi(t) - \theta \varphi_0 (t)
+        \right) \d t \ \ \in \DS.
+    \end{equation*}
+    Собирая всё вместе находим
+    \begin{equation*}
+        \psi' = \varphi - \theta \cdot \varphi_0,
+        \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+        \langle f \,|\, \varphi \rangle = \langle f \,|\, \psi' + \theta \varphi_0 \rangle = 
+        \langle f \,|\, \psi' \rangle + \theta \langle f \,|\, \varphi_0 \rangle,
+    \end{equation*}
+    где $- \langle f' \,|\, \psi \rangle =0$ по условию. Также $\langle f \,|\, \varphi_0 \rangle  = c$, тогда верно, что
+    \begin{equation*}
+        \psi' = c \cdot \theta = c \int_{-\infty}^{+\infty}  \varphi(x) \d x, 
+        \hspace{5 mm} 
+        \QED
+    \end{equation*}
+\end{proof}
+
+
+\begin{to_thr}[]
+    Для всякой обобщенной функции $f$ из $\DS$ существует $g \in \mathcal D' (\mathbb{R})$ такая, что $g' \overset{D'}{=}  f$. Для всякой другой $h \in \mathcal D'\left(\mathbb{R}\right)$ верно, что  если $h' \overset{\mathcal D'}{=} f$, то $g - h \overset{\mathcal D'}{=} c$.
+\end{to_thr}
+
+\begin{proof}[$\triangle$]
+    Точно также берем некоторую $\varphi$, $\psi$. Положим, по определению, что 
+    \begin{equation*}
+        \langle g \,|\, \varphi \rangle \overset{\mathrm{def}}{=} - \langle f \,|\, \Psi \rangle ,
+    \end{equation*}
+    для которого хотелось бы показать линейность и непрерывность. 
+
+Для этого рассмотрим
+\begin{equation*}
+    \langle g \,|\, \varphi_1 + \varphi_2 \rangle = - \langle f \,|\, \psi_1 + \psi_2 \rangle =
+    - \bigg\langle f \,\bigg|\, \int_{-\infty}^{x} (\varphi_1 + \varphi_2 - (\theta_1 + \theta_2) \varphi_0) \d t \bigg\rangle = - \langle f \,|\, \psi_1 \rangle- \langle f \,|\, \psi_2 \rangle.
+\end{equation*}
+Осталось показать непрерывность, точнее показать, что линейной отображение $\varphi \to \psi$ непрерывно на $\DS$.
+
+Рассмотрим в частности $\varphi_k \dto 0$, для них $\theta_k \to 0$  при $k \to \infty$. Построим теперь $\varphi_k - \theta_k \varphi_0 \in \mathcal D(\mathbb{R})$ и имеют нулевые интегралы. Более того 
+\begin{equation*}
+    \hat{l} (\varphi_k) = \psi_k = \int_{-\infty}^{x} \left(
+        \varphi_k (t) - \theta_k \varphi_0 (t)
+    \right) \d t \in \DS.
+\end{equation*}
+Итого $\psi_k \to 0$ при $k \to \infty$, что и завершает доказательство непрерывности. 
+
+\end{proof}

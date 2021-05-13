@@ -1,0 +1,84 @@
+
+\subsubsection*{Пример (К3, 21.75)}
+
+
+Найдём 
+\begin{equation*}
+    I = \langle (\ln x)' \mid \varphi \rangle = - \langle \ln|x| \mid \varphi \rangle = 
+    - \int_{-\infty}^{+\infty} \ln |x| \varphi'(x) \d x = \langle \text{smth} \mid \varphi \rangle,
+\end{equation*}
+однако просто вернуть производную на лоагрифм будет нехорошо. Запишем это так:
+\begin{equation*}
+    I =  - \lim_{\varepsilon \to + 0} \left(
+        \int_{\infty}^{-\varepsilon} + \int_{\varepsilon}^{+\infty}
+    \right) \ln |x| \varphi'(x) \d x = \lim_{\varepsilon \to +0}\left[
+        \ln \varepsilon \cdot (\varphi(\varepsilon)-\varphi(-\varepsilon))
+    \right] + \int_{|x|>\varepsilon} \frac{\varphi(x)}{x} \d x.
+\end{equation*}
+Здесь заметим, что
+\begin{equation*}
+    \ln \varepsilon \cdot (\varphi(\varepsilon) - \varphi(-\varepsilon)) = 2 \varepsilon \ln \varepsilon \cdot \frac{\varphi(\varepsilon)-\varphi(-\varepsilon)}{2 \varepsilon} = 0 \cdot \varphi'(0) = 0,
+\end{equation*}
+тогда 
+\begin{equation*}
+    I = \lim_{\varepsilon \to +0} \int_{|x|>\varepsilon} \frac{\varphi(x)}{x}\d x,
+\end{equation*}
+но $1/x$ -- не является локально интегрируемой в $0$ функцией. Итого
+\begin{equation*}
+    I = \text{v. p. } \int_{-\infty}^{+\infty} \frac{\varphi(x)}{x} \d x = 
+    \left\langle  
+                \mathcal P \frac{1}{x} \bigg| \varphi
+            \right\rangle.
+\end{equation*}
+Другими словами мы установили, что
+\begin{equation*}
+    (\ln |x|)' \overset{D'}{=} \mathcal P \frac{1}{x}, \ 
+    \Leftrightarrow \ 
+    (\ln |x|)' \overset{* w.}{=} \mathcal P \frac{1}{x},
+    \ 
+    \Leftrightarrow \ 
+    \big\langle (\ln |x|)' \big| = \bigg\langle \mathcal P \frac{1}{x} \bigg|.
+\end{equation*}
+
+\subsubsection*{Пример (К3, 21.84)}
+
+Уместен вопрос: когда верно, что
+\begin{equation*}
+    \langle \lambda_f' \mid \varphi\rangle = \langle  \lambda_{f'} \mid \varphi\rangle.
+\end{equation*}
+Далее пусть $\frac{d }{d x}$ -- классическая производная, $f'$ -- производная обобщенной функции, тогда наш вопрос будет выглядеть, как
+\begin{equation*}
+    \langle f' \mid \varphi \rangle = \bigg\langle 
+        \frac{d f}{d x} \ \bigg|\ \varphi
+    \bigg\rangle + \sum_{k=1}^{n} \Delta f(x_k) \langle \delta(x-x_k) \,|\, \ldots \rangle ,
+\end{equation*}
+где $x_k$ -- точки разрыва классической функции $f$, а
+\begin{equation*}
+    \Delta f (x_k) = f(x_k + 0) - f(x_k - 0) \in \mathbb{R}.
+\end{equation*}
+В частности рассмотрим  случай с $x_k = 0$. Тогда
+\begin{equation*}
+    \langle f' \mid \varphi \rangle = - \langle f \,|\, \varphi' \rangle = - \int_{-\infty}^{+\infty} f(x) \varphi'(x) \d x,
+\end{equation*}
+что удобно расписать в виде
+\begin{equation*}
+    - \left(\int_{- \infty}^{0} + \int_0^\infty\right) f(x) \varphi'(x) = 
+    - f(x) \varphi(x) \bigg|_{+0}^{+\infty} - f(x) \varphi(x) \bigg|_{-\infty}^{-0} + 
+    \int_{-\infty}^{+\infty} \frac{d f(x)}{d x} \varphi(x) \d x =  \Delta f(0) \langle \delta(x) \,|\, \varphi \rangle + \bigg\langle \frac{d f}{d x}  \,\bigg|\, \varphi  \bigg\rangle.
+\end{equation*}
+
+
+
+% \begin{hw1}
+%     Найти $(\ln x_+)'$ и $\frac{1}{x + i \cdot 0}$, где 
+%     \begin{equation*}
+%         \ln x_+ = \left\{\begin{aligned}
+%             &\ln x, &x > 0, \\
+%             &0, &x < 0.
+%         \end{aligned}\right.
+%         \hspace{10 mm} 
+%         \bigg\langle \frac{1}{x \pm i \cdot 0} \,\bigg|\, \varphi \bigg\rangle  = \lim_{\varepsilon \to +0} \int_{-\infty}^{+\infty}  \frac{\varphi(x)}{x \pm i \varepsilon} \d x,
+%         \ \ \Rightarrow 
+%         \frac{1}{x \pm i \cdot 0} \overset{\mathcal D'}{=}  \mp i \pi \delta(x) + \mathcal P \frac{1}{x}.
+%     \end{equation*}
+% \end{hw1}
