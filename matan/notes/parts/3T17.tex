@@ -1,0 +1,111 @@
+\subsubsection*{Т17}
+
+Для последовательностей 
+\begin{equation*}
+    x = (x(1), \ldots, x(k), \ldots),
+\end{equation*}
+рассмотрим пространство вида
+\begin{equation*}
+    l_p = \{x \mid \|x\|_p \in \mathbb{R} \},
+    \hspace{5 mm} 
+    \|x\|_p = \l(
+        \sum_{k=1}^{\infty} |x(k)|^p
+    \r)^{1/p}.
+\end{equation*}
+Возьмём пространство $l_p$ как множество, но добавим норму из пространства $l_q$, где $\infty > q > p$. Покажем, что в таком <<дырявом>> пространстве не выполняется теорема Бэра и принцип равномерной ограниченности. 
+
+Рассмотрим шар $A_n$ вида
+\begin{equation*}
+    A_n = \{x \in l_p \mid \|x\|_p \leq n\},
+    \hspace{5 mm}
+    l_p = \bigcap_{n=1}^{\infty} A_n.
+\end{equation*}
+Докажем от противного, что $A_n$ нигде не плотно. 
+
+Пусть существует такой $R > 0$ и $x_0 \in A_n \colon B_R (x_0) \subset \cl A_n = A_n$. 
+\begin{equation*}
+    \forall x \in l_p \colon  \ \ \ 
+    \rho_q (x, x_0) < R,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    x \in A_n \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \|x\|_p \leq n.
+\end{equation*}
+Рассмотрим некоторую последовательность
+\begin{equation*}
+    z(k) = \frac{R}{2} \frac{1}{\sum_{\kappa=1}^{\infty} \frac{1}{\kappa^{q/p}}} \frac{1}{k^{1/p}}.
+\end{equation*}
+Для начала,
+\begin{equation*}
+    \left(
+        \sum_{k=1}^{\infty} (z(k))^{q}
+    \right)^{1/q} = \|z\|_q = \frac{R}{2} < + \infty.
+\end{equation*}
+Далее, видим гармонический ряд
+\begin{equation*}
+    \sum_{k=1}^{\infty} (z(k))^p = + \infty,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \exists N  \colon  \sum_{k=1}^{N} (z(k))^p > (2n)^p.
+\end{equation*}
+Теперь рассмотрим набор <<частниных последовательностей>>
+\begin{equation*}
+    y(k) = \left\{\begin{aligned}
+        &z(k), \ &k \leq N,
+        &0, &k > N.
+    \end{aligned}\right.
+\end{equation*}
+Теперь рассмотрим последовательность $h(k) = (x_0 + y) (k)$, для которой верно, что
+\begin{enumerate}
+    \item $\rho_q (h, x_0) = \|y\|_q \leq R/2$, откуда следует $\|h\|_p \leq n$.
+    \item $\|h\|_p \geq \|y\|_p - \|x_0\|_p > 2n -n=n$, а тогда $\|h\|_p >n$, таким образом пришли к противоречию. 
+\end{enumerate}
+
+Полное пространство нельзя представить, как объединение нигде не плотных множеств, получается $l_p$ не полно. Осталось доказать, что $A_n$ замкнуто.
+
+Пусть $t$ -- точка прикосновения. Тогда $\forall \varepsilon > 0$ найдётся 
+\begin{equation*}
+    \forall\varepsilon > 0 \ \ \ 
+    \exists x_\varepsilon \in A_n \colon 
+    \rho_q (t, x_\varepsilon) < \varepsilon,
+    \hspace{0.5cm} \encircled{\Rightarrow} \hspace{0.5cm}
+    \sum_{k=1}^{N} |t(k) - x_\varepsilon(k)|^q < \varepsilon
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    |t(k) - x_\varepsilon (k)|< \varepsilon^{1/q},
+\end{equation*}
+получается это правда и для
+\begin{equation*}
+    \encircled{\Rightarrow} \hspace{5 mm}
+    \forall N \in \mathbb{N} \ 
+    \left(
+        \sum_{k=1}^{N} |t(k)|^p
+    \right)^{1/p} \leq t(k) - x_\varepsilon (k) + x_\varepsilon(k) 
+    \leq
+    \left(
+        \sum_{k=1}^{N} |t(k) - x_\varepsilon (k)|^p
+    \right)^{1/p}  + 
+    \left(
+        \sum_{k=1}^{N} |x_\varepsilon (k)|^p
+    \right)^{1/p} \leq 
+    \left(
+        N \varepsilon^{p/q}
+    \right)^{1/p} + n,
+\end{equation*}
+что стремится к $n$ при $\varepsilon \to 0$. Таким образом $\|t\|_p \leq n$. 
+
+
+И, наконец, докажем, что не выполняеся принцип равномерной ограниченности. Рассмотрим функционалы
+\begin{equation*}
+    F_n [x] = \sum_{k=1}^{n} x(k).
+\end{equation*}
+Верно, что
+\begin{equation*}
+    \forall x \in l_1 \ \ 
+    |F_n[x]| \leq \|x\|_1.
+\end{equation*}
+По норме $\|\circ\|_2$ верно, что эти функционалы можно переписать в виде скалярного произведения $(x, e_n)$, где $e_n = (1, \ldots, 1, 0,\ldots,0,\ldots)$:
+\begin{equation*}
+    F_n [x] = (x, e_n) = \sum_{k=1}^{\infty}  x_{(k)} (e_n)_{(k)} = \sum_{k=1}^{n} x(k),
+\end{equation*}
+что является проявлением одной из теорем Рисса. Положив $x=e_n$ видим, что норма достигается и $\|F_n\| = n \to \infty$ при $n \to \infty$. Таким образом мы показали, что на таком пространстве не работает принцип равномерной сходимости. 
+
+
+

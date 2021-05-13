@@ -1,0 +1,32 @@
+\subsubsection*{Т28}
+
+Докажем, что слабая сходимость $\delta_{x_n} \to \delta_{x_0}$ эквивалентна обычной сходимости $x_n \to x_0$. Другими словами есть набор $f_n (x) = \delta(x-x_n)$ которые в пределе сходится к $f(x) = \delta(x-x_0)$. 
+
+По определению,
+\begin{equation*}
+    \forall \varphi \in \mathcal D \ \ 
+    \lim_{n\to \infty} \langle \delta(x-x_n) \,|\, \varphi \rangle = \langle \delta(x-x_0) \,|\, \varphi \rangle.
+\end{equation*}
+В силу непрерывности функций в $\mathcal D$:
+\begin{equation*}
+    \forall \varphi \in D \ \ \lim_{n\to \infty}   \varphi(x_n) \varphi(x_0).
+\end{equation*}
+Наконец, это можно переписать в виде
+\begin{equation*}
+    \forall \varphi \in \mathcal D \ 
+    \forall \varepsilon > 0 \ 
+    \exists N(\varphi, \varepsilon) \in \mathbb{N} \ 
+    \forall n \geq N(\varphi. \varepsilon) \ \ 
+    |\varphi(x_n) - \varphi(x_0)| < \varepsilon.
+\end{equation*}
+Это было дано. Хочется показать, что из этого следует $x_n \to x_0$, или
+\begin{equation*}
+    \lim_{n\to \infty} x_n = x_0 
+    \hspace{5 mm} 
+    \forall \varepsilon > 0 \ 
+    \exists N_\varepsilon \in \mathbb{N} \forall n \geq N_\varepsilon \ \ 
+    |x_n - x_0| < \varepsilon.
+\end{equation*}
+Докажем от противного, пусть $x_n \to x_1 \neq x_0$. Тогда пусть $\varkappa = |x_1-x_0|/3$, выберем функцию $\varphi = \cf{X_0} (x)+ -\cf{X_1} (x)$,  где $X_0 = [x_0-\varkappa, x_0 + \varkappa]$, $X_1 = [x_1-\varkappa, x_1 + \varkappa]$. В таком случае, в пределе, $\langle f_n (x) \,|\, \varphi \rangle = -1$, при этом по условию $\langle f(x) \,|\, \varphi \rangle = 1$, что приводит нас к противоречию. 
+
+

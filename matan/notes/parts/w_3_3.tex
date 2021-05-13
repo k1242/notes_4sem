@@ -1,0 +1,61 @@
+% пропускается начало семинара 
+% https://www.youtube.com/watch?v=bXpmoUzjm3k&t=361s&ab_channel=%D0%A1%D1%82%D0%B0%D0%BD%D0%B8%D1%81%D0%BB%D0%B0%D0%B2%D0%9B%D0%B5%D0%BE%D0%BD%D0%B8%D0%B4%D0%BE%D0%B2%D0%B8%D1%87%D0%9E%D0%B3%D0%B0%D1%80%D0%BA%D0%BE%D0%B2
+
+
+\subsection{Распредления (обобщенные функции)}
+
+Работать будем с $\mathcal D (X) \overset{\mathrm{def}}{=} C_0^{\infty} (X)$, $X \subseteq \mathbb{R}$.  Функция называется \textit{финитной}, если $\supp \varphi = K \subset X$, 
+\begin{equation*}
+    \supp \varphi \overset{\mathrm{def}}{=} \bar{Y},
+    \hspace{5 mm} 
+    Y = \{x \in X \mid \varphi(x) \neq 0\}.
+\end{equation*}
+Далее будем считать $\DS \equiv \mathcal D$. 
+
+Вспомним, что $\varphi_n \dto \varphi$ означает $\exists [a, b] \supset \supp \varphi_n$ и $\supp \varphi$, а также $\varphi_n^{(k)} \overset{[a, b]}{\rightrightarrows}  \varphi^{(k)}$, и тогда пишут, что $\lim_{n\to\infty} \varphi_n \overset{\mathcal D}{=}  \varphi$. 
+
+Хочется определить пространство линейный непрерывных функционалов. Далее, договоримся обозначать $f(\varphi) \equiv f[\varphi] \overset{\mathrm{def}}{=} \langle f \,|\, \varphi \rangle$. 
+
+\begin{to_def}
+    Функционал $f \colon \mathcal D \mapsto \mathbb{C}(\mathbb{R})$ \textit{непрерывен} в $\mathcal D'$, если
+    \begin{equation*}
+        \lim_{n\to\infty} \varphi_n \overset{\mathcal D}{=}  \varphi,
+        \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+        \lim_{n\to\infty} \langle f \,|\, \varphi_n \rangle  = \langle f \,|\, \varphi \rangle.
+    \end{equation*}
+\end{to_def}
+
+\begin{to_def}
+    Всякий линейный функционал из $\mathcal D'$ называют \textit{обобщенной функцией} на $\mathcal D$. 
+\end{to_def}
+
+Каждая локально-интегрируемая функция порождает некоторую обобщенную, их назовём \textit{регулярными}. Если не существует такой локально-интегрируемой функции в $D$ для функционала из $\mathcal D'$, то это \textit{сингулярная обобщенная функция}. Стоит заметить, что регулярные обобщенные функции плотны в $\mathcal D'$, а их пополнением являются сингулярные. 
+
+Например, $\delta(x)$ можно представить как предел РОФ, где под пределом имеется ввиду
+\begin{equation*}
+    f_n \dto f \hspace{5 mm} 
+    (f_n)_{n\in \mathbb{N}} \subset \mathcal D', \ f \sin \mathcal D',
+    \hspace{5 mm} 
+    \forall \varphi \in \mathcal D \ \ \lim_{n \to \infty} \langle f_n \,|\, \varphi \rangle  = \langle f \,|\, \varphi \rangle,
+\end{equation*}
+в частности тогда пишут
+\begin{equation*}
+    \lim_{n \to \infty} f_n \dseq f 
+    \hspace{5 mm} \Leftrightarrow \hspace{5 mm} 
+    *w. \lim_{n \to \infty} f_n = f. 
+\end{equation*}
+
+
+% зорич, глава 17, параграф 4, свёртка функци, п.4 -- начальные сведения. 
+
+
+\input{parts/3T23.tex}
+\input{parts/3T24.tex}
+\input{parts/3T25.tex}
+\input{parts/3T26.tex}
+\input{parts/3T27.tex}
+\input{parts/3T28.tex}
+% \input{parts/3T29.tex}
+% \input{parts/3T30.tex}
+\input{parts/3T31.tex} %-
+

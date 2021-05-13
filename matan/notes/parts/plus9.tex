@@ -1,0 +1,51 @@
+\subsubsection*{14.8(2)}
+
+Рассмотрим интеграл с подвижной особенностью. В частности есть $c(\alpha) \in [a, b]$:
+\begin{equation*}
+    I(\alpha) = \int_{a}^{b} f(x, \alpha) \d x = 
+    \left(\int_{a}^{c(\alpha)} + \int_{c(\alpha)}^{b} \right)
+    f(x, \alpha) \d x.
+\end{equation*}
+В частности опишем ситуации, когда функция неограничена на нижнем и верхнем пределе:
+\begin{equation*}
+    \forall \varepsilon > 0 \ 
+    \exists \alpha_1(\varepsilon) \geq a \
+    \forall \xi_1 > \alpha_1(\varepsilon) \ 
+    \forall \varepsilon \in E \ 
+    \bigg| \int_{\xi_1}^{c(\alpha)}f(x, \alpha) \d x \bigg| < \frac{\varepsilon}{2}.
+\end{equation*}
+Аналогично для нижнего предела
+\begin{equation*}
+    \forall \varepsilon > 0 \ 
+    \exists \alpha_2(\varepsilon) \leq b \
+    \forall \xi_2 > \alpha_2(\varepsilon) \ 
+    \forall \varepsilon \in E \ 
+    \bigg| \int_{c(\alpha)}^{\xi_2}f(x, \alpha) \d x \bigg| < \frac{\varepsilon}{2}.
+\end{equation*}
+Если взять $\Delta$ большое правильным образом, то приходим к определению вида
+\begin{equation*}
+    \forall \varepsilon > 0 \ 
+    \exists \Delta(\varepsilon) > 0 \ 
+    \forall \delta_1 \in (0, \Delta(\varepsilon)) \ 
+    \forall \delta_2 \in (0, \Delta(\varepsilon)) \
+    \forall \alpha \in E \ 
+    \bigg| \int_{c(\alpha)-\delta_1}^{c(\alpha)+\delta_2}f(x, \alpha) \d x \bigg| < \varepsilon.
+\end{equation*}
+
+Теперь можем перейти к примеру:
+\begin{equation*}
+    I(\alpha) = \int_0^1 \frac{\sin(\alpha x)}{\sqrt{|x-\alpha|}} \d x,
+\end{equation*}
+тогда, по определению,
+\begin{equation*}
+    \bigg| \int_{\alpha-\delta_1}^{\alpha+\delta_2} 
+    \frac{\sin(\alpha x) \d x}{\sqrt{|x-\alpha|}}
+    \bigg| \leq \int_{\alpha-\delta_1}^{\alpha+\delta_2} \frac{\d x}{\sqrt{|x-\alpha|}} = 
+    \int_{\alpha-\delta_1}^{\alpha} \frac{\d x}{\sqrt{|x-\alpha|}}  + 
+    \int_{\alpha}^{\alpha+\delta_2} \frac{\d x}{\sqrt{|x-\alpha|}} = 
+    2\sqrt{\delta_1} + 2 \sqrt{\delta_2} < 4 \Delta(\varepsilon),
+\end{equation*}
+в таком случае достаточно взять $\Delta(\varepsilon) = \varepsilon^2/16$. 
+
+
+

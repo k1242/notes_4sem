@@ -1,0 +1,47 @@
+Найдём некоторые пределы в терминах обобщенных функций. В частности,
+\begin{equation*}
+    * w \lim_{a\to+0} \frac{a}{\pi (a^2+x^2)} = * w \lim_{\mathcal B_a} \frac{a}{\pi (a^2+x^2)},
+\end{equation*}
+где $\mathcal B_a$ -- база, состоящяя из всех последовательностей, стремящихся к $0$. 
+В частности, при $a=1/n$, перейдём к Т24(а). Прямым вычислением, находим
+\begin{equation*}
+    \bigg\langle \frac{a}{\pi(a^2+x^2)} \,\bigg|\, \varphi \bigg\rangle  = 
+    \int_{-\infty}^{+\infty} \frac{a \varphi(x)}{\pi (a^2+x^2)} \d x = 
+    \left(
+    \lim_{\Lambda_+ \to +\infty} \int_{0}^{\Lambda_+} + 
+    \lim_{\Lambda_+ \to -\infty} \int_{\Lambda_-}^{0}  
+    \right) \frac{a \varphi(x)}{\pi (a^2+x^2)} \d x,
+\end{equation*}
+что интегрируя по частям можем свести  к $\arctg x$:
+\begin{align*}
+    \frac{1}{\pi} \lim_{\Lambda_+ \to +\infty} \left\{
+        \arctg \frac{x}{a} \varphi(x) \bigg|_{0}^{\Lambda_+} - 
+        \int_{0}^{\Lambda_+} \left(\arctg \frac{x}{a}\right) \varphi' (x) \d x
+    \right\} + \frac{1}{\pi} \lim_{\Lambda_- \to -\infty} \left\{
+        \arctg \frac{x}{a}\varphi(x) \bigg|_{\Lambda_-}^{0} - \int_{\Lambda_-}^{0}  
+        \left(\arctg \frac{x}{a}\right) \varphi' (x) \d x
+    \right\}
+     = \\ = 
+     - \frac{1}{2} \varphi(x) \bigg|_{0}^{\infty}  + \frac{1}{2} \varphi(x) \bigg|_{-\infty}^{0} = \varphi(0) = \langle \delta(x) \,|\, \varphi \rangle,
+\end{align*}
+таким образом мы нашли, что
+\begin{equation*}
+    \bigg\langle \frac{a}{\pi(a^2+x^2)} \,\bigg|\, \varphi \bigg\rangle  =  
+     \langle \delta(x) \,|\, \varphi \rangle.
+\end{equation*}
+
+Второй пункт сводится к интегрированию
+\begin{equation*}
+    \frac{1}{\pi} \int_{0}^{x}  \frac{1}{t} \sin \frac{t}{a} \d t = \frac{1}{\pi} \int_{0}^{x/a} \frac{d \sin y}{d y}  \d y = \frac{1}{\pi} \si\left(\frac{x}{a}\right).
+\end{equation*}
+Вспоминая, что
+\begin{equation*}
+    \frac{1}{\pi}\si(+\infty) = \frac{1}{\pi} \frac{\pi}{2} = \frac{1}{2},
+    \hspace{5 mm}   
+    \frac{1}{\pi} \si(-\infty) = \frac{1}{\pi} \left(-\frac{\pi}{2}\right),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \lim_{n\to \infty} \frac{1}{\pi} \frac{\sin nx}{x} \dseq \delta(x). 
+\end{equation*}
+
+
+

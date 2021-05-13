@@ -1,0 +1,80 @@
+
+\subsubsection*{Т20}
+
+
+Приведем пример замкнутого в топологии нормы множества $X \subset E'$ (двойственное к некоторому банахову пространству), которое не замкнутое в его *-слабой топологии. 
+
+
+Ответ -- \textit{сфера}, докажем это. Покажем, что для $X \subset E'$ $\cl X = X$ и $w. \cl X \neq X$. Что есть сфера? Сфера есть
+\begin{equation*}
+    S = \{f \in E' \mid \|f\| = 1\}, 
+    \hspace{5 mm} \cl S = S, 
+    \hspace{5 mm} w. \cl S = \bar{B},
+    \hspace{5 mm} 
+    \bar{B} = \{F \in E' \mid \|f\|\leq 1\}.
+\end{equation*}
+Введём дополнение $S_C \overset{\mathrm{def}}{=} E\backslash S$, и покажем, что оно открыто. 
+
+
+Выберем $g \in S_c$ с $\|g\|<1$ и $\varepsilon = 1- \|g\|> 0$. Пусть $h \in B_\varepsilon(g)$, более того
+\begin{equation*}
+    \|h\| = \|g + h - g\| \leq \|g\| + \|h-g\| < 1,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    B_\varepsilon (g) \subseteq S_c. 
+\end{equation*}
+Далее, пусть $g \in S_c$ и $\|g\|>1$, тогда $\varepsilon = \|g\|-1 > 0$. Выберем $h \in B_\varepsilon (g)$, тогда 
+\begin{equation*}
+    \|g\| =  \|h+g-h\| \leq \|h\| + \|g-h\|,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \|h\| \geq \|g\|-(\|g\|-1) = 1,
+\end{equation*}
+получается $\|h\| > 1$ и $B_\varepsilon (g) \subseteq S_c$. Таким образом $S_c$ открыто, $S$ замкнуто. 
+
+
+Докажем теперь, что $w, \cl S = \bar{B}$. Во-первых $\forall g_0 \notin B$ верно, что
+\begin{equation*}
+    \|g_0\| > 1,
+    \hspace{5 mm} 
+    \exists x_0 \in E, \ 
+    \exists \varepsilon_0 > 0 \ 
+    \forall g \in U_{x_0, g_0, \varepsilon_0} \ \ \|g\|>1,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    w.\cl S \subseteq B. 
+\end{equation*}
+В чатсности, покажем, что
+\begin{equation*}
+    \|g\| \geq |g[x_0]| = |g[x_0] - g_0[x_0] + g_0[x_0]| \geq 
+    |g_0[x_0]| - |g[x_0] - g_0[x_0]|,
+\end{equation*}
+что уже можно сделать строго больше:
+\begin{equation*}
+    \|g\| > |g_0 [x_0]| - \varepsilon_0 = 1,
+\end{equation*}
+где $\varepsilon_0 = |g_0[x_0]|-1$. 
+
+
+Пусть теперь $\forall$ фиксированного $g_0 \in \bar{B}$ с $\|g_0\|<1$. Тогда 
+\begin{equation*}
+    \exists U(g_0) \colon  g_0 \in \bigcap_{k=1}^N U_{x_k, g_k, \varepsilon_k} \subset U(g_0).
+\end{equation*}
+Утверждается, что существует ненулевой $g$ такой, что $\forall t \in \mathbb{R}$ с $g_0 + t g \in U(g_0)$. 
+
+Осталось построить цилиндрическое множество по которому <<прогуляемся>> до  нужной нам области.  Пусть
+\begin{equation*}
+    \varphi(t) = \|g_0 + tg\| \in C(\mathbb{R}),
+    \hspace{5 mm} 
+    |\varphi(t_1) - \varphi(t_2)| \leq |t_1 - t_2|  \cdot \|g\|.
+\end{equation*}
+Понятно, что $\varphi(0) = \|g_0\| < 1$. Тогда $\varphi(t) \geq |t| \cdot \|g\|-\|g\|_0 \to \infty$ при $t \to \infty$. По теореме о промежуточных значениях непрерывной функции
+\begin{equation*}
+     \exists t_0 \in \mathbb{R} \colon  \varphi(t_0) = 1,
+     \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+     g_0 +t_0 g \in S.
+ \end{equation*} 
+ Получается, что взяв точку из шара, и взяв её слабую окрестность, мы находим непустое пересечение этой окрестности со сферой. Из этого следует, что $g_0 \in w. \cl S$, а тогда и $\bar{B} \subseteq w. \cl S$, которое содержится в замкнутом шаре. Вывод: $\bar{B} = w. \cl S$. 
+
+
+
+
+
+

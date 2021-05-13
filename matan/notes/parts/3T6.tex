@@ -1,0 +1,46 @@
+\subsubsection*{Т6. Функции Эрмита}
+
+Приведем пример счетной системы фукций, полной в $L_2(\mathbb{R})$. В частности, воспользуемся функциями Эрмита:
+\begin{equation*}
+    \varphi_n (t) = c_n H_n(t) e^{-\frac{1}{2}t^2},
+    \hspace{5 mm} 
+    H_n (t) = e^{\frac{1}{2}t^2} \frac{d^n}{d t^n} e^{-\frac{1}{2} t^2}.
+\end{equation*}
+Утверждается, что это базис $L_2(\mathbb{R})$, докажем это. 
+
+Есть система функций
+\begin{equation*}
+    \mathcal L = \{\varphi_n (t)\} = \{\rho(t) e^{-\frac{1}{2}t^2}, \ \rho \in \mathcal P\}. 
+\end{equation*}
+Так как $L_2$ -- гильбертово пространство, то достаточно проверить замкнутость системы, то есть показать, что $\mathcal L^\bot = \{0\}$. По определению:
+\begin{equation*}
+    f \in \mathcal L^\bot,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \int_{\mathbb{R}} f(t) t^n e^{-\frac{1}{2}t^2} \d t = 0,
+    \hspace{5 mm} n \in \mathbb{N}. 
+\end{equation*}
+Рассмотрим преобразование Фурье:
+\begin{align*}
+    F\left[f(t)e^{-\frac{1}{2}t^2}\right](y) &= \int_{\mathbb{R}} \frac{\d t}{\sqrt{2\pi}} f(t) e^{-\frac{1}{2}t^2}, e^{-i y t} = 
+    \int_{\mathbb{R}} \frac{\d t}{\sqrt{2\pi}} f(t) e^{-\frac{1}{2}t^2} 
+    \sum_{n=0}^{\infty} \frac{(-iy t)^n}{n!} =\\
+    &\overset{\encircled{!}}{=} 
+    \sum_{n=0}^{\infty}  \frac{(-iy)^n}{n!} \int_{\mathbb{R}} \frac{\d t}{\sqrt{2\pi}} f(t) \underbrace{t^n e^{-\frac{1}{2}t^2}}_{=0 \text{\ по условию}} = 0,
+\end{align*}
+таким образом мы выяснили, что Фурье функции $\equiv 0$. 
+
+Далее воспользуемся тем, что $f(t) e^{-\frac{1}{2}t^2} \in L_2\left(\mathbb{R}\right)$, а значит работает равенство Парсеваля:
+\begin{equation*}
+    \int_\mathbb{R} \bigg|f(t) e^{-\frac{1}{2}t^2}\bigg|^2 \frac{\d t}{2 \pi} = 
+    \int_{\mathbb{R}} \big|F[\ldots](y)\big|^2 \d y = 0,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    f(t) e^{-\frac{1}{2}t^2} = 0,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    f(t) = 0,
+\end{equation*}
+по крайней мере кроме множества меры нуль. Таким образом функции эрмита составляют базис в $L_2$.
+
+
+
+% \encircled{!} -- теоерма Фубини, объяснить, лемма Лебеша о мажорируемой сходимости
+

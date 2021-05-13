@@ -1,0 +1,66 @@
+
+\subsubsection*{Т9. Пространство \texorpdfstring{$c$}{с}}
+
+Пространство состоит из некоторых бесконечномерных <<векторов>>  (последовательностей):
+\begin{equation*}
+    x = \big(x(1), x(2), \ldots, x(k), \ldots\big),
+    \hspace{5 mm}
+    \bigg|
+        \lim_{k \to \infty} x(k)
+    \bigg| < + \infty.
+\end{equation*}
+Норма определена, как
+\begin{equation*}
+    p(x) = \|x\|_c = \sup_{k \in \mathbb{N}} |x(k)| = \|x\|_{\infty}.
+\end{equation*}
+Докажем, что это пространство является банаховым, а именно полноту по $\|\cdot\|_{\infty}$ норме. 
+
+Рассмотрим последовательность $x_n$, где 
+\begin{equation*}
+    x_n = (x_n (1), \ldots, x_n(k), \ldots).
+\end{equation*}
+Глобально хотим показать, что
+\begin{equation*}
+    \forall \varepsilon > 0 \ \ 
+    \exists N(\varepsilon) \in \mathbb{N} \ \ 
+    \forall n \geq N(\varepsilon) \ \ 
+    \forall l \in \mathbb{N} \ \  \ 
+    \|x_{n+l} -x_{n}\|_{\infty} = \sup_{k \in \mathbb{N}} |x_{n+l} (k) - x_n (k)| < \varepsilon.
+\end{equation*}
+Попробуем через это продраться: из сходимости следует, что
+\begin{equation*}
+    \forall k \in \mathbb{N} \ \ |x_{n+l} (k) - x_n (k) | < \varepsilon.
+\end{equation*}
+Здесь можем выделить $(x_n(k))_{n \in \mathbb{N}}$ -- числовая фундаментальная в $\mathbb{R}$. 
+По критерию Коши:
+\begin{equation*}
+    \forall k \in \mathbb{N} \ \ 
+    \lim_{n \to \infty} x_n (k) = y(k) \in \mathbb{R},
+\end{equation*}
+уставнавливается покомпонентая сходимость. 
+Теперь рассмотрим
+\begin{equation*}
+    \sup_{k\in \mathbb{N}} |x_n (k) - y(k)| = \|x_n - y\|_{\infty} < \varepsilon,
+\end{equation*}
+что автоматически означает, что $\exists y$ такой, что
+\begin{equation*}
+    \lim_{n \to \infty} x_n  = y.
+\end{equation*}
+
+Следующий этап -- показать, что
+\begin{equation*}
+    \exists \lim_{k \to \infty} y(k) \in \mathbb{R},
+\end{equation*}
+то есть показать полноту пространства:
+\begin{align*}
+    |y(k+q)-y(k)| 
+    &= |y(k+q) - x_n (k+q) + x_n (k+q) - x_n (k) + x_n (k) - x_n (k)|\\
+    &\leq |y(k+q)-x_n (k+q)| + |y(k) - x_n (k)| + |x_n (k+q) - x_n (k)| \\
+    & < \varepsilon/3 + \varepsilon/3 + \varepsilon/3 = \varepsilon.
+\end{align*}
+Таким образом мы доказали полноту пространства\footnote{
+    \red{$c_0, c_{00}, l_\infty$ -- банаховы ли?
+    $\encircled{!}$: $c_0$ (сходящиеся к $0$), $c_{00}$ (финитные), $l_\infty$ (ограниченные). 
+    }  
+} . 
+

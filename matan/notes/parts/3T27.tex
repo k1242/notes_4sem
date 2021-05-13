@@ -1,0 +1,71 @@
+\subsubsection*{Т27}
+
+\begin{to_lem}
+    В $\mathcal D'$ верно, что
+    \begin{equation*}
+        (g \cdot f)^{(m)} = \sum_{k=0}^{m} C_m^k g^{(k)} f^{(m-k)}.
+    \end{equation*}
+\end{to_lem}
+
+Найдём производные отдельных <<строительных блоков>>:
+\begin{equation*}
+    H(x) = \left\{\begin{aligned}
+        &1, &x\geq 0, \\
+        &0, &x<0,
+    \end{aligned}\right.
+    \hspace{5 mm}
+    \tilde{H} (x) = \left\{\begin{aligned}
+        &1,   &x>0, \\
+        &1/2, &x=0, \\
+        &0,   &x<0. \\
+    \end{aligned}\right. 
+\end{equation*}
+Докажем, что
+\begin{equation*}
+    \sign x = 2 \tilde{H}(x) - 1,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \sign'(x) = 2 \tilde{H}'(x) = 2 \delta(x).
+\end{equation*}
+Первый шаг, по определению,
+\begin{align*}
+    \big\langle \sign'(x) \,\big|\, \varphi  \big\rangle  = -\langle \sign x \,|\, \varphi' \rangle = - \int_{-\infty}^{+\infty} \sign x \varphi'(x) \d x =   
+    \int_{-\infty}^{0} \varphi'(x) \d x - \int_{0}^{+\infty} \varphi'(x) \d x = 2 \varphi(0) = 
+    \langle 2 \delta(x) \,|\, \varphi \rangle.
+\end{align*}
+
+
+Теперь покажем, что
+\begin{equation*}
+    |x|' = (x \sign x)' = \sign x + x \sign' x = \sign x + x 2 \delta(x) = \sign x.
+\end{equation*}
+Также можем найти вторую производную
+\begin{equation*}
+    |x|'' = \sign'(x) = 2 \delta(x). 
+\end{equation*}
+
+
+\textbf{Пункт а}. Теперь легко посчитать, что
+\begin{equation*}
+    \left(g(x) \sign x\right)' = g'(x) \sign x + g(x) \sign' (x) = g'(x) \sign x + 2 g(0) \delta(x),
+\end{equation*}
+где равенства подразумеваются в пространстве $\mathcal D'$. Для второй производной, находим
+\begin{align*}
+    \left(g(x) \sign x\right)'' &= g'' \sign x + 2 g'(x) \sign'x + g(x) \sign''(x) = 
+    g''(x) \sign x + 4 g'(0) \delta(x) + 2 g(x) \delta'(x) 
+    = \\ &=
+    g''(x) \sign x + 4 g'(0) \delta(x) + 2\left(
+        -g'(0) \delta(x) + g(0) \delta'(x)
+    \right) = g''(x) \sign x + 2 g'(0) \delta(x) + 2 g(0) \delta'(x).
+\end{align*}
+
+
+\textbf{Пункт б}. Сразу подставим значение $g(x) = (x+1)e^{|x|}$:
+\begin{align*}
+    g' &= e^{|x|}\left(1+(x+1)\sign x \right), \\
+    g'' &= 
+    e^{|x|} \left(
+        1 + \sign x + 2 \delta(x) (x+1) + \sign x + x + 1
+    \right) = 2 e^{|x|} \left(
+        1 + x/2 + \sign x + \delta(x)
+    \right).
+\end{align*}

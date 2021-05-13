@@ -1,0 +1,22 @@
+\subsubsection*{Т25}
+
+Теперь найдём предел вида
+\begin{equation*}
+    * w. \lim_{n\to \infty} \frac{n^3 x}{(1+n^2 x^2)^2} = 
+    * w. \lim_{a \to +0} \frac{x a}{(x^2+a^2)^2} = F,
+\end{equation*}
+для этого 
+\begin{equation*}
+    \bigg\langle \frac{xa}{(x^2+a^2)^2} \,\bigg|\, \varphi \bigg\rangle  = 
+    \int_{-\infty}^{+\infty} \frac{xa}{(x^2+a^2)^2} \varphi(x) \d x = \int_{-\infty}^{+\infty} 
+    \left(-\frac{1}{2}\right)\left(
+        \frac{\partial }{\partial x} \frac{a}{x^2 + a^2}
+    \right) \varphi(x) \d x = 
+    \frac{1}{2} \int_{-\infty}^{+\infty}  \frac{a \varphi'(x)}{x^2 + a^2} \d x \underset{a\to+0}{\to} \frac{\pi}{2} \varphi'(0),
+\end{equation*}
+что, учитывая предыдущую задачу, позволяет записать
+\begin{equation*}
+     \frac{\pi}{2} \langle \delta(x) \,|\, \varphi' \rangle = \bigg\langle \left(-\frac{\pi}{2}\right)\delta'(x)   \,\bigg|\, \varphi \bigg\rangle,
+     \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+     w. \lim_{a \to +0} \frac{x a}{(x^2+a^2)^2}  = -\frac{\pi}{2}\delta'(x), 
+\end{equation*}

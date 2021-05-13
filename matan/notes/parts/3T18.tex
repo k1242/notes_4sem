@@ -1,0 +1,56 @@
+\subsubsection*{Т18}
+
+Докажем, что в бесконечномерном банаховом пространстве $E$ единичный шар не явяется компактным. 
+
+
+\begin{to_lem}[Лемма Рисса или лемма о перпендикуляре]
+    Если $X_0$ -- замкнутое линейное подпространство в нормированом пространстве $X$, $X_0 \neq X$, тогда
+    \begin{equation*}
+        \forall \varepsilon > 0, \ \exists x_\varepsilon \in X \colon \|x_\varepsilon\| = 1,
+        \hspace{5 mm} 
+        \|x_\varepsilon - y\| \geq 1 - \varepsilon \ \ \forall y \in X_0.
+    \end{equation*}
+\end{to_lem}
+
+\begin{proof}[$\triangle$]
+    Найдётся $z \in X \backslash X_0$, положим $\delta = \inf\{
+        \|z - u\| \mid y \in X_0
+    \} > 0$.
+    Тогда выберем
+    \begin{equation*}
+        \varepsilon_0 > 0 \colon  \frac{\delta}{\delta+\varepsilon_0} > 1 - \varepsilon,
+    \end{equation*}
+    выберем $y_0 \in X_0$ такой, что $\|z - y_0\| < \delta + \varepsilon_0$.
+
+    Далее, считая
+    \begin{equation*}
+        x_\varepsilon = \frac{z-y_0}{\|z-y_0\|}, \  \ \forall y \in X_0.
+    \end{equation*}
+    Теперь оценим
+    \begin{equation*}
+        \|x_\varepsilon - y\| = \frac{1}{\|z-y_0\|} \|z-y_0-\|z-y_0\|y\| \geq \frac{\delta}{\delta+\varepsilon_0} > 1 - \varepsilon.
+    \end{equation*}
+    Заметим, что
+    \begin{equation*}
+        v = y_0 + \|z-y_0\| y \in X_0,
+        \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+        \|z-v\| \geq \delta.
+    \end{equation*}
+\end{proof}
+
+
+
+\begin{to_con}
+    В $\forall X$  (бесконеномерном, нормированном пространстве) $\exists (x_n) \colon  \|x_n\| = 1$ и
+    $\|x_n - x_k\| \geq 1$, $n \neq k$.
+    Как следставие все шары $R > 0$ в $X$ некомпактны. 
+\end{to_con}
+
+\begin{proof}[$\triangle$]
+
+Всякое бесконечное подмножество компакта имеет предельную точку. 
+Последовательность $x_n$ строится по индукции с помошью леммы Рисса. 
+
+\end{proof}
+
+

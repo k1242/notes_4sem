@@ -1,0 +1,56 @@
+\subsubsection*{Т13}
+
+
+Сначала  найдём норму оператора $F$, откуда уже получим значение нормы для $J$, где
+\begin{equation*}
+    F[f] = \int_a^b g(t) f(t) \d t,
+    \hspace{5 mm} 
+    J[f] = \int_{a}^{b} K(x, y) f(y) \d y,
+\end{equation*}
+где $g\in C[a,b]$, а $F, \ J$ -- линейные функционалы на $C[a, b]$. 
+
+
+\textbf{Первая часть}. Функционал $F$ ограничен в силу
+\begin{equation*}
+    |F[f]| \leq \int_{a}^{b} |g(t) |f(t)| \d t \leq \|f\|_\infty \cdot \int_{a}^{b} |g(t)| \d t.
+\end{equation*}
+Далее выберем произвольное $\varepsilon  > 0$. По \textit{теореме Кантора} найдётся такое разбиение отрезка $[a, b]$ точками $a=t_0 < t_1 < \ldots < t_n = b$, что колебание $\omega_i(g)$ функции $g$ на $i$-ом отрезке $\Delta_i = [t_{i-1}, t_i]$ удовлетворяет неравенствам 
+\begin{equation*}
+    \omega_i(g) < \varepsilon, \hspace{5 mm} i = 1,\, 2,\, \ldots,\, n.
+\end{equation*}
+Разобьём все $\Delta_i$ на две группы. В первую группу отнесем те отрезки, на которых $g$ сохраняет знак. Пусть это будут отрезки $\Delta_1',\ldots,\Delta_r'$. Вторую группу $\Delta_1'', \ldots, \Delta_s''$ образуют отрезки, на которых $g$ меняется знак. В каждом промежутке второго типа существует точка, в которой $g$ обращается в нуль. Ввиду установленных неравенств там $|g(t)|<\varepsilon$. 
+
+На промежутках первого типа положим $\tilde{f}(t) = \sign g(t)$, в остальных точках $\tilde{f}(t)$ -- линейная непрерывная функция, удовлетворяющая неравенству $|\tilde{f}| \leq 1$. Тогда $\|\tilde{f}\|=1$, и 
+\begin{align*}
+    \|F\| &= \sup_{\|f\|=1} |F[f]| \geq |F[\tilde{f}]| = \bigg|
+        \int_a^b g(t) \tilde{f}(t) \d t
+    \bigg| = 
+    \bigg|
+        \sum_{k=1}^{r} \int_{\Delta'_k} |g(t)|\d t + \sum_{i=1}^{s} \int_{\Delta''_i} g(t) \tilde{f}(t) \d t
+    \bigg| 
+    \geq \\ &\geq
+    \sum_{k=1}^{r}  \int_{\Delta'_k} |g(t)| \d t - 
+    \sum_{i=1}^{s} \int_{\Delta_i''} = \int_a^b |g(t)| \d t - 
+    2 \sum_{i=1}^{s}  \int_{\Delta''_i} |g(t)| \d t \geq \int_{a}^{b} |g(t)| \d t - 2 \varepsilon \cdot \mu[a, b],
+\end{align*}
+что ввиду произвольности $\varepsilon$ означает, что $\|F\|\geq \int_a^b |g(t)| \d t$, что вместе со знанием супремума позволяет утверждать: $\|f\|=\int_a^b |g(t)| \d t$.
+
+
+\textbf{Вторая часть}. Переходим к поиску нормы $J$:
+\begin{align*}
+    \|J[f]\| = \sup_{t\in[a, b]} \bigg| 
+        \int_{a}^{b} K(t, s) f(s) \d s
+    \bigg| \leq \sup_{t\in[a, b]} \int_{a}^{b}  |K(t, s)| \cdot |f(s)| \d s \leq 
+    \|f\| \cdot \sup_{t\in[a, b]} \int_{a}^{b} |K(t, s)| \d s,
+\end{align*}
+таким образом, по определению
+\begin{equation*}
+    \|J\| \leq \sup_{t\in[a, b]} \int_{a}^{b} |K(t, s)| \d s \overset{\mathrm{def}}{=}  M.
+\end{equation*}
+Так как ядро $K$ непрерывно, то непрерывен и интеграл $\int_a^b |K|\d s$, поэтому $\exists t_0 \in [a, b]$ такой, что $M = \int_{a}^{b} |K(t_0, s)|\d s$. 
+
+Как было показано в первой части, $q(x) = \int_{a}^{b}  |K(t_0, s)| f(s) \d s$ -- линейный непрерывный функционал на $C[a, b]$ с нормой равной $M$. Таким образом, выбирая $\tilde{f}$ так, чтобы $\sign \tilde{f(s)} = \sign K(t_0, s)$ может утверждать, что супремум достигается, и 
+\begin{equation*}
+    \|J\| = M = \sup_{t\in[a, b]} \int_{a}^{b}  |K(t, s)| \d s.
+\end{equation*}
+

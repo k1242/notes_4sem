@@ -1,11 +1,10 @@
 \subsubsection*{Т21}
 
 Для отображения Мандельброта 
-\begin{equation*}
+$
     z_{n+1} = z_n^2 + c, \hspace{5 mm} z, c \in \mathbb{C}
-\end{equation*}
+$
 найдём стационарные точки и исследуем их на устойчивость.
-
 Будем считать точку стационарной, если $z_{n+1} = z_n$, тогда
 \begin{equation*}
     z^2 - z + c = 0,
@@ -23,7 +22,7 @@
     \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
     |z_n| = |z_1|^{2^{n-1}} e^{i 2^{n-1} \varphi} < |z_1|^{2^{n-1}}
 \end{equation*}
-то есть для стационарной точки $z_1 = 0$ $\forall \varepsilon > 0 \ \exists N \colon  \forall n > N \ z_n < \varepsilon$, то есть вернется к нулю сколь угодно близко (ассимптотически устойчиво). Можно также сказать, что точка $z_1 = 0$ устойчива по Лярунову: $\forall \varepsilon >  0 \ \exists \delta > 0$ такая, что 
+то есть для стационарной точки $z_1 = 0$ $\forall \varepsilon > 0 \ \exists N \colon  \forall n > N \ z_n < \varepsilon$, то есть вернется к нулю сколь угодно близко (асимптотически устойчиво). Можно также сказать, что точка $z_1 = 0$ устойчива по Ляпунову: $\forall \varepsilon >  0 \ \exists \delta > 0$ такая, что 
 \begin{equation*}
     \forall |z_1| < \delta\colon |z_n| < \varepsilon, \ \forall n \geq 1,
 \end{equation*}

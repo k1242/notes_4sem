@@ -1,0 +1,70 @@
+\subsubsection*{Т12}
+
+
+Пусть функция $g$ непрерывна на $[a, b]$. Найдём норму линейного отображения $M_g \colon L_2[a, b] \mapsto L_2[a,b]$, где $A_g(f) = [f]$ -- мультипликативный оператор. Здесь $X=Y=L_2[a,b]$. 
+
+По опредению, норма оператора $\|A_g\| = \sup_{\|f\|_X = 1} \|A_g [f]\|_Y$. Аналогично, ищем ограничение сверху:
+\begin{equation*}
+    \|A_g [f]\|_2^2 = \|gf\|_2^2 = \int_{[a, b]} |gf|^2 (x) \mu(\d x) \leq 
+    \int_{[a, b]} \left\{
+        \sup_{x\in[a,b]} |g(x)|
+    \right\}^2 |f(x)|^2 \mu(\d x).
+\end{equation*}
+Вынесенный супремум позволит записать:
+\begin{equation*}
+    \|A_g[f]\|_2^2 \leq \|g\|_\infty^2 \|f\|_2^2,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \|A_g\| = \sup_{\|f\|_2=1} \|A_g[f]\|_2 \leq \|g\|_\infty.
+\end{equation*}
+Далее покажем, что норма не достигается, но сколь угодно близко приближается.
+
+
+Есть функция 
+\begin{equation*}
+    \sup_{x\in[a,b]} |g(x)| = |g(c)|,
+\end{equation*}
+есть некоторая $f_\varepsilon \in L_2[a, b]$ вида
+\begin{equation*}
+    f(x) = \left\{\begin{aligned}
+        &\alpha_\varepsilon, &x\in[c-\varepsilon, c+\varepsilon], \\
+        &0, &x\notin[c-\varepsilon, c+\varepsilon],
+    \end{aligned}\right.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \|f_\varepsilon\|_2^2 = \int_{[c-\varepsilon, c+\varepsilon]} \hspace{-10mm} \alpha_\varepsilon^2 \mu(d x) =
+    \alpha_\varepsilon^2 \cdot 2 \varepsilon = 1,
+    \hspace{5 mm} 
+    \alpha_\varepsilon = \frac{1}{\sqrt{2\varepsilon}}.
+\end{equation*}
+В таком случае рассмотрим
+\begin{equation*}
+    \|A_g [f_\varepsilon]\|_2^2 = \|g f_\varepsilon\|_2^2 = \alpha_\varepsilon^2 \int_{[c-\varepsilon, c+\varepsilon]} \hspace{-10mm} |g(x)|^2 \mu(dx) = \alpha_\varepsilon^2 \cdot 2 \varepsilon |g(x_{c,\varepsilon})|^2 \underset{\varepsilon\to 0}{\to} \|g\|_\infty^2,
+\end{equation*}
+в силу непрерывности $g$, по теореме о среднем.
+
+
+Можно пойти другим путем, по определению:
+\begin{equation*}
+    \forall \varepsilon \in (0, \|g\|_\infty), \hspace{5 mm} 
+    \exists x_\varepsilon \subseteq [a, b] \ 
+    g(x) \geq \|g\|_\infty - \varepsilon,
+\end{equation*}
+почти всюду на $X_\varepsilon$. Выберем $h(x)$ вида
+\begin{equation*}
+    h(x) = \sign g(x) \ \cf{X_\varepsilon} (x),
+    \hspace{5 mm} 
+    \|h_\varepsilon\|_1 = \|h_\varepsilon\|_2 = \mu(X_\varepsilon), 
+\end{equation*}
+тогда верно, что
+\begin{equation*}
+    \|A_g\| \geq \|A_g [h_\varepsilon]\|_1 \cdot \|h_\varepsilon\|_1 = \int_{[a, b]} |g(x)| \cf{X_\varepsilon} (x) \mu(\d x) \geq \left(
+        \|g\|_{\infty} - \varepsilon
+    \right) \chi \mu(X_\varepsilon),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \|A_g\| = \|g\|_\infty.
+\end{equation*}
+Аналогично в $L_2$:
+\begin{equation*}
+    \|A_g\|^2 \geq \||g| \cf{X_\varepsilon}\|_2^2 \cdot \|h_\varepsilon\|_2^2 \geq \|g\|_\infty^2 \mu^2(X_\varepsilon),
+\end{equation*}
+что приводит такому же результату. 
+

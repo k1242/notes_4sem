@@ -1,0 +1,45 @@
+
+
+\subsubsection*{Т8}
+
+Здесь, и далее $p(x) = \|x\|$, $q(x) = \|x\|'$. Нормы \textit{эквивалентны}, если
+\begin{equation*}
+    \exists m, M \ \colon  \ m p(x) \leq q(x) \leq M p(x) \  \ \forall x.
+\end{equation*}
+% ульянов бахвалов -- Rn, 3,99
+% Кудрявцев, том 3
+% базис Гамиля есть всегда!
+Так вот, всегда есть $\{e_k\}_{k=1}^n$ базис Гамиля, такой что $x = \sum_{k=1}^n x_k e_k$, где естественно ввести норму вида
+\begin{equation*}
+    p(x) = \sum_{k=1}^n |x_k|.
+\end{equation*}
+Пусть $q(x)$ -- ещё одна норма на $X$, в качестве мажоранты выберем $M = \max\limits_{i=1, \ldots, n}  q(e_i)$.
+Теперь можем оценить сумму сверху:
+\begin{equation*}
+    q(x) = q\left(
+        \sum_{k=1}^n x_k e_k
+    \right) \leq \sum_{k=1}^{n} |x_k| q(e_k) \leq M \cdot p(x).
+\end{equation*}
+И оценить снизу:
+\begin{equation*}
+    |q(x) - q(y)| \leq q(x-y) \leq M \cdot p (x-y),
+\end{equation*}
+вообще это значит, что $q$ -- липшецев функционал, -- непрерывный функционал на $X$ с нормой $p$, а тогда и $q(x)$ непрерывный функционал $X$ с нормой $p(x)$. 
+
+
+\begin{to_lem}
+    Шары в пространстве компактны тогда, и только тогда, когда $\dim X < + \infty$.
+\end{to_lem}
+
+Рассмотрим сферу $S = \{x \in X \mid p(x) = 1\}$ -- компакт. Но мы знаем, что непрерывный функционал на компакте достигает своего миниимума:
+\begin{equation*}
+    \min_{x \in S} q(x) = \min_{p(x)=1} q(x) = m > 0.
+\end{equation*}
+Тогда на сфере $S$ верно, что $q(x) \geq m$. Тогда в $X$ $q(x) \geq m \cdot p(x)$. Действительно,
+\begin{equation*}
+    q(tx) = |t|q(x), \ \  p(tx) = |t| \, p(x), \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    q(tx) = \frac{p(tx)}{p(x)} q(x) \geq m\, p(tx).
+\end{equation*}
+Собственно, $m p(x) \leq q(x) \leq M \cdot p(x)$,  $Q.\, E.\, D.$
+
+
