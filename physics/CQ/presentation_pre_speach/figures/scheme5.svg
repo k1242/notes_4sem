@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 156 78.9" style="enable-background:new 0 0 156 78.9;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:none;}
+	.st1{fill:none;stroke:#FFFFFF;stroke-width:0.5;stroke-miterlimit:10;}
+	.st2{fill:none;stroke:#FFFFFF;stroke-width:0.5;stroke-miterlimit:10;stroke-dasharray:1.053,1.053;}
+	.st3{fill:none;stroke:#FFFFFF;stroke-miterlimit:10;}
+	.st4{fill:#FFFFFF;}
+	.st5{fill:none;stroke:#FFFFFF;stroke-width:0.5;stroke-miterlimit:10;stroke-dasharray:1.0321,1.0321;}
+	.st6{stroke:#FFFFFF;stroke-width:0.25;stroke-miterlimit:10;}
+	.st7{font-family:'ArialMT';}
+	.st8{font-size:12px;}
+</style>
+<g id="Слой_1">
+	
+		<image style="overflow:visible;" width="1617" height="817" xlink:href="F849B949.jpg"  transform="matrix(9.654240e-02 0 0 9.654240e-02 -0.1026 2.834066e-02)">
+	</image>
+	<rect id="SVGID_3_" x="0.9" y="-47.7" class="st0" width="156" height="126.6"/>
+</g>
+<g id="Слой_2">
+	<g>
+		<g>
+			<line class="st1" x1="30.2" y1="51.1" x2="30.2" y2="50.6"/>
+			<line class="st2" x1="30.2" y1="49.6" x2="30.2" y2="39.6"/>
+			<line class="st1" x1="30.2" y1="39" x2="30.2" y2="38.5"/>
+		</g>
+	</g>
+	<line class="st3" x1="22.4" y1="38.5" x2="45.2" y2="38.5"/>
+	<g>
+		<g>
+			<path class="st4" d="M27.2,38.5l-1.1-1.8l0.1,0l2.9,1.2c1,0.2,2,0.5,3.1,0.7c-1,0.2-2,0.5-3.1,0.7l-2.9,1.2l-0.1,0L27.2,38.5z"/>
+		</g>
+	</g>
+	<g>
+		<g>
+			<line class="st1" x1="35.4" y1="53" x2="35.4" y2="52.5"/>
+			<line class="st5" x1="35.4" y1="51.4" x2="35.4" y2="39.6"/>
+			<line class="st1" x1="35.4" y1="39" x2="35.4" y2="38.5"/>
+		</g>
+	</g>
+	<g>
+		<g>
+			<path class="st4" d="M38.8,38.5l1.1,1.8l-0.1,0l-2.9-1.2c-1-0.2-2-0.5-3.1-0.7c1-0.2,2-0.5,3.1-0.7l2.9-1.2l0.1,0L38.8,38.5z"/>
+		</g>
+	</g>
+	<text transform="matrix(0.9988 -4.942260e-02 4.942260e-02 0.9988 12.5844 30.5357)" class="st6 st7 st8">$\sim 6\, \mu$s</text>
+</g>
+</svg>
