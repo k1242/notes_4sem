@@ -13,3 +13,21 @@
     f = \sum_{k=1}^{\infty} \delta^{(k)} (x-k).
 \end{equation*}
 Докажем от противного, пусть $g^{(m)} = f$ и $g$ -- РОФ. 
+
+
+Ну, по определению, 
+\begin{equation*}
+    \langle (-1)^m g^{(m)} \,|\, \varphi \rangle  = (-1)^m \sum_{k=0}^{\infty}  \varphi^{(k)} (x-k) (-1)^k = 
+    (-1)^m \sum_{n=N}^{N} \varphi^{(k)} (x-k) (-1)^k.
+\end{equation*}
+Распишем чуть подробнее свёртку с $g$:
+\begin{equation*}
+    I = \int_{-\infty}^{+\infty} g(x) \varphi^{(m)} (x) \d x = (-1)^m \sum_{k=0}^{N}  \varphi^{(k)} (k) (-1)^k.
+\end{equation*}
+Теперь выберем $\varphi$, такую, что это ступенька гаусс вокург $x = m$, тогда
+\begin{equation*}
+    I = (-1)^m (-1)^m \varphi^{(m)}(m) = \langle \delta(x-m) \,|\, \varphi^{(m)} \rangle ,
+\end{equation*}
+таким образом пришли к противоречию.
+
+
