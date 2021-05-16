@@ -1,6 +1,6 @@
 %% Creator: Inkscape 1.0 (4035a4fb49, 2020-05-01), www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
-%% Accompanies image file 'scheme4.pdf' (pdf, eps, ps)
+%% Accompanies image file 'scheme5.pdf' (pdf, eps, ps)
 %%
 %% To include the image in your LaTeX document, write
 %%   \input{<filename>.pdf_tex}
@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{253.34999084bp}%
+    \setlength{\unitlength}{117bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,16 +50,10 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.54144464)%
+  \begin{picture}(1,0.50576924)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
-    \put(0,0){\includegraphics[width=\unitlength,page=1]{scheme4.pdf}}%
-    \put(0.56320606,0.2385293){\color[rgb]{1,1,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Laser\end{tabular}}}}%
-    \put(0.12606395,0.48324985){\color[rgb]{1,1,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Optical fiber\end{tabular}}}}%
-    \put(0.47340943,0.0737374){\color[rgb]{1,1,1}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}OPA\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=2]{scheme4.pdf}}%
-    \put(0.03399171,0.19347364){\color[rgb]{1,1,1}\rotatebox{23.68383671}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Photodiode\end{tabular}}}}}%
-    \put(0.01298372,0.06154024){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$R \approx 800 \Omega$\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=3]{scheme4.pdf}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{scheme5.pdf}}%
+    \put(0.08066923,0.31002757){\color[rgb]{1,1,1}\rotatebox{2.83279803}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\sim 6\, \mu$s\end{tabular}}}}}%
   \end{picture}%
 \endgroup%

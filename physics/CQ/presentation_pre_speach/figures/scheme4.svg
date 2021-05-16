@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 294.6 182.9" style="enable-background:new 0 0 294.6 182.9;" xml:space="preserve">
+	 viewBox="0 0 337.8 182.9" style="enable-background:new 0 0 337.8 182.9;" xml:space="preserve">
 <style type="text/css">
 	.st0{stroke:#FFFFFF;stroke-width:0.1;stroke-miterlimit:10;}
 	.st1{font-family:'MyriadPro-Regular';}
@@ -20,5 +20,8 @@
 	<rect x="1.7" y="150.3" class="st3" width="73.2" height="15.3"/>
 	<text transform="matrix(0.9158 -0.4017 0.4017 0.9158 11.4824 117.5446)" class="st0 st1 st2">Photodiode</text>
 	<text transform="matrix(1 0 0 1 4.3859 162.1117)" class="st1 st2">$R \approx 800 \Omega$</text>
+	
+		<image style="overflow:visible;" width="1403" height="634" xlink:href="969110B5.jpg"  transform="matrix(7.980600e-18 0.1303 -0.1303 7.980600e-18 336.848 1.801845e-04)">
+	</image>
 </g>
 </svg>
