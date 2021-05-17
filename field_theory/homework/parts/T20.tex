@@ -1,0 +1,68 @@
+\Tsec{Т20}
+
+Имеем что? $\vc{E}_0 \parallel \vc{e}_x$ и $\vc{H}_0 \parallel \vc{e}_y$. Запишем вектор Пойтинга для такой рассейянной волны:
+\begin{equation*}
+    \vc{S} = \frac{c}{4 \pi} |H|^2 \vc{n} = \frac{c}{4 \pi} |\vc{E}|^2 \vc{n}.
+\end{equation*}
+Вдали от источника, как мы обсуждали выполняется $\vc{E} \perp \vc{H}$ и равны по модулю.
+
+Для интенсивности имеем
+\begin{equation*}
+    d I = \vc{n} \vc{S} r^2 d \Omega = S_0 d \sigma,
+\end{equation*}
+где ввели дифференциальное сечение рассеяния $d \sigma$, а $S_0 = \frac{c}{4 \pi} |\vc{E}_0|^2$.
+
+Внутри идеально проводящего шара $\vc{E} = \vc{0}$ и $\vc{H} = \vc{0}$.
+Рассмотрим конкретно электрическое поле в центре шара с плотностью заряда $\rho(\theta,\phi)$, взяв закон Кулона:
+\begin{equation*}
+    \vc{E}_0 \cos (\omega t - \vc{k} \cdot \vc{r}) + \int \frac{\rho (\theta,\varphi) (-  \vc{r})}{r^3}d S = 0
+    \hspace{1 cm}
+    \Rightarrow
+    \hspace{1 cm}
+    \vc{E}_0 \cos (\omega t) - \frac{1}{r^3} \underbrace{\int \rho(\theta,\varphi) \vc{r} d S}_{\vc{d}} = 0.
+\end{equation*}
+Соответственно получаем: $\vc{d} = \vc{E}_0 r^3 \cos (\omega t)$.
+
+Теперь берем Био-Савара
+\begin{equation*}
+    \vc{H}_0 \cos (\omega t) + \int \frac{[\vc{J} \times (- \vc{r})]}{c r^3} dS = 0
+    \hspace{1 cm}
+    \Rightarrow
+    \hspace{1 cm}
+    \vc{H}_0 \cos (\omega t) + \frac{2}{r^3} \int \frac{\vc{r} \times \vc{J}}{2 c} d S = 0.
+\end{equation*}
+И аналогично $\vc{\mu} = - \frac{\smallvc{H}_0 r^3}{2} \cos (\omega t)$.
+
+В волновой (зоне) будет верно, что
+\begin{equation*}
+    \vc{H}_d = \frac{\vc{\ddot{d}} \times \vc{n}}{c^2 r},
+    \hspace{1 cm}
+    \vc{H}_\mu = \frac{\vc{n} (\vc{n} \cdot \vc{\ddot{\mu}}) - \vc{\ddot{\mu}}}{c^2 r}.
+\end{equation*}
+Таким образом вектор Пойтинга:
+\begin{equation*}
+    \vc{S} = \frac{c}{4 \pi} |\vc{H}_d + \vc{H}_\mu|^2 \vc{n}
+    =
+    \frac{c}{4 \pi c^4 r^2} \big( |[\vc{\ddot{d}} \times \vc{n}]|^2 + (\vc{n} \cdot \vc{\ddot{\mu}})^2 + |\vc{\ddot{\mu}}|^2 + 2 ([\vc{\ddot{d}} \times \vc{n}] \cdot \vc{n}) (\vc{n} \cdot \vc{\ddot{\mu}}) - 2 (\vc{\ddot{\mu}} \cdot [\vc{\ddot{d}} \times \vc{n}]) - 2 (\vc{n} \cdot \vc{\ddot{\mu}})^2 \big) \vc{n}.
+\end{equation*}
+
+Будем разбираться по очереди: $[\vc{\ddot{d}} \times \vc{n}] \cdot \vc{n} = 0$.
+Далее:
+\begin{equation*}
+    [\vc{\ddot{d}} \times \vc{n}]_\alpha [\vc{\ddot{d}} \times \vc{n}]^\alpha = |\vc{\ddot{d}}|^2 - (\vc{n} \cdot \vc{\ddot{d}})^2.
+\end{equation*}
+Теперь вроде как немного упростилось:
+\begin{equation*}
+    \vc{S} = \frac{1}{4 \pi c^3 r^2} \big( |[\vc{\ddot{d}} \times \vc{n}]|^2 - (\vc{n} \cdot \vc{\ddot{\mu}})^2 + |\vc{\ddot{\mu}}|^2 - (\vc{n} \cdot \vc{\ddot{\mu}})^2 - 2 (\vc{\ddot{\mu}} \cdot [\vc{\ddot{d}} \times \vc{n}]) \big) \vc{n}.
+\end{equation*}
+И теперь по формулам выше найдём сечение:
+\begin{align*}
+    d \sigma &= \frac{\omega^4 r^6}{c^4} \cos^2 (\omega t)\big( |\vc{e}_x|^2 - (\vc{n} \cdot \vc{e}_x)^2 + \frac{1}{4}|\vc{e}_y|^2 - \frac{1}{4} (\vc{n} \cdot \vc{e}_y)^2 - (\vc{e}_y [\vc{e}_x \times \vc{n}])\big) d \Omega 
+    = \\ &= 
+    \frac{\omega^4 r^6}{2 c^4}
+    \left( \frac{5}{4} - \sin^2 \theta \cos^2 \varphi - \frac{1}{4} \sin^2 \theta \sin^2 \varphi + \cos \theta\right) d \Omega.
+\end{align*}
+А теперь, как нас просят  задаче, мы это возьмём и проинтегрируем!
+\begin{equation*}
+    \sigma = 2 \pi \frac{\omega^4 r^6}{2 c^4} (\frac{5}{4} -\frac{1}{3} - \frac{1}{12}) =  \frac{5 \pi}{3} \frac{\omega^4}{2 c^4} r^6.
+\end{equation*}
