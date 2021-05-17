@@ -1,7 +1,20 @@
-And from the previous equation we can describe the quantum well laser behavior
+And the demensional gain coefficient is approximately:
+\begin{equation}
+	G \approx G_0 = \frac{1}{V_{MD}} \sum_{k_q, x, z} \frac{E}{E_0} \frac{|\mu(k_q, x, z)|^2}{\hbar c \varepsilon_0 n_r}[\rho_{ee} + \rho_{hh} - 1] (E - E_0)
+\end{equation}
+
+And from the previous equation we can describe the quantum well laser behavior\footnote{
+    Semiconductor
+Lasers I
+Fundamentals Ch.I by Bin Zhao, Amnon Yariv.
+}
 \begin{equation*}
-	\frac{d S}{d t} = \Gamma(0) G_0 v_g S - \frac{S}{\tau_p}. 
+	\frac{d S}{d t} = \Gamma_{MD} G_0 v_g S - \frac{S}{\tau_p} = v_g g S(t) - \gamma_p S. 
 \end{equation*}
 \begin{equation*}
-	\frac{d N}{d t} = \frac{J}{e} - \frac{N}{\tau_n} - \Gamma G_0 v_g S.
+	\frac{d N}{d t} = \frac{J}{e} - \frac{N}{\tau_n} - \Gamma_{MD} G_0 v_g S = \frac{J}{e d} - \gamma_s - g S.
+\end{equation*}
+for previously mentioned optical gain coefficient:
+\begin{equation*}
+	g = g_0 + g_n(N-N_0) + g_p(S - S_0).
 \end{equation*}
