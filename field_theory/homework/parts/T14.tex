@@ -1,0 +1,96 @@
+\Tsec{T14}
+
+Запишем выражение для магнитного дипольного момента:
+\begin{equation*}
+    \vc{\mu} = g \frac{e}{2 m c \gamma} [\vc{r}\times \vc{p}].
+\end{equation*}
+Обозначив момент количества движения как $\vc{l} = [\vc{r}\times \vc{p}]$ получим поправку в гамильтониан от взаимодействие вида:
+\begin{equation*}
+    H_{int} = - \frac{e g}{2 m c \gamma} (\vc{l} \cdot \vc{H}) = - \frac{e g}{2 m c \gamma} l_\alpha H^\alpha.
+\end{equation*}
+И так у нас есть величина, которая вообще есть функция $F(q,p,t)$, то есть
+\begin{equation*}
+    \frac{d F}{d t} = \frac{\partial F}{\partial t} + \frac{\partial F}{\partial q^\alpha} \dot{q}^\alpha + \frac{\partial F}{\partial p_\alpha} \dot{p}_\alpha
+    =
+    \frac{\partial F}{\partial t} + \frac{\partial F}{\partial q^\alpha} \frac{\partial H}{\partial p_\alpha} - \frac{\partial F}{\partial p_\alpha} \frac{\partial H}{\partial q^\alpha} = \frac{\partial F}{\partial t} + \{F, H\}.
+\end{equation*}
+Тогда с таким великим механическим знанием пойдём посмотрим на наш момент импульса:
+\begin{equation*}
+    \frac{d l_i}{d t} = 0 + \frac{\partial l_i}{\partial r^\alpha} \left(- \frac{e g}{2 m c \gamma} H^\beta \frac{\partial l_\beta}{\partial p_\alpha}\right) - \frac{\partial l_i}{\partial p_\alpha} \left(- \frac{e g}{2 m c \gamma} H^\beta \frac{\partial l_\beta}{\partial r^\alpha}\right)
+    = - \frac{e g}{2 m c \gamma} H^\beta \{l_i, l_\beta\}
+\end{equation*}
+Давайте отдельно посмотрим на скобку Пуассона для таких вот векторных произведений, как моменты импульса мюона:
+\begin{equation*}
+    \{l_i, l_\beta\} = \varepsilon_{i j k} \varepsilon_{\beta\alpha\gamma} \{r^j p^k, r^\alpha p^\gamma\} 
+    =
+    \varepsilon_{i j k} \varepsilon_{\beta\alpha\gamma} (\delta^{j \gamma} p^k r^\alpha - \delta^{\alpha k} p^\gamma r^j) 
+    = 
+    \varepsilon_{i \phantom{0} k}^{\phantom{0} \gamma} \varepsilon_{\beta\alpha\gamma} p^k r^\alpha - \varepsilon_{i j}^{\phantom{0} \phantom{0}\alpha} \varepsilon_{\beta\alpha\gamma} p^\gamma r^j
+    =
+\end{equation*}
+\begin{equation*}
+    = (\delta_{i \beta} \delta_{j \gamma} - \delta_{i \gamma} \delta_{j \beta}) p^\gamma r^j - (\delta_{i \beta} \delta_{k \alpha} - \delta_{i \alpha} \delta_{k \beta})p^k p^\alpha
+    =
+    \delta_{i \beta} p_j r^j - p_i r_\beta - \delta_{i \beta} p_\alpha r^\alpha + p_\beta r_i 
+    =
+    p_\beta r_i -p_i r_\beta = \varepsilon_{i \beta}^{\phantom{0}\phantom{0}\gamma} \varepsilon_{\gamma m n} r^m p^n = \varepsilon_{i \beta}^{\phantom{0}\phantom{0}\gamma}  l_\gamma.
+\end{equation*}
+Тогда получаем:
+\begin{equation*}
+    \frac{d l_i}{d t} = - \frac{e g}{2 m c \gamma} \varepsilon_{i \beta}^{\phantom{0}\phantom{0}\gamma}  l_\gamma H^\beta
+    \hspace{1 cm}
+    \Rightarrow
+    \hspace{1 cm}
+    \frac{d \vc{l}}{d t} = \frac{e g}{2 m c \gamma} [\vc{l} \times \vc{H}].
+\end{equation*}
+Тогда для производной по времени от магнитного дипольного момента имеем:
+\begin{equation*}
+    \frac{d \vc{\mu}}{d t} = \frac{e g}{2 m c \gamma} [\vc{\mu} \times \vc{H}] = \frac{g}{2} [\vc{\omega}_L \times \vc{\mu}],
+\end{equation*}
+где $\vc{\omega}_L = - \frac{e \smallvc{H}}{m c \gamma}$ -- Ларморовская частота.
+
+Знаем теперь гиромагнитное соотношение для дипольного момента, и тогда в первом приближении в постоянном магнитном поле:
+\begin{equation*}
+    \vc{\mu} = \frac{g e}{2 m c} \vc{s}
+    \hspace{1 cm}
+    \Rightarrow
+    \hspace{1 cm}
+    \vc{\dot{s}}^{(1)} = \frac{g}{2} \gamma [\vc{\omega}_L \times \vc{s}].
+\end{equation*}
+Во втором же приближении получим прецессию Томаса, с которой мы уже работали в Задаче 2.
+\begin{equation*}
+    \vc{\dot{s}}^{(2)} = \frac{\gamma^2}{(\gamma+1)c^2} [\vc{\dot{v}} \times \vc{v}] = \vc{\omega}_{th} \times \vc{s}.
+\end{equation*}
+
+Теперь свяжем Ларморовскую частоту с Томасоновской, зная, что 
+\begin{equation*}
+    m \gamma \vc{\dot{v}} = \frac{e}{c} [\vc{v} \times \vc{H}]
+    \hspace{1 cm}
+    \Rightarrow
+    \hspace{1 cm}
+    \vc{\dot{v}} = [\vc{\omega}_L \times \vc{v}]
+\end{equation*}
+Тогда выражение для прецессии Томаса:
+\begin{equation*}
+    \vc{\omega}_{th} = \frac{\gamma^2}{\gamma +1}c^2 [\vc{\omega}_L \times \vc{v}]\times \vc{v} = - \frac{\gamma^2 v^2}{(\gamma+1) c^2} = - (\gamma - 1) \vc{\omega}_L.
+\end{equation*}
+Таким образом для изменения спина получаем:
+\begin{equation*}
+    \vc{\dot{S}} = \left(\frac{g}{2}\gamma - (\gamma - 1)\right) \vc{\omega}_L \times \vc{s} = \vc{\omega}_L \times \vc{s} + \gamma \left(\frac{g}{2} - 1\right)\vc{\omega}_L \times \vc{s}.
+\end{equation*}
+Таким образом за один оборот спин отклонится на
+\begin{equation*}
+    \Delta \varphi =  \left(\frac{g}{2} - 1 \gamma\right) \cdot 2 \pi = \alpha \gamma.
+\end{equation*}
+И как нетрудно показать, 
+\begin{equation*}
+    P = m c \sqrt{\gamma^2 - 1}
+    \hspace{1 cm}
+    \Rightarrow
+    \hspace{1 cm}
+    \gamma = \sqrt{\left(\frac{P}{m c}\right)^2 + 1}
+\end{equation*}
+Тогда получаем ответ:
+\begin{equation*}
+    \Delta \varphi = \alpha \sqrt{\left(\frac{P}{m c}\right)^2 + 1} \simeq 0.07.
+\end{equation*}

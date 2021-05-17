@@ -1,0 +1,81 @@
+\Tsec{Т16}
+
+Значит есть разноименные заряды, один будем характеризовать индексами "1", а другой "2".
+Будем работать в системе центра инерции:
+\begin{equation*}
+    \vc{R} = \frac{m_1 \vc{r}_1 + m_2 \vc{r}_2}{m_1 + m_2},
+     \ \vc{r} = \vc{r}_2 - \vc{r}_1
+    \hspace{0.5 cm}
+    \leadsto
+    \hspace{0.5 cm}
+    \vc{R}_{\text{центра инерции}} = 0.
+\end{equation*}
+Тогда не сложно вычислить:
+\begin{equation*}
+    \vc{r}_1 = - \frac{m_2}{m_1} \vc{r}_2,
+    \
+    \vc{r}_2 = \frac{m_1}{m_1 + m_2} \vc{r},
+    \
+    \vc{r} = \vc{r}_2 (1 + \frac{m_2}{m_1}),
+    \
+    \vc{r}_1 = - \frac{m_2}{m_1 + m_2} \vc{r}.
+\end{equation*}
+Ну и как мы показывали для излучения диполя: $I =2 
+|\vc{\ddot{d}}|^2/(3 c^3)$.
+В нашем случае:
+\begin{equation*}
+    \vc{d} = e_1 \vc{r}_1 + e_2 \vc{r}_2 = \left(\frac{e_2 m_1 - e_1 m_2}{m_1 + m_2}\right) \vc{r} = q \vc{r}
+    \hspace{1 cm}
+    \Rightarrow
+    \hspace{1 cm}
+    I = \frac{2 q^2 \vc{\ddot{r}}^2}{3 c^3}.
+\end{equation*}
+Введем $\mu = \frac{m_1 m_2}{m_1 + m_2}$. Посмотрим на энергию, излучаемую за один период:
+\begin{equation*}
+    \delta \varepsilon = I \cdot T_{\text{период}} = I \frac{2 \pi r}{v}.
+\end{equation*}
+Будем работать в предположении, что $\delta \varepsilon \ll \varepsilon$. Воспользуемся теоремой Вириала:
+\begin{equation*}
+    2 \langle T \rangle = n \langle u \rangle,
+    \
+    T = \frac{\mu v^2}{2},
+    \
+    \mu v^2 = -\frac{e_1 e_2}{r}
+    \hspace{0.5 cm}
+    \leadsto
+    \hspace{0.5 cm}
+    u = \frac{e_1 e_2}{r}.
+\end{equation*}
+Таким образом $v = \sqrt{|e_1 e_2|/\mu^2}$, тогда опять к энергии:
+\begin{equation*}
+    \delta \varepsilon = \frac{2 q^2 \ddot{r}^2}{3 c^3} \frac{\pi r^{3/2} \mu^{1/2}}{|e_1 e_2|^{1/2}}
+    =
+    \frac{2 q^2}{3 c^3} \frac{|e_1 e_2|^{3/2}}{\mu^{3/2} r^{5/2}}\pi 
+    =
+    \frac{|e_1 e_2}{2 r} \frac{4 \pi q^2}{3 |e_1 e_2|} 
+    \underbrace{\frac{|e_1 e_2|^{3/2}}{c^3 \mu^{3/2} r^{3/2}}}_{(v/c)^3}
+    =
+    \varepsilon\left(\frac{v}{c}\right)^3 \frac{4 \pi q^2}{3 |e_1 e_2|} \ll \varepsilon.
+\end{equation*}
+
+Теперь на интересует $r(t)$. Знаем, что $\varepsilon = \frac{e_1 e_2}{2 r}$.
+\begin{equation*}
+    I = - \frac{d \varepsilon}{d t} = - \frac{d \varepsilon}{ d r} \frac{d r}{d t}
+    =
+    \frac{e_1 e_2}{2 r^2} \dot{r} = \frac{2 q^2 \ddot{r}^2}{3 c^3},
+\end{equation*}
+подставляем сюда Кулона $\mu \ddot{r} = \frac{e_1 e_2}{r^2}$, а он выполняется, так как за один оборот не очень много энергии теряется:
+\begin{equation*}
+    \frac{e_1 e_2}{2 r^2} \dot{r} = \frac{2 q^2 (e_1 e_2)^2}{3 c^3 \mu^2 r^4}
+    \hspace{0.5 cm}
+    \leadsto
+    \hspace{0.5 cm}
+    r^2 \dot{r} = \frac{4 q^2 (e_1 e_2}{3 c^3 \mu^2} = \frac{1}{3} \frac{d r^3}{d t}.
+\end{equation*}
+Не сложно тогда получается:
+\begin{equation*}
+    r = \left(r_0^3 + \frac{4 \theta^2 (e_1 e_2)}{c^3 \mu^2} t\right)^{1/3},
+    \hspace{1 cm}
+    t_{\text{пад}} = \frac{r_0^3 \mu^2 c^3}{4 q^2 (e_1 e_2)}.
+\end{equation*}
+Для атома время падения электрона на него $t \sim 10^{-8}$ секунды, и действительно в классической теории поля атомы с электронами стабильно существовать не могут.

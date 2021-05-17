@@ -1,0 +1,41 @@
+\Tsec{Т17}
+
+Два заряда у нас сталкиваются, излучают и летят обратно, нас интересует процесс излучения. Будем считать, что $v \ll c$.
+Воспользуемся выведенной формулой $I = 2 |\vc{\ddot{d}}|^2/3(c^3)$.
+И всё так же живём в системе центра инерции, как в прошлой задаче.
+\begin{equation*}
+    \vc{d} = e_1 \vc{r}_1 + e_2 \vc{r}_2 = \left(\frac{e_2 m_1 - e_1 m_2}{m_1 + m_2}\right) \vc{r} = q \vc{r}.
+\end{equation*}
+
+Давайте рассмотрим случай, когда $e_2 m_1 \neq e_1 m_2$. Тогда у нас не появляется лишних нулей, $I = \frac{ 2 q^2 \vc{\ddot{r}}^2}{e c^3}$. И, собственно, для энергии имеем:
+\begin{equation*}
+    \varepsilon = \int_{-\infty}^{\infty} I(t) dt = \frac{2 q^2}{3 c^3} \int_{-\infty}^{\infty} \ddot{r}^2 d t
+    =
+    \frac{2 q^2}{3 c^3} \int_{v_{-\infty}}^{v_{\infty}} \ddot{r} d \dot{r}
+\end{equation*}
+Опять, работая с предположением: $\varepsilon_{\text{изл}}\ll \varepsilon_{\text{полная}}$, воспользуемся законом кулона. Ещё нам, для выражения скорости понадобится закон сохранения энергии:
+\begin{equation*}
+    \frac{\mu v^2_\infty}{2} = \frac{\mu v^2}{2} + \frac{e_1 e_2}{r}
+    \hspace{1 cm}
+    \Rightarrow
+    \hspace{1 cm}
+    \frac{(e_1 e_2)^2}{r^2} = \frac{\mu^2}{4} (v_\infty^2 - v^2)^2,
+\end{equation*}
+что при подстановке в закон Кулона:
+\begin{equation*}
+    \ddot{r} = \frac{e_1 e_2}{\mu r^2} = \frac{(e_1 e_2)^2}{r^2} \frac{1}{\mu (e_1 e_2)}
+    =
+    \frac{\mu}{4 (e_1 e_2)} (v_\infty^2 - v^2)^2.
+\end{equation*}
+Теперь мы готовы взять наш интеграл:
+\begin{equation*}
+    \varepsilon = \frac{q^2 \mu}{6 c^3 (e_1 e_2)} \int_{- v_\infty}^{v_\infty} (v_\infty^2 - v^2) d v
+    =
+    \frac{\mu q^2}{6 c^3 (e_1 e_2)} \left(v_\infty^4 v - \frac{2 v^{3}}{3} v_\infty^2 + \frac{v^5}{5}\right) \bigg|_{-v_\infty}^{v_\infty}
+    =
+    \frac{8 \mu q^2}{45 c^3 (e_1 e_2)} v_\infty^5
+    =
+    \left(\frac{\mu v_\infty^2}{2}\right) \left(\frac{v_\infty}{c}\right)^3 \frac{16 q^2}{45 (e_1 e_2)}
+    \ll \frac{\mu v_\infty^2}{2}.
+\end{equation*}
+Так и показали, что $\varepsilon \ll \varepsilon_{\text{полн}}$.

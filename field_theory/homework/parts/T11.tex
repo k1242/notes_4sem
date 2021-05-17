@@ -1,0 +1,57 @@
+\Tsec{Т11}
+
+
+Задача аксиально симметрична относительно оси $Oz$, дан потенциал:
+\begin{equation*}
+    v(r,0) - v_0 \left(1 - \frac{r^2 - a^2}{r \sqrt{r^2 + a^2}}\right), \ r>a.
+\end{equation*}
+Хочется узнать $v(r,\theta) - ?$ при условии, что $r \gg a$.
+
+Соотвественно раскладываем в ряд, раз $r \gg a$, и получаем:
+\begin{equation*}
+    v(z,0) = v_0 \left(1 - \left(1 - \frac{a^2}{z^2}\right)\left(1 + \frac{a^2}{z^2}\right)^{-1/2}\right) 
+    \simeq
+    v_0 \left(1 - \left(1 - \frac{a^2}{z^2}\right)\left(1 + \frac{a^2}{2z^2}\right)\right) 
+    =
+    v_0 \left(\frac{3 a^2}{2 z^2} - \frac{a^4}{2 z^4}\right).
+\end{equation*}
+
+С другой стороны по теории должно было бы получиться разложение вида
+\begin{equation*}
+    \varphi(\vc{r}) = \int \frac{\rho (\vc{r}')}{|\vc{r} - \vc{r}'|}d^3 r'
+    = \frac{Q}{r} + \frac{\vc{d} \vc{r}}{r^3} + \frac{r_\alpha r_\beta D_{\alpha\beta}}{2 r^5} + \frac{O_{\alpha\beta\gamma r_\alpha r_\beta r_\gamma}}{6 r^7} + \ldots
+\end{equation*}
+. Сравнивая степени в разложении получаем:
+\begin{equation*}
+    Q = 0, \hspace{1 cm} D_{z z} = 0, \hspace{1 cm} d_z = \frac{3 a^2}{2}v_0,
+    \hspace{1 cm} 0_{z z z} = - 3 a^4 v_0.
+\end{equation*}
+
+Теперь применим аксиальную симметрию: $\vc{d} = \int \rho(\vc{r}) \vc{r} d^3 \vc{r}$. В дипольном моменте компоненты $d_x = d_y = 0$, что мы получаем так же как в упражнении про усреднение $\rho(x, y) = \rho(-x,-y)$.
+
+Далее $D_{\alpha\alpha} = 0$, значит $D_{xx} + D_{yy} + D_{zz} = 0$ то есть $D_{xx} = - D_{yy}$, но в силу аксиальной симметрии такое возможно лишь если $D_{xx} = D_{yy} = 0$.
+
+Наконец $O_{\alpha\alpha\beta} = 0$. То есть $O_{xxz} + O_{yyz} + O_{zzz} = 0$, тогда получаем: 
+\begin{gather*}
+    O_{xxz} = O_{yyz} = - \frac{O_{zzz}}{2} = \frac{3 a^4}{2}v_0\\
+    O_{xzx} = O_{yzy} = O_{zxx} = O_{zyy} = \frac{3 a^4}{2}v_0
+\end{gather*}
+
+Вариант со всеми разными: $O_{xyz} = \int \rho(x,y,z) (15 x y z) d^3 r = 0$, так как $\rho(x) = \rho(-x)$. И поэтому же $O_{xxx}=O_{yyy}=0$.
+
+И не взятые ещё:
+\begin{equation*}
+    O_{z zx} = O_{zzy} = O_{xzz} = O_{yzz} = O_{zxz} = O_{zyz} = 0.
+\end{equation*}
+\begin{equation*}
+    O_{xxy} = O_{yyx} = O_{xyx} = O_{yxy} = O_{yxx} = O_{xyy} = 0.
+\end{equation*}
+
+Теперь давайте, как нас просят в задаче, подставим $z = r \cos \theta$:
+\begin{equation*}
+    v_0(r,\theta) = \frac{3 a^2 v_0}{2} \frac{\cos \theta}{r^2} + \left(
+    - \frac{a^4 v_0}{2 r^4} \cos^3 \theta + \frac{3 O_{xxz} xxz}{6 r^7} + \frac{3 O_{yyz}yyz}{6 r^7}
+    \right) =
+    \frac{3 a^2 v_0}{2} \frac{\cos^2 \theta}{r^2} + \frac{\left(\frac{3}{4} \cos\theta \sin^2 \theta - \frac{1}{2} \cos^3 \theta\right)}{r^4}a^4 v_0.
+\end{equation*}
+/так как по сферической замене: $xxz = r^3 \cos \theta \sin^2 \theta \cos^2 \varphi$, $yyz = r^3 \cos \theta \sin^2 \theta \sin^2 \varphi$/

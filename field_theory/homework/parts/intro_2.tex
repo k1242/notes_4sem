@@ -15,3 +15,35 @@
     \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
     U = \int d^3 r\, \rho(\vc{r}) A_0 (\vc{r}).
 \end{equation*}
+
+\begin{to_thr}[Теорема Адемолло-Гатто]
+    Если к исходному действию $S_0$, привлдящему к периодическому движению, и, следовательно, к адиабатическому инварианту $\mathcal I$, добавлено возмущение с малым параметром $\lambda$, так что полной действие $S = S_0 + \lambda \int V(q, \dot{q})\d t$, то инвариант, по-прежнему, сохарняется с точностью до членов второго порядка малости по $\lambda$: $\frac{d }{d t} \mathcal I = O(\lambda^2)$.
+\end{to_thr}
+
+Тензор энергии-импульса поля:
+\begin{equation*}
+    T_\mu^\nu = \frac{1}{4 \pi c} F^{\nu \lambda} F_{\lambda \mu} + \frac{1}{16 \pi c} F^2 \delta_\mu^\nu,
+\end{equation*}
+где $F^2 = F_{ij} F^{ij}$. В частности, пространственная и временная компоненты
+\begin{equation*}
+    T_0^0 = \frac{1}{8 \pi c} (\vc{H}^2 + \vc{E}^2),
+    \hspace{5 mm} 
+    T_0^\alpha = \frac{1}{4\pi c}\left[\vc{E} \times  \vc{H}\right]^\alpha.
+\end{equation*}
+Баланс энергии можем записать в интегральном и в дифференциальном виде:
+\begin{equation*}
+    \frac{d }{d t} \left(W_{\text{ч}} + \int d^3 r\, c T_0^0\right) + \int d^3 r \, \div \vc{S} = 0,
+    \hspace{5 mm} 
+    \vc{S} = \frac{c}{4\pi} \left[\vc{E} \times  \vc{H}\right],
+    \vc{E} \cdot \vc{j} + \frac{d }{d t}  c T_0^0 + \div \vc{S} = 0. 
+\end{equation*}
+
+
+Аналогично, баланс импульса:
+\begin{equation*}
+    \frac{d }{d t} \left(p^\beta + \frac{1}{c^2} \int d^3 r \, S^\beta\right) = \int d^3 r \, c \nabla_\alpha T^\alpha_\beta,
+    \hspace{5 mm} 
+    \frac{1}{c}\left(
+        j_0 \vc{E} + \vc{j} \times  \vc{H}
+    \right)^\beta + \frac{1}{c^2} \frac{d S^\beta}{d t} = c \nabla_\alpha T^\alpha_\beta.
+\end{equation*}

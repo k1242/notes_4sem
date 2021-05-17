@@ -1,0 +1,90 @@
+\Tsec{Т18}
+
+У нас есть некий электрон летящий по окружности. Магнитное поле пусть направлено  $\vc{H} = (0, 0, H)$. И у нас релетявистсктй случай $v \to c$.
+
+Пренебрегаем излучением:
+\begin{equation*}
+    \frac{d \vc{p}}{d t} = e \vc{E} + \frac{e}{c}[\vc{v} \times \vc{H}].
+\end{equation*}
+Изменение энергии при $E = 0$ будет:
+\begin{equation*}
+    \frac{d \varepsilon}{d t} = e \vc{v} \vc{E} = 0.
+\end{equation*}
+То есть константа, а значит:
+\begin{equation*}
+    \varepsilon = \gamma mc^2 = \const
+    \hspace{0.5 cm}
+    \Rightarrow
+    \hspace{0.5 cm}
+    \gamma = \const.
+\end{equation*}
+Тогда далее жить намного удобнее, найдем радиус орбиты:
+\begin{equation*}
+    \frac{d \vc{p}}{d t} =  \gamma m \vc{\dot{v}} = \frac{e}{c} [\vc{v} \times \vc{H}].
+\end{equation*}
+\begin{equation*}
+    \vc{v}(t) = \vc{v}_0 + \frac{e}{m c\gamma} [(\vc{r} - \vc{r}_0) \times \vc{H}],
+    \hspace{0.3 cm}
+    \vc{v}_0 =\frac{e}{m c\gamma} [\vc{r}_0 \times \vc{H}]
+    \hspace{0.5 cm}
+    \Rightarrow
+    \hspace{0.5 cm}
+    \vc{v} = \frac{e}{\gamma m c} [\vc{r} \times \vc{H}]
+\end{equation*}
+Тогда имеем радиус и циклотронную частоту:
+\begin{equation*}
+    R = \frac{\gamma mc}{e H}v,
+    \hspace{1 cm}
+    \Omega = \frac{e H}{\gamma mc}.
+\end{equation*}
+Далее достаточно большой блок теории -- нужны запаздывающие потенциалы, но мы будем пытаться обойтись без них, введем на веру \textit{потенциалы Лиенара-Вихерта}:
+\begin{equation*}
+    \varphi = \frac{e}{R \left(1 - \frac{\vc{n} \vc{v}}{c}\right)},
+    \hspace{0.5 cm}
+    \vc{A} = \frac{e \vc{v}}{R \left(1 - \frac{\vc{n} \vc{v}}{c}\right)}.
+\end{equation*}
+
+Переходим в мгновенную систему отсчета $K'$:
+\begin{equation*}
+    \vc{v}'= (0,0,0); \ \vc{v}(0,v,0);
+    \ \vc{H}(0,0,H); \ \vc{E} = (0,0,0).
+\end{equation*}
+Тогда, зная как преобразуются компоненты поля:
+\begin{equation*}
+    E_\parallel' = E_\parallel = 0, \
+    H_\parallel' = H_\parallel = 0.
+\end{equation*}
+\begin{equation*}
+    \vc{E}_\perp' = \gamma = \left(\vc{E}_\perp - \frac{1}{c}[\vc{v}\times \vc{H}]\right),
+    \hspace{5 mm} 
+    \vc{H}_\perp' = \gamma = \left(\vc{H}_\perp - \frac{1}{c}[\vc{v}\times \vc{E}]\right).
+\end{equation*}
+Таким образом получаем:
+\begin{equation*}
+    \vc{H}' = (0,0, \gamma H),
+    \
+    \vc{E}' = (- \beta\gamma H, 0,0).
+\end{equation*}
+Тогда в новой системе отсчета движение описывается как:
+\begin{equation*}
+    \frac{d p'}{d t'} = e \vc{E}' + \underbrace{\frac{e}{c}[\vc{v}' \times \vc{H}']}_{0} = \underbrace{\dot{\gamma}' m \vc{v}'}_{0} + \gamma' m \dot{\vc{v}}'
+    \hspace{0.5 cm}
+    \Rightarrow
+    \hspace{0.5 cm}
+    m \vc{\dot{v}}' = e \vc{E}'.
+\end{equation*}
+\begin{equation*}
+    \ddot{\vc{r}}' = - \frac{e \beta \gamma H}{m} \vc{e}_x
+    \hspace{0.5 cm}
+    \vc{\ddot{d}}' = e \ddot{\vc{r}}' = - \frac{e^2 \beta \gamma H}{m} \vc{e}_x.
+\end{equation*}
+
+
+Тогда интенсивность излучения:
+\begin{equation*}
+    I' = \frac{2 |\vc{\ddot{d}}'|^2}{3 c^3} = \frac{2 e^4 \beta^2 \gamma^2 H^2}{3 m^2 c^3}.
+\end{equation*}
+Но в то же время $I' = - d\varepsilon' / d t'$  и $I = -d \varepsilon /d t$.
+ счастью наше преобразование нам даёт, что $x'=y'=z'=0$, и главное -- $t = \gamma t'$.
+ И большая удача, что преобразование четыре импульса системы тоже даёт нам $p_x'=p_y'=p_z'=0$, и самое главное -- $\varepsilon = \gamma \varepsilon'$.
+ Тогда и $I = I'$, по замечанию выше.
