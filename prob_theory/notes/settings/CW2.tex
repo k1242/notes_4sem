@@ -1,0 +1,119 @@
+
+\subsection*{Первая задача}
+Вероятность выпадения решки равна $p_0 = 0.42$. Монетка подброшена 1000 раз, и решка выпала 360 раз. Сколько раз необходимо подрбросить такую же монетку, чтобы доля выпавших решек отличалась от $p_0$ менее, чем в первые 1000 бросков с вероятностью $p_1 = 0.95$.
+
+\begin{to_thr}[ЦПТ Ляпунова]
+    Пусть $\xi_1$, $\xi_2$, $\ldots$ -- независимые и одинакоово распределенные случайные величины с конечной и ненулевой дисперсией: $0 < \D \xi_1 < \infty$. Тогда имеет место слабая сходимость 
+    \begin{equation*}
+        \frac{S_n - n \E \xi_1}{\sqrt{n \D \xi_1}} \underset{n\to\infty}{\to} \textnormal{N}_{0, 1},
+        \hspace{5 mm} 
+        S_n = \xi_1 + \ldots + \xi_n.
+    \end{equation*}
+    последовательности центрированных и нормированных сумм случайных величин к стандартному нормальному распределению.
+\end{to_thr}
+
+Точнее $S_n$ стремится к $\textnormal{N}_{a, \sigma^2}$, где в пределах данной задачи верно, что $A = n \E \xi_1 = 0.42 n $, а $\sigma = \sqrt{n \D \xi_1} = \sqrt{n 0.42 (1-0.42)} = \sqrt{n p q}$. 
+
+По условиям задачи требуется попадание в интервал $[a, b] = [0.36n,\, 0.48n]$. Тогда
+\begin{equation*}
+    \int_a^b \frac{1}{\sqrt{2\pi} \sigma} \exp\left(-\frac{(x-A)^2}{2 \sigma^2}\right) = \Phi\left(\sqrt{n}\frac{A-a}{\sqrt{2 pq}}\right) = 0.95, 
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    n = \frac{2 X^2 p q}{(A-a)^2} = 260,
+\end{equation*}
+где $X = 1.38$ можно найти по таблице. 
+
+
+
+
+\subsection*{Вторая задача}
+Известно, что ковариационная матрица случайного вектора $(X,\, Y,\, Z)\T$  равна
+\begin{equation*}
+    M = \begin{pmatrix}
+        2 & -1 & \lambda \\
+        -1 & 2 & 1 \\
+        \lambda & 1 & 3 \\
+    \end{pmatrix}.
+\end{equation*}
+Хочется найти все возможные значения $\lambda$, а также $\lambda$, соответсвующий минимальной вариации величины $\xi = X + \lambda Y - 2 Z$. 
+
+
+Для начала поймём возможные значения $\lambda$: матрица неотрицательно определена, а значит, по критерию Сильвестра:
+\begin{equation*}
+    \det M = 7 - 2 \lambda - 2 \lambda^2 > 0,
+    \hspace{0.5cm} \Rightarrow \bigg/
+        \lambda_{1,2} = \frac{1}{2}\left(-1\pm \sqrt{15}\right)
+    \bigg/
+    \Rightarrow
+    \hspace{5 mm} 
+    \lambda \in \left[
+        -\frac{1}{2}-\frac{\sqrt{15}}{2};\ 
+        -\frac{1}{2}+\frac{\sqrt{15}}{2}
+    \right].
+\end{equation*}
+Теперь можем найти оптимальное значение $\lambda$ для $\vc{\xi} = X + \lambda Y - 2 Z = (1,\, \lambda,\, -2)\T$ в базисе $(X, Y, Z)$:
+\begin{equation*}
+    \vc{\xi}\T M \xi = 2\lambda^2 - 10 \lambda + 14 = 2\left(\lambda- \frac{5}{2}\right)^2 + \frac{3}{2},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \lambda = \frac{5}{2}.
+\end{equation*}
+Однако можно заметить, что верхняя граница $(-1 + \sqrt{15})/2 \approx 1.44 < 2.5$, следовательно минимум достигается на правой границе $\lambda_{\text{opt}} = \frac{1}{2}\left(-1 + \sqrt{15}\right)$. 
+
+
+
+
+
+\subsection*{Третья задача}
+Известно, что $X$ и $Z$ независимы их плотность вероятности может быть задана, как
+\begin{equation*}
+    f_X (x) = 5 I_{x>0} e^{-5x}, \hspace{5 mm} 
+    f_Z (z) = 5 I_{z>0} e^{-5z}.
+\end{equation*}
+Считая $U = \min(X; Z)$, $V = \max(X, Z)$, найдём ковариацию $U$ и $V$.
+
+
+
+
+
+
+
+\subsection*{Четвертая задача}
+Известно, что плотность распределения переменной $Y$ дана
+\begin{equation*}
+    f_Y(y) = C \exp\left(
+        - y^2 + 4y - 10 
+    \right), \hspace{5 mm} y \in \mathbb{R}.
+\end{equation*}
+Найдём константу $C$, а также матожидание и дисперсию $Y$. 
+
+Заметим, что $f_Y (y) =  C \exp\left(
+        - (y-2)^2 - 6
+    \right) =  \frac{C}{e^6} \exp\left(
+        - (y-2)^2
+    \right)$, -- нормальное распределение с $\E Y = a = 2$. 
+Осталось найти
+\begin{equation*}
+    \int_{-\infty}^{+\infty} \frac{C}{e^6} \exp\left(
+        - (y-2)^2
+    \right) \d y = \sqrt{\pi} C e^{-6} = 1,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    C = \frac{e^6}{\sqrt{\pi}}.
+\end{equation*}
+Итого, распределение перепишется в виде
+\begin{equation*}
+    f_\xi(y) = \frac{1}{\sqrt{2\pi} \sqrt{\frac{1}{2}}} \exp\left(
+        - \frac{(y-2)^2}{2 (\frac{1}{\sqrt{2}})^2}
+    \right),
+\end{equation*}
+собственно $\D Y = \sigma^2 = 1/2$. 
+
+
+
+
+
+
+
+\subsection*{Пятая задача}
+
+Случайный величины $X_1, \ldots, X_{100}$ независимы и одинаково распределены, в частности с $N(0, 4)$. Найдём распределение вектора $(Y,\, Z)\T$, где $Y = X_{61} + X_{62} + \ldots + X_{100}$, и $Z = X_1 + X_2 + \ldots + X_{80}$.
+
+

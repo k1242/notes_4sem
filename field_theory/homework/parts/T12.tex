@@ -1,2 +1,60 @@
-\Tsec{x Т12}
+\Tsec{Т12}
+
+Для движения в постоянном магнитном поле можно записать уравнения движения
+\begin{equation*}
+    \dot{\vc{p}} = \frac{e}{c} \left[\vc{v} \times  \vc{H}\right], \hspace{5 mm} 
+    \vc{p} = \frac{W \vc{v}}{c^2}, \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \frac{W}{c^2} \frac{d \vc{v}}{d t} = \frac{e}{c} \left[\vc{v} \times \vc{H}\right],
+\end{equation*}
+или, считая $\vc{H} \parallel Oz$, 
+\begin{equation*}
+    \dot{v}_x = \omega v_y, \hspace{5 mm} 
+    \dot{v}_y = - \omega v_x, \hspace{5 mm} 
+    \dot{v}_z = 0,
+    \hspace{5 mm} 
+    \omega_L = \frac{e c H}{W} = \frac{e H}{m c \gamma},
+    \hspace{5 mm} 
+    r = \frac{c p_t}{e H}.
+\end{equation*}
+
+Рассмотрим теперь адиабатический инвариант, вида
+\begin{equation*}
+    I = \frac{1}{2\pi} \oint \vc{P}_t \d \vc{r} = \frac{1}{2\pi} \oint \vc{p}_t \d t + \frac{e}{2\pi c} \oint \vc{A} \d \vc{r},
+\end{equation*}
+вспоминая, что $\rot \vc{A} = \vc{H}$, по теореме Стокса, находим
+\begin{equation*}
+    I = r p_t - \frac{e}{2c} H r^2 = \frac{c p_t^2}{2 e H},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \frac{p_\bot^2}{H} = \tilde{I}.
+\end{equation*}
+Так что, по теореме Адемолло-Гатто, $I$ сохраняется и в случае слабонеоднородного магнитного поля. 
+
+
+Изменения энергии за период найдём, выразив:
+\begin{equation*}
+    \frac{d }{d t} \left(\frac{W^2}{c^2}\right) = \frac{d }{d t} p^2,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \Delta W = \frac{2 \pi}{\omega_L} \dot{W} = \frac{2 \pi}{\omega_L} \frac{c}{2W} \frac{2 e \dot{H} J}{c} = \frac{\pi c}{e H} J \dot{H}.
+\end{equation*}
+
+Найдём теперь изменеине $r$ и $W$ при изменение поля от $H_1$ до $H_2$. Во-первых
+\begin{equation*}
+    \frac{p_1^2}{H_1} = \frac{p_2^2}{H_2} = J.
+\end{equation*}
+Далее, считая $c=1$, запишем
+\begin{equation*}
+    W^2_1 - m^2 = \frac{H_2}{H_1}\left(W_2^2 -m^2\right), \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    W_2^2 = \sqrt{m^2 \left(1- \frac{H_1}{H_2} \right) + \frac{H_1}{H_2} W_1^2},r
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    W_2 - W_1 \approx \frac{J}{2m}\left(H_2-H_1\right).
+\end{equation*}
+Чуть проще обстоит дело с радиусами
+\begin{equation*}
+    r_2 = \frac{c p_2}{e H_2} = \frac{c}{e} \frac{p_1}{\sqrt{H_1 H_2}} = r_1 \sqrt{\frac{H_1}{H_2}}.
+\end{equation*}
+
+
+
+
+
 

@@ -1,1 +1,40 @@
-\Tsec{x Т19}
+\Tsec{Т19}
+
+Пусть электрон двиэется вдоль оси $x$, конденсатор вызывает колебания вдоль оси $y$. 
+Предполагаем, что колебания примерно не влияют на движения электрона с большой скоростью вдоль оси конденсатора. 
+
+Перейдём в систему $K'$, движущуюся относительно лабораторной со скоростью $\langle v_x\rangle$. 4-вектор стоячей волны в конденсаторе имеет вид $k^\mu_{\text{ст}} = (\omega_0/c,\, 0,\, 0,\, 0)\T$.  В системе $K'$ можем найти, что
+\begin{equation*}
+   k^\mu_{\text{ст}}\vphantom{1}' = \Lambda(\langle v_x\rangle,\, Ox)_\nu^{\mu} k^\nu_{\text{ст}} =  (\gamma \omega_0/c,\, -\beta \gamma \omega_0,\, 0,\, 0)\T,
+\end{equation*}
+с $\beta = v/c$. Если в системе $K'$ электроны остаются нерелятивисткими, частота частота излучения не зависит от направления и совпадает с вынуждающей сильной $k^0_{\text{ст}} \vphantom{1}' = \gamma \omega_0 /c$. 
+
+Рассмотрим волновой 4-вектор излучения в системе $K'$. Считая, что излучение происходит $(x, y)$, можем записать 
+\begin{equation*}
+    \tilde{k}^\mu = \frac{1}{c} \left(
+        \gamma \omega_0,\,  \gamma \omega_0 \cos \theta',\, \gamma \omega_0 \sin \theta',\, 0
+    \right),
+\end{equation*}
+где $\theta'$ -- угол между волновым вектором $\vc{k}'$ и осью $x$. После обратного преобразования Лоренца переходим к выражению, вида
+\begin{equation*}
+    k^\mu = \Lambda(-\langle v_x\rangle,\, Ox)_{\nu}^{\mu} \tilde{k}^\nu = \frac{1}{c} \begin{pmatrix}
+        \gamma^2 \omega_0 (1 + \beta \cos \theta') \\ 
+        \gamma^2 \omega_0 (\beta + \cos \theta') \\
+        \gamma \omega_0 \sin \theta' \\ 
+        0
+    \end{pmatrix} = \frac{1}{c} \begin{pmatrix}
+        \omega \\ 
+        \omega \cos \theta \\ 
+        \omega \sin \theta \\ 
+        0
+    \end{pmatrix},
+\end{equation*}
+внимательно посмотрев на которое, находим
+\begin{equation*}
+    \cos \theta = \frac{k^1}{k^0} = \frac{\beta + \cos \theta'}{1 + \beta \cos \theta'},
+    \hspace{5 mm} 
+    \cos \theta' = \frac{-\beta + \cos \theta}{1 - \beta \cos \theta},
+    \hspace{5 mm} 
+    \omega = \gamma^2 \omega_0 (1 + \beta \cos \theta') = \frac{\omega_0}{1-\beta \cos \theta}. 
+\end{equation*}
+Таким образом излучение происходяет в формате узкого конуса вперед по движению $(\theta \approx 0)$. 

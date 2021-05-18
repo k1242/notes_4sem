@@ -1,4 +1,5 @@
-\textbf{Электростатика}. Запишем действие взаимодействия $S_{\textnormal{int}}$
+% \textbf{Электростатика}. 
+Запишем действие взаимодействия $S_{\textnormal{int}}$
 \begin{equation*}
     \sub{S}{int} = - \frac{e}{c} \int d \tau\, u^\mu A_\mu,
 \end{equation*}
@@ -37,8 +38,6 @@
     \vc{S} = \frac{c}{4\pi} \left[\vc{E} \times  \vc{H}\right],
     \vc{E} \cdot \vc{j} + \frac{d }{d t}  c T_0^0 + \div \vc{S} = 0. 
 \end{equation*}
-
-
 Аналогично, баланс импульса:
 \begin{equation*}
     \frac{d }{d t} \left(p^\beta + \frac{1}{c^2} \int d^3 r \, S^\beta\right) = \int d^3 r \, c \nabla_\alpha T^\alpha_\beta,
@@ -47,4 +46,23 @@
         j_0 \vc{E} + \vc{j} \times  \vc{H}
     \right)^\beta + \frac{1}{c^2} \frac{d S^\beta}{d t} = c \nabla_\alpha T^\alpha_\beta.
 \end{equation*}
+Для электрического, и магнитного поля, во время \textit{электрического дипольного излучения} верно, что
+\begin{equation*}
+    \vc{H} = - \frac{1}{c r^2} \vc{n} \times  \dot{\vc{d}} - \frac{1}{c^2 r} \vc{n} \times  \ddot{\vc{d}},
+    \hspace{5 mm} 
+    \vc{E} = \frac{1}{r^3} \left(
+        3 \left(\vc{d} \cdot \vc{n}\right) \vc{n} - \vc{d}
+    \right) + \frac{1}{c r^2} \left(
+        3 (\dot{\vc{d}} \cdot \vc{n}) \vc{n} - \dot{\vc{d}}
+    \right) + \frac{1}{c^2 r} \left(
+        (\ddot{\vc{d}} \cdot \vc{n}) \vc{n} - \ddot{\vc{d}}
+    \right).
+\end{equation*}
+Вектор потока энергии в волновой зоне
+\begin{equation*}
+    \vc{S} = \frac{c}{4\pi} \left[\vc{E} \times \vc{H}\right] = \frac{1}{4\pi c^3 r^2} \vc{n} \ddot{\vc{d}}^2 \sin^2 \theta,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \mathcal J = \frac{2}{3 c^3}\left\langle \ddot{\vc{d}}^2\right\rangle.
+\end{equation*}
+где $\theta$ -- угол между векторами $\vc{n}$ и $\ddot{\vc{d}}$, $\mathcal J$ --полная интенсивность дипольного излучения. 
 
