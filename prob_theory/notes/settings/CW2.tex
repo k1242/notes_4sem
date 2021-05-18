@@ -62,13 +62,13 @@
 
 
 
-\subsection*{Третья задача}
-Известно, что $X$ и $Z$ независимы их плотность вероятности может быть задана, как
-\begin{equation*}
-    f_X (x) = 5 I_{x>0} e^{-5x}, \hspace{5 mm} 
-    f_Z (z) = 5 I_{z>0} e^{-5z}.
-\end{equation*}
-Считая $U = \min(X; Z)$, $V = \max(X, Z)$, найдём ковариацию $U$ и $V$.
+% \subsection*{Третья задача}
+% Известно, что $X$ и $Z$ независимы их плотность вероятности может быть задана, как
+% \begin{equation*}
+%     f_X (x) = 5 I_{x>0} e^{-5x}, \hspace{5 mm} 
+%     f_Z (z) = 5 I_{z>0} e^{-5z}.
+% \end{equation*}
+% Считая $U = \min(X; Z)$, $V = \max(X, Z)$, найдём ковариацию $U$ и $V$.
 
 
 
@@ -114,6 +114,51 @@
 
 \subsection*{Пятая задача}
 
-Случайный величины $X_1, \ldots, X_{100}$ независимы и одинаково распределены, в частности с $N(0, 4)$. Найдём распределение вектора $(Y,\, Z)\T$, где $Y = X_{61} + X_{62} + \ldots + X_{100}$, и $Z = X_1 + X_2 + \ldots + X_{80}$.
 
 
+Случайные величины $X_1, \ldots, X_{100}$ независимы и одинаково распределены, в частности с $N(0, \sigma^2)$, $\sigma=2$. Найдём распределение вектора $(Y,\, Z)\T$, где $Y = X_{61} + X_{62} + \ldots + X_{100}$, и $Z = X_1 + X_2 + \ldots + X_{80}$.
+
+ 
+% Запишем распределение некоторой величины $f_\xi$ в 100-мерном пространстве:
+% \begin{equation*}
+%     f_\xi(\vc{x}) = \frac{1}{\sqrt{2\pi}^{100} 2^{100}} \exp\left(
+%         -\frac{1}{2} \vc{x}\T \Sigma^{-1} \vc{x}
+%     \right), \hspace{5 mm} \Sigma = 4E.
+% \end{equation*}
+
+\begin{to_lem}
+    Если две случайные величины $\xi \in \text{N}_{a_1, \sigma_1^2}$, $\eta \in \text{N}_{a_2, \sigma_2^2}$ независимы, то $\xi + \eta \in \text{N}_{a_1 + a_2, \sigma_1^2 + \sigma_2^2}$.
+\end{to_lem}
+
+\begin{to_lem}
+    Пусть есть две величины $\xi_1 \in \text{N}_{a_1, \sigma_1^2}$ и $\xi_2 \in \text{N}_{a_2, \sigma_2^2}$ с ковариациоей $\sigma_{12}$, тогда $\det \Sigma = \sigma_1^2 \sigma_2^2 (1-\rho^2)$, где $\rho = \sigma_{12}/(\sigma_1 \sigma_2)$ -- коэффицент корреляции. Плотность двумерного нормального распределения в этом случае:
+    \begin{equation*}
+        f(x_1, x_2) = \frac{1}{\sqrt{2\pi}^2 \sigma_1 \sigma_2 \sqrt{1-\rho^2}} \exp\left(
+            - \frac{1}{2(1-\rho^2)} \left[
+                \frac{(x_1-a_1)^2}{\sigma_1^2} - \rho \frac{2 (x_1 - a_1)(x_2-a_2)}{\sigma_1 \sigma_2} + \frac{(x_2-a_2)^2}{\sigma_2^2}
+            \right]
+        \right).
+    \end{equation*}
+\end{to_lem}
+
+И это замечательно, ведь по условию $X_i$ и $X_j$ независимы при $i \neq j$, а тогда $Y$ и $Z$ распределены нормально. Получается, остается найти ковариацию $\rho(Y, Z)$, и мы найдём искомое распределение.
+
+Для начала, $\D Y = 40 \sigma^2$, $\D Z = 80 \sigma^2$, также по условию $a_1 = a_2 = 0$. Ковариация $Y$ и $Z$ по линейности:
+\begin{equation*}
+    \cov \left(\textstyle \sum_{i=61}^{100} X_i,\, \textstyle \sum_{j=1}^{80} X_j\right) = 
+    \sum_{i=61}^{100} \sum_{j=1}^{80} \cov(X_i, X_j) = 20 \sigma^2,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \rho = \frac{20}{\sqrt{40 \cdot 80}} = \frac{1}{2\sqrt{2}} = 2^{-3/2}.
+\end{equation*}
+где учтено, что
+\begin{equation*}
+    \cov(X_i,\, X_i) = \E X_i^2 - \E^2 X_i = \D X_i = \sigma^2.
+\end{equation*}
+Итого, искомое распределение:
+\begin{equation*}
+    f(Y, Z) = \frac{1}{2\pi \sigma^2 \cdot 20 \sqrt{7}} \exp\left(
+        - \frac{1}{140 \sigma^2} \left[
+            2 Y^2 -  Y Z +  Z^2
+        \right]
+    \right).
+\end{equation*}
