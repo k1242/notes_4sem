@@ -7,7 +7,9 @@
     \varphi(\vc{r}) = \int \frac{\rho(\vc{r}') d^3 \vc{r}'}{|\vc{r} - \vc{r}'|}
      = \varphi^{(0)} + \varphi^{(1)} + \varphi^{(2)} + \ldots = \sum_{l=0}^\infty \varphi^{(l)}.
 \end{equation*}
-Известно что (ЛЛII \S 41 его лучше прочитать, потому как мне лень техать выражения для всех величин тут) :
+Известно что (ЛЛII \S 41 
+% его лучше прочитать, потому как мне лень техать выражения для всех величин тут
+) :
 \begin{equation}
     \varphi^{(l)} = \sum_a e_a\sum_{m = -l}^l \sqrt{\frac{4 \pi}{2 l +1}} D_l^{(m)} Y_{l m} (\theta, \varphi) \frac{r_a^l}{R_0^{l+1}}.
     \label{potential_zhest}
@@ -26,7 +28,7 @@
     \end{aligned}
     \right.
     \hspace{0.5 cm}
-    \leadsto
+    \Rightarrow
     \hspace{0.5 cm}
     \int \varphi(r) Y_{l m} (\theta, \varphi) = \sin \theta d \theta d\varphi
     =
@@ -50,12 +52,12 @@
     d_z = r \frac{3 \Phi_0}{2}.
 \end{equation*}
 
-Занятно, но решая ту же задачу на семинаре четвртой парой 08.04 мы получили ответ:
-\begin{equation*}
-    d_z = \frac{3}{2}R^2 \Phi_0     
-    \hspace{1 cm}
-    \Leftarrow
-    \hspace{1 cm}
-    \varphi^{(l)} = \sum_a e_a\sum_{m = -l}^l \sqrt{\frac{4 \pi}{2 l +1}} D_l^{(m)} Y_{l m} (\theta, \varphi) \frac{1}{R_0^{l+1}},
-\end{equation*}
-думается, что это из-за отличия в вот этой формуле \eqref{potential_zhest}. И вроде бы сейчас он правдивее и совпадает с ЛЛ2.
+% Занятно, но решая ту же задачу на семинаре четвртой парой 08.04 мы получили ответ:
+% \begin{equation*}
+%     d_z = \frac{3}{2}R^2 \Phi_0     
+%     \hspace{1 cm}
+%     \Leftarrow
+%     \hspace{1 cm}
+%     \varphi^{(l)} = \sum_a e_a\sum_{m = -l}^l \sqrt{\frac{4 \pi}{2 l +1}} D_l^{(m)} Y_{l m} (\theta, \varphi) \frac{1}{R_0^{l+1}},
+% \end{equation*}
+% думается, что это из-за отличия в вот этой формуле \eqref{potential_zhest}. И вроде бы сейчас он правдивее и совпадает с ЛЛ2.
