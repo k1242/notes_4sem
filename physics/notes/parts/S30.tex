@@ -1,0 +1,41 @@
+\subsection{Влияние немонохроматичности света}
+
+
+
+Рассмотри два точечных немонохроматичных источников света: длины волн $\lambda$ и $\lambda' = \lambda+\delta \lambda$. Точка с $\Delta = 0$ -- \textit{центр интерференионной картины}. 
+
+\textbf{Две спектральные линии}. Если фазы $S_1$ и $S_2$ то центр сохранится. Волны придут в противофазе, при
+\begin{equation*}
+    N \lambda' = \left(N + \frc{1}{2}\right) \lambda,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    N = \frac{\lambda}{2(\lambda'-\lambda)} = \frac{\lambda}{2 \delta \lambda}.
+\end{equation*}
+Когда номер полосы мал по сравнению с величиной $N$, интерференционные полосы будут отчётливы, при номере $N$ для $\lambda$ и $(N+1.2)$ для $\lambda'$ полосы пропадут, а вот на $2N$ и $2N+1$ уже снова будут в фазе.
+
+\textbf{Кусочек спектра}. Пусть теперь $\lambda \in (\lambda,\,  \lambda+\delta \lambda)$, тогда разобьём всё на пары на расстоянии $\delta \lambda/2$ друг от друга, к каждой из которых верно значение для $N$ (при $\delta \lambda \to \delta \lambda/2$), поэтому первые полосы исчезнут при
+\begin{equation*}
+    N = \lambda / \delta \lambda,
+\end{equation*}
+что в два раза больше дискретного случая. 
+
+
+
+\textbf{Временная когерентность}.
+Вообще можно сказать, что для когерентности необходимо, чтобы разность хода лучей не превосходила длину цуга $L = c \tau$,  тогда
+\begin{equation*}
+    \sub{N}{max} = \frac{\Lambda}{\lambda} = \frac{\tau}{T} = \frac{\lambda}{\delta \lambda} = \frac{\omega}{\delta \omega}.
+\end{equation*}
+Если учесть, что $\lambda = 2\pi / k$ и $T = 2 \pi/\omega$, то $\tau \cdot \delta \omega = 2 \pi$ и $L \cdot \delta k = 2 \pi$. 
+
+Так как здесь основной игрок -- длина цуга, то говорят про \textit{пространственную когерентность}, связанная с \textit{узостью спектрального интервала} $\Delta \omega$. Для времени когерентности верно соотношение
+\begin{equation*}
+    \sub{\tau}{ког} \approx \frac{2\pi}{\Delta \omega} \approx \frac{1}{\Delta \nu},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    L \approx c \sub{\tau}{ког} = \lambda \frac{\nu}{\delta \nu} = \frac{\lambda^2}{\delta \lambda},
+\end{equation*}
+что называется \textit{длиной когерентности}.
+
+
+
+
+
