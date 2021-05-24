@@ -1,0 +1,56 @@
+\subsection{Диф-решетка как спектральный прибор}
+Как мы видели выше дифракционная решетка имеет раскидывать волны, падающие на нее, под разными углами. Введём характеристики такого спектрального прибора.
+
+\textbf{Угловой дисперсией} называют производную $d \vartheta/ d \lambda$. Чем она больше, тем больше расстояние между двумя спектральными линиями.
+\begin{equation*}
+	\frac{d}{d \lambda} \big[ d (\sin \vartheta - \sin \vartheta_0) = m \lambda \big]
+	\hspace{1 cm}
+	\leadsto
+	\hspace{1 cm}
+	\frac{d \vartheta}{d \lambda} = \frac{m}{d \cos \vartheta} = \frac{\sin \vartheta  - \sin \vartheta_0}{\lambda \cos \vartheta}.
+\end{equation*}
+Таким образом угловая дисперсия не зависит от параметров решетки, а определяется только длинами волн и углами падения и дифракции.
+
+\textbf{Дисперсионная область} -- максимальная ширина спектрального интервала $\Delta \lambda$, при котором ещё нет перекрытия спектральных линий.
+
+Пусть падающие длины лежат в диапазоне: $\lambda' = \lambda + \Delta \lambda$. Пусть $(m+1)$ порядок $\lambda$ с $m$ порядком  $\lambda'$.
+Тогда
+\begin{equation*}
+	\left\{
+	\begin{aligned}
+		&d (\sin \vartheta - \sin \vartheta_0) = m \lambda'\\
+		&d (\sin \vartheta - \sin \vartheta_0) = (m+1) \lambda	
+	\end{aligned}
+	\right.
+	\hspace{0.5 cm}
+	\Rightarrow
+	\hspace{0.5 cm}
+	m \lambda' = (m+1) \lambda
+	\hspace{0.5 cm}
+	\Rightarrow
+	\hspace{0.5 cm}
+	\lambda' - \lambda \equiv \Delta \lambda = \lambda/m.
+\end{equation*}
+
+\textbf{Разрешающая способность} аппарата -- $R = \frac{\lambda}{\delta \lambda}$. А наименьшая разность длин волн двух спектральных линий $\delta\lambda$, при которой спектральный аппарат разрешает эти линии, называется \textit{спектральным разрешаемым расстоянием}.
+То есть мы стремимся, чтобы дифракционные картины около каждого спектра были как можно более узкими, вдобавок к узкой дисперсии.
+
+Спектральные линии с близкими длинами волн $\lambda$ и $\lambda'$ считаются разрешенными, если главный максимум дифракционной 
+картины для одной длины волны совпадает по своему положению с первым дифракционным минимумом в том же порядке для другой длины волны. 
+\begin{equation*}
+	\left\{
+	\begin{aligned}
+		&d (\sin \vartheta - \sin \vartheta_0) =  m \lambda'\\
+		&d (\sin \vartheta - \sin \vartheta_0) = \left(m+\frac{1}{N}\right) \lambda	
+	\end{aligned}
+	\right.
+	\hspace{0.5 cm}
+	\Rightarrow
+	\hspace{0.5 cm}
+	m \lambda' = (m+\frac{1}{N}) \lambda
+	\hspace{0.5 cm}
+	\Rightarrow
+	\hspace{0.5 cm}
+	\lambda' - \lambda \equiv \delta \lambda = \lambda/(N ms).
+\end{equation*}
+Таким образом получаем критерий Релея $R = \frac{\lambda}{\delta\lambda} = N m$.
