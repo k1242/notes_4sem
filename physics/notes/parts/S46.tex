@@ -1,0 +1,105 @@
+\subsection{Дифракционная решетка}
+\begin{minipage}{0.45\textwidth}
+    \includegraphics[width=1\textwidth]{figures/s36_1.png}
+\end{minipage}
+\hfill
+\begin{minipage}{0.45\textwidth}
+	Имеем простейший случай: лучи падают перпендикулярно, $d$ -- \textit{период решетки}, $\vartheta$ -- угол дифракции.
+	Разность хода между волнами, исходящими из соседних щелей 
+	\begin{equation*}
+		\Delta = d \sin \vartheta, 	
+	\end{equation*}
+	а разность фаз 
+	\begin{equation*}
+		\delta = k d \sin \vartheta = 2 \pi d \sin \vartheta / \lambda.
+	\end{equation*}  
+	Поле, наблюдаемое от первой щели определяется формулой
+	\begin{equation*}
+		E_1 = \frac{b \sin\alpha}{\alpha}.
+	\end{equation*}
+\end{minipage}
+
+Поля же излучаемые остальными щелями:
+\begin{equation*}
+	E_2 = E_1 e^{-i \delta}, 
+	\hspace{0.5 cm}
+	E_3 = E_1 e^{-2i \delta},
+	\hspace{0.5 cm}
+	\ldots
+	\hspace{0.5 cm}
+	E_N = E_1 e^{- i (N-1)\delta}.
+\end{equation*}
+Полное поле представится как сумма всех:
+\begin{equation*}
+	E = E_1 \frac{1- e^{- i N \delta}}{1 - e^{-i\delta}} = E_1 \frac{\sin \left(\frac{N \delta}{2}\right)}{\sin \left(\frac{\delta}{2}\right)}e^{- i (N-1)\delta/2}
+	\hspace{1 cm}
+	\Rightarrow
+	\hspace{1 cm}
+	I = I_1 \left[\frac{\sin \left(\frac{N \delta}{2}\right)}{\sin \left(\frac{\delta}{2}\right)}\right]^2.
+\end{equation*}
+Заметим, что при  
+\begin{equation*}
+	\delta/2 = m \pi
+	\hspace{1 cm}
+	\Leftrightarrow
+	\hspace{1 cm}
+	d \sin \vartheta = m \lambda.
+\end{equation*}
+получаем $I = N^2 I_1$ -- \textit{главные максимумы}, где $m$ -- целое число, \textit{порядок главного максимума}. Это соотношение так же определяет направление $\vartheta$ на главные максимумы.
+
+Если у решетки $a = b$, то все главные максимумы четных порядков вообще не появятся, так как условие максимума решетки перейдёт в условие минимума дифракции на одной щели $I_1=0$:
+\begin{equation*}
+	d \sin \vartheta = 2 n \lambda
+	\hspace{1 cm}
+	\Rightarrow
+	\hspace{1 cm}
+	b \sin \vartheta = n \lambda.
+\end{equation*}
+Таким образом в рассматриваемом направлении ни одна щель, а потому и решетка в целом не излучают.
+
+Дифракционные минимумы получаются из условия:
+\begin{equation*}
+	d \sin \vartheta = \left(m \frac{p}{N}\right)\lambda.
+\end{equation*}
+Максимумы, получающиеся между двумя соседними минимумами, называются \textit{второстепенными максимумами}. 
+Таким образом между двумя соседними максимумами располагается $(N-1)$ минимум и $(N-2)$ добавочный максимум. И на эту всю красоту накладывается минимумы дифракции на одной щели.
+
+Второстепенные максимумы находятся примерно между минимумами давайте определим направление $\delta$ на них:
+\begin{equation*}
+	\frac{\delta}{2} = \left(m + \frac{2 p +1}{2 N}\right)\pi.
+\end{equation*}
+
+Найдём теперь интенсивность второстепенных максимумов в окрестности главного, то есть при $N \gg 1$ и малых номерах этих максимумов $p$, а $\delta/2$ -- мал:
+\begin{equation*}
+	\sin \frac{\delta}{2} = \pm \sin \frac{2 p +1}{2 N} \approx \pm \frac{2 p +1}{2 N} \pi
+	\hspace{0.5 cm}
+	\Rightarrow
+	\hspace{0.5 cm}
+	I = \frac{I_1}{\pi^2}\left(\frac{2N}{2p+1}\right)^2 = \frac{4}{(2p +1)^2 \pi^2}I_\text{гл}.
+\end{equation*}
+Таким образом интенсивности максимумов к главному относятся как очень малые величины. И при большом числе щелей они вообще не играют роли.
+
+\begin{minipage}{0.35\textwidth}
+    \includegraphics[width=1\textwidth]{figures/s46_2.png}
+\end{minipage}
+\hfill
+\begin{minipage}{0.55\textwidth}
+	Если же волна падает на решетку под углом, то разность хода между соседними щелями становится равной:
+	\begin{equation*}
+		d (\sin \vartheta - \sin \vartheta_0).
+	\end{equation*}
+	Мы имеем новое условие на главные максимумы:
+	\begin{equation*}
+		d (\sin \vartheta - \sin \vartheta_0) = m \lambda,
+	\end{equation*}
+	а минимумы:
+	\begin{equation*}
+		d(\sin \vartheta - \sin \vartheta_0) = \left(m + \frac{p}{N}\right) \lambda.
+	\end{equation*}
+\end{minipage}
+
+И наконец если решетка -- грубая, то при углах падения $\vartheta_0$ близких к $90^\circ$ можно написать:
+\begin{equation*}
+	d \cos \vartheta_0 \cdot (\vartheta - \vartheta_0) = m \lambda.
+\end{equation*}
+Где $d \cos \vartheta_0$ -- типа новый период, который мы уже вправе от угла падения уменьшать, делая решетку менее грубой.
