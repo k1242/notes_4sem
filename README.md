@@ -35,6 +35,10 @@
 [*задание*](https://github.com/k1242/notes_4sem/blob/main/matan/notes/matan_notes.pdf)
 );
 
+* **общей физики**
+(
+[*билеты по задавальнику*](https://github.com/k1242/notes_4sem/blob/main/physics/notes/gp_optics_notes.pdf)
+);
 
 ## P.S.
 Если есть какие-то опечатки в современной оптике, то в надежде на их отсутствтие можно посмотреть 
