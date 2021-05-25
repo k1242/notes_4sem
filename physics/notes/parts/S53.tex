@@ -1,0 +1,48 @@
+\subsection{Применение метода Рэлея}
+
+
+\textbf{Амплитудная решетка}. Есть решетка с щелями ширины $b$ и непрозрачных промежутков между ними ширины $a$. Начало координат в середине щели:
+\begin{equation*}
+    D_m = \frac{1}{d} \int_{-d/2}^{+d/2} D(x) e^{impx} \d x = 
+    \frac{1}{d} \int_{-b/2}^{+b/2} e^{impx} \d x = \frac{b}{d} \frac{\sin \varkappa}{\varkappa},
+    \hspace{5 mm}  
+    \varkappa = \pi \frac{m b}{d}.
+\end{equation*}
+Что верно при малых углах дифракции, с $\cos \theta \approx 1$. Для спектра нулевого порядка $D_0 = b/d$, и $I_0 = (b/d)^2$, а полна $\sub{I}{прош} = b/d$, вообще верно, что
+\begin{equation*}
+    \frac{b}{d} = \frac{b^2}{d^2} + \frac{2}{\pi^2} \sum_{m=1}^{\infty} \frac{1}{m^2} \sin^2 \frac{\pi m b}{d}.
+\end{equation*}
+Относительная доля дифрагированного света
+\begin{equation*}
+    \frac{\sub{I}{прош} - I_0}{\sub{I}{прош}} = 1 - \frac{b}{d}.
+\end{equation*}
+Стоит помнить, что $d \sin \vartheta = m \lambda$. 
+
+
+
+
+
+\textbf{Амплитудно-фазовая решётка.} Пусть есть участки длины $b$ с пропускаемостью $\beta$ и участки длины $a$ с пропускаемостью $\alpha$, где $\alpha$ и $\beta$ постоянны. 
+
+Вычисение $D_m$ сводится к предыдущей задаче. Рассматриваемая решётка эквивалентна плоскопараллеьной решетке с пропусканием $\alpha$ и наложенной на неё дифракционной решетки пропускаемости $(\beta-\alpha)$. Так приходим к выражению
+\begin{equation*}
+    D_m = (\beta-\alpha) \frac{b}{d} \frac{\sin(\varkappa)}{\varkappa} + \alpha \delta_m, \hspace{5 mm} 
+    \varkappa = \pi \frac{ m b}{d},
+\end{equation*}
+где $\delta_m = 1$ при $m=0$ и $\delta_m = 0$ при $m \neq 0$. В случае фазовой реешетки пропускаемости имеют вид $e^{i \rho}$, так как важна лишь разность фаз, то вполне можем положить $\alpha=1$ и $\beta=e^{i \rho}$. Тогда
+\begin{align*}
+    D_m &= (e^{i \rho}-1) \frac{b}{d} \frac{\sin\varkappa}{\varkappa}, \hspace{5 mm} m \neq 0, \\
+    D_0 &= (e^{i \rho} -1) \frac{b}{d} + 1.
+\end{align*}
+Итого имеет дополнительный сдвиг фаз между спектром нулевого и спектрами всех прочих порядков. Можем его найти, посчитав
+\begin{equation*}
+    \arg \frac{D_m}{D_0} = \varphi, \hspace{5 mm} \tg \varphi = \frac{b+a}{b-a} \frac{\sin \rho}{1-\cos \rho}.
+\end{equation*}
+Введя на пути нулевого максимума пластину, меняющую фазу на $\varphi$ можем перейти к фазовым соотношениями, аналогичным амплитудной решетке, на основе этого и строится \textit{метод фазового контраста}. 
+
+Стоит заметить, что при $a=b$ $\varphi =\pi/2$, а при $\rho \ll 1$  получим $\varphi \approx \pi/2$. 
+
+
+\textbf{Эшелетт}. \red{Сивухин, страница 362.}
+
+
