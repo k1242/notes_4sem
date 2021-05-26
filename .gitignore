@@ -26,3 +26,5 @@ anmec/notes/settings/tmp_E.tex
 *.ini
 
 *.nav
+
+*.synctex(busy)
