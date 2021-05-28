@@ -1,0 +1,30 @@
+\newcommand{\progressbar}{%
+	\pgfmathsetmacro{\slidewidth}{\paperwidth}
+	\pgfmathsetmacro{\progressstep}{\paperwidth/\inserttotalframenumber}
+	\pgfmathsetmacro{\progresspos}{(\insertframenumber - 0.5) * \progressstep}
+	\begin{tikzpicture}[scale = 0.035, line width = 1ex]
+		\node[inner sep=0pt] (cat) at (\progresspos,0)	{\includegraphics[width=30pt]{settings/cat.png}};
+		\path[red] (0,0) -- (\slidewidth,0);
+	\end{tikzpicture}
+}
+
+\makeatletter
+\setbeamertemplate{footline}
+{
+\hfill \progressbar%
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.433333\paperwidth,ht=2.25ex,dp=1ex,center]{section in head/foot}%
+    \usebeamerfont{author in head/foot}\insertshortauthor~~\beamer@ifempty{\insertshortinstitute}{}{(\insertshortinstitute)}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{section in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,right]{section in head/foot}%
+    % \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+    % \insertframenumber{} / \inserttotalframenumber\hspace*{2ex} 
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+
+\setbeamertemplate{caption}[numbered]
