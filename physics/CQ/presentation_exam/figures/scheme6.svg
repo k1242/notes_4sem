@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 22.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 446.3 182.9" style="enable-background:new 0 0 446.3 182.9;" xml:space="preserve">
+<style type="text/css">
+	.st0{font-family:'ArialMT';}
+	.st1{font-size:12px;}
+	.st2{fill:none;stroke:#FFFFFF;stroke-width:0.1;stroke-miterlimit:10;}
+	.st3{opacity:0.87;fill:#FFFFFF;stroke:#FFFFFF;stroke-width:0.1;stroke-miterlimit:10;enable-background:new    ;}
+	.st4{fill:none;stroke:#FFFFFF;stroke-miterlimit:10;}
+	.st5{fill:none;stroke:#FFFFFF;stroke-width:0.5;stroke-miterlimit:10;}
+</style>
+<g id="Слой_1_1_">
+	
+		<image style="overflow:visible;enable-background:new    ;" width="3886" height="2861" xlink:href="../../../../../../../google_drive/ЖиК/labs/cq4/Photos/scheme.jpg"  transform="matrix(6.391384e-02 0 0 6.391384e-02 -13.6667 2.125301e-02)">
+	</image>
+</g>
+<text transform="matrix(1 0 0 1 168.7501 96.5743)" class="st0 st1">Laser</text>
+<text transform="matrix(1 0 0 1 168.75 96.5748)" class="st2 st0 st1">Laser</text>
+<text transform="matrix(1 0 0 1 42.5843 25.5331)" class="st0 st1">Optical fiber</text>
+<text transform="matrix(1 0 0 1 42.5843 25.5332)" class="st2 st0 st1">Optical fiber</text>
+<g>
+	<text transform="matrix(1 0 0 1 165.5013 151.9917)" class="st0 st1">OPA</text>
+	<text transform="matrix(1 0 0 1 165.501 151.9915)" class="st2 st0 st1">OPA</text>
+</g>
+<rect x="1.7" y="150.3" class="st3" width="73.2" height="15.3"/>
+<g>
+	<text transform="matrix(1 5.780096e-03 -5.780096e-03 1 8.6667 102.4017)" class="st0 st1">Photodiode</text>
+	<text transform="matrix(1 5.780096e-03 -5.780096e-03 1 8.6669 102.4012)" class="st2 st0 st1">Photodiode</text>
+</g>
+<text transform="matrix(1 0 0 1 4.3859 162.1117)" class="st0 st1">$R \approx 800 \Omega$</text>
+<image style="overflow:visible;enable-background:new    ;" width="1403" height="634" xlink:href="969110B5.jpg"  transform="matrix(0.1475 0 0 0.1475 239.3692 46.4527)">
+</image>
+<circle class="st4" cx="151.8" cy="145.5" r="10.2"/>
+<line class="st5" x1="152.9" y1="155.7" x2="194.4" y2="155.7"/>
+<circle class="st4" cx="209.4" cy="118.3" r="18.5"/>
+<line class="st5" x1="207.3" y1="99.8" x2="168.8" y2="99.8"/>
+<circle class="st4" cx="48.2" cy="126.5" r="20.3"/>
+<line class="st4" x1="8.7" y1="106.2" x2="79.7" y2="106.2"/>
+<line class="st5" x1="45.4" y1="31.1" x2="131.1" y2="31.1"/>
+<line class="st5" x1="146.1" y1="16.7" x2="131.1" y2="31.1"/>
+</svg>

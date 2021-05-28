@@ -1,0 +1,31 @@
+\newcommand{\incfig}[1]{%
+    % \def\svgwidth{\columnwidth}
+    \import{figures/}{#1.pdf_tex}
+}
+
+% \usepackage{circuitikz}
+
+\newcommand{\vc}[1]{\mbox{\boldmath $#1$}}
+\newcommand{\smallvc}[1]{\scalebox{0.65}{\mbox{\boldmath $#1$}}}
+
+\newcommand{\T}{^{\text{T}}}
+\newcommand{\xmark}{\ding{55}}
+\newcommand{\R}{\text{R}}
+\newcommand{\const}{\text{const}}
+\newcommand{\tg}{\mathop{\mathrm{tg}}\nolimits}
+
+\renewcommand{\Im}{\mathop{\mathrm{Im}}\nolimits}
+\renewcommand{\Re}{\mathop{\mathrm{Re}}\nolimits}
+\renewcommand{\d}{\, d}
+\renewcommand{\leq}{\leqslant}
+\renewcommand{\geq}{\geqslant}
+
+
+
+
+\definecolor{mygray}{gray}{0.6}
+\definecolor{mygreen}{RGB}{8,99,44}
+
+
+
+\newcommand{\iitem}[1]{\item[\textcolor{mygreen}{\scalebox{0.7}{$\blacksquare$}}]{#1}}
