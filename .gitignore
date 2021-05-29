@@ -28,3 +28,7 @@ anmec/notes/settings/tmp_E.tex
 *.nav
 
 *.synctex(busy)
+
+physics/CQ/presentation_exam/P2_OSC.pdf
+
+*.snm
