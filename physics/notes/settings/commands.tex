@@ -34,6 +34,8 @@
 
 \newcommand{\frc}[2]{\raisebox{2pt}{$#1$}\big/\raisebox{-3pt}{$#2$}}
 
+
+
 \newcommand{\Qsec}[2]{
 \setcounter{section}{\numexpr #1 - 1 \relax}
 \section{#2}
@@ -42,6 +44,11 @@
 \newcommand{\Ssec}[2]{
 \setcounter{subsection}{\numexpr #1 - 1 \relax}
 \subsection{\ \ \ #2}
+}
+
+\newcommand{\Esec}[1]{
+    \addcontentsline{toc}{subsection}{\hspace{10.4 mm} #1}
+    \subsection*{#1}
 }
 
 \newcommand{\secX}{\texorpdfstring{\xmark}{x}}
