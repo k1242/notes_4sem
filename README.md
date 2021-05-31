@@ -37,7 +37,7 @@
 
 * **общей физики**
 (
-[*билеты по задавальнику*](https://github.com/k1242/notes_4sem/blob/main/physics/notes/gp_optics_notes.pdf)
+[*билеты*](https://github.com/k1242/notes_4sem/blob/main/physics/notes/gp_optics_tickets.pdf)
 );
 
 ## P.S.
