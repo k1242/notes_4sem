@@ -1,0 +1,16 @@
+Вроде как это тема 50 из билетов. Но она строится на 49 теме, которая затронулась в прошлой лекции.
+
+\begin{to_def}
+	Множество функций $X \subset C(K)$(над метрическим компактом) \textbf{равностепенно непрерывно} , если $$\forall \varepsilon >0 \, \exists \delta > 0 \colon \forall f \in X\, \forall x, y \in K, \, \rho(x,y) < \delta \Leftrightarrow |f(x) - f(y)| < \varepsilon.$$
+\end{to_def}
+Если все функции ещё и $L$-липшецивы, то $|f(x) - f(y)| = L \rho(x,y)$.
+
+Можно ввести понятие модуля непрерывности для липшецивых функций:
+\begin{equation*}
+	\omega_X(\delta) = \sup \left\{|f(x) - f(y)| \mid f \in X, \, \rho(x,y) < \delta \right\}.
+\end{equation*}
+$X$ -- равностепенно непрерывно $\Longleftrightarrow$ $\omega_X(\delta) \to 0$ при $\delta \to +0$.
+
+\begin{to_thr}[Арцела-Асколи]
+	Множество $X \subset C(K)$ предкомпактно $\Longleftrightarrow$ $X$ равномерно ограниченно и равностепенно непрерывно.
+\end{to_thr}
