@@ -1,4 +1,19 @@
-\sbs{Полнота и замкнутость ортонормированной системы в гильбертовом пр-ве}
+\sbs{52}{Полнота и замкнутость ортонормированной системы в гильбертовом пр-ве}
 \begin{to_def}
 	Последовательность векторов $(\varphi_k)$ --- \textbf{полная система векторов}  в банаховом $E$, если $\overline{\langle \varphi_k\rangle} = E$. Другими словами $\forall x \in E$ и $\forall >0$ найдется конечная $a_1 \varphi_1 + \ldots + a_n \varphi_n$ такая, что $||x - a_1 \varphi_1 - \cdots - a_n \varphi_n||<\varepsilon$.
 \end{to_def}
+
+\begin{to_def}
+	$(\varphi_k)$ --- \textbf{замкнутая система векторов} в гильбертовом $H$, если в $\forall x \in H \colon (x, \varphi_k) = 0, \, \forall k$.
+\end{to_def}
+
+\begin{to_thr}
+	$\forall \varphi_k$ -- ортогональной в гильбертовом $H$ эквивалентны утверждения:
+	\begin{itemize}
+		\item полнота системы;
+		\item замкнутость системы;
+		\item сходимость ряда Фурье $\forall x \in H$ по системе $(\varphi_k)$ к $x$;
+		\item равенство Парсеваля для коэффициентов Фурье $\forall x \in H$ по данной системе.
+	\end{itemize}
+\end{to_thr}
+
