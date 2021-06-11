@@ -12,15 +12,6 @@
 \newcommand{\vc}[1]{\mbox{\boldmath $#1$}}
 \newcommand{\T}{^{\text{T}}}
 
-\newcommand{\incfig}[1]{%
-    \def\svgwidth{\columnwidth}
-    \import{./figures/}{#1.pdf_tex}
-}
-
-\newcommand{\sbsnum}[2]{
-    \setcounter{subsection}{\the\numexpr #1 - 1 \relax}
-    \subsection{#2}
-}
 
 \newcommand{\diag}{\mathop{\mathrm{diag}}\nolimits}
 \newcommand{\cl}{\mathop{\mathrm{cl}}\nolimits}
@@ -43,22 +34,36 @@
 \newcommand{\const}{\text{const}}
 \newcommand{\xmark}{\ding{55}}
 
-\definecolor{ugreen}{RGB}{15, 110, 0}
-\definecolor{ured}{RGB}{220, 0, 0}
 
-\newcommand{\red}[1]{\textcolor{ured}{#1}}
-\newcommand{\green}[1]{\textcolor{usergreen}{#1}}
+\newenvironment{uproof}{
+\par \color{ugray}
+\begin{proof}[$\triangle$]
+}{
+\end{proof} \par
+}
+
 
 \newcommand{\bhat}{\overset{\text{\scalebox{0.8}[0.5]{\rotatebox[origin=c]{180}{$\wedge$}}}}}
-
-
 
 \newcommand{\cf}[1]{\scalebox{1.5}{$\chi$}_{#1}}
 \newcommand{\supp}{\mathop{\mathrm{supp}}\nolimits}
 \newcommand{\si}{\mathop{\mathrm{Si}}\nolimits}
 
+\newcommand{\rr}{\rightrightarrows}
+
+% \newcommand{\sbsnum}[2]{
+%     \setcounter{subsection}{\the\numexpr #1 - 1 \relax}
+%     \subsection{#2}
+% }
 
 % Секции и сабсекции
-\definecolor{darkblue}{HTML}{000099}
-\newcommand{\sbs}[1]{\subsection{\textcolor{darkblue}{#1}}}
-\renewcommand{\sec}[1]{\section{\textcolor{darkblue}{#1}}}
+% \definecolor{darkblue}{HTML}{000099}
+% \newcommand{\sbs}[1]{\subsection{\textcolor{darkblue}{#1}}}
+% \renewcommand{\sec}[1]{\section{\textcolor{darkblue}{#1}}}
+\newcommand{\sbs}[2]{
+\setcounter{subsection}{\numexpr #1 - 1 \relax}
+    \textcolor{ugreen}{
+        \subsection{#2}
+        }
+}
+
