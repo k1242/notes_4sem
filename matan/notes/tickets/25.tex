@@ -1,0 +1,62 @@
+\sbs{25}{Теорема Фейера}
+
+
+
+\begin{to_def}
+    Определим \textit{ядро Фейера} 
+    \begin{equation*}
+        \Phi_n (t) = 
+        \frac{D_0 (t) + D_1 (t) + \ldots + D_n (t)}{n+1} = 
+        \frac{1}{2\pi} \sum_{k=-n}^{n} 
+        \frac{n+1 - |k|}{n+1} e^{ikx},
+    \end{equation*}
+    как усреднение ядер Дирихле. Соответствующая \textit{сумма Фейера} будет соответствовать усреднением первых $n+1$ частичных сумм ряда Фурье,
+    \begin{equation*}
+        S_n (f, x) = \int_{-\pi}^{\pi} 
+        f(x+\xi) \Phi_n (\xi) \d \xi = 
+        \frac{T_0 (f, x) + \ldots + T_n (f, x)}{n+1}.
+    \end{equation*}
+\end{to_def}
+
+Записав
+\begin{equation*}
+    D_n (t) 
+    =
+    \frac{1}{2\pi}
+     \frac{\sin \left( \left(n + \frac{1}{2}\right)t\right)}{\sin \left(\frac{1}{2} t\right)} 
+     = 
+     \frac{1}{4\pi}
+    \frac{
+    \cos nt - \cos \left((n+1)t\right)
+    }{
+    \sin^2 \left(\frac{1}{2}t\right)
+    },
+\end{equation*}
+и суммируя, получаем
+\begin{equation*}
+    \Phi_n (t) = 
+    \frac{1}{4 \pi}
+    \frac{
+        1 - \cos \left((n+1)t\right)
+    }{
+        (n+1) \sin^2 \left(\frac{1}{2}t\right)
+    }
+    =
+    \frac{1}{2\pi}
+    \frac{
+        \sin^2 \left(
+            \frac{n+1}{2}t
+        \right)
+    }{
+        (n+1) \sin^2 \left(\frac{1}{2}t\right)
+    }
+\end{equation*}
+
+
+\begin{to_thr}
+    Для непрерывной $2\pi$-периодической $f$ 
+    \begin{equation*}
+        S_n (f, x) \rightrightarrows f(x),
+    \end{equation*}
+    то есть сходится равномерно.
+\end{to_thr}

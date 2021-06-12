@@ -1,0 +1,80 @@
+\sbs{12}{Теорема Римана об осцилляции и равномерной осцилляции}
+% 327
+
+\begin{to_def}
+    Определим \textit{коэффициент Фурье} (с точностью до умножения на константу)
+    \begin{equation*}
+        c_f (y) = \int_{-\infty}^{+\infty} f(x) e^{-ixy} \d x.
+    \end{equation*}
+\end{to_def}
+
+\begin{to_thr}[]
+    Если $f \in L_1 (\mathbb{R})$, то $|c_f (y)| \leq \|f\|_1$ и $c_f (y)$ непрерывно зависит от $y$.
+\end{to_thr}
+
+\textcolor{ugray}{
+\begin{to_thr}[Теорема об ограниченной сходимости]
+    Пусть неотрицательная функция $g$ на измеримом $X$ имеет конечный интеграл. Пусть $f_k$ измеримы на $X$, $|f_k| \leq g$ для всех $k$ и $f_k \to f$ поточечно на $X$. Тогда
+    $\lim_{k \to \infty} \int_X f_k \d x = \int_X f \d x$.
+\end{to_thr}   
+}
+
+\begin{uproof}
+    По теореме об ограниченной сходимости разрешен предельный переход под знаком интеграла, значит $c_f (y)$ непрерывно зависит от $y$. \red{Расписать бы это.}
+\end{uproof}
+
+\begin{to_thr}[Лемма Римана об осцилляции]
+    Если $f \in L_1 (\mathbb{R})$, то выражение
+    \begin{equation*}
+        c_f (y) = \int_{-\infty}^{+\infty} f(x) e^{-ixy} \d x
+    \end{equation*}
+    стремится к нулю при $y \to \infty$.
+\end{to_thr}
+
+\begin{uproof}
+\red{У Кудрявцева математичненько всё расписано.}
+    Получим оценко на порядок убывания $c_f(y)$ при $y \to \infty$ считая $f ^{(k-1)}$ абсолютно непрерывной и производные до $k$-й включительно $\in L_1 \left(\mathbb{R}\right)$, тогда интегрируя по частям (дифференцируя функцию) получим:
+    \begin{align*}
+        c_f (y) &= \int_{-\infty}^{+\infty} f(x) \d \left(
+            \frac{e^{-ixy}}{-iy}
+        \right) = f(x) \left(
+            \frac{e^{-ixy}}{-iy}
+        \right) \bigg|_{-\infty}^{+\infty} + \int_{-\infty}^{+\infty} f'(x) \cdot \left(
+            \frac{e^{-ixy}}{-iy}
+        \right) \d x 
+        = \\ &=
+        \frac{c[{f'}](y)}{iy} = \ldots = \frac{c[f^{(k)}](y)}{(iy)^k} = O\left(\frac{1}{y^k}\right), \hspace{5 mm} y \to \infty.
+    \end{align*}
+    Тут мы воспользовались компактностью носителя функции и её производных. 
+
+    Рассмотрим теперь $\forall  f \in L_1(\mathbb{R})$. Найдём бесконечно гладкую $g$ с компактным носителем $\|f-g\|_1 < \varepsilon$. Тогда $\forall y \in \mathbb{R}$:
+    \begin{equation*}
+        |c[f](y) - c[g](y)| = |c[f-g](y)| \leq \varepsilon.
+    \end{equation*}
+    При этом для $c[g] (y) \to 0$ доказали (быстрее любой степени). Отсюда следует, что $\overline{\lim} |c[f](y)| < \varepsilon$, точнее равен нулю. 
+    % \red{Но не убывает быстрее любой степени, ведь так?}
+\end{uproof}
+
+
+
+\begin{to_thr}[Лемма о равномерной осцилляции]
+    Если $f \in L_1(\mathbb{R})$, то выражение
+    \begin{equation*}
+        c[f](y, \xi, \eta) = \int_\xi^\eta f(x) e^{-ixy} \d x
+    \end{equation*}
+    стремится к нулю при $y \to \infty$ равномерно по $\xi, \ \eta$.
+\end{to_thr}
+
+\begin{uproof}
+    Разобьём $\mathbb{R}$ на коненое число промежутков числами $x_1 < \ldots < x_N$ так, чтобы на каждом промежутке $\int |f| < \varepsilon $. Для $\xi$ и $\eta$ найдём ближайшие $x_i,\, x_j$:
+    \begin{equation*}
+        \bigg| 
+            \int_{\xi}^{\eta} f(x) e^{-ixy} \d x
+        \bigg| \leq 
+        \bigg|
+            \int_{x_i}^{x_j} f(x) e^{-ixy} \d x
+        \bigg| + 2 \varepsilon
+    \end{equation*}
+    и при достаточно большом $\varepsilon$ по доказанноу неравномерному варианту, применяемого к ограничению $f$ на $[x_i,\, x_j]$, что и доказывает равномерную оценку. 
+\end{uproof}
+

@@ -4,11 +4,115 @@
     Назовём \textit{элементарно ступенчатыми} функции с конечным числом ступенек, в основании которых лежат элементарные множества.
 \end{to_def}
 
+\textcolor{ugray}{
+\begin{to_thr}[]
+    Пусть функция $f \colon  X \mapsto \mathbb{R} \in L_p$ с конечным интегралом. Положим для $M > 0$
+    \begin{equation*}
+        f_M (x) = \left\{\begin{aligned}
+            &M, &f(x) \geq M; \\
+            &f(x), &|f(x)| \leq M; \\
+            &-M, &f(x) \leq - M;            
+        \end{aligned}\right.
+        \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+        \lim_{M \to + \infty} \|f_M\|_p = \|f\|_p.
+    \end{equation*}
+\end{to_thr}
+}
+
+\textcolor{ugray}{
+\begin{to_thr}[]
+% 5.79
+    Пусть функция $f \colon \mathbb{R}^n \mapsto \mathbb{R}$ и $f \in L_1 \left(\mathbb{R}^n\right)$. Тогда $f$ можно сколь угодно близко приблизить в среднем элементарно ступенчатой функцией. 
+\end{to_thr}
+}
+
 \begin{to_thr}[]
      Можно сколь угодно близко по норме $\| \cdot \|_p$ приблизить элементарно ступенчатой $\forall f \in L_p(\mathbb{R}^n)$.
 \end{to_thr}
 
+
+\begin{uproof}
+    Интеграл разности $f - f_M$ можно оценить, как
+    \begin{align*}
+        &|f(x) -M|^p \leq |f(x)|^p - M^p, &f(x) > M; \\
+        &|f(x) +M|^p \leq |f(x)|^p - M^p, &f(x) <- M;
+    \end{align*}
+    что получается из выпуклости $|x|^p$. 
+    \begin{equation*}
+        \int_{\mathbb{R}^n} \left(|f|^p - |f_M|^p\right) \d x < \varepsilon^p,
+        \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+        \int_{\mathbb{R}^n} |f - f_M|^p \d x < \varepsilon^p.
+    \end{equation*}
+    Осталось перейти к ограниченной функции $g = f_M |_{[-a, a]^n}$. В силу непрерывности интеграла Лебега по множествам
+    \begin{equation*}
+        \int_{\mathbb{R}^n} |g(x)|^p \d x = \lim_{a \to + \infty} \int_{[-a, a]^n} |g(x)|^p \d x,
+    \end{equation*}
+    поэтому можем приблизить $f_M$ функцией $g$ с точностью $\varepsilon$ функцией $h \leq M$ c $\supp h = Q = [-a, a]^n$. Таким образом $h$ измерима по лебегу, то есть $h \in L_1 \left(\mathbb{R}^n\right)$. 
+
+    Теперь возвращаемся к приближению функции из $L_1$ элементарно ступенчатой $s$ в норме $L_1$:
+    \begin{equation*}
+        \int_{\mathbb{R}^n} |h-s| \d x < \varepsilon',
+        \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+        \int_{\mathbb{R}^n} |h(x) - s(x)|^p \d x \leq (2M)^{p-1} \int_{\mathbb{R}^n} |h-s| \d x < (2M)^{p-1} \varepsilon'.
+    \end{equation*}
+    Тогда можем добиться 
+    \begin{equation*}
+        \|f-s\|_p < \|f - g\|_p + \|g-h\|_p + \|h-s\|_p <3 \varepsilon,
+    \end{equation*}
+    при выборе $s = s(\varepsilon)$.
+\end{uproof}
+
+
+
 \begin{to_thr}
     Всякую $f \in L_p (\mathbb{R}^n)$ можно сколь угодно близко по норме $\| \cdot \|_p$ приблизить бесконечно дифференцируемой функцией с компактным носителем.
+    \label{thr8d17}
 \end{to_thr}
 
+
+\begin{uproof}
+    Вспомним хороший набор функций
+    \begin{equation*}
+        f(x) = \left\{\begin{aligned}
+            &0, &x \leq 0; \\
+            &e^{-1/x},  &x>0.
+        \end{aligned}\right.
+        \hspace{5 mm}   
+        \varphi(x) = f(x+1)f(1-x),
+        \hspace{5 mm} 
+        \varphi_\varepsilon (\vc{x}) = A \varphi\left(\frac{\sqrt{n} x_1}{\varepsilon}\right) \cdots \varphi\left(\frac{\sqrt{n}x_n}{\varepsilon}\right),
+    \end{equation*}
+    где последняя нормирована быть с единичным интегралом и отлична от нуля только в $U_\varepsilon (0)$. Тогда можем построить
+    \begin{equation*}
+        \psi(x) = B \int_{-\infty}^{x} \varphi(t) \d t,
+        \hspace{5 mm} B \colon \left\{\begin{aligned}
+            &\psi(x) \equiv 0, &x \leq 1; \\
+            &\psi(x) \equiv 1, &x \geq 1;
+        \end{aligned}\right.
+        \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+        \psi_{\varepsilon, \delta} (x) = \psi\left(
+            \frac{\delta + \varepsilon - 2 |x|}{\varepsilon - \delta}
+        \right),
+    \end{equation*}
+    где $\psi_{\varepsilon, \delta}$ отлична от нуля только в $U_\varepsilon (0)$ и тождественно равна $1$ в $U_\delta (0)$. 
+
+    Осталось свёрткой приблизить каждую ступеньку на параллелепипедом $P$, точнее $
+    \cf{P}
+    $ в норме $L_p$, тогда 
+    \begin{equation*}
+        \int_{\mathbb{R}^n} \big|
+        \cf{P} - g(x)
+        \big|^p \d x \leqslant\mu \left[U_{\varepsilon} (P)\right] - \mu P,
+    \end{equation*}
+    что стремится к нулю при $\varepsilon \to + 0$.
+\end{uproof}
+
+
+\textit{Доплнительно}. 
+Также по теоерме Стоуна-Вейерштрасса любую $f \in L_p (X)$ можно сколь угодно близко по норме $\|\cdot\|_p$ приблизить ограниченным на $X$ многочленом, где $X$ -- ограниченное измеримое в $\mathbb{R}^n$ множество. 
+
+Также для любой $f \in L_p \left(\mathbb{R}^n\right)$ можно показать непрерывность сдвига в $L_p$:
+\begin{equation*}
+    \int_{-\infty}^{+\infty} |f(x+t) - f(x)|^p \d x \to 0  \ \ \text{при} \ \  |t| \to 0,
+\end{equation*}
+показав это для непрерывной функции с компактным носителем, а затем по неравенству Минковского, приближая $f$, доказать утверждение. 

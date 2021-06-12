@@ -36,16 +36,19 @@
 
 
 \newenvironment{uproof}{
+% \begin{comment}
 \par \color{ugray}
 \begin{proof}[$\triangle$]
 }{
 \end{proof} \par
+% \end{comment}
 }
 
 
 \newcommand{\bhat}{\overset{\text{\scalebox{0.8}[0.5]{\rotatebox[origin=c]{180}{$\wedge$}}}}}
 
-\newcommand{\cf}[1]{\scalebox{1.5}{$\chi$}_{#1}}
+\newcommand{\cf}[1]{\text{\raisebox{1.5pt}{$\scalebox{1.3}{$\chi$}$}}_{#1}}
+
 \newcommand{\supp}{\mathop{\mathrm{supp}}\nolimits}
 \newcommand{\si}{\mathop{\mathrm{Si}}\nolimits}
 

@@ -1,0 +1,31 @@
+\sbs{21}{Признак Липшица равномерной сходимости ряда Фурье}
+
+\begin{to_def}
+    Функция $f$ называется гёльдеровой степени $\alpha > 0$, если для любых $x, \, y$ из области определения
+    \begin{equation*}
+        |f(x) -f(y)| \leq C |x-y|^{\alpha}
+    \end{equation*}
+    с некоторой константой $C$.
+\end{to_def}
+
+
+\begin{to_thr}[Признак Липшица сходимости ряда Фурье]
+    Для абсолютно интегрируемой $2\pi$-периодической функции, которая является гёльдеровой с некоторыми $C$, $\alpha > 0$ на интервале $(A, B) \supset [a, b]$
+    \begin{equation*}
+        T_n (f, x) \to f(x)
+    \end{equation*}
+    равномерно $x \in [a, b]$ при $n \to \infty$.
+\end{to_thr}
+
+\begin{uproof}
+    Вспомним локальное представление $T_n[f](x) - f(x)$, как
+    \begin{equation*}
+        \bigg|
+            \int_{-\delta}^{\delta} \left(f(x+t)-f(x)\right) D_n (t) \d t
+        \bigg|  \leq 
+        C \int_{-\delta}^{\delta} \frac{|t|^\alpha}{2\pi}
+        \frac{1}{|\sin t/2|} \d t \leq 
+        \frac{C}{2} \int_{-\delta}^{\delta} |t|^{\alpha-1} \d t = \frac{C}{\alpha} |\delta|^\alpha,
+    \end{equation*}
+    где мы воспользовались мыслью, что $\pi |\sin t/2| \geq t$ на $[-\pi, \pi]$. По произвольности $\delta$ и равномерного принципа локализации следует, что $T_n[f](x) - f(x)$ может быть равномерно сделано сколь угодно маленьким при некотором $\delta > 0$ и $n$. 
+\end{uproof}

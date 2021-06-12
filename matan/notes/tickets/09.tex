@@ -1,0 +1,22 @@
+\sbs{9}{Абсолютная непрерывность интеграла с переменных верхним пределом}
+
+\begin{to_thr}[]
+    Для некоторой $f \in L_1 [a, b]$, всякая обобщенная первообразная $F$ 
+    \begin{equation*}
+        F(x) = \int_a^x f(t) \d t,
+    \end{equation*}
+     является абсолютно непрерывной и её производная почти всюду существует и совпадает с $f$. 
+\end{to_thr}
+
+\begin{uproof}
+    В силу теоремы о дифференцируемости интеграла с переменным верхним пределом, производная $F$ почти всюду равна $f$. Осталось показать абсолютную непрерывность $F$. Как и раньше, приблизим $f$ ограниченной $g \leq M$, так что $\|f-g\|_1 < \varepsilon$. Тогда при наборе отрезков $S$ длины $< \delta$
+     \begin{equation*}
+         \int_S |g(x)| \d x \leq M \delta, \hspace{5 mm} 
+         \int_S |f(x) - g(x)| < \varepsilon,
+         \hspace{0.25cm} \Rightarrow \hspace{0.25cm}
+        \int_S |f(x)| \d x \leq M \delta  + \varepsilon,
+        \hspace{0.25cm} \Rightarrow \hspace{0.25cm}
+        \int_S |f(x)| \d x \leq 2 \varepsilon,
+     \end{equation*}
+     что и означает сумме приращений $F$ на отрезках $S$ не более $2\varepsilon$ при $\mu[S] < \delta$. 
+\end{uproof}

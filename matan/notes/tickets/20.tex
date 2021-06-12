@@ -1,0 +1,84 @@
+\sbs{20}{Принцип локализации для рядов Фурье и равномерный принцип локализации}
+
+
+\begin{to_thr}[принцип локализации]
+    Если $f$ -- $2\pi$-периодическая абсолютно интегрируемая функция, то существование и значение предела последовательности её частичных сум Фурье $T_n[f](x)$ в любой точке $x_0 \in \mathbb{R}$ зависит только от существования и значения предела при $n \to \infty$ интеграла
+    \begin{equation*}
+        \frac{1}{\pi} \int_0^\delta D_n(t) \left(
+            f(x_0 + t) + f(x_0 - t)
+        \right) \d t,
+    \end{equation*}
+    иначе говоря сходимость ряда Фурье в точке $x_0$ определяется лишь поведением функции $f$ в любой сколь угодно малой окрестности $x_0$. 
+\end{to_thr}
+
+\begin{uproof}
+    Во-первых, по чётности ядра Дирихле, можем записать
+    \begin{align*}
+        T_n[f](x) &= \frac{1}{\pi} \int_{0}^{\pi} D_n(t) \left(
+            f(x+t) + f(x-t)
+        \right) \d t = 
+        \left(
+            \frac{1}{\pi} \int_{0}^{\delta}  + \frac{1}{\pi} \int_{\delta}^{\pi} 
+        \right) D_n(t) \left(
+            f(x+t) + f(x-t)
+        \right) \d t.
+    \end{align*}
+    Подробнее рассмотрим последнее слагаемое:
+    \begin{equation*}
+        \frac{1}{\pi} \int_{\delta}^{\pi} \frac{f(x+t)+f(x-t)}{2 \sin (t/2)} \sin\left(
+            \left(n + \textstyle\frac{1}{2}\right)t
+        \right) \d t = o(1), \hspace{5 mm} n \to \infty,
+    \end{equation*}
+    так как $\frac{f(x+t) + f(x-t)}{2 \sin (t/2)}$ интегрируемое по интегрируемости $f$ и ограниченности $\frac{1}{\sin(t/2)}$. Оставшаяся велична стремится к $0$ по лемме Римана об осцилляции.
+\end{uproof}
+
+
+\begin{to_thr}[Равномерный принцип локализации]
+    Запищем для $\delta \in (0, \pi)$
+    \begin{equation*}
+        T_n (f, x) - f(x) = 
+        \int_{-\pi}^{\pi} 
+        \left(
+            f(x+t) - f(x)
+        \right) D_n (t) \d t =
+        \int_{-\delta}^{\delta} \left(
+            f(x+t) - f(x)
+        \right) D_n (t) \d t + 
+        \int_M 
+        (f(x+t)-f(x)) D_n (t) \d t,
+    \end{equation*}
+    где $M = \left\{t \mid \delta \leq |t| \leq \pi\right\}$. Если $f \in L_1 [-\pi, \pi]$, то
+    \begin{equation*}
+        \int_M \left(
+            f(x+t) - f(x)
+        \right) D_n (t) \d t
+        \ \to \ 0, \hspace{0.5 cm} n \to \infty.
+    \end{equation*}
+    Если $f$ ограничена на отрезке $[a, b]$, то это выражение стремится к нулю равномерно по $x \in [a, b]$.
+\end{to_thr}
+
+\begin{uproof}
+    Делаем то же, что и раньше, но подводим всё к лемме о равномерной осцилляции:
+    \begin{equation*}
+        \bigg| \int\limits_{a}^{b}  f(x+t) \sin\big(\left(n + \textstyle \frac{1}{2}\right) t \big) \d t \bigg| \sim 
+        \bigg|
+            \int\limits_{a}^{b} f(x+t) e^{i\left(n + \frac{1}{2}\right)t} \d t
+        \bigg| = 
+        \bigg|
+            \int\limits_{x +a}^{x + b}  f(\xi) e^{\left(
+                i\left[
+                    n + \textstyle \frac{1}{2}
+                \right] \xi - i \left[
+                    n + \textstyle \frac{1}{2}
+                \right] x
+            \right)} \d \xi
+        \bigg| = 
+        \bigg|
+            \int\limits_{x +a}^{x + b}  f(\xi) e^{\left(
+                i\left[n + \textstyle \frac{1}{2}\right] \xi
+            \right) }\d \xi
+        \bigg|,
+    \end{equation*}
+    где уже можем применить лемму о равномерной осцилляции в силу $f \in L_1$. 
+\end{uproof}
+
