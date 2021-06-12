@@ -1,0 +1,38 @@
+\sbs{26}{Представление котангенса и косеканса. Формула дополнения для бета-функции}
+
+\begin{to_lem}
+    \red{Разложим $\cos ax$ на отрезке $[-\pi, \pi]$ при $a \notin \mathbb{Z}$ в ряд Фурье.} Легко получить, что
+    \begin{align*}
+        \ctg x
+        &=
+        v. p. \sum_{k=-\infty}^{\infty} \frac{1}{x-\pi k} \\
+        \frac{1}{\sin x}
+        &=
+         v. p. \sum_{k=-\infty}^{\infty} \frac{(-1)^k}{x-\pi k} \\
+        \sin x
+        &=
+        x \prod_{k=1}^{\infty} \left(
+            1 - \frac{x^2}{\pi^2 k^2}
+        \right).
+    \end{align*}
+\end{to_lem}
+
+
+\begin{to_lem}
+    \textit{Формула дополнения} для бета-функции про $p \in (0, 1)$
+    \begin{equation*}
+        B(p, 1-p) = \int_0^1 t^{p-1} (1-t)^{-p} \d t = \frac{\pi}{\sin \pi p}.
+    \end{equation*}
+\end{to_lem}
+
+\begin{to_lem}
+    Для $0 < |x| < \pi$ верно, что
+    \begin{equation*}
+        \frac{1}{x} - \ctg x = 
+        \sum_{n, k \geq 1} \frac{2 x^{2k-1}}{\pi^{2k} n^{2k}},
+    \end{equation*}
+    \red{
+        откуда можно получить значения сумм $\sum_{n=1}^{\infty} \frac{1}{n^2}$ и $\sum_{n=1}^{\infty} \frac{1}{n^4}$.
+    }
+\end{to_lem}
+

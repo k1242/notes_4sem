@@ -1,11 +1,18 @@
 \sbs{4}{Пространства \texorpdfstring{$L_p$}{Lp}. Неравенства Гёльдера и Минковского.}
 
-\subsubsection*{Неравенства Гёльдера и Минковского}
-
 \begin{to_def}
     \textit{Абсолютно интегрирумыми функциями} на измеримом $X \subseteq \mathbb{R}^n$ называют $f \colon X \mapsto \mathbb{R}$ с конечным интегралом $\int_X |f(x)| \d x$. \textit{Расстоянием}\footnote{
         В силу неравенства $|f(x) - g(x)| \leq |f(x)| + |g(x)|$ расстояние конечно.
     } между функциями $f$ и $g$ будем считать $\int_X |f(x)-g(x)| \d x$.
+\end{to_def}
+
+\begin{to_def}
+    \textit{Нормой} в векторном пространстве $V$ над полем $\mathbb{F}$ называется функционал $p \colon  V \mapsto \mathbb{R}_+$, обладающий своствами: \vspace{-3mm}
+    \begin{enumerate*}
+        \item $p(x) = 0 \ \Rightarrow \ x = 0_V$ -- невырожденность нормы (в \textit{полунорме} это неверно);
+        \item $\forall x,\, y \in V,\, \ p(x + y) \leq p(x) + p(y)$ -- неравенство треугольника;
+        \item $\forall  \alpha \in \mathbb{F},\, \forall x \in V,\,\ p(\alpha x) = |\alpha| p(x)$. 
+    \end{enumerate*}
 \end{to_def}
 
 \begin{to_def}
@@ -28,6 +35,8 @@
     назовём $L_p (X)$.
 \end{to_def}
 
+
+
 \texttt{Очень хорошим, симметричным, актуальным для описания квантовой механики оказывается $L_2$ простран-\\ство, на котором естественно вводить скалярное произведение, его порождающее.} 
 
  \begin{to_def}
@@ -47,13 +56,22 @@
     \end{equation*}
 \end{to_thr}
 
-\begin{proof}[$\triangle$]
-    Для доказательства достаточно проинтегрировать неравенство вида
+\begin{uproof}
+    Добьёмся (домножением на константу) ситуации с $\|f\|_p = \|g\|_q=1$. 
+    Тогда достаточно проинтегрировать неравенство вида
     \begin{equation*}
         |fg| \leq \frac{|f|^p}{p} + \frac{|g|^q}{q}.
     \end{equation*}
-    \red{Осталось получить само неравенство.}
-\end{proof}
+    Неравенство же можем получить из выпуклости логарифма
+    \begin{equation*}
+        \ln(\alpha f + \beta g) \geq \alpha \ln f + \beta \ln g, \hspace{2.5 mm} \alpha + \beta = 1,
+        \hspace{0.5cm} \Rightarrow  \bigg/ \left.\begin{aligned}
+            \alpha = p^{-1} \\
+            \beta = q^{-1}
+        \end{aligned}\right. \bigg/ \Rightarrow\hspace{0.5cm}
+        \ln\left(\frac{f}{p} + \frac{b}{q}\right) \geq \frac{\ln f}{p} + \frac{\ln g}{q} = \ln (f^{1/p} g^{1/q}).
+    \end{equation*}
+\end{uproof}
 
 \begin{to_con}
     Для измеримых функций и чисел $p, \, q > 0$, таких что $1/p + 1/q = 1$, имеет место формула
@@ -66,14 +84,14 @@
 \end{to_con}
 
 \begin{proof}[$\triangle$]
-По неравенству Гёльдера норма $f$ не менее супремума правой части \red{(?)}, более того равенство достигается при выборе
+По неравенству Гёльдера норма $f$ не менее супремума правой части, более того равенство достигается при выборе
 \begin{equation*}
     g(x) = \frac{\sign f(x) |f(x)|^{p-1}}{\|f\|_p^{p-1}}.
 \end{equation*}
 \end{proof}
 
 \begin{to_def}
-    Функция $f \colon V \mapsto \mathbb{R}$ на векторном пространство называется выпуклой, если для любых $x, \, y \in V$ и любого $t \in (0, 1)$ имеет место неравенство
+    Функция $f \colon V \mapsto \mathbb{R}$ на векторном пространство называется \textit{выпуклой}, если для любых $x, \, y \in V$ и любого $t \in (0, 1)$ имеет место неравенство
     \begin{equation*}
         f ( (1-t) x + ty) \leq (1-t) f(x) + t f(y).
     \end{equation*}
@@ -90,6 +108,9 @@
     }.
 \end{to_lem}
 
+\begin{uproof}
+    Выпуклость функции нескольких переменных означает выпуклость всех её ограничений на прямые, а значит достаточно доказать это для функции одной переменной, \texttt{что допускает графическое доказательство}. 
+\end{uproof}
 
 \begin{to_thr}[Неравенство Минковского]
     Для функций $f, \, g \in L_p$ при $p \geq 1$
@@ -98,4 +119,15 @@
     \end{equation*}
 \end{to_thr}
 
+\begin{uproof}
+    В силу предыдущих двух утверждений норма $\|\cdot\|_p$ -- выпуклая функция на $L_p$, тогда, в частности
+    \begin{equation*}
+        \left\|\frac{f+g}{2}\right\|_p \leq \left(
+            \|f\|_p + \|g\|_p
+        \right),
+        \hspace{0.5cm} \Rightarrow \hspace{0.5cm}  
+        \left\|\frac{f}{2} + \frac{g}{2}\right\|_p \leq \left\|\frac{f}{2}\right\|_p + \left\|\frac{g}{2}\right\|_p,
+    \end{equation*}
+    где последнее верно по 1-однородности нормы. 
+\end{uproof}
 
