@@ -1,0 +1,22 @@
+\sbs{50}{Теорема Арцела-Асколи}
+\begin{to_def}
+	Множество функций $X \subset C(K)$(над метрическим компактом) \textbf{равностепенно непрерывно} , если 
+	\begin{equation*}
+		\forall \varepsilon >0 \, \exists \delta > 0 \colon \forall f \in X\, \forall x, y \in K, \, \rho(x,y) < \delta \Leftrightarrow |f(x) - f(y)| < \varepsilon.
+	\end{equation*}
+	Если все функции ещё и $L$-липшецивы, то $|f(x) - f(y)| = L \rho(x,y)$.
+\end{to_def}
+
+\begin{to_def}
+	\textbf{Модуль непрерывности} липшецивых функций:
+	\begin{equation*}
+		\omega_X(\delta) = \sup \left\{|f(x) - f(y)| \mid f \in X, \, \rho(x,y) < \delta \right\}.
+	\end{equation*}
+	И тогда,
+	$X$ -- равностепенно непрерывно $\Longleftrightarrow$ $\omega_X(\delta) \to 0$ при $\delta \to +0$.
+\end{to_def}
+
+
+\begin{to_thr}[Арцела-Асколи]
+	Множество $X \subset C(K)$ предкомпактно $\Longleftrightarrow$ $X$ равномерно ограниченно и равностепенно непрерывно.
+\end{to_thr}

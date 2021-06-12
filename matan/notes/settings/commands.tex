@@ -51,6 +51,7 @@
 
 \newcommand{\supp}{\mathop{\mathrm{supp}}\nolimits}
 \newcommand{\si}{\mathop{\mathrm{Si}}\nolimits}
+
 \newcommand{\rr}{\rightrightarrows}
 
 % \newcommand{\sbsnum}[2]{
@@ -58,9 +59,14 @@
 %     \subsection{#2}
 % }
 
+% Секции и сабсекции
+% \definecolor{darkblue}{HTML}{000099}
+% \newcommand{\sbs}[1]{\subsection{\textcolor{darkblue}{#1}}}
+% \renewcommand{\sec}[1]{\section{\textcolor{darkblue}{#1}}}
 \newcommand{\sbs}[2]{
 \setcounter{subsection}{\numexpr #1 - 1 \relax}
     \textcolor{ugreen}{
         \subsection{#2}
         }
 }
+
