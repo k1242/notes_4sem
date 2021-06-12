@@ -64,12 +64,12 @@
     \end{equation*}
     Неравенство же можем получить из выпуклости логарифма
     \begin{equation*}
-        \ln(\alpha f + \beta g) \geq \alpha \ln f + \beta \ln g, \hspace{2.5 mm} \alpha + \beta = 1,
+        \ln(\alpha a + \beta b) \geq \alpha \ln a + \beta \ln b, \hspace{2.5 mm} \alpha + \beta = 1,
         \hspace{0.5cm} \Rightarrow  \bigg/ \left.\begin{aligned}
             \alpha = p^{-1} \\
             \beta = q^{-1}
         \end{aligned}\right. \bigg/ \Rightarrow\hspace{0.5cm}
-        \ln\left(\frac{f}{p} + \frac{b}{q}\right) \geq \frac{\ln f}{p} + \frac{\ln g}{q} = \ln (f^{1/p} g^{1/q}).
+        \ln\left(\frac{a}{p} + \frac{b}{q}\right) \geq \frac{\ln a}{p} + \frac{\ln b}{q} = \ln (a^{1/p} b^{1/q}).
     \end{equation*}
 \end{uproof}
 
@@ -122,7 +122,7 @@
 \begin{uproof}
     В силу предыдущих двух утверждений норма $\|\cdot\|_p$ -- выпуклая функция на $L_p$, тогда, в частности
     \begin{equation*}
-        \left\|\frac{f+g}{2}\right\|_p \leq \left(
+        \left\|\frac{f+g}{2}\right\|_p \leq \frac{1}{2} \left(
             \|f\|_p + \|g\|_p
         \right),
         \hspace{0.5cm} \Rightarrow \hspace{0.5cm}  
