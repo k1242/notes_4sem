@@ -3,20 +3,25 @@
 \begin{to_def}
 	Векторное $E$ -- \textbf{нормировано}, если $\forall v \in E$ имеется $||v||$ такое, что:
 	\begin{itemize}
-		\item Однородность: $||\alpha v|| = |\alpha| ||v||$
-		\item Неравенство треугольника: $||v + w|| \leq ||v|| + ||w||$
-		\item Невырожденность: $||v|| = 0 \Leftrightarrow v = 0$
+		\item Однородность: $\|\alpha v\| = |\alpha| \|v\|$
+		\item Неравенство треугольника: $\|v + w\| \leq \|v\| + \|w\|$
+		\item Невырожденность: $\|v\| = 0 \Leftrightarrow v = 0$
 	\end{itemize}
 \end{to_def}
 
 Можно эквивалентно определить норму единичным шаром с центром в $B_0(1)$:
 \begin{equation*}
-	||x|| = \inf \{|1/t| \mid t x \in B_0(1)\}
+	\|x\| = \inf \{|1/t| \mid t x \in B_0(1)\}
 	\hspace{1 cm}
 	\text{where }
-	B_{c}(r) = \{x \in E \mid ||x-c|| \leq r\}.
+	B_{c}(r) = \{x \in E \mid \|x-c\| \leq r\}.
 \end{equation*}
 
 \begin{to_def}
 	Полное нормированное пространство называется \textbf{банаховым}.
 \end{to_def}
+
+Так например, $L_p$ и $C[a, b]$ (с нормой $\|\cdot\|_{\infty}$) -- банаховы, а $C[a, b]$ в $L_2$ не ялвяется полным. 
+
+
+
