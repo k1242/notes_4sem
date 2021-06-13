@@ -1,0 +1,20 @@
+\sbs{68}{Топология и сходимость в D'}
+\begin{to_def}
+	В $\mathcal{D}'(\mathcal{R})$ используется $\star$-слабая топология соответствующая поточечной сходимости. Предбаза топологии:
+	\begin{equation*}
+		U_{\varphi,a,b} = \{\lambda \in \mathcal{D}'(\mathcal{R}) \mid a < \lambda(\varphi) < \beta\},
+	\end{equation*}
+	для $\varphi \in \mathcal{D}(\mathcal{R})$, $a< b \in \mathcal{R}$. Сходимость в $\mathcal{D}'(\mathcal{R}): \lambda_n \to \lambda_0$ будем понимать в смысле $\forall \varphi \in \mathcal{D}(\mathcal{R}): \lambda_n(\varphi) \to \lambda_0(\varphi)$.
+\end{to_def}
+
+\begin{to_thr}
+	Пусть $(f_k)$ локально интегрируемых: $\int_{-\infty}^{+\infty} f_n(x) d x = 1$. Пусть $\exists C >0 \colon |\int_{a}^{b} f_n(x) d x|<C$ при этом $C$ не зависит $a,b,n$. Пусть ещё $\forall \delta>0$ (внимание, это не дельта-функция):
+	\begin{equation*}
+		\lim_{n \to \infty} \int_{\delta}^{+\infty} f_n(x) d x = \lim_{n \to \infty} \int_{-\infty}^{\delta} = 0.
+	\end{equation*}
+	\textbf{Тогда} $\lambda_{f_n} \to \delta_0$ в смысле $\mathcal{D}'(\mathcal{R})$
+\end{to_thr}
+
+\begin{to_suj}
+	Получаем свойство интергала Дирихле: $\frac{\sin \lambda x}{\pi x} \to \delta_0$ при $\lambda \to \infty$ в смысле сходимости в $\mathcal{D}'(\mathcal{R})$.
+\end{to_suj}
