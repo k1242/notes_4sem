@@ -1,0 +1,55 @@
+\sbs{69}{Дифференцирование обобщенных функций}
+Общая идея выведения действия какой-либо операции на обобщенные функции -- проделать её с регулярной, а затем обобщить и на нерегулярные. Будем теперь писать действия обобщенной функции как: $\lambda_f(\varphi) = \langle \lambda_f, \varphi\rangle$.
+
+\begin{to_def}
+	Производная от обобщенной функции: $\langle \lambda', \varphi \rangle  = - \langle \lambda, \varphi'\rangle$.
+\end{to_def}
+Здесь это вынесено определением, но несложно показать интегрируя по частям функцию с компактным носителем:
+\begin{equation*}
+	\langle \lambda_f', \varphi \rangle = - \int_{-\infty}^{+\infty} f'(x)\varphi(x) d x = - \int_{-\infty}^{+\infty} f(x) \varphi'(x)d x
+\end{equation*}
+Таким образом получили линейный непрерывный функционал.
+
+Можно сформулировать утверждения вытекающие из определения производной:
+\begin{enumerate}
+	\item $\forall f \in \mathcal{D}'$ имеет производные всех порядков;
+	\item Если $(f_k)\to f$ для обобщенных. То и $f_k' \to f'$. И так далее;
+\end{enumerate}
+ 
+ \begin{to_lem}
+ 	Всякий сходящийся ряд из обобщенных функций можно дифференцировать почленно любое количество раз.
+ \end{to_lem}
+
+ И для примера рассмотрим тоже популярную функцию
+ \begin{equation*}
+ 	f(x) = \left\{
+ 	\begin{aligned}
+ 		&1, \, x > 0\\
+ 		&0, \, x \leq 0
+ 	\end{aligned}\right.
+ 	\hspace{0.5 cm}
+ 	\leadsto
+ 	\hspace{0.5 cm}
+ 	\langle \lambda_f,\varphi\rangle = \int_{0}^{\infty} \varphi(x) d x
+ \end{equation*}
+ Это \textbf{Функция Хевисайда} она обладает хайповым свойством -- её производная это дельта-функция:
+ \begin{equation*}
+ 	\langle \lambda_f', \varphi\rangle = - \langle \lambda_f, \varphi'\rangle = - \int_{0}^{\infty} \varphi'(x) d x = \varphi(0).
+ \end{equation*}
+
+Покажем ещё непрерывность в смысле топологии по конспекту Романа Николаевича:
+\begin{equation*}
+	\lambda' \in U_{\varphi,a,b} 
+	\hspace{0.3 cm}
+	\Leftrightarrow
+	\hspace{0.3 cm}
+	a <\lambda'(\varphi) < b 
+	\hspace{0.3 cm}
+	\Leftrightarrow
+	\hspace{0.3 cm}
+	a < - \lambda(\varphi') < b
+	\hspace{0.3 cm}
+	\Leftrightarrow
+	\hspace{0.3 cm}
+	\lambda \in U_{- \varphi', a, b}.
+\end{equation*}

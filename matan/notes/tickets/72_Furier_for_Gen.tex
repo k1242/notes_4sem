@@ -1,0 +1,23 @@
+\sbs{72}{Преобразование Фурье для обобщённый функций}
+Тут нам уже потрубется пространство $\mathcal{S}(\mathcal{R})$. Так как
+\begin{to_def}
+	Преобразование Фурье непрерывно переводит $\mathcal{S}(\mathcal{R})$ в $\mathcal{S}(\mathcal{R})$.
+\end{to_def}
+
+\begin{to_def}
+	$\mathcal{S}(\mathcal{R})$ -- \textbf{пространство бесконечно дифференцируемых функций} $f \colon \mathcal{R} \to \mathcal{C}$, у которрой конечны все полунормы $(k,n \geq 0)$
+	\begin{equation*}
+		||f||_{n,k} = \sup \{x^n f^{(k)}(x) \mid x \in \mathcal{R}\}.
+	\end{equation*}
+\end{to_def}
+
+Соответсвенно можем определить преобразование Фурье:
+\begin{equation*}
+	\langle F[\lambda], \varphi\rangle = \langle \lambda, F[\varphi]\rangle.
+\end{equation*}
+
+Наверное тут хочется посмотреть на хороший пример: обозначим $F[\delta] = \hat{\delta}$, тогда
+\begin{equation*}
+	(\hat{\delta}, \varphi) = (\delta, \hat{\varphi}) = \hat{\varphi}(0) = \frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{+\infty} \varphi(x) e^{- i x y} d x\big|_{y=0} = \frac{1}{\sqrt{2 \pi}} \int_{-\infty}^{+\infty} \varphi(x) d x = \left(\frac{1}{\sqrt{2 \pi}}, \varphi\right)
+\end{equation*}
+Ого, мы полчуили, что $F[\delta] = 1/\sqrt{2\pi}$, а для обратного тогда $F^{-1}[1] = \sqrt{2\pi}\delta$. И подобным же образом получается и прямое преобразование фурье для единицы, что ранее не в обобщенных нам было не доступно.
