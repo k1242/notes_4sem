@@ -1,0 +1,32 @@
+\sbs{67}{Пространство обобщённых функций. Регулярные и нерегулярные}
+\begin{to_def}
+	$\forall$ локально $\text{L}_1 \ni f \colon \mathcal{R} \to \mathcal{R}$ задаёт $\lambda_f \in \mathcal{D}'(\mathcal{R})$ \textbf{регулярные функции}:
+	\begin{equation*}
+		\lambda_f(\varphi) = \int_{-\infty}^{\infty} f(x) \varphi(x) d x
+	\end{equation*}
+\end{to_def}
+
+\begin{to_lem}
+	Локально интегрируемые $f$ и $g$ задаются $\lambda_f = \lambda_g \in \mathcal{D}'(\mathcal{R})$ \textbf{тогда и только тогда}, когда они отличаются на множестве меры нуль. 
+\end{to_lem}
+
+Помимо регулярных в пространстве $\mathcal{D}'$ лежат ещё нерегулярные. Давайте посмотрим на самую популярную из них.
+
+\begin{to_def}
+	\textbf{Дельта-функция} или функция Дирака
+	\begin{equation*}
+		\lambda_\delta (\varphi)= \int_{-\infty}^{\infty} \delta(x) \varphi(x) d x = \varphi(0),
+		\hspace{0.5 cm}
+		\int_{-\infty}^{\infty} \delta(x) d x = 1
+		\hspace{0.5 cm}
+		\delta(x) = \left\{
+		\begin{aligned}
+			&0, \, &x \neq 0\\
+			&\infty, \, &x = 0
+		\end{aligned}\right.
+	\end{equation*}
+	Также можно говорить о смещенной дельтта-функции:
+	\begin{equation*}
+		\lambda_\delta (\varphi) = \int_{-\infty}^{\infty} \delta(x-a) \varphi(x) d x = \varphi(a)
+	\end{equation*}
+\end{to_def}
