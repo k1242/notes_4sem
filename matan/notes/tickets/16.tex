@@ -35,17 +35,17 @@
         \left\|f - \sum_{k=1}^N c_k \varphi_k \right\|_2^2 = 
         \|f\|_2^2 - \sum_{k=1}^{N} |c_k|^2 \|\varphi_k\|_2^2,
         \hspace{0.7 cm} \Rightarrow \hspace{0.7   cm}
-        \|f\|_2^2 \geq  \sum_{k=1}^{\infty} |c_k|^2 \|\varphi_k\|^2_2,
+        \|f\|_2^2 \geq  \sum_{k=1}^{N} |c_k|^2 \|\varphi_k\|^2_2,
         \hspace{0.5cm} \overset{\mathrm{trig}}{\Rightarrow}  \hspace{0.5cm}
         \|f\|_2^2 \geq 2\pi \sum_{k=-n}^n |c_k|^2.
     \end{equation*}
-    \red{Точно ли до $n$?}
+    % \red{Точно ли до $n$?}
 \end{to_lem}
 
 \begin{to_lem}[Представление действительнозначной функции]
     Для действительнозначной функции представление в виде ряда Фурье перепишется в виде
     \begin{equation*}
-        f = a_0 + \sum_{k=0}^{n} (a_k \cos kx + b_k \sin kx),
+        f = a_0 + \sum_{k=1}^{n} (a_k \cos kx + b_k \sin kx),
         \hspace{0.25 cm}
         a_0 = \frac{1}{2\pi} \int_{-\pi}^{+\pi} f(x) \d x,
         \hspace{2.5 mm} 

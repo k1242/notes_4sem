@@ -14,7 +14,7 @@
     \begin{equation*}
         T_n (f, x) \to f(x)
     \end{equation*}
-    равномерно $x \in [a, b]$ при $n \to \infty$.
+    равномерно по $x \in [a, b]$ при $n \to \infty$.
 \end{to_thr}
 
 \begin{uproof}
@@ -25,7 +25,9 @@
         \bigg|  \leq 
         C \int_{-\delta}^{\delta} \frac{|t|^\alpha}{2\pi}
         \frac{1}{|\sin t/2|} \d t \leq 
-        \frac{C}{2} \int_{-\delta}^{\delta} |t|^{\alpha-1} \d t = \frac{C}{\alpha} |\delta|^\alpha,
+        \frac{C}{2} \int_{-\delta}^{\delta} |t|^{\alpha-1} \d t \leq \frac{C}{\alpha} |\delta|^\alpha,
     \end{equation*}
     где мы воспользовались мыслью, что $\pi |\sin t/2| \geq t$ на $[-\pi, \pi]$. По произвольности $\delta$ и равномерного принципа локализации следует, что $T_n[f](x) - f(x)$ может быть равномерно сделано сколь угодно маленьким при некотором $\delta > 0$ и $n$. 
 \end{uproof}
+
+
