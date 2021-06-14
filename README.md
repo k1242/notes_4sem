@@ -6,6 +6,7 @@
 [*задание*](https://github.com/k1242/notes_4sem/blob/main/anmec/hw/anmec_hw_4sem.pdf),
 [*заметки с семинаров*](https://github.com/k1242/notes_4sem/blob/main/anmec/notes/anmec_notes.pdf),
 [*теория :hammer:*](https://github.com/k1242/notes_4sem/blob/main/anmec/tickets/anmec_tickets.pdf),
+[*программа*](https://github.com/k1242/notes_4sem/blob/main/anmec/tickets/anmec_program.pdf),
 );
 
 *  **теория поля**
