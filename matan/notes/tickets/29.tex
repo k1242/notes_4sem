@@ -1,0 +1,40 @@
+\sbs{29}{Принцип локализации для интеграла Фурье}
+
+
+
+
+\begin{to_def}
+    Равномерная сходимость несоственного интеграла
+    \begin{equation*}
+        \int_a^\beta f(x, y) \d x \rr \int_a^{*b} f(x, y) \d x,
+    \end{equation*}
+    при $\beta \to b -0$ является равномерной по $y \in Y$, где $Y$ -- некоторое множество параметров. 
+\end{to_def}
+
+\begin{to_lem}
+    Возможно дифференирования равномерно сходящегося интеграла по параметру. Пусть интеграл
+    \begin{equation*}
+        I(y) = \int_{a}^{*b} f(x, y) \d x
+    \end{equation*}
+    сходится хотя бы в одной точке $y \in (c, d)$, а интеграл 
+    \begin{equation*}
+        J(y) = \int_{a}^{*b} f_y' (x, y) \d x
+    \end{equation*}
+    сходится равномерно по $y \in (c, d)$. Пусть также $|f'_y (x, y) | \leq g(x)$ для некоторой функции $g$, имеющей конечные интегралы на всех отрезках $[\alpha, \beta] \subset [a, b)$. Тогда $I(y)$ сходится равномерно по $y \in (c, d)$ и $I'(y) = J(y)$. 
+\end{to_lem}
+
+
+
+\begin{to_thr}[]
+    Предположим функция $f \in L_1 (\mathbb{R})$ ограничена на $[a, b]$, тогда в выражении
+    \begin{equation*}
+        T_h (f, x) - f(x) = \int_{-\delta}^{\delta} \left(
+            f(x+t) - f(x)
+        \right) D_h (t) \d t + \, v.p. \ 
+        \int_{|t| \geq \delta} \left(
+            f(x+t) - f(x)
+        \right) D_h (t) \d t
+    \end{equation*}
+    при фиксированном $\delta > 0$ второй интеграл стремится к нулю равномерно по $x\in [a, b]$ при $h \to + \infty$. 
+\end{to_thr}
+

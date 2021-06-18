@@ -1,0 +1,73 @@
+\sbs{32}{Пространство \texorpdfstring{$S$}{S} и его инвариантность}
+
+
+\begin{to_def}
+    Пространство $cal S (\mathbb{R})$ -- пространство бесконечно дифференцируемых функций $f\colon \mathbb{R} \mapsto \mathbb{C}$, у которых конечны все полунормы ($k,\, n \geq 0$) вида
+    \begin{equation*}
+        \|f\|_{n,k} = \sup\left\{
+            |x^n f^{(k)} (x) \mid x \in \mathbb{R}
+        \right\}.
+    \end{equation*}
+    Другими словами все их производны убывают на бесконечности быстрее любой степени. 
+\end{to_def}
+
+Так, например, $e^{-x^2/2}$ лежит в $\mathcal S (\mathbb{R})$. 
+
+
+
+\begin{to_def}
+    Последовательность $(f_m)$ функций из $\mathcal S (\mathbb{R})$ стремится к $f_0$, если для любых $n,\, k \geq 0$
+    \begin{equation*}
+        \|f_m - f_0\|_{n, k} \to 0, \hspace{5 mm}  m \to \infty.
+    \end{equation*}
+\end{to_def}
+
+
+Также можем определить топологию на $\mathcal S(\mathbb{R})$, объявив предбазовыми открытми окрестностями функции $f_0 \in \mathcal S(\mathbb{R})$ множества
+\begin{equation*}
+    U_{n. k, \varepsilon} (f_0) = \left\{
+        f \in \mathcal S(\mathbb{R}) \\medskip
+        \|f-f_0\|_{n, k} < \varepsilon
+    \right\},
+\end{equation*}
+объявив базовыми окрестностями $f_0$ любые конечные пересечения предбазовых окрестностей $f_0$ и объявив открытыми те множества, которые содержат каждый свой элемент вместе со своей базовой открытой окрестностью. 
+
+\begin{to_thr}[]
+    Преобразование Фурье непрерывно переводит $\mathcal S\left(\mathbb{R}\right)$ в $\mathcal S(\mathbb{R})$. 
+\end{to_thr}
+
+\begin{uproof}
+    Заметим, что $\sup |F[f]|$ ограничен $L_1$-нормой $\|f\|_1$ с точностью до константы. Также заметим, что
+    \begin{equation*}
+        \|f\|_1 \leq \pi\left(
+            \|f\|_{0, 0} + \|f\|_{2, 0}
+        \right),
+    \end{equation*}
+    так как если $|f| \leq M$ и $|x^2 f| \leq N$, то всюуда $(1+x^2)|f| \leq M + N$ и интеграл от $|f|$ не более $M + N$  на интеграл от $\frac{1}{x^2+1}$, который равен $\pi$. 
+
+    Тогда можем ограничить $\|F[f]\|_{0, 0}$ в терминах полунорм исходной функции $f$. Если же нас интересует упремум выражения вида
+    \begin{equation*}
+        y^n \frac{d^k}{d y^k}  F[f],
+    \end{equation*}
+    то с точностью до константы это выражение является преобразованием Фурье от
+    \begin{equation*}
+        \frac{d^n}{dx^n} \left(x^k f(x)\right).
+    \end{equation*}
+    Тогда, по формуле Лейбниа, имеет место выражение ... которое приведет нас к оценке вида
+    \begin{equation*}
+        \|F[f]\|_{n, k} \leq \sum_{k' \leq k + 2,\, n' \leq n} C_{k', n', k, n} \|f\|_{k', n'},
+    \end{equation*}
+    которая доказывает определенность Фуре как линейного отображения $\mathcal S (\mathbb{R}) \mapsto \mathcal S (\mathbb{R})$. Отсюда же получаем и непрерывность преобразования Фурье по Гейне. 
+\end{uproof}
+
+Также, по Коши, можно показать, что для любой базовой окрестности $U \ni F[f_0]$ найдётся базовая окрестность $V \ni f_0$, такая что $F(V) \subseteq U$. 
+
+\begin{to_thr}[Формула суммирования Пуассона]
+    Для функции $f \in \mathcal S (\mathbb{R})$ верна формула
+    \begin{equation*}
+        \sum_{n \in \mathbb{Z}} f(2 \pi n) = \frac{1}{\sqrt{2\pi}} \sum_{n \in \mathbb{Z}} \hat{f}(n).
+    \end{equation*}
+\end{to_thr}
+
+
+

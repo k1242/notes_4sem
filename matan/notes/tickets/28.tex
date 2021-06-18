@@ -1,0 +1,31 @@
+\sbs{28}{Представление функции интегралом Фурье, свёртка с ядром Дирихле для интеграла Фурье}
+
+
+
+Представление функции \textit{интегралом Фурье} -- формула вида
+\begin{equation*}
+    f(x) \sim v.p.\ \int_{-\infty}^{+\infty}  c(y) e^{ixy} \d y,
+\end{equation*}
+где по аналогии с коэффициентами ряда Фурье
+\begin{equation*}
+    c(y) = \frac{1}{2\pi} \, v.p. \ \int_{-\infty}^{+\infty} f(x) e^{-ixy} \d x,
+\end{equation*}
+что будет сходиться  к определенным достаточно хорошим функциям.    
+
+
+Введем также \textit{частичный интеграл Фурье}:
+\begin{equation*}
+    T_h (f, x) = \int_{-h}^{h} c(y) e^{ixy} \d y = \frac{1}{2\pi} \int_{-h}^{h} \left(
+        v.p. \int_{-\infty}^{+\infty} f(\xi) e^{-(\xi-x)y} \d \xi
+    \right) \d y.
+\end{equation*}
+Далее будем считать $f \in L_2 (\mathbb{R})$, тогда можем опустить $v.p.$ и перейти к $t =  \xi - x$, тогда после теоремы Фубини (\red{написать}) получится формула
+\begin{equation*}
+    T_h (f, x) = \int_{-\infty}^{+\infty} f(x+t) D_h (t) \d t,
+    \hspace{10 mm} 
+    D_h(t) = \frac{1}{2\pi} \int_{-h}^{h}  e^{ity} \d y = \frac{\sin ht}{\pi t},
+\end{equation*}
+где $D_h (t)$ уместно назвать \textit{ядром Дирихле для интеграла Фурье}. 
+
+
+

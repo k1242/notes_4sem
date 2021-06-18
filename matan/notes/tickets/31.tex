@@ -1,0 +1,53 @@
+\sbs{31}{Преобразование Фурье}
+
+Сделаем переход от $f(x)$ к $c(y)$ и обратно чуть более симметричным перейдя к константам в выражениях $1/\sqrt{2\pi}$:
+\begin{equation*}
+    \hat{f}(y) = F[f] = \frac{1}{\sqrt{2\pi}} \, v.p.\ \int_{-\infty}^{+\infty} 
+    f(x) e^{-ixy} \d x,
+\end{equation*}
+и обратное преобразование Фурье
+\begin{equation*}
+    \tilde{f}(y) = F^{-1}[f] = \frac{1}{\sqrt{2\pi}} \, v. p. \ 
+    \int_{-\infty}^{+\infty} f(x) e^{ixy} \d x.
+\end{equation*}
+
+В случаяъ, когда функция $f$ представляется интегралом Фурье, можем утверждать, что выполняется $f = F^{-1}[F[f]]$ и $f = F[F^{-1}[f]]$ -- \textit{формула обращения для преобразования Фурье}. 
+
+
+\begin{to_thr}[Производная преобразования Фурье]
+    Если $f$, $xf \in L_1(\mathbb{R})$, то 
+    \begin{equation*}
+        \frac{d }{d y} F[f] = - i F[xf].
+    \end{equation*}
+\end{to_thr}
+
+\begin{uproof}
+    Продифференцируем под знаком интеграла и ограничим полученное выражение независимо от параметра $y$ функцией $|xf|$ с конечным интегралом. 
+\end{uproof}
+
+
+\begin{to_thr}[Преобразование Фурье производной]
+    Пусть $f \in L_1(\mathbb{R})$, является абсолютно непрерывной, и её определенная почти всюду всюду производная $f'$ тоже лежит в $L_1 (\mathbb{R})$. Тогда
+    \begin{equation*}
+        F[f'] = i y F[f].
+    \end{equation*}
+\end{to_thr}
+
+\begin{uproof}
+    По определению:
+    \begin{equation*}
+        \int_{-\infty}^{+\infty}  f'(x) e^{-ixy} \d x = 
+        f(x) e^{-ixy} \bigg|_{-\infty}^{+\infty} + iy \int_{-\infty}^{+\infty} 
+        f(x) e^{-ixy} \d x.
+    \end{equation*}
+    Осталось заметить, что $f(x)$ имеет нулевые предела на бесконечности. 
+\end{uproof}
+
+
+
+\begin{to_lem}[Преобразование Фурье для гауссовой плотности]
+    Выполняется формула 
+    \begin{equation*}
+        F\left[e^{-x^2/2}\right] = e^{-y^2/2}. 
+    \end{equation*}
+\end{to_lem}

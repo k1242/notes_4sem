@@ -1,0 +1,66 @@
+% разложить cos[x]^6 
+
+
+
+\sbs{33}{Унитарность преобразования Фурье относительно стандартного скалярного произведения}
+
+
+Установим сохранение скалярного произведения и $L_2$-нормы преобразования Фурье. Сначала цстановим для пространства $\mathcal S (\mathbb{R})$, для которого с интегралами в определении пробразования Фурье можно работать напрямую.
+
+\begin{to_thr}[]
+    Для функций $f,\, g \in \mathcal S (\mathbb{R})$ имеет место унитарность преобразования Фурье (равенство Парсеваля):
+    \begin{equation*}
+        \left(\hat{f}, \hat{g}\right) = (f, g),
+    \end{equation*}
+    где скалярное произведение:
+    \begin{equation*}
+        (f,\, g) = \int_{-\infty}^{+\infty}  f(x) \overline{g(x)} \d x.
+    \end{equation*}
+\end{to_thr}
+
+\begin{uproof}
+В силу работы в $\mathcal S (\mathbb{R})$ применима теорема Фубини:
+\begin{equation*}
+    \left(\hat{f}, \hat{g}\right) = \int_{-\infty}^{+\infty}    
+    \hat{f} (y)
+    \overline{\hat{g}(y)} \d y = 
+    \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{+\infty}  \int_{-\infty}^{+\infty} 
+    f(x) e^{ixy} \overline{\tilde{g}(y)} \d x \d y = 
+    \int_{-\infty}^{+\infty} f(x) \overline{g(x)} \d x.
+\end{equation*}
+\end{uproof}
+
+\begin{to_con}
+    Преобразования Фурье продолжается до унитарного оператора $F \colon  L_2(\mathbb{R}) \mapsto L_2(\mathbb{R})$.
+\end{to_con}
+
+
+Вообще не очевидно что мы можем как-то явно задать Фурье над $L_2$, ведь $L_2 (\mathbb{R}) \not \subseteq L_1\left(\mathbb{R}\right)$. Однаков в 1966 году было доказано, что явные формулы преобразования Фурье работают для функций из $L_2 (\mathbb{R})$ для почти всех значений аргумента. 
+
+\begin{to_lem}
+    Если функция $f \in L_2 (\mathbb{R})$ имеет компактный носитель, то её преобразование Фурье почти всюду совпадает с преобразованием Фурье из предыдущего следствия. 
+\end{to_lem}
+
+
+
+\begin{to_thr}[]
+    Для любой функции $f \in L_2 \left(\mathbb{R}\right)$ её преобразование Фурье $\hat{f}$ определенное раннее является пределом в $L_2$-норме её частичных преобразований Фурье
+    \begin{equation*}
+        \left\|
+            \hat{f} - \frac{1}{\sqrt{2\pi}} \int_{-h}^{h}  f(x) e^{-ixy} \d x
+        \right\|_2 \to 0, \hspace{5 mm} h \to + \infty.
+    \end{equation*}
+    То же верно для обратного преобразования Фурье. 
+\end{to_thr}
+
+
+
+
+\begin{to_lem}[Соотношение неопределенностей для преобразования Фурье]
+    Для любой функции $f \in \mathcal S(\mathbb{R})$ и любых двух чисел $x_0,\, y_0 \in \mathbb{R}$ выполняется неравенство
+    \begin{equation*}
+        \|(x-x_0) f(x)\|_2 \cdot \|(y-y_0) \hat{f} (y)\|_2 \geq \frac{1}{2} \|f\|_2^2.
+    \end{equation*}
+\end{to_lem}
+
+
