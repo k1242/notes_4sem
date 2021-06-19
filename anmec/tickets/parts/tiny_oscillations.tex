@@ -1,0 +1,99 @@
+Запишем уравнения Лагранжа для консервативной голономной системе:
+\begin{equation*}
+    \frac{d }{d t} \frac{\partial L}{\partial \dot{q}} - \frac{\partial L}{\partial q} = 0,
+    \hspace{1 cm}
+    q \in  M^n;
+    \hspace{1 cm}
+    q, \dot{q} \in T M^n.
+\end{equation*}
+Тогда можно сказать, что
+\begin{equation*}
+    L(q, \dot{q}, t) \colon TM^n \times \mathbb{R}^1 \mapsto \mathbb{R}^1.
+\end{equation*}
+Параллельным переносом выберем $q=0$ -- положение равновесия. Тогда считаем, что $q(t), \ \dot{q}(t) \in \varepsilon$ -- окрестности. В идеале мы хотим всё линеаризовать, тогда 
+\begin{equation*}
+    T = T_2 + T_1 + T_0 = T_2 = \frac{1}{2} \dot{q}^i \dot{q}^j A_{ij} (q) \approx \frac{1}{2} \dot{q}\T A(0) \dot{q} + \ldots,
+    \hspace{1 cm}
+    A(0) = \frac{\partial^2 T(0)}{\partial \dot{q}\T \partial \dot{q}}.
+\end{equation*}
+ т. к. для консервативных систем $T_1 = T_0 = 0$. 
+
+Аналогично можем сделать для потенциальной энергии
+\begin{equation*}
+    \Pi = \Pi (0) + \frac{\partial \Pi(0)}{\partial q\T} q 
+    + \frac{1}{2} q\T \frac{\partial^2 \Pi (0)}{\partial q\T \partial q} q + \ldots
+    \approx \frac{1}{2} q\T C(0) q,
+    \hspace{1 cm}
+    C(0) = \frac{\partial^2 \Pi(0)}{\partial q\T \partial q}.
+\end{equation*}
+Таким образом мы пришли к уравнениям вида
+\begin{equation*}
+    \frac{d }{d t} \frac{\partial T}{\partial \dot{q}} - \frac{\partial T}{\partial q} = - \frac{\partial \Pi}{\partial q} 
+    \hspace{1 cm} \Rightarrow \hspace{1 cm}
+    \boxed{
+    A \ddot{q} + C q = 0.
+    }
+\end{equation*}
+Последнее уравнение называется \textit{уравнением малых колебаний}. Важно, что $A$ -- положительно определена,  в силу невырожденности уравнений на $\ddot{q}$ уравнений Лагранжа.
+
+Из линейной алгебры понятно, что существуют координаты $\vc{\theta} \in M^n$, а также невырожденная матрица перехода к новым координатам $U \colon \vc{q} = U \vc{\theta}$, и $U\T A U = E, \ U\T C U = \Lambda$ -- диагональная матрица. Тогда верно, что
+\begin{equation*}
+    T = \frac{1}{2} \dot{\vc{q}} A \dot{\vc{q}} = \frac{1}{2} \dot{\vc{\theta}}\T U\T A U \dot{\vc{\theta}} = 
+    \frac{1}{2} \sum_{i=1}^{n} \dot{\theta}_i^2.
+\end{equation*}
+Аналогично для потенциальной энергии
+\begin{equation*}
+    \Pi = \frac{1}{2} \vc{q}\T C q = \frac{1}{2} \vc{\theta}\T U\T C U \vc{\theta} 
+    = \frac{1}{2} \vc{\theta}\T \Lambda \vc{\theta}
+    = \frac{1}{2} \sum_{i=1}^{n} \lambda _i \theta_i^2
+    .
+\end{equation*}
+Это ещё сильнее упрощает уравнения Лагранжа:
+\begin{equation*}
+    A \ddot{\vc{q}} + C \vc{q} = 0
+    \hspace{1 cm} \to \hspace{1 cm}
+    \ddot{\theta}_i + \lambda_i \theta_i = 0, 
+    \hspace{0.5 cm}
+    i = 1, \ldots, n.
+\end{equation*}
+Здесь $\lambda_i$ -- действительные диагональные элементы $\Lambda$. При различных $\lambda$ получаем, что
+\begin{align*}
+    \lambda_i > 0 
+    \hspace{1 cm} \Rightarrow \hspace{1 cm}
+    & \theta_i = c_i \sin (\sqrt{\lambda_i} t + \alpha_i); \\
+    \lambda_i = 0 
+    \hspace{1 cm} \Rightarrow \hspace{1 cm}
+    & \theta_i = c_i t + \alpha_i.; \\
+    \lambda_i < 0 
+    \hspace{1 cm} \Rightarrow \hspace{1 cm}
+    & \theta_i = c_i \exp( \sqrt{-\lambda_i} t) + \alpha_i \exp(-  \sqrt{-\lambda_i} t). \\
+\end{align*}
+где последние два -- уже не  колебаниям.
+
+
+Возвращаясь к удобной форме, получаем, что
+\begin{equation*}
+    \vc{q} = U \vc{\theta} = \sum_{i=1}^{n} c_i \vc{u}_i \sin (\sqrt{\lambda_i} t + \alpha_i),
+\end{equation*}
+где $\vc{u}_i$ -- амплитудный вектор $i$-го главного колебания.
+\texttt{Таким образом консервативная система движется по суперпозиции некоторых главных колебаний (гармонических осцилляций).} 
+
+Иначе мы можем интерпретировать это так, что кинетическая энергия\footnote{
+    Переписать грамотнее.
+} образует некоторую метрику, а амплитудные вектора образуют некоторый ортонормированный базис.
+\begin{equation*}
+    U\T A U = E
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \vc{u}\T_i A \vc{u}_j = \delta_{ij}
+\end{equation*}
+
+
+% \subsection{Решение задач}
+
+Получив матрицы $A, \ C$ переходим к $[C - \lambda A] \vc{u} = 0$, получая
+\begin{equation*}
+    | C - \lambda A| = 0,
+\end{equation*}
+что называют \textit{вековым уравнением}, или \textit{уравнением частот}. Из него получим $\lambda_1, \ldots, \lambda_n$,  и уже перейдём к системе уравнений вида $|C - \lambda_i A| \vc{u}_i = 0$.
+
+

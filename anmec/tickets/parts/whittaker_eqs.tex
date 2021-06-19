@@ -1,0 +1,83 @@
+Если $\partial H / \partial t = 0$, то $H(q, p) = h$, где $h = \const$ определяемая из н.у. В $2n$-мерном пространстве $q, \ p$ интеграл Якоби задаёт гиперповерхность, рассмотрим движение с $H = h$.
+
+Такое движение описывается системой с $2n-2$ уравнений, причём она может быть записана в виде канонических уравнений. Пусть $\partial H / \partial p_1 \neq 0$, тогда
+\begin{equation*}
+    p_1 = - K(q^1, \ldots, q^n, p_2, \ldots, p_n, h),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \left\{\begin{aligned}
+        \dot{q}^i &= \frac{\partial H}{\partial p_i}, \\
+        \dot{p}_j &= - \frac{\partial H}{\partial q^j}        
+    \end{aligned}\right.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \frac{d q^j}{d q^1} = \frac{
+    \left(\dfrac{\partial H}{\partial p_j} \right)
+    }{
+    \left(\dfrac{\partial H}{\partial p_1} \right)
+    },
+    \hspace{0.5cm} 
+    \frac{d p_j}{d q^1} = - \frac{
+    \left(\dfrac{\partial H}{\partial q^j}\right)
+    }{
+    \left(\dfrac{\partial H}{\partial p_1} \right)
+    },
+\end{equation*}
+для $j = 2,\ 3,\ \ldots,\ n$. Подставляя $p_1$ получим
+\begin{align*}
+    &\frac{\partial H}{\partial q^j} - \frac{\partial H}{\partial p_1} \frac{\partial K}{\partial q^j} = 0,
+    &(j = 2, \ 3, \ \ldots, n);
+    \\
+    &\frac{\partial H}{\partial p_j} - \frac{\partial H}{\partial p_1} \frac{\partial K}{\partial p_j}  = 0,
+    &(j = 2, \ 3, \ \ldots, n).
+\end{align*}
+Допиливая до надлежащего вида, окончательно находим
+\begin{equation*}
+    \frac{d q^j}{d q^1} = \frac{\partial K}{\partial p_j},
+    \hspace{1cm} 
+    \frac{d p_j}{d q^1} = - \frac{\partial K}{\partial q^j},
+    \hspace{1cm} 
+    (j = 2, \ 3, \ \ldots, n).
+\end{equation*}
+Эти уравнения описывают движения системы при $H = h = \const$, и называются \textit{уравнениями Уиттекера}. 
+
+% \hrulefill
+
+\subsubsection*{Уравнения Якоби}
+
+
+Уравнения Уиттекера имеют структуру уравнений Гамильтона, соответственно их можно записать в виде уравнений типа Лагранжа, при гессиане $K$ по $p$ неравным 0. Пусть $P$ -- преобразование Лежандра функции $K$ по $p_j$ ($j = 2, \ 3,\ \ldots,\ n$). Тогда
+\begin{equation*}
+    P = P(q^2, \ldots, q^n, \tilde q^2, \ldots, \tilde q^n, q^1, h) = \sum_{j = 2}^{n} \tilde q^j p_j - K,
+\end{equation*}
+где $\tilde q^{j} = d q^j / d q^1$. Величины $p_j$ выражаются через $\tilde q^2, \ \ldots, \ \tilde q_n$ из уравнений 
+\begin{equation*}
+    \tilde q^j = \frac{\partial K}{\partial p_j}, \hspace{0.5cm} 
+    (j = 2, \ 3, \ \ldots, n),
+\end{equation*}
+т.е. из первых $n-1$ уравнений Уиттекера. При помощи функции $P$ эти уравнения могут быть записаны в эквивалентной форме:
+\begin{equation*}
+    \frac{d }{d q^1} \frac{\partial P}{\partial q_j'} - \frac{\partial P}{\partial q^j} = 0
+    \hspace{1cm} (j = 2,\ 3,\ \ldots,\ n).
+\end{equation*}
+Это уравнения типа Лагранжа, называются \textit{уравнениями Якоби}.
+
+Преобразовывая выражение для $P$ найдём, что
+\begin{equation*}
+    P = \sum_{j=2}^{n} q_j \tilde q^j + p_1 = 
+    \sum_{i=1}^{n} p_1 \tilde q_i = \frac{1}{\dot{q}^1} \sum_{i=1}^{n} p_i \dot{q}^i = \frac{1}{\dot{q}^1} (L+H).
+\end{equation*}
+Тогда в случае консервативной системы $L = T - \Pi$, $H = T + \Pi$, и
+\begin{equation*}
+    P = \frac{2T}{\dot{q}^1},
+    \hspace{0.5cm} 
+    T = \frac{1}{2} a_{ik} \dot{q}^i \dot{q}^k = (\dot{q}^1)^2 G(q^1, \ldots, q^n, \tilde q^2, \ldots, \tilde q^n),
+    \hspace{0.5cm} 
+    G = \frac{1}{2} a_{ik} \tilde q^i \tilde q^k.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \tilde q^1 = \sqrt{\frac{h-\Pi}{G} }
+\end{equation*}
+Таким образом выражение для 
+\begin{equation*}
+    P = 2 \sqrt{(h-\Pi)G }.
+\end{equation*}
+
+

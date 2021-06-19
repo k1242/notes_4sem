@@ -1,0 +1,129 @@
+Давайте испортим консервативность так, чтобы
+\begin{equation*}
+    \frac{d }{d t} \frac{\partial T}{\partial \dot{q}^i} - \frac{\partial T}{\partial q^i} = - \frac{\partial \Pi}{\partial q^i} + Q_i(t).
+\end{equation*}
+Как выяснили раннее
+\begin{equation*}
+    q = U  \theta. \hspace{1 cm}
+    U\T A U = E, U\T C U = \Lambda.
+\end{equation*}
+Посчитаем элементарную работу добавленной силы
+\begin{equation*}
+    \delta A = Q_i \delta q^i = \Theta\T \delta \theta = Q\T U \delta \theta,
+\end{equation*}
+тогда можно записать, что
+\begin{equation*}
+    \Theta = U\T Q, \hspace{1 cm} Q = \left(U\T\right)^{-1} \Theta,
+\end{equation*}
+то есть \textit{преобразование обобщенных сил}. То есть уравнение приходит к виду
+\begin{equation*}
+    A \ddot{q} + C q = Q(t),
+    \hspace{0.5cm} \overset{\text{бог с индексами}}{=}  \hspace{0.5cm}
+    \ddot{q}_i + \lambda_i \theta_i = \Theta_i (t).
+\end{equation*}
+Тогда ответ запишется в виде
+\begin{equation*}
+    q = \sum_{i=1}^{n} c_i \vc{u}_i \sin \left(
+        \sqrt{\lambda_i} \, t + \alpha_i
+    \right) + 
+    \sum_{i=1}^{n} \vc{u}_i \theta^*_i (t),
+\end{equation*}
+где вторая сумма соотвествует \textit{вынужденным колебаниям}, а первая свободным гармоническим колебаниям. 
+
+Пусть так вышло, что 
+\begin{equation*}
+    % \theta_i (t) = a_i \sin (\Omega t),
+    % \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \left\{\begin{aligned}
+        \theta_i^* &= b_i \sin \left(\Omega t\right) \\
+        \Theta_i (t) &= a_i \sin \left(\Omega t\right)
+    \end{aligned}\right.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    b_i \left(
+        \lambda_i - \Omega^2
+    \right) = a_i,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \theta_i^* = \frac{a_i}{\lambda_i - \Omega^2} \sin \left(\Omega t\right).
+\end{equation*}
+В случае же \textit{резонанса} ищем решение в виде
+\begin{equation*}
+    \theta_i^* (t) = b_i t \cos\left(\Omega t\right),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    b_i = -\frac{a_i}{2 \Omega}.
+\end{equation*}
+И здесь мы видим первые звоночки от Пуанкаре, о конце линейной теории.
+
+
+\subsubsection*{Диссипативные системы}
+
+И снова испортим консервативную систему до диссипативной,
+\begin{equation*}
+    \frac{d }{d t} \frac{\partial T}{\partial \dot{q}^i} - \frac{\partial T}{\partial q^i} = - \frac{\partial \Pi}{\partial q^i} + \tilde Q_i(\dot{q}) = Q_i(q, \dot{q}).
+\end{equation*}
+С кинетической всё как обычно, тогда
+\begin{equation*}
+    T = \frac{1}{2} \dot{\vc{q}}\T A \dot{\vc{q}};
+    \hspace{1 cm}
+    \vc{Q} = \vc{Q}(0) + \frac{\partial \vc{Q}}{\partial \vc{q}\T} \vc{q} + \frac{\partial \vc{Q}(0)}{\partial \dot{\vc{q}}\T} \dot{\vc{q}} = - C \vc{q} - B \dot{\vc{q}}.
+\end{equation*}
+Где ввели матрицы вида
+\begin{equation*}
+    C = - \frac{\partial \vc{Q}(0)}{\partial \vc{q}\T};
+    \hspace{1 cm}
+    B = - \frac{\partial \vc{Q} (0)}{\partial \dot{\vc{q}}\T}.
+\end{equation*}
+В таком случае уравнение примет вид
+\begin{equation}
+    A \ddot{\vc{q}} + B \dot{\vc{q}} + C \vc{q} = 0,
+\end{equation}
+получили \textit{линеаризация уравнений Лагранжа I}.
+Но его сходу к каноническом виду не привести.
+
+Вспомним, что энергия системы
+\begin{equation*}
+    E = \frac{1}{2} \dot{\vc{q}} \cdot A \dot{\vc{q}} + \frac{1}{2} \vc{q} \cdot C \vc{q},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \frac{d E}{d t} = A \ddot{\vc{q}} \cdot \dot{\vc{q}} + C \vc{q} \cdot \dot{\vc{q}} =
+    \left[
+        A \ddot{\vc{q}} + C \vc{q}
+    \right] \cdot \dot{\vc{q}} = - B \dot{\vc{q}}^2 = N.
+\end{equation*}
+И пошла классификация: если $N \equiv 0$, то силы называем \textit{гироскопическими}. Если $N \leq 0$, то силы \textit{диссипативные}. 
+
+
+\begin{to_def}
+    Положение равновесия $\vc{q}^*$ называется \textit{асимптотически устойчивым}, если оно устойчиво \textbf{и} 
+    \begin{equation*}
+        \exists \delta \colon  \forall\,  |\dot{\vc{q}}| < \delta, \, |\vc{q}| < \delta \ \ 
+        \lim_{t \to \infty} \vc{q}(t) = 0, \ 
+        \lim_{t \to \infty} \dot{\vc{q}}(t) = 0.
+    \end{equation*}
+\end{to_def}
+
+
+Возвращаясь к уравнению, вспомним что решение ищется в виде\footnote{
+    В общем случае решение системы вообще сложнее (при кратных $\lambda$), но качественно всё примерно в таком же духе, поэтому, ну, всё хорошо.
+} 
+\begin{equation*}
+    \vc{q} = \sum_{i=1}^{2n} C_i \vc{u}_i \exp\left(
+        \lambda_i t
+    \right),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \left[
+        A \lambda^2 + B \lambda + C
+    \right] \vc{u} = 0,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \det\left[
+        A \lambda^2 + B \lambda + C
+    \right] = 0,
+\end{equation*}
+тогда мы находим $2n$ решений $\lambda_1, \ldots, \lambda_{2n}$, и, соответственно, $2n$ амплитудных векторов.
+
+
+\begin{to_thr}[Достаточное условие асимптотической устойчивости]
+    Для того, чтобы решение $\vc{q} = \vc{q}^*$ было асимптотически устойчиво достаточно, чтобы
+    \begin{equation*}
+        \Re \lambda_i < 0, \ \ \forall i \in \{1, \ldots, 2n\}.
+    \end{equation*}
+    Если $\exists \lambda_i \colon \Re \lambda_i > 0$, тогда всё не так хорошо.
+\end{to_thr}

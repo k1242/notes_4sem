@@ -1,0 +1,99 @@
+\subsubsection*{Преобразование Лежандра}
+
+\begin{to_def} 
+    В уравнениях Лагранжа второго рода движения голономной системы в потенциальном поле сил, функция Лагранжа зависит от $q, \ \dot{q}, \ t$ -- \textit{переменные Лагранжа}.
+    Если в качестве параметров взять $q, \ p, \ t$, где $p_i$ -- \textit{обобщенные импульсы}\footnote{
+        Обобщенный импульс $p_i$ -- ковектор, а  не вектор!
+    }, определяемые как
+    $
+        p_i = {\partial L}/{\partial \dot{q}^i}.
+    $
+    То получим набор $q, \ p, \ t$ -- \textit{переменные Гамильтона}. 
+\end{to_def}
+
+В силу невырожденности $\partial L / (\partial \dot{q}^i \partial \dot{q}^j) = J_{p}$, то есть по \textit{теореме о неявной функции} эти равенства разрешимы относительно переменных $\dot{q}^i$. Через преобразование Лежандра естественно ввести функцию
+\begin{equation*}
+    H(q, p, t) = p_i \dot{q}^i - L(q, \dot{q}, t),  \hspace{0.5cm} \dot{q} \equiv \dot{q}(q, p, t).
+\end{equation*}
+
+\subsubsection*{Уравнения Гамильтона}
+% Маркеев, п.149.
+
+Полный дифференциал функции Гамильтона можем выразить двумя способами:
+\begin{equation*}
+    \left.\begin{aligned}
+        d H &= \frac{\partial H}{\partial q^i} \d q^i + \frac{\partial H}{\partial p_i} \d p_i + \frac{\partial H}{\partial t} \d t,
+        \\
+        dH &= \dot{q}^i \d p_i - \frac{\partial L}{\partial q^i} \d q^i - \frac{\partial L}{\partial t} \d t.
+    \end{aligned}\right\}
+    \hspace{0.7cm} \Rightarrow \hspace{0.7cm} 
+    \left.\begin{gathered}
+        \frac{\partial H}{\partial t} = - \frac{\partial L}{\partial t} \\
+        \frac{\partial H}{\partial p_i} = \dot{q}^i, \ \ 
+        \frac{\partial H}{\partial q^i} = - \frac{\partial L}{\partial q^i}
+    \end{gathered}\right.
+    \hspace{0.7cm} \Rightarrow \hspace{0.7cm} 
+    \left\{\begin{aligned}
+        \frac{d q^i}{d t} &= \frac{\partial H}{\partial p_i}, \\
+        \frac{d p_i}{d t} &= - \frac{\partial H}{\partial q^i}.    
+    \end{aligned}\right.
+\end{equation*}
+Эти уравнения называются \textit{уравнениями Гамильтона}, или \textit{каноническими уравнениями}.
+
+
+\subsubsection*{Физический смысл функции Гамильтона}
+
+Пусть система натуральна, тогда $L = L_2 + L_1 + L_0$, и, соотвественно,
+\begin{equation*}
+    H = \frac{\partial L}{\partial \dot{q}^i} \dot{q}^i - L.
+\end{equation*}
+По теореме Эйлера об однородных функциях
+\begin{equation*}
+    \frac{\partial L_2}{\partial \dot{q}^i} \dot{q}^i = 2 L_2,
+    \hspace{1cm} 
+    \frac{\partial L_1}{\partial \dot{q}^i} \dot{q}^i = L_1,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    H = L_2 - L_0.
+\end{equation*}
+пусть $T = T_2 + T_1 + T_0$, если силы имеют обычный потенциал $\Pi$, то $L_0 = T_0 - \Pi$, 
+\begin{equation*}
+    H = T_2 - T_0 + \Pi.
+\end{equation*}
+Если же силы имеют обобщенный потенциал $V = V_1 + V_0$, то $L_0 = T_0 - V_0$, и
+\begin{equation*}
+    H = T_2 - T_0 + V_0.
+\end{equation*}
+В случае натуральных и склерономных систем $T_1 = T_0 = 0$ и $T = T_2$, тогда $H = T + \Pi$. Т.е. для натуральных склерономных систем с обычным потенциалом сил функция Гамильтона $H$ представляет собой полную механическую энергию.
+
+\subsubsection*{Интеграл Якоби}
+
+Найдём полную производную $H$ по времени,
+\begin{equation*}
+    \frac{d H}{d t} = \frac{\partial H}{\partial q^i} \dot{q}^i + \frac{\partial H}{\partial p_i} \dot{p}_i + \frac{\partial H}{\partial t} = 
+    \frac{\partial H}{\partial q^i} \frac{\partial H}{\partial p_i} - \frac{\partial H}{\partial p_i} \frac{\partial H}{\partial q^i} + \frac{\partial H}{\partial t} = \frac{\partial H}{\partial t},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm} 
+    \frac{d H}{d t} = \frac{\partial H}{\partial t}.
+\end{equation*}
+Система называется \textit{обобщенно консервативной}, если $\partial H / \partial t = 0$, т.е $H(q^i, p_i) = h$, собственно, $H$ называют \textit{обобщенной полной энергией}, а последнее равенство -- \textit{обобщенным интегралом энергии}.
+
+
+\begin{to_def} 
+    Для натуральной системы с обычным потенциалом сил, если $\partial H/ \partial t =0$, то
+    \begin{equation*}
+         H = T_2 - T_0 + \Pi = h = \const.
+     \end{equation*} 
+     Соотношение, где $h$ -- произвольная постоянная, называют \textit{интегралом Якоби}.
+\end{to_def}
+
+Есть и другая формулировка для интеграла Якоби голономной склерономной системы. Действительно, при $\partial L / \partial t = 0$, интеграл Якоби перейдёт в
+\begin{equation*}
+    \frac{\partial H}{\partial t} = 0,
+    \hspace{0.25cm} \Rightarrow \hspace{0.25cm} 
+    \frac{d }{d t} \left(
+        \frac{\partial L}{\partial \dot{q}^i} \dot{q}^i
+    \right) = 0,
+    \hspace{0.25cm} \Rightarrow \hspace{0.25cm} 
+    \frac{\partial L}{\partial \dot{q}^i} \dot{q}^i = \const.
+\end{equation*}
+
+
