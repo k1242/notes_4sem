@@ -1,0 +1,107 @@
+\section{Ширины и профили спектральных линий}
+
+
+\subsection{Естественная ширина линии}
+
+Это скорее чисто квантовое явление, поэтому давайте сейчас немного помашем руками, пусть атом это осциллятор
+\begin{equation*}
+    \ddot{x} + 2 \gamma \dot{x}  +\omega_0^2 x = 0,
+    \hspace{5 mm}
+    x(0) = x_0,
+    \hspace{5 mm}
+    \dot{x}(0) = 0,
+\end{equation*}
+что приводит к известному решению
+\begin{equation*}
+    x(t) = x_0 e^{- \gamma t} \left(
+        \cos (\omega t) + \frac{\gamma}{2\omega} \sin (\omega t)
+    \right) \approx 
+    x_0 e^{-\gamma t} \cos (\omega_0 t)
+    ,
+    \hspace{5 mm}
+    \omega = \sqrt{\omega_0^2 - \gamma^2}.
+\end{equation*}
+Далее, пусть есть преобразование Фурье
+\begin{equation*}
+    x(t) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{+\infty} A(\omega) e^{i \omega t} \d \omega,
+    \hspace{5 mm}
+    A(\omega) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{+\infty} x(t) e^{-i \omega t} \d t.
+\end{equation*}
+Тогда
+\begin{align*}
+    A(\omega) &= \frac{1}{\sqrt{2\pi}} \int_{0}^{+\infty} x_0 e^{- \gamma t} \cos (\omega_0 t)
+    e^{- i \omega t} \d t = \bigg/
+        \cos (\omega_0 t) = \frac{1}{2} \left( e^{i \omega_0 t} + e^{- i \omega_0 t}\right)
+    \bigg/ = \\
+    &=  \frac{1}{\sqrt{2\pi}} \frac{1}{2} \int_{0}^{\infty} x_0 e^{-\gamma t} e^{i (\omega_0 - \omega)t} \d t + 
+    \frac{1}{\sqrt{2\pi}} \frac{1}{2} \int_{0}^{+\infty} x_0 e^{-\gamma t} e^{i(\omega_0+\omega)t} \d t = \\
+    &= \frac{x_0}{2 \sqrt{2\pi}}  \left[
+        \frac{e^{-\gamma t + i(\omega_0 - \omega) t}}{i (\omega_0 - \omega) - \gamma} + 
+        \frac{e^{-\gamma t + i (\omega_0 + \omega)t}}{- (\omega_0 + \omega) - \gamma}
+    \right] \bigg|_0^\infty \approx
+    - \frac{x_0}{2 \sqrt{2\pi}} \frac{1}{i (\omega_0 - \omega) - \gamma}
+    ,
+\end{align*}
+где вторым слагаемым можно пренеречь, в силу ...
+\begin{equation*}
+    I = A A^* = \frac{x_0^2}{8 \pi} \frac{1}{(\omega_0-\omega)^2 + \gamma^2},
+\end{equation*}
+что дает кривую Лоренцова профиля.
+
+Если говорить про жизнь, то ширина на полувысоте $\in [10^7, \, 10^9]$ Гц.
+
+
+
+
+
+
+\subsection{Доплеровское уширение}
+
+В зависимости от взаимного движения излучения от атома и приемника будет фиксироваться частота
+\begin{equation*}
+    \omega = \omega_0 (1 + \vc{k} \cdot \vc{v})
+\end{equation*}
+Если аккуратно взять максвелловское распределение $f(v_x)$, то само собой максимум в $v_x = 0$, и максимум $J(\omega)$ будет в $\omega_0$, а сама кривая -- перекочевавший из $f(v_x)$ гауссов колокольчик.
+
+Если говорить точнее, то
+\begin{equation*}
+    v_0^2 = \frac{2kT}{m}, \hspace{5 mm}
+    d N = N \exp\left(
+        - \frac{(\omega-\omega_0)^2c^2}{\omega_0^2 v_0^2}
+    \right) \frac{c}{\omega_0} \d \omega,
+\end{equation*}
+где, переходя к числам будем наблюдать толщину $\in [10^0, 10^9]$ Гц.
+При небольших температурах функция $J(\nu)$ может быть аппроксимирована
+\begin{equation*}
+    \bar{g} (\nu) = \frac{1}{\sqrt{2\pi} \sigma_D} \exp\left(
+        - \frac{(\nu-\nu_0)^2}{2 \sigma^2_D}
+    \right),
+    \hspace{5 mm} 
+    \sigma_D = \nu_0 \frac{\sigma_\nu}{c} = \frac{1}{\lambda} \sqrt{\frac{k T}{M}}.
+\end{equation*}
+
+
+
+
+\subsection{Другие примеры}
+
+% \red{Вернуться к этому разделу после скоростных уравнений. Подробнее на странице 677, взаимодействие фотонов с атомами}.
+
+Есть столкновительное уширение, глобально потенциальная энергия зависит от расстояния между атомами, тогда начинает фаза, или частота зависеть от времени. В результате снова возникает Лоренцев контур, но с шириной $\Delta \nu = \sub{f}{ст}/\pi$, где $\sub{f}{ст}$ -- частота столкновений в секунду. Лоренцева функция формы линии с учётом вкладов конечного времени жизни и столкновений имеет полную ширину, как сумму отдельных ширин линий:
+\begin{equation*}
+    \Delta \nu = \frac{1}{2\pi} \left(
+        \frac{1}{\tau_1} + \frac{1}{\tau_2} + 2 \sub{f}{ст}
+    \right)
+\end{equation*}
+
+Есть ещё времяпролетное уширение, частица пролетает конечный пучок, тогда интегрировать нужно не от $0$ до $\infty$, а от $0$ до $T$, с чем тоже как-то борются.
+
+Глобально можно их резделить на два типа: однородное и неоднородное. Например, естественная ширина линии однородна, а доплеровское неоднородно. 
+
+Для  неоднородного уширинея можно определить среднюю функцию формы линии $\bar{g}(\nu) = \langle g_\beta (\nu)\rangle$. Например, при доплеровском уширении роль параметра $\beta$ играет скорость атома $v$  и $\bar{g} (n) = \left\langle g_v (\nu)\right\rangle$. Тогда функция формы линии равна
+\begin{equation*}
+    \bar{g} (\nu) = \int_{-\infty}^{+\infty} g\left(
+        \nu - \nu_0 \frac{v}{c}
+    \right) p(v) \d v.
+\end{equation*}
+

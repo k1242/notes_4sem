@@ -1,0 +1,300 @@
+\section{Оптика фотонных кристаллов}
+
+
+\subsection{Модуляция добротности}
+
+% 4-ltvtnbkfvbyf-lbnbk,typjkf
+
+Есть \textit{активная} и \textit{пассивная} модуляция добротности. 
+
+Рассмотрим синхронизацию мод. Имея одинаковые фазы на всех модах из фабри перо можно получать мощные короткие импульсы. Если добавить в лазер амплитудный модулятор
+\begin{equation*}
+    A = A_0 (1 + m \cos \Omega t) \cos \omega t,
+\end{equation*}
+то это приведет, при $\Omega = \omega$ (активная самосинхронизация), и в конечном итоге получить пики со временем порядка пикисекунд. 
+
+
+
+Пассивная самосинхронизация мод возможная с помощью \textit{красителя} -- двухуровневой системой. Характерное время отдельного выброса $\tau \sim 1/\Delta \nu$. Один из механизмов -- пусть у красителя $\tau$  очень мало (время релаксации), но и $I_{\text{sat}}$ также очень мало (возможно при эффективном сечение $I \sim 1/\sigma\tau$ достаточно большом). 
+
+
+
+
+
+\subsection{Фотонные кристаллы}
+
+\textit{Фотонные кристаллы} -- бываем $\{1, 2, 3\}$-мерные. Например в одномерном случае можно воспринимать это как набор пластинок толшины $h_i$ и коэффициентом преломления $n_i$. 
+
+
+Построим теорию матриц для фотонных кристаллов. Есть два типа матриц: $M$-типа и $M$-типа. Пусть в матрицу $M$-типа свящывается $u_2$ и $u_1$:
+\begin{equation*}
+    \begin{pmatrix}
+        u_2^+ \\ u_2^-
+    \end{pmatrix} = 
+    \begin{pmatrix}
+        A & B \\
+        C & D \\
+    \end{pmatrix}
+    \begin{pmatrix}
+        u_1^+ \\ u_1^-
+    \end{pmatrix}.
+\end{equation*}
+Приятный момент в том, что $M = M_6 M_5 \ldots M_1$. 
+
+Другой тип -- \textit{матрица рассеяния} или $S$-матрица, которая связывает
+-типа свящывается $u_2$ и $u_1$:
+\begin{equation*}
+    \red{\begin{pmatrix}
+        u_1^- \\ u_2^+
+    \end{pmatrix}} = 
+    \begin{pmatrix}
+        t_{12} & r_{21} \\
+        r_{12} & t_{21} \\
+    \end{pmatrix}
+    \begin{pmatrix}
+        u_1^+ \\ u_2^-
+    \end{pmatrix}.
+\end{equation*}
+Но их перемножить не получится. 
+
+Хотелось бы понять переход от $M$ матриц, к $S$ матрицам и назад. Рубрика <<занимательная арифметика>>:
+\begin{align*}
+    \frac{\det M}{D}  = \frac{AD-BC}{D} = t_{12}, \ldots, \text{\ \ ну, СЛУ, ..}
+\end{align*}
+В общем получается связь вида
+\begin{equation}
+    M = \begin{pmatrix}
+        A & B \\
+        C & D \\
+    \end{pmatrix} = 
+    \frac{1}{t_{21}} \begin{pmatrix}
+        t_{12} t_{21} & r_2 \\
+        -r_1 & 1 \\ 
+    \end{pmatrix}.
+\end{equation}
+И, аналогично,
+\begin{equation}
+    S = \begin{pmatrix}
+        t_{12} & r_2 \\
+        r_1 & t_{21} \\
+    \end{pmatrix} = 
+    \frac{1}{D} \begin{pmatrix}
+        AD-BC & B  \\
+        -C & 1
+    \end{pmatrix}.
+\end{equation}
+
+
+
+\subsubsection*{Пример №1: однородная среда}
+Так в однородной среде с $n_0, h$ и для волны $E = E_0 \exp(i \omega t - i k z)$  верно, что
+\begin{equation*}
+    u_1^- = u_2^- e^{-i \varphi},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    S = \begin{pmatrix}
+        e^{-i \varphi} & 0 \\
+        0 & e^{-i\varphi}
+    \end{pmatrix},
+\end{equation*}
+откуда уже можем найти $M$-матрицу
+\begin{equation*}
+    M = \begin{pmatrix}
+        e^{i \varphi} & 0 \\
+        0 & e^{i \varphi} \\
+    \end{pmatrix}
+\end{equation*}
+
+
+
+
+
+\subsubsection*{Пример №2: системы без потерь}
+
+Рассмотрим системы без потерь
+\begin{equation*}
+    |u_1^+|^2 + |u_2^-|^2 = |u_1^-|^2 + |u_2^+|^2.
+\end{equation*}
+Если система без потерь, то $|t|^2 + |r|^2 = 1$, также $|t_{12}| = |t_{21}| = |t|$ и то же для $r$. Также верно, что
+\begin{equation*}
+    \frac{t_{12}}{t_{21}^*} = - \frac{r_1}{r_2^*}.
+\end{equation*}
+В случае, если мы говорим про взаимные системы, то
+\begin{equation*}
+    t_{12} = t_{21} = t, \hspace{5 mm} r_{21} = r_{12} = r. 
+\end{equation*}
+Также для $S$ матриц можем так получить условия
+\begin{equation*}
+    A = D^*, \hspace{5 mm} B=C^*, \hspace{5 mm}  |A|^2 - |B|^2 = 1.
+\end{equation*}
+Так $S$ и $M$ матрицы запишутся в виде
+\begin{equation*}
+    S = \begin{pmatrix}
+        t & r  \\ 
+        r & t  \\
+    \end{pmatrix},
+    \hspace{5 mm} 
+    M = \begin{pmatrix}
+        1/t^*, & r/t \\
+        r^*/t, & 1/t
+    \end{pmatrix}.
+\end{equation*}
+
+
+
+
+\subsubsection*{Пример №3: граница}
+
+Рассмотрим падение на границу
+\begin{equation*}
+    S = \begin{pmatrix}
+    \vphantom{\dfrac{1}{2}}
+        \frac{2n_1}{n_1 + n_2} & \frac{n_2-n_1}{n_1 + n_2} \\ 
+    \vphantom{\dfrac{1}{2}}
+        \frac{n_1-n_2}{n_1+n_2} & \frac{2 n_2}{n_1 + n_2},
+    \end{pmatrix}
+\end{equation*}
+по Френелю. Забавно выглядит $M$-матрица:
+\begin{equation*}
+    M  = \frac{1}{2n_2} \begin{pmatrix}
+        n_2 + n_1 & n_2-n_1 \\
+        n_2-n & n_2 + n_1
+    \end{pmatrix}.
+\end{equation*}
+Если добавим распространение в среде, перемножим, а также добавим второе преломление, то получим
+\begin{equation*}
+    M = \frac{1}{2n_2} \begin{pmatrix}
+        n_2 + n_1 & n_2-n_1 \\
+        n_2-n & n_2 + n_1
+    \end{pmatrix} 
+    \cdot 
+    \begin{pmatrix}
+        e^{- i \varphi} & 0 \\
+        0 & e^{i \varphi} \\
+    \end{pmatrix}
+    \cdot \ldots
+    = 
+    \frac{1}{4n_1 n_2} \begin{pmatrix}
+        \tilde{A} & \tilde{B} \\
+        \tilde{C} & \tilde{D} \\
+    \end{pmatrix}.
+\end{equation*}
+Так находим, что
+\begin{equation*}
+    t = \frac{AD - BC}{D} = e^{-i \varphi_1 - i \varphi_2} \frac{4 n_1 n_2}{(n_1+n_2)^2-(n)}
+\end{equation*}
+
+
+Есть некоторая решётка с периодом $a$, на которую светят волной с угом падения $a$. 
+Найдём разность хода $\Delta = CA+DC-BD = 2 a \cos \theta = m \lambda$, тогда у коэффициента $R$ и $T$ будет зависимость от $\theta$ и $\lambda$.
+
+Суммируя интенсивности можем получить
+\begin{equation*}
+    I_{\text{out}} = I_0 \frac{\sin^2 (N \varphi/2)}{\varphi/2},
+    \hspace{5 mm} 
+    2 k a \cos \theta = \pi m,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \cos \theta =  \frac{\pi m }{2 k a}
+    = \frac{m \lambda}{2 a},
+    \hspace{0.25cm} \Rightarrow \hspace{0.25cm}
+    \theta = \arccos\left(\frac{m \lambda}{2a}\right).
+\end{equation*}
+
+
+Аналогично можем переписать в терминах матриц, и, по индукции, получить выражение вида
+\begin{equation*}
+    M_0 = \begin{pmatrix}
+        1/t^* & r/t  \\
+        r^*/t^* & 1/t  \\
+    \end{pmatrix},
+    \hspace{5 mm} 
+    M = M_0^N, \hspace{5 mm} 
+    \det M_0 = 1,
+    \hspace{5 mm} 
+    M_0^N = \Psi_N M_0 - \Psi_{N-1} \hat{E},
+    \hspace{5 mm} 
+    \Psi_N = \frac{\sin N \Phi}{\sin \Phi},
+    \hspace{5 mm} 
+    \cos \Phi = \Re\left(\frac{1}{t}\right).
+\end{equation*}
+Так мы приходим к 
+\begin{equation*}
+    M = \begin{pmatrix}
+        1/t^*_N & r_N/t_N  \\
+        r^*_N / t^*_N & 1/t^N  \\
+    \end{pmatrix},
+    \hspace{5 mm} 
+    \frac{\sin N \Phi}{\sin \Phi} \begin{pmatrix}
+        1/t^* & r/t  \\
+        r^*/t^* & 1/t  \\
+    \end{pmatrix} - \frac{\sin (N-1)\Phi}{\sin \Phi} \begin{pmatrix}
+        1 & 0  \\
+        0 & 1  \\
+    \end{pmatrix}.
+\end{equation*}
+Итого, из предельно простых рассуждений, находим
+\begin{equation*}
+    \left\{\begin{aligned}
+        1/t_N^* &= \Psi_N / t^* - \Psi_{N-1} \\
+        r_N / t_N &= \Psi_N r / t
+    \end{aligned}\right.
+\end{equation*}
+вводя $T_N = t_N^* t_N$ переходим к 
+\begin{equation*}
+    \frac{R_N}{T_N} = |\Psi_N|^2 \cdot \frac{R}{T}, \hspace{5 mm} 
+    \left.\begin{aligned}
+        R_N &= 1 - T_N \\
+        R = 1 - T \\
+    \end{aligned}\right.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \frac{1-T_N}{T_N} = |\Psi_N|^2 \cdot \frac{1-T}{T},
+\end{equation*}
+итого, финальная формула (почти)
+\begin{equation*}
+    \frac{1}{T_N} = |\Psi_N|^2 \frac{1-T}{T} + 1,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    T_N = T \frac{1}{|\Psi_N|^2 (1-T)+T},
+    \hspace{5 mm} 
+    R_N = \frac{|\Psi_N|^2 (1-T)}{|\Psi_N|^2 (1-T)+T}.
+\end{equation*}
+
+
+
+
+
+\subsubsection*{Предельные случаи.}
+
+
+\textbf{ Случай 1}. Считая $R \ll 1$, и $\Psi_N^2 R << 1$, тогда и $R_N \approx \Psi_N^2 R$.
+
+
+\textbf{ Случай 2, режим частичного отражения}. Рассматривается случай вида $|\Re 1/t| < 1$, тогда  $\Phi = \arccos\left(\Re 1/t\right)$. Можем тогда получить, что $R_{N\, max}$ будет вида
+\begin{equation*}
+    R_{N\, max} = \frac{N^2 (1-T)}{N^2 (1-T) + T}, \hspace{5 mm} \Psi_N = N.
+\end{equation*}
+И может быть минимум 
+\begin{equation*}
+    R_N = 0, \hspace{5 mm} \left\{\begin{aligned}
+        \sin N \Phi &= 0, \\
+        \sin \Phi &\neq 0
+    \end{aligned}\right.
+\end{equation*}
+
+
+
+\textbf{ Случай 3, режим полного отражения}. Рассмотрим $\Re 1/t > 1$, тогда $\cos \Phi > 1$, тогда
+\begin{equation*}
+    \cos \left(\Phi_R + i \Phi_I\right) = \cos \Phi_R \cos (i \Phi_I) - \sin \Phi_R \sin (i \Phi_I) = 
+    \cos \Phi_R \ch \Phi_I - i \sin \Phi_R \sh \Phi_I = \Re \left(\frac{1}{t}\right)
+\end{equation*}
+тогда $\sin \Phi_R \sh \Phi_I = 0$, иначе $\Phi_r = \pi m$, итого находим
+\begin{equation*}
+    \ch \Phi_I = |\Re 1/t|.
+\end{equation*}
+Приходим к значению
+\begin{equation*}
+    \Psi_N = (-1)^N \frac{\sin i \Phi_I N}{\sin i \Phi_I},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    R_N = \bigg|
+        \frac{\sh^2 \Phi_I N}{\sh^2 \Phi_I}
+    \bigg| (1-T).
+\end{equation*}
