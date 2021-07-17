@@ -1,0 +1,98 @@
+\subsection*{Первая задача}
+
+Вообще собственные значение эрмитова линейного оператора в конечномерном пространстве вещественны, а собственные векторы, соответсвующие различным собственным значениеям, ортогональны. Действительно, пусть $A$ -- эрмитов оператор, $\alpha,\, \beta$ -- собственные значение, отвечающие векторам $\vc{a}, \vc{b}$, тогда:
+\begin{equation*}
+    (\alpha \vc{a},\, \vc{b}) = (A \vc{a},\, \vc{b}) = 
+    (\vc{a},\, A^\dag \vc{b}) = (\vc{a},\, A \vc{b}) = (\vc{a},\, \beta \vc{b}) = \beta^* (\vc{a}, \vc{b}),
+\end{equation*}
+тогда $(\alpha - \beta^*) (\vc{a},\, \vc{b}) = 0$, откуда выделяем два случая: 1) $\vc{a} = \vc{b}$, а тогда $\alpha = \alpha^*$; 2) $\vc{a} \neq \vc{b}$, откуда $\alpha \neq \beta$, тогда $(\vc{a}, \vc{b}) = 0$ что и доказывает ортогональность.
+
+Введенная аксиоматика квантовой механики позволяет провести аналогичные рассуждения для \textit{эрмитова} оператора $\vc{A}$ и набора собственных состояний наблюдаемых системы $\{|q\rangle\}$. 
+\begin{equation*}
+    \left.\begin{aligned}
+        \hat{A} |q'\rangle &= q' |q'\rangle, \\
+        \langle q''| \hat{A} &= q''^* \langle q''| 
+    \end{aligned}\right.
+    \hspace{0.25cm} \Rightarrow \hspace{0.25cm}
+    \left.\begin{aligned}
+        \langle q''| \hat{A} | q' \rangle &= q' \langle q'' \,|\, q' \rangle \\
+        \langle q''| \hat{A} | q' \rangle &= q''^* \langle q'' \,|\, q' \rangle 
+    \end{aligned}\right.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    (q'-q''^*) \langle q'' \,|\, q' \rangle = 0,
+\end{equation*}
+сводящееся к аналогичным двум случаям говорящие о вещественности наблюдаемых и ортогональности собственных состояний.
+
+Можно пойти с другой стороны, и потребовать вещественности среднего значения наблюдаемой, тогда
+\begin{equation*}
+    \langle q\rangle = \langle \Psi | A \Psi \rangle = \langle q\rangle^*
+    \hspace{5 mm} \Leftrightarrow \hspace{5 mm} 
+    \langle \Psi \,|\, A\Psi \rangle = \langle \Psi \,|\, A \Psi \rangle^\dag = \langle \Psi \,|\, A^\dag \Psi \rangle,
+\end{equation*}
+для любого $\forall \ | \Psi\rangle $, что соответсвует операторному равенству $\hat{A} = \hat{A}^\dag$, которое по условию и выполняется. 
+
+
+
+
+\subsection*{Вторая задача}
+
+Магнитный момент заряженной частицы $\vc{\mu}$ и момент импульса $\vc{L}$, соответственно, равны
+\begin{equation*}
+    \vc{\mu} = \frac{1}{2c} e \left[\vc{r} \times  \vc{v}\right],
+    \hspace{5 mm} 
+    \vc{L} = \left[\vc{r} \times  \vc{p}\right] = \gamma m\left[
+        \vc{r}\times \vc{v}
+    \right],
+\end{equation*}
+откуда можем найти их соотношение, считая $v \ll c$, 
+\begin{equation*}
+    \vc{\mu} = \frac{e}{2\gamma m c} \vc{L} \approx 
+    \frac{e}{2mc} \vc{L},
+\end{equation*}
+что в два раза отличается от встретившегося выражения для момента электрона
+\begin{equation*}
+    \vc{\mu} = \frac{e}{m_e c} \vc{L}.
+\end{equation*}
+
+
+
+\subsection*{Третья задача}
+
+Можем просто посчитать оба оператора:
+\begin{align*}
+    \hat{S}_x &= \textstyle \frac{\hbar}{2} | + \rangle \langle - | + 
+    \textstyle \frac{\hbar}{2} | - \rangle \langle + | \\
+    \hat{S}_y &= - \textstyle \frac{i \hbar}{2} | + \rangle \langle - | + 
+    \textstyle \frac{i \hbar}{2} | - \rangle \langle + | \\
+\end{align*}
+И найти $[\hat{S}_x,\, \hat{S}_y] \neq 0$:
+\begin{equation*}
+    [\hat{S}_x,\, \hat{S}_y] = \hat{S}_x \hat{S}_y - \hat{S}_y \hat{S} = 
+    \frac{i \hbar^2}{2}\left(
+         | + \rangle \langle + |  - | - \rangle \langle - | 
+    \right) \neq 0,
+\end{equation*}
+где воспользовались нормировкой состояний на 1 и ассоцитивностью.
+
+
+\subsection*{Четвертая задача}
+
+Воспользуемся полнотой набора наблюдаемых, представляя $| \Psi\rangle $ как
+\begin{equation*}
+    | \Psi\rangle = \sum_a \langle a \,|\, \Psi \rangle | a\rangle,
+\end{equation*}
+и пременим к нему оператор $\hat{B} = \prod_a (\hat{A} - a)$, 
+\begin{equation*}
+    \hat{B} | \Psi\rangle  = | \Phi\rangle = \sum_a c_a | a\rangle,
+\end{equation*}
+где снова воспользовались разложением по базису. 
+
+Пусть нашлось такое значение $a''$, что $c_{a''} \neq 0$, тогда для некоторого $a'$
+\begin{equation*}
+    \hat{B} \langle a' \,|\, \Psi \rangle | a'\rangle \neq 0,
+    \hspace{0.25cm} \Rightarrow  \hspace{0.25cm}
+    \langle a' \,|\, \Psi \rangle \big(
+        \underbrace{\hat{A} | a'\rangle}_{a' | a'\rangle }  - a' | a'\rangle 
+    \big) \neq 0,
+\end{equation*}
+таким образом пришли к противоречию. Следовательно $c_a = 0 \ \forall a$, а тогда и $| \Phi\rangle = 0$ для любого $| \Psi\rangle $, что и даёт операторное равенство $\hat{B} = 0$. 

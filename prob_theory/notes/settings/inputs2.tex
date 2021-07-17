@@ -5,7 +5,7 @@
 % \subsection{Определение и примеры}
 % \input{parts/pt13_b1}
 
-\newpage
+% \newpage
 
 \section{Статистика}
 
@@ -24,12 +24,12 @@
     где $f_{\smallvc{x}}$ -- плотность распределения. 
 \end{to_thr}
 
-\begin{proof}[$\triangle$]
-Пусть известно, что плотность факторизована, тогда вероятность
-\begin{align*}
-    P(\vc{X} &= \vc{x} \mid T = t) = \frac{P(\vc{X} = \vc{x},\, T=t)}{P(T=t)} = I_{T=t} \frac{P(\vc{X} = \vc{x})}{P(T=t)} = I_{T(\smallvc{x})=t} \frac{g(T(\vc{x}), \theta) h(\vc{x})}{\sum\limits_{\smallvc{x}\colon T(\smallvc{x})=t} P(\vc{X} = \vc{x})} 
-    =  \\ &= 
-    I_{T(\smallvc{x})=t} 
-    \frac{g(T(\vc{x}), \theta) h(\vc{x})}{\sum\limits_{\smallvc{x}\colon T(\smallvc{x})=t} g(T(\vc{x}), \theta)h(\vc{x})} = 
-\end{align*}
-\end{proof}
+% \begin{proof}[$\triangle$]
+% Пусть известно, что плотность факторизована, тогда вероятность
+% \begin{align*}
+%     P(\vc{X} &= \vc{x} \mid T = t) = \frac{P(\vc{X} = \vc{x},\, T=t)}{P(T=t)} = I_{T=t} \frac{P(\vc{X} = \vc{x})}{P(T=t)} = I_{T(\smallvc{x})=t} \frac{g(T(\vc{x}), \theta) h(\vc{x})}{\sum\limits_{\smallvc{x}\colon T(\smallvc{x})=t} P(\vc{X} = \vc{x})} 
+%     =  \\ &= 
+%     I_{T(\smallvc{x})=t} 
+%     \frac{g(T(\vc{x}), \theta) h(\vc{x})}{\sum\limits_{\smallvc{x}\colon T(\smallvc{x})=t} g(T(\vc{x}), \theta)h(\vc{x})} = 
+% \end{align*}
+% \end{proof}

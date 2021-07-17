@@ -1,0 +1,244 @@
+\subsection*{Первая задача}
+
+Для начала выпишем явный вид $\hat{S}_i$ в базисе $S_z$ и найдём $\vc{S}^2$:
+\begin{equation*}
+    \left.\begin{aligned}
+        \hat{S}_z &= \textstyle \frac{\hbar}{2} | + \rangle \langle + | - 
+        \textstyle \frac{\hbar}{2} | - \rangle \langle - |; \\
+        \hat{S}_x &= \textstyle \frac{\hbar}{2} | + \rangle \langle - | 
+        + \textstyle \frac{\hbar}{2} | - \rangle \langle + |; \\ 
+        \hat{S}_y &= - \textstyle \frac{i \hbar}{2} | + \rangle \langle - |  + 
+        \textstyle \frac{i \hbar}{2} | - \rangle \langle + |.
+    \end{aligned}\right.
+    \hspace{0.25cm} \Rightarrow \hspace{0.25cm}
+    \vc{S}^2 = S_{i} S_{i} = \frac{3 \hbar^2}{4} \bigg(
+        | + \rangle \langle + |  + | - \rangle \langle - | 
+    \bigg) = \frac{3 \hbar^2}{4}.
+\end{equation*}
+Заметим, что для $S_i$ верно коммутационные соотношения, аналогичные $J$:
+\begin{equation*}
+    \left[S_i,\, S_j\right] = i \hbar \varepsilon_{ijk} S_k, \hspace{5 mm} 
+    \left[J_i,\, J_j\right] = i \hbar \varepsilon_{ijk} J_k.
+\end{equation*}
+Так как рассуждение по собственным векторам $J^2$ и $J_z$ (Сакурай, 3.5) опирается только на коммутационные соотношения для $J_i$, то аналогичным образом мы могли бы получить, что
+\begin{equation*}
+    \vc{S}^2 | j,\, m\rangle  = \hbar^2 j (j + 1) | j,\, m\rangle,
+\end{equation*}
+где $j$, $m$ -- максимальный набор наблюдаемых и 
+\begin{equation*}
+    a = \hbar^2 j(j + 1), \hspace{5 mm} b = m \hbar,
+\end{equation*}
+с $a,\, b$ собственными числамми операторов $\vc{S}^2$, $S_z$ соответственно.
+
+% \textbf{Общие рассуждения}.
+\textbf{Частный случай}. Посмотрим на явный величин и операторов, используемых в доказательстве 3.5 для $S$. Введём повышающий и понижающий операторы
+\begin{equation*}
+    S_{\pm} = S_x \pm i S_y = \hbar | \pm \rangle \langle \mp |,
+\end{equation*}
+заметим, что всё так же
+\begin{align*}
+    S_{\pm} | +\rangle = \left[\begin{aligned}
+        &0, &\text{if }S_+ \\
+        &\hbar | -\rangle, &\text{if }S_- \\
+    \end{aligned}\right.
+    \hspace{5 mm} 
+    S_{\pm} | -\rangle = \left[\begin{aligned}
+        &\hbar | +\rangle, &\text{if }S_+ \\
+        &0, &\text{if }S_- \\
+    \end{aligned}\right.
+\end{align*}
+то есть $S_{\pm}$ переводит собственные состояния $|S_z,\, \pm \rangle$ в $|S_z,\, \pm \rangle$. Более того, 
+\begin{equation*}
+    S_z S_{\pm} | \textstyle \frac{3}{4} \hbar^2,\, \pm \textstyle \frac{\hbar}{2}\rangle = \bigg(
+        \left[S_z,\, S_{\pm}\right] + S_{\pm} S_z
+    \bigg) | a,\, b\rangle = 
+    \left(\pm \hbar + b\right)S_{\pm} | a,\, b\rangle,
+\end{equation*}
+где $b \in \left\{+ \textstyle \frac{\hbar}{2},\, - \textstyle \frac{\hbar}{2}\right\}$, то есть $b_{\textnormal{max}} = + \textstyle \frac{1}{2} \hbar$ и $b_{\textnormal{min}} = - \textstyle \frac{1}{2} \hbar$. 
+
+Дейтсвительно, должно выполняться $\vc{S}^2 - S_z^2 = \frac{\hbar^2}{2} > 0$, точнее
+\begin{equation*}
+    \langle a,\, b| (\vc{S}^2 - S_z^2) | a,\, b\rangle \geq 0,
+    \hspace{0.25cm} \Rightarrow \hspace{0.25cm}
+    \left\{\begin{aligned}
+        &S_+ | a,\, b_{\text{max}}\rangle = 0 \\
+        &S_- | a,\, b_{\text{min}}\rangle = 0 \\
+    \end{aligned}\right.
+\end{equation*}
+что мы уже и проверили. Также может быть интересно взглянуть на $S_\pm S_\mp$:
+\begin{equation*}
+    \left.\begin{aligned}
+        S_{-} S_+ &= S^2 - S_z^2 - \hbar S_z = \hbar^2 | - \rangle \langle - | \\ 
+        S_{+} S_- &= S^2 - S_z^2 + \hbar S_z = \hbar^2 | + \rangle \langle + | \\         
+    \end{aligned}\right.
+    \hspace{0.25cm} \overset{S_{\pm} S_{\mp} | a,b_{\text{max/min}}\rangle = 0}{\Rightarrow}  \hspace{0.25cm} 
+    \left.\begin{gathered}
+        \textstyle \frac{3}{4} \hbar^2 - b_{\text{max}}^2 - b_{\text{max}} \hbar = 0 \\
+        \ldots
+    \end{gathered}\right.
+    \hspace{0.25cm} \Rightarrow \hspace{0.25cm}
+    \left.\begin{aligned}
+        b_{\text{max}} &= \textstyle \frac{\hbar}{2}, \\
+        b_{\text{min}} &= \textstyle -\frac{\hbar}{2} = - b_{\text{max}},\\
+    \end{aligned}\right.
+\end{equation*}
+откуда можем указать, что $j = \frac{b_{\text{max}}}{\hbar} = \frac{1}{2}$, и получить соотношение
+\begin{equation*}
+    \vc{S}^2 | a, b\rangle = \frac{3}{4} \hbar^2 | a,b\rangle,
+    \hspace{5 mm}  
+    \frac{3}{4} \hbar^2 = a = \hbar^2 j(j+1),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \vc{S}^2 | a, b\rangle = \hbar^2 j(j+1) | a, b\rangle, 
+    \hspace{5 mm} \text{Q. E. D.}
+\end{equation*}
+для $b$ -- собственного $S_z$ состояния. 
+
+
+
+\subsection*{Вторая задача. Спин электрона в постоянном магнитном поле}
+
+Рассмотрим электрон в постоянном магнитном поле, то есть систему с гамильтонианом $\hat{H} = - \hat{\vc{\mu}} \cdot \bar{B} = \omega \hat{S}_z$, где $\omega = \frac{|e| B}{m_e c}$. 
+
+Знаем, что $|\alpha,\, t=0\rangle = |S_x + \rangle $. Хотелось бы найти $| \alpha, t\rangle $ и вероятность пребывания в состояниях $S_{x, y, z}$ в момент времени $t$ с указанным начальным условием.
+
+Так как гамильтониан от времени явно не зависит, то очень просто выглядит оператор эволюции:
+\begin{equation*}
+    i \hbar \partial_t \hat{U} = \hat{H} \hat{U},
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \hat{U}(t) = \exp\left(- \frac{i}{\hbar} \hat{H} t\right) 
+    =
+    \exp\left(- \frac{i \omega S_z}{\hbar} t\right)
+    .
+\end{equation*}
+В начальный момент времени сисетма находится в состоянии $| S_x,+\rangle = \textstyle \frac{1}{\sqrt{2}} | +\rangle + \frac{1}{\sqrt{2}} | -\rangle $, значит
+\begin{equation*}
+    | \alpha, t_0 = 0;\, t\rangle = \frac{1}{\sqrt{2}} \exp\left(- \frac{i \omega t}{2}\right) | +\rangle + \frac{1}{\sqrt{2}} \exp\left(+ \frac{i \omega t}{2}\right) | -\rangle,
+\end{equation*}
+аналогично рассуждению в третьей задаче от 9 июля (см. страницу 3), где был получен явный вид для $\exp\left(- \frac{i S_z \varphi}{\hbar}\right)$. 
+
+
+Теперь найдём соответствующие значения:
+% \begin{equation*}
+%     \langle \alpha, t| \hat{S}_x | \alpha, t\rangle = 
+%     \left(
+%         \frac{1}{\sqrt{2}} \exp\left(+ \frac{i \omega t}{2}\right) \langle +|  + \frac{1}{\sqrt{2}} \exp\left(- \frac{i \omega t}{2}\right) \langle -| 
+%     \right)
+%     % S_x
+%     \left(
+%         \frac{1}{\sqrt{2}} \exp\left(- \frac{i \omega t}{2}\right) | +\rangle + \frac{1}{\sqrt{2}} \exp\left(+ \frac{i \omega t}{2}\right) | -\rangle
+%     \right)
+% \end{equation*}
+\begin{align*}
+    \begin{pmatrix}
+         S_x \vphantom{\dfrac{1}{2}} \\ 
+         \vphantom{\dfrac{1}{2}} S_y \\ 
+         \vphantom{\dfrac{1}{2}} S_z
+     \end{pmatrix} | \alpha,t\rangle =  \frac{1}{\sqrt{2}} \exp \left(- \frac{i \omega t}{2}\right) \begin{pmatrix}
+            \textstyle \frac{\hbar}{2} | -\rangle   
+            \vphantom{\dfrac{1}{2}}\\
+            \textstyle \frac{i\hbar}{2} | -\rangle  
+            \vphantom{\dfrac{1}{2}}\\
+            \textstyle \frac{\hbar}{2} | +\rangle  
+            \vphantom{\dfrac{1}{2}}
+     \end{pmatrix}
+     + \frac{1}{\sqrt{2}} \exp\left(+\frac{i \omega t}{2}\right)
+     \begin{pmatrix}
+            \vphantom{\dfrac{1}{2}} 
+            \textstyle \frac{\hbar}{2} | +\rangle  \\
+            \vphantom{\dfrac{1}{2}} 
+            \textstyle -\frac{i\hbar}{2} | +\rangle \\
+            \vphantom{\dfrac{1}{2}} 
+            \textstyle -\frac{\hbar}{2} | -\rangle 
+     \end{pmatrix},
+\end{align*}
+откуда уже можем посчитать
+\begin{align*}
+    \langle \alpha, t| \vc{\hat{S}} | \alpha, t\rangle &= 
+    \left(
+        \frac{1}{\sqrt{2}} \exp\left(+ \frac{i \omega t}{2}\right) \langle +|  + \frac{1}{\sqrt{2}} \exp\left(- \frac{i \omega t}{2}\right) \langle -| 
+    \right)\left(
+\frac{1}{\sqrt{2}} \exp \left(- \frac{i \omega t}{2}\right) \begin{pmatrix}
+            \textstyle \frac{\hbar}{2} | -\rangle   
+            \vphantom{\dfrac{1}{2}}\\
+            \textstyle \frac{i\hbar}{2} | -\rangle  
+            \vphantom{\dfrac{1}{2}}\\
+            \textstyle \frac{\hbar}{2} | +\rangle  
+            \vphantom{\dfrac{1}{2}}
+     \end{pmatrix}
+     + \frac{1}{\sqrt{2}} \exp\left(+\frac{i \omega t}{2}\right)
+     \begin{pmatrix}
+            \vphantom{\dfrac{1}{2}} 
+            \textstyle \frac{\hbar}{2} | +\rangle  \\
+            \vphantom{\dfrac{1}{2}} 
+            \textstyle -\frac{i\hbar}{2} | +\rangle \\
+            \vphantom{\dfrac{1}{2}} 
+            \textstyle -\frac{\hbar}{2} | -\rangle 
+     \end{pmatrix}
+     \right) 
+     = \\ &=
+     \frac{\hbar}{4}
+     \begin{pmatrix}
+        e^{i \omega t} + e^{- i \omega t}
+        \\
+        - i(  e^{i\omega t} -  e^{- i \omega t})
+        \\
+        0
+        \\
+     \end{pmatrix} = 
+     \frac{\hbar}{2}
+     \begin{pmatrix}
+         \cos \omega t \\
+         \sin \omega t \\ 
+         0
+     \end{pmatrix},
+     \hspace{0.5cm} \Rightarrow \hspace{0.5cm}  
+\boxed{
+    \langle \alpha, t| \vc{\hat{S}} | \alpha, t\rangle =
+     \frac{\hbar}{2}
+     \begin{pmatrix}
+         \cos \omega t \\
+         \sin \omega t \\ 
+         0
+     \end{pmatrix}
+},
+\end{align*}
+что очень сильно похоже на правду.
+
+
+
+
+\subsection*{Третья задача}
+
+Исследуемый оператор энергии сверхтонкого взаимодействия:
+\begin{equation*}
+    \hat{H} = \hbar \nu \hat{\vc{S}} \cdot \vc{\hat{I}},
+\end{equation*}
+введём оператор $\hat{\vc{F}} = \hat{\vc{S}} + \hat{\vc{I}}$, и воспользуемся соотношением и предыдущей задачи
+\begin{equation*}
+    \hat{\vc{J}}^2 | j,m\rangle = \hbar^2 j (j + 1) | j, m\rangle,
+    \hspace{5 mm} 
+    \hat{\vc{S}} \cdot \hat{\vc{I}} = \frac{1}{2} \left(
+        \hat{\vc{F}}^2 - \hat{\vc{S}}^2 - \hat{\vc{I}}^2
+    \right),
+\end{equation*}
+тогда, подставляя, находим
+\begin{equation*}
+        \hat{H} = \hbar \nu \left(
+        \frac{f(f+1)}{2} - \frac{1}{2}\left(\frac{1}{2}+1\right) - 1 (1+1)
+    \right) = \hbar \nu \left(
+        \frac{f(f+1)}{2} - \frac{11}{4}
+        \right).
+\end{equation*}
+Для него собственные числа (энергетические сдвиги) можем найти, подставив $f = l + \frac{1}{2}$  и $f = l - \frac{1}{2}$, тогда соответствующие сдвиги: $\frac{1}{2} \hbar \nu$ и $- \hbar \nu$. 
+
+Соответствующие собственные значения, в таком случае:
+\begin{equation*}
+    | F= \textstyle \frac{3}{2},\, F_z = +\textstyle \frac{3}{2}\rangle, \ \ 
+    | F= \textstyle \frac{3}{2},\, F_z = -\textstyle \frac{3}{2}\rangle, \ \ 
+    | F= \textstyle \frac{3}{2},\, F_z = +\textstyle \frac{1}{2}\rangle, \ \ 
+    | F= \textstyle \frac{3}{2},\, F_z = -\textstyle \frac{1}{2}\rangle, \ \ 
+    | F= \textstyle \frac{1}{2},\, F_z = +\textstyle \frac{1}{2}\rangle, \ \ 
+    | F= \textstyle \frac{1}{2},\, F_z = -\textstyle \frac{1}{2}\rangle,
+\end{equation*}
+где последние два соответсвуют сдвигу на $- \hbar \nu$.
+\red{Нужно выразить вектора из одного базиса в другом}.

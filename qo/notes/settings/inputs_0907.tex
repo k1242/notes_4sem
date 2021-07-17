@@ -1,0 +1,190 @@
+\subsection*{Первая задача}
+
+Вероятность измерения $| S_x, +\rangle $ в базисе $\hat{S}_z$ равна $1/2$, тогда
+\begin{equation*}
+    |\langle + \,|\, S_x,+ \rangle |^2 = 
+    | \langle - \,|\, S_x, - \rangle|^2 = \frac{1}{2},
+    \hspace{0.25cm} \Rightarrow \hspace{0.25cm}
+    \left.\begin{aligned}
+        | S_x, +\rangle = \textstyle \frac{1}{\sqrt{2}} | +\rangle + \textstyle\frac{e^{i \delta_1}}{\sqrt{2}} | -\rangle, \\
+        | S_x, -\rangle = \textstyle\frac{1}{\sqrt{2}} | +\rangle - \textstyle\frac{e^{i \delta_2}}{\sqrt{2}} | -\rangle,
+    \end{aligned}\right.
+    \hspace{0.25cm} \Rightarrow \hspace{0.25cm}
+    \left.\begin{aligned}
+         | S_x,+\rangle &= \textstyle \frac{1}{\sqrt{2}} | +\rangle + \frac{1}{\sqrt{2}} | -\rangle , \\ 
+        \langle S_x \,|\, - \rangle &= \textstyle\frac{1}{\sqrt{2}} | +\rangle - \textstyle\frac{1}{\sqrt{2}} | -\rangle,
+    \end{aligned}\right.
+\end{equation*}
+где значение определены с точностью до глобальной фазы; можно показать, что $\delta_1 -\delta_2 = \pm \pi/2$. Теперь можем выразить $| \pm\rangle $ в базисе $S_x$ и подставить в выражение для $S_z$:
+\begin{equation*}
+    \left.\begin{aligned}
+        | +\rangle &= \textstyle \frac{1}{\sqrt{2}} | S_x,+\rangle + \textstyle \frac{1}{\sqrt{2}} | S_x,-\rangle \\
+        | -\rangle &= \textstyle\frac{1}{\sqrt{2}} | S_x,+\rangle - \textstyle\frac{1}{\sqrt{2}} | S_x,-\rangle 
+    \end{aligned}\right.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}   
+    \hat{S}_z = \frac{\hbar}{2}\bigg(
+        | + \rangle \langle + | - | - \rangle \langle - | 
+    \bigg) = \frac{\hbar}{2} \bigg(
+        | S_x, + \rangle \langle S_x, - | + | S_x, - \rangle \langle S_x, + | 
+    \bigg).
+\end{equation*}
+
+\subsection*{Вторая задача}
+
+Известно, что
+\begin{equation*}
+    \langle p \,|\, \alpha \rangle = C \exp\left(
+        -\frac{(p-p_0)^2}{(\hbar k)^2}
+    \right), \hspace{5 mm} \langle \alpha \,|\, \alpha \rangle =1.
+\end{equation*}
+Для начала воспользуемся разложением по базису $| p\rangle $, тогда нормировка запишется в виде
+\begin{equation*}
+    \int \d p \langle \alpha \, \underbrace{|\, p \rangle  \langle p \,|}_{\equiv \mathbbm{1}}   \, \alpha \rangle = 1,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}  
+    |C|^2 \int d p\, 
+    \exp\left(
+        -\frac{2(p-p_0)^2}{(\hbar k)^2}
+    \right) = |C|^2 \hbar k \sqrt{\frac{\pi}{2}} = 1,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    |C| = \sqrt{\sqrt{\frac{2}{\pi}} \frac{1}{\hbar k}}.
+\end{equation*}
+Таким же разложением можем найти $\langle x \,|\, \alpha \rangle $:
+\begin{equation*}
+    \langle x \,|\, \alpha \rangle = \int dp, \langle x \,|\, p \rangle \langle p \,|\, \alpha \rangle =
+    \kappa \int \exp\left(\frac{i p x}{\hbar} - \frac{(p-p_0)^2}{(\hbar k)^2}\right), 
+    \hspace{5 mm} 
+    \kappa = \left(\frac{\pi}{2}\right)^{1/4} \frac{1}{\pi \hbar \sqrt{k}}.
+\end{equation*}
+где воспользовались равенством $\langle x \,|\, p \rangle = \frac{1}{\sqrt{2 \pi \hbar}} e^{\frac{i p x}{\hbar}}$. Выделяя полный квадрат
+\begin{equation*}
+     p^2 - 2 p (p_0 + i x \hbar k^2) + p_0^2 = 
+        = (p-p_0 - ix \hbar k^2/2)^2 -  i x \hbar k^2 + x^2 \hbar^2 k^4/4
+\end{equation*}
+, сводим интеграл к гауссову, и находим
+\begin{equation*}
+    \langle x \,|\, \alpha \rangle 
+    =
+    \left(\frac{k^2}{2\pi}\right)^{1/4} \exp\left(
+        \frac{-  i x p_0 \hbar k^2 + x^2 \hbar^2 k^4/4}{(\hbar k)^2}
+    \right).
+\end{equation*}
+
+\subsection*{Третья задача}
+
+
+По Сакураю (3.1.15) поворот в пространстве можем быть найден, как
+\begin{equation*}
+    D_z (\varphi) = \exp\left(- \frac{i J_z \varphi}{\hbar}\right), \hspace{5 mm} J_x \to S_z.
+\end{equation*}
+Считая $| + \rangle \langle + | = a$, $| - \rangle \langle - | = b$, $\alpha = \frac{i \varphi}{2}$, находим:
+\begin{equation*}
+    -\frac{i S_z \varphi}{\hbar} = - \frac{i \varphi}{2} \bigg(
+        | + \rangle \langle + | - | - \rangle \langle - | 
+    \bigg), \hspace{2.5 mm} 
+    \left.\begin{aligned}
+        (a-b)^2 &= a + b \\
+        (a-b)^3 &= a - b
+    \end{aligned}\right.
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    D_z (\varphi) = 1 + \alpha (a-b) + \frac{\alpha^2}{2} (a+b) + \frac{\alpha^3}{3!}(a-b) + \ldots,
+\end{equation*}
+немного перегруппируя члены, и пользуясь представлением $\mathbbm{1} = \sum | n \rangle \langle n |$, получаем
+\begin{equation*}
+    D_z(\varphi) = (1 - (a + b)) + a \left(1 + \alpha \textstyle\frac{\alpha^2}{2}+\ldots\right) + b \left(
+        1 - \alpha + \textstyle \frac{\alpha^2}{2} - \ldots
+    \right) = a e^\alpha + b e^{-\alpha}.
+\end{equation*}
+Рассмотрим измерения в базисе $S_\varphi$ -- направления в плоскости $Oxy$ повернутого на $\varphi$ относительно $Ox$, тогда 
+\begin{equation*}
+    \langle \alpha| S_\varphi | \alpha\rangle = \vphantom{1}_{R_{-\varphi}}
+    \langle \alpha| S_x | \alpha\rangle_{R_{-\varphi}} = 
+    \langle \alpha \,|\, D^\dag_z (-\varphi) S_x D_z (-\varphi) \,|\, \rangle,
+    \hspace{5 mm}   
+    | \alpha\rangle_{R_\varphi} = D_z (\varphi) | \alpha\rangle.
+\end{equation*}
+Подставляя явное выражение для поворота  и для $S_x$, находим
+\begin{equation*}
+    D^\dag_z (\varphi) S_x D_z (\varphi) = 
+    \frac{\hbar}{2} e^{i \varphi} = 
+    \frac{\hbar}{2} \bigg(
+        | + \rangle \langle - |  + | - \rangle \langle + | 
+    \bigg) \cos \varphi 
+    - \frac{i \hbar}{2} \bigg(
+        -| + \rangle \langle - |  + | - \rangle \langle + | 
+    \bigg) \sin \varphi = \cos (\varphi) S_x - \sin(\varphi) S_y.
+\end{equation*}
+Наконец, подставляя $\varphi \to - \varphi$, из операторного равенства, находим значение для $S_\varphi$:
+\begin{equation*}
+    S_\varphi = \cos(\varphi) S_x + \sin(\varphi) S_y = 
+    \frac{\hbar}{2}e^{-i \varphi} | + \rangle \langle - |  + \frac{\hbar}{2}e^{i\varphi} | - \rangle \langle + |.
+\end{equation*}
+
+
+\subsection*{Четвертая задача}
+
+Рассмотрим, в частности, поворот на малый угол $d\varphi$ относительно оси $Oz$
+\begin{equation*}
+    D_z(d \varphi) = 1 - \frac{i \d \varphi}{\hbar} S_z,
+    \hspace{5 mm} 
+    | \alpha\rangle_{d \varphi} = | \tilde{\alpha}\rangle = D_z (d \varphi) | \alpha\rangle.
+\end{equation*}
+Для начала найдём с точки зрения операторного равенства $\tilde{S}_{x, y, z}$:
+\begin{equation*}
+    \langle \tilde{\alpha}| S_z | \tilde{\alpha}\rangle = \langle \alpha| \tilde{S}_z | \alpha\rangle, \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \tilde{S}_z = D\dag_x(d \varphi) S_z D_z(d \varphi).
+\end{equation*}
+Подставляя выражения для $S_z$ и для $D_z$, находим с точностью до членов порядка $\d \varphi$
+\begin{equation*}
+    \tilde{S}_z = \left(1 + \frac{i \d \varphi}{\hbar} S_z\right) S_z \left(
+        1 - \frac{o \d \varphi}{\hbar}S_z
+    \right) = S_x - \frac{i \d \varphi}{\hbar} S_z^2 + \frac{i \d \varphi}{\hbar} S_z^2 + o(\d \varphi),
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \tilde{S}_z = S_z,
+\end{equation*}
+таким образом поворот не затрагивает $S_z$, что действительно похоже на поворот. Аналогично находим
+\begin{equation*}
+    \tilde{S}_x = S_x + \frac{i \d \varphi}{\hbar} \left[S_x,\, S_z\right] + o(d \varphi)= S_x + S_y \d \varphi + o(d \varphi),
+\end{equation*}
+и аналогично $\tilde{S}_y = S_y - S_x \d \varphi + o(d \varphi)$. Здесь мы воспользовались выражением для коммутатора $S_{x, y, z}$:
+\begin{equation*}
+    \left[S_i, S_j\right]= i \hbar \varepsilon_{ijk} S_k.
+\end{equation*}
+Итого, с точностью до $o(d \varphi)$, находим преобразование <<проекций>>, очень сильно похожих на инфинитезимальный поворот
+\begin{align*}
+    \tilde{S}_x &= S_x + S_y \d \varphi, \\
+    \tilde{S}_y &= S_y - S_x \d \varphi, \\
+    \tilde{S}_z &= S_z.
+\end{align*}
+
+\subsection*{Пятая задача}
+
+В шестой задаче покажем, что
+\begin{equation*}
+    R_z (d \varphi) = 1 - \frac{i \d \varphi}{\hbar} L_z = 
+    1 - \frac{i \d \varphi}{\hbar} (x p_y - y p_x),
+\end{equation*}
+где $\hat{L}_{x,y,z}$ удовлетворяет коммутативным свойствам и $\hat{L} = \hat{x} \times  \hat{p}$. 
+
+Рассмотрим действие этого оператора на состояние $| x,y,z\rangle $, вспоминая, что $\hat{p}$ строился из оператора трансляции:
+\begin{equation*}
+    R_z (\d \varphi) | x,y,z\rangle = \left(
+        1 - \frac{i \d \varphi}{\hbar} p_y x + \frac{i \d \varphi}{\hbar} p_x y
+    \right) | x,y,z\rangle = | x - y \d \varphi,\, y + x \d \varphi,\, z\rangle,
+\end{equation*}
+с точностью до $o(d \varphi)$. Можно заметить, что это и есть инфинитезимальный поворот вокруг $Oz$. 
+
+
+
+\subsection*{Шестая задача}
+
+Оператор $L = \hat{x} \times  \hat{p}$ удовлетворяет $\left[L_i,\, L_j \right]= i \varepsilon_{i j k} \hbar L_k$, по Сакураю (3.6.2). Тогда
+\begin{align*}
+    \left[L_x,\, L_y\right] &= \left[
+        y p_z - z p_y,\, z p_x - x p_z
+    \right] = 
+    \left[y p_z,\, z p_x\right] + \left[z p_y,\, x p_z\right] 
+    = \\ &=
+    y p_x \left[p_z, z\right] + p_y x [z,\, p_z] = i \hbar \left(x p_y - y p_x\right) = i \hbar L_z,
+\end{align*}
+что и показывает корректность введения $\hat{L}$ через $\hat{x}$ и $\hat{p}$ .
+

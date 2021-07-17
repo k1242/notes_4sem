@@ -1,0 +1,351 @@
+\subsection*{Первая задача. Трансляция импульса}
+
+Вводя импульс из трансляции координаты, нашли
+\begin{equation*}
+    \hat{\vc{p}} = - i \hbar \nabla,
+    \hspace{5 mm} \Leftrightarrow \hspace{5 mm} 
+    e^{i k_p \hat{p}} \ket{x} = \ket{x - k_p \hbar},
+    \hspace{2.5 mm} k_p = \frac{\Delta x}{\hbar}.
+\end{equation*}
+Для оператора $\hat{p}$ можем найти собственные состояния, как
+\begin{equation*}
+    i \hbar \nabla \psi = \vc{p} \psi,
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    \psi_p = \const \cdot e^{i p r / \hbar} =  e^{i p r / \hbar},
+\end{equation*}
+где равенство $\const = 1$ можем получить из требований нормировки. Тогда волновую функцию можем записать в координатном представление:
+\begin{equation*}
+    \psi(\vc{x}) = \int a(\vc{p}) \psi_p (\vc{x}) \dppp = 
+    \int a(\vc{x}) e^{i p \cdot r / \hbar} \dppp,
+\end{equation*}
+где $a(\vc{p})$ -- волновая функция в импульсном представление, которую находим, как коэффициенты в разложение по Фурье (так вышло):
+\begin{equation*}
+    a(\vc{p}) = \int \psi(\vc{x}) \psi^*_p (\vc{x}) \d V = 
+    \int \psi(\vc{x}) e^{- i p \cdot r / \hbar}\d V.
+\end{equation*}
+
+Запишем $\langle r\rangle$ в импульсном и координатном представление:
+\begin{equation*}
+    \langle \vc{x} \rangle \overset{(1)}{=}  \int \psi^*(\vc{x})\, \hat{\vc{x}}\, \psi(\vc{x}) \d V 
+    \overset{(2)}{=} \int a(\vc{p}) \,\hat{\vc{x}}\, a(\vc{p}) \dppp.
+\end{equation*}
+Интегрируя по частям выражение для $\vc{x} \psi(\vc{x})$, можем получить
+\begin{equation*}
+    \vc{x} \psi(\vc{x}) = \int \vc{x} a(\vc{p}) e^{i \smallvc{p} \cdot \smallvc{x} / \hbar} \dppp = 
+    \int i \hbar e^{i \smallvc{p} \cdot \smallvc{x} / \hbar} \partial_{\smallvc{p}} a(\vc{p}) \dppp,
+\end{equation*}
+что подставляя в (1), находим
+\begin{equation*}
+        \langle r\rangle = 
+    \int \psi^* (\vc{x}) e^{i \smallvc{p} \cdot \smallvc{x} / \hbar} \dppp
+    \int i \hbar \partial_{\smallvc{p}} a(\vc{p}) \dppp = 
+    \int a^*(\vc{p}) i \hbar \partial_{\smallvc{p}} a(\vc{p}) \dppp,
+\end{equation*}
+где был переставлен порядок интегрирования. Сравнивая это выражение с (2), получаем замечательное выражение
+\begin{equation*}
+    \hat{\vc{x}} = i \hbar \partial_{\smallvc{p}},
+\end{equation*}
+в импульсном представление. 
+
+Приходим к двум очень похожим ситуациям для канонически сопряжённых переменных
+\begin{align*}
+    &\hat{\vc{p}} = - i \hbar \nabla,
+    &\Leftrightarrow
+    &&e^{i k_p \hat{p}} \ket{x} = \ket{x - k_p \hbar}, 
+    \\
+    &\hat{\vc{x}} = i \hbar \partial_{\smallvc{p}},
+    &\Leftrightarrow
+    &&e^{i k_x \hat{x}} \ket{p} = \ket{p + k_x \hbar},
+\end{align*}
+где вывод для трансляции импульса аналогичен демонстрации явного вида $\hat{\vc{p}}$, как транляции координаты (Сакурай, 1.7.15), или, чуть более явно, можно разложить $a(\vc{p} + \hbar k)$ в ряд, тогда возникнет 
+\begin{equation*}
+    a(p - \hbar k) = \left[
+        1 + \frac{i}{\hbar} \hbar k \hat{\vc{x}} + \frac{1}{2} \left(
+            \frac{i}{\hbar} \hbar k \hat{\vc{x}}
+        \right)^2 + \ldots
+    \right] a(p),
+\end{equation*}
+где выражение в квадратных скобках и есть $\exp(i k \hat{\vc{x}})$.
+
+
+% Аналогично импульсу в координатном представление, рассмотрим трансляцию $\hat{T}_{\Delta \smallvc{p}}$ импульса на $\Delta \vc{p}$, и разложим функцию 
+
+
+
+\subsection*{Вторая задача. Коммутационные соотношения}
+
+Известно, что $\hat{H} = \hbar \nu \hat{\vc{S}} \cdot \hat{\vc{I}} + \hbar \omega \hat{S}_z$. Найдём значения $[H,\,  J^2]$ и $[H,\, J_z]$, где $\hat{\vc{J}} = \hat{\vc{S}} + \hat{\vc{I}}$. 
+
+Для начала заметим, что 
+\begin{equation*}
+    \hat{\vc{S}} \cdot \hat{\vc{I}} = \frac{1}{2} \left(
+        \hat{\vc{J}}^2 - \hat{\vc{S}}^2 - \hat{\vc{I}}^2
+    \right),
+    \hspace{5 mm} 
+    \hat{J}_i \hat{J}^i = \hat{I}_j \hat{I}^j + 2 \hat{S}_j \hat{I}^j + \hat{S}_j \hat{S}^j,
+\end{equation*}
+далее для удобства опусти шляпки у операторов и проигнорируем баланс индексов, за ненадобностью. Для начала найдём коммутатор для $S_i I_i$:
+\begin{align*}
+    \hbar \nu \left[
+        S_i I_i,\, I_j I_j + S_j S_j + 2 S_j I_j
+    \right] = \hbar \nu\left(
+        2 S_i I_i S_j I_j + S_i I_i I^2 + S_i I_i S^2 - 
+        2 S_j I_j S_i I_i - I^2 S_i I_i - S^2 S_i I_i
+    \right).
+\end{align*}
+Временно опуская $\hbar \nu$ и вспоминая, что $[S_i, I_j] = 0$, а также что $[I_i, I^2] = [S_i, S^2] = 0$, находим
+\begin{equation*}
+    \left[S_i I_i,\, J^2\right] \sim 
+    2 \left(
+        S_i S_j I^i I^j - S_j S_i I^j I^i
+    \right) + S_i \left[I_i,\,  I^2\right] + I_i\left[S_i,\,  S^2\right] = 0.
+\end{equation*}
+Теперь найдём часть с $S_z$ (считая правой тройку $xyz$):
+\begin{equation*}
+    \left[S_z,\, J^2\right] = 
+    2 (S_z S_i I_i - S_i S_z I_i) + S_z S_i S_i - S_i S_i S_z = 
+    2 I_i \left[S_z,\, S_i\right] = 2 I_i \varepsilon_{z i k} S_k = 
+    2 i \hbar \left(I_x S_y + I_y S_x\right).
+\end{equation*}
+Так находим, что
+\begin{equation*}
+    \left[\hat{H}, \hat{J}^2\right] = 2 i \hbar^2 \nu \left(\hat{I}_x \hat{S}_y + \hat{I}_y \hat{S}_x\right) \neq 0,
+\end{equation*}
+то есть они не коммутируют.
+
+
+Найдём теперь $\left[\hat{H},\, \hat{J}_z\right]$. Очевидно, что $[S_z,\, S_z + I_z] = 0$, так что осталось рассмотреть
+\begin{align*}
+    \left[S_i I_i,\, I_z + S_z\right] 
+    &= 
+    S_i I_i I_z - I_z S_i I_i + S_i I_i S_z - S_z S_i I_i 
+    = 
+    S_i \left[I_i,\, I_z\right] + I_i \left[S_i,\, S_z\right] 
+    = \\ &=
+    i \hbar \left(
+        S_i \varepsilon_{izk} I_k + I_i \varepsilon_{izk} S_k
+    \right) = i\hbar\left(
+        - S_x I^y + S_y I_x - I_x S_y + I_y S_x
+    \right) = 0,
+\end{align*}
+таким образом нашли, что $\hat{H}$ и $\hat{J}_z$ коммутируют:
+\begin{equation*}
+    \left[\hat{H},\, \hat{J}_z\right] = 0.
+\end{equation*}
+
+
+\subsection*{Третья задача. Эффект Зеемана}
+
+% \textbf{Предыстория (теория возмущений)}. 
+
+% \textbf{Предельные случаи}.
+
+\renewcommand{\kbldelim}{(}% Left delimiter
+\renewcommand{\kbrdelim}{)}% Right delimiter
+
+\textbf{Решение в общем случае}. 
+Найдём собственные состояния и собственные значения для гамильтониана
+вида 
+\begin{equation*}
+    \hat{H}_p = \hbar \nu \hat{\vc{S}} \cdot \hat{\vc{I}} + \hbar \omega S_z,
+\end{equation*}
+а именно посчитаем матричные элементы
+\begin{equation*}
+    \mathcal{M} = \langle S_z'',\, I_z'' \,|  \hat{H}_p |\, S_z', I_z' \rangle = 
+    \kbordermatrix{
+    & \ket{++} & \ket{-+} & \ket{+-} & \ket{--} \\
+    \bra{++} & ... & 0 & 0 & 0 \\
+    \bra{-+} & 0 & ... & ... & 0 \\
+    \bra{+-} & 0 & ... & ... & 0 \\
+    \bra{--} & 0 & 0 & 0 & ...}
+\end{equation*}
+ в базисе $\mathfrak{B}_1 \overset{\mathrm{def}}{=} \{\hat{\vc{S}}^2,\,  \hat{{S}}_z,\, \hat{\vc{I}}^2,\,  \hat{{I}}_z\}$, точнее $\ket{S_z,\pm; I_z, \pm } \overset{\mathrm{def}}{=} \ket{\pm, \pm}$ и найдём собственные значения и собственные состояния получившейся матрицы. 
+
+
+Не совсем понятно, как быстро посчитать действие $\hat{\vc{S}} \cdot \hat{\vc{I}}$ на $\ket{\pm, \pm}$, однако мы отлично умеем действовать $\hat{\vc{S}} \cdot \hat{\vc{I}}$ на $\ket{\pm, \pm}$ в базисе $\mathfrak{B}_2 \overset{\mathrm{def}}{=}  \{\hat{\vc{J}}^2,\,  J_z,\,
+\hat{\vc{S}}^2,\, 
+\hat{\vc{I}}^2
+ \}$:
+ \begin{equation*}
+     \left.\begin{aligned}
+         \hat{\vc{S}} \cdot \hat{\vc{I}} &= \textstyle \frac{1}{2} (
+        \hat{\vc{J}}^2 - \hat{\vc{S}}^2 - \hat{\vc{I}}^2
+    ) \\
+         \hat{\vc{J}}^2 \ket{j,\, m} &= \hbar^2 j(j+1)\ket{j,\, m}
+     \end{aligned}\right.
+     \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+     \hbar \nu \hat{\vc{S}} \cdot \hat{\vc{I}} \ket{J,\, J_z} = \left\{\begin{aligned}
+         &\textstyle \frac{1}{4} \hbar \nu, &J=1,\\
+         -&\textstyle \frac{3}{4} \hbar \nu, &J=0;\\
+     \end{aligned}\right.
+ \end{equation*}
+ в случае $1s$ орбитали электрона. 
+
+ Более того, мы уже выводили собственные состояния $\mathfrak B_2$ выраженные через собственные состояния $\mathfrak B_1$:
+ \begin{align*}
+     \ket{J=1,\, J_z=1} &= \ket{++}, 
+     &\ket{++} &= \ket{J=1,\, J_z=1};
+     \\
+     \ket{J=1,\, J_z=-1} &= \ket{--}, 
+     & \ket{--} &= \ket{J=1,\, J_z=-1};
+     \\
+     \ket{J=1,\, J_z=0} &= \textstyle \frac{1}{\sqrt{2}} \ket{+-} + \textstyle \frac{1}{\sqrt{2}} \ket{-+}, 
+     & \ket{+-} &=  \textstyle \frac{1}{\sqrt{2}} \ket{J=1,\, J_z=0} + \textstyle \frac{1}{\sqrt{2}} \ket{J=0,\, J_z=0};
+     \\
+     \ket{J=0,\, J_z=0} &= \textstyle \frac{1}{\sqrt{2}} \ket{+-} - \textstyle \frac{1}{\sqrt{2}} \ket{-+}, 
+     & \ket{+-} &=  \textstyle \frac{1}{\sqrt{2}} \ket{J=1,\, J_z=0} - \textstyle \frac{1}{\sqrt{2}} \ket{J=0,\, J_z=0};
+ \end{align*}
+ чем мы и воспользуемся для поиска $\mathcal M$.
+
+ В качестве примера найдём $\hat{H}_p \ket{+-}$, остальные найдём аналогично:
+ \begin{equation*}
+     \hat{H}_p \ket{+-} =
+    \hbar \nu \hat{\vc{S}} \cdot \hat{\vc{I}} \left(\frac{1}{\sqrt{2}} \ket{J=1,\, J_z=0} + \frac{1}{\sqrt{2}} \ket{J=0,\, J_z=0}\right) + \frac{1}{2} \hbar \omega \ket{+-} 
+     = \frac{1}{2} \hbar \omega \ket{+-} + 
+     \frac{1}{\sqrt{2}} \left(
+        \frac{1}{4} \hbar \nu - \frac{3}{4} \hbar \nu
+     \right),
+ \end{equation*}
+ так получаем четыре вектора $\hat{H}_p \ket{\pm \pm}$,
+ действуя на них соответсующим набором бра-векторов, находим $\mathcal M$
+\begin{equation*}
+    \left.\begin{aligned}
+            \hat{H}_p \ket{++} &= 
+    \textstyle \frac{1}{4} |\textstyle \frac{1}{2},\textstyle \frac{1}{2}\rangle  ( \hbar \nu +2  \hbar \omega );
+    \\
+    \hat{H}_p \ket{-+} &= 
+    \textstyle \frac{1}{2}  \hbar \nu  |\textstyle \frac{1}{2},-\textstyle \frac{1}{2}\rangle -\textstyle \frac{1}{4} |-\textstyle \frac{1}{2},\textstyle \frac{1}{2}\rangle  ( \hbar \nu +2  \hbar \omega );
+    \\
+    \hat{H}_p \ket{+-} &= 
+    \textstyle \frac{1}{2}  \hbar \nu  |-\textstyle \frac{1}{2},\textstyle \frac{1}{2}\rangle -\textstyle \frac{1}{4} |\textstyle \frac{1}{2},-\textstyle \frac{1}{2}\rangle  ( \hbar \nu -2  \hbar \omega ) ;
+    \\
+    \hat{H}_p \ket{--} &= 
+    \textstyle \frac{1}{4} |-\textstyle \frac{1}{2},-\textstyle \frac{1}{2}\rangle  ( \hbar \nu -2  \hbar \omega ).
+    \end{aligned}\right.
+    % 
+    \hspace{0.5cm} \Rightarrow \hspace{0.5cm}
+    % 
+        \mathcal M = \frac{\hbar}{4} \left(
+\begin{array}{cccc}
+ \nu +2 \omega  & 0 & 0 & 0 \\
+ 0 & -\nu -2 \omega  & 2 \nu  & 0 \\
+ 0 & 2 \nu  & 2 \omega -\nu  & 0 \\
+ 0 & 0 & 0 & \nu -2 \omega  \\
+\end{array}
+\right).
+\end{equation*}
+Запишем характерестическое уравнение для $\mathcal M$:
+\begin{equation*}
+    \det(\mathcal M - \hbar \lambda_\hbar \mathbbm{1}) = \frac{\hbar^4}{256} (4 \lambda_\hbar -\nu -2 \omega ) (4 \lambda_\hbar -\nu +2 \omega ) \left(16 \lambda_\hbar ^2+8 \lambda_\hbar  \nu -3 \nu ^2-4 \omega ^2\right) = 0,
+\end{equation*}
+где введено $\lambda_\hbar = \lambda/\hbar$. Теперь находим спектр, соответсвтующий энергетическим сдвигам:
+\begin{equation*}
+    \lambda_1 = \frac{\hbar}{4} (\nu -2 \omega ), \hspace{2.5 mm} 
+    \lambda_2 =  \frac{\hbar}{4} (\nu +2 \omega ), \hspace{2.5 mm}
+    \lambda_3 = \frac{\hbar}{4} \left(-2 \sqrt{\nu ^2+\omega ^2}-\nu \right), \hspace{2.5 mm}
+    \lambda_4 = \frac{\hbar}{4} \left(2 \sqrt{\nu ^2+\omega ^2}-\nu \right).
+\end{equation*}
+Не мудрствуя лукаво, сразу же построим количественный график для их поведения, положив $\nu = 1$, $\hbar = 1$: рис. 1.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.5\textwidth]{D:\\Kami\\WM12_Workspace\\BraKets\\plot2.pdf}
+    \caption{Поведение энергетических сдвигов при различной силе внешнего поля $B(\omega) \colon \omega \sim \nu_{\text{hf}}$.}
+    %\label{fig:}
+\end{figure}
+
+\noindent
+где ГГц можем, если что, пересчитать в Гс, домножим на $\frac{c m_e}{e} \times 10^9 \times 10^{-4} \approx 170$, что сходится с масштабами, приведенными на презентации. Приведём для наглядности аналогичную зависимость в другом масштабе.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.45\textwidth]{D:\\Kami\\WM12_Workspace\\BraKets\\plot3.pdf}
+    \includegraphics[width=0.45\textwidth]{D:\\Kami\\WM12_Workspace\\BraKets\\plot4.pdf}
+    \caption{Поведение энергетических сдвигов при  $\omega \ll \nu_{\text{hf}}$ и $\omega \gg \nu_{\text{nf}}$.}
+    %\label{fig:}
+\end{figure}
+
+
+Также можем найти собственные векторы для $\mathcal M$, соответствующие собственным состояниям $\hat{H}_p$:
+\begin{align*}
+    \vc{v}_1\T = \{0,0,0,1\}, \hspace{5 mm} 
+    \vc{v}_2\T = \{1,0,0,0\}, \hspace{5 mm} 
+    \vc{v}_3\T &= \left\{0,-\frac{\sqrt{\nu ^2+\omega ^2}+\omega }{\sqrt{2} \sqrt{\omega  \sqrt{\nu ^2+\omega ^2}+\nu ^2+\omega ^2}},\frac{\nu }{\sqrt{2} \sqrt{-\omega  \sqrt{\nu ^2+\omega ^2}+\nu ^2+\omega ^2}},0\right\},
+    \\
+    \vc{v}_4\T &= \left\{0,\frac{\nu }{\sqrt{2} \sqrt{\omega  \sqrt{\nu ^2+\omega ^2}+\nu ^2+\omega ^2}},\frac{\nu }{\sqrt{2} \sqrt{-\omega  \sqrt{\nu ^2+\omega ^2}+\nu ^2+\omega ^2}},0\right\}.
+\end{align*}
+Стоит заметить, что в пределе $\nu \to 0$, собственные значения переходя в $\pm \omega/2$, а при $\omega \to 0$ спектр $\text{spec}\, \mathcal M$ перейдёт в $\left\{\frac{\hbar\nu}{4},-\frac{3}{4}\hbar\nu\right\}$.
+
+Аналогичное соответствие наблюдается для собственных значений:
+\begin{equation*}
+    \nu \to 0, \ \Rightarrow \ 
+    \{\vc{v}_1, \vc{v}_2, \vc{v}_3, \vc{v}_4\} = \left(
+\begin{array}{cccc}
+ 0 & 0 & 0 & 1 \\
+ 0 & 1 & 0 & 0 \\
+ 0 & 0 & 1 & 0 \\
+ 1 & 0 & 0 & 0 \\
+\end{array}
+\right),
+\hspace{10 mm} 
+    \omega \to 0, \ \Rightarrow \ 
+    \{\vc{v}_1, \vc{v}_2, \vc{v}_3, \vc{v}_4\} = 
+    \left(
+\begin{array}{cccc}
+ 0 & 0 & 0 & 1 \\
+ -1 & 0 & 1 & 0 \\
+ 1 & 0 & 1 & 0 \\
+ 0 & 1 & 0 & 0 \\
+\end{array}
+\right),
+\end{equation*}
+где я вроде бы перепутал порядок $\vc{v}_i$, но суть должна быть ясна. 
+
+
+Собственно, эти пределы и можно рассматривать как $B \approx 0$ и $B \to \infty$, а именно
+\begin{equation*}
+    B \to \infty \ \Leftrightarrow \ \nu \ll \omega,
+    \hspace{10 mm} 
+    B \approx 0 \  \Leftrightarrow \ \nu \gg \omega.
+\end{equation*}
+Для численной оценки положим $\omega = \alpha \nu$, тогда
+\begin{equation*}
+    B = \frac{m_e c \omega}{|e|} = \alpha \frac{\nu_{\text{hf}} m_e c}{|e|} = \alpha \times 239\, \text{Гс},
+\end{equation*}
+откда и можем оценить характерные для водорода значения магнитного поля. 
+Можем построить $\lambda_i / \lambda_i^{\text{approx}}$:
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.45\textwidth]{D:\\Kami\\WM12_Workspace\\BraKets\\plot01.pdf}
+    \includegraphics[width=0.45\textwidth]{D:\\Kami\\WM12_Workspace\\BraKets\\plot02.pdf}
+    \caption{Визуализация ошибки приближения: малые $\alpha \ll 1$ и большие $\alpha \gg 1$ (примерно).}
+    %\label{fig:}
+\end{figure}
+
+% Для большей наглядности можем привести табличку
+
+% \begin{table}[h]
+% \centering
+% \caption{Поведением энергетических сдвигов}
+% \begin{tabular}{cc}
+% \toprule
+% $\alpha$ & $B$, Гс  \\ 
+% \midrule
+% $0.1$ & $24$ \\
+% $1$ & $239$ \\
+% $2$ & $1194$ 
+% \bottomrule
+% \end{tabular}
+% \end{table}
+
+
+% \begin{table}[h]
+% \begin{tabular}{cc}
+% \toprule
+% 1 & 2 \\
+% 2 & 3 \\
+% 4 & 1 \\
+% 2 & 3
+% \bottomrule
+% \end{tabular}
+% \end{table}
